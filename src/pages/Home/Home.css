@@ -1,0 +1,68 @@
+.app {
+  min-height: 100vh;
+  color: var(--c-black);
+}
+
+.flex {
+  display: flex;
+}
+
+.end {
+  justify-content: flex-end;
+}
+
+.home-page {
+  background-color: var(--c-pink);
+  flex-direction: column;
+  height: 92vh;
+  padding-bottom: 8vh;
+}
+
+.bar {
+  margin: 2rem;
+}
+
+.bold {
+  font-family: "Gilroy-Bold";
+}
+
+.title {
+  font-size: 4.4rem;
+}
+
+.glass-card {
+  border-radius: var(--s-radius);
+  font-size: 2rem;
+  overflow: hidden;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.glass-card:before {
+  background-color: var(--c-secondary);
+  opacity: 0.5;
+  backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.glass-text {
+  margin: 2rem 2rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.glass-bot {
+  margin: 0 2rem 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.btn {
+  padding: 2rem;
+  border: 0;
+  border-radius: var(--s-radius);
+  font-weight: bold;
+}
