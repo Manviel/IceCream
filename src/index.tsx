@@ -1,16 +1,16 @@
 import "solid-js";
 import { render } from "solid-js/web";
-import App from "./App";
+import { Router, pathIntegration } from "@rturnq/solid-router";
 
-import { Provider } from "./store";
+import App from "./App";
 
 import "./index.css";
 
 render(
   () => (
-    <Provider>
+    <Router integration={pathIntegration()}>
       <App />
-    </Provider>
+    </Router>
   ),
   document.getElementById("root") as Node
 );

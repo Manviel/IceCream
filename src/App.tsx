@@ -1,23 +1,20 @@
-import { Switch, Match } from "solid-js";
+import { Switch } from "solid-js";
 import { JSX } from "solid-js/jsx-runtime";
-
-import { useRouter } from "./store";
+import { MatchRoute } from "@rturnq/solid-router";
 
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 
 function App(): JSX.Element {
-  const { match } = useRouter();
-
   return (
     <div class="app">
       <Switch>
-        <Match when={match("", /^#?$/)}>
+        <MatchRoute end>
           <Home />
-        </Match>
-        <Match when={match("profile", /^profile/)}>
+        </MatchRoute>
+        <MatchRoute path="profile">
           <Profile />
-        </Match>
+        </MatchRoute>
       </Switch>
     </div>
   );

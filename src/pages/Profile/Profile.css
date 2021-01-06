@@ -1,0 +1,14 @@
+.start {
+  align-items: flex-start;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 3.4rem;
+  max-width: 15rem;
+}

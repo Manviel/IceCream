@@ -1,11 +1,16 @@
 import { JSX } from "solid-js/jsx-runtime";
+import { Link } from "@rturnq/solid-router";
+
+import "./Profile.css";
 
 function Profile(): JSX.Element {
   return (
-    <article class="flex end">
-      <a href="/">Back</a>
+    <article class="flex col bar start">
+      <Link href="/profile" className="link btn icon">
+        <i className="arrow-right"></i>
+      </Link>
 
-      <h2 className="bar bold title">Choose Your CSV</h2>
+      <h2 className="bar bold subtitle">Choose Your CSV</h2>
 
       <header className="flex bar">
         <section className="glass-card">

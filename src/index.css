@@ -34,5 +34,6 @@ body {
   --c-basic: #2b2b2b;
   --c-active: #d0ebd8;
   --c-light: #f4dcc1;
+  --o-secondary: rgb(247, 247, 247, 0.5);
   --s-radius: 30px;
 }

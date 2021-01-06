@@ -7,13 +7,16 @@
   display: flex;
 }
 
+.col {
+  flex-direction: column;
+}
+
 .end {
   justify-content: flex-end;
 }
 
 .home-page {
   background-color: var(--c-pink);
-  flex-direction: column;
   height: 92vh;
   padding-bottom: 8vh;
 }
@@ -30,6 +33,10 @@
   font-size: 4.4rem;
 }
 
+.center {
+  align-items: center;
+}
+
 .glass-card {
   border-radius: var(--s-radius);
   font-size: 2rem;
@@ -39,8 +46,7 @@
 }
 
 .glass-card:before {
-  background-color: var(--c-secondary);
-  opacity: 0.5;
+  background-color: var(--o-secondary);
   backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
   content: "";
   height: 100%;
@@ -65,4 +71,36 @@
   border: 0;
   border-radius: var(--s-radius);
   font-weight: bold;
+  font-size: 1.6rem;
+  background-color: var(--o-secondary);
+  backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.arrow-right {
+  border: solid var(--c-black);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+}
+
+.slide {
+  animation: slide 1s ease-in-out infinite;
+  transition: transform 0.3s;
+}
+
+@keyframes slide {
+  0%,
+  100% {
+    transform: translate(-15px, 0);
+  }
+
+  50% {
+    transform: translate(-30px, 0);
+  }
 }
