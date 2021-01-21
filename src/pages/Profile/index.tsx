@@ -6,7 +6,7 @@ import "./Profile.css";
 function Profile(): JSX.Element {
   return (
     <article class="flex col bar start">
-      <Link href="/profile" className="link btn icon">
+      <Link href="/" className="link btn icon">
         <i className="arrow-right"></i>
       </Link>
 

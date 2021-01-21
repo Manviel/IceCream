@@ -29,6 +29,24 @@ function Home(): JSX.Element {
           <button className="btn">Next</button>
         </Link>
       </footer>
+
+      <ul className="bar dock flex justify">
+        <li className="superellipse">
+          <span>Finder</span>
+        </li>
+
+        <li className="superellipse">
+          <span>Store</span>
+        </li>
+
+        <li className="superellipse">
+          <span>Settings</span>
+        </li>
+
+        <li className="superellipse">
+          <span>Messages</span>
+        </li>
+      </ul>
     </article>
   );
 }

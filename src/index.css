@@ -36,4 +36,5 @@ body {
   --c-light: #f4dcc1;
   --o-secondary: rgb(247, 247, 247, 0.5);
   --s-radius: 30px;
+  --s-ellipse: 50px;
 }
