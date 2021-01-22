@@ -1,0 +1,37 @@
+.superellipse {
+  width: var(--s-ellipse);
+  height: var(--s-ellipse);
+  position: relative;
+  border-radius: 20%;
+  background-color: var(--o-glass);
+  transition: transform 0.3s;
+}
+
+.superellipse:hover {
+  transform: translateY(-1rem) scale(2);
+}
+
+.superellipse::before,
+.superellipse::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+
+‍.superellipse::before {
+  border-radius: 2%/30%;
+  background-color: inherit;
+  top: var(--s-ellipse) / 7;
+  bottom: var(--s-ellipse) / 7;
+  right: var(--s-ellipse) / -110;
+  left: var(--s-ellipse) / -110;
+}
+
+.superellipse::after {
+  border-radius: 30%/2%;
+  background-color: inherit;
+  top: var(--s-ellipse) / -110;
+  bottom: var(--s-ellipse) / -110;
+  right: var(--s-ellipse) / 7;
+  left: var(--s-ellipse) / 7;
+}

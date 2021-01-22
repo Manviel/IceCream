@@ -1,0 +1,30 @@
+.glass-card {
+  border-radius: var(--s-radius);
+  font-size: 2rem;
+  overflow: hidden;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.glass-card:before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background-color: var(--o-glass);
+  background-blend-mode: hard-light;
+  box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(81.5485px);
+}
+
+.glass-text {
+  margin: 2rem 2rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.glass-bot {
+  margin: 0 2rem 2rem;
+  position: relative;
+  z-index: 2;
+}
