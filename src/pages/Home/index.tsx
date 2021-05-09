@@ -9,6 +9,16 @@ import "./Home.css";
 function Home(): JSX.Element {
   return (
     <article class="page home-page flex col justify-end">
+      <main className="dock stage flex justify-between items-center">
+        <SuperEllipse name="Google" />
+
+        <p className="stage-title">New stage of your application</p>
+
+        <button className="btn dark dark-btn">
+          <i className="arrow arrow-right"></i>
+        </button>
+      </main>
+
       <header className="flex">
         <Card number="700k +" description="Vacancies" />
         <Card number="320" description="Countries" />
@@ -18,7 +28,7 @@ function Home(): JSX.Element {
 
       <nav className="bar flex justify-end items-center">
         <p className="slide">
-          <i className="arrow-right"></i>
+          <i className="arrow arrow-left"></i>
         </p>
 
         <Link href="/profile" className="link">

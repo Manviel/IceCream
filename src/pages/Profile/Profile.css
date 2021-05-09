@@ -2,10 +2,6 @@
   background-color: var(--c-light);
 }
 
-.start {
-  align-items: flex-start;
-}
-
 .content-full {
   width: 100%;
 }

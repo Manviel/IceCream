@@ -30,22 +30,22 @@ const fetchQuery = async (page: number) =>
   await getCompanies({ page, limit: DATA_STEP });
 
 function Profile(): JSX.Element {
-  const [state, setState] = createSignal(0);
+  const [getState, setState] = createSignal(0);
 
-  const [companies] = createResource(state, fetchQuery);
+  const [companies] = createResource(getState, fetchQuery);
 
-  const loadCompanies = () => setState(state() + 1);
+  const loadCompanies = () => setState(getState() + 1);
 
   const extractMonth = (str: string) =>
     new Date(str).toDateString().slice(4, 7);
 
   return (
-    <article class="page profile-page flex col start">
+    <article class="page profile-page flex col">
       <Link
         href="/"
         className="link btn primary icon flex items-center justify-center"
       >
-        <i className="arrow-right"></i>
+        <i className="arrow arrow-left"></i>
       </Link>
 
       <h1 className="bar subtitle bold">Your Profile</h1>
@@ -53,7 +53,7 @@ function Profile(): JSX.Element {
       <header className="flex bar">
         <Card number="Today" description="126 Views" />
 
-        <Card number={state()} description="Messages" />
+        <Card number={getState()} description="Messages" />
       </header>
 
       <h2 className="bar subtitle bold">Your Applications</h2>
