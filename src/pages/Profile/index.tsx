@@ -6,6 +6,7 @@ import { getCompanies } from "../../services/company";
 
 import Card from "../../components/Card";
 import SuperEllipse from "../../components/Superellipse";
+import Loader from "../../components/Loader";
 
 import "./Profile.css";
 
@@ -31,7 +32,10 @@ function Profile(): JSX.Element {
 
   return (
     <article class="page profile-page flex col start">
-      <Link href="/" className="link btn icon flex items-center justify-center">
+      <Link
+        href="/"
+        className="link btn primary icon flex items-center justify-center"
+      >
         <i className="arrow-right"></i>
       </Link>
 
@@ -39,18 +43,22 @@ function Profile(): JSX.Element {
 
       <header className="flex bar">
         <Card number="Today" description="126 Views" />
+
+        <Card number="6" description="Messages" />
       </header>
 
       <h2 className="bar subtitle bold">Your Applications</h2>
 
-      <Switch fallback={"Failed to load User"}>
-        <Match when={companies.loading}>Loading...</Match>
+      <Switch fallback={"Failed to load"}>
+        <Match when={companies.loading}>
+          <Loader />
+        </Match>
         <Match when={companies.error}>Something Went Wrong</Match>
         <Match when={companies()}>
           {(list: Company[]) => (
             <For each={list}>
               {(com) => (
-                <div className="card">
+                <div className="card content-full">
                   <SuperEllipse name="Logo" />
 
                   <p className="bar card-description">
@@ -86,6 +94,10 @@ function Profile(): JSX.Element {
           )}
         </Match>
       </Switch>
+
+      <footer className="flex justify-center content-full">
+        <button className="btn dark dark-btn">Show Other Results</button>
+      </footer>
     </article>
   );
 }

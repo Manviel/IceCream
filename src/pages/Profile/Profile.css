@@ -6,6 +6,10 @@
   align-items: flex-start;
 }
 
+.content-full {
+  width: 100%;
+}
+
 .icon {
   width: var(--s-medium);
   height: var(--s-medium);
@@ -20,7 +24,6 @@
   padding: var(--s-medium);
   background-color: var(--c-secondary);
   border-radius: var(--s-radius);
-  width: 100%;
   margin-bottom: 1.4rem;
 }
 
@@ -32,4 +35,8 @@
 .card-description {
   color: var(--c-basic);
   font-size: 1.6rem;
+}
+
+.dark-btn:hover {
+  background-color: var(--c-basic);
 }

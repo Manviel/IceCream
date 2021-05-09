@@ -22,7 +22,7 @@ function Home(): JSX.Element {
         </p>
 
         <Link href="/profile" className="link">
-          <button className="btn">Next</button>
+          <button className="btn primary">Next</button>
         </Link>
       </nav>
 

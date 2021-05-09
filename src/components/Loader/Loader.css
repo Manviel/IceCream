@@ -1,0 +1,15 @@
+.pulse-loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.pulse-loading .bar {
+  background-color: var(--c-basic);
+  height: 1.6rem;
+  border-radius: var(--s-radius);
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}

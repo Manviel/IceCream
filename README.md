@@ -32,3 +32,5 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 https://dribbble.com/shots/14826038-IntoJob-Job-Search-Platform-Mobile-App
 
 https://dribbble.com/shots/14766931-Jobler-Job-Search-Platform-Mobile-App
+
+https://dribbble.com/shots/14792981-Jobwaves-Job-Search-Platform-Mobile-App

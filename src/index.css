@@ -42,9 +42,14 @@ body {
   --c-active: #d0ebd8;
   --o-secondary: rgba(245, 245, 245, 0.25);
   --o-glass: rgba(255, 255, 255, 0.7);
-  --s-radius: 30px;
-  --s-ellipse: 50px;
+  --s-radius: 3rem;
+  --s-ellipse: 5rem;
   --s-medium: 2rem;
+}
+
+.app {
+  min-height: 100vh;
+  color: var(--c-black);
 }
 
 .flex {
@@ -85,4 +90,13 @@ body {
 
 .bar {
   margin: var(--s-medium) 0;
+}
+
+.primary {
+  background-color: var(--o-glass);
+}
+
+.dark {
+  background-color: var(--c-dark);
+  color: var(--c-white);
 }

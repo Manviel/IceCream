@@ -4,6 +4,7 @@
   overflow: hidden;
   position: relative;
   margin-right: 1rem;
+  animation: alert-enter 0.2s ease-in-out;
 }
 
 .glass-card:before {
@@ -27,4 +28,14 @@
   margin: 0 var(--s-medium) var(--s-medium);
   position: relative;
   z-index: 2;
+}
+
+@keyframes alert-enter {
+  0% {
+    opacity: 0.01;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
