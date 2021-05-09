@@ -1,4 +1,4 @@
-import { createResource, Switch, Match, For } from "solid-js";
+import { createResource, createSignal, Switch, Match, For } from "solid-js";
 import { JSX } from "solid-js/jsx-runtime";
 import { Link } from "@rturnq/solid-router";
 
@@ -20,13 +20,22 @@ type Company = {
   category_code: string;
   twitter_username: string;
   updated_at: string;
+  created_at: string;
+  email_address: string;
 };
 
-const fetchQuery = async () => await getCompanies({ page: 0, limit: 4 });
+const DATA_STEP = 4;
 
-const [companies] = createResource(fetchQuery);
+const fetchQuery = async (page: number) =>
+  await getCompanies({ page, limit: DATA_STEP });
 
 function Profile(): JSX.Element {
+  const [state, setState] = createSignal(0);
+
+  const [companies] = createResource(state, fetchQuery);
+
+  const loadCompanies = () => setState(state() + 1);
+
   const extractMonth = (str: string) =>
     new Date(str).toDateString().slice(4, 7);
 
@@ -44,7 +53,7 @@ function Profile(): JSX.Element {
       <header className="flex bar">
         <Card number="Today" description="126 Views" />
 
-        <Card number="6" description="Messages" />
+        <Card number={state()} description="Messages" />
       </header>
 
       <h2 className="bar subtitle bold">Your Applications</h2>
@@ -85,8 +94,10 @@ function Profile(): JSX.Element {
                   </header>
 
                   <Card
-                    number={com.founded_year}
-                    description={com.twitter_username}
+                    number={
+                      com.founded_year || new Date(com.created_at).getFullYear()
+                    }
+                    description={com.twitter_username || com.email_address}
                   />
                 </div>
               )}
@@ -96,7 +107,9 @@ function Profile(): JSX.Element {
       </Switch>
 
       <footer className="flex justify-center content-full">
-        <button className="btn dark dark-btn">Show Other Results</button>
+        <button className="btn dark dark-btn" onClick={loadCompanies}>
+          Show Other Results
+        </button>
       </footer>
     </article>
   );
