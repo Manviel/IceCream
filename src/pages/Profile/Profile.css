@@ -1,14 +1,35 @@
+.profile-page {
+  background-color: var(--c-light);
+}
+
 .start {
   align-items: flex-start;
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
-  text-align: center;
+  width: var(--s-medium);
+  height: var(--s-medium);
 }
 
 .subtitle {
   font-size: 3.4rem;
   max-width: 15rem;
+}
+
+.card {
+  padding: var(--s-medium);
+  background-color: var(--c-secondary);
+  border-radius: var(--s-radius);
+  width: 100%;
+  margin-bottom: 1.4rem;
+}
+
+.card-title {
+  font-size: var(--s-medium);
+  margin-bottom: 1.8rem;
+}
+
+.card-description {
+  color: var(--c-basic);
+  font-size: 1.6rem;
 }

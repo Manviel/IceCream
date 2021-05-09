@@ -1,6 +1,6 @@
 .glass-card {
   border-radius: var(--s-radius);
-  font-size: 2rem;
+  font-size: var(--s-medium);
   overflow: hidden;
   position: relative;
   margin-right: 1rem;
@@ -18,13 +18,13 @@
 }
 
 .glass-text {
-  margin: 2rem 2rem 0;
+  margin: var(--s-medium) var(--s-medium) 0;
   position: relative;
   z-index: 2;
 }
 
 .glass-bot {
-  margin: 0 2rem 2rem;
+  margin: 0 var(--s-medium) var(--s-medium);
   position: relative;
   z-index: 2;
 }

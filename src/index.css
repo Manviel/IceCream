@@ -1,11 +1,15 @@
 @font-face {
   font-family: "Gilroy-Regular";
-  src: url("/fonts/Gilroy-Regular.woff") format("woff");
+  src: url("/fonts/Gilroy-Regular.woff2") format("woff2");
+  font-display: optional;
+  font-style: normal;
 }
 
 @font-face {
   font-family: "Gilroy-Bold";
-  src: url("/fonts/Gilroy-Bold.woff") format("woff");
+  src: url("/fonts/Gilroy-Bold.woff2") format("woff2");
+  font-display: optional;
+  font-style: normal;
 }
 
 html {
@@ -15,6 +19,7 @@ html {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -22,20 +27,62 @@ body {
     Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1.4rem;
 }
 
 :root {
   --c-black: #000;
   --c-white: #fff;
-  --c-border: #d4d4d4;
   --c-pink: #f8e0dc;
-  --c-secondary: #f7f7f7;
+  --c-light: #eff2f5;
+  --c-border: #d4d4d4;
+  --c-secondary: #f5f5f5;
   --c-dark: #181818;
-  --c-basic: #2b2b2b;
+  --c-basic: #4e4e4e;
   --c-active: #d0ebd8;
-  --c-light: #f4dcc1;
-  --o-secondary: rgba(245, 245, 245, 0.15);
-  --o-glass: rgba(245, 245, 245, 0.8);
+  --o-secondary: rgba(245, 245, 245, 0.25);
+  --o-glass: rgba(255, 255, 255, 0.7);
   --s-radius: 30px;
   --s-ellipse: 50px;
+  --s-medium: 2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.bold {
+  font-family: "Gilroy-Bold";
+}
+
+.title {
+  font-size: 4.4rem;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.page {
+  padding: 1rem var(--s-medium);
+}
+
+.bar {
+  margin: var(--s-medium) 0;
 }

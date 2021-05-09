@@ -2,7 +2,8 @@
   width: var(--s-ellipse);
   height: var(--s-ellipse);
   position: relative;
-  border-radius: 20%;
+  border-radius: 25%;
+  font-size: 1rem;
   background-color: var(--o-glass);
   transition: transform 0.3s;
 }

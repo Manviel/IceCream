@@ -3,45 +3,13 @@
   color: var(--c-black);
 }
 
-.flex {
-  display: flex;
-}
-
-.col {
-  flex-direction: column;
-}
-
-.end {
-  justify-content: flex-end;
-}
-
 .home-page {
   background-color: var(--c-pink);
   height: 100vh;
 }
 
-.bar {
-  margin: 1rem 2rem;
-}
-
-.bold {
-  font-family: "Gilroy-Bold";
-}
-
-.title {
-  font-size: 4.4rem;
-}
-
-.center {
-  align-items: center;
-}
-
-.justify {
-  justify-content: space-between;
-}
-
 .btn {
-  padding: 2rem;
+  padding: var(--s-medium);
   border: 0;
   border-radius: var(--s-radius);
   font-weight: bold;
@@ -70,12 +38,11 @@
 
 .dock {
   border: 0.25px solid var(--o-secondary);
-  border-radius: 2rem;
-  background: var(--o-secondary);
+  border-radius: var(--s-medium);
+  background-color: var(--o-secondary);
   background-blend-mode: luminosity;
   backdrop-filter: blur(81.5485px);
   padding: 1rem 1rem 1.2rem;
-  list-style-type: none;
 }
 
 @keyframes slide {

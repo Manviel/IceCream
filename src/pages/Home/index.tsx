@@ -8,15 +8,15 @@ import "./Home.css";
 
 function Home(): JSX.Element {
   return (
-    <article class="home-page flex col end">
-      <header className="flex bar">
+    <article class="page home-page flex col justify-end">
+      <header className="flex">
         <Card number="700k +" description="Vacancies" />
         <Card number="320" description="Countries" />
       </header>
 
-      <h2 className="bar bold title">Find Your Dream Job</h2>
+      <h1 className="bar title bold">Find Your Dream Job</h1>
 
-      <footer className="bar flex end center">
+      <nav className="bar flex justify-end items-center">
         <p className="slide">
           <i className="arrow-right"></i>
         </p>
@@ -24,14 +24,14 @@ function Home(): JSX.Element {
         <Link href="/profile" className="link">
           <button className="btn">Next</button>
         </Link>
-      </footer>
+      </nav>
 
-      <ul className="bar dock flex justify">
+      <footer className="dock flex justify-between">
         <SuperEllipse name="Finder" />
         <SuperEllipse name="Store" />
         <SuperEllipse name="Settings" />
         <SuperEllipse name="Messages" />
-      </ul>
+      </footer>
     </article>
   );
 }

@@ -8,9 +8,9 @@ type EllipseType = {
 
 function SuperEllipse({ name }: EllipseType): JSX.Element {
   return (
-    <li className="superellipse">
-      <span>{name}</span>
-    </li>
+    <span className="superellipse flex items-center justify-center">
+      {name}
+    </span>
   );
 }
 
