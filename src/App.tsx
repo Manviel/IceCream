@@ -4,6 +4,7 @@ import { MatchRoute } from "@rturnq/solid-router";
 
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import Details from "./pages/Details";
 
 function App(): JSX.Element {
   return (
@@ -14,6 +15,9 @@ function App(): JSX.Element {
         </MatchRoute>
         <MatchRoute path="profile">
           <Profile />
+        </MatchRoute>
+        <MatchRoute path="company/:id">
+          {(route) => <Details id={route.params.id} />}
         </MatchRoute>
       </Switch>
     </div>

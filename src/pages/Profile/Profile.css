@@ -8,7 +8,7 @@
 
 .icon {
   width: var(--s-medium);
-  height: var(--s-medium);
+  min-height: var(--s-medium);
 }
 
 .subtitle {

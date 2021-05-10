@@ -61,7 +61,21 @@
 
 .stage-title {
   font-size: 1.8rem;
-  margin-left: 1.8rem;
+  width: 50%;
+}
+
+.line {
+  display: block;
+  height: 0.2rem;
+  margin: 0.2rem -0.5rem;
+}
+
+.line:first-child {
+  width: 1.2rem;
+}
+
+.line:last-child {
+  width: 0.8rem;
 }
 
 @keyframes slide {

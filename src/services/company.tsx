@@ -19,3 +19,15 @@ export const getCompanies = async (params: PaginateType) => {
 
   return json;
 };
+
+export const getCompanyById = async (id: string) => {
+  const response = await fetch(`http://localhost:3080/companies/${id}`, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const json = await response.json();
+
+  return json;
+};

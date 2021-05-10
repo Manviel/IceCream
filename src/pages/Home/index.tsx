@@ -8,8 +8,13 @@ import "./Home.css";
 
 function Home(): JSX.Element {
   return (
-    <article class="page home-page flex col justify-end">
-      <main className="dock stage flex justify-between items-center">
+    <article class="page home-page flex col justify-between">
+      <Link href="/" className="link btn primary icon flex col">
+        <span className="line dark"></span>
+        <span className="line dark"></span>
+      </Link>
+
+      <main className="dock flex justify-between items-center">
         <SuperEllipse name="Google" />
 
         <p className="stage-title">New stage of your application</p>
@@ -24,9 +29,9 @@ function Home(): JSX.Element {
         <Card number="320" description="Countries" />
       </header>
 
-      <h1 className="bar title bold">Find Your Dream Job</h1>
+      <h1 className="title bold">Find Your Dream Job</h1>
 
-      <nav className="bar flex justify-end items-center">
+      <nav className="flex justify-end items-center">
         <p className="slide">
           <i className="arrow arrow-left"></i>
         </p>

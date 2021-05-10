@@ -1,0 +1,31 @@
+.details-page {
+  background-color: var(--c-border);
+  color: var(--c-white);
+}
+
+.details-description {
+  color: var(--c-active);
+  font-size: 1.6rem;
+}
+
+.details-info {
+  line-height: var(--s-medium);
+}
+
+.details-list {
+  padding-left: 1.6rem;
+}
+
+.details-list-item {
+  margin-bottom: 0.6rem;
+}
+
+.details-club {
+  overflow: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .details-flow {
+    width: 120vw;
+  }
+}

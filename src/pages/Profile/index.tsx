@@ -8,21 +8,9 @@ import Card from "../../components/Card";
 import SuperEllipse from "../../components/Superellipse";
 import Loader from "../../components/Loader";
 
-import "./Profile.css";
+import { Company } from "../../models";
 
-type Company = {
-  _id: string;
-  name: string;
-  description: string;
-  number_of_employees: number;
-  total_money_raised: string;
-  founded_year: number;
-  category_code: string;
-  twitter_username: string;
-  updated_at: string;
-  created_at: string;
-  email_address: string;
-};
+import "./Profile.css";
 
 const DATA_STEP = 4;
 
@@ -67,7 +55,10 @@ function Profile(): JSX.Element {
           {(list: Company[]) => (
             <For each={list}>
               {(com) => (
-                <div className="card content-full">
+                <Link
+                  href={`/company/${com._id}`}
+                  className="card content-full"
+                >
                   <SuperEllipse name="Logo" />
 
                   <p className="bar card-description">
@@ -99,7 +90,7 @@ function Profile(): JSX.Element {
                     }
                     description={com.twitter_username || com.email_address}
                   />
-                </div>
+                </Link>
               )}
             </For>
           )}

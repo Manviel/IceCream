@@ -30,16 +30,21 @@ body {
   font-size: 1.4rem;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 :root {
   --c-black: #000;
   --c-white: #fff;
   --c-pink: #f8e0dc;
   --c-light: #eff2f5;
-  --c-border: #d4d4d4;
+  --c-border: #2b2b2b;
   --c-secondary: #f5f5f5;
   --c-dark: #181818;
   --c-basic: #4e4e4e;
-  --c-active: #d0ebd8;
+  --c-active: #cccccc;
   --o-secondary: rgba(245, 245, 245, 0.25);
   --o-glass: rgba(255, 255, 255, 0.7);
   --s-radius: 3rem;
