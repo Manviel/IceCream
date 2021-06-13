@@ -29,14 +29,11 @@ function Profile(): JSX.Element {
 
   return (
     <article class="page content-full flex col">
-      <Link
-        href="/"
-        className="link btn primary icon flex items-center justify-center"
-      >
+      <Link href="/" className="link btn icon flex items-center justify-center">
         <i className="arrow arrow-left"></i>
       </Link>
 
-      <h1 className="bar subtitle bold">Your Profile</h1>
+      <h1 className="bar subtitle">Your Profile</h1>
 
       <header className="flex bar">
         <Card number="Today" description="126 Views" />
@@ -44,7 +41,7 @@ function Profile(): JSX.Element {
         <Card number={getState()} description="Messages" />
       </header>
 
-      <h2 className="bar subtitle bold">Your Applications</h2>
+      <h2 className="bar subtitle">Your Applications</h2>
 
       <Switch fallback={"Failed to load"}>
         <Match when={companies.loading}>
@@ -65,7 +62,7 @@ function Profile(): JSX.Element {
                     {com.description || com.category_code}
                   </p>
 
-                  <h2 className="card-title bold">{com.name}</h2>
+                  <h2 className="card-title">{com.name}</h2>
 
                   <header className="flex bar justify-between items-center">
                     <Card
@@ -78,7 +75,7 @@ function Profile(): JSX.Element {
                         {extractMonth(com.updated_at)}
                       </p>
 
-                      <h4 className="subtitle bold">
+                      <h4 className="subtitle">
                         {new Date(com.updated_at).getDate()}
                       </h4>
                     </div>

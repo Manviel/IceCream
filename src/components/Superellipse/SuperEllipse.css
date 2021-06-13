@@ -4,11 +4,12 @@
   position: relative;
   border-radius: 25%;
   font-size: 1rem;
+  background-color: var(--o-secondary);
   transition: transform 0.4s var(--a-press);
 }
 
 .superellipse:hover {
-  transform: translateY(-1rem) scale(1.6);
+  transform: translateY(-1rem) scale(1.8);
 }
 
 .superellipse::before,

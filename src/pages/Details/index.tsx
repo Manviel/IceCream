@@ -28,7 +28,7 @@ function Details({ id }: DetailsType): JSX.Element {
     <article class="page content-full flex col justify-between">
       <Link
         href="/profile"
-        className="link stage btn primary icon flex items-center justify-center"
+        className="link stage btn icon flex items-center justify-center"
       >
         <i className="arrow arrow-left"></i>
       </Link>
@@ -49,7 +49,7 @@ function Details({ id }: DetailsType): JSX.Element {
                     {extractMonth(com.updated_at)}
                   </p>
 
-                  <h4 className="subtitle bold">
+                  <h4 className="subtitle">
                     {new Date(com.updated_at).getDate()}
                   </h4>
                 </div>
@@ -59,7 +59,7 @@ function Details({ id }: DetailsType): JSX.Element {
                 {com.description}
               </p>
 
-              <h1 className="title bold">{com.name}</h1>
+              <h1 className="title">{com.name}</h1>
 
               <p className="bar details-description">
                 {com.total_money_raised}
@@ -78,7 +78,7 @@ function Details({ id }: DetailsType): JSX.Element {
 
               <div className="bar details-info" innerHTML={com.overview}></div>
 
-              <h1 class="bar subtitle bold">Media</h1>
+              <h1 class="bar subtitle">Media</h1>
 
               <ul className="stage details-list">
                 {com.external_links.map((extra) => (

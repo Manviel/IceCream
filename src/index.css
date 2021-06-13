@@ -67,10 +67,6 @@ a {
   flex-direction: column;
 }
 
-.bold {
-  font-weight: bold;
-}
-
 .title {
   font-size: 4.4rem;
 }
@@ -103,10 +99,6 @@ a {
 
 .bar {
   margin: var(--s-medium) 0;
-}
-
-.primary {
-  background-color: var(--o-glass);
 }
 
 .dark {
