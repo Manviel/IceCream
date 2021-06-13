@@ -8,18 +8,18 @@ import "./Home.css";
 
 function Home(): JSX.Element {
   return (
-    <article class="page home-page flex col justify-between">
+    <article class="page content-full flex col justify-between">
       <Link href="/" className="link btn primary icon flex col">
         <span className="line dark"></span>
         <span className="line dark"></span>
       </Link>
 
-      <main className="dock flex justify-between items-center">
+      <main className="dock content-full flex justify-between items-center">
         <SuperEllipse name="Google" />
 
         <p className="stage-title">New stage of your application</p>
 
-        <button className="btn dark dark-btn">
+        <button className="btn dark">
           <i className="arrow arrow-right"></i>
         </button>
       </main>
@@ -40,13 +40,6 @@ function Home(): JSX.Element {
           <button className="btn primary">Next</button>
         </Link>
       </nav>
-
-      <footer className="dock flex justify-between">
-        <SuperEllipse name="Finder" />
-        <SuperEllipse name="Store" />
-        <SuperEllipse name="Settings" />
-        <SuperEllipse name="Messages" />
-      </footer>
     </article>
   );
 }

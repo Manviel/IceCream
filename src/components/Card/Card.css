@@ -13,9 +13,7 @@
   position: absolute;
   width: 100%;
   background-color: var(--o-glass);
-  background-blend-mode: hard-light;
-  box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(81.5485px);
+  backdrop-filter: var(--p-blur);
 }
 
 .glass-text {

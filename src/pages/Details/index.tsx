@@ -25,7 +25,7 @@ function Details({ id }: DetailsType): JSX.Element {
     new Date(str).toDateString().slice(4, 7);
 
   return (
-    <article class="page details-page flex col justify-between">
+    <article class="page content-full flex col justify-between">
       <Link
         href="/profile"
         className="link stage btn primary icon flex items-center justify-center"
@@ -95,14 +95,14 @@ function Details({ id }: DetailsType): JSX.Element {
               </ul>
 
               {com.ipo && (
-                <main className="dock stage flex justify-between items-center">
+                <main className="dock content-full stage flex justify-between items-center">
                   <SuperEllipse name={com.ipo.valuation_currency_code} />
 
                   <p className="stage-title">{com.ipo.valuation_amount}</p>
 
                   <a
                     href={`https://www.google.com/search?q=${com.ipo.stock_symbol}`}
-                    className="btn dark dark-btn"
+                    className="btn dark"
                     target="_blank"
                   >
                     <i className="arrow arrow-right"></i>

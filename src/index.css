@@ -5,13 +5,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Gilroy-Bold";
-  src: url("/fonts/Gilroy-Bold.woff2") format("woff2");
-  font-display: optional;
-  font-style: normal;
-}
-
 html {
   font-size: 62.5%;
 }
@@ -38,23 +31,32 @@ a {
 :root {
   --c-black: #000;
   --c-white: #fff;
-  --c-pink: #f8e0dc;
-  --c-light: #eff2f5;
-  --c-border: #2b2b2b;
-  --c-secondary: #f5f5f5;
-  --c-dark: #181818;
+  --c-dark: rgba(30, 30, 30, 0.75);
   --c-basic: #4e4e4e;
   --c-active: #cccccc;
-  --o-secondary: rgba(245, 245, 245, 0.25);
-  --o-glass: rgba(255, 255, 255, 0.7);
+  --o-secondary: rgba(255, 255, 255, 0.5);
+  --o-glass: hsla(0, 0%, 100%, 0.3);
   --s-radius: 3rem;
   --s-ellipse: 5rem;
   --s-medium: 2rem;
+  --a-press: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --p-blur: blur(80px);
+  --p-shadow: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.2));
 }
 
 .app {
   min-height: 100vh;
   color: var(--c-black);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  justify-items: center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.content-full {
+  width: 100%;
 }
 
 .flex {
@@ -66,7 +68,7 @@ a {
 }
 
 .bold {
-  font-family: "Gilroy-Bold";
+  font-weight: bold;
 }
 
 .title {
@@ -90,7 +92,13 @@ a {
 }
 
 .page {
-  padding: 1rem var(--s-medium);
+  padding: var(--s-medium);
+  max-width: 120rem;
+  margin: 1.2rem 0;
+  background-color: var(--o-secondary);
+  border-radius: var(--s-radius);
+  backdrop-filter: var(--p-blur);
+  filter: var(--p-shadow);
 }
 
 .bar {
@@ -104,4 +112,9 @@ a {
 .dark {
   background-color: var(--c-dark);
   color: var(--c-white);
+}
+
+.canvas {
+  position: fixed;
+  height: 100%;
 }

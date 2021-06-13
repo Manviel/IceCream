@@ -28,7 +28,7 @@ function Profile(): JSX.Element {
     new Date(str).toDateString().slice(4, 7);
 
   return (
-    <article class="page profile-page flex col">
+    <article class="page content-full flex col">
       <Link
         href="/"
         className="link btn primary icon flex items-center justify-center"
@@ -98,7 +98,7 @@ function Profile(): JSX.Element {
       </Switch>
 
       <footer className="flex justify-center content-full">
-        <button className="btn dark dark-btn" onClick={loadCompanies}>
+        <button className="btn dark" onClick={loadCompanies}>
           Show Other Results
         </button>
       </footer>
