@@ -61,7 +61,7 @@ function Profile(): JSX.Element {
 
                       <h3 className="card-title">{com.name}</h3>
 
-                      <header className="flex bar justify-between items-center">
+                      <article className="flex wrap bar justify-between items-center">
                         <Card
                           number={com.total_money_raised}
                           description={`Raised funds`}
@@ -73,7 +73,7 @@ function Profile(): JSX.Element {
                         />
 
                         <CardDate date={com.updated_at} />
-                      </header>
+                      </article>
 
                       <Card
                         number={`Founded in ${
