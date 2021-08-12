@@ -76,9 +76,12 @@ a {
   line-height: 2rem;
 }
 
+.bar {
+  margin: var(--s-medium) 0;
+}
+
 .text {
   max-width: 42rem;
-  margin: var(--s-medium) 0;
 }
 
 .items-center {
@@ -108,10 +111,6 @@ a {
   backdrop-filter: var(--p-blur);
 }
 
-.bar {
-  margin: var(--s-medium) 0;
-}
-
 .dark {
   background-color: var(--c-dark);
   color: var(--c-white);
@@ -127,8 +126,12 @@ a {
   padding: var(--s-medium);
 }
 
+.brown {
+  background-color: #e7c4b1;
+  padding: var(--s-medium);
+}
+
 .tour {
   background-color: var(--c-white);
   padding: var(--s-medium);
-  margin: var(--s-medium) 0;
 }

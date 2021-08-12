@@ -80,6 +80,10 @@
   align-items: flex-end;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 .tour-list {
   list-style-type: none;
 }
@@ -97,7 +101,7 @@
 .tour-list li:hover {
   color: var(--c-white);
   background-color: var(--c-dark);
-  transform: translateX(10px);
+  transform: translateX(0.8rem);
 }
 
 @keyframes slide {

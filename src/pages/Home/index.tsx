@@ -1,43 +1,58 @@
+import { createSignal, For } from "solid-js";
 import { JSX } from "solid-js/jsx-runtime";
 import { Link } from "@rturnq/solid-router";
 
 import Card from "../../components/Card";
+import Header from "../../components/Header";
+
+import { randomInRange } from "../../services/company";
 
 import "./Home.css";
 
 function Home(): JSX.Element {
+  const [item, setItem] = createSignal<string | null>(null);
+
+  const handleHover = (e: MouseEvent) => {
+    const elem = e.target as HTMLElement;
+
+    setItem(elem.textContent);
+  };
+
+  const listItems = [
+    "Scan",
+    "Learn",
+    "Food",
+    "Supplements",
+    "Lifestyle",
+    "Plan",
+    "Improve",
+  ];
+
   return (
     <>
-      <header className="flex content-full justify-between">
-        <Link href="/" className="link btn rounded icon flex col">
-          <span className="line dark"></span>
-          <span className="line dark"></span>
-        </Link>
-
-        <button className="btn rounded dark">Join Now</button>
-      </header>
+      <Header />
 
       <main class="page rounded content-full flex col justify-between">
-        <h1 className="title text">Find Your Dream Job</h1>
+        <h1 className="title text bar">Find Your Dream Job</h1>
 
-        <p className="text info">
+        <p className="text info bar">
           Introducing App, an instant home health tracker. An edge-to-edge OLED
           display. Ceramic Shield with four times better drop performance.
         </p>
 
         <section className="pale rounded">
-          <article className="flex">
+          <article className="flex wrap">
             <Card number="200k +" description="Active Users" />
             <Card number="700k +" description="Vacancies" />
-            <Card number="320" description="Countries" />
+            <Card number={randomInRange(10, 320)} description="Countries" />
           </article>
 
           <div>
-            <h2 className="title text">
+            <h2 className="title text bar">
               We are Working on Solutions for Testing Everyone
             </h2>
 
-            <p className="text info">
+            <p className="text info bar">
               A14 Bionic is the fastest chip in a smartphone. And it pushes
               what’s possible. Like crunching trillions of operations on the
               Neural Engine. Or shooting in Dolby Vision — even pro movie
@@ -48,36 +63,27 @@ function Home(): JSX.Element {
           </div>
         </section>
 
-        <section className="flex justify-between tour rounded">
+        <section className="flex justify-between items-center tour bar rounded wrap">
           <ul className="tour-list flex col items-end">
-            <li>
-              Scan
-              <hr />
-            </li>
-            <li>
-              Learn <hr />
-            </li>
-            <li>
-              Food <hr />
-            </li>
-            <li>
-              Supplements <hr />
-            </li>
-            <li>
-              Lifestyle <hr />
-            </li>
-            <li>
-              Plan <hr />
-            </li>
-            <li>
-              Improve <hr />
-            </li>
+            <For each={listItems}>
+              {(list: string) => (
+                <li onMouseEnter={handleHover}>
+                  {list}
+                  <hr />
+                </li>
+              )}
+            </For>
           </ul>
 
-          <div>
-            <h3 className="title text">Check your health in 2 minutes</h3>
+          <div className="brown rounded">
+            <strong className="subtitle">{randomInRange(1, 100)}</strong>
+            <p>{item}</p>
+          </div>
 
-            <p className="text info">
+          <div>
+            <h3 className="title text bar">Check your health in 2 minutes</h3>
+
+            <p className="text info bar">
               Vastly more contrast. Incredible color accuracy. A huge jump in
               pixel density. Just wow.
             </p>

@@ -16,9 +16,11 @@
 }
 
 .glass-text {
+  display: block;
   margin: var(--s-medium) var(--s-medium) 0;
   position: relative;
   z-index: 2;
+  font-size: 2.4rem;
 }
 
 .glass-bot {

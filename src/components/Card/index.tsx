@@ -10,7 +10,7 @@ type CardType = {
 function Card({ number, description }: CardType): JSX.Element {
   return (
     <section className="glass-card rounded">
-      <h3 className="glass-text">{number}</h3>
+      <strong className="glass-text">{number}</strong>
       <p className="glass-bot">{description}</p>
     </section>
   );
