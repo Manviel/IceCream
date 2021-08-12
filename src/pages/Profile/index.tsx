@@ -54,7 +54,7 @@ function Profile(): JSX.Element {
               {(com) => (
                 <Link
                   href={`/company/${com._id}`}
-                  className="card content-full"
+                  className="card rounded content-full"
                 >
                   <SuperEllipse name="Logo" />
 

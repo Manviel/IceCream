@@ -11,7 +11,6 @@
 .card {
   padding: var(--s-medium);
   background-color: var(--o-glass);
-  border-radius: var(--s-radius);
   margin-bottom: 1.4rem;
 }
 

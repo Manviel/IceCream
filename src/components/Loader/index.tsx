@@ -4,9 +4,9 @@ import "./Loader.css";
 
 function Loader(): JSX.Element {
   return (
-    <div className="card content-full pulse-loading">
-      <p className="bar card-description"></p>
-      <p className="bar card-description"></p>
+    <div className="card rounded content-full pulse-loading">
+      <p className="bar rounded card-description"></p>
+      <p className="bar rounded card-description"></p>
     </div>
   );
 }

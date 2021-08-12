@@ -5,7 +5,6 @@
 .pulse-loading .bar {
   background-color: var(--c-basic);
   height: 1.6rem;
-  border-radius: var(--s-radius);
 }
 
 @keyframes pulse {

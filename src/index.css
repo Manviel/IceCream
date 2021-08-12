@@ -21,6 +21,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.4rem;
+  background-color: #c1deba;
+  color: var(--c-black);
+  min-height: 100vh;
+  padding: 1rem;
 }
 
 a {
@@ -45,14 +49,11 @@ a {
 }
 
 .app {
-  min-height: 100vh;
-  color: var(--c-black);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto 1fr auto;
   justify-items: center;
-  position: relative;
-  padding: 0 1rem;
+  max-width: 144rem;
 }
 
 .content-full {
@@ -71,6 +72,15 @@ a {
   font-size: 4.4rem;
 }
 
+.info {
+  line-height: 2rem;
+}
+
+.text {
+  max-width: 42rem;
+  margin: var(--s-medium) 0;
+}
+
 .items-center {
   align-items: center;
 }
@@ -87,14 +97,15 @@ a {
   justify-content: center;
 }
 
+.rounded {
+  border-radius: var(--s-radius);
+}
+
 .page {
   padding: var(--s-medium);
-  max-width: 120rem;
   margin: 1.2rem 0;
   background-color: var(--o-secondary);
-  border-radius: var(--s-radius);
   backdrop-filter: var(--p-blur);
-  filter: var(--p-shadow);
 }
 
 .bar {
@@ -104,9 +115,20 @@ a {
 .dark {
   background-color: var(--c-dark);
   color: var(--c-white);
+  transition: background-color 0.25s;
 }
 
-.canvas {
-  position: fixed;
-  height: 100%;
+.dark:hover {
+  background-color: var(--c-black);
+}
+
+.pale {
+  background-color: #fbf3eb;
+  padding: var(--s-medium);
+}
+
+.tour {
+  background-color: var(--c-white);
+  padding: var(--s-medium);
+  margin: var(--s-medium) 0;
 }

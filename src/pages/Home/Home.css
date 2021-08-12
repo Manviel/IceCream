@@ -1,7 +1,6 @@
 .btn {
   padding: var(--s-medium);
   border: 0;
-  border-radius: var(--s-radius);
   font-weight: bold;
   font-size: 1.6rem;
   transition: filter 0.25s, transform 0.4s var(--a-press);
@@ -46,7 +45,6 @@
 
 .dock {
   max-width: 80rem;
-  margin-bottom: 1rem;
   border-radius: var(--s-medium);
   background-color: var(--o-glass);
   background-blend-mode: luminosity;
@@ -71,11 +69,35 @@
 }
 
 .line:first-child {
-  width: 1.2rem;
+  width: 1.4rem;
 }
 
 .line:last-child {
-  width: 0.8rem;
+  width: 1rem;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.tour-list {
+  list-style-type: none;
+}
+
+.tour-list li {
+  padding: 1rem 1.6rem;
+  border-radius: var(--s-medium);
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.tour-list hr {
+  margin-top: 0.8rem;
+}
+
+.tour-list li:hover {
+  color: var(--c-white);
+  background-color: var(--c-dark);
+  transform: translateX(10px);
 }
 
 @keyframes slide {
