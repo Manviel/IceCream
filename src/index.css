@@ -104,6 +104,10 @@ a {
   border-radius: var(--s-radius);
 }
 
+.list {
+  list-style-type: none;
+}
+
 .page {
   padding: var(--s-medium);
   margin: 1.2rem 0;

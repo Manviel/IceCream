@@ -9,9 +9,10 @@
 }
 
 .card {
+  display: block;
   padding: var(--s-medium);
   background-color: var(--o-glass);
-  margin-bottom: 1.4rem;
+  margin: 1.4rem 0;
 }
 
 .card-title {

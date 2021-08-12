@@ -1,8 +1,3 @@
-.details-description {
-  color: var(--c-active);
-  font-size: 1.6rem;
-}
-
 .details-info {
   line-height: var(--s-medium);
 }

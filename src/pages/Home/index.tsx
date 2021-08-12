@@ -32,7 +32,10 @@ function Home(): JSX.Element {
     <>
       <Header />
 
-      <main class="page rounded content-full flex col justify-between">
+      <main
+        class="page rounded content-full flex col justify-between"
+        tabIndex="0"
+      >
         <h1 className="title text bar">Find Your Dream Job</h1>
 
         <p className="text info bar">
@@ -41,13 +44,13 @@ function Home(): JSX.Element {
         </p>
 
         <section className="pale rounded">
-          <article className="flex wrap">
+          <article className="flex wrap" tabIndex="0">
             <Card number="200k +" description="Active Users" />
             <Card number="700k +" description="Vacancies" />
             <Card number={randomInRange(10, 320)} description="Countries" />
           </article>
 
-          <div>
+          <div tabIndex="0">
             <h2 className="title text bar">
               We are Working on Solutions for Testing Everyone
             </h2>
@@ -64,10 +67,10 @@ function Home(): JSX.Element {
         </section>
 
         <section className="flex justify-between items-center tour bar rounded wrap">
-          <ul className="tour-list flex col items-end">
+          <ul className="list tour-list flex col">
             <For each={listItems}>
               {(list: string) => (
-                <li onMouseEnter={handleHover}>
+                <li onMouseEnter={handleHover} tabIndex="0">
                   {list}
                   <hr />
                 </li>
@@ -75,12 +78,12 @@ function Home(): JSX.Element {
             </For>
           </ul>
 
-          <div className="brown rounded">
+          <div className="brown rounded" tabIndex="0">
             <strong className="subtitle">{randomInRange(1, 100)}</strong>
             <p>{item}</p>
           </div>
 
-          <div>
+          <div tabIndex="0">
             <h3 className="title text bar">Check your health in 2 minutes</h3>
 
             <p className="text info bar">

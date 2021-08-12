@@ -1,13 +1,17 @@
 import { JSX } from "solid-js/jsx-runtime";
 import { Link } from "@rturnq/solid-router";
 
-function Header(): JSX.Element {
+type HeaderType = {
+  href?: string;
+};
+
+function Header({ href }: HeaderType): JSX.Element {
   return (
     <header className="flex content-full justify-between">
       <Link
-        href="/"
+        href={href ? href : "/"}
         className="link btn rounded icon flex col"
-        aria-label="Go home"
+        aria-label={href ? "Go back" : "Go home"}
       >
         <span className="line dark"></span>
         <span className="line dark"></span>

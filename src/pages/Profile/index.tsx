@@ -5,7 +5,7 @@ import { Link } from "@rturnq/solid-router";
 import { getCompanies, randomInRange } from "../../services/company";
 
 import Card from "../../components/Card";
-import SuperEllipse from "../../components/Superellipse";
+import CardDate from "../../components/Card/CardDate";
 import Loader from "../../components/Loader";
 import Header from "../../components/Header";
 
@@ -25,77 +25,70 @@ function Profile(): JSX.Element {
 
   const loadCompanies = () => setState(getState() + 1);
 
-  const extractMonth = (str: string) =>
-    new Date(str).toDateString().slice(4, 7);
-
   return (
     <>
       <Header />
 
-      <main class="page rounded content-full flex col">
-        <h1 className="bar subtitle">Your Profile</h1>
+      <main class="page rounded content-full flex col" tabIndex="0">
+        <h1 className="bar subtitle">Your Profile:</h1>
 
-        <article className="flex bar">
+        <article className="flex bar" tabIndex="0">
           <Card number="Today" description={`${randomInRange(3, 126)} Views`} />
 
           <Card number={getState()} description="Messages" />
         </article>
 
-        <h2 className="bar subtitle">Your Applications</h2>
+        <section className="bar" role="list">
+          <h2 className="subtitle">Your Applications</h2>
 
-        <Switch fallback={"Failed to load"}>
-          <Match when={companies.loading}>
-            <Loader />
-          </Match>
-          <Match when={companies.error}>Something Went Wrong</Match>
-          <Match when={companies()}>
-            {(list: Company[]) => (
-              <For each={list}>
-                {(com) => (
-                  <Link
-                    href={`/company/${com._id}`}
-                    className="card rounded content-full"
-                  >
-                    <SuperEllipse name="Logo" />
+          <Switch fallback={"Failed to load"}>
+            <Match when={companies.loading}>
+              <Loader />
+            </Match>
+            <Match when={companies.error}>Something Went Wrong</Match>
+            <Match when={companies()}>
+              {(list: Company[]) => (
+                <For each={list}>
+                  {(com) => (
+                    <Link
+                      href={`/company/${com._id}`}
+                      role="listitem"
+                      className="card rounded content-full"
+                    >
+                      <p className="bar card-description">
+                        {com.description || com.category_code}
+                      </p>
 
-                    <p className="bar card-description">
-                      {com.description || com.category_code}
-                    </p>
+                      <h3 className="card-title">{com.name}</h3>
 
-                    <h2 className="card-title">{com.name}</h2>
+                      <header className="flex bar justify-between items-center">
+                        <Card
+                          number={com.total_money_raised}
+                          description={`Raised funds`}
+                        />
 
-                    <header className="flex bar justify-between items-center">
+                        <Card
+                          number={com.number_of_employees || 0}
+                          description="Employees"
+                        />
+
+                        <CardDate date={com.updated_at} />
+                      </header>
+
                       <Card
-                        number={com.total_money_raised}
-                        description={`${
-                          com.number_of_employees || 0
-                        } employees`}
+                        number={`Founded in ${
+                          com.founded_year ||
+                          new Date(com.created_at).getFullYear()
+                        }`}
+                        description={`Contact via ${com.email_address}`}
                       />
-
-                      <div>
-                        <p className="card-description">
-                          {extractMonth(com.updated_at)}
-                        </p>
-
-                        <h4 className="subtitle">
-                          {new Date(com.updated_at).getDate()}
-                        </h4>
-                      </div>
-                    </header>
-
-                    <Card
-                      number={
-                        com.founded_year ||
-                        new Date(com.created_at).getFullYear()
-                      }
-                      description={com.twitter_username || com.email_address}
-                    />
-                  </Link>
-                )}
-              </For>
-            )}
-          </Match>
-        </Switch>
+                    </Link>
+                  )}
+                </For>
+              )}
+            </Match>
+          </Switch>
+        </section>
 
         <section className="flex justify-center content-full">
           <button className="btn rounded dark" onClick={loadCompanies}>

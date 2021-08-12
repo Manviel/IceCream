@@ -76,16 +76,12 @@
   width: 1rem;
 }
 
-.items-end {
-  align-items: flex-end;
-}
-
 .wrap {
   flex-wrap: wrap;
 }
 
 .tour-list {
-  list-style-type: none;
+  align-items: flex-end;
 }
 
 .tour-list li {
