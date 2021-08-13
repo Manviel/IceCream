@@ -139,3 +139,9 @@ a {
   background-color: var(--c-white);
   padding: var(--s-medium);
 }
+
+@media screen and (max-width: 768px) {
+  .page {
+    padding: 1.2rem;
+  }
+}

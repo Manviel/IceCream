@@ -5,7 +5,7 @@ import { Link } from "@rturnq/solid-router";
 import Card from "../../components/Card";
 import Header from "../../components/Header";
 
-import { randomInRange } from "../../services/company";
+import { randomInRange } from "../../services/utils";
 
 import "./Home.css";
 
@@ -44,10 +44,17 @@ function Home(): JSX.Element {
         </p>
 
         <section className="pale rounded">
-          <article className="flex wrap" tabIndex="0">
-            <Card number="200k +" description="Active Users" />
-            <Card number="700k +" description="Vacancies" />
+          <article className="home-stats" tabIndex="0">
+            <Card
+              number={randomInRange(10000, 20000)}
+              description="Active Users"
+            />
+            <Card
+              number={randomInRange(30000, 70000)}
+              description="Vacancies"
+            />
             <Card number={randomInRange(10, 320)} description="Countries" />
+            <Card number={randomInRange(3, 20)} description="Years" />
           </article>
 
           <div tabIndex="0">

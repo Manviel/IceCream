@@ -1,5 +1,5 @@
 .superellipse {
-  width: var(--s-ellipse);
+  min-width: var(--s-ellipse);
   height: var(--s-ellipse);
   position: relative;
   border-radius: 25%;

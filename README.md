@@ -37,4 +37,4 @@ https://dribbble.com/shots/14766931-Jobler-Job-Search-Platform-Mobile-App
 
 https://dribbble.com/shots/14792981-Jobwaves-Job-Search-Platform-Mobile-App
 
-https://codepen.io/georgedoescode/pen/bGBzGKZ
+https://dribbble.com/shots/14845623-Vessel-Personal-Trainer-App-Modules

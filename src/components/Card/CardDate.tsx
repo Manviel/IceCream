@@ -9,8 +9,8 @@ function CardDate({ date }: CardDateType): JSX.Element {
     new Date(str).toDateString().slice(4, 7);
 
   return (
-    <div>
-      <p className="card-description">{extractMonth(date)}</p>
+    <div class="flex col">
+      <time className="card-description">{extractMonth(date)}</time>
 
       <strong className="subtitle">{new Date(date).getDate()}</strong>
     </div>

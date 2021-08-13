@@ -2,7 +2,8 @@ import { createResource, createSignal, Switch, Match, For } from "solid-js";
 import { JSX } from "solid-js/jsx-runtime";
 import { Link } from "@rturnq/solid-router";
 
-import { getCompanies, randomInRange } from "../../services/company";
+import { getCompanies } from "../../services/company";
+import { randomInRange } from "../../services/utils";
 
 import Card from "../../components/Card";
 import CardDate from "../../components/Card/CardDate";
@@ -30,17 +31,9 @@ function Profile(): JSX.Element {
       <Header />
 
       <main class="page rounded content-full flex col" tabIndex="0">
-        <h1 className="bar subtitle">Your Profile:</h1>
-
-        <article className="flex bar" tabIndex="0">
-          <Card number="Today" description={`${randomInRange(3, 126)} Views`} />
-
-          <Card number={getState()} description="Messages" />
-        </article>
+        <h1 className="subtitle">Your Applications: {getState()}</h1>
 
         <section className="bar" role="list">
-          <h2 className="subtitle">Your Applications</h2>
-
           <Switch fallback={"Failed to load"}>
             <Match when={companies.loading}>
               <Loader />

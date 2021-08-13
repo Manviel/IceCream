@@ -14,6 +14,21 @@ type IPO = {
   valuation_amount: number;
 };
 
+type Milestone = {
+  description: string;
+  source_url: string;
+  source_description: string;
+  stoned_year: number;
+};
+
+type Person = {
+  title: string;
+  person: {
+    first_name: string;
+    last_name: string;
+  };
+};
+
 export type Company = {
   _id: string;
   name: string;
@@ -27,7 +42,10 @@ export type Company = {
   created_at: string;
   email_address: string;
   overview: string;
+  blog_url: string;
   offices: Office[];
   external_links: External[];
   ipo?: IPO;
+  relationships: Person[];
+  milestones: Milestone[];
 };

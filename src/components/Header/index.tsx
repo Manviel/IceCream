@@ -7,7 +7,7 @@ type HeaderType = {
 
 function Header({ href }: HeaderType): JSX.Element {
   return (
-    <header className="flex content-full justify-between">
+    <nav className="flex content-full justify-between">
       <Link
         href={href ? href : "/"}
         className="link btn rounded icon flex col"
@@ -18,7 +18,7 @@ function Header({ href }: HeaderType): JSX.Element {
       </Link>
 
       <button className="btn rounded dark">Join Now</button>
-    </header>
+    </nav>
   );
 }
 
