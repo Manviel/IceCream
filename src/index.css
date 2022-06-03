@@ -1,8 +1,9 @@
 @font-face {
   font-family: "Gilroy-Regular";
-  src: url("/fonts/Gilroy-Regular.woff2") format("woff2");
+  src: url("assets/fonts/Gilroy-Regular.woff2") format("woff2");
   font-display: optional;
   font-style: normal;
+  unicode-range: U+000-5FF;
 }
 
 html {
