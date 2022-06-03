@@ -15,12 +15,12 @@ const App: Component = () => {
 
           <Route path='/profile' element={<Profile />} />
         </Routes>
-        <footer class='dock content-full flex justify-between'>
+        <nav class='dock content-full flex justify-between' aria-label='Tabs'>
           <SuperEllipse name='Finder' />
           <SuperEllipse name='Store' />
           <SuperEllipse name='Settings' />
           <SuperEllipse name='Messages' />
-        </footer>
+        </nav>
       </div>
     </div>
   );

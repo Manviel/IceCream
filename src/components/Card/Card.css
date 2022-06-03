@@ -16,10 +16,10 @@
 
 .glass-text {
   display: block;
-  margin: var(--s-medium) var(--s-medium) 0;
+  margin: var(--s-medium) var(--s-medium) 0.8rem;
   position: relative;
   z-index: 2;
-  font-size: 2.4rem;
+  font-size: 6.2rem;
 }
 
 .glass-bot {
@@ -44,11 +44,11 @@
   }
 
   .glass-text {
-    font-size: 2rem;
-    margin: 1.4rem 1.4rem 0;
+    font-size: 3.2rem;
+    margin: 1.4rem 1.6rem 0.8rem;
   }
 
   .glass-bot {
-    margin: 0 1.4rem 1.4rem;
+    margin: 0 1.6rem 1.4rem;
   }
 }
