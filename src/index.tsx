@@ -1,16 +1,8 @@
-import "solid-js";
-import { render } from "solid-js/web";
-import { Router, pathIntegration } from "@rturnq/solid-router";
+/* @refresh reload */
+import { render } from 'solid-js/web';
 
-import App from "./App";
+import App from './App';
 
-import "./index.css";
+import './index.css';
 
-render(
-  () => (
-    <Router integration={pathIntegration()}>
-      <App />
-    </Router>
-  ),
-  document.getElementById("root") as Node
-);
+render(() => <App />, document.getElementById('root') as HTMLElement);
