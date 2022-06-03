@@ -1,6 +1,6 @@
 import { createResource, createSignal, Switch, Match, For } from "solid-js";
 import { JSX } from "solid-js/jsx-runtime";
-import { Link } from "@rturnq/solid-router";
+import { Link } from "solid-app-router";
 
 import { getCompanies } from "../../services/company";
 import { randomInRange } from "../../services/utils";

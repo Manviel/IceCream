@@ -1,13 +1,13 @@
-import { createSignal, For } from "solid-js";
-import { JSX } from "solid-js/jsx-runtime";
-import { Link } from "@rturnq/solid-router";
+import { createSignal, For } from 'solid-js';
+import { JSX } from 'solid-js/jsx-runtime';
+import { Link } from 'solid-app-router';
 
-import Card from "../../components/Card";
-import Header from "../../components/Header";
+import Card from '../../components/Card';
+import Header from '../../components/Header';
 
-import { randomInRange } from "../../services/utils";
+import { randomInRange } from '../../services/utils';
 
-import "./Home.css";
+import './Home.css';
 
 function Home(): JSX.Element {
   const [item, setItem] = createSignal<string | null>(null);
@@ -19,13 +19,13 @@ function Home(): JSX.Element {
   };
 
   const listItems = [
-    "Scan",
-    "Learn",
-    "Food",
-    "Supplements",
-    "Lifestyle",
-    "Plan",
-    "Improve",
+    'Scan',
+    'Learn',
+    'Food',
+    'Supplements',
+    'Lifestyle',
+    'Plan',
+    'Improve',
   ];
 
   return (
@@ -33,36 +33,36 @@ function Home(): JSX.Element {
       <Header />
 
       <main
-        class="page rounded content-full flex col justify-between"
-        tabIndex="0"
+        class='page rounded content-full flex col justify-between'
+        tabIndex='0'
       >
-        <h1 className="title text bar">Find Your Dream Job</h1>
+        <h1 className='title text bar'>Find Your Dream Job</h1>
 
-        <p className="text info bar">
+        <p className='text info bar'>
           Introducing App, an instant home health tracker. An edge-to-edge OLED
           display. Ceramic Shield with four times better drop performance.
         </p>
 
-        <section className="pale rounded">
-          <article className="home-stats" tabIndex="0">
+        <section className='pale rounded'>
+          <article className='home-stats' tabIndex='0'>
             <Card
               number={randomInRange(10000, 20000)}
-              description="Active Users"
+              description='Active Users'
             />
             <Card
               number={randomInRange(30000, 70000)}
-              description="Vacancies"
+              description='Vacancies'
             />
-            <Card number={randomInRange(10, 320)} description="Countries" />
-            <Card number={randomInRange(3, 20)} description="Years" />
+            <Card number={randomInRange(10, 320)} description='Countries' />
+            <Card number={randomInRange(3, 20)} description='Years' />
           </article>
 
-          <div tabIndex="0">
-            <h2 className="title text bar">
+          <div tabIndex='0'>
+            <h2 className='title text bar'>
               We are Working on Solutions for Testing Everyone
             </h2>
 
-            <p className="text info bar">
+            <p className='text info bar'>
               A14 Bionic is the fastest chip in a smartphone. And it pushes
               what’s possible. Like crunching trillions of operations on the
               Neural Engine. Or shooting in Dolby Vision — even pro movie
@@ -73,11 +73,11 @@ function Home(): JSX.Element {
           </div>
         </section>
 
-        <section className="flex justify-between items-center tour bar rounded wrap">
-          <ul className="list tour-list flex col">
+        <section className='flex justify-between items-center tour bar rounded wrap'>
+          <ul className='list tour-list flex col'>
             <For each={listItems}>
               {(list: string) => (
-                <li onMouseEnter={handleHover} tabIndex="0">
+                <li onMouseEnter={handleHover} tabIndex='0'>
                   {list}
                   <hr />
                 </li>
@@ -85,25 +85,25 @@ function Home(): JSX.Element {
             </For>
           </ul>
 
-          <div className="brown rounded" tabIndex="0">
-            <strong className="subtitle">{randomInRange(1, 100)}</strong>
+          <div className='brown rounded' tabIndex='0'>
+            <strong className='subtitle'>{randomInRange(1, 100)}</strong>
             <p>{item}</p>
           </div>
 
-          <div tabIndex="0">
-            <h3 className="title text bar">Check your health in 2 minutes</h3>
+          <div tabIndex='0'>
+            <h3 className='title text bar'>Check your health in 2 minutes</h3>
 
-            <p className="text info bar">
+            <p className='text info bar'>
               Vastly more contrast. Incredible color accuracy. A huge jump in
               pixel density. Just wow.
             </p>
 
-            <div className="flex justify-end items-center">
-              <p className="slide">
-                <i className="arrow arrow-left"></i>
+            <div className='flex justify-end items-center'>
+              <p className='slide'>
+                <i className='arrow arrow-left'></i>
               </p>
 
-              <Link href="/profile" className="btn rounded dark">
+              <Link href='/profile' className='btn rounded dark'>
                 Next
               </Link>
             </div>
