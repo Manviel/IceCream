@@ -1,10 +1,12 @@
 .btn {
   padding: var(--s-medium);
+  background-color: var(--o-glass);
+  color: var(--c-black);
   border: 0;
   font-weight: bold;
   font-size: 1.6rem;
-  transition: filter 0.25s, transform 0.4s var(--a-press);
-  cursor: pointer;
+  transition: filter 0.25s, transform 0.4s var(--a-press), background-color 0.25s;
+  border-radius: 2.4rem;
 }
 
 .btn:active {
@@ -13,12 +15,13 @@
 
 .btn:hover {
   filter: var(--p-shadow);
+  background-color: var(--c-dark);
+  color: var(--c-white);
 }
 
 .link {
   text-decoration: none;
   color: inherit;
-  background-color: var(--o-glass);
 }
 
 .arrow {
@@ -45,15 +48,13 @@
 
 .fixed-bottom {
   position: fixed;
-  bottom: 0;
+  bottom: 1.2rem;
   left: 50%;
-  padding: 1.2rem 1rem;
   animation: toast-enter cubic-bezier(0.155, 1.105, 0.295, 1.12) 0.4s both;
 }
 
 .dock {
   max-width: 58rem;
-  border-radius: var(--s-medium);
   background-color: var(--o-glass);
   background-blend-mode: luminosity;
   backdrop-filter: var(--p-blur);
@@ -144,5 +145,9 @@
 
   .home-stats {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dock {
+    max-width: calc(100% - 2rem);
   }
 }

@@ -17,23 +17,16 @@ const App: Component = () => {
         </Routes>
       </div>
       <nav
-        class='fixed-bottom content-full flex justify-center'
+        class='fixed-bottom dock rounded content-full flex justify-between'
         aria-label='Tabs'
       >
-        <ul class='list dock content-full flex justify-between'>
-          <li>
-            <SuperEllipse name='Finder' />
-          </li>
-          <li>
-            <SuperEllipse name='Store' />
-          </li>
-          <li>
-            <SuperEllipse name='Settings' />
-          </li>
-          <li>
-            <SuperEllipse name='Messages' />
-          </li>
-        </ul>
+        <SuperEllipse name='Finder' />
+
+        <SuperEllipse name='Store' />
+
+        <SuperEllipse name='Settings' />
+
+        <SuperEllipse name='Messages' />
       </nav>
     </div>
   );

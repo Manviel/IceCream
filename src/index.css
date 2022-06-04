@@ -17,7 +17,7 @@ body {
   background-color: #c1deba;
   color: var(--c-black);
   min-height: 100vh;
-  padding: 1rem;
+  padding: 1.2rem 1rem 10.6rem;
 }
 
 a {
@@ -33,7 +33,6 @@ a {
   --c-active: #cccccc;
   --o-secondary: rgba(255, 255, 255, 0.5);
   --o-glass: rgba(245, 245, 245, 0.5);
-  --s-radius: 3rem;
   --s-ellipse: 5rem;
   --s-medium: 2rem;
   --a-press: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -97,7 +96,7 @@ a {
 }
 
 .rounded {
-  border-radius: var(--s-radius);
+  border-radius: var(--s-medium);
 }
 
 .list {
@@ -109,16 +108,6 @@ a {
   margin: 2rem 0;
   background-color: var(--o-secondary);
   backdrop-filter: var(--p-blur);
-}
-
-.dark {
-  background-color: var(--c-dark);
-  color: var(--c-white);
-  transition: background-color 0.25s;
-}
-
-.dark:hover {
-  background-color: var(--c-black);
 }
 
 .pale {

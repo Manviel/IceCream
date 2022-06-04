@@ -10,14 +10,14 @@ function Header({ href }: HeaderType): JSX.Element {
     <nav className='flex content-full justify-between'>
       <Link
         href={href ? href : '/'}
-        className='link btn rounded icon flex col'
+        className='link btn icon flex col'
         aria-label={href ? 'Go back' : 'Go home'}
       >
-        <span className='line dark'></span>
-        <span className='line dark'></span>
+        <span className='line'></span>
+        <span className='line'></span>
       </Link>
 
-      <button className='btn rounded dark'>Join Now</button>
+      <button className='btn'>Join Now</button>
     </nav>
   );
 }

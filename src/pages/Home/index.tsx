@@ -98,7 +98,7 @@ function Home(): JSX.Element {
               <i class='arrow arrow-left'></i>
             </p>
 
-            <Link href='/profile' class='btn rounded dark'>
+            <Link href='/profile' class='btn'>
               Next
             </Link>
           </div>
