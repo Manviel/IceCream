@@ -26,7 +26,7 @@ a {
 }
 
 :root {
-  --c-black: #000;
+  --c-black: #1C1C1E;
   --c-white: #fff;
   --c-dark: rgba(30, 30, 30, 0.75);
   --c-basic: #4e4e4e;

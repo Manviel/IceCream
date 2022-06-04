@@ -1,24 +1,3 @@
-.btn {
-  padding: var(--s-medium);
-  background-color: var(--o-glass);
-  color: var(--c-black);
-  border: 0;
-  font-weight: bold;
-  font-size: 1.6rem;
-  transition: filter 0.25s, transform 0.4s var(--a-press), background-color 0.25s;
-  border-radius: 2.4rem;
-}
-
-.btn:active {
-  transform: scale(0.94);
-}
-
-.btn:hover {
-  filter: var(--p-shadow);
-  background-color: var(--c-dark);
-  color: var(--c-white);
-}
-
 .link {
   text-decoration: none;
   color: inherit;
@@ -68,20 +47,6 @@
 .stage-title {
   font-size: 1.8rem;
   width: 50%;
-}
-
-.line {
-  display: block;
-  height: 0.3rem;
-  margin: 0.3rem 0;
-}
-
-.line:first-child {
-  width: 1.4rem;
-}
-
-.line:last-child {
-  width: 1rem;
 }
 
 .wrap {
