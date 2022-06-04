@@ -1,25 +1,28 @@
-import { JSX } from 'solid-js/jsx-runtime';
+import type { Component } from 'solid-js';
 import { Link } from 'solid-app-router';
+
+import BagIcon from '../../assets/icons/bag.svg';
+
+import './Header.css';
 
 type HeaderType = {
   href?: string;
 };
 
-function Header({ href }: HeaderType): JSX.Element {
+const Header: Component<HeaderType> = ({ href }) => {
   return (
-    <nav className='flex content-full justify-between'>
+    <nav class='flex content-full justify-between'>
       <Link
         href={href ? href : '/'}
-        className='link btn icon flex col'
+        class='link btn'
         aria-label={href ? 'Go back' : 'Go home'}
       >
-        <span className='line'></span>
-        <span className='line'></span>
+        <BagIcon />
       </Link>
 
-      <button className='btn'>Join Now</button>
+      <button class='btn'>Join Now</button>
     </nav>
   );
-}
+};
 
 export default Header;
