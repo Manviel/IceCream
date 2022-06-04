@@ -31,7 +31,7 @@ const Home: Component = () => {
     <>
       <Header />
 
-      <main class='page rounded content-full flex col justify-between'>
+      <div class='page rounded content-full flex col justify-between'>
         <h1 class='title text'>
           How did we get such a huge camera upgrade to fit?
         </h1>
@@ -66,7 +66,7 @@ const Home: Component = () => {
             </p>
           </div>
         </section>
-      </main>
+      </div>
 
       <section class='flex justify-between items-center tour content-full rounded wrap'>
         <ul class='list tour-list flex col'>

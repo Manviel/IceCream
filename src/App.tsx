@@ -9,13 +9,13 @@ const Profile = lazy(() => import('./pages/Profile'));
 const App: Component = () => {
   return (
     <div class='flex col items-center'>
-      <div class='app content-full'>
+      <main class='app content-full'>
         <Routes>
           <Route path='/' element={<Home />} />
 
           <Route path='/profile' element={<Profile />} />
         </Routes>
-      </div>
+      </main>
       <nav
         class='fixed-bottom dock rounded content-full flex justify-between'
         aria-label='Tabs'

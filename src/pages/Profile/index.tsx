@@ -28,10 +28,10 @@ const Profile: Component = () => {
     <>
       <Header />
 
-      <main class='page rounded content-full flex col'>
+      <div class='page rounded content-full flex col'>
         <h1 class='subtitle'>Your Applications: {getState()}</h1>
 
-        <section class='bar' role='list'>
+        <ul class='bar'>
           <Switch fallback={'Failed to load'}>
             <Match when={companies.loading}>
               <Loader />
@@ -58,8 +58,8 @@ const Profile: Component = () => {
               )}
             </Match>
           </Switch>
-        </section>
-      </main>
+        </ul>
+      </div>
     </>
   );
 };
