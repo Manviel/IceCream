@@ -1,14 +1,12 @@
-import { JSX } from "solid-js/jsx-runtime";
+import type { Component } from 'solid-js';
 
-import "./Loader.css";
+import './Loader.css';
 
-function Loader(): JSX.Element {
-  return (
-    <div className="card rounded content-full pulse-loading">
-      <p className="bar rounded card-description"></p>
-      <p className="bar rounded card-description"></p>
-    </div>
-  );
-}
+const Loader: Component = () => (
+  <div class='card rounded content-full pulse-loading'>
+    <p class='bar rounded card-description'></p>
+    <p class='bar rounded card-description'></p>
+  </div>
+);
 
 export default Loader;

@@ -39,8 +39,6 @@ You can deploy the `dist` folder to any static host provider (netlify, surge, no
 
 ### Dribble
 
-https://dribbble.com/shots/14766931-Jobler-Job-Search-Platform-Mobile-App
-
-https://dribbble.com/shots/14792981-Jobwaves-Job-Search-Platform-Mobile-App
-
 https://dribbble.com/shots/14845623-Vessel-Personal-Trainer-App-Modules
+
+https://dribbble.com/shots/16599998-Portable-Storage-Container-Delivery-App
