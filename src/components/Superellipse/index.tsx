@@ -1,6 +1,6 @@
-import type { Component } from "solid-js";
+import type { Component } from 'solid-js';
 
-import "./SuperEllipse.css";
+import './SuperEllipse.css';
 
 type EllipseType = {
   name: string;
@@ -8,7 +8,7 @@ type EllipseType = {
 
 const SuperEllipse: Component<EllipseType> = ({ name }) => {
   return (
-    <span class="superellipse flex items-center justify-center" tabIndex="0">
+    <span class='superellipse flex items-center justify-center' tabIndex='0'>
       {name}
     </span>
   );

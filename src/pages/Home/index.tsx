@@ -66,44 +66,44 @@ function Home(): JSX.Element {
             </p>
           </div>
         </section>
+      </main>
 
-        <section class='flex justify-between items-center tour rounded wrap'>
-          <ul class='list tour-list flex col'>
-            <For each={listItems}>
-              {(list: string) => (
-                <li onMouseEnter={handleHover}>
-                  {list}
-                  <hr />
-                </li>
-              )}
-            </For>
-          </ul>
+      <section class='flex justify-between items-center tour content-full rounded wrap'>
+        <ul class='list tour-list flex col'>
+          <For each={listItems}>
+            {(list: string) => (
+              <li onMouseEnter={handleHover}>
+                {list}
+                <hr />
+              </li>
+            )}
+          </For>
+        </ul>
 
-          <div class='brown rounded'>
-            <strong class='subtitle'>{randomInRange(1, 100)}</strong>
-            <p>{item}</p>
-          </div>
+        <div class='brown rounded'>
+          <strong class='subtitle'>{randomInRange(1, 100)}</strong>
+          <p>{item}</p>
+        </div>
 
-          <div>
-            <h3 class='title text'>Check your health in 2 minutes</h3>
+        <div>
+          <h3 class='title text'>Check your health in 2 minutes</h3>
 
-            <p class='text info'>
-              Vastly more contrast. Incredible color accuracy. A huge jump in
-              pixel density. Just wow.
+          <p class='text info'>
+            Vastly more contrast. Incredible color accuracy. A huge jump in
+            pixel density. Just wow.
+          </p>
+
+          <div class='flex justify-end items-center'>
+            <p class='slide'>
+              <i class='arrow arrow-left'></i>
             </p>
 
-            <div class='flex justify-end items-center'>
-              <p class='slide'>
-                <i class='arrow arrow-left'></i>
-              </p>
-
-              <Link href='/profile' class='btn rounded dark'>
-                Next
-              </Link>
-            </div>
+            <Link href='/profile' class='btn rounded dark'>
+              Next
+            </Link>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
     </>
   );
 }

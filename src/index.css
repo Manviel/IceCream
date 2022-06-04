@@ -32,7 +32,7 @@ a {
   --c-basic: #4e4e4e;
   --c-active: #cccccc;
   --o-secondary: rgba(255, 255, 255, 0.5);
-  --o-glass: hsla(0, 0%, 100%, 0.3);
+  --o-glass: rgba(245, 245, 245, 0.5);
   --s-radius: 3rem;
   --s-ellipse: 5rem;
   --s-medium: 2rem;
@@ -102,7 +102,6 @@ a {
 
 .list {
   list-style-type: none;
-  font-size: 1.6rem;
 }
 
 .page {
@@ -136,6 +135,7 @@ a {
   background-color: var(--c-white);
   padding: var(--s-medium);
   margin-top: var(--s-medium);
+  font-size: 1.6rem;
 }
 
 @media screen and (max-width: 768px) {

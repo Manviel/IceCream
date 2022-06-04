@@ -15,13 +15,26 @@ const App: Component = () => {
 
           <Route path='/profile' element={<Profile />} />
         </Routes>
-        <nav class='dock content-full flex justify-between' aria-label='Tabs'>
-          <SuperEllipse name='Finder' />
-          <SuperEllipse name='Store' />
-          <SuperEllipse name='Settings' />
-          <SuperEllipse name='Messages' />
-        </nav>
       </div>
+      <nav
+        class='fixed-bottom content-full flex justify-center'
+        aria-label='Tabs'
+      >
+        <ul class='list dock content-full flex justify-between'>
+          <li>
+            <SuperEllipse name='Finder' />
+          </li>
+          <li>
+            <SuperEllipse name='Store' />
+          </li>
+          <li>
+            <SuperEllipse name='Settings' />
+          </li>
+          <li>
+            <SuperEllipse name='Messages' />
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };
