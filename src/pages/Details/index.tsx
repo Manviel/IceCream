@@ -3,7 +3,7 @@ import { JSX } from 'solid-js/jsx-runtime';
 
 import Header from '../../components/Header';
 import Card from '../../components/Card';
-import CardDate from '../../components/Card/CardDate';
+import CardDate from '../../components/Card/DateBox';
 import SuperEllipse from '../../components/Superellipse';
 import Loader from '../../components/Loader';
 

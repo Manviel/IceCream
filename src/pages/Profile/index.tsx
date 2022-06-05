@@ -9,7 +9,7 @@ import {
 
 import { getNews } from '../../services/news';
 
-import CardDate from '../../components/Card/CardDate';
+import DateBox from '../../components/Card/DateBox';
 import Loader from '../../components/Loader';
 import Header from '../../components/Header';
 
@@ -25,40 +25,39 @@ const Profile: Component = () => {
   const [companies] = createResource(getState, fetchQuery);
 
   return (
-    <>
-      <Header />
+    <div class='page rounded content-full flex col'>
+      <Header spot='Your Feed' />
 
-      <div class='page rounded content-full flex col'>
-        <h1 class='subtitle'>Your Applications: {getState()}</h1>
+      <ul>
+        <Switch fallback={'Failed to load'}>
+          <Match when={companies.loading}>
+            <Loader />
+          </Match>
+          <Match when={companies()}>
+            {(list: Company[]) => (
+              <For each={list}>
+                {(com) => (
+                  <li class='paper rounded content-full'>
+                    <div class='flex justify-between items-center'>
+                      <div>
+                        <address class='paper-description'>
+                          {com.author} at {com.time}
+                        </address>
+                        <h2 class='subtitle'>{com.title}</h2>
+                      </div>
 
-        <ul class='bar'>
-          <Switch fallback={'Failed to load'}>
-            <Match when={companies.loading}>
-              <Loader />
-            </Match>
-            <Match when={companies()}>
-              {(list: Company[]) => (
-                <For each={list}>
-                  {(com) => (
-                    <li class='card rounded content-full'>
-                      <p class='bar card-description'>{com.author}</p>
+                      <DateBox date={com.date} />
+                    </div>
 
-                      <h2 class='card-title'>{com.title}</h2>
-
-                      {com.content}
-
-                      <CardDate date={com.date} />
-
-                      {com.time}
-                    </li>
-                  )}
-                </For>
-              )}
-            </Match>
-          </Switch>
-        </ul>
-      </div>
-    </>
+                    <p class='info'>{com.content}</p>
+                  </li>
+                )}
+              </For>
+            )}
+          </Match>
+        </Switch>
+      </ul>
+    </div>
   );
 };
 

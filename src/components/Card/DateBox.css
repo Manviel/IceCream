@@ -1,0 +1,11 @@
+.box {
+  background-color: var(--c-dark);
+  color: var(--c-white);
+  padding: 1.6rem var(--s-medium);
+  max-width: 15rem;
+  width: 100%;
+}
+
+.box-description {
+  font-size: 1.6rem;
+}

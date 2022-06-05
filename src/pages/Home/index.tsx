@@ -81,7 +81,7 @@ const Home: Component = () => {
       </div>
 
       <section class='flex justify-between items-center tour content-full rounded wrap'>
-        <ul class='list tour-list flex col'>
+        <ul class='tour-list flex col'>
           <For each={listItems}>
             {(list: string) => (
               <li onMouseEnter={handleHover}>

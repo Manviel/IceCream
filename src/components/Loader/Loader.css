@@ -2,9 +2,10 @@
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.pulse-loading .bar {
-  background-color: var(--c-basic);
+.loader {
+  background-color: var(--c-black);
   height: 1.6rem;
+  margin: var(--s-medium) 0;
 }
 
 @keyframes pulse {

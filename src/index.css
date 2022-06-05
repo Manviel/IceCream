@@ -2,7 +2,6 @@
   --c-black: #1c1c1e;
   --c-white: #fff;
   --c-dark: rgba(30, 30, 30, 0.75);
-  --c-basic: #4e4e4e;
   --c-active: #cccccc;
   --o-secondary: rgba(255, 255, 255, 0.5);
   --o-glass: rgba(245, 245, 245, 0.5);
@@ -44,6 +43,10 @@ svg {
   fill: var(--c-black);
 }
 
+ul {
+  list-style-type: none;
+}
+
 .app {
   display: grid;
   grid-template-columns: 1fr;
@@ -74,8 +77,9 @@ svg {
   margin: 1.4rem 0 2rem;
 }
 
-.bar {
-  margin: var(--s-medium) 0;
+.subtitle {
+  font-size: 3.4rem;
+  margin: 1.6rem 0 1rem;
 }
 
 .text {
@@ -102,25 +106,11 @@ svg {
   border-radius: var(--s-medium);
 }
 
-.list {
-  list-style-type: none;
-}
-
 .page {
   padding: var(--s-medium);
   margin-bottom: var(--s-medium);
   background-color: var(--o-secondary);
   backdrop-filter: var(--p-blur);
-}
-
-.pale {
-  background-color: #fbf3eb;
-  padding: var(--s-medium);
-}
-
-.brown {
-  background-color: #e7c4b1;
-  padding: var(--s-medium);
 }
 
 .tour {

@@ -1,16 +1,10 @@
-.card {
-  display: block;
+.paper {
   padding: var(--s-medium);
   background-color: var(--o-glass);
-  margin: 1.4rem 0;
+  margin: 1.8rem 0 2.2rem;
 }
 
-.card-title {
-  font-size: var(--s-medium);
-  margin-bottom: 1.8rem;
-}
-
-.card-description {
-  color: var(--c-basic);
-  font-size: 1.6rem;
+.paper-description {
+  text-transform: uppercase;
+  font-style: normal;
 }

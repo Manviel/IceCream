@@ -1,3 +1,13 @@
+.pale {
+  background-color: #fbf3eb;
+  padding: var(--s-medium);
+}
+
+.brown {
+  background-color: #e7c4b1;
+  padding: var(--s-medium);
+}
+
 .arrow {
   border-style: solid;
   border-width: 0 2px 2px 0;
@@ -10,27 +20,9 @@
   transform: rotate(135deg);
 }
 
-.arrow-right {
-  border-color: var(--c-white);
-  transform: rotate(-45deg);
-}
-
 .slide {
   animation: slide 1s ease-in-out infinite;
   transition: transform 0.3s;
-}
-
-.stage {
-  margin-bottom: 4.4rem;
-}
-
-.stage-title {
-  font-size: 1.8rem;
-  width: 50%;
-}
-
-.wrap {
-  flex-wrap: wrap;
 }
 
 .tour-list {
@@ -60,16 +52,7 @@
   grid-gap: 1rem;
 }
 
-.subtitle {
-  font-size: 3.4rem;
-  max-width: 24rem;
-}
-
 @media screen and (max-width: 768px) {
-  .stage {
-    margin-bottom: 3.6rem;
-  }
-
   .home-stats {
     grid-template-columns: repeat(1, 1fr);
   }
