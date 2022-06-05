@@ -111,8 +111,8 @@ const Home: Component = () => {
               <i class='arrow arrow-left'></i>
             </p>
 
-            <Link href='/profile' class='btn'>
-              Next
+            <Link href='/news' class='btn'>
+              News
             </Link>
           </div>
         </div>

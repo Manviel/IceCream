@@ -15,11 +15,11 @@ import Header from '../../components/Header';
 
 import { Company, Category } from '../../models';
 
-import './Profile.css';
+import './NewsFeed.css';
 
 const fetchQuery = async (page: Category) => await getNews({ category: page });
 
-const Profile: Component = () => {
+const NewsFeed: Component = () => {
   const [getState, setState] = createSignal(Category.All);
 
   const [companies] = createResource(getState, fetchQuery);
@@ -61,4 +61,4 @@ const Profile: Component = () => {
   );
 };
 
-export default Profile;
+export default NewsFeed;

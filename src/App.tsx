@@ -6,7 +6,7 @@ import SuperEllipse from './components/Superellipse';
 import BagIcon from './assets/icons/bag.svg';
 
 const Home = lazy(() => import('./pages/Home'));
-const Profile = lazy(() => import('./pages/Profile'));
+const NewsFeed = lazy(() => import('./pages/NewsFeed'));
 
 const App: Component = () => {
   return (
@@ -15,7 +15,7 @@ const App: Component = () => {
         <Routes>
           <Route path='/' element={<Home />} />
 
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/news' element={<NewsFeed />} />
         </Routes>
       </main>
       <nav
