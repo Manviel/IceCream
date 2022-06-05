@@ -108,16 +108,9 @@ ul {
 
 .page {
   padding: var(--s-medium);
-  margin-bottom: var(--s-medium);
+  margin-bottom: 2.4rem;
   background-color: var(--o-secondary);
   backdrop-filter: var(--p-blur);
-}
-
-.tour {
-  background-color: var(--c-white);
-  padding: var(--s-medium);
-  margin-top: var(--s-medium);
-  font-size: 1.6rem;
 }
 
 .fixed-bottom {

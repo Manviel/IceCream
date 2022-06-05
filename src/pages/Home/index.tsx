@@ -24,7 +24,6 @@ const Home: Component = () => {
     'Supplements',
     'Lifestyle',
     'Plan',
-    'Improve',
   ];
 
   return (
@@ -40,7 +39,7 @@ const Home: Component = () => {
           faster sensor.
         </p>
 
-        <section class='pale rounded'>
+        <div class='pale rounded'>
           <article class='home-stats'>
             <Card
               phrase='Up to'
@@ -67,7 +66,7 @@ const Home: Component = () => {
             />
           </article>
 
-          <div>
+          <article>
             <h2 class='title text'>Presenting Cinematic mode</h2>
 
             <p class='text info'>
@@ -76,28 +75,30 @@ const Home: Component = () => {
               their movies. Now iPhone makes it easy for you to bring the same
               storytelling technique to your videos.
             </p>
-          </div>
-        </section>
+          </article>
+        </div>
       </div>
 
-      <section class='flex justify-between items-center tour content-full rounded wrap'>
-        <ul class='tour-list flex col'>
-          <For each={listItems}>
-            {(list: string) => (
-              <li onMouseEnter={handleHover}>
-                {list}
-                <hr />
-              </li>
-            )}
-          </For>
-        </ul>
+      <div class='tour content-full rounded'>
+        <article class='flex items-center'>
+          <ul class='tour-list flex col'>
+            <For each={listItems}>
+              {(list: string) => (
+                <li onMouseEnter={handleHover}>
+                  {list}
+                  <hr />
+                </li>
+              )}
+            </For>
+          </ul>
 
-        <div class='brown rounded'>
-          <strong class='subtitle'>{randomInRange(1, 100)}</strong>
-          <p>{item}</p>
-        </div>
+          <div class='brown rounded'>
+            <strong class='subtitle'>{randomInRange(1, 100)}</strong>
+            <p>{item}</p>
+          </div>
+        </article>
 
-        <div>
+        <article>
           <h3 class='title text'>Cinematic mode shoots in Dolby Vision HDR</h3>
 
           <p class='text info'>
@@ -115,8 +116,8 @@ const Home: Component = () => {
               News
             </Link>
           </div>
-        </div>
-      </section>
+        </article>
+      </div>
     </>
   );
 };

@@ -25,8 +25,17 @@
   transition: transform 0.3s;
 }
 
+.tour {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--c-white);
+  padding: var(--s-medium);
+}
+
 .tour-list {
+  font-size: 1.6rem;
   align-items: flex-end;
+  margin-right: 2.6rem;
 }
 
 .tour-list li {
@@ -53,6 +62,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .tour {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .home-stats {
     grid-template-columns: repeat(1, 1fr);
   }

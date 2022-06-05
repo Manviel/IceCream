@@ -8,13 +8,14 @@
   transition: transform 0.4s var(--a-press);
 }
 
-.superellipse:hover {
+.superellipse:hover,
+a:focus {
   transform: scale(1.2);
 }
 
 .superellipse::before,
 .superellipse::after {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
 }
