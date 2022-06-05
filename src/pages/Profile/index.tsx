@@ -43,13 +43,11 @@ const Profile: Component = () => {
                     <li class='card rounded content-full'>
                       <p class='bar card-description'>{com.author}</p>
 
-                      <h3 class='card-title'>{com.title}</h3>
+                      <h2 class='card-title'>{com.title}</h2>
 
-                      <article class='flex wrap bar justify-between items-center'>
-                        {com.content}
+                      {com.content}
 
-                        <CardDate date={com.date} />
-                      </article>
+                      <CardDate date={com.date} />
 
                       {com.time}
                     </li>

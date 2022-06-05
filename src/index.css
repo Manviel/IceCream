@@ -1,3 +1,18 @@
+:root {
+  --c-black: #1c1c1e;
+  --c-white: #fff;
+  --c-dark: rgba(30, 30, 30, 0.75);
+  --c-basic: #4e4e4e;
+  --c-active: #cccccc;
+  --o-secondary: rgba(255, 255, 255, 0.5);
+  --o-glass: rgba(245, 245, 245, 0.5);
+  --s-ellipse: 5rem;
+  --s-medium: 2rem;
+  --a-press: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --p-blur: blur(80px);
+  --p-shadow: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.2));
+}
+
 html {
   font-size: 62.5%;
 }
@@ -17,7 +32,7 @@ body {
   background-color: #c1deba;
   color: var(--c-black);
   min-height: 100vh;
-  padding: 1.2rem 1rem 10.6rem;
+  padding: 1rem 1rem 10.6rem;
 }
 
 a {
@@ -25,25 +40,13 @@ a {
   color: inherit;
 }
 
-:root {
-  --c-black: #1c1c1e;
-  --c-white: #fff;
-  --c-dark: rgba(30, 30, 30, 0.75);
-  --c-basic: #4e4e4e;
-  --c-active: #cccccc;
-  --o-secondary: rgba(255, 255, 255, 0.5);
-  --o-glass: rgba(245, 245, 245, 0.5);
-  --s-ellipse: 5rem;
-  --s-medium: 2rem;
-  --a-press: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --p-blur: blur(80px);
-  --p-shadow: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.2));
+svg {
+  fill: var(--c-black);
 }
 
 .app {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
   justify-items: center;
   max-width: 144rem;
 }
@@ -105,7 +108,7 @@ a {
 
 .page {
   padding: var(--s-medium);
-  margin: 2rem 0;
+  margin-bottom: var(--s-medium);
   background-color: var(--o-secondary);
   backdrop-filter: var(--p-blur);
 }

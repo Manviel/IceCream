@@ -1,7 +1,9 @@
 import { Component, lazy } from 'solid-js';
-import { Routes, Route } from 'solid-app-router';
+import { Routes, Route, Link } from 'solid-app-router';
 
 import SuperEllipse from './components/Superellipse';
+
+import BagIcon from './assets/icons/bag.svg';
 
 const Home = lazy(() => import('./pages/Home'));
 const Profile = lazy(() => import('./pages/Profile'));
@@ -20,13 +22,17 @@ const App: Component = () => {
         class='fixed-bottom dock rounded content-full flex justify-between'
         aria-label='Tabs'
       >
-        <SuperEllipse name='Finder' />
+        <Link href='/'>
+          <SuperEllipse>
+            <BagIcon />
+          </SuperEllipse>
+        </Link>
 
-        <SuperEllipse name='Store' />
+        <SuperEllipse>Store</SuperEllipse>
 
-        <SuperEllipse name='Settings' />
+        <SuperEllipse>Settings</SuperEllipse>
 
-        <SuperEllipse name='Messages' />
+        <SuperEllipse>Messages</SuperEllipse>
       </nav>
     </div>
   );

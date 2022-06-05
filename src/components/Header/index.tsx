@@ -1,28 +1,13 @@
 import type { Component } from 'solid-js';
-import { Link } from 'solid-app-router';
-
-import BagIcon from '../../assets/icons/bag.svg';
 
 import './Header.css';
 
 type HeaderType = {
-  href?: string;
+  spot: string;
 };
 
-const Header: Component<HeaderType> = ({ href }) => {
-  return (
-    <nav class='flex content-full justify-between'>
-      <Link
-        href={href ? href : '/'}
-        class='link btn'
-        aria-label={href ? 'Go back' : 'Go home'}
-      >
-        <BagIcon />
-      </Link>
-
-      <button class='btn'>Join Now</button>
-    </nav>
-  );
+const Header: Component<HeaderType> = ({ spot }) => {
+  return <h1 class='title text'>{spot}</h1>;
 };
 
 export default Header;

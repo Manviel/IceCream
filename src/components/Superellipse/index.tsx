@@ -1,15 +1,16 @@
 import type { Component } from 'solid-js';
+import { JSX } from 'solid-js/jsx-runtime';
 
 import './SuperEllipse.css';
 
 type EllipseType = {
-  name: string;
+  children: JSX.Element;
 };
 
-const SuperEllipse: Component<EllipseType> = ({ name }) => {
+const SuperEllipse: Component<EllipseType> = ({ children }) => {
   return (
-    <span class='superellipse flex items-center justify-center' tabIndex='0'>
-      {name}
+    <span class='superellipse flex items-center justify-center'>
+      {children}
     </span>
   );
 };

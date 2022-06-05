@@ -29,12 +29,8 @@ const Home: Component = () => {
 
   return (
     <>
-      <Header />
-
       <div class='page rounded content-full flex col justify-between'>
-        <h1 class='title text'>
-          How did we get such a huge camera upgrade to fit?
-        </h1>
+        <Header spot='How did we get such a huge camera upgrade to fit?' />
 
         <p class='text info'>
           We designed a totally new architecture and turned the lenses 45

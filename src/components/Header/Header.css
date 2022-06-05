@@ -6,7 +6,7 @@
   font-weight: bold;
   font-size: 1.6rem;
   transition: filter 0.25s, transform 0.4s var(--a-press),
-    background-color 0.25s, fill 0.25s;
+    background-color 0.25s;
   border-radius: 2.4rem;
 }
 
@@ -18,12 +18,4 @@
   filter: var(--p-shadow);
   background-color: var(--c-dark);
   color: var(--c-white);
-}
-
-svg {
-  fill: var(--c-black);
-}
-
-.btn:hover svg {
-  fill: var(--c-white);
 }
