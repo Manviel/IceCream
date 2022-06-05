@@ -43,12 +43,28 @@ const Home: Component = () => {
         <section class='pale rounded'>
           <article class='home-stats'>
             <Card
-              number={randomInRange(1000, 2000)}
-              description='Active Users'
+              phrase='Up to'
+              number={randomInRange(11, 98)}
+              measure='million'
+              description='Active users'
             />
-            <Card number={randomInRange(3000, 7000)} description='Vacancies' />
-            <Card number={randomInRange(10, 320)} description='Countries' />
-            <Card number={randomInRange(3, 20)} description='Years' />
+            <Card
+              phrase='Support'
+              number={randomInRange(10, 320)}
+              description='Countries'
+            />
+            <Card
+              phrase='Up to'
+              number={randomInRange(1, 10)}
+              measure='x'
+              description='Faster than previous versions'
+            />
+            <Card
+              phrase='Down to'
+              number={randomInRange(1, 3)}
+              measure='sec'
+              description='Time to interactive'
+            />
           </article>
 
           <div>

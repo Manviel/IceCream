@@ -5,15 +5,24 @@ import './Card.css';
 type CardType = {
   number: string | number;
   description: string;
+  phrase: string;
+  measure?: string;
 };
 
-const Card: Component<CardType> = ({ number, description }) => {
-  return (
-    <section class='glass-card rounded'>
-      <strong class='glass-text'>{number}</strong>
-      <p class='glass-bot'>{description}</p>
-    </section>
-  );
-};
+const Card: Component<CardType> = ({
+  number,
+  description,
+  phrase,
+  measure,
+}) => (
+  <div class='card rounded'>
+    <sup class='card-sub'>{phrase}</sup>
+    <strong class='card-text'>
+      {number}
+      <span class='card-measure'>{measure}</span>
+    </strong>
+    <sub class='card-sub'>{description}</sub>
+  </div>
+);
 
 export default Card;

@@ -1,54 +1,30 @@
-.glass-card {
-  font-size: var(--s-medium);
-  overflow: hidden;
-  position: relative;
-  animation: alert-enter 0.2s ease-in-out;
+.card {
+  background-color: var(--c-white);
+  animation: alert-enter 0.4s ease-in-out;
+  padding: 1.6rem var(--s-medium);
 }
 
-.glass-card:before {
-  content: "";
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  background-color: var(--o-glass);
-  backdrop-filter: var(--p-blur);
-}
-
-.glass-text {
+.card-text {
   display: block;
-  margin: var(--s-medium) var(--s-medium) 0.8rem;
-  position: relative;
-  z-index: 2;
   font-size: 6.2rem;
 }
 
-.glass-bot {
-  margin: 0 var(--s-medium) var(--s-medium);
-  position: relative;
-  z-index: 2;
+.card-measure {
+  font-size: 3rem;
+}
+
+.card-sub {
+  font-size: var(--s-medium);
 }
 
 @keyframes alert-enter {
   0% {
     opacity: 0.01;
+    transform: translateY(100%);
   }
 
   100% {
     opacity: 1;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .glass-card {
-    font-size: 1.6rem;
-  }
-
-  .glass-text {
-    font-size: 3.2rem;
-    margin: 1.4rem 1.6rem 0.8rem;
-  }
-
-  .glass-bot {
-    margin: 0 1.6rem 1.4rem;
+    transform: translateY(0%);
   }
 }
