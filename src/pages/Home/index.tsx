@@ -8,22 +8,42 @@ import { randomInRange } from '../../services/utils';
 
 import './Home.css';
 
+type ListItem = {
+  label: string;
+  value: number;
+};
+
 const Home: Component = () => {
-  const [item, setItem] = createSignal<string | null>(null);
+  const [item, setItem] = createSignal<number | null>(null);
 
-  const handleHover = (e: MouseEvent) => {
-    const elem = e.target as HTMLElement;
+  const handleHover = (e: ListItem) => setItem(e.value);
 
-    setItem(elem.textContent);
-  };
+  const listItems: ListItem[] = [
+    {
+      label: 'Scan',
+      value: randomInRange(1, 100),
+    },
+    {
+      label: 'Learn',
+      value: randomInRange(1, 100),
+    },
+    {
+      label: 'Food',
+      value: randomInRange(1, 100),
+    },
+    {
+      label: 'Supplements',
+      value: randomInRange(1, 100),
+    },
 
-  const listItems = [
-    'Scan',
-    'Learn',
-    'Food',
-    'Supplements',
-    'Lifestyle',
-    'Plan',
+    {
+      label: 'Lifestyle',
+      value: randomInRange(1, 100),
+    },
+    {
+      label: 'Plan',
+      value: randomInRange(1, 100),
+    },
   ];
 
   return (
@@ -66,10 +86,10 @@ const Home: Component = () => {
             />
           </article>
 
-          <article>
-            <h2 class='title text'>Presenting Cinematic mode</h2>
+          <article class='text'>
+            <h2 class='title'>Presenting Cinematic mode</h2>
 
-            <p class='text info'>
+            <p class='info'>
               Filmmakers use a technique called rack focus — shifting focus from
               one subject to another — to guide the audience’s attention in
               their movies. Now iPhone makes it easy for you to bring the same
@@ -83,25 +103,25 @@ const Home: Component = () => {
         <article class='flex items-center'>
           <ul class='tour-list flex col'>
             <For each={listItems}>
-              {(list: string) => (
-                <li onMouseEnter={handleHover}>
-                  {list}
-                  <hr />
+              {(item) => (
+                <li
+                  class='flex justify-between items-center content-full rounded'
+                  onMouseEnter={() => handleHover(item)}
+                >
+                  {item.label}
+                  <span class='chip'>{item.value}</span>
                 </li>
               )}
             </For>
           </ul>
 
-          <div class='brown rounded'>
-            <strong class='subtitle'>{randomInRange(1, 100)}</strong>
-            <p>{item}</p>
-          </div>
+          <strong class='brown rounded subtitle'>{item}</strong>
         </article>
 
-        <article>
-          <h3 class='title text'>Cinematic mode shoots in Dolby Vision HDR</h3>
+        <article class='text'>
+          <h3 class='title'>Cinematic mode shoots in Dolby Vision HDR</h3>
 
-          <p class='text info'>
+          <p class='info'>
             Want to change the focus or adjust the blur after shooting wraps? No
             problem. iPhone lets you do it with a few taps and swipes. Even pro
             movie cameras can’t do that.

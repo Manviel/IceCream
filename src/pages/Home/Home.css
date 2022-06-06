@@ -34,25 +34,26 @@
 
 .tour-list {
   font-size: 1.6rem;
-  align-items: flex-end;
-  margin-right: 2.6rem;
+  align-items: flex-start;
+  margin-right: 3rem;
+  width: 18rem;
 }
 
 .tour-list li {
   padding: 1rem 1.6rem;
-  border-radius: var(--s-medium);
-  text-align: right;
   transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 
-.tour-list hr {
-  margin-top: 0.8rem;
+.tour-list li:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateX(0.8rem);
 }
 
-.tour-list li:hover {
-  color: var(--c-white);
-  background-color: var(--c-dark);
-  transform: translateX(0.8rem);
+.chip {
+  padding: 0.2rem 0.6rem;
+  color: #232526;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 8.5px;
 }
 
 .home-stats {
