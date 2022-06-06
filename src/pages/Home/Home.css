@@ -28,31 +28,31 @@
 .tour {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-color: var(--c-white);
-  padding: var(--s-medium);
 }
 
 .tour-list {
   font-size: 1.6rem;
   align-items: flex-start;
-  margin-right: 3rem;
-  width: 18rem;
+  min-width: 18rem;
 }
 
 .tour-list li {
   padding: 1rem 1.6rem;
-  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  transition: background-color 0.2s;
 }
 
 .tour-list li:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  transform: translateX(0.8rem);
+  background-color: var(--c-chip);
+}
+
+.tour-indicators {
+  justify-content: space-around;
 }
 
 .chip {
   padding: 0.2rem 0.6rem;
   color: #232526;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--c-chip);
   border-radius: 8.5px;
 }
 

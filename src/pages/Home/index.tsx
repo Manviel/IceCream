@@ -14,7 +14,7 @@ type ListItem = {
 };
 
 const Home: Component = () => {
-  const [item, setItem] = createSignal<number | null>(null);
+  const [item, setItem] = createSignal<number>(0);
 
   const handleHover = (e: ListItem) => setItem(e.value);
 
@@ -99,7 +99,7 @@ const Home: Component = () => {
         </div>
       </div>
 
-      <div class='tour content-full rounded'>
+      <div class='layer tour content-full rounded'>
         <article class='flex items-center'>
           <ul class='tour-list flex col'>
             <For each={listItems}>
@@ -115,7 +115,9 @@ const Home: Component = () => {
             </For>
           </ul>
 
-          <strong class='brown rounded subtitle'>{item}</strong>
+          <div class='tour-indicators flex items-center content-full'>
+            <strong class='brown rounded subtitle'>{item}</strong>
+          </div>
         </article>
 
         <article class='text'>
@@ -133,7 +135,7 @@ const Home: Component = () => {
             </p>
 
             <Link href='/news' class='btn'>
-              News
+              Go to News
             </Link>
           </div>
         </article>

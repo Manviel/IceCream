@@ -3,6 +3,7 @@
   --c-white: #fff;
   --c-dark: rgba(30, 30, 30, 0.75);
   --c-active: #cccccc;
+  --c-chip: rgba(0, 0, 0, 0.05);
   --o-secondary: rgba(255, 255, 255, 0.5);
   --o-glass: rgba(245, 245, 245, 0.5);
   --s-ellipse: 5rem;
@@ -126,6 +127,11 @@ ul {
   background-blend-mode: luminosity;
   backdrop-filter: var(--p-blur);
   padding: 1.6rem;
+}
+
+.layer {
+  background-color: var(--c-white);
+  padding: var(--s-medium);
 }
 
 @media screen and (max-width: 768px) {

@@ -1,0 +1,22 @@
+.badge {
+  padding: 1.3rem 1.6rem;
+  background-color: var(--c-chip);
+}
+
+.indicator {
+  display: block;
+  min-width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #c1deba;
+  margin-right: 2rem;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(1.8);
+    opacity: 0.5;
+  }
+}

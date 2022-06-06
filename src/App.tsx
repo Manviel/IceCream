@@ -10,6 +10,7 @@ import PersonFinderIcon from './assets/icons/person-finder.svg';
 
 const Home = lazy(() => import('./pages/Home'));
 const NewsFeed = lazy(() => import('./pages/NewsFeed'));
+const Profile = lazy(() => import('./pages/Profile'));
 
 const App: Component = () => {
   return (
@@ -20,6 +21,8 @@ const App: Component = () => {
             <Route path='/' element={<Home />} />
 
             <Route path='/news' element={<NewsFeed />} />
+
+            <Route path='/profile' element={<Profile />} />
           </Routes>
         </Suspense>
       </main>
@@ -41,7 +44,7 @@ const App: Component = () => {
 
         <SuperEllipse>Soon</SuperEllipse>
 
-        <Link href='/profile' aria-label='News'>
+        <Link href='/profile' aria-label='Profile'>
           <SuperEllipse>
             <PersonFinderIcon />
           </SuperEllipse>
