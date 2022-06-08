@@ -52,7 +52,7 @@ ul {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  max-width: 144rem;
+  max-width: 142rem;
 }
 
 .content-full {

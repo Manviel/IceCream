@@ -9,7 +9,8 @@
 }
 
 .superellipse:hover,
-a:focus {
+a.active,
+a:focus-visible {
   transform: scale(1.2);
 }
 

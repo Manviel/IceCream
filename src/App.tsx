@@ -1,5 +1,5 @@
 import { Component, lazy, Suspense } from 'solid-js';
-import { Routes, Route, Link } from 'solid-app-router';
+import { Routes, Route, NavLink } from 'solid-app-router';
 
 import SuperEllipse from './components/Superellipse';
 import Loader from './components/Loader';
@@ -11,6 +11,7 @@ import PersonFinderIcon from './assets/icons/person-finder.svg';
 const Home = lazy(() => import('./pages/Home'));
 const NewsFeed = lazy(() => import('./pages/NewsFeed'));
 const Profile = lazy(() => import('./pages/Profile'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 const App: Component = () => {
   return (
@@ -23,6 +24,8 @@ const App: Component = () => {
             <Route path='/news' element={<NewsFeed />} />
 
             <Route path='/profile' element={<Profile />} />
+
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
@@ -30,25 +33,25 @@ const App: Component = () => {
         class='fixed-bottom dock rounded content-full flex justify-between'
         aria-label='Tabs'
       >
-        <Link href='/' aria-label='Home'>
+        <NavLink href='/home' aria-label='Home'>
           <SuperEllipse>
             <BagIcon />
           </SuperEllipse>
-        </Link>
+        </NavLink>
 
-        <Link href='/news' aria-label='News'>
+        <NavLink href='/news' aria-label='News'>
           <SuperEllipse>
             <SquareTextIcon />
           </SuperEllipse>
-        </Link>
+        </NavLink>
 
         <SuperEllipse>Soon</SuperEllipse>
 
-        <Link href='/profile' aria-label='Profile'>
+        <NavLink href='/profile' aria-label='Profile'>
           <SuperEllipse>
             <PersonFinderIcon />
           </SuperEllipse>
-        </Link>
+        </NavLink>
       </nav>
     </div>
   );
