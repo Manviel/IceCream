@@ -48,7 +48,7 @@ const Home: Component = () => {
 
   return (
     <>
-      <div class='page rounded content-full flex col justify-between'>
+      <div class='page view rounded content-full flex col justify-between'>
         <Header spot='How did we get such a huge camera upgrade to fit?' />
 
         <p class='text info'>
@@ -59,7 +59,7 @@ const Home: Component = () => {
           faster sensor.
         </p>
 
-        <div class='pale rounded'>
+        <div class='pale view rounded'>
           <article class='home-stats'>
             <Card
               phrase='Up to'
@@ -99,7 +99,7 @@ const Home: Component = () => {
         </div>
       </div>
 
-      <div class='layer tour content-full rounded'>
+      <div class='layer view tour content-full rounded'>
         <article class='flex items-center'>
           <ul class='tour-list flex col'>
             <For each={listItems}>

@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import './Profile.css';
 
 const Profile: Component = () => (
-  <div class='layer rounded content-full'>
+  <div class='layer view rounded content-full'>
     <Header spot='Your profile' />
 
     <p class='info'>Flat-edge design</p>

@@ -25,7 +25,7 @@ const NewsFeed: Component = () => {
   const [companies] = createResource(getState, fetchQuery);
 
   return (
-    <div class='page rounded content-full flex col'>
+    <div class='page view rounded content-full flex col'>
       <Header spot='Your Feed' />
 
       <ul>
@@ -37,8 +37,8 @@ const NewsFeed: Component = () => {
             {(list: Company[]) => (
               <For each={list}>
                 {(com) => (
-                  <li class='paper rounded content-full'>
-                    <div class='flex justify-between items-center'>
+                  <li class='paper view rounded content-full'>
+                    <div class='paper-grid items-center'>
                       <div>
                         <address class='paper-description'>
                           {com.author} at {com.time}

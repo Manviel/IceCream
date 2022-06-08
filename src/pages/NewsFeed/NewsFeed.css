@@ -1,5 +1,4 @@
 .paper {
-  padding: var(--s-medium);
   background-color: var(--o-glass);
   margin: 1.8rem 0 2.4rem;
 }
@@ -7,4 +6,10 @@
 .paper-description {
   text-transform: uppercase;
   font-style: normal;
+}
+
+.paper-grid {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-gap: 1rem;
 }
