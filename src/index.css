@@ -2,10 +2,9 @@
   --c-black: #1c1c1e;
   --c-white: #fff;
   --c-dark: rgba(30, 30, 30, 0.75);
-  --c-active: #cccccc;
-  --c-chip: rgba(0, 0, 0, 0.05);
-  --o-secondary: rgba(255, 255, 255, 0.5);
-  --o-glass: rgba(245, 245, 245, 0.5);
+  --c-active: rgba(0, 0, 0, 0.05);
+  --c-secondary: rgba(255, 255, 255, 0.5);
+  --c-glass: rgba(245, 245, 245, 0.5);
   --s-ellipse: 5rem;
   --s-medium: 2rem;
   --a-press: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -112,7 +111,7 @@ ul {
 }
 
 .page {
-  background-color: var(--o-secondary);
+  background-color: var(--c-secondary);
   backdrop-filter: var(--p-blur);
 }
 
@@ -129,7 +128,7 @@ ul {
 
 .dock {
   max-width: 58rem;
-  background-color: var(--o-glass);
+  background-color: var(--c-glass);
   background-blend-mode: luminosity;
   backdrop-filter: var(--p-blur);
   padding: 1.6rem;

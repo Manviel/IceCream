@@ -1,7 +1,7 @@
 .btn {
   display: block;
   padding: 1.8rem var(--s-medium) 1.6rem;
-  background-color: var(--o-glass);
+  background-color: var(--c-glass);
   color: var(--c-black);
   border: 0;
   font-weight: bold;

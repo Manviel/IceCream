@@ -37,11 +37,11 @@
 
 .tour-list li {
   padding: 1rem 1.6rem;
-  transition: background-color 0.2s;
+  transition: background-color 0.25s;
 }
 
 .tour-list li:hover {
-  background-color: var(--c-chip);
+  background-color: var(--c-active);
 }
 
 .tour-indicators {
@@ -49,10 +49,10 @@
 }
 
 .chip {
-  padding: 0.2rem 0.6rem;
+  padding: 0.4rem 0.8rem;
   color: #232526;
-  background-color: var(--c-chip);
-  border-radius: 8.5px;
+  background-color: var(--c-active);
+  border-radius: 1rem;
 }
 
 .home-stats {

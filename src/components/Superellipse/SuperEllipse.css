@@ -5,13 +5,22 @@
   border-radius: 25%;
   font-size: 1rem;
   background-color: var(--c-white);
-  transition: transform 0.4s var(--a-press);
+  transition: transform 0.4s var(--a-press), background-color 0.25s;
 }
 
-.superellipse:hover,
+.superellipse:hover {
+  background-color: var(--c-secondary);
+}
+
 a.active,
 a:focus-visible {
   transform: scale(1.2);
+}
+
+a:focus-visible {
+  outline: 1px solid #0a84ff;
+  outline-offset: 4px;
+  border-radius: 1rem;
 }
 
 .superellipse::before,

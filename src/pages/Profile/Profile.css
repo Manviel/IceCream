@@ -1,6 +1,6 @@
 .badge {
   padding: 1.3rem 1.6rem;
-  background-color: var(--c-chip);
+  background-color: var(--c-active);
 }
 
 .indicator {
