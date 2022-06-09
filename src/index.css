@@ -32,7 +32,7 @@ body {
   background-color: #c1deba;
   color: var(--c-black);
   min-height: 100vh;
-  padding: 1rem 0.6rem 10.6rem;
+  padding: 1rem 0.8rem 10.6rem;
 }
 
 a {
@@ -149,7 +149,7 @@ ul {
   }
 
   .dock {
-    max-width: calc(100% - 1.2rem);
+    max-width: calc(100% - 1.6rem);
   }
 
   .subtitle {
