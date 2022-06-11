@@ -49,6 +49,8 @@ const Home: Component = () => {
   return (
     <>
       <div class='page view rounded content-full flex col justify-between'>
+        <strong class='subtitle'>For You</strong>
+
         <Header spot='How did we get such a huge camera upgrade to fit?' />
 
         <p class='text info'>
@@ -104,12 +106,11 @@ const Home: Component = () => {
           <ul class='tour-list flex col'>
             <For each={listItems}>
               {(item) => (
-                <li
-                  class='flex justify-between items-center content-full rounded'
-                  onMouseEnter={() => handleHover(item)}
-                >
+                <li class='flex justify-between items-center content-full rounded'>
                   {item.label}
-                  <span class='chip'>{item.value}</span>
+                  <button class='chip' onClick={() => handleHover(item)}>
+                    {item.value}
+                  </button>
                 </li>
               )}
             </For>

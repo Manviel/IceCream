@@ -1,9 +1,9 @@
 .pale {
-  background-color: #fbf3eb;
+  background-color: var(--c-warning);
 }
 
 .brown {
-  background-color: #e7c4b1;
+  background-color: var(--c-info);
   padding: var(--s-medium);
 }
 
@@ -50,9 +50,11 @@
 
 .chip {
   padding: 0.4rem 0.8rem;
-  color: #232526;
+  color: var(--c-contrast);
   background-color: var(--c-active);
   border-radius: 1rem;
+  border: 0;
+  font-size: inherit;
 }
 
 .home-stats {

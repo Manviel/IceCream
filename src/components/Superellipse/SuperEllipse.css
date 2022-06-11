@@ -17,8 +17,9 @@ a:focus-visible {
   transform: scale(1.2);
 }
 
-a:focus-visible {
-  outline: 1px solid #0a84ff;
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--c-ring);
   outline-offset: 4px;
   border-radius: 1rem;
 }
