@@ -23,8 +23,20 @@
   font-size: 1.6rem;
 }
 
+.theme-list {
+  padding: 1.2rem;
+}
+
 .theme-list li {
   margin-bottom: 2rem;
+}
+
+.blue-theme {
+  --c-primary: #0c3139;
+}
+
+.night-theme {
+  --c-primary: #12203b;
 }
 
 @keyframes ping {
