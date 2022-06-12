@@ -7,6 +7,7 @@ import Loader from './components/Loader';
 import BagIcon from './assets/icons/bag.svg';
 import SquareTextIcon from './assets/icons/square-text.svg';
 import PersonFinderIcon from './assets/icons/person-finder.svg';
+import LockIcon from './assets/icons/lock.svg';
 
 const Home = lazy(() => import('./pages/Home'));
 const NewsFeed = lazy(() => import('./pages/NewsFeed'));
@@ -45,7 +46,9 @@ const App: Component = () => {
           </SuperEllipse>
         </NavLink>
 
-        <SuperEllipse>Soon</SuperEllipse>
+        <SuperEllipse>
+          <LockIcon />
+        </SuperEllipse>
 
         <NavLink href='/profile' aria-label='Profile'>
           <SuperEllipse>
