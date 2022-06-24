@@ -16,6 +16,7 @@
 .form-radio {
   height: 2.8rem;
   min-width: 2.8rem;
+  outline-offset: 4px;
 }
 
 .form-label {
@@ -32,7 +33,7 @@
 }
 
 .blue-theme {
-  --c-primary: #0c3139;
+  --c-primary: #dce7f9;
 }
 
 .night-theme {

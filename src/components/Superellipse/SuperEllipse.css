@@ -4,12 +4,16 @@
   position: relative;
   border-radius: 25%;
   font-size: 1rem;
-  background-color: var(--c-white);
+  background-color: var(--c-secondary);
   transition: transform 0.4s var(--a-press), background-color 0.25s;
 }
 
 .superellipse:hover {
-  background-color: var(--c-secondary);
+  background-color: var(--c-white);
+}
+
+.active .superellipse {
+  background-color: var(--c-white);
 }
 
 a.active,
