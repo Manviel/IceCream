@@ -1,6 +1,7 @@
 import { createSignal, Component } from 'solid-js';
 
 import Header from '../../components/Header';
+import RadioField from '../../components/RadioField';
 
 import FaceDashedIcon from '../../assets/icons/face-dashed.svg';
 
@@ -26,7 +27,7 @@ const Profile: Component = () => {
       <Header spot='Your new superpower' />
 
       <b class='badge flex items-center rounded info' id='edge-design'>
-        <i class='indicator'></i>Design Gallery
+        <i class={`indicator ${theme()}`}></i>Design Gallery
       </b>
 
       <ul
@@ -35,43 +36,28 @@ const Profile: Component = () => {
         aria-labelledby='edge-design'
       >
         <li class='flex items-center'>
-          <input
-            type='radio'
-            id='green-theme'
-            name='app-theme'
-            value='green-theme'
-            class='form-radio'
+          <RadioField
             onChange={handleChange}
+            id='orange-theme'
+            name='app-theme'
+            title='Orange'
           />
-          <label for='green-theme' class='form-label'>
-            Green
-          </label>
         </li>
         <li class='flex items-center'>
-          <input
-            type='radio'
+          <RadioField
+            onChange={handleChange}
             id='blue-theme'
             name='app-theme'
-            value='blue-theme'
-            class='form-radio'
-            onChange={handleChange}
+            title='Blue'
           />
-          <label for='blue-theme' class='form-label'>
-            Blue
-          </label>
         </li>
         <li class='flex items-center'>
-          <input
-            type='radio'
+          <RadioField
+            onChange={handleChange}
             id='night-theme'
             name='app-theme'
-            value='night-theme'
-            class='form-radio'
-            onChange={handleChange}
+            title='Midnight'
           />
-          <label for='night-theme' class='form-label'>
-            Midnight
-          </label>
         </li>
       </ul>
 

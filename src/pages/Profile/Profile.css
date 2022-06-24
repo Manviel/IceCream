@@ -37,7 +37,11 @@
 }
 
 .night-theme {
-  --c-primary: #12203b;
+  --c-primary: rgba(37, 37, 37, 0.5);
+}
+
+.orange-theme {
+  --c-primary: #ff8c82;
 }
 
 @keyframes ping {
