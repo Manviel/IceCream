@@ -2,6 +2,7 @@ import { Index, ErrorBoundary, Component, createEffect } from 'solid-js';
 
 import { getNews } from '../../services/news';
 import { useNews } from '../../services/store';
+import { useObserver } from '../../services/utils';
 
 import DateBox from '../../components/Card/DateBox';
 import Loader from '../../components/Loader';
@@ -20,6 +21,8 @@ const NewsFeed: Component = () => {
     if (data.news.length === 0) {
       fetchQuery(Category.All).then((companies) => updateNews(companies));
     }
+
+    useObserver('.paper-description');
   });
 
   return (
