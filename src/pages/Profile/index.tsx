@@ -2,6 +2,7 @@ import { createSignal, Component } from 'solid-js';
 
 import Header from '../../components/Header';
 import RadioField from '../../components/RadioField';
+import Quote from '../../components/Card/Quote';
 
 import FaceDashedIcon from '../../assets/icons/face-dashed.svg';
 
@@ -24,7 +25,9 @@ const Profile: Component = () => {
         <FaceDashedIcon />
       </header>
 
-      <Header spot='Your new superpower' />
+      <Header spot='And new superpower' />
+
+      <Quote />
 
       <b class='badge flex items-center rounded info' id='edge-design'>
         <i class={`indicator ${theme()}`}></i>Design Gallery
