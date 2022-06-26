@@ -1,9 +1,12 @@
+button {
+  border: 0;
+}
+
 .btn {
   display: block;
   padding: 1.8rem var(--s-medium) 1.6rem;
   background-color: var(--c-glass);
   color: var(--c-black);
-  border: 0;
   font-weight: bold;
   font-size: 1.6rem;
   transition: filter 0.25s, transform 0.4s var(--a-press),
