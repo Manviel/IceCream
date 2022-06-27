@@ -28,7 +28,7 @@ a:focus-visible,
 button:focus-visible {
   outline: 1px solid var(--c-ring);
   outline-offset: 4px;
-  border-radius: 1rem;
+  border-radius: 1.4rem;
 }
 
 .superellipse::before,

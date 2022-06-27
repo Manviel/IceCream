@@ -14,6 +14,7 @@
 
 .widget-title {
   font-size: 1.7rem;
+  color: var(--c-contrast);
 }
 
 .widget-main {

@@ -6,7 +6,7 @@
 .card-text {
   display: block;
   font-size: 6.4rem;
-  animation: alert-enter cubic-bezier(0.155, 1.105, 0.295, 1.12) 0.4s both;
+  animation: text-enter cubic-bezier(0.155, 1.105, 0.295, 1.12) 0.4s both;
 }
 
 .card-measure {
@@ -17,7 +17,7 @@
   font-size: var(--s-medium);
 }
 
-@keyframes alert-enter {
+@keyframes text-enter {
   0% {
     opacity: 0.01;
     transform: translateY(5rem);
