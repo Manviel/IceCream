@@ -1,17 +1,30 @@
-import { createSignal, Component } from 'solid-js';
+import { createSignal, Component, For } from 'solid-js';
+import { Label, RadioGroup, RadioGroupOption } from 'solid-a11y';
 
 import Header from '../../components/Header';
-import RadioField from '../../components/RadioField';
 import Quote from '../../components/Card/Quote';
 
 import FaceDashedIcon from '../../assets/icons/face-dashed.svg';
 
 import './Profile.css';
 
-const Profile: Component = () => {
-  const [theme, setTheme] = createSignal<string>('');
+const options = [
+  {
+    value: 'blue-theme',
+    label: 'Blue',
+  },
+  {
+    value: 'orange-theme',
+    label: 'Orange',
+  },
+  {
+    value: 'night-theme',
+    label: 'Midnight',
+  },
+];
 
-  const handleChange = (e: any) => setTheme(e.target.value);
+const Profile: Component = () => {
+  const [theme, setTheme] = createSignal<string>(options[0].value);
 
   const handleSubmit = () => {
     document.body.className = theme();
@@ -29,40 +42,27 @@ const Profile: Component = () => {
 
       <Quote />
 
-      <b class='badge flex items-center rounded info' id='edge-design'>
+      <b class='badge flex items-center rounded info'>
         <i class={`indicator ${theme()}`}></i>Design Gallery
       </b>
 
-      <ul
-        role='radiogroup'
-        class='flex col theme-list rounded'
-        aria-labelledby='edge-design'
-      >
-        <li class='flex items-center'>
-          <RadioField
-            onChange={handleChange}
-            id='orange-theme'
-            name='app-theme'
-            title='Orange'
-          />
-        </li>
-        <li class='flex items-center'>
-          <RadioField
-            onChange={handleChange}
-            id='blue-theme'
-            name='app-theme'
-            title='Blue'
-          />
-        </li>
-        <li class='flex items-center'>
-          <RadioField
-            onChange={handleChange}
-            id='night-theme'
-            name='app-theme'
-            title='Midnight'
-          />
-        </li>
-      </ul>
+      <RadioGroup class='flex col' value={theme()} onChange={setTheme}>
+        <For each={options}>
+          {(option) => (
+            <RadioGroupOption
+              value={option.value}
+              class='flex items-center form-item rounded'
+            >
+              {({ checked }) => (
+                <>
+                  <i class={`form-radio ${checked() && 'radio-checked'}`}></i>
+                  <Label class='form-label'>{option.label}</Label>
+                </>
+              )}
+            </RadioGroupOption>
+          )}
+        </For>
+      </RadioGroup>
 
       <button class='btn' onClick={handleSubmit}>
         Update theme
