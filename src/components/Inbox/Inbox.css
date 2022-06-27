@@ -1,0 +1,32 @@
+.backdrop {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.alert {
+  animation: alert-enter ease-in-out 0.2s;
+}
+
+@keyframes alert-enter {
+  0% {
+    opacity: 0.01;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

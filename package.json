@@ -16,6 +16,7 @@
     "vite-plugin-solid-svg": "^0.2.0"
   },
   "dependencies": {
+    "solid-a11y": "^0.3.0",
     "solid-app-router": "^0.3.3",
     "solid-js": "^1.4.2"
   }

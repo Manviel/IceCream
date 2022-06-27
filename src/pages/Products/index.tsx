@@ -2,8 +2,7 @@ import { Component } from 'solid-js';
 import { Link } from 'solid-app-router';
 
 import Header from '../../components/Header';
-
-import TrayIcon from '../../assets/icons/tray.svg';
+import Inbox from '../../components/Inbox';
 
 import './Products.css';
 
@@ -20,14 +19,7 @@ const Products: Component = () => {
           <p class='widget-main'>Home page</p>
         </Link>
 
-        <button class='view layer rounded flex col widget'>
-          <strong class='widget-title'>Inbox</strong>
-          <p class='widget-main'>1</p>
-
-          <div class='widget-group'>
-            <TrayIcon />
-          </div>
-        </button>
+        <Inbox />
 
         <button class='view'>Stocks</button>
         <button class='view'>Subscriptions</button>
