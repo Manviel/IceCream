@@ -2,7 +2,8 @@ import { Component } from 'solid-js';
 import { Link } from 'solid-app-router';
 
 import Header from '../../components/Header';
-import Inbox from '../../components/Inbox';
+
+import Inbox from './Inbox';
 
 import './Products.css';
 
