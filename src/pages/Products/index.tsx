@@ -4,6 +4,7 @@ import { Link } from 'solid-app-router';
 import Header from '../../components/Header';
 
 import Inbox from './Inbox';
+import Stocks from './Stocks';
 
 import './Products.css';
 
@@ -21,8 +22,8 @@ const Products: Component = () => {
         </Link>
 
         <Inbox />
+        <Stocks />
 
-        <button class='view'>Stocks</button>
         <button class='view'>Subscriptions</button>
         <button class='view'>Vault</button>
         <button class='view'>Health</button>

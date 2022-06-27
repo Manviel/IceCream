@@ -1,0 +1,13 @@
+.frappe-chart .x.axis .line-vertical {
+  display: none;
+}
+
+.frappe-chart .y.axis .line-horizontal {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .stocks {
+    grid-column: span 2;
+  }
+}
