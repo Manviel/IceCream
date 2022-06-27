@@ -16,9 +16,12 @@
   background-color: var(--c-white);
 }
 
-a.active,
-a:focus-visible {
+a.active {
   transform: scale(1.2);
+}
+
+a:focus-visible {
+  transform: scale(1.1);
 }
 
 a:focus-visible,

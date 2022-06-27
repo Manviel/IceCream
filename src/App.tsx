@@ -13,6 +13,7 @@ const Home = lazy(() => import('./pages/Home'));
 const NewsFeed = lazy(() => import('./pages/NewsFeed'));
 const Profile = lazy(() => import('./pages/Profile'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const Products = lazy(() => import('./pages/Products'));
 
 const App: Component = () => {
   return (
@@ -26,15 +27,18 @@ const App: Component = () => {
 
             <Route path='/profile' element={<Profile />} />
 
+            <Route path='/products' element={<Products />} />
+
             <Route path='*' element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
+
       <nav
         class='fixed-bottom dock rounded content-full flex justify-between'
         aria-label='Tabs'
       >
-        <NavLink href='/home' aria-label='Home'>
+        <NavLink href='/products' aria-label='Products'>
           <SuperEllipse>
             <BagIcon />
           </SuperEllipse>
@@ -46,9 +50,11 @@ const App: Component = () => {
           </SuperEllipse>
         </NavLink>
 
-        <SuperEllipse>
-          <LockIcon />
-        </SuperEllipse>
+        <NavLink href='/privacy' aria-label='Privacy'>
+          <SuperEllipse>
+            <LockIcon />
+          </SuperEllipse>
+        </NavLink>
 
         <NavLink href='/profile' aria-label='Profile'>
           <SuperEllipse>

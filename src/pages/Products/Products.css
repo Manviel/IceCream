@@ -1,0 +1,28 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+.widget {
+  transition: background-color 0.25s;
+}
+
+.widget:hover {
+  background-color: var(--c-secondary);
+}
+
+.widget-title {
+  font-size: 1.7rem;
+}
+
+.widget-main {
+  font-size: 3.2rem;
+  margin: 1rem 0 1.6rem;
+}
+
+.widget-group {
+  background-color: var(--c-active);
+  padding: 0.7rem 0.7rem 0.3rem;
+  border-radius: 50%;
+}
