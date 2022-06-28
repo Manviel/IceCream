@@ -13,7 +13,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 62vw;
+  min-width: 54vw;
 }
 
 .alert {
@@ -29,5 +29,11 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dialog {
+    min-width: 88vw;
   }
 }
