@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 
 import Inbox from './Inbox';
 import Stocks from './Stocks';
+import Health from './Health';
 
 import './Products.css';
 
@@ -13,20 +14,20 @@ const Products: Component = () => {
     <div class='page view rounded content-full flex col'>
       <Header spot='Products' />
 
-      <p class='text info'>Quick actions and features</p>
+      <h2 class='text info'>Quick actions and features</h2>
 
       <article class='products'>
         <Link href='/' class='view layer rounded flex col widget'>
-          <strong class='widget-title'>Back</strong>
+          <h3 class='widget-title'>Back</h3>
           <p class='widget-main'>Home page</p>
         </Link>
 
         <Inbox />
         <Stocks />
+        <Health />
 
-        <button class='view'>Subscriptions</button>
-        <button class='view'>Vault</button>
-        <button class='view'>Health</button>
+        <div class='view'>Subscriptions</div>
+        <div class='view'>Vault</div>
       </article>
     </div>
   );

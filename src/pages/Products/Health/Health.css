@@ -1,0 +1,10 @@
+.frappe-chart .bar {
+  rx: 6;
+  ry: 6;
+}
+
+@media screen and (max-width: 768px) {
+  .health {
+    grid-column: span 2;
+  }
+}
