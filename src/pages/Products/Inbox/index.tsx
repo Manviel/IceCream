@@ -14,7 +14,7 @@ const Inbox: Component = () => {
         class='view layer rounded flex col widget'
         onClick={() => setOpen(true)}
       >
-        <strong class='widget-title'>Inbox</strong>
+        <h3 class='widget-title'>Inbox</h3>
         <p class='widget-main'>1</p>
 
         <div class='widget-group'>

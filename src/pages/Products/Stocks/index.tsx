@@ -6,12 +6,12 @@ import './Stocks.css';
 const Stocks: Component = () => {
   onMount(() => {
     new Chart('#chart-stocks', {
+      type: 'line',
       data: {
         labels: ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'],
         datasets: [
           {
             name: 'AAPL',
-            chartType: 'line',
             values: [180, 159, 172, 150, 174, 137],
           },
         ],
@@ -28,8 +28,8 @@ const Stocks: Component = () => {
 
   return (
     <div class='layer rounded flex col widget stocks'>
-      <strong class='view widget-title'>Stocks</strong>
-      <div id='chart-stocks' class='content-full'></div>
+      <h3 class='view widget-title'>Stocks (usd value)</h3>
+      <div id='chart-stocks' class='content-full' role='presentation'></div>
     </div>
   );
 };
