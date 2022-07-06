@@ -1,0 +1,39 @@
+.vault {
+  background-color: var(--c-black);
+  color: var(--c-white);
+}
+
+.activity {
+  height: 8rem;
+  width: 8rem;
+  margin-top: 1.6rem;
+}
+
+.ring {
+  transform-origin: 50%;
+  transform: scale(1) rotate(-90deg);
+}
+
+.completed {
+  animation: progress 1s ease-in-out forwards;
+  stroke-linecap: round;
+  stroke: #fa124f;
+}
+
+.background {
+  stroke: rgba(208, 45, 41, 0.2);
+}
+
+circle {
+  fill: none;
+  stroke-width: 0.5rem;
+  cx: 50%;
+  cy: 50%;
+  r: 15.915;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}

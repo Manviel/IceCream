@@ -28,7 +28,7 @@ const Stocks: Component = () => {
 
   return (
     <div class='layer rounded flex col widget stocks'>
-      <h3 class='view widget-title'>Stocks (usd value)</h3>
+      <h3 class='view widget-title'>Stocks (value in usd)</h3>
       <div id='chart-stocks' class='content-full' role='presentation'></div>
     </div>
   );

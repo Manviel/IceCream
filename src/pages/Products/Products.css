@@ -1,20 +1,20 @@
 .products {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 1.2rem;
 }
 
 .widget {
-  transition: background-color 0.25s;
+  transition: filter 0.4s, transform 0.4s var(--a-press);
 }
 
 .widget:hover {
-  background-color: var(--c-secondary);
+  transform: scale(1.05);
+  filter: var(--p-shadow);
 }
 
 .widget-title {
   font-size: 1.7rem;
-  color: var(--c-contrast);
 }
 
 .widget-main {

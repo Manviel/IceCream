@@ -50,7 +50,6 @@
 
 .chip {
   padding: 0.4rem 0.8rem;
-  color: var(--c-contrast);
   background-color: var(--c-active);
   border-radius: 1rem;
   font-size: inherit;

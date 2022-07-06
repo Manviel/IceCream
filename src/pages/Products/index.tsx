@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 import Inbox from './Inbox';
 import Stocks from './Stocks';
 import Health from './Health';
+import Vault from './Vault';
 
 import './Products.css';
 
@@ -25,9 +26,9 @@ const Products: Component = () => {
         <Inbox />
         <Stocks />
         <Health />
+        <Vault />
 
         <div class='view'>Subscriptions</div>
-        <div class='view'>Vault</div>
       </article>
     </div>
   );
