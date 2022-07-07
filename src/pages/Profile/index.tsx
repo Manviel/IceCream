@@ -3,8 +3,7 @@ import { Label, RadioGroup, RadioGroupOption } from 'solid-a11y';
 
 import Header from '../../components/Header';
 import Quote from '../../components/Card/Quote';
-
-import FaceDashedIcon from '../../assets/icons/face-dashed.svg';
+import BackwardNavigation from '../../components/Header/BackwardNavigation';
 
 import './Profile.css';
 
@@ -32,11 +31,7 @@ const Profile: Component = () => {
 
   return (
     <div class='layer view rounded content-full'>
-      <header class='flex justify-between items-center'>
-        <strong class='subtitle'>Your Profile</strong>
-
-        <FaceDashedIcon />
-      </header>
+      <BackwardNavigation subtitle='Your Profile' />
 
       <Header spot='And new superpower' />
 

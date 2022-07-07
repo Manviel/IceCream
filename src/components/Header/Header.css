@@ -23,3 +23,26 @@ button {
   background-color: var(--c-dark);
   color: var(--c-white);
 }
+
+.arrow {
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  border-color: var(--c-black);
+}
+
+.arrow-left {
+  transform: rotate(135deg);
+}
+
+.arrow-right {
+  transform: rotate(-45deg);
+}
+
+.backward {
+  background-color: var(--c-active);
+  height: 3.4rem;
+  width: 3.4rem;
+  border-radius: 50%;
+}

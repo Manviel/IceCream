@@ -1,8 +1,7 @@
-import { Component, lazy, Suspense } from 'solid-js';
+import { Component, lazy } from 'solid-js';
 import { Routes, Route, NavLink } from 'solid-app-router';
 
 import SuperEllipse from './components/Superellipse';
-import Loader from './components/Loader';
 
 import BagIcon from './assets/icons/bag.svg';
 import SquareTextIcon from './assets/icons/square-text.svg';
@@ -19,19 +18,17 @@ const App: Component = () => {
   return (
     <div class='flex col items-center'>
       <main class='app content-full'>
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route path='/' element={<Home />} />
+        <Routes>
+          <Route path='/' element={<Home />} />
 
-            <Route path='/news' element={<NewsFeed />} />
+          <Route path='/news' element={<NewsFeed />} />
 
-            <Route path='/profile' element={<Profile />} />
+          <Route path='/profile' element={<Profile />} />
 
-            <Route path='/products' element={<Products />} />
+          <Route path='/products' element={<Products />} />
 
-            <Route path='*' element={<NotFound />} />
-          </Routes>
-        </Suspense>
+          <Route path='*' element={<NotFound />} />
+        </Routes>
       </main>
 
       <nav

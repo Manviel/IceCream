@@ -34,7 +34,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.4rem;
   background-color: var(--c-primary);
-  color: var(--c-black);
   min-height: 100vh;
   padding: 1rem 0.8rem 10.6rem;
 }
@@ -122,6 +121,7 @@ button {
 .page {
   background-color: var(--c-secondary);
   backdrop-filter: var(--p-blur);
+  color: var(--c-black);
 }
 
 .page:not(:last-child) {
