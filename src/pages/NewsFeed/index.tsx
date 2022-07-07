@@ -7,6 +7,7 @@ import { useObserver } from '../../services/utils';
 import DateBox from '../../components/Card/DateBox';
 import Loader from '../../components/Loader';
 import Header from '../../components/Header';
+import BackwardNavigation from '../../components/Header/BackwardNavigation';
 
 import { Category } from '../../models';
 
@@ -27,6 +28,8 @@ const NewsFeed: Component = () => {
 
   return (
     <div class='page view rounded content-full flex col'>
+      <BackwardNavigation subtitle='News' />
+
       <Header spot='Your Feed' />
 
       <ul>

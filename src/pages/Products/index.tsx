@@ -1,7 +1,7 @@
 import { Component } from 'solid-js';
-import { Link } from 'solid-app-router';
 
 import Header from '../../components/Header';
+import BackwardNavigation from '../../components/Header/BackwardNavigation';
 
 import Inbox from './Inbox';
 import Stocks from './Stocks';
@@ -13,15 +13,22 @@ import './Products.css';
 const Products: Component = () => {
   return (
     <div class='page view rounded content-full flex col'>
+      <BackwardNavigation subtitle='For You' />
+
       <Header spot='Products' />
 
       <h2 class='text info'>Quick actions and features</h2>
 
       <article class='products'>
-        <Link href='/' class='view layer rounded flex col widget'>
-          <h3 class='widget-title'>Back</h3>
-          <p class='widget-main'>Home page</p>
-        </Link>
+        <a
+          href='https://prytulafoundation.org/uk/home/support_page'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='view layer rounded flex col widget'
+        >
+          <h3 class='widget-title'>Promotions</h3>
+          <p class='widget-main'>Save Ukraine</p>
+        </a>
 
         <Inbox />
         <Stocks />

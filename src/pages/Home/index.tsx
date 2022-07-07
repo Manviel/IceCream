@@ -49,7 +49,7 @@ const Home: Component = () => {
   return (
     <>
       <div class='page view rounded content-full flex col justify-between'>
-        <strong class='subtitle'>For You</strong>
+        <strong class='subtitle'>Home</strong>
 
         <Header spot='How did we get such a huge camera upgrade to fit?' />
 

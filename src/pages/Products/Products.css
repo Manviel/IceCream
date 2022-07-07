@@ -9,7 +9,7 @@
 }
 
 .widget:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   filter: var(--p-shadow);
 }
 
@@ -26,4 +26,10 @@
   background-color: var(--c-active);
   padding: 0.7rem 0.7rem 0.3rem;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .widget:hover {
+    transform: scale(1.05);
+  }
 }
