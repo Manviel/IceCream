@@ -1,5 +1,6 @@
 :root {
   --c-heat: #fa124f;
+  --c-grey: rgba(235, 235, 245, 0.6);
 }
 
 .vault {
@@ -35,19 +36,25 @@ circle {
   r: 15.915;
 }
 
+input:focus-visible {
+  outline: 1px solid var(--c-ring);
+  outline-offset: 4px;
+}
+
 .conditions {
   margin-top: 1.6rem;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 1.6rem;
+  grid-gap: var(--s-medium);
 }
 
 .context {
   grid-column: span 5;
+  text-align: left;
 }
 
 .term {
-  color: rgba(235, 235, 245, 0.6);
+  color: var(--c-grey);
 }
 
 .sum {
@@ -58,6 +65,21 @@ circle {
 .accrued {
   color: var(--c-heat);
   font-size: var(--s-medium);
+}
+
+.form-group {
+  margin: var(--s-medium) 0;
+}
+
+.form-control {
+  padding: 0.8rem 1.4rem;
+  font-size: 1.6rem;
+}
+
+.form-action {
+  background-color: rgba(118, 118, 128, 0.12);
+  border-radius: 1.8rem;
+  border: 0;
 }
 
 @keyframes progress {
