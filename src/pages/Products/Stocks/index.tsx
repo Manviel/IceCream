@@ -1,8 +1,6 @@
 import { Component, onMount } from 'solid-js';
 import { Chart } from 'frappe-charts';
 
-import './Stocks.css';
-
 const Stocks: Component = () => {
   onMount(() => {
     new Chart('#chart-stocks', {
@@ -27,7 +25,7 @@ const Stocks: Component = () => {
   });
 
   return (
-    <div class='layer rounded flex col widget stocks'>
+    <div class='layer rounded flex col widget widget-chart'>
       <h3 class='view widget-title'>Stocks (value in usd)</h3>
       <div id='chart-stocks' class='content-full' role='presentation'></div>
     </div>

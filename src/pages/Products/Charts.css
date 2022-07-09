@@ -6,8 +6,21 @@
   display: none;
 }
 
+.frappe-chart .bar {
+  rx: 6;
+  ry: 6;
+}
+
+circle {
+  fill: none;
+  stroke-width: 0.5rem;
+  cx: 50%;
+  cy: 50%;
+  r: 15.915;
+}
+
 @media screen and (max-width: 768px) {
-  .stocks {
+  .widget-chart {
     grid-column: span 2;
   }
 }

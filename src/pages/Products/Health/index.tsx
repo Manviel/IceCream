@@ -1,8 +1,6 @@
 import { Component, onMount } from 'solid-js';
 import { Chart } from 'frappe-charts';
 
-import './Health.css';
-
 const Health: Component = () => {
   onMount(() => {
     new Chart('#chart-health', {
@@ -31,7 +29,7 @@ const Health: Component = () => {
   });
 
   return (
-    <div class='layer rounded flex col widget health'>
+    <div class='layer rounded flex col widget widget-chart'>
       <h3 class='view widget-title'>Health (grams of protein)</h3>
       <div id='chart-health' class='content-full' role='presentation'></div>
     </div>
