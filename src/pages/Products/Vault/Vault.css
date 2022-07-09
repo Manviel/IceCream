@@ -41,7 +41,7 @@ input:focus-visible {
 }
 
 .context {
-  grid-column: span 4;
+  grid-column: span 2;
   text-align: left;
 }
 
@@ -87,6 +87,6 @@ input:focus-visible {
 
 @media screen and (max-width: 768px) {
   .conditions {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
