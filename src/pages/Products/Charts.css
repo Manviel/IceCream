@@ -19,8 +19,16 @@ circle {
   r: 15.915;
 }
 
+.graph-svg-tip.comparison .title {
+  font-size: 1.8rem;
+}
+
 @media screen and (max-width: 768px) {
   .widget-chart {
     grid-column: span 2;
+  }
+
+  .graph-svg-tip.comparison .title {
+    font-size: 1.6rem;
   }
 }

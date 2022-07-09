@@ -44,8 +44,9 @@ const Vault: Component = () => {
 
           <article class='flex col context'>
             <p class='term'>12 months at 12% per annum</p>
-            <h4 class='sum'>Sum: {budget()}</h4>
-            <h5 class='accrued'>+{income()}</h5>
+            <h4 class='flex justify-between sum'>
+              {budget()} <span class='accrued'>+{income()}</span>
+            </h4>
           </article>
         </div>
       </button>

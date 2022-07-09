@@ -28,14 +28,6 @@
   stroke: rgba(208, 45, 41, 0.2);
 }
 
-circle {
-  fill: none;
-  stroke-width: 0.5rem;
-  cx: 50%;
-  cy: 50%;
-  r: 15.915;
-}
-
 input:focus-visible {
   outline: 1px solid var(--c-ring);
   outline-offset: 4px;
@@ -49,17 +41,22 @@ input:focus-visible {
 }
 
 .context {
-  grid-column: span 5;
+  grid-column: span 4;
   text-align: left;
 }
 
 .term {
   color: var(--c-grey);
+  font-size: 1.4rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .sum {
   font-size: 2.8rem;
-  margin: 0.4rem 0;
+  margin-top: 0.4rem;
+  align-items: baseline;
 }
 
 .accrued {
@@ -90,6 +87,6 @@ input:focus-visible {
 
 @media screen and (max-width: 768px) {
   .conditions {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
