@@ -6,10 +6,9 @@
   --c-secondary: rgba(255, 255, 255, 0.52);
   --c-glass: rgba(245, 245, 245, 0.5);
   --c-primary: #c1deba;
-  --c-info: #e7c4b1;
   --c-warning: #fbf3eb;
   --c-contrast: #232526;
-  --c-ring: #0a84ff;
+  --c-ring: #008ffb;
   --s-ellipse: 5rem;
   --s-medium: 2rem;
   --a-press: cubic-bezier(0.175, 0.885, 0.32, 1.275);

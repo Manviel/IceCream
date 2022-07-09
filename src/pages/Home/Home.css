@@ -2,11 +2,6 @@
   background-color: var(--c-warning);
 }
 
-.brown {
-  background-color: var(--c-info);
-  padding: var(--s-medium);
-}
-
 .slide {
   animation: slide 1s ease-in-out infinite;
   transition: transform 0.3s;

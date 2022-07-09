@@ -117,7 +117,7 @@ const Home: Component = () => {
           </ul>
 
           <div class='tour-indicators flex items-center content-full'>
-            <strong class='brown rounded subtitle'>{item}</strong>
+            <strong class='pale view rounded subtitle'>{item}</strong>
           </div>
         </article>
 
