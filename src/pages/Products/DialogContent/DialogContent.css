@@ -20,6 +20,10 @@
   animation: alert-enter ease-in-out 0.2s;
 }
 
+.dialog-action {
+  margin-bottom: 1.6rem;
+}
+
 @keyframes alert-enter {
   0% {
     opacity: 0.01;

@@ -1,0 +1,13 @@
+.connect {
+  display: inline-block;
+  color: var(--c-ring);
+  padding: 0.2rem;
+}
+
+.connect:hover {
+  text-decoration: underline;
+}
+
+.screen {
+  margin: 1.8rem 0 2.4rem;
+}

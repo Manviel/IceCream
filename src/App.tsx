@@ -13,6 +13,7 @@ const NewsFeed = lazy(() => import('./pages/NewsFeed'));
 const Profile = lazy(() => import('./pages/Profile'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Products = lazy(() => import('./pages/Products'));
+const Privacy = lazy(() => import('./pages/Privacy'));
 
 const App: Component = () => {
   return (
@@ -26,6 +27,8 @@ const App: Component = () => {
           <Route path='/profile' element={<Profile />} />
 
           <Route path='/products' element={<Products />} />
+
+          <Route path='/privacy' element={<Privacy />} />
 
           <Route path='*' element={<NotFound />} />
         </Routes>

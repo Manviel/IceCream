@@ -1,5 +1,6 @@
 import { Component, createSignal, Show } from 'solid-js';
 import { Dialog, DialogTitle, Description } from 'solid-a11y';
+import { Link } from 'solid-app-router';
 
 import TrayIcon from '../../../assets/icons/tray.svg';
 
@@ -32,9 +33,16 @@ const Inbox: Component = () => {
                 You can read more on our payment policy.
               </Description>
 
-              <button class='btn content-full' onClick={() => setOpen(false)}>
+              <button
+                class='btn content-full dialog-action'
+                onClick={() => setOpen(false)}
+              >
                 Close
               </button>
+
+              <Link href='/privacy' class='btn content-full'>
+                Go to Policy
+              </Link>
             </DialogContent>
           </Dialog>
         )}
