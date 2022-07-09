@@ -11,7 +11,7 @@ const source = {
 const Subscriptions: Component = () => {
   onMount(() => {
     new Chart('#chart-subscriptions', {
-      type: 'pie',
+      type: 'donut',
       data: {
         labels: Object.keys(source),
         datasets: [
@@ -20,6 +20,7 @@ const Subscriptions: Component = () => {
           },
         ],
       },
+      colors: ['#DF62FF', '#fa124f', '#00e396', '#008FFB'],
       isNavigable: true,
       truncateLegends: true,
     });
