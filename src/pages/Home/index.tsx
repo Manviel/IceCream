@@ -20,7 +20,7 @@ const Home: Component = () => {
 
   const listItems: ListItem[] = [
     {
-      label: 'Scan',
+      label: 'Taste',
       value: randomInRange(1, 100),
     },
     {
@@ -28,11 +28,11 @@ const Home: Component = () => {
       value: randomInRange(1, 100),
     },
     {
-      label: 'Food',
+      label: 'Rest',
       value: randomInRange(1, 100),
     },
     {
-      label: 'Lifestyle',
+      label: 'Smile',
       value: randomInRange(1, 100),
     },
   ];
