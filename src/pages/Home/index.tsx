@@ -32,16 +32,7 @@ const Home: Component = () => {
       value: randomInRange(1, 100),
     },
     {
-      label: 'Supplements',
-      value: randomInRange(1, 100),
-    },
-
-    {
       label: 'Lifestyle',
-      value: randomInRange(1, 100),
-    },
-    {
-      label: 'Plan',
       value: randomInRange(1, 100),
     },
   ];

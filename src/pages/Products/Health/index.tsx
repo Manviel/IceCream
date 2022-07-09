@@ -25,7 +25,7 @@ const Health: Component = () => {
           },
         ],
       },
-      colors: ['#008FFB'],
+      colors: ['#0072ea'],
       isNavigable: true,
     });
   });

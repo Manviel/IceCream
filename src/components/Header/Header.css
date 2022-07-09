@@ -12,6 +12,7 @@ button {
   transition: filter 0.25s, transform 0.4s var(--a-press),
     background-color 0.25s;
   border-radius: 2.4rem;
+  text-align: center;
 }
 
 .btn:active {

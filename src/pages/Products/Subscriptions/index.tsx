@@ -20,7 +20,7 @@ const Subscriptions: Component = () => {
           },
         ],
       },
-      colors: ['#DF62FF', '#fa124f', '#00e396', '#008FFB'],
+      colors: ['#DF62FF', '#fa124f', '#00e396', '#0072ea'],
       isNavigable: true,
       truncateLegends: true,
     });
