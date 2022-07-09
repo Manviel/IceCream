@@ -1,16 +1,25 @@
 import { Component, onMount } from 'solid-js';
 import { Chart } from 'frappe-charts';
 
+const source = {
+  Dec: 180,
+  Jan: 159,
+  Feb: 172,
+  Mar: 150,
+  Apr: 174,
+  May: 137,
+};
+
 const Stocks: Component = () => {
   onMount(() => {
     new Chart('#chart-stocks', {
       type: 'line',
       data: {
-        labels: ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        labels: Object.keys(source),
         datasets: [
           {
             name: 'AAPL',
-            values: [180, 159, 172, 150, 174, 137],
+            values: Object.values(source),
           },
         ],
       },

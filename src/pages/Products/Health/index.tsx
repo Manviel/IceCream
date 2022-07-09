@@ -1,25 +1,27 @@
 import { Component, onMount } from 'solid-js';
 import { Chart } from 'frappe-charts';
 
+const source = {
+  Eggs: 6.3,
+  'Chicken breast': 26.7,
+  'Cottage cheese': 28,
+  'Greek yogurt': 19.9,
+  Milk: 8.3,
+  Lentils: 9,
+  'Lean beef': 24.6,
+  Salmon: 30.5,
+  Peanuts: 7.3,
+};
+
 const Health: Component = () => {
   onMount(() => {
     new Chart('#chart-health', {
       type: 'bar',
       data: {
-        labels: [
-          'Eggs',
-          'Chicken breast',
-          'Cottage cheese',
-          'Greek yogurt',
-          'Milk',
-          'Lentils',
-          'Lean beef',
-          'Salmon',
-          'Peanuts',
-        ],
+        labels: Object.keys(source),
         datasets: [
           {
-            values: [6.3, 26.7, 28, 19.9, 8.3, 9, 24.6, 30.5, 7.3],
+            values: Object.values(source),
           },
         ],
       },

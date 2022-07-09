@@ -1,20 +1,22 @@
 import { Component, onMount } from 'solid-js';
 import { Chart } from 'frappe-charts';
 
+const source = {
+  'House, Transport and Food': 54.8,
+  'Clothes and Personal': 14.5,
+  'Entertainment and Fitness': 15.4,
+  Save: 15.3,
+};
+
 const Subscriptions: Component = () => {
   onMount(() => {
     new Chart('#chart-subscriptions', {
       type: 'pie',
       data: {
-        labels: [
-          'House, Transport and Food',
-          'Clothes and Personal',
-          'Entertainment and Fitness',
-          'Save',
-        ],
+        labels: Object.keys(source),
         datasets: [
           {
-            values: [54.8, 14.5, 15.4, 15.3],
+            values: Object.values(source),
           },
         ],
       },
