@@ -32,7 +32,7 @@ const Inbox: Component = () => {
                 You can read more on our payment policy.
               </Description>
 
-              <button class='btn' onClick={() => setOpen(false)}>
+              <button class='btn content-full' onClick={() => setOpen(false)}>
                 Close
               </button>
             </DialogContent>

@@ -76,7 +76,7 @@ const Vault: Component = () => {
                 />
               </div>
 
-              <button class='btn' onClick={() => setOpen(false)}>
+              <button class='btn content-full' onClick={() => setOpen(false)}>
                 Apply
               </button>
             </DialogContent>

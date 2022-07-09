@@ -1,6 +1,7 @@
 :root {
   --c-heat: #fa124f;
   --c-grey: rgba(235, 235, 245, 0.6);
+  --c-action: rgba(118, 118, 128, 0.2);
 }
 
 .vault {
@@ -25,7 +26,7 @@
 }
 
 .background {
-  stroke: rgba(208, 45, 41, 0.2);
+  stroke: var(--c-action);
 }
 
 input:focus-visible {
@@ -74,7 +75,7 @@ input:focus-visible {
 }
 
 .form-action {
-  background-color: rgba(118, 118, 128, 0.12);
+  background-color: var(--c-action);
   border-radius: 1.8rem;
   border: 0;
 }
