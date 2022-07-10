@@ -97,10 +97,6 @@ button {
   align-items: center;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-between {
   justify-content: space-between;
 }
@@ -145,6 +141,17 @@ button {
 .layer {
   background-color: var(--c-white);
   color: var(--c-contrast);
+}
+
+.connect {
+  display: inline-block;
+  color: var(--c-ring);
+  padding: 0.2rem;
+  font-size: 1.6rem;
+}
+
+.connect:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 768px) {

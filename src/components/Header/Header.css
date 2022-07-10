@@ -33,10 +33,6 @@ button {
   border-color: var(--c-black);
 }
 
-.arrow-left {
-  transform: rotate(135deg);
-}
-
 .arrow-right {
   transform: rotate(-45deg);
 }

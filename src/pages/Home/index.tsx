@@ -11,49 +11,74 @@ import './Home.css';
 type ListItem = {
   label: string;
   value: number;
+  explanation: string;
 };
 
+const listItems: ListItem[] = [
+  {
+    label: 'Presentation',
+    value: randomInRange(1, 100),
+    explanation: 'Responsible for user interactions with the software system',
+  },
+  {
+    label: 'Business',
+    value: randomInRange(1, 100),
+    explanation:
+      'Handles aspects related to accomplishing functional requirements',
+  },
+  {
+    label: 'Domain',
+    value: randomInRange(1, 100),
+    explanation: 'Responsible for algorithms, and programming components',
+  },
+  {
+    label: 'Infrastructure',
+    value: randomInRange(1, 100),
+    explanation: 'Responsible for handling data, databases',
+  },
+];
+
 const Home: Component = () => {
-  const [item, setItem] = createSignal<number>(0);
+  const [item, setItem] = createSignal<ListItem>(listItems[0], {
+    equals: false,
+  });
 
-  const handleHover = (e: ListItem) => setItem(e.value);
-
-  const listItems: ListItem[] = [
-    {
-      label: 'Taste',
-      value: randomInRange(1, 100),
-    },
-    {
-      label: 'Learn',
-      value: randomInRange(1, 100),
-    },
-    {
-      label: 'Rest',
-      value: randomInRange(1, 100),
-    },
-    {
-      label: 'Smile',
-      value: randomInRange(1, 100),
-    },
-  ];
+  const handleHover = (e: ListItem) => setItem(e);
 
   return (
     <>
       <div class='page view rounded content-full flex col justify-between'>
         <strong class='subtitle'>Home</strong>
 
-        <Header spot='How did we get such a huge camera upgrade to fit?' />
+        <Header spot='What is Cohesion?' />
 
-        <p class='text info'>
-          We designed a totally new architecture and turned the lenses 45
-          degrees to fit in our best dual-camera system ever — with its biggest
-          Wide camera sensor. We also made room for our sensor-shift optical
-          image stabilization. And we equipped the Ultra Wide camera with a
-          faster sensor.
+        <p class='info'>
+          The degree to which the elements inside a module belong together. It
+          is a measure of how deeply each piece of device module functionality
+          relates. Therefore, the most suitable term for defining cohesion is
+          <em> the code that shifts together, stays together</em>. As we can
+          see, strong cohesion makes thinking smoother and reduces dependency.
+          Low coupling is generally associated with strong stability. In
+          microservices - oriented systems, a low degree of cohesion is
+          accomplished by pooling specific business processes together, such
+          that, if developers need to change actions, only a single microservice
+          has to be modified.
         </p>
 
-        <div class='pale view rounded'>
-          <article class='home-stats'>
+        <article class='pale view rounded'>
+          <h2 class='title text'>What is Coupling?</h2>
+
+          <p class='info'>
+            The degree to which components have knowledge of other components.
+            Effectively, the coupling is about how changing one thing required
+            change in another. Two modules have high coupling if they are
+            closely connected. For example, two concrete classes storing
+            references to each other and calling each other’s methods. Modules
+            with low coupling among them work mostly independently of each
+            other.
+          </p>
+
+          <div class='home-stats'>
             <Card
               phrase='Up to'
               number={randomInRange(11, 98)}
@@ -77,54 +102,54 @@ const Home: Component = () => {
               measure='sec'
               description='Time to interactive'
             />
-          </article>
-
-          <article class='text'>
-            <h2 class='title'>Presenting Cinematic mode</h2>
-
-            <p class='info'>
-              Filmmakers use a technique called rack focus — shifting focus from
-              one subject to another — to guide the audience’s attention in
-              their movies. Now iPhone makes it easy for you to bring the same
-              storytelling technique to your videos.
-            </p>
-          </article>
-        </div>
-      </div>
-
-      <div class='layer view tour content-full rounded'>
-        <article class='flex items-center'>
-          <ul class='tour-list flex col'>
-            <For each={listItems}>
-              {(item) => (
-                <li class='flex justify-between items-center content-full rounded'>
-                  {item.label}
-                  <button class='chip' onClick={() => handleHover(item)}>
-                    {item.value}
-                  </button>
-                </li>
-              )}
-            </For>
-          </ul>
-
-          <div class='tour-indicators flex items-center content-full'>
-            <strong class='pale view rounded subtitle'>{item}</strong>
           </div>
         </article>
+      </div>
 
-        <article class='text'>
-          <h3 class='title'>Cinematic mode shoots in Dolby Vision HDR</h3>
+      <div class='home-stats layer view content-full rounded items-center'>
+        <ul class='tour-list flex col'>
+          <For each={listItems}>
+            {(item) => (
+              <li class='flex justify-between items-center content-full rounded'>
+                {item.label}
+                <button class='chip' onClick={() => handleHover(item)}>
+                  {item.value}
+                </button>
+              </li>
+            )}
+          </For>
+        </ul>
+
+        <div class='tour-indicators pale view rounded flex col'>
+          <strong class='subtitle'>{item().value}</strong>
+          <p>{item().explanation}</p>
+        </div>
+
+        <article class='tour'>
+          <h3 class='title'>What is Layered Architecture?</h3>
 
           <p class='info'>
-            Want to change the focus or adjust the blur after shooting wraps? No
-            problem. iPhone lets you do it with a few taps and swipes. Even pro
-            movie cameras can’t do that.
+            It is describes an architectural pattern composed of several
+            separate horizontal layers that function together as a single unit
+            of software. A layer is a logical separation of components or code.
+            In these frameworks, components that are related or that are similar
+            are usually placed on the same layers. However, each layer is
+            different and contributes to a different part of the overall system.
+            This means that layers can be modified and the change won’t affect
+            other layers. Separation of concerns is another notable feature that
+            speaks to how the modules on a single layer together perform a
+            single function.
           </p>
 
-          <div class='flex justify-end items-center'>
-            <p class='slide'>
-              <i class='arrow arrow-left'></i>
-            </p>
+          <div class='flex justify-between items-center'>
+            <a
+              href='https://www.baeldung.com/cs/layered-architecture'
+              target='_blank'
+              rel='noopener noreferrer'
+              class='connect'
+            >
+              Learn more
+            </a>
 
             <Link href='/news' class='btn'>
               Go to News
