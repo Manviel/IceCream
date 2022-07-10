@@ -6,6 +6,7 @@ type PaginateType = {
 
 const headers = {
   'Content-Type': 'application/json',
+  mode: 'no-cors',
 };
 
 export const getNews = async (params: PaginateType) => {

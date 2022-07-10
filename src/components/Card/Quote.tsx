@@ -28,7 +28,7 @@ const Quote: Component = () => {
               </p>
 
               <button
-                class='superellipse'
+                class='superellipse flex justify-center items-center'
                 onClick={refetch}
                 aria-label='Get new quote'
               >

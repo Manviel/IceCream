@@ -33,13 +33,13 @@
   min-width: 2.8rem;
   border-width: 0.6rem;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.1);
+  border-color: var(--c-dark);
   border-radius: 50%;
   transition: border 0.2s ease-out;
 }
 
-.form-item:hover .form-radio:not(.radio-checked) {
-  border-color: var(--c-dark);
+.form-item:hover {
+  background-color: var(--c-active);
 }
 
 .form-radio.radio-checked {
