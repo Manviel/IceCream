@@ -126,6 +126,109 @@ const Privacy: Component = () => (
 
       <ConnectFactory href='https://www.wrike.com/blog/project-estimation-techniques/' />
     </article>
+
+    <article class='layer view content-full rounded screen'>
+      <h2 class='info'>Authentication and Authorization</h2>
+      <p class='info'>
+        Authentication is a process that verifies that someone or something is
+        who they say they are. Technology systems typically use some form of
+        authentication to secure access to an application or its data.
+      </p>
+      <p class='info'>
+        Authorization is the security process that determines a user or
+        service's level of access. In technology, we use authorization to give
+        users or services permission to access some data or perform a particular
+        action.
+      </p>
+
+      <ConnectFactory href='https://www.sailpoint.com/identity-library/difference-between-authentication-and-authorization/' />
+    </article>
+
+    <article class='layer view content-full rounded screen'>
+      <h2 class='info'>What is Unit testing?</h2>
+      <p class='info'>
+        Unit testing ensures that the units within your program are working as
+        expected.
+      </p>
+      <h3 class='info'>Write tests for a number of scenarios</h3>
+      <p class='info'>
+        When writing a test case, be sure that you’re considering all possible
+        scenarios. In other words, don’t just write a test for the happy path.
+        Think about other scenarios as well, such as error handling.
+      </p>
+      <h3 class='info'>Write good test names</h3>
+      <p class='info'>
+        A good unit test name should explicitly reflect the intent of the test
+        case. Follow consistent naming conventions, and only use shorthand if
+        they’re easily understood by a reader. Writing good test names supports
+        code readability, which will make it easier for yourself and others to
+        extend that code into the future.
+      </p>
+      <h3 class='info'>Set up automated tests</h3>
+      <p class='info'>
+        Opt for automated unit testing with the help of a unit testing
+        framework. An even better practice is automating tests in your
+        continuous integration (CI/CD) pipeline.
+      </p>
+      <h3 class='info'>Write deterministic tests</h3>
+      <p class='info'>
+        The goal is to have consistent outputs for tests in order to verify the
+        desired function. Unit tests should therefore be deterministic. In other
+        words, as long as the test code isn’t changed, a deterministic test
+        should have consistent behavior every time the test is run.
+      </p>
+      <h3 class='info'>Arrange, Act, and Assert</h3>
+      <p class='info'>
+        As a unit testing best practice, it improves your test’s readability by
+        giving it a logical flow. Arrange the setup and initialization for the
+        test. Act on the unit for the given test. Assert or verify the outcome.
+      </p>
+      <h3 class='info'>Write tests before or during development</h3>
+      <p class='info'>
+        TDD - software development process through which we enhance our test
+        cases and software code in parallel. In contrast to a typical
+        development methodology, TDD involves writing test code before
+        production code.
+      </p>
+      <h3 class='info'>One use case per unit test</h3>
+      <p class='info'>
+        Each test should focus on a single use case, and verify the output is as
+        expected for that tested method. By focusing on one use case, you’ll
+        have a clearer line of sight into the root problem in the event that a
+        test fails.
+      </p>
+      <h3 class='info'>Avoid logic in tests</h3>
+      <p class='info'>
+        To reduce the chance of bugs, your test code should have little to no
+        logical conditions or manual string concatenations.
+      </p>
+      <h3 class='info'>Reduce test dependencies</h3>
+      <p class='info'>
+        Tests should not be dependent on each other. By reducing dependencies
+        between units, test runners can simultaneously run tests on different
+        pieces of code. A unit can be considered testable only if its
+        dependencies are staged within the test code. No real-world or external
+        dependencies should affect the outcome of the test.
+      </p>
+      <h3 class='info'>Aim for maximum test coverage</h3>
+      <p class='info'>
+        While we can aim for 100% test coverage, this might not be always
+        desirable or possible. That being said, we should aim for the most
+        possible coverage given our constraints.
+      </p>
+      <h3 class='info'>Keep proper test documentation</h3>
+      <p class='info'>
+        Maintaining test documentation will help both developers and, in some
+        cases, the end users. Reviewable: A test by any given resource is
+        reviewable by others. Repeatable: A test is documented such that it can
+        be repeated multiple times. This enables us to verify that a bug is
+        fixed in an updated piece of code by repeating the same test.
+        Archivable: Tests and related bugs can be archived in documentation,
+        serving as a valuable resource for future extensions of the project.
+      </p>
+
+      <ConnectFactory href='https://www.educative.io/blog/unit-testing-best-practices-overview' />
+    </article>
   </div>
 );
 
