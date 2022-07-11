@@ -2,6 +2,8 @@ import { Component, createSignal, createEffect } from 'solid-js';
 
 import DialogFacade from '../DialogContent/DialogFacade';
 
+import { commasAdapter } from '../../../services/utils';
+
 import './Vault.css';
 
 const Vault: Component = () => {
@@ -46,9 +48,9 @@ const Vault: Component = () => {
                 12 months at 12% per annum
               </p>
               <h4 class='flex justify-between sum'>
-                {budget()}
+                {commasAdapter(budget())}
                 <output for='term' name='accrued' class='accrued'>
-                  +{income()}
+                  +{commasAdapter(income())}
                 </output>
               </h4>
             </article>

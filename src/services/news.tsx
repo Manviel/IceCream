@@ -24,16 +24,6 @@ export const getNews = async (params: PaginateType) => {
   return data;
 };
 
-export const getCompanyById = async (id: string) => {
-  const response = await fetch(`http://localhost:3080/companies/${id}`, {
-    headers,
-  });
-
-  const json = await response.json();
-
-  return json;
-};
-
 export const getQuote = async () => {
   const response = await fetch(`https://api.quotable.io/random`, {
     headers,
