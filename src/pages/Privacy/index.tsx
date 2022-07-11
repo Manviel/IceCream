@@ -2,6 +2,7 @@ import type { Component } from 'solid-js';
 
 import Header from '../../components/Header';
 import BackwardNavigation from '../../components/Header/BackwardNavigation';
+import ConnectFactory from '../../components/ConnectFactory';
 
 import './Privacy.css';
 
@@ -22,14 +23,8 @@ const Privacy: Component = () => (
         Kanban delivers tasks continuously until the project is finished, while
         Scrum delivers chunks of deliverables in one to four-week periods.
       </p>
-      <a
-        href='https://www.coursera.org/articles/kanban-vs-scrum'
-        target='_blank'
-        rel='noopener noreferrer'
-        class='connect'
-      >
-        Learn more
-      </a>
+
+      <ConnectFactory href='https://www.coursera.org/articles/kanban-vs-scrum' />
     </article>
 
     <article class='layer view content-full rounded screen'>
@@ -52,14 +47,8 @@ const Privacy: Component = () => (
         usability. If non functional requirements are not met, users may become
         frustrated with how the system works and go elsewhere.
       </p>
-      <a
-        href='https://enkonix.com/blog/functional-requirements-vs-non-functional'
-        target='_blank'
-        rel='noopener noreferrer'
-        class='connect'
-      >
-        Learn more
-      </a>
+
+      <ConnectFactory href='https://enkonix.com/blog/functional-requirements-vs-non-functional' />
     </article>
 
     <article class='layer view content-full rounded screen'>
@@ -81,14 +70,61 @@ const Privacy: Component = () => (
         considering the impact on your project schedule, budget, risks, and
         more.
       </p>
-      <a
-        href='https://projectmanagementacademy.net/resources/blog/gold-plating-vs-scope-creep/'
-        target='_blank'
-        rel='noopener noreferrer'
-        class='connect'
-      >
-        Learn more
-      </a>
+
+      <ConnectFactory href='https://projectmanagementacademy.net/resources/blog/gold-plating-vs-scope-creep/' />
+    </article>
+
+    <article class='layer view content-full rounded screen'>
+      <h2 class='info'>Estimation techniques</h2>
+      <p class='info'>
+        An estimate is a rough calculation of something. For example, a project
+        cost estimate is a general idea of the price model for a project.
+        Without accurate estimates, it’s impossible to plan your project. If you
+        don’t have an idea of how long the project will take or what resources
+        you will need, there is no way to ensure you’ll have the right people,
+        materials, or tools available when you need them.
+      </p>
+      <h3 class='info'>Top-down</h3>
+      <p class='info'>
+        A top-down estimating technique assigns an overall time for the project
+        and then breaks it down into discrete phases, work, and tasks.
+      </p>
+      <h3 class='info'>Bottom-up</h3>
+      <p class='info'>
+        Using this estimation technique, you start by estimating each individual
+        task or aspect of the project. Then you combine all those separate
+        estimates to build up the overall project estimate.
+      </p>
+      <h3 class='info'>Expert judgment</h3>
+      <p class='info'>
+        This technique involves relying on the experience and gut feel of
+        experts to estimate projects. It’s most useful when you’re planning a
+        standard project that is similar to projects your team has completed
+        before.
+      </p>
+      <h3 class='info'>Comparative or analogous</h3>
+      <p class='info'>
+        Comparative estimation uses past project data combined with a top-down
+        approach to estimate project duration. If the average completion time of
+        similar projects was eight months, you’d assume the current one will
+        take eight months. Then you can break those eight months down across
+        tasks and activities to get your lower-level work estimates.
+      </p>
+      <h3 class='info'>Parametric model</h3>
+      <p class='info'>
+        Also uses past project data, but it attempts to adjust the data to
+        reflect each project's differences. This technique takes the detail of
+        past projects and pro-rates it to estimate the current project.
+      </p>
+      <h3 class='info'>Three-point</h3>
+      <p class='info'>
+        A technique sometimes used for creating bottom-up estimates. Rather than
+        assuming one duration for a task, you may assign three: optimistic,
+        pessimistic, and most likely. These three numbers are averaged to create
+        your actual estimate.
+      </p>
+
+      <ConnectFactory href='https://www.wrike.com/blog/project-estimation-techniques/' />
     </article>
   </div>
 );

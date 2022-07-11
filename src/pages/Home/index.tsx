@@ -3,6 +3,7 @@ import { Link } from 'solid-app-router';
 
 import Card from '../../components/Card';
 import Header from '../../components/Header';
+import ConnectFactory from '../../components/ConnectFactory';
 
 import { randomInRange } from '../../services/utils';
 
@@ -47,7 +48,7 @@ const Home: Component = () => {
 
   return (
     <>
-      <div class='page view rounded content-full flex col justify-between'>
+      <div class='page view rounded content-full flex col'>
         <strong class='subtitle'>Home</strong>
 
         <Header spot='What is Cohesion?' />
@@ -142,14 +143,7 @@ const Home: Component = () => {
           </p>
 
           <div class='flex justify-between items-center'>
-            <a
-              href='https://www.baeldung.com/cs/layered-architecture'
-              target='_blank'
-              rel='noopener noreferrer'
-              class='connect'
-            >
-              Learn more
-            </a>
+            <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
 
             <Link href='/news' class='btn'>
               Go to News
