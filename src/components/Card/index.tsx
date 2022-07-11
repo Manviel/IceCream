@@ -15,7 +15,7 @@ const Card: Component<CardType> = ({
   phrase,
   measure,
 }) => (
-  <div class='card rounded'>
+  <div class='card layer rounded'>
     <sup class='card-sub'>{phrase}</sup>
     <strong class='card-text'>
       {number}

@@ -8,6 +8,10 @@
   margin: var(--s-medium) 0;
 }
 
+.loader-box {
+  height: 12rem;
+}
+
 @keyframes pulse {
   50% {
     opacity: 0.5;

@@ -40,7 +40,7 @@ const NewsFeed: Component = () => {
             </li>
           }
         >
-          <Index each={data.news} fallback={<Loader />}>
+          <Index each={data.news} fallback={<Loader hasBox />}>
             {(list) => {
               const com = list();
 
