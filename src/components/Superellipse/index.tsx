@@ -1,13 +1,8 @@
-import type { Component } from 'solid-js';
-import { JSX } from 'solid-js/jsx-runtime';
+import type { ParentComponent } from 'solid-js';
 
 import './SuperEllipse.css';
 
-type EllipseType = {
-  children: JSX.Element;
-};
-
-const SuperEllipse: Component<EllipseType> = ({ children }) => {
+const SuperEllipse: ParentComponent = ({ children }) => {
   return (
     <span class='superellipse flex items-center justify-center'>
       {children}

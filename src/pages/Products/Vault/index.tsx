@@ -1,14 +1,12 @@
-import { Component, createSignal, createEffect, Show } from 'solid-js';
-import { Dialog, DialogTitle, Description } from 'solid-a11y';
+import { Component, createSignal, createEffect } from 'solid-js';
 
-import DialogContent from '../DialogContent';
+import DialogFacade from '../DialogContent/DialogFacade';
 
 import './Vault.css';
 
 const Vault: Component = () => {
   const [budget, setBudget] = createSignal(1000);
   const [income, setIncome] = createSignal(0);
-  const [open, setOpen] = createSignal(false);
 
   const valueNow = 80;
 
@@ -23,72 +21,59 @@ const Vault: Component = () => {
   const handleChange = ({ target }: any) => setBudget(target.value);
 
   return (
-    <>
-      <button
-        class='rounded flex col widget view vault'
-        onClick={() => setOpen(true)}
-      >
-        <h3 class='widget-title'>Vault</h3>
-        <div class='conditions'>
-          <div class='activity' role='progressbar' aria-valuenow={valueNow}>
-            <svg viewBox='0 0 37 37'>
-              <g class='ring'>
-                <circle class='background' />
-                <circle
-                  class='completed'
-                  stroke-dasharray={`${valueNow}, 100`}
-                />
-              </g>
-            </svg>
+    <DialogFacade
+      title='I want multiply'
+      description='Making a deposit'
+      closingName='Apply'
+      triggerContent={
+        <>
+          <h3 class='widget-title'>Vault</h3>
+          <div class='conditions'>
+            <div class='activity' role='progressbar' aria-valuenow={valueNow}>
+              <svg viewBox='0 0 37 37'>
+                <g class='ring'>
+                  <circle class='background' />
+                  <circle
+                    class='completed'
+                    stroke-dasharray={`${valueNow}, 100`}
+                  />
+                </g>
+              </svg>
+            </div>
+
+            <article class='flex col context'>
+              <p class='term' id='term'>
+                12 months at 12% per annum
+              </p>
+              <h4 class='flex justify-between sum'>
+                {budget()}
+                <output for='term' name='accrued' class='accrued'>
+                  +{income()}
+                </output>
+              </h4>
+            </article>
           </div>
-
-          <article class='flex col context'>
-            <p class='term' id='term'>
-              12 months at 12% per annum
-            </p>
-            <h4 class='flex justify-between sum'>
-              {budget()}
-              <output for='term' name='accrued' class='accrued'>
-                +{income()}
-              </output>
-            </h4>
-          </article>
-        </div>
-      </button>
-
-      <Show when={open()}>
-        {() => (
-          <Dialog onClose={setOpen}>
-            <DialogContent>
-              <DialogTitle class='subtitle'>I want multiply</DialogTitle>
-
-              <Description class='info'>Making a deposit</Description>
-
-              <div class='flex col form-group'>
-                <label for='budget' class='form-control'>
-                  Sum
-                </label>
-                <input
-                  id='budget'
-                  type='number'
-                  name='budget'
-                  class='form-control form-action'
-                  value={budget()}
-                  min={1000}
-                  step={200}
-                  max={1000000}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <button class='btn content-full' onClick={() => setOpen(false)}>
-                Apply
-              </button>
-            </DialogContent>
-          </Dialog>
-        )}
-      </Show>
-    </>
+        </>
+      }
+      triggerClassName='view vault rounded flex col widget'
+    >
+      <div class='flex col form-group'>
+        <label for='budget' class='form-control'>
+          Sum
+        </label>
+        <input
+          id='budget'
+          type='number'
+          name='budget'
+          class='form-control form-action'
+          value={budget()}
+          min={1000}
+          step={200}
+          max={1000000}
+          onChange={handleChange}
+        />
+      </div>
+    </DialogFacade>
   );
 };
 

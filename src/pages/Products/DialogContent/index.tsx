@@ -1,14 +1,9 @@
-import type { Component } from 'solid-js';
-import { JSX } from 'solid-js/jsx-runtime';
+import type { ParentComponent } from 'solid-js';
 import { DialogOverlay } from 'solid-a11y';
 
 import './DialogContent.css';
 
-type DialogContentType = {
-  children: JSX.Element;
-};
-
-const DialogContent: Component<DialogContentType> = ({ children }) => {
+const DialogContent: ParentComponent = ({ children }) => {
   return (
     <>
       <DialogOverlay class='backdrop alert' />
