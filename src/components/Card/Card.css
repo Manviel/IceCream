@@ -5,7 +5,6 @@
 .card-text {
   display: block;
   font-size: 6.4rem;
-  animation: text-enter cubic-bezier(0.155, 1.105, 0.295, 1.12) 0.4s both;
 }
 
 .card-measure {
@@ -16,14 +15,22 @@
   font-size: var(--s-medium);
 }
 
-@keyframes text-enter {
-  0% {
-    opacity: 0.01;
-    transform: translateY(5rem);
-  }
+.box {
+  background-color: var(--c-contrast);
+  color: var(--c-white);
+}
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.box-description {
+  font-size: 1.6rem;
+}
+
+.on-scroll {
+  opacity: 0.01;
+  transform: translateY(4.8rem);
+  transition: 0.4s opacity, 0.8s transform cubic-bezier(0.07, 0.89, 0.79, 0.95);
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
 }

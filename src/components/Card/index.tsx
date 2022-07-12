@@ -17,7 +17,7 @@ const Card: Component<CardType> = ({
 }) => (
   <div class='card layer rounded'>
     <sup class='card-sub'>{phrase}</sup>
-    <strong class='card-text'>
+    <strong class='card-text on-scroll'>
       {number}
       <span class='card-measure'>{measure}</span>
     </strong>

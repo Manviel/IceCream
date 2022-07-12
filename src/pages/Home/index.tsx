@@ -1,11 +1,11 @@
-import { createSignal, For, Component } from 'solid-js';
+import { createSignal, For, Component, createEffect } from 'solid-js';
 import { Link } from 'solid-app-router';
 
 import Card from '../../components/Card';
 import Header from '../../components/Header';
 import ConnectFactory from '../../components/ConnectFactory';
 
-import { randomInRange } from '../../services/utils';
+import { randomInRange, useObserver } from '../../services/utils';
 
 import './Home.css';
 
@@ -42,6 +42,10 @@ const listItems: ListItem[] = [
 const Home: Component = () => {
   const [item, setItem] = createSignal<ListItem>(listItems[0], {
     equals: false,
+  });
+
+  createEffect(() => {
+    useObserver('.on-scroll');
   });
 
   const handleHover = (e: ListItem) => setItem(e);

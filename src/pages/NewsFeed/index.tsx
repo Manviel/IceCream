@@ -23,7 +23,7 @@ const NewsFeed: Component = () => {
       fetchQuery(Category.All).then((companies) => updateNews(companies));
     }
 
-    useObserver('.paper-description');
+    useObserver('.on-scroll');
   });
 
   return (
