@@ -3,7 +3,7 @@ import { Index, ErrorBoundary, Component, createEffect } from 'solid-js';
 import { getNews } from '../../services/news';
 import { useNews } from '../../services/store';
 
-import DateBox from '../../components/Card/DateBox';
+import { DateBox } from '../../components/Card';
 import Loader from '../../components/Loader';
 import Header from '../../components/Header';
 import BackwardNavigation from '../../components/Header/BackwardNavigation';
@@ -52,7 +52,7 @@ const NewsFeed: Component = () => {
                       <h2 class='subtitle'>{com.title}</h2>
                     </div>
 
-                    <DateBox date={com.date} />
+                    <DateBox description={com.date} />
                   </div>
 
                   <p class='info'>{com.content}</p>

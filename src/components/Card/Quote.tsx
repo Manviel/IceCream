@@ -6,7 +6,7 @@ import { getQuote } from '../../services/news';
 
 import GoForwardIcon from '../../assets/icons/go-forward.svg';
 
-import './DateBox.css';
+import './Card.css';
 
 const fetchQuote = async () => await getQuote();
 
