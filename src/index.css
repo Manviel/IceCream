@@ -133,7 +133,6 @@ button {
 .dock {
   max-width: 58rem;
   background-color: var(--c-glass);
-  background-blend-mode: luminosity;
   backdrop-filter: var(--p-blur);
   padding: 1.6rem;
 }

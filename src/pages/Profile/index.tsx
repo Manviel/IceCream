@@ -4,6 +4,7 @@ import { Label, RadioGroup, RadioGroupOption } from 'solid-a11y';
 import Header from '../../components/Header';
 import Quote from '../../components/Card/Quote';
 import BackwardNavigation from '../../components/Header/BackwardNavigation';
+import PageDecorator from '../../components/PageDecorator';
 
 import './Profile.css';
 
@@ -30,39 +31,41 @@ const Profile: Component = () => {
   };
 
   return (
-    <div class='layer view rounded content-full'>
+    <PageDecorator>
       <BackwardNavigation subtitle='Your Profile' />
 
       <Header spot='And new superpower' />
 
       <Quote />
 
-      <b class='badge flex items-center rounded info'>
-        <i class={`indicator ${theme()}`}></i>Design Gallery
-      </b>
+      <article class='layer view rounded content-full'>
+        <h3 class='badge flex items-center rounded info'>
+          <i class={`indicator ${theme()}`}></i>Design Gallery
+        </h3>
 
-      <RadioGroup class='flex col' value={theme()} onChange={setTheme}>
-        <For each={options}>
-          {(option) => (
-            <RadioGroupOption
-              value={option.value}
-              class='flex items-center form-item rounded'
-            >
-              {({ checked }) => (
-                <>
-                  <i class={`form-radio ${checked() && 'radio-checked'}`}></i>
-                  <Label class='form-label'>{option.label}</Label>
-                </>
-              )}
-            </RadioGroupOption>
-          )}
-        </For>
-      </RadioGroup>
+        <RadioGroup class='flex col' value={theme()} onChange={setTheme}>
+          <For each={options}>
+            {(option) => (
+              <RadioGroupOption
+                value={option.value}
+                class='flex items-center form-item rounded'
+              >
+                {({ checked }) => (
+                  <>
+                    <i class={`form-radio ${checked() && 'radio-checked'}`}></i>
+                    <Label class='form-label'>{option.label}</Label>
+                  </>
+                )}
+              </RadioGroupOption>
+            )}
+          </For>
+        </RadioGroup>
 
-      <button class='btn' onClick={handleSubmit}>
-        Update theme
-      </button>
-    </div>
+        <button class='btn' onClick={handleSubmit}>
+          Update theme
+        </button>
+      </article>
+    </PageDecorator>
   );
 };
 
