@@ -2,6 +2,7 @@ import { Component } from 'solid-js';
 
 import Header from '../../components/Header';
 import BackwardNavigation from '../../components/Header/BackwardNavigation';
+import PageDecorator from '../../components/PageDecorator';
 
 import Inbox from './Inbox';
 import Stocks from './Stocks';
@@ -15,7 +16,7 @@ import './Charts.css';
 
 const Products: Component = () => {
   return (
-    <div class='page view rounded content-full flex col'>
+    <PageDecorator>
       <BackwardNavigation subtitle='For You' />
 
       <Header spot='Products' />
@@ -30,7 +31,7 @@ const Products: Component = () => {
         <Promotions />
         <Subscriptions />
       </article>
-    </div>
+    </PageDecorator>
   );
 };
 

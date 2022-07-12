@@ -154,6 +154,17 @@ button {
   text-decoration: underline;
 }
 
+.on-scroll {
+  opacity: 0.01;
+  transform: translateY(4.8rem);
+  transition: 0.4s opacity, 0.8s transform cubic-bezier(0.07, 0.89, 0.79, 0.95);
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media screen and (max-width: 768px) {
   .view {
     padding: 1.6rem 1.4rem;

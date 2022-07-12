@@ -1,11 +1,12 @@
-import { createSignal, For, Component, createEffect } from 'solid-js';
+import { createSignal, For, Component } from 'solid-js';
 import { Link } from 'solid-app-router';
 
 import Card from '../../components/Card';
 import Header from '../../components/Header';
 import ConnectFactory from '../../components/ConnectFactory';
+import PageDecorator from '../../components/PageDecorator';
 
-import { randomInRange, useObserver } from '../../services/utils';
+import { randomInRange } from '../../services/utils';
 
 import './Home.css';
 
@@ -44,15 +45,11 @@ const Home: Component = () => {
     equals: false,
   });
 
-  createEffect(() => {
-    useObserver('.on-scroll');
-  });
-
   const handleHover = (e: ListItem) => setItem(e);
 
   return (
     <>
-      <div class='page view rounded content-full flex col'>
+      <PageDecorator>
         <strong class='subtitle'>Home</strong>
 
         <Header spot='What is Cohesion?' />
@@ -109,7 +106,7 @@ const Home: Component = () => {
             />
           </div>
         </article>
-      </div>
+      </PageDecorator>
 
       <div class='home-stats layer view content-full rounded items-center'>
         <ul class='tour-list flex col'>

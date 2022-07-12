@@ -3,16 +3,17 @@ import type { Component } from 'solid-js';
 import Header from '../../components/Header';
 import BackwardNavigation from '../../components/Header/BackwardNavigation';
 import ConnectFactory from '../../components/ConnectFactory';
+import PageDecorator from '../../components/PageDecorator';
 
 import './Privacy.css';
 
 const Privacy: Component = () => (
-  <div class='page view rounded content-full flex col'>
+  <PageDecorator>
     <BackwardNavigation subtitle='Privacy' />
 
     <Header spot='Designed for your policy' />
 
-    <article class='layer view content-full rounded screen'>
+    <article class='layer view content-full rounded screen on-scroll'>
       <h2 class='info'>Kanban vs Scrum</h2>
       <p class='info'>
         Kanban is a methodology centered around visualizing tasks, while Scrum
@@ -27,7 +28,7 @@ const Privacy: Component = () => (
       <ConnectFactory href='https://www.coursera.org/articles/kanban-vs-scrum' />
     </article>
 
-    <article class='layer view content-full rounded screen'>
+    <article class='layer view content-full rounded screen on-scroll'>
       <h2 class='info'>Functional and non functional requirements</h2>
       <p class='info'>
         Functional requirements can be most simply defined as:
@@ -51,7 +52,7 @@ const Privacy: Component = () => (
       <ConnectFactory href='https://enkonix.com/blog/functional-requirements-vs-non-functional' />
     </article>
 
-    <article class='layer view content-full rounded screen'>
+    <article class='layer view content-full rounded screen on-scroll'>
       <h2 class='info'>Scope creep and Gold plating</h2>
       <p class='info'>
         Gold plating happens when the project team adds extra features that were
@@ -74,7 +75,7 @@ const Privacy: Component = () => (
       <ConnectFactory href='https://projectmanagementacademy.net/resources/blog/gold-plating-vs-scope-creep/' />
     </article>
 
-    <article class='layer view content-full rounded screen'>
+    <article class='layer view content-full rounded screen on-scroll'>
       <h2 class='info'>Estimation techniques</h2>
       <p class='info'>
         An estimate is a rough calculation of something. For example, a project
@@ -127,7 +128,7 @@ const Privacy: Component = () => (
       <ConnectFactory href='https://www.wrike.com/blog/project-estimation-techniques/' />
     </article>
 
-    <article class='layer view content-full rounded screen'>
+    <article class='layer view content-full rounded screen on-scroll'>
       <h2 class='info'>Authentication and Authorization</h2>
       <p class='info'>
         Authentication is a process that verifies that someone or something is
@@ -144,7 +145,7 @@ const Privacy: Component = () => (
       <ConnectFactory href='https://www.sailpoint.com/identity-library/difference-between-authentication-and-authorization/' />
     </article>
 
-    <article class='layer view content-full rounded screen'>
+    <article class='layer view content-full rounded screen on-scroll'>
       <h2 class='info'>What is Unit testing?</h2>
       <p class='info'>
         Unit testing ensures that the units within your program are working as
@@ -229,7 +230,7 @@ const Privacy: Component = () => (
 
       <ConnectFactory href='https://www.educative.io/blog/unit-testing-best-practices-overview' />
     </article>
-  </div>
+  </PageDecorator>
 );
 
 export default Privacy;
