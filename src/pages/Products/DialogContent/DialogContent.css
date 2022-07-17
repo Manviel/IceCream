@@ -38,6 +38,6 @@
 
 @media screen and (max-width: 768px) {
   .dialog {
-    min-width: 88vw;
+    min-width: 90vw;
   }
 }

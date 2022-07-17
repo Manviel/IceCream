@@ -108,7 +108,7 @@ const Home: Component = () => {
         </article>
       </PageDecorator>
 
-      <div class='home-stats layer view content-full rounded items-center'>
+      <div class='home-stats layer view screen content-full rounded items-center'>
         <ul class='tour-list flex col'>
           <For each={listItems}>
             {(item) => (

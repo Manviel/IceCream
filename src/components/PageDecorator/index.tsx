@@ -7,7 +7,7 @@ const PageDecorator: ParentComponent = ({ children }) => {
     useObserver('.on-scroll');
   });
 
-  return <div class='page view rounded content-full flex col'>{children}</div>;
+  return <div class='depth view rounded content-full flex col'>{children}</div>;
 };
 
 export default PageDecorator;

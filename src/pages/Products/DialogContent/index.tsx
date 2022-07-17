@@ -9,7 +9,7 @@ const DialogContent: ParentComponent = ({ children }) => {
       <DialogOverlay class='backdrop alert' />
 
       <div class='dialog'>
-        <div class='page view rounded alert'>{children}</div>
+        <div class='depth view rounded alert'>{children}</div>
       </div>
     </>
   );

@@ -5,8 +5,6 @@ import BackwardNavigation from '../../components/Header/BackwardNavigation';
 import ConnectFactory from '../../components/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
 
-import './Privacy.css';
-
 const Privacy: Component = () => (
   <PageDecorator>
     <BackwardNavigation subtitle='Privacy' />

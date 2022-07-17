@@ -33,7 +33,7 @@ const NewsFeed: Component = () => {
       <ul>
         <ErrorBoundary
           fallback={
-            <li class='paper layer view rounded content-full'>
+            <li class='screen layer view rounded content-full'>
               Failed to load
             </li>
           }
@@ -43,7 +43,7 @@ const NewsFeed: Component = () => {
               const com = list();
 
               return (
-                <li class='paper layer view rounded content-full'>
+                <li class='screen layer view rounded content-full'>
                   <div class='paper-grid items-center'>
                     <div>
                       <address class='paper-description'>
