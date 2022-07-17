@@ -48,7 +48,7 @@ input:focus-visible {
 
 .term {
   color: var(--c-grey);
-  font-size: 1.4rem;
+  font-size: var(--s-system);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -71,7 +71,7 @@ input:focus-visible {
 }
 
 .form-control {
-  padding: 0.8rem 1.4rem;
+  padding: 0.8rem var(--s-system);
   font-size: 1.6rem;
 }
 
