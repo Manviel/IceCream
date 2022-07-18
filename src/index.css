@@ -6,7 +6,7 @@
   --c-secondary: rgba(255, 255, 255, 0.52);
   --c-glass: rgba(245, 245, 245, 0.4);
   --c-primary: #c1deba;
-  --c-warning: #fbf3eb;
+  --c-material: #f2f2f7;
   --c-contrast: #232526;
   --c-ring: #0072ea;
   --s-ellipse: 5.4rem;
@@ -167,7 +167,7 @@ button {
 
 @media screen and (max-width: 768px) {
   .view {
-    padding: 1.6rem var(--s-system);
+    padding: var(--s-system);
   }
 
   .title {
