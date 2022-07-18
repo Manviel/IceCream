@@ -45,7 +45,7 @@ a {
 }
 
 svg {
-  fill: var(--c-black);
+  fill: currentColor;
 }
 
 ul {

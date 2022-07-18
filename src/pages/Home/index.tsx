@@ -5,6 +5,7 @@ import Card from '../../components/Card';
 import Header from '../../components/Header';
 import ConnectFactory from '../../components/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
+import BackwardNavigation from '../../components/Header/BackwardNavigation';
 
 import { randomInRange } from '../../services/utils';
 
@@ -50,7 +51,7 @@ const Home: Component = () => {
   return (
     <>
       <PageDecorator>
-        <strong class='subtitle'>Home</strong>
+        <BackwardNavigation subtitle='Home' hideBackward />
 
         <Header spot='What is Cohesion?' />
 
