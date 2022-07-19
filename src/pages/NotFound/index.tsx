@@ -1,15 +1,13 @@
 import type { Component } from 'solid-js';
 import { Link } from 'solid-app-router';
 
-import Header from '../../components/Header';
+import HeaderTemplate from '../../components/Header/HeaderTemplate';
 
 const NotFound: Component = () => (
   <div class='layer view rounded content-full flex col items-center'>
-    <Header spot='404' />
+    <HeaderTemplate subtitle='Not Found' headline='404' hideBackward />
 
-    <h2 class='subtitle'>Not Found</h2>
-
-    <p class='info'>Sorry, we can't find that page!</p>
+    <h2 class='info'>Sorry, we can't find that page!</h2>
 
     <Link href='/' class='btn'>
       Back to Home page

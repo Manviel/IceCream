@@ -5,8 +5,7 @@ import { useNews } from '../../services/store';
 
 import { DateBox } from '../../components/Card';
 import Loader from '../../components/Loader';
-import Header from '../../components/Header';
-import BackwardNavigation from '../../components/Header/BackwardNavigation';
+import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import PageDecorator from '../../components/PageDecorator';
 
 import { Category } from '../../models';
@@ -26,9 +25,7 @@ const NewsFeed: Component = () => {
 
   return (
     <PageDecorator>
-      <BackwardNavigation subtitle='News' />
-
-      <Header spot='Your Feed' />
+      <HeaderTemplate subtitle='News' headline='Your Feed' />
 
       <ul>
         <ErrorBoundary

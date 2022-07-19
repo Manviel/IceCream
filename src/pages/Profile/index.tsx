@@ -1,9 +1,8 @@
 import { createSignal, Component, For } from 'solid-js';
 import { Label, RadioGroup, RadioGroupOption } from 'solid-a11y';
 
-import Header from '../../components/Header';
 import Quote from '../../components/Card/Quote';
-import BackwardNavigation from '../../components/Header/BackwardNavigation';
+import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import PageDecorator from '../../components/PageDecorator';
 
 import './Profile.css';
@@ -32,9 +31,7 @@ const Profile: Component = () => {
 
   return (
     <PageDecorator>
-      <BackwardNavigation subtitle='Your Profile' />
-
-      <Header spot='And new superpower' />
+      <HeaderTemplate subtitle='Your Profile' headline='And new superpower' />
 
       <Quote />
 

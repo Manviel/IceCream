@@ -1,7 +1,6 @@
 import { Component } from 'solid-js';
 
-import Header from '../../components/Header';
-import BackwardNavigation from '../../components/Header/BackwardNavigation';
+import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import PageDecorator from '../../components/PageDecorator';
 
 import Inbox from './Inbox';
@@ -17,9 +16,7 @@ import './Charts.css';
 const Products: Component = () => {
   return (
     <PageDecorator>
-      <BackwardNavigation subtitle='For You' />
-
-      <Header spot='Products' />
+      <HeaderTemplate subtitle='For You' headline='Products' />
 
       <h2 class='text info'>Quick actions and features</h2>
 

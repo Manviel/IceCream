@@ -1,15 +1,12 @@
 import type { Component } from 'solid-js';
 
-import Header from '../../components/Header';
-import BackwardNavigation from '../../components/Header/BackwardNavigation';
+import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import ConnectFactory from '../../components/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
 
 const Privacy: Component = () => (
   <PageDecorator>
-    <BackwardNavigation subtitle='Privacy' />
-
-    <Header spot='Designed for your policy' />
+    <HeaderTemplate subtitle='Privacy' headline='Designed for your policy' />
 
     <article class='layer view content-full rounded screen on-scroll'>
       <h2 class='info'>Kanban vs Scrum</h2>
