@@ -13,6 +13,7 @@
   --s-medium: 2rem;
   --s-dock: 2.3rem;
   --s-system: 1.4rem;
+  --s-unit: 0.8rem;
   --a-press: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --p-blur: blur(80px) saturate(160%);
   --p-shadow: drop-shadow(0px 20px 30px var(--c-dark));
@@ -36,7 +37,7 @@ body {
   font-size: var(--s-system);
   background-color: var(--c-primary);
   min-height: 100vh;
-  padding: 1rem 0.8rem 10.8rem;
+  padding: var(--s-unit) var(--s-unit) 10.8rem;
 }
 
 a {
@@ -127,7 +128,7 @@ button {
 
 .fixed-bottom {
   position: fixed;
-  bottom: 1.2rem;
+  bottom: var(--s-unit);
   left: 50%;
   animation: toast-enter cubic-bezier(0.155, 1.105, 0.295, 1.12) 0.4s both;
 }

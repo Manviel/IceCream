@@ -2,10 +2,9 @@ import { createSignal, For, Component } from 'solid-js';
 import { Link } from 'solid-app-router';
 
 import Card from '../../components/Card';
-import Header from '../../components/Header';
 import ConnectFactory from '../../components/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
-import BackwardNavigation from '../../components/Header/BackwardNavigation';
+import HeaderTemplate from '../../components/Header/HeaderTemplate';
 
 import { randomInRange } from '../../services/utils';
 
@@ -51,9 +50,11 @@ const Home: Component = () => {
   return (
     <>
       <PageDecorator>
-        <BackwardNavigation subtitle='Home' hideBackward />
-
-        <Header spot='What is Cohesion?' />
+        <HeaderTemplate
+          subtitle='Home'
+          headline='What is Cohesion?'
+          hideBackward
+        />
 
         <p class='info'>
           The degree to which the elements inside a module belong together. It

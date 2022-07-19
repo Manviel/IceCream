@@ -1,10 +1,10 @@
 import { Component, onMount } from 'solid-js';
 import { Link } from 'solid-app-router';
 
-type BackwardNavigationType = {
+export interface BackwardNavigationType {
   subtitle: string;
   hideBackward?: boolean;
-};
+}
 
 const BackwardNavigation: Component<BackwardNavigationType> = ({
   subtitle,
