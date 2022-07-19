@@ -225,6 +225,39 @@ const Privacy: Component = () => (
 
       <ConnectFactory href='https://www.educative.io/blog/unit-testing-best-practices-overview' />
     </article>
+
+    <article class='layer view content-full rounded screen on-scroll'>
+      <h2 class='info'>OOD principles</h2>
+      <p class='info'>
+        Single responsibility - the class should be responsible for one task. If
+        a class is responsible for solving several tasks, then its subsystems
+        that implement the solution of these tasks turn out to be connected with
+        each other, in which case changes in one such subsystem lead to changes
+        in another.
+      </p>
+      <p class='info'>
+        Open-closed - Program entities (classes, modules, functions) must be
+        open for extension, but not for modification.
+      </p>
+      <p class='info'>
+        Liskov substitution - descendant classes should be able to be used
+        instead of the parent classes from which they are derived, without
+        breaking the program.
+      </p>
+      <p class='info'>
+        Interface segregation - create highly specialized interfaces designed
+        for a specific client. Interfaces that are too large should be divided
+        into smaller and more specific ones so that the program methods of these
+        interfaces only know about the methods that they use to work.
+      </p>
+      <p class='info'>
+        Dependency inversion - upper-level modules should not depend on
+        lower-level modules, and lower-level modules should not depend on
+        upper-level modules. Both types of modules must depend on abstractions.
+      </p>
+
+      <ConnectFactory href='https://meline.lviv.ua/development/other/ood/' />
+    </article>
   </PageDecorator>
 );
 
