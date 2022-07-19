@@ -1,7 +1,3 @@
-.pale {
-  background-color: var(--c-material);
-}
-
 .home-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

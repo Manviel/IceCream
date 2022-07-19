@@ -3,16 +3,13 @@
   height: var(--s-ellipse);
   position: relative;
   border-radius: 25%;
-  background-color: var(--c-secondary);
+  background-color: var(--c-white);
   transition: transform 0.4s var(--a-press), background-color 0.25s;
 }
 
-.superellipse:hover {
-  background-color: var(--c-white);
-}
-
+.superellipse:hover,
 .active .superellipse {
-  background-color: var(--c-white);
+  background-color: var(--c-active);
 }
 
 a.active {

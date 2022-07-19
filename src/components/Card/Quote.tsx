@@ -14,17 +14,17 @@ const Quote: Component = () => {
   const [quote, { refetch }] = createResource(fetchQuote);
 
   return (
-    <Switch fallback={<h2 class='box view rounded info'>Failed to fetch</h2>}>
+    <Switch fallback={<h2 class='box view rounded screen'>Failed to fetch</h2>}>
       <Match when={quote.loading}>
         <Loader />
       </Match>
       <Match when={quote()}>
         {(res) => (
-          <article class='box view rounded info'>
+          <article class='layer view rounded screen'>
             <div class='flex justify-between items-center'>
               <p class='flex col'>
                 <time>{res.dateModified}</time>
-                <span>{res.author}</span>
+                <span class='box-description'>{res.author}</span>
               </p>
 
               <button

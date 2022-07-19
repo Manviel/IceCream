@@ -48,67 +48,63 @@ const Home: Component = () => {
   const handleHover = (e: ListItem) => setItem(e);
 
   return (
-    <>
-      <PageDecorator>
-        <HeaderTemplate
-          subtitle='Home'
-          headline='What is Cohesion?'
-          hideBackward
-        />
+    <PageDecorator>
+      <HeaderTemplate
+        subtitle='Home'
+        headline='What is Cohesion?'
+        hideBackward
+      />
+
+      <p class='info'>
+        The degree to which the elements inside a module belong together. It is
+        a measure of how deeply each piece of device module functionality
+        relates. Therefore, the most suitable term for defining cohesion is
+        <em> the code that shifts together, stays together</em>. As we can see,
+        strong cohesion makes thinking smoother and reduces dependency. Low
+        coupling is generally associated with strong stability. In microservices
+        - oriented systems, a low degree of cohesion is accomplished by pooling
+        specific business processes together, such that, if developers need to
+        change actions, only a single microservice has to be modified.
+      </p>
+
+      <article class='box view rounded'>
+        <h2 class='title'>What is Coupling?</h2>
 
         <p class='info'>
-          The degree to which the elements inside a module belong together. It
-          is a measure of how deeply each piece of device module functionality
-          relates. Therefore, the most suitable term for defining cohesion is
-          <em> the code that shifts together, stays together</em>. As we can
-          see, strong cohesion makes thinking smoother and reduces dependency.
-          Low coupling is generally associated with strong stability. In
-          microservices - oriented systems, a low degree of cohesion is
-          accomplished by pooling specific business processes together, such
-          that, if developers need to change actions, only a single microservice
-          has to be modified.
+          The degree to which components have knowledge of other components.
+          Effectively, the coupling is about how changing one thing required
+          change in another. Two modules have high coupling if they are closely
+          connected. For example, two concrete classes storing references to
+          each other and calling each other’s methods. Modules with low coupling
+          among them work mostly independently of each other.
         </p>
 
-        <article class='pale view rounded'>
-          <h2 class='title text'>What is Coupling?</h2>
-
-          <p class='info'>
-            The degree to which components have knowledge of other components.
-            Effectively, the coupling is about how changing one thing required
-            change in another. Two modules have high coupling if they are
-            closely connected. For example, two concrete classes storing
-            references to each other and calling each other’s methods. Modules
-            with low coupling among them work mostly independently of each
-            other.
-          </p>
-
-          <div class='home-stats'>
-            <Card
-              phrase='Up to'
-              number={randomInRange(11, 98)}
-              measure='million'
-              description='Active users'
-            />
-            <Card
-              phrase='Support'
-              number={randomInRange(10, 320)}
-              description='Countries'
-            />
-            <Card
-              phrase='Up to'
-              number={randomInRange(1, 10)}
-              measure='x'
-              description='Faster than previous versions'
-            />
-            <Card
-              phrase='Down to'
-              number={randomInRange(1, 3)}
-              measure='sec'
-              description='Time to interactive'
-            />
-          </div>
-        </article>
-      </PageDecorator>
+        <div class='home-stats'>
+          <Card
+            phrase='Up to'
+            number={randomInRange(11, 98)}
+            measure='million'
+            description='Active users'
+          />
+          <Card
+            phrase='Support'
+            number={randomInRange(10, 320)}
+            description='Countries'
+          />
+          <Card
+            phrase='Up to'
+            number={randomInRange(1, 10)}
+            measure='x'
+            description='Faster than previous versions'
+          />
+          <Card
+            phrase='Down to'
+            number={randomInRange(1, 3)}
+            measure='sec'
+            description='Time to interactive'
+          />
+        </div>
+      </article>
 
       <div class='home-stats layer view screen content-full rounded items-center'>
         <ul class='tour-list flex col'>
@@ -124,7 +120,7 @@ const Home: Component = () => {
           </For>
         </ul>
 
-        <div class='tour-indicators pale view rounded flex col'>
+        <div class='tour-indicators box view rounded flex col'>
           <strong class='subtitle'>{item().value}</strong>
           <p>{item().explanation}</p>
         </div>
@@ -154,7 +150,7 @@ const Home: Component = () => {
           </div>
         </article>
       </div>
-    </>
+    </PageDecorator>
   );
 };
 

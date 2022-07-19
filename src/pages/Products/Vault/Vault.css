@@ -1,7 +1,5 @@
 :root {
   --c-heat: #fa124f;
-  --c-grey: rgba(235, 235, 245, 0.6);
-  --c-action: rgba(118, 118, 128, 0.2);
 }
 
 .vault {
@@ -37,28 +35,23 @@ input:focus-visible {
 .conditions {
   margin-top: 1.6rem;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: var(--s-medium);
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.6rem;
 }
 
 .context {
-  grid-column: span 2;
-  text-align: left;
+  text-align: right;
 }
 
 .term {
   color: var(--c-grey);
   font-size: var(--s-system);
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  margin-top: 0.2rem;
 }
 
 .sum {
   font-size: 2.8rem;
-  margin-top: 0.4rem;
-  align-items: baseline;
-  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
 }
 
 .accrued {
@@ -88,7 +81,7 @@ input:focus-visible {
 }
 
 @media screen and (max-width: 768px) {
-  .conditions {
-    grid-template-columns: repeat(1, 1fr);
+  .sum {
+    font-size: 1.8rem;
   }
 }

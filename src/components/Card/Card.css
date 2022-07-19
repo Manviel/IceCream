@@ -1,3 +1,8 @@
+.card {
+  background-color: var(--c-secondary);
+  color: var(--c-primary);
+}
+
 .card-text {
   display: block;
   font-size: 6.4rem;
@@ -13,9 +18,11 @@
 
 .box {
   background-color: var(--c-contrast);
-  color: var(--c-white);
+  color: var(--c-primary);
 }
 
 .box-description {
   font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
 }

@@ -18,7 +18,7 @@ const Products: Component = () => {
     <PageDecorator>
       <HeaderTemplate subtitle='For You' headline='Products' />
 
-      <h2 class='text info'>Quick actions and features</h2>
+      <h2 class='info'>Quick actions and features</h2>
 
       <article class='products'>
         <Vault />

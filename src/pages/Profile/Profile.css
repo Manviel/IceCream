@@ -3,22 +3,10 @@
 }
 
 .badge {
-  padding: 1.3rem 1.6rem;
-  background-color: var(--c-active);
-}
-
-.indicator {
-  display: block;
-  min-width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: var(--c-primary);
-  margin-right: 2rem;
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  padding: 1.2rem;
 }
 
 .form-item {
-  padding: 1.2rem;
   margin-bottom: 0.8rem;
   cursor: pointer;
 }
@@ -47,21 +35,13 @@
 }
 
 .blue-theme {
-  --c-primary: #dce7f9;
+  color: #3a82f7;
 }
 
 .night-theme {
-  --c-primary: rgba(30, 30, 30, 0.75);
+  color: #b25fea;
 }
 
 .orange-theme {
-  --c-primary: #ff8c82;
-}
-
-@keyframes ping {
-  75%,
-  100% {
-    transform: scale(1.6);
-    opacity: 0.7;
-  }
+  color: #eb4b62;
 }

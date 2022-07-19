@@ -5,7 +5,7 @@ button {
 .btn {
   display: block;
   padding: 1.8rem var(--s-medium) 1.6rem;
-  background-color: var(--c-glass);
+  background-color: var(--c-active);
   color: var(--c-black);
   font-weight: bold;
   font-size: 1.6rem;
@@ -46,5 +46,5 @@ button {
 }
 
 .backward:hover {
-  background-color: var(--c-secondary);
+  background-color: var(--c-dark);
 }

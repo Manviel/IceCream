@@ -3,12 +3,13 @@
   --c-white: #fff;
   --c-dark: rgba(0, 0, 0, 0.2);
   --c-active: rgba(0, 0, 0, 0.05);
-  --c-secondary: rgba(255, 255, 255, 0.52);
-  --c-glass: rgba(245, 245, 245, 0.4);
-  --c-primary: #c1deba;
-  --c-material: #f2f2f7;
-  --c-contrast: #232526;
-  --c-ring: #0072ea;
+  --c-secondary: #2c2c2e;
+  --c-glass: rgba(245, 245, 245, 0.5);
+  --c-primary: #f5f5f7;
+  --c-action: rgba(118, 118, 128, 0.2);
+  --c-contrast: #151516;
+  --c-ring: #0066cc;
+  --c-grey: #a1a1a6;
   --s-ellipse: 5.4rem;
   --s-medium: 2rem;
   --s-dock: 2.3rem;
@@ -35,9 +36,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: var(--s-system);
-  background-color: var(--c-primary);
+  background-color: var(--c-white);
   min-height: 100vh;
-  padding: var(--s-unit) var(--s-unit) 10.8rem;
+  padding-bottom: 9rem;
 }
 
 a {
@@ -92,10 +93,6 @@ button {
   margin: 1.6rem 0 1rem;
 }
 
-.text {
-  max-width: 62rem;
-}
-
 .items-center {
   align-items: center;
 }
@@ -114,6 +111,7 @@ button {
 
 .view {
   padding: var(--s-medium);
+  color: var(--c-black);
 }
 
 .depth {
@@ -140,8 +138,7 @@ button {
 }
 
 .layer {
-  background-color: var(--c-white);
-  color: var(--c-contrast);
+  background-color: var(--c-primary);
 }
 
 .connect {
