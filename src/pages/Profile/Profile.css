@@ -1,5 +1,5 @@
 :root {
-  --c-success: #00e396;
+  --s-radio: 2.4rem;
 }
 
 .badge {
@@ -7,7 +7,7 @@
 }
 
 .form-item {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
   cursor: pointer;
 }
 
@@ -17,31 +17,32 @@
 }
 
 .form-radio {
-  height: 2.8rem;
-  min-width: 2.8rem;
+  height: var(--s-radio);
+  min-width: var(--s-radio);
   border-width: 0.6rem;
   border-style: solid;
-  border-color: var(--c-dark);
+  border-color: var(--c-primary);
+  box-shadow: 0 0 0 0.6rem var(--c-grey);
   border-radius: 50%;
-  transition: border 0.2s ease-out;
+  transition: border 0.2s ease-out, background-color 0.25s;
 }
 
-.form-item:hover {
-  background-color: var(--c-active);
+.form-radio:hover {
+  background-color: var(--c-dark);
 }
 
 .form-radio.radio-checked {
-  border-color: var(--c-success);
+  background-color: var(--c-ring);
 }
 
 .blue-theme {
-  color: #3a82f7;
+  color: var(--c-ring);
 }
 
 .night-theme {
-  color: #b25fea;
+  color: var(--c-purple);
 }
 
 .orange-theme {
-  color: #eb4b62;
+  color: var(--c-heat);
 }

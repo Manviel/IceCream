@@ -1,7 +1,7 @@
 import { Component, lazy } from 'solid-js';
 import { Routes, Route, NavLink } from 'solid-app-router';
 
-import SuperEllipse from './components/Superellipse';
+import { SuperEllipse } from './components/Superellipse';
 
 import BagIcon from './assets/icons/bag.svg';
 import SquareTextIcon from './assets/icons/square-text.svg';
@@ -38,28 +38,20 @@ const App: Component = () => {
         class='fixed-bottom dock content-full flex justify-between'
         aria-label='Tabs'
       >
-        <NavLink href='/products' aria-label='Products'>
-          <SuperEllipse>
-            <BagIcon />
-          </SuperEllipse>
+        <NavLink href='/products' aria-label='Products' class={SuperEllipse}>
+          <BagIcon />
         </NavLink>
 
-        <NavLink href='/news' aria-label='News'>
-          <SuperEllipse>
-            <SquareTextIcon />
-          </SuperEllipse>
+        <NavLink href='/news' aria-label='News' class={SuperEllipse}>
+          <SquareTextIcon />
         </NavLink>
 
-        <NavLink href='/privacy' aria-label='Privacy'>
-          <SuperEllipse>
-            <LockIcon />
-          </SuperEllipse>
+        <NavLink href='/privacy' aria-label='Privacy' class={SuperEllipse}>
+          <LockIcon />
         </NavLink>
 
-        <NavLink href='/profile' aria-label='Profile'>
-          <SuperEllipse>
-            <PersonFinderIcon />
-          </SuperEllipse>
+        <NavLink href='/profile' aria-label='Profile' class={SuperEllipse}>
+          <PersonFinderIcon />
         </NavLink>
       </nav>
     </div>

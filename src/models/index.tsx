@@ -1,7 +1,7 @@
 export enum ChartColors {
   Blue = '#007AFF',
   Green = '#00e396',
-  Purple = '#AF52DE',
+  Purple = '#b25fea',
   Red = '#fa124f',
 }
 

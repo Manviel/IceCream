@@ -4,7 +4,6 @@
   position: relative;
   border-radius: 25%;
   background-color: var(--c-glass);
-  transition: transform 0.4s var(--a-press), background-color 0.25s;
 }
 
 .superellipse:hover,

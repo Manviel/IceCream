@@ -1,6 +1,7 @@
 import { Component, createResource, Switch, Match } from 'solid-js';
 
 import Loader from '../Loader';
+import { SuperEllipse } from '../Superellipse';
 
 import { getQuote } from '../../services/news';
 
@@ -28,7 +29,7 @@ const Quote: Component = () => {
               </p>
 
               <button
-                class='superellipse flex justify-center items-center'
+                class={SuperEllipse}
                 onClick={refetch}
                 aria-label='Get new quote'
               >

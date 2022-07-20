@@ -121,7 +121,7 @@ const Home: Component = () => {
         </ul>
 
         <div class='tour-indicators box view rounded flex col'>
-          <strong class='subtitle'>{item().value}</strong>
+          <strong class='subtitle purple'>{item().value}</strong>
           <p>{item().explanation}</p>
         </div>
 

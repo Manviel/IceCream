@@ -34,6 +34,10 @@
   font-size: inherit;
 }
 
+.purple {
+  color: var(--c-purple);
+}
+
 @media screen and (max-width: 768px) {
   .home-stats {
     grid-template-columns: repeat(1, 1fr);

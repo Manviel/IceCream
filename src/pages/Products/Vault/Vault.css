@@ -1,7 +1,3 @@
-:root {
-  --c-heat: #fa124f;
-}
-
 .vault {
   background-color: var(--c-black);
   color: var(--c-white);

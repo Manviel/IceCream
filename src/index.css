@@ -11,6 +11,8 @@
   --c-contrast: #151516;
   --c-ring: #0066cc;
   --c-grey: #a1a1a6;
+  --c-heat: #fa124f;
+  --c-purple: #b25fea;
   --s-ellipse: 5.4rem;
   --s-medium: 2rem;
   --s-dock: 2.3rem;
@@ -123,7 +125,7 @@ button {
 }
 
 .screen {
-  margin-top: 3.2rem;
+  margin-top: 3.4rem;
 }
 
 .fixed-bottom {
