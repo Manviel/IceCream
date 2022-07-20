@@ -35,7 +35,7 @@ const App: Component = () => {
       </main>
 
       <nav
-        class='fixed-bottom dock depth content-full flex justify-between'
+        class='fixed-bottom dock content-full flex justify-between'
         aria-label='Tabs'
       >
         <NavLink href='/products' aria-label='Products'>

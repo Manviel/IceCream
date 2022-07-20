@@ -20,7 +20,7 @@ const Quote: Component = () => {
       </Match>
       <Match when={quote()}>
         {(res) => (
-          <article class='layer view rounded screen'>
+          <article class='box view rounded screen'>
             <div class='flex justify-between items-center'>
               <p class='flex col'>
                 <time>{res.dateModified}</time>
