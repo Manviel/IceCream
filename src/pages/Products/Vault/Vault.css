@@ -28,7 +28,7 @@
 }
 
 input:focus-visible {
-  outline: 1px solid var(--c-ring);
+  outline: 2px solid var(--c-ring);
   outline-offset: 4px;
 }
 

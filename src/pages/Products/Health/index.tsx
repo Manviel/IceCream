@@ -1,6 +1,8 @@
 import { Component, onMount } from 'solid-js';
 import { Chart } from 'frappe-charts';
 
+import { ChartColors } from '../../../models';
+
 const source = {
   Eggs: 6.3,
   'Chicken breast': 26.7,
@@ -25,7 +27,7 @@ const Health: Component = () => {
           },
         ],
       },
-      colors: ['#0072ea'],
+      colors: [ChartColors.Blue],
       isNavigable: true,
     });
   });

@@ -1,6 +1,8 @@
 import { Component, onMount } from 'solid-js';
 import { Chart } from 'frappe-charts';
 
+import { ChartColors } from '../../../models';
+
 const source = {
   'House, Transport and Food': 54.8,
   'Clothes and Personal': 14.5,
@@ -20,7 +22,12 @@ const Subscriptions: Component = () => {
           },
         ],
       },
-      colors: ['#DF62FF', '#fa124f', '#00e396', '#0072ea'],
+      colors: [
+        ChartColors.Purple,
+        ChartColors.Red,
+        ChartColors.Green,
+        ChartColors.Blue,
+      ],
       isNavigable: true,
       truncateLegends: true,
     });

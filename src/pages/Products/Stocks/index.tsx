@@ -1,6 +1,8 @@
 import { Component, onMount } from 'solid-js';
 import { Chart } from 'frappe-charts';
 
+import { ChartColors } from '../../../models';
+
 const source = {
   Dec: 180,
   Jan: 159,
@@ -23,7 +25,7 @@ const Stocks: Component = () => {
           },
         ],
       },
-      colors: ['#00e396'],
+      colors: [ChartColors.Green],
       lineOptions: {
         hideDots: 1,
         regionFill: 1,

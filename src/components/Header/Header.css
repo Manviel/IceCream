@@ -1,5 +1,7 @@
+a,
 button {
-  border: 0;
+  transition: filter 0.25s, transform 0.4s var(--a-press),
+    background-color 0.25s, outline-offset 0.2s linear;
 }
 
 .btn {
@@ -9,8 +11,6 @@ button {
   color: var(--c-black);
   font-weight: bold;
   font-size: 1.6rem;
-  transition: filter 0.25s, transform 0.4s var(--a-press),
-    background-color 0.25s;
   border-radius: var(--s-dock);
   text-align: center;
 }
@@ -42,7 +42,6 @@ button {
   height: 3.4rem;
   width: 3.4rem;
   border-radius: 50%;
-  transition: background-color 0.25s;
 }
 
 .backward:hover {
