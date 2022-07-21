@@ -19,3 +19,8 @@ export const useObserver = (query: string) => {
 
   animationItems.forEach((item) => observer.observe(item));
 };
+
+export const total = (arr: number[]) =>
+  arr.reduce((a: number, b: number) => a + b, 0);
+
+export const average = (arr: number[]) => total(arr) / arr.length;

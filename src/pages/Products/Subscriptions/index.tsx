@@ -2,6 +2,7 @@ import { Component, onMount } from 'solid-js';
 import { Chart } from 'frappe-charts';
 
 import { ChartColors } from '../../../models';
+import { average } from '../../../services/utils';
 
 const source = {
   'House, Transport and Food': 54.8,
@@ -35,7 +36,12 @@ const Subscriptions: Component = () => {
 
   return (
     <div class='layer rounded flex col widget widget-chart'>
-      <h3 class='view widget-title'>Subscriptions</h3>
+      <article class='view'>
+        <h3 class='widget-title'>Subscriptions</h3>
+        <p class='term'>
+          Average share is equal to {average(Object.values(source))}%
+        </p>
+      </article>
       <div
         id='chart-subscriptions'
         class='content-full'

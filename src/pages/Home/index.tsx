@@ -110,10 +110,13 @@ const Home: Component = () => {
         <ul class='tour-list flex col'>
           <For each={listItems}>
             {(item) => (
-              <li class='flex justify-between items-center content-full rounded'>
-                {item.label}
-                <button class='chip' onClick={() => handleHover(item)}>
-                  {item.value}
+              <li class='content-full'>
+                <button
+                  class='tour-list-item flex justify-between items-center content-full rounded'
+                  onClick={() => handleHover(item)}
+                >
+                  {item.label}
+                  <span class='chip'>{item.value}</span>
                 </button>
               </li>
             )}

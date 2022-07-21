@@ -33,7 +33,7 @@ const Vault: Component = () => {
 
           <p class='term grey'>Up to 12 months</p>
 
-          <div class='conditions items-center'>
+          <div class='products conditions items-center'>
             <div class='activity' role='progressbar' aria-valuenow={valueNow}>
               <svg viewBox='0 0 37 37'>
                 <g class='ring'>

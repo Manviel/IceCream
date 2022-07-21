@@ -30,9 +30,6 @@ input:focus-visible {
 
 .conditions {
   margin-top: 1.6rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1.6rem;
 }
 
 .context {
@@ -42,7 +39,8 @@ input:focus-visible {
 }
 
 .term {
-  font-size: var(--s-system);
+  font-size: 1.5rem;
+  line-height: var(--s-medium);
 }
 
 .sum {

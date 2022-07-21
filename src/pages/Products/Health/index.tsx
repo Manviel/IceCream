@@ -2,6 +2,7 @@ import { Component, onMount } from 'solid-js';
 import { Chart } from 'frappe-charts';
 
 import { ChartColors } from '../../../models';
+import { total } from '../../../services/utils';
 
 const source = {
   Eggs: 6.3,
@@ -34,7 +35,12 @@ const Health: Component = () => {
 
   return (
     <div class='layer rounded flex col widget widget-chart'>
-      <h3 class='view widget-title'>Health (grams of protein)</h3>
+      <article class='view'>
+        <h3 class='widget-title'>Health</h3>
+        <p class='term'>
+          Total protein {Math.round(total(Object.values(source)))} grams
+        </p>
+      </article>
       <div id='chart-health' class='content-full' role='presentation'></div>
     </div>
   );
