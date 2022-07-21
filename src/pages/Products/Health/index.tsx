@@ -14,6 +14,9 @@ const source = {
   'Lean beef': 24.6,
   Salmon: 30.5,
   Peanuts: 7.3,
+  Almonds: 5.8,
+  Quinoa: 8,
+  'Turkey breast': 25.6,
 };
 
 const Health: Component = () => {

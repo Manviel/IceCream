@@ -30,7 +30,6 @@ const Subscriptions: Component = () => {
         ChartColors.Blue,
       ],
       isNavigable: true,
-      truncateLegends: true,
     });
   });
 
