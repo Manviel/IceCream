@@ -4,17 +4,9 @@
   grid-gap: var(--s-system);
 }
 
-.widget {
-  transition: filter 0.4s, transform 0.4s var(--a-press);
-}
-
-.widget:hover {
-  transform: scale(1.02);
-  filter: var(--p-shadow);
-}
-
 .widget-title {
   font-size: 1.7rem;
+  margin-bottom: 0.2rem;
 }
 
 .widget-main {
@@ -26,10 +18,4 @@
   background-color: var(--c-active);
   padding: 0.7rem 0.7rem 0.3rem;
   border-radius: 50%;
-}
-
-@media screen and (max-width: 768px) {
-  .widget:hover {
-    transform: scale(1.05);
-  }
 }

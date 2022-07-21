@@ -1,3 +1,7 @@
+:root {
+  --c-olive: #78b589;
+}
+
 .card {
   background-color: var(--c-secondary);
   color: var(--c-primary);
@@ -6,7 +10,7 @@
 .card-text {
   display: block;
   font-size: 6.4rem;
-  color: #43f95a;
+  color: var(--c-olive);
 }
 
 .card-measure {

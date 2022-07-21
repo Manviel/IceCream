@@ -31,9 +31,9 @@ const Vault: Component = () => {
         <>
           <h3 class='widget-title'>Vault</h3>
 
-          <p class='term'>12 months at 12%</p>
+          <p class='term grey'>Up to 12 months</p>
 
-          <div class='conditions'>
+          <div class='conditions items-center'>
             <div class='activity' role='progressbar' aria-valuenow={valueNow}>
               <svg viewBox='0 0 37 37'>
                 <g class='ring'>
@@ -48,7 +48,8 @@ const Vault: Component = () => {
 
             <article class='flex col context'>
               <h4 class='sum'>{commasAdapter(budget())}</h4>
-              <h5 class='accrued'>+{commasAdapter(income())}</h5>
+              <h5 class='term grey'>12%</h5>
+              <h6 class='accrued'>+{commasAdapter(income())}</h6>
             </article>
           </div>
         </>

@@ -7,7 +7,7 @@
 }
 
 .superellipse:hover,
-.active .superellipse {
+.superellipse.active {
   background-color: var(--c-white);
 }
 
@@ -16,7 +16,7 @@ a.active {
 }
 
 a:focus-visible {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 a:focus-visible,

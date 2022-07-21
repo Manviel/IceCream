@@ -70,7 +70,7 @@ const Home: Component = () => {
       <article class='box view rounded'>
         <h2 class='title'>What is Coupling?</h2>
 
-        <p class='info'>
+        <p class='info grey'>
           The degree to which components have knowledge of other components.
           Effectively, the coupling is about how changing one thing required
           change in another. Two modules have high coupling if they are closely
