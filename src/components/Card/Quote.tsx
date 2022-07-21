@@ -24,7 +24,7 @@ const Quote: Component = () => {
           <article class='box view rounded screen'>
             <div class='flex justify-between items-center'>
               <p class='flex col'>
-                <time>{res.dateModified}</time>
+                <time class='grey'>{res.dateModified}</time>
                 <span class='box-description'>{res.author}</span>
               </p>
 
