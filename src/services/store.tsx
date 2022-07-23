@@ -1,10 +1,13 @@
 import { createContext, useContext, ParentComponent } from 'solid-js';
 import { createStore } from 'solid-js/store';
 
-import { Entity } from '../models';
+import { Category, Entity } from '../models';
+import { getEnumKeyByEnumValue, getRandomEnum } from './utils';
 
 type NewsContextState = {
   readonly news: Entity[];
+  readonly currentRank: Category;
+  readonly currentLeague: string;
 };
 
 type NewsContextValue = [
@@ -14,8 +17,12 @@ type NewsContextValue = [
   }
 ];
 
+const newRank = getRandomEnum(Category);
+
 const defaultState = {
   news: [],
+  currentRank: newRank,
+  currentLeague: getEnumKeyByEnumValue(Category, newRank),
 };
 
 const NewsContext = createContext<NewsContextValue>([
@@ -25,9 +32,13 @@ const NewsContext = createContext<NewsContextValue>([
   },
 ]);
 
-export const NewsProvider: ParentComponent<{ news?: Entity[] }> = (props) => {
+export const NewsProvider: ParentComponent<{
+  news?: Entity[];
+}> = (props) => {
   const [state, setState] = createStore({
     news: props.news ?? defaultState.news,
+    currentRank: defaultState.currentRank,
+    currentLeague: defaultState.currentLeague,
   });
 
   const updateNews = (data: Entity[]) => setState('news', data);

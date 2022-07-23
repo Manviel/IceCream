@@ -26,15 +26,18 @@ const NewsFeed: Component = () => {
 
   createEffect(() => {
     if (data.news.length === 0) {
-      fetchQuery(Category.Bronze).then((companies: any) =>
-        updateNews(companies)
+      fetchQuery(data.currentRank).then((entities: any) =>
+        updateNews(entities)
       );
     }
   });
 
   return (
     <PageDecorator>
-      <HeaderTemplate subtitle='Discover' headline='Golden League' />
+      <HeaderTemplate
+        subtitle='Discover'
+        headline={`${data.currentLeague} League`}
+      />
 
       <ul>
         <ErrorBoundary
