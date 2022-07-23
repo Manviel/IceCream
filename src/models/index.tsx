@@ -7,21 +7,13 @@ export enum ChartColors {
 }
 
 export enum Category {
-  All = 'all',
-  Business = 'business',
-  Sports = 'sports',
-  World = 'world',
-  Politics = 'politics',
-  Technology = 'technology',
-  Startup = 'startup',
-  Entertainment = 'entertainment',
+  Bronze = 'USD',
+  Silver = 'EUR',
+  Gold = 'GBP',
+  Sapphire = 'JPY',
+  Ruby = 'AUD',
 }
 
 export type Entity = {
-  id: string;
-  author: string;
-  content: string;
-  date: string;
-  time: string;
-  title: string;
+  [key: string]: number;
 };

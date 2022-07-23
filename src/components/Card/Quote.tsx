@@ -7,8 +7,6 @@ import { getQuote } from '../../services/news';
 
 import GoForwardIcon from '../../assets/icons/go-forward.svg';
 
-import './Card.css';
-
 const fetchQuote = async () => await getQuote();
 
 const Quote: Component = () => {

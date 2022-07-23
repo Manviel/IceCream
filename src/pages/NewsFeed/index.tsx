@@ -3,14 +3,21 @@ import { Index, ErrorBoundary, Component, createEffect } from 'solid-js';
 import { getNews } from '../../services/news';
 import { useNews } from '../../services/store';
 
-import { DateBox } from '../../components/Card';
 import Loader from '../../components/Loader';
 import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import PageDecorator from '../../components/PageDecorator';
 
-import { Category } from '../../models';
+import { Category, ChartColors } from '../../models';
 
 import './NewsFeed.css';
+
+const getRankColor = (rank: number) => {
+  if (rank < 7) return ChartColors.Neon;
+
+  if (rank > 27) return ChartColors.Red;
+
+  return null;
+};
 
 const fetchQuery = async (page: Category) => await getNews({ category: page });
 
@@ -19,7 +26,9 @@ const NewsFeed: Component = () => {
 
   createEffect(() => {
     if (data.news.length === 0) {
-      fetchQuery(Category.All).then((companies) => updateNews(companies));
+      fetchQuery(Category.Bronze).then((companies: any) =>
+        updateNews(companies)
+      );
     }
   });
 
@@ -35,24 +44,24 @@ const NewsFeed: Component = () => {
             </li>
           }
         >
-          <Index each={data.news} fallback={<Loader hasBox />}>
-            {(list) => {
+          <Index each={data.news} fallback={<Loader />}>
+            {(list, index) => {
               const com = list();
 
               return (
-                <li class='screen layer view rounded content-full'>
-                  <div class='paper-grid items-center'>
-                    <div>
-                      <address class='paper-description'>
-                        {com.author} at {com.time}
-                      </address>
-                      <h2 class='subtitle'>{com.title}</h2>
-                    </div>
+                <li class='screen layer view rounded content-full flex items-center justify-between'>
+                  <article class='paper-grid items-center'>
+                    <h2
+                      class='box rank flex items-center justify-center'
+                      style={{ color: getRankColor(index) }}
+                    >
+                      {index + 1}
+                    </h2>
 
-                    <DateBox description={com.date} />
-                  </div>
+                    <p class='paper-description'>{com[0]}</p>
+                  </article>
 
-                  <p class='info'>{com.content}</p>
+                  <p class='paper-description'>{com[1]}</p>
                 </li>
               );
             }}

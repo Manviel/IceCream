@@ -2,15 +2,12 @@ import type { Component } from 'solid-js';
 
 import './Card.css';
 
-interface DateBoxType {
+type CardType = {
   description: string;
-}
-
-interface CardType extends DateBoxType {
   number: string | number;
   phrase: string;
   measure?: string;
-}
+};
 
 const Card: Component<CardType> = ({
   number,
@@ -25,14 +22,6 @@ const Card: Component<CardType> = ({
       <span class='card-measure'>{measure}</span>
     </strong>
     <sub class='card-sub'>{description}</sub>
-  </div>
-);
-
-export const DateBox: Component<DateBoxType> = ({ description }) => (
-  <div class='flex col box view rounded'>
-    <time class='box-description'>{description.slice(7, 11)}</time>
-
-    <strong class='subtitle'>{description.slice(0, 6)}</strong>
   </div>
 );
 

@@ -1,10 +1,17 @@
 .paper-description {
   text-transform: uppercase;
-  font-style: normal;
+  font-size: var(--s-medium);
 }
 
 .paper-grid {
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: var(--s-system);
+}
+
+.rank {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  font-size: 1.8rem;
 }
