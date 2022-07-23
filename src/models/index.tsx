@@ -17,7 +17,7 @@ export enum Category {
   Entertainment = 'entertainment',
 }
 
-export type Company = {
+export type Entity = {
   id: string;
   author: string;
   content: string;

@@ -1,7 +1,6 @@
 .superellipse {
   min-width: var(--s-ellipse);
   height: var(--s-ellipse);
-  position: relative;
   border-radius: 25%;
   background-color: var(--c-glass);
 }

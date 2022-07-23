@@ -25,7 +25,7 @@ const NewsFeed: Component = () => {
 
   return (
     <PageDecorator>
-      <HeaderTemplate subtitle='News' headline='Your Feed' />
+      <HeaderTemplate subtitle='Discover' headline='Golden League' />
 
       <ul>
         <ErrorBoundary
