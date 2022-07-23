@@ -54,7 +54,7 @@ const Vault: Component = () => {
           </div>
         </>
       }
-      triggerClassName='view vault rounded flex col widget'
+      triggerClassName='view box rounded flex col'
     >
       <div class='flex col form-group'>
         <label for='budget' class='form-control'>

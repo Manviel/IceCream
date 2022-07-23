@@ -37,7 +37,7 @@ const Health: Component = () => {
   });
 
   return (
-    <div class='layer rounded flex col widget widget-chart'>
+    <div class='layer rounded flex col widget-chart'>
       <article class='view'>
         <h3 class='widget-title'>Health</h3>
         <p class='term'>

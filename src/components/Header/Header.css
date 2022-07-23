@@ -6,7 +6,7 @@ button {
 
 a:active,
 button:active {
-  transform: scale(0.94);
+  transform: scale(0.95);
 }
 
 .btn {
@@ -22,7 +22,7 @@ button:active {
 
 .btn:hover {
   filter: var(--p-shadow);
-  background-color: var(--c-contrast);
+  background-color: var(--c-black);
   color: var(--c-white);
 }
 

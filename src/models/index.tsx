@@ -3,6 +3,7 @@ export enum ChartColors {
   Green = '#00e396',
   Purple = '#b25fea',
   Red = '#fa124f',
+  Neon = '#04DE71',
 }
 
 export enum Category {

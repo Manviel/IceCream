@@ -21,11 +21,6 @@
   font-size: var(--s-medium);
 }
 
-.box {
-  background-color: var(--c-contrast);
-  color: var(--c-primary);
-}
-
 .box-description {
   font-size: 1.6rem;
   text-transform: uppercase;
