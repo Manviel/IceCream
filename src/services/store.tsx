@@ -1,13 +1,13 @@
 import { createContext, useContext, ParentComponent } from 'solid-js';
 import { createStore } from 'solid-js/store';
 
-import { Category, Entity } from '../models';
+import { Category, Entity, LeagueUnion } from '../models';
 import { getEnumKeyByEnumValue, getRandomEnum } from './utils';
 
 type NewsContextState = {
   readonly news: Entity[];
   readonly currentRank: Category;
-  readonly currentLeague: string;
+  readonly currentLeague: LeagueUnion;
 };
 
 type NewsContextValue = [

@@ -1,5 +1,6 @@
 :root {
   --s-chart-bar: 8;
+  --c-legend: #636366;
 }
 
 .frappe-chart .x.axis .line-vertical {
@@ -38,7 +39,7 @@ circle {
 
 .chart-container .axis,
 .chart-container .chart-label {
-  fill: #636366;
+  fill: var(--c-legend);
 }
 
 @media screen and (max-width: 768px) {

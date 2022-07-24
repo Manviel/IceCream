@@ -1,3 +1,7 @@
+:root {
+  --c-blue: #2094fa;
+}
+
 .paper-description {
   text-transform: uppercase;
   font-size: var(--s-medium);
@@ -14,4 +18,11 @@
   height: 4rem;
   border-radius: 50%;
   font-size: 1.8rem;
+}
+
+.current-league .backward {
+  background-color: var(--c-black);
+  transform: scale(1.6);
+  font-weight: bold;
+  color: var(--c-blue);
 }

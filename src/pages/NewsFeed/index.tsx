@@ -7,17 +7,12 @@ import Loader from '../../components/Loader';
 import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import PageDecorator from '../../components/PageDecorator';
 
-import { Category, ChartColors } from '../../models';
+import { Category } from '../../models';
+
+import Rank from './Rank';
+import Leagues from './Leagues';
 
 import './NewsFeed.css';
-
-const getRankColor = (rank: number) => {
-  if (rank < 7) return ChartColors.Neon;
-
-  if (rank > 27) return ChartColors.Red;
-
-  return null;
-};
 
 const fetchQuery = async (page: Category) => await getNews({ category: page });
 
@@ -39,6 +34,8 @@ const NewsFeed: Component = () => {
         headline={`${data.currentLeague} League`}
       />
 
+      <Leagues currentLeague={data.currentLeague} />
+
       <ul>
         <ErrorBoundary
           fallback={
@@ -54,12 +51,7 @@ const NewsFeed: Component = () => {
               return (
                 <li class='screen layer view rounded content-full flex items-center justify-between'>
                   <article class='paper-grid items-center'>
-                    <h2
-                      class='box rank flex items-center justify-center'
-                      style={{ color: getRankColor(index) }}
-                    >
-                      {index + 1}
-                    </h2>
+                    <Rank place={index} />
 
                     <p class='paper-description'>{com[0]}</p>
                   </article>

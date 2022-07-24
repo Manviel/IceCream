@@ -28,7 +28,7 @@ export const average = (arr: number[]) => total(arr) / arr.length;
 export function getEnumKeyByEnumValue<TK extends string, TV extends string>(
   myEnum: { [key in TK]: TV },
   enumValue: TV
-): string {
+) {
   const keys = (Object.keys(myEnum) as TK[]).filter(
     (x) => myEnum[x] === enumValue
   );

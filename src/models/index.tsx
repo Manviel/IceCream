@@ -14,6 +14,8 @@ export enum Category {
   Ruby = 'AUD',
 }
 
+export type LeagueUnion = 'Bronze' | 'Silver' | 'Gold' | 'Sapphire' | 'Ruby';
+
 export type Entity = {
   [key: string]: number;
 };
