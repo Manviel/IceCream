@@ -1,9 +1,9 @@
 import { Component, lazy } from 'solid-js';
 import { Routes, Route, NavLink } from 'solid-app-router';
 
-import SuperEllipse from './components/Superellipse';
+import { SuperEllipse } from './components/Superellipse';
 
-import BagIcon from './assets/icons/bag.svg';
+import FlameIcon from './assets/icons/flame.svg';
 import SquareTextIcon from './assets/icons/square-text.svg';
 import PersonFinderIcon from './assets/icons/person-finder.svg';
 import LockIcon from './assets/icons/lock.svg';
@@ -22,7 +22,7 @@ const App: Component = () => {
         <Routes>
           <Route path='/' element={<Home />} />
 
-          <Route path='/news' element={<NewsFeed />} />
+          <Route path='/league' element={<NewsFeed />} />
 
           <Route path='/profile' element={<Profile />} />
 
@@ -35,31 +35,23 @@ const App: Component = () => {
       </main>
 
       <nav
-        class='fixed-bottom dock depth content-full flex justify-between'
+        class='fixed-bottom dock content-full flex justify-between'
         aria-label='Tabs'
       >
-        <NavLink href='/products' aria-label='Products'>
-          <SuperEllipse>
-            <BagIcon />
-          </SuperEllipse>
+        <NavLink href='/products' aria-label='Products' class={SuperEllipse}>
+          <SquareTextIcon />
         </NavLink>
 
-        <NavLink href='/news' aria-label='News'>
-          <SuperEllipse>
-            <SquareTextIcon />
-          </SuperEllipse>
+        <NavLink href='/league' aria-label='League' class={SuperEllipse}>
+          <FlameIcon />
         </NavLink>
 
-        <NavLink href='/privacy' aria-label='Privacy'>
-          <SuperEllipse>
-            <LockIcon />
-          </SuperEllipse>
+        <NavLink href='/privacy' aria-label='Privacy' class={SuperEllipse}>
+          <LockIcon />
         </NavLink>
 
-        <NavLink href='/profile' aria-label='Profile'>
-          <SuperEllipse>
-            <PersonFinderIcon />
-          </SuperEllipse>
+        <NavLink href='/profile' aria-label='Profile' class={SuperEllipse}>
+          <PersonFinderIcon />
         </NavLink>
       </nav>
     </div>

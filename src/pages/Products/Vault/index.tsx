@@ -30,7 +30,10 @@ const Vault: Component = () => {
       triggerContent={
         <>
           <h3 class='widget-title'>Vault</h3>
-          <div class='conditions'>
+
+          <p class='term grey'>Up to 12 months</p>
+
+          <div class='products conditions items-center'>
             <div class='activity' role='progressbar' aria-valuenow={valueNow}>
               <svg viewBox='0 0 37 37'>
                 <g class='ring'>
@@ -44,24 +47,18 @@ const Vault: Component = () => {
             </div>
 
             <article class='flex col context'>
-              <p class='term' id='term'>
-                12 months at 12% per annum
-              </p>
-              <h4 class='flex justify-between sum'>
-                {commasAdapter(budget())}
-                <output for='term' name='accrued' class='accrued'>
-                  +{commasAdapter(income())}
-                </output>
-              </h4>
+              <h4 class='sum'>{commasAdapter(budget())}</h4>
+              <h5 class='term grey'>12%</h5>
+              <h6 class='accrued'>+{commasAdapter(income())}</h6>
             </article>
           </div>
         </>
       }
-      triggerClassName='view vault rounded flex col widget'
+      triggerClassName='view box rounded flex col'
     >
       <div class='flex col form-group'>
         <label for='budget' class='form-control'>
-          Sum
+          Sum:
         </label>
         <input
           id='budget'

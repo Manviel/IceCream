@@ -3,12 +3,14 @@ import { Index, ErrorBoundary, Component, createEffect } from 'solid-js';
 import { getNews } from '../../services/news';
 import { useNews } from '../../services/store';
 
-import { DateBox } from '../../components/Card';
 import Loader from '../../components/Loader';
 import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import PageDecorator from '../../components/PageDecorator';
 
 import { Category } from '../../models';
+
+import Rank from './Rank';
+import Leagues from './Leagues';
 
 import './NewsFeed.css';
 
@@ -19,13 +21,20 @@ const NewsFeed: Component = () => {
 
   createEffect(() => {
     if (data.news.length === 0) {
-      fetchQuery(Category.All).then((companies) => updateNews(companies));
+      fetchQuery(data.currentRank).then((entities: any) =>
+        updateNews(entities)
+      );
     }
   });
 
   return (
     <PageDecorator>
-      <HeaderTemplate subtitle='News' headline='Your Feed' />
+      <HeaderTemplate
+        subtitle='Discover'
+        headline={`${data.currentLeague} League`}
+      />
+
+      <Leagues currentLeague={data.currentLeague} />
 
       <ul>
         <ErrorBoundary
@@ -35,24 +44,19 @@ const NewsFeed: Component = () => {
             </li>
           }
         >
-          <Index each={data.news} fallback={<Loader hasBox />}>
-            {(list) => {
+          <Index each={data.news} fallback={<Loader />}>
+            {(list, index) => {
               const com = list();
 
               return (
-                <li class='screen layer view rounded content-full'>
-                  <div class='paper-grid items-center'>
-                    <div>
-                      <address class='paper-description'>
-                        {com.author} at {com.time}
-                      </address>
-                      <h2 class='subtitle'>{com.title}</h2>
-                    </div>
+                <li class='screen layer view rounded content-full flex items-center justify-between'>
+                  <article class='paper-grid items-center'>
+                    <Rank place={index} />
 
-                    <DateBox description={com.date} />
-                  </div>
+                    <p class='paper-description'>{com[0]}</p>
+                  </article>
 
-                  <p class='info'>{com.content}</p>
+                  <p class='paper-description'>{com[1]}</p>
                 </li>
               );
             }}

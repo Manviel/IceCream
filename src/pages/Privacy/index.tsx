@@ -4,12 +4,13 @@ import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import ConnectFactory from '../../components/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
 
+import Article from './Article';
+
 const Privacy: Component = () => (
   <PageDecorator>
     <HeaderTemplate subtitle='Privacy' headline='Designed for your policy' />
 
-    <article class='layer view content-full rounded screen on-scroll'>
-      <h2 class='info'>Kanban vs Scrum</h2>
+    <Article name='Kanban vs Scrum'>
       <p class='info'>
         Kanban is a methodology centered around visualizing tasks, while Scrum
         is a methodology that structures workflow and team culture to deliver
@@ -21,10 +22,9 @@ const Privacy: Component = () => (
       </p>
 
       <ConnectFactory href='https://www.coursera.org/articles/kanban-vs-scrum' />
-    </article>
+    </Article>
 
-    <article class='layer view content-full rounded screen on-scroll'>
-      <h2 class='info'>Functional and non functional requirements</h2>
+    <Article name='Functional and non functional requirements'>
       <p class='info'>
         Functional requirements can be most simply defined as:
         <b> Something the system must do</b>. If the system does not meet a
@@ -45,10 +45,9 @@ const Privacy: Component = () => (
       </p>
 
       <ConnectFactory href='https://enkonix.com/blog/functional-requirements-vs-non-functional' />
-    </article>
+    </Article>
 
-    <article class='layer view content-full rounded screen on-scroll'>
-      <h2 class='info'>Scope creep and Gold plating</h2>
+    <Article name='Scope creep and Gold plating'>
       <p class='info'>
         Gold plating happens when the project team adds extra features that were
         not part of the original scope, usually as “freebies” for the client.
@@ -68,10 +67,9 @@ const Privacy: Component = () => (
       </p>
 
       <ConnectFactory href='https://projectmanagementacademy.net/resources/blog/gold-plating-vs-scope-creep/' />
-    </article>
+    </Article>
 
-    <article class='layer view content-full rounded screen on-scroll'>
-      <h2 class='info'>Estimation techniques</h2>
+    <Article name='Estimation techniques'>
       <p class='info'>
         An estimate is a rough calculation of something. For example, a project
         cost estimate is a general idea of the price model for a project.
@@ -121,10 +119,9 @@ const Privacy: Component = () => (
       </p>
 
       <ConnectFactory href='https://www.wrike.com/blog/project-estimation-techniques/' />
-    </article>
+    </Article>
 
-    <article class='layer view content-full rounded screen on-scroll'>
-      <h2 class='info'>Authentication and Authorization</h2>
+    <Article name='Authentication and Authorization'>
       <p class='info'>
         Authentication is a process that verifies that someone or something is
         who they say they are. Technology systems typically use some form of
@@ -138,10 +135,9 @@ const Privacy: Component = () => (
       </p>
 
       <ConnectFactory href='https://www.sailpoint.com/identity-library/difference-between-authentication-and-authorization/' />
-    </article>
+    </Article>
 
-    <article class='layer view content-full rounded screen on-scroll'>
-      <h2 class='info'>What is Unit testing?</h2>
+    <Article name='What is Unit testing?'>
       <p class='info'>
         Unit testing ensures that the units within your program are working as
         expected.
@@ -224,10 +220,9 @@ const Privacy: Component = () => (
       </p>
 
       <ConnectFactory href='https://www.educative.io/blog/unit-testing-best-practices-overview' />
-    </article>
+    </Article>
 
-    <article class='layer view content-full rounded screen on-scroll'>
-      <h2 class='info'>OOD principles</h2>
+    <Article name='OOD principles'>
       <p class='info'>
         Single responsibility - the class should be responsible for one task. If
         a class is responsible for solving several tasks, then its subsystems
@@ -257,7 +252,7 @@ const Privacy: Component = () => (
       </p>
 
       <ConnectFactory href='https://meline.lviv.ua/development/other/ood/' />
-    </article>
+    </Article>
   </PageDecorator>
 );
 

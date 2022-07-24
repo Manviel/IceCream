@@ -25,27 +25,21 @@ const options = [
 const Profile: Component = () => {
   const [theme, setTheme] = createSignal<string>(options[0].value);
 
-  const handleSubmit = () => {
-    document.body.className = theme();
-  };
-
   return (
     <PageDecorator>
       <HeaderTemplate subtitle='Your Profile' headline='And new superpower' />
 
       <Quote />
 
-      <article class='layer view rounded content-full'>
-        <h3 class='badge flex items-center rounded info'>
-          <i class={`indicator ${theme()}`}></i>Design Gallery
-        </h3>
+      <article class='layer view rounded content-full screen'>
+        <h3 class={`badge subtitle ${theme()}`}>Design Gallery</h3>
 
         <RadioGroup class='flex col' value={theme()} onChange={setTheme}>
           <For each={options}>
             {(option) => (
               <RadioGroupOption
                 value={option.value}
-                class='flex items-center form-item rounded'
+                class='flex items-center badge form-item rounded'
               >
                 {({ checked }) => (
                   <>
@@ -57,10 +51,6 @@ const Profile: Component = () => {
             )}
           </For>
         </RadioGroup>
-
-        <button class='btn' onClick={handleSubmit}>
-          Update theme
-        </button>
       </article>
     </PageDecorator>
   );

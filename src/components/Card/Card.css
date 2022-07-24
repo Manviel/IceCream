@@ -1,6 +1,16 @@
+:root {
+  --c-olive: #78b589;
+}
+
+.card {
+  background-color: var(--c-secondary);
+  color: var(--c-primary);
+}
+
 .card-text {
   display: block;
   font-size: 6.4rem;
+  color: var(--c-olive);
 }
 
 .card-measure {
@@ -9,13 +19,4 @@
 
 .card-sub {
   font-size: var(--s-medium);
-}
-
-.box {
-  background-color: var(--c-contrast);
-  color: var(--c-white);
-}
-
-.box-description {
-  font-size: 1.6rem;
 }

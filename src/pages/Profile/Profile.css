@@ -1,25 +1,13 @@
 :root {
-  --c-success: #00e396;
+  --s-radio: 2.4rem;
 }
 
 .badge {
-  padding: 1.3rem 1.6rem;
-  background-color: var(--c-active);
-}
-
-.indicator {
-  display: block;
-  min-width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: var(--c-primary);
-  margin-right: 2rem;
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  padding: 1.2rem;
 }
 
 .form-item {
-  padding: 1.2rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
   cursor: pointer;
 }
 
@@ -29,39 +17,38 @@
 }
 
 .form-radio {
-  height: 2.8rem;
-  min-width: 2.8rem;
+  height: var(--s-radio);
+  min-width: var(--s-radio);
   border-width: 0.6rem;
   border-style: solid;
-  border-color: var(--c-dark);
+  border-color: var(--c-primary);
+  box-shadow: 0 0 0 0.6rem var(--c-grey);
   border-radius: 50%;
-  transition: border 0.2s ease-out;
+  transition: border 0.2s ease-out, background-color 0.25s;
 }
 
-.form-item:hover {
-  background-color: var(--c-active);
+.form-radio:hover {
+  background-color: var(--c-dark);
 }
 
 .form-radio.radio-checked {
-  border-color: var(--c-success);
+  background-color: var(--c-ring);
+}
+
+.box-description {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
 }
 
 .blue-theme {
-  --c-primary: #dce7f9;
+  color: var(--c-ring);
 }
 
 .night-theme {
-  --c-primary: rgba(30, 30, 30, 0.75);
+  color: var(--c-purple);
 }
 
 .orange-theme {
-  --c-primary: #ff8c82;
-}
-
-@keyframes ping {
-  75%,
-  100% {
-    transform: scale(1.6);
-    opacity: 0.7;
-  }
+  color: var(--c-heat);
 }

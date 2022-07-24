@@ -1,3 +1,8 @@
+:root {
+  --s-chart-bar: 8;
+  --c-legend: #636366;
+}
+
 .frappe-chart .x.axis .line-vertical {
   display: none;
 }
@@ -7,20 +12,34 @@
 }
 
 .frappe-chart .bar {
-  rx: 6;
-  ry: 6;
+  rx: var(--s-chart-bar);
+  ry: var(--s-chart-bar);
 }
 
 circle {
   fill: none;
-  stroke-width: 0.5rem;
+  stroke-width: 0.52rem;
   cx: 50%;
   cy: 50%;
-  r: 15.915;
+  r: 15.914;
 }
 
 .graph-svg-tip.comparison .title {
   font-size: 1.8rem;
+}
+
+.widget-chart {
+  transition: filter 0.4s, transform 0.4s var(--a-press);
+}
+
+.widget-chart:hover {
+  transform: scale(1.02);
+  filter: var(--p-shadow);
+}
+
+.chart-container .axis,
+.chart-container .chart-label {
+  fill: var(--c-legend);
 }
 
 @media screen and (max-width: 768px) {
@@ -28,7 +47,15 @@ circle {
     grid-column: span 2;
   }
 
+  .widget-chart:hover {
+    transform: scale(1.05);
+  }
+
   .graph-svg-tip.comparison .title {
     font-size: 1.6rem;
+  }
+
+  .frappe-chart .bar {
+    --s-chart-bar: 6;
   }
 }

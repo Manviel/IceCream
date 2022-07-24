@@ -1,6 +1,9 @@
 import { Component, onMount } from 'solid-js';
 import { Chart } from 'frappe-charts';
 
+import { ChartColors } from '../../../models';
+import { total } from '../../../services/utils';
+
 const source = {
   Eggs: 6.3,
   'Chicken breast': 26.7,
@@ -11,6 +14,9 @@ const source = {
   'Lean beef': 24.6,
   Salmon: 30.5,
   Peanuts: 7.3,
+  Almonds: 5.8,
+  Quinoa: 8,
+  'Turkey breast': 25.6,
 };
 
 const Health: Component = () => {
@@ -25,14 +31,19 @@ const Health: Component = () => {
           },
         ],
       },
-      colors: ['#0072ea'],
+      colors: [ChartColors.Blue],
       isNavigable: true,
     });
   });
 
   return (
-    <div class='layer rounded flex col widget widget-chart'>
-      <h3 class='view widget-title'>Health (grams of protein)</h3>
+    <div class='layer rounded flex col widget-chart'>
+      <article class='view'>
+        <h3 class='widget-title'>Health</h3>
+        <p class='term'>
+          Total protein is equal to {Math.round(total(Object.values(source)))}gm
+        </p>
+      </article>
       <div id='chart-health' class='content-full' role='presentation'></div>
     </div>
   );

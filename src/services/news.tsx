@@ -13,15 +13,15 @@ export const getNews = async (params: PaginateType) => {
   const { category } = params;
 
   const response = await fetch(
-    `https://inshorts.deta.dev/news?category=${category}`,
+    `https://api.frankfurter.app/latest?from=${category}`,
     {
       headers,
     }
   );
 
-  const { data } = await response.json();
+  const { rates } = await response.json();
 
-  return data;
+  return Object.entries(rates);
 };
 
 export const getQuote = async () => {

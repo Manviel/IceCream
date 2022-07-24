@@ -1,17 +1,12 @@
 .superellipse {
   min-width: var(--s-ellipse);
   height: var(--s-ellipse);
-  position: relative;
   border-radius: 25%;
-  background-color: var(--c-secondary);
-  transition: transform 0.4s var(--a-press), background-color 0.25s;
+  background-color: var(--c-glass);
 }
 
-.superellipse:hover {
-  background-color: var(--c-white);
-}
-
-.active .superellipse {
+.superellipse:hover,
+.superellipse.active {
   background-color: var(--c-white);
 }
 
@@ -20,12 +15,12 @@ a.active {
 }
 
 a:focus-visible {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 1px solid var(--c-ring);
+  outline: 2px solid var(--c-ring);
   outline-offset: 4px;
   border-radius: var(--s-system);
 }

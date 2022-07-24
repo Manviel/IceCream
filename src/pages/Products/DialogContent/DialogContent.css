@@ -1,5 +1,15 @@
+:root {
+  --c-backdrop: rgba(0, 0, 0, 0.4);
+}
+
+.depth {
+  background-color: var(--c-depth);
+  backdrop-filter: var(--p-blur);
+  color: #000;
+}
+
 .backdrop {
-  background: rgba(0, 0, 0, 0.4);
+  background-color: var(--c-backdrop);
   position: fixed;
   overflow-y: auto;
   top: 0;

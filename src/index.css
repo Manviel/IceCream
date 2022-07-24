@@ -3,20 +3,23 @@
   --c-white: #fff;
   --c-dark: rgba(0, 0, 0, 0.2);
   --c-active: rgba(0, 0, 0, 0.05);
-  --c-secondary: rgba(255, 255, 255, 0.52);
-  --c-glass: rgba(245, 245, 245, 0.4);
-  --c-primary: #c1deba;
-  --c-material: #f2f2f7;
-  --c-contrast: #232526;
-  --c-ring: #0072ea;
+  --c-secondary: #2c2c2e;
+  --c-glass: rgba(255, 255, 255, 0.72);
+  --c-primary: #f5f5f7;
+  --c-action: rgba(118, 118, 128, 0.22);
+  --c-depth: rgba(245, 245, 245, 0.5);
+  --c-ring: #0066cc;
+  --c-grey: #a1a1a6;
+  --c-heat: #fa124f;
+  --c-purple: #b25fea;
   --s-ellipse: 5.4rem;
   --s-medium: 2rem;
   --s-dock: 2.3rem;
   --s-system: 1.4rem;
   --s-unit: 0.8rem;
   --a-press: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --p-blur: blur(80px) saturate(160%);
-  --p-shadow: drop-shadow(0px 20px 30px var(--c-dark));
+  --p-blur: blur(20px) saturate(180%);
+  --p-shadow: drop-shadow(0px 0px 30px var(--c-dark));
 }
 
 html {
@@ -36,8 +39,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: var(--s-system);
   background-color: var(--c-primary);
+  color: var(--c-black);
   min-height: 100vh;
-  padding: var(--s-unit) var(--s-unit) 10.8rem;
+  padding-bottom: 9.2rem;
 }
 
 a {
@@ -55,6 +59,8 @@ ul {
 
 button {
   cursor: pointer;
+  border: 0;
+  font-family: inherit;
 }
 
 .app {
@@ -92,10 +98,6 @@ button {
   margin: 1.6rem 0 1rem;
 }
 
-.text {
-  max-width: 62rem;
-}
-
 .items-center {
   align-items: center;
 }
@@ -116,19 +118,13 @@ button {
   padding: var(--s-medium);
 }
 
-.depth {
-  background-color: var(--c-glass);
-  backdrop-filter: var(--p-blur);
-  color: var(--c-black);
-}
-
 .screen {
-  margin-top: 3.2rem;
+  margin-top: 3.4rem;
 }
 
 .fixed-bottom {
   position: fixed;
-  bottom: var(--s-unit);
+  bottom: 1.2rem;
   left: 50%;
   animation: toast-enter cubic-bezier(0.155, 1.105, 0.295, 1.12) 0.4s both;
 }
@@ -137,11 +133,12 @@ button {
   max-width: 58rem;
   padding: 1.6rem;
   border-radius: var(--s-dock);
+  background-color: var(--c-dark);
+  backdrop-filter: var(--p-blur);
 }
 
 .layer {
   background-color: var(--c-white);
-  color: var(--c-contrast);
 }
 
 .connect {
@@ -166,6 +163,15 @@ button {
   transform: translateY(0);
 }
 
+.grey {
+  color: var(--c-grey);
+}
+
+.box {
+  background-color: var(--c-black);
+  color: var(--c-white);
+}
+
 @media screen and (max-width: 768px) {
   .view {
     padding: var(--s-system);
@@ -176,7 +182,7 @@ button {
   }
 
   .dock {
-    max-width: calc(100% - 1.6rem);
+    max-width: calc(100% - 2.4rem);
   }
 
   .subtitle {

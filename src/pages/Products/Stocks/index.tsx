@@ -1,6 +1,9 @@
 import { Component, onMount } from 'solid-js';
 import { Chart } from 'frappe-charts';
 
+import { ChartColors } from '../../../models';
+import { average } from '../../../services/utils';
+
 const source = {
   Dec: 180,
   Jan: 159,
@@ -23,7 +26,7 @@ const Stocks: Component = () => {
           },
         ],
       },
-      colors: ['#00e396'],
+      colors: [ChartColors.Green],
       lineOptions: {
         hideDots: 1,
         regionFill: 1,
@@ -34,8 +37,13 @@ const Stocks: Component = () => {
   });
 
   return (
-    <div class='layer rounded flex col widget widget-chart'>
-      <h3 class='view widget-title'>Stocks (value in usd)</h3>
+    <div class='layer rounded flex col widget-chart'>
+      <article class='view'>
+        <h3 class='widget-title'>Stocks</h3>
+        <p class='term'>
+          Average price is equal to ${average(Object.values(source))}
+        </p>
+      </article>
       <div id='chart-stocks' class='content-full' role='presentation'></div>
     </div>
   );

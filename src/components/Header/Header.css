@@ -1,27 +1,28 @@
+a,
 button {
-  border: 0;
+  transition: filter 0.25s, transform 0.4s var(--a-press),
+    background-color 0.25s, outline-offset 0.2s linear;
+}
+
+a:active,
+button:active {
+  transform: scale(0.95);
 }
 
 .btn {
   display: block;
   padding: 1.8rem var(--s-medium) 1.6rem;
-  background-color: var(--c-glass);
+  background-color: var(--c-active);
   color: var(--c-black);
   font-weight: bold;
   font-size: 1.6rem;
-  transition: filter 0.25s, transform 0.4s var(--a-press),
-    background-color 0.25s;
   border-radius: var(--s-dock);
   text-align: center;
 }
 
-.btn:active {
-  transform: scale(0.94);
-}
-
 .btn:hover {
   filter: var(--p-shadow);
-  background-color: var(--c-contrast);
+  background-color: var(--c-black);
   color: var(--c-white);
 }
 
@@ -42,9 +43,8 @@ button {
   height: 3.4rem;
   width: 3.4rem;
   border-radius: 50%;
-  transition: background-color 0.25s;
 }
 
 .backward:hover {
-  background-color: var(--c-secondary);
+  background-color: var(--c-dark);
 }

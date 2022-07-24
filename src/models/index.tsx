@@ -1,19 +1,21 @@
-export enum Category {
-  All = 'all',
-  Business = 'business',
-  Sports = 'sports',
-  World = 'world',
-  Politics = 'politics',
-  Technology = 'technology',
-  Startup = 'startup',
-  Entertainment = 'entertainment',
+export enum ChartColors {
+  Blue = '#007AFF',
+  Green = '#00e396',
+  Purple = '#b25fea',
+  Red = '#fa124f',
+  Neon = '#04DE71',
 }
 
-export type Company = {
-  id: string;
-  author: string;
-  content: string;
-  date: string;
-  time: string;
-  title: string;
+export enum Category {
+  Bronze = 'USD',
+  Silver = 'EUR',
+  Gold = 'GBP',
+  Sapphire = 'JPY',
+  Ruby = 'AUD',
+}
+
+export type LeagueUnion = 'Bronze' | 'Silver' | 'Gold' | 'Sapphire' | 'Ruby';
+
+export type Entity = {
+  [key: string]: number;
 };
