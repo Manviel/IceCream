@@ -1,5 +1,6 @@
 :root {
   --c-blue: #2094fa;
+  --a-snack: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .paper-description {
@@ -20,9 +21,78 @@
   font-size: 1.8rem;
 }
 
+.current-league,
+.league {
+  position: relative;
+}
+
 .current-league .backward {
   background-color: var(--c-black);
-  transform: scale(1.6);
+  transform: scale(1.5);
   font-weight: bold;
   color: var(--c-blue);
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-4.8rem);
+  background-color: var(--c-secondary);
+  color: var(--c-white);
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--s-dock);
+  animation: tooltip-enter var(--a-snack) 0.3s both;
+}
+
+.notification {
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  background-color: var(--c-dark);
+  backdrop-filter: var(--p-blur);
+  border-radius: var(--s-dock);
+  animation: snack-path var(--a-snack) 4s both;
+}
+
+.snackbar {
+  display: block;
+  background-color: var(--c-depth);
+  border-radius: var(--s-dock);
+  padding: 1.2rem 1.4rem;
+  white-space: nowrap;
+}
+
+.snackbar-title {
+  font-size: 1.6rem;
+  line-height: var(--s-medium);
+}
+
+.snackbar-desc {
+  font-size: 1.3rem;
+  margin-top: 0.2rem;
+}
+
+@keyframes tooltip-enter {
+  0% {
+    opacity: 0.01;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes snack-path {
+  0%,
+  100% {
+    opacity: 0.01;
+    transform: translateY(-100%) translateX(-50%);
+  }
+
+  10%,
+  75% {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
 }

@@ -48,7 +48,7 @@ circle {
   }
 
   .widget-chart:hover {
-    transform: scale(1.06);
+    transform: scale(1.05);
   }
 
   .graph-svg-tip.comparison .title {
