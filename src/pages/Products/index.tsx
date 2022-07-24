@@ -20,14 +20,14 @@ const Products: Component = () => {
 
       <h2 class='info'>Quick actions and features</h2>
 
-      <article class='products'>
+      <div class='products'>
         <Vault />
         <Inbox />
         <Stocks />
         <Health />
         <Promotions />
         <Subscriptions />
-      </article>
+      </div>
     </PageDecorator>
   );
 };

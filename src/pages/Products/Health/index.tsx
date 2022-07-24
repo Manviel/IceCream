@@ -41,7 +41,7 @@ const Health: Component = () => {
       <article class='view'>
         <h3 class='widget-title'>Health</h3>
         <p class='term'>
-          Total protein {Math.round(total(Object.values(source)))} grams
+          Total protein is equal to {Math.round(total(Object.values(source)))}gm
         </p>
       </article>
       <div id='chart-health' class='content-full' role='presentation'></div>
