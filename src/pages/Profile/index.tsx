@@ -43,7 +43,10 @@ const Profile: Component = () => {
               >
                 {({ checked }) => (
                   <>
-                    <i class={`form-radio ${checked() && 'radio-checked'}`}></i>
+                    <i
+                      class='form-radio'
+                      classList={{ 'radio-checked': checked() }}
+                    ></i>
                     <Label class='form-label'>{option.label}</Label>
                   </>
                 )}

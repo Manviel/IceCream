@@ -73,6 +73,10 @@
   margin-top: 0.2rem;
 }
 
+.place {
+  background-color: var(--c-action);
+}
+
 @keyframes tooltip-enter {
   0% {
     opacity: 0.01;

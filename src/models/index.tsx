@@ -17,5 +17,5 @@ export enum Category {
 export type LeagueUnion = 'Bronze' | 'Silver' | 'Gold' | 'Sapphire' | 'Ruby';
 
 export type Entity = {
-  [key: string]: number;
+  [key: string]: number | string;
 };
