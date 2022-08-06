@@ -2,7 +2,7 @@ import { Component, createSignal, createEffect } from 'solid-js';
 
 import DialogFacade from '../DialogContent/DialogFacade';
 
-import { commasAdapter } from '../../../services/utils';
+import { commasAdapter, randomInRange } from '../../../services/utils';
 
 import './Vault.css';
 
@@ -10,7 +10,7 @@ const Vault: Component = () => {
   const [budget, setBudget] = createSignal(1000);
   const [income, setIncome] = createSignal(0);
 
-  const valueNow = 80;
+  const valueNow = randomInRange(52, 98);
 
   createEffect(() => {
     const interest = 12 * 0.01;

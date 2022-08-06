@@ -5,6 +5,8 @@ import Quote from '../../components/Card/Quote';
 import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import PageDecorator from '../../components/PageDecorator';
 
+import Breathe from './Breathe';
+
 import './Profile.css';
 
 const options = [
@@ -55,6 +57,8 @@ const Profile: Component = () => {
           </For>
         </RadioGroup>
       </article>
+
+      <Breathe />
     </PageDecorator>
   );
 };

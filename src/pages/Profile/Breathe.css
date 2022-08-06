@@ -1,0 +1,118 @@
+:root {
+  --s-petal: 12.5rem;
+  --c-odd: #61bea2;
+  --c-even: #529ca0;
+}
+
+.breathe {
+  animation: relax 4s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
+}
+
+.circle {
+  border-radius: 50%;
+  position: absolute;
+  mix-blend-mode: screen;
+  transform: translate(0, 0);
+  animation: center 6s infinite;
+}
+
+.breathe,
+.circle {
+  height: var(--s-petal);
+  width: var(--s-petal);
+}
+
+.circle:nth-child(odd) {
+  background: var(--c-odd);
+}
+
+.circle:nth-child(even) {
+  background: var(--c-even);
+}
+
+.circle:nth-child(1) {
+  animation: circle-1 4s ease alternate infinite;
+}
+
+.circle:nth-child(2) {
+  animation: circle-2 4s ease alternate infinite;
+}
+
+.circle:nth-child(3) {
+  animation: circle-3 4s ease alternate infinite;
+}
+
+.circle:nth-child(4) {
+  animation: circle-4 4s ease alternate infinite;
+}
+
+.circle:nth-child(5) {
+  animation: circle-5 4s ease alternate infinite;
+}
+
+.circle:nth-child(6) {
+  animation: circle-6 4s ease alternate infinite;
+}
+
+@keyframes relax {
+  0% {
+    transform: scale(0.15) rotate(180deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes circle-1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-35px, -50px);
+  }
+}
+
+@keyframes circle-2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(35px, 50px);
+  }
+}
+
+@keyframes circle-3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-60px, 0);
+  }
+}
+
+@keyframes circle-4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(60px, 0);
+  }
+}
+
+@keyframes circle-5 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-35px, 50px);
+  }
+}
+
+@keyframes circle-6 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(35px, -50px);
+  }
+}

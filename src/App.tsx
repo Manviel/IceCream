@@ -42,7 +42,7 @@ const App: Component = () => {
           <SquareTextIcon />
         </NavLink>
 
-        <NavLink href='/league' aria-label='League' class={SuperEllipse}>
+        <NavLink href='/league' aria-label='Leagues' class={SuperEllipse}>
           <FlameIcon />
         </NavLink>
 
