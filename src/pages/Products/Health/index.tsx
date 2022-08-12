@@ -1,8 +1,9 @@
 import { Component, onMount } from 'solid-js';
-import { Chart } from 'frappe-charts';
+import Chart from 'chart.js/auto';
 
 import { ChartColors } from '../../../models';
 import { total } from '../../../services/utils';
+import { hideGridCells } from '../frappe-charts';
 
 const source = {
   Eggs: 6.3,
@@ -21,31 +22,36 @@ const source = {
 
 const Health: Component = () => {
   onMount(() => {
-    new Chart('#chart-health', {
+    const ctx = document.getElementById('chart-health') as HTMLCanvasElement;
+
+    new Chart(ctx, {
       type: 'bar',
       data: {
         labels: Object.keys(source),
         datasets: [
           {
-            values: Object.values(source),
+            label: 'Protein',
+            borderRadius: 12,
+            backgroundColor: ChartColors.Blue,
+            hoverBackgroundColor: 'hsl(211, 100%, 40%)',
+            data: Object.values(source),
           },
         ],
       },
-      colors: [ChartColors.Blue],
-      isNavigable: true,
+      options: {
+        scales: hideGridCells,
+      },
     });
   });
 
   return (
-    <div class='layer rounded flex col widget-chart'>
-      <article class='view'>
-        <h3 class='widget-title'>Health</h3>
-        <p class='term'>
-          Total protein is equal to {Math.round(total(Object.values(source)))}gm
-        </p>
-      </article>
-      <div id='chart-health' class='content-full' role='presentation'></div>
-    </div>
+    <article class='layer view rounded flex col widget-chart'>
+      <h3 class='widget-title'>Health</h3>
+      <p class='term'>
+        Total protein is equal to {Math.round(total(Object.values(source)))}gm
+      </p>
+      <canvas id='chart-health' class='conditions'></canvas>
+    </article>
   );
 };
 

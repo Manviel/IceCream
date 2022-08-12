@@ -16,6 +16,7 @@
     "vite-plugin-solid-svg": "^0.2.0"
   },
   "dependencies": {
+    "chart.js": "^3.9.1",
     "frappe-charts": "^1.6.2",
     "solid-a11y": "^0.3.0",
     "solid-app-router": "^0.3.3",

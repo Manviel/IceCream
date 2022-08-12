@@ -10,7 +10,7 @@ const Vault: Component = () => {
   const [budget, setBudget] = createSignal(1000);
   const [income, setIncome] = createSignal(0);
 
-  const valueNow = randomInRange(52, 98);
+  const valueNow = randomInRange(52, 94);
 
   createEffect(() => {
     const interest = 12 * 0.01;

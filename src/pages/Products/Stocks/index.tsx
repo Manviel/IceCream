@@ -1,8 +1,9 @@
 import { Component, onMount } from 'solid-js';
-import { Chart } from 'frappe-charts';
+import Chart from 'chart.js/auto';
 
 import { ChartColors } from '../../../models';
 import { average } from '../../../services/utils';
+import { hideGridCells } from '../frappe-charts';
 
 const source = {
   Dec: 180,
@@ -15,37 +16,42 @@ const source = {
 
 const Stocks: Component = () => {
   onMount(() => {
-    new Chart('#chart-stocks', {
+    const ctx = document.getElementById('chart-stocks') as HTMLCanvasElement;
+
+    new Chart(ctx, {
       type: 'line',
       data: {
         labels: Object.keys(source),
         datasets: [
           {
-            name: 'AAPL',
-            values: Object.values(source),
+            label: 'AAPL',
+            fill: true,
+            borderColor: ChartColors.Green,
+            backgroundColor: 'hsl(160, 100%, 76%)',
+            hoverBackgroundColor: 'hsl(160, 100%, 30%)',
+            data: Object.values(source),
           },
         ],
       },
-      colors: [ChartColors.Green],
-      lineOptions: {
-        hideDots: 1,
-        regionFill: 1,
-        spline: 1,
+      options: {
+        elements: {
+          line: {
+            tension: 0.3,
+          },
+        },
+        scales: hideGridCells,
       },
-      isNavigable: true,
     });
   });
 
   return (
-    <div class='layer rounded flex col widget-chart'>
-      <article class='view'>
-        <h3 class='widget-title'>Stocks</h3>
-        <p class='term'>
-          Average price is equal to ${average(Object.values(source))}
-        </p>
-      </article>
-      <div id='chart-stocks' class='content-full' role='presentation'></div>
-    </div>
+    <article class='layer view rounded flex col widget-chart'>
+      <h3 class='widget-title'>Stocks</h3>
+      <p class='term'>
+        Average price is equal to ${average(Object.values(source))}
+      </p>
+      <canvas id='chart-stocks' class='conditions'></canvas>
+    </article>
   );
 };
 
