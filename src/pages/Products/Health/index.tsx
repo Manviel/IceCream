@@ -3,7 +3,7 @@ import Chart from 'chart.js/auto';
 
 import { ChartColors } from '../../../models';
 import { total } from '../../../services/utils';
-import { hideGridCells } from '../frappe-charts';
+import { BAR_RADIUS, hideGridCells } from '../frappe-charts';
 
 const source = {
   Eggs: 6.3,
@@ -20,9 +20,11 @@ const source = {
   'Turkey breast': 25.6,
 };
 
+const chartID = 'chart-health';
+
 const Health: Component = () => {
   onMount(() => {
-    const ctx = document.getElementById('chart-health') as HTMLCanvasElement;
+    const ctx = document.getElementById(chartID) as HTMLCanvasElement;
 
     new Chart(ctx, {
       type: 'bar',
@@ -31,7 +33,7 @@ const Health: Component = () => {
         datasets: [
           {
             label: 'Protein',
-            borderRadius: 12,
+            borderRadius: BAR_RADIUS,
             backgroundColor: ChartColors.Blue,
             hoverBackgroundColor: 'hsl(211, 100%, 40%)',
             data: Object.values(source),
@@ -50,7 +52,7 @@ const Health: Component = () => {
       <p class='term'>
         Total protein is equal to {Math.round(total(Object.values(source)))}gm
       </p>
-      <canvas id='chart-health' class='conditions'></canvas>
+      <canvas id={chartID} class='conditions'></canvas>
     </article>
   );
 };

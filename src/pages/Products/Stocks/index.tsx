@@ -14,9 +14,11 @@ const source = {
   May: 137,
 };
 
+const chartID = 'chart-stocks';
+
 const Stocks: Component = () => {
   onMount(() => {
-    const ctx = document.getElementById('chart-stocks') as HTMLCanvasElement;
+    const ctx = document.getElementById(chartID) as HTMLCanvasElement;
 
     new Chart(ctx, {
       type: 'line',
@@ -50,7 +52,7 @@ const Stocks: Component = () => {
       <p class='term'>
         Average price is equal to ${average(Object.values(source))}
       </p>
-      <canvas id='chart-stocks' class='conditions'></canvas>
+      <canvas id={chartID} class='conditions'></canvas>
     </article>
   );
 };

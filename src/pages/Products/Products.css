@@ -19,3 +19,22 @@
   padding: 0.7rem 0.7rem 0.3rem;
   border-radius: 50%;
 }
+
+circle {
+  fill: none;
+  stroke-width: 0.52rem;
+}
+
+.widget-chart {
+  transition: filter 0.4s;
+}
+
+.widget-chart:hover {
+  filter: var(--p-shadow);
+}
+
+@media screen and (max-width: 768px) {
+  .widget-chart {
+    grid-column: span 2;
+  }
+}

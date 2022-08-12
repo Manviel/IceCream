@@ -12,7 +12,6 @@ import Promotions from './Promotions';
 import Subscriptions from './Subscriptions';
 
 import './Products.css';
-import './Charts.css';
 
 Chart.defaults.plugins.legend.position = 'bottom';
 

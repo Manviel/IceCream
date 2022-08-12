@@ -3,37 +3,38 @@ import Chart from 'chart.js/auto';
 
 import { ChartColors } from '../../../models';
 import { average } from '../../../services/utils';
+import { BAR_RADIUS, hideGridCells } from '../frappe-charts';
 
 const source = {
-  'House, Transport and Food': 54.8,
-  'Clothes and Personal': 14.5,
-  'Entertainment and Fitness': 15.4,
-  Save: 15.3,
+  Spotify: 165,
+  'Apple Music': 88,
+  Amazon: 68,
+  Youtube: 50,
 };
+
+const chartID = 'chart-subscriptions';
 
 const Subscriptions: Component = () => {
   onMount(() => {
-    const ctx = document.getElementById(
-      'chart-subscriptions'
-    ) as HTMLCanvasElement;
+    const ctx = document.getElementById(chartID) as HTMLCanvasElement;
 
     new Chart(ctx, {
-      type: 'doughnut',
+      type: 'bar',
       data: {
         labels: Object.keys(source),
         datasets: [
           {
-            label: 'My',
+            label: 'Million',
+            borderRadius: BAR_RADIUS,
+            backgroundColor: ChartColors.Purple,
+            hoverBackgroundColor: 'hsl(276, 77%, 45%)',
             data: Object.values(source),
-            backgroundColor: [
-              ChartColors.Purple,
-              ChartColors.Red,
-              ChartColors.Green,
-              ChartColors.Blue,
-            ],
-            hoverOffset: 4,
           },
         ],
+      },
+      options: {
+        indexAxis: 'y',
+        scales: hideGridCells,
       },
     });
   });
@@ -42,9 +43,9 @@ const Subscriptions: Component = () => {
     <article class='layer view rounded flex col widget-chart'>
       <h3 class='widget-title'>Subscriptions</h3>
       <p class='term'>
-        Average share is equal to {average(Object.values(source))}%
+        Average amount of people is {average(Object.values(source))} M
       </p>
-      <canvas id='chart-subscriptions' class='conditions'></canvas>
+      <canvas id={chartID} class='conditions'></canvas>
     </article>
   );
 };

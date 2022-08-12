@@ -10,3 +10,5 @@ export const hideGridCells = {
     },
   },
 };
+
+export const BAR_RADIUS = 10;

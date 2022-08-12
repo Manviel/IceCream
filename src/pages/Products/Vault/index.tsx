@@ -12,6 +12,8 @@ const Vault: Component = () => {
 
   const valueNow = randomInRange(52, 94);
 
+  const circleRadius = 15.914;
+
   createEffect(() => {
     const interest = 12 * 0.01;
     const years = 12 / 12;
@@ -37,9 +39,17 @@ const Vault: Component = () => {
             <div class='activity' role='progressbar' aria-valuenow={valueNow}>
               <svg viewBox='0 0 37 37'>
                 <g class='ring'>
-                  <circle class='background' />
+                  <circle
+                    class='background'
+                    cx='50%'
+                    cy='50%'
+                    r={circleRadius}
+                  />
                   <circle
                     class='completed'
+                    cx='50%'
+                    cy='50%'
+                    r={circleRadius}
                     stroke-dasharray={`${valueNow}, 100`}
                   />
                 </g>
