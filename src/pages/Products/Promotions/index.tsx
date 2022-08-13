@@ -19,12 +19,13 @@ const Promotions: Component = () => {
     <article class='box view rounded flex col widget-chart'>
       <h3 class='widget-title'>Promotions</h3>
       <p class='term grey'>
-        Most productive hours are from {sortByMaxValue(source, 0)[0]} to{' '}
+        Most productive hours from {sortByMaxValue(source, 0)[0]} to{' '}
         {sortByMaxValue(source, 1)[0]}
       </p>
 
       <svg
         id={chartID}
+        class='conditions'
         viewBox='0 0 1000 500'
         xmlns='http://www.w3.org/2000/svg'
       >

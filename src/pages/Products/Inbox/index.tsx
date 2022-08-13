@@ -14,7 +14,7 @@ const Inbox: Component = () => {
       triggerContent={
         <>
           <h3 class='widget-title'>Inbox</h3>
-          <p class='widget-main'>1</p>
+          <p class='widget-main conditions'>1</p>
 
           <div class='widget-group'>
             <TrayIcon />
