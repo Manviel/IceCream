@@ -12,7 +12,7 @@
   --c-grey: #a1a1a6;
   --c-heat: #fa124f;
   --c-purple: #b25fea;
-  --s-ellipse: 5.4rem;
+  --s-ellipse: 4.9rem;
   --s-medium: 2rem;
   --s-dock: 2.3rem;
   --s-system: 1.4rem;
@@ -75,9 +75,6 @@ button:active {
 }
 
 .app {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
   max-width: 142rem;
 }
 
@@ -229,9 +226,29 @@ button:active {
   grid-gap: 1.6rem;
 }
 
+.panel {
+  padding: 0.1rem var(--s-medium);
+}
+
+.depth {
+  background-color: var(--c-depth);
+  backdrop-filter: var(--p-blur);
+  color: #000;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 @media screen and (max-width: 768px) {
   .view {
     padding: var(--s-system);
+  }
+
+  .panel {
+    padding: 0.1rem var(--s-system);
   }
 
   .title {

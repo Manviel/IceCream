@@ -4,7 +4,6 @@ import { Link } from 'solid-app-router';
 import Card from '../../components/Card';
 import ConnectFactory from '../../components/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
-import HeaderTemplate from '../../components/Header/HeaderTemplate';
 
 import { randomInRange } from '../../services/utils';
 
@@ -48,13 +47,7 @@ const Home: Component = () => {
   const handleHover = (e: ListItem) => setItem(e);
 
   return (
-    <PageDecorator>
-      <HeaderTemplate
-        subtitle='Home'
-        headline='What is Cohesion?'
-        hideBackward
-      />
-
+    <PageDecorator subtitle='Home' headline='What is Cohesion?' hideBackward>
       <p class='info'>
         The degree to which the elements inside a module belong together. It is
         a measure of how deeply each piece of device module functionality

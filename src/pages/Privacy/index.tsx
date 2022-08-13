@@ -1,15 +1,12 @@
 import type { Component } from 'solid-js';
 
-import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import ConnectFactory from '../../components/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
 
 import Article from './Article';
 
 const Privacy: Component = () => (
-  <PageDecorator>
-    <HeaderTemplate subtitle='Privacy' headline='Designed for your policy' />
-
+  <PageDecorator subtitle='Privacy' headline='Designed for your policy'>
     <Article name='Kanban vs Scrum'>
       <p class='info'>
         Kanban is a methodology centered around visualizing tasks, while Scrum

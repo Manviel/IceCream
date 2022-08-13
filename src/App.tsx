@@ -18,7 +18,7 @@ const Privacy = lazy(() => import('./pages/Privacy'));
 
 const App: Component = () => (
   <div class='flex col items-center'>
-    <main class='app content-full'>
+    <main class='app flex col content-full'>
       <Suspense fallback={<Skeleton />}>
         <Routes>
           <Route path='/' element={<Home />} />

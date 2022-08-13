@@ -1,13 +1,37 @@
 import { ParentComponent, createEffect } from 'solid-js';
 
+import Header from '../Header';
+import BackwardNavigation, {
+  BackwardNavigationType,
+} from '../Header/BackwardNavigation';
+
 import { useObserver } from '../../services/utils';
 
-const PageDecorator: ParentComponent = ({ children }) => {
+interface HeaderTemplateType extends BackwardNavigationType {
+  headline: string;
+}
+
+const PageDecorator: ParentComponent<HeaderTemplateType> = ({
+  children,
+  headline,
+  subtitle,
+  hideBackward,
+}) => {
   createEffect(() => {
     useObserver('.on-scroll');
   });
 
-  return <div class='view content-full flex col'>{children}</div>;
+  return (
+    <>
+      <BackwardNavigation subtitle={subtitle} hideBackward={hideBackward} />
+
+      <div class='panel content-full flex col'>
+        <Header spot={headline} />
+
+        {children}
+      </div>
+    </>
+  );
 };
 
 export default PageDecorator;

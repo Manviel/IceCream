@@ -15,7 +15,7 @@ const BackwardNavigation: Component<BackwardNavigationType> = ({
   });
 
   return (
-    <header class='flex justify-between items-center'>
+    <header class='sticky depth panel flex justify-between items-center'>
       <strong class='subtitle'>{subtitle}</strong>
 
       {!hideBackward && (

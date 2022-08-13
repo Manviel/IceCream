@@ -1,6 +1,5 @@
 import { Component } from 'solid-js';
 
-import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import PageDecorator from '../../components/PageDecorator';
 
 import Inbox from './Inbox';
@@ -14,9 +13,7 @@ import './Products.css';
 
 const Products: Component = () => {
   return (
-    <PageDecorator>
-      <HeaderTemplate subtitle='For You' headline='Products' />
-
+    <PageDecorator subtitle='For You' headline='Products'>
       <h2 class='info'>Quick actions and features</h2>
 
       <div class='products'>

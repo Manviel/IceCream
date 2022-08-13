@@ -4,7 +4,6 @@ import { getNews } from '../../services/news';
 import { useNews } from '../../services/store';
 
 import Loader from '../../components/Loader';
-import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import PageDecorator from '../../components/PageDecorator';
 
 import { Category } from '../../models';
@@ -28,12 +27,10 @@ const NewsFeed: Component = () => {
   });
 
   return (
-    <PageDecorator>
-      <HeaderTemplate
-        subtitle='Discover'
-        headline={`${data.currentLeague} League`}
-      />
-
+    <PageDecorator
+      subtitle='Discover'
+      headline={`${data.currentLeague} League`}
+    >
       <Leagues currentLeague={data.currentLeague} />
 
       <ul>
