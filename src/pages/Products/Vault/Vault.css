@@ -8,6 +8,11 @@
   transform: scale(1) rotate(-90deg);
 }
 
+.ring circle {
+  fill: none;
+  stroke-width: 0.52rem;
+}
+
 .completed {
   animation: progress 1s ease-in-out forwards;
   stroke-linecap: round;
