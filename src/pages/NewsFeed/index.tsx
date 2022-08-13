@@ -53,7 +53,7 @@ const NewsFeed: Component = () => {
                   class='screen layer view rounded content-full flex items-center justify-between'
                   classList={{ place: com[0] === Category.Silver }}
                 >
-                  <article class='paper-grid items-center'>
+                  <article class='products items-center'>
                     <Rank place={index} />
 
                     <p class='paper-description'>{com[0]}</p>

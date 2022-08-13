@@ -4,12 +4,12 @@
 
 .loader {
   background-color: var(--c-black);
-  height: 1.6rem;
+  height: var(--s-ellipse);
   margin: var(--s-medium) 0;
 }
 
-.loader-box {
-  height: 12rem;
+.skeleton {
+  width: var(--s-ellipse);
 }
 
 @keyframes pulse {

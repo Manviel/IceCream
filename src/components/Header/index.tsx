@@ -1,7 +1,5 @@
 import type { Component } from 'solid-js';
 
-import './Header.css';
-
 type HeaderType = {
   spot: string;
 };

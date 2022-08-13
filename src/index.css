@@ -63,6 +63,17 @@ button {
   font-family: inherit;
 }
 
+a,
+button {
+  transition: filter 0.25s, transform 0.4s var(--a-press),
+    background-color 0.25s, outline-offset 0.2s linear;
+}
+
+a:active,
+button:active {
+  transform: scale(0.95);
+}
+
 .app {
   display: grid;
   grid-template-columns: 1fr;
@@ -170,6 +181,52 @@ button {
 .box {
   background-color: var(--c-black);
   color: var(--c-white);
+}
+
+.btn {
+  display: block;
+  padding: 1.8rem var(--s-medium) 1.6rem;
+  background-color: var(--c-active);
+  color: var(--c-black);
+  font-weight: bold;
+  font-size: 1.6rem;
+  border-radius: var(--s-dock);
+  text-align: center;
+}
+
+.btn:hover {
+  filter: var(--p-shadow);
+  background-color: var(--c-black);
+  color: var(--c-white);
+}
+
+.arrow {
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  border-color: var(--c-black);
+}
+
+.arrow-right {
+  transform: rotate(-45deg);
+}
+
+.backward {
+  background-color: var(--c-active);
+  height: 3.4rem;
+  width: 3.4rem;
+  border-radius: 50%;
+}
+
+.backward:hover {
+  background-color: var(--c-dark);
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.6rem;
 }
 
 @media screen and (max-width: 768px) {

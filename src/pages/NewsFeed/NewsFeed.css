@@ -8,12 +8,6 @@
   font-size: var(--s-medium);
 }
 
-.paper-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: var(--s-system);
-}
-
 .rank {
   width: 4rem;
   height: 4rem;
