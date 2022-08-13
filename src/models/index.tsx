@@ -1,9 +1,9 @@
 export enum ChartColors {
-  Blue = 'hsl(211, 100%, 50%)',
-  Green = 'hsl(160, 100%, 45%)',
-  Purple = 'hsl(276, 77%, 65%)',
-  Red = 'hsl(344, 96%, 53%)',
-  Neon = 'hsl(150, 96%, 44%)',
+  Blue = '#007AFF',
+  Green = '#00e396',
+  Purple = '#b25fea',
+  Red = '#fa124f',
+  Neon = '#04DE71',
 }
 
 export enum Category {

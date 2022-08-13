@@ -1,9 +1,7 @@
-import { Component, onMount } from 'solid-js';
-import Chart from 'chart.js/auto';
+import { Component } from 'solid-js';
 
 import { ChartColors } from '../../../models';
 import { average } from '../../../services/utils';
-import { hideGridCells } from '../frappe-charts';
 
 const source = {
   Dec: 180,
@@ -17,42 +15,29 @@ const source = {
 const chartID = 'chart-stocks';
 
 const Stocks: Component = () => {
-  onMount(() => {
-    const ctx = document.getElementById(chartID) as HTMLCanvasElement;
-
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: Object.keys(source),
-        datasets: [
-          {
-            label: 'AAPL',
-            fill: true,
-            borderColor: ChartColors.Green,
-            backgroundColor: 'hsl(160, 100%, 76%)',
-            hoverBackgroundColor: 'hsl(160, 100%, 30%)',
-            data: Object.values(source),
-          },
-        ],
-      },
-      options: {
-        elements: {
-          line: {
-            tension: 0.3,
-          },
-        },
-        scales: hideGridCells,
-      },
-    });
-  });
-
   return (
     <article class='layer view rounded flex col widget-chart'>
       <h3 class='widget-title'>Stocks</h3>
       <p class='term'>
         Average price is equal to ${average(Object.values(source))}
       </p>
-      <canvas id={chartID} class='conditions'></canvas>
+      <svg
+        id={chartID}
+        viewBox='0 0 1000 500'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          d='M 0,351.8559889247681 C 40,339.4985922113387 119.99999999999999,286.7064713732217 200,290.0690053576211 C 280,293.4315393420205 320,398.68477639283157 400,368.6686588467653 C 480,338.65254130069906 520,172.0701244255574 600,139.98841762728995 C 680,107.9067108290225 720,220.73253047665995 800,208.2601248554281 C 880,195.7877192341963 960,103.75313658799033 1000,77.62638952113087,L 1000 500,L 0 500Z'
+          fill='#00e3961a'
+        />
+        <path
+          d='M 0,351.8559889247681 C 40,339.4985922113387 119.99999999999999,286.7064713732217 200,290.0690053576211 C 280,293.4315393420205 320,398.68477639283157 400,368.6686588467653 C 480,338.65254130069906 520,172.0701244255574 600,139.98841762728995 C 680,107.9067108290225 720,220.73253047665995 800,208.2601248554281 C 880,195.7877192341963 960,103.75313658799033 1000,77.62638952113087'
+          fill='none'
+          stroke={ChartColors.Green}
+          stroke-width='4px'
+        />
+        <g></g>
+      </svg>
     </article>
   );
 };

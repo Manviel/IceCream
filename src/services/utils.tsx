@@ -41,3 +41,6 @@ export function getRandomEnum<T>(enumObj: T): T[keyof T] {
 
   return enumValues[index];
 }
+
+export const sortByMaxValue = (obj: {}, pos: number) =>
+  Object.entries(obj).sort((x: any, y: any) => y[1] - x[1])[pos];

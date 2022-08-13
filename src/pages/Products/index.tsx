@@ -1,5 +1,4 @@
 import { Component } from 'solid-js';
-import Chart from 'chart.js/auto';
 
 import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import PageDecorator from '../../components/PageDecorator';
@@ -12,8 +11,6 @@ import Promotions from './Promotions';
 import Subscriptions from './Subscriptions';
 
 import './Products.css';
-
-Chart.defaults.plugins.legend.position = 'bottom';
 
 const Products: Component = () => {
   return (
