@@ -41,7 +41,7 @@ body {
   background-color: var(--c-primary);
   color: var(--c-black);
   min-height: 100vh;
-  padding-bottom: 9.2rem;
+  padding-bottom: 10.2rem;
 }
 
 a {

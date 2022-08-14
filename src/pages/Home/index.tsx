@@ -1,4 +1,4 @@
-import { createSignal, For, Component } from 'solid-js';
+import { Component } from 'solid-js';
 import { Link } from '@solidjs/router';
 
 import Card from '../../components/Card';
@@ -7,45 +7,11 @@ import PageDecorator from '../../components/PageDecorator';
 
 import { randomInRange } from '../../services/utils';
 
+import LayeredTabs from './LayeredTabs';
+
 import './Home.css';
 
-type ListItem = {
-  label: string;
-  value: number;
-  explanation: string;
-};
-
-const listItems: ListItem[] = [
-  {
-    label: 'Presentation',
-    value: randomInRange(1, 100),
-    explanation: 'Responsible for user interactions with the software system',
-  },
-  {
-    label: 'Business',
-    value: randomInRange(1, 100),
-    explanation:
-      'Handles aspects related to accomplishing functional requirements',
-  },
-  {
-    label: 'Domain',
-    value: randomInRange(1, 100),
-    explanation: 'Responsible for algorithms, and programming components',
-  },
-  {
-    label: 'Infrastructure',
-    value: randomInRange(1, 100),
-    explanation: 'Responsible for handling data, databases',
-  },
-];
-
 const Home: Component = () => {
-  const [item, setItem] = createSignal<ListItem>(listItems[0], {
-    equals: false,
-  });
-
-  const handleHover = (e: ListItem) => setItem(e);
-
   return (
     <PageDecorator subtitle='Home' headline='What is Cohesion?' hideBackward>
       <p class='info'>
@@ -100,26 +66,7 @@ const Home: Component = () => {
       </article>
 
       <div class='home-stats layer view screen content-full rounded items-center'>
-        <ul class='tour-list flex col'>
-          <For each={listItems}>
-            {(item) => (
-              <li class='content-full'>
-                <button
-                  class='tour-list-item flex justify-between items-center content-full rounded'
-                  onClick={() => handleHover(item)}
-                >
-                  {item.label}
-                  <span class='chip'>{item.value}</span>
-                </button>
-              </li>
-            )}
-          </For>
-        </ul>
-
-        <div class='tour-indicators box view rounded flex col'>
-          <strong class='subtitle purple'>{item().value}</strong>
-          <p>{item().explanation}</p>
-        </div>
+        <LayeredTabs />
 
         <article class='tour'>
           <h3 class='title'>What is Layered Architecture?</h3>
