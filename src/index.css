@@ -98,7 +98,7 @@ button:active {
 
 .info {
   line-height: 2.4rem;
-  margin: var(--s-system) 0 2rem;
+  margin: var(--s-system) 0 var(--s-medium);
 }
 
 .subtitle {
