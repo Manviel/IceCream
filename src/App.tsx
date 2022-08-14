@@ -1,5 +1,5 @@
 import { Component, lazy, Suspense } from 'solid-js';
-import { Routes, Route, NavLink } from 'solid-app-router';
+import { Routes, Route, NavLink } from '@solidjs/router';
 
 import { SuperEllipse } from './components/Superellipse';
 import { Skeleton } from './components/Loader';

@@ -35,6 +35,7 @@ const Promotions: Component = () => {
         class='conditions'
         viewBox='0 0 1000 500'
         xmlns='http://www.w3.org/2000/svg'
+        aria-label='Timeline'
       >
         <path
           d='M0,500  h100  v-447.8035436167326  q0,-31 -31,-31  h-38  q-31,0 -31,31  Z'

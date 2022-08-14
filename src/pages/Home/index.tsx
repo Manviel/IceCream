@@ -1,5 +1,5 @@
 import { createSignal, For, Component } from 'solid-js';
-import { Link } from 'solid-app-router';
+import { Link } from '@solidjs/router';
 
 import Card from '../../components/Card';
 import ConnectFactory from '../../components/ConnectFactory';

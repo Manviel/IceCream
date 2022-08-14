@@ -1,5 +1,5 @@
 import { Component } from 'solid-js';
-import { Link } from 'solid-app-router';
+import { Link } from '@solidjs/router';
 
 import TrayIcon from '../../../assets/icons/tray.svg';
 

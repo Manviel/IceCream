@@ -23,9 +23,7 @@ const Stocks: Component = () => {
   return (
     <article class='layer view rounded flex col widget-chart'>
       <h3 class='widget-title'>Stocks</h3>
-      <p class='term'>
-        Average price is equal to ${average(Object.values(source))}
-      </p>
+      <p class='term'>Average price is ${average(Object.values(source))}</p>
       <svg
         id={chartID}
         class='conditions'

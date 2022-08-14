@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { Link } from 'solid-app-router';
+import { Link } from '@solidjs/router';
 
 import PageDecorator from '../../components/PageDecorator';
 

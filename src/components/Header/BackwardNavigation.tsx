@@ -1,5 +1,5 @@
 import { Component, onMount } from 'solid-js';
-import { Link } from 'solid-app-router';
+import { Link } from '@solidjs/router';
 
 export interface BackwardNavigationType {
   subtitle: string;
