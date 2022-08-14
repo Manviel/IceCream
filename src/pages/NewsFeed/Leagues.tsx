@@ -1,6 +1,7 @@
 import { Component, For, createSignal, createUniqueId } from 'solid-js';
 
-import { Category, LeagueUnion } from '../../models';
+import { LeagueUnion } from '../../models';
+import { Category } from '../../models/config';
 
 import Notification from './Notification';
 

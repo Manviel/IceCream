@@ -1,7 +1,7 @@
-import { Category, Entity } from '../models';
+import { Entity } from '../models';
 
 type PaginateType = {
-  category: Category;
+  category: string;
 };
 
 const headers = {

@@ -2,18 +2,17 @@ import { Index, ErrorBoundary, Component, createEffect } from 'solid-js';
 
 import { getNews } from '../../services/news';
 import { useNews } from '../../services/store';
+import { Category, LEVEL_2 } from '../../models/config';
 
 import Loader from '../../components/Loader';
 import PageDecorator from '../../components/PageDecorator';
-
-import { Category, LEVEL_2 } from '../../models/config';
 
 import Rank from './Rank';
 import Leagues from './Leagues';
 
 import './NewsFeed.css';
 
-const fetchQuery = async (page: string) => await getNews({ category: page });
+const fetchQuery = async (category: string) => await getNews({ category });
 
 const NewsFeed: Component = () => {
   const [data, { updateNews }] = useNews();
