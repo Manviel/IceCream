@@ -18,23 +18,21 @@ const Privacy = lazy(() => import('./pages/Privacy'));
 
 const App: Component = () => (
   <div class='flex col items-center'>
-    <main class='app flex col content-full'>
-      <Suspense fallback={<Skeleton />}>
-        <Routes>
-          <Route path='/' element={<Home />} />
+    <Suspense fallback={<Skeleton />}>
+      <Routes>
+        <Route path='/' element={<Home />} />
 
-          <Route path='/league' element={<NewsFeed />} />
+        <Route path='/league' element={<NewsFeed />} />
 
-          <Route path='/profile' element={<Profile />} />
+        <Route path='/profile' element={<Profile />} />
 
-          <Route path='/products' element={<Products />} />
+        <Route path='/products' element={<Products />} />
 
-          <Route path='/privacy' element={<Privacy />} />
+        <Route path='/privacy' element={<Privacy />} />
 
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-      </Suspense>
-    </main>
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+    </Suspense>
 
     <nav
       class='fixed-bottom dock content-full flex justify-between'

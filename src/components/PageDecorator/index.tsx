@@ -1,4 +1,5 @@
 import { ParentComponent, createEffect } from 'solid-js';
+import { useIsRouting } from '@solidjs/router';
 
 import Header from '../Header';
 import BackwardNavigation, {
@@ -17,12 +18,17 @@ const PageDecorator: ParentComponent<HeaderTemplateType> = ({
   subtitle,
   hideBackward,
 }) => {
+  const isRouting = useIsRouting();
+
   createEffect(() => {
     useObserver('.on-scroll');
   });
 
   return (
-    <>
+    <main
+      class='app flex col content-full'
+      classList={{ 'pulse-loading': isRouting() }}
+    >
       <BackwardNavigation subtitle={subtitle} hideBackward={hideBackward} />
 
       <div class='panel content-full flex col'>
@@ -30,7 +36,7 @@ const PageDecorator: ParentComponent<HeaderTemplateType> = ({
 
         {children}
       </div>
-    </>
+    </main>
   );
 };
 
