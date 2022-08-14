@@ -66,7 +66,8 @@ button {
 a,
 button {
   transition: filter 0.25s, transform 0.4s var(--a-press),
-    background-color 0.25s, outline-offset 0.2s linear;
+    background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1),
+    outline-offset 0.2s linear;
 }
 
 a:active,

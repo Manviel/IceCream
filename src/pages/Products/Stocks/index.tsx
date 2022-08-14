@@ -1,4 +1,4 @@
-import { Component } from 'solid-js';
+import { Component, createSignal } from 'solid-js';
 
 import { ChartColors } from '../../../models';
 import { CIRCLE_RADIUS } from '../../../models/config';
@@ -16,10 +16,14 @@ const source = {
 const chartID = 'chart-stocks';
 
 const Stocks: Component = () => {
+  const [legend, setLegend] = createSignal<number>(0);
+
   const labels = Object.keys(source);
   const datasets = Object.values(source);
 
   const getItem = (index: number) => `${labels[index]}: ${datasets[index]}`;
+
+  const handleHover = (pos: number) => setLegend(pos);
 
   return (
     <article class='layer view rounded flex col widget-chart'>
@@ -50,6 +54,8 @@ const Stocks: Component = () => {
             fill={ChartColors.Green}
             aria-roledescription={getItem(0)}
             tabindex='0'
+            onMouseEnter={() => handleHover(0)}
+            onFocus={() => handleHover(0)}
           />
           <circle
             cx='200'
@@ -58,6 +64,8 @@ const Stocks: Component = () => {
             fill={ChartColors.Green}
             aria-roledescription={getItem(1)}
             tabindex='0'
+            onMouseEnter={() => handleHover(1)}
+            onFocus={() => handleHover(1)}
           />
           <circle
             cx='400'
@@ -66,6 +74,8 @@ const Stocks: Component = () => {
             fill={ChartColors.Green}
             aria-roledescription={getItem(2)}
             tabindex='0'
+            onMouseEnter={() => handleHover(2)}
+            onFocus={() => handleHover(2)}
           />
           <circle
             cx='600'
@@ -74,6 +84,8 @@ const Stocks: Component = () => {
             fill={ChartColors.Green}
             aria-roledescription={getItem(3)}
             tabindex='0'
+            onMouseEnter={() => handleHover(3)}
+            onFocus={() => handleHover(3)}
           />
           <circle
             cx='800'
@@ -82,6 +94,8 @@ const Stocks: Component = () => {
             fill={ChartColors.Green}
             aria-roledescription={getItem(4)}
             tabindex='0'
+            onMouseEnter={() => handleHover(4)}
+            onFocus={() => handleHover(4)}
           />
           <circle
             cx='1000'
@@ -90,9 +104,12 @@ const Stocks: Component = () => {
             fill={ChartColors.Green}
             aria-roledescription={getItem(5)}
             tabindex='0'
+            onMouseEnter={() => handleHover(5)}
+            onFocus={() => handleHover(5)}
           />
         </g>
       </svg>
+      <small class='conditions'>Selected - {getItem(legend())}</small>
     </article>
   );
 };

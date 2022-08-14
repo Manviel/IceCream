@@ -22,6 +22,20 @@
   filter: var(--p-shadow);
 }
 
+.widget-chart circle {
+  stroke-width: 0;
+}
+
+.widget-chart circle:hover {
+  stroke: var(--c-black);
+  stroke-width: 4px;
+}
+
+small {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   .widget-chart {
     grid-column: span 2;
