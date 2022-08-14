@@ -3,6 +3,7 @@ import { Component } from 'solid-js';
 import { ChartColors } from '../../../models';
 import { CIRCLE_RADIUS } from '../../../models/config';
 import { average } from '../../../services/utils';
+import { useLegends } from '../charts';
 
 const source = {
   Ipsy: 10,
@@ -25,7 +26,7 @@ const Subscriptions: Component = () => {
   const labels = Object.keys(source);
   const datasets = Object.values(source);
 
-  const getItem = (index: number) => `${labels[index]}: ${datasets[index]}`;
+  const { legend, handleHover, getItem } = useLegends(labels, datasets);
 
   return (
     <article class='layer view rounded flex col widget-chart'>
@@ -33,7 +34,7 @@ const Subscriptions: Component = () => {
       <p class='term'>Average fee is ${Math.round(average(datasets))}</p>
       <svg
         id={chartID}
-        class='conditions'
+        class='conditions widget-line'
         viewBox='0 0 1000 500'
         xmlns='http://www.w3.org/2000/svg'
         aria-label='Services'
@@ -56,6 +57,8 @@ const Subscriptions: Component = () => {
             fill={ChartColors.Purple}
             aria-roledescription={getItem(0)}
             tabindex='0'
+            onMouseEnter={() => handleHover(0)}
+            onFocus={() => handleHover(0)}
           />
           <circle
             cx='91'
@@ -64,6 +67,8 @@ const Subscriptions: Component = () => {
             fill={ChartColors.Purple}
             aria-roledescription={getItem(1)}
             tabindex='0'
+            onMouseEnter={() => handleHover(1)}
+            onFocus={() => handleHover(1)}
           />
           <circle
             cx='182'
@@ -72,6 +77,8 @@ const Subscriptions: Component = () => {
             fill={ChartColors.Purple}
             aria-roledescription={getItem(2)}
             tabindex='0'
+            onMouseEnter={() => handleHover(2)}
+            onFocus={() => handleHover(2)}
           />
           <circle
             cx='273'
@@ -80,6 +87,8 @@ const Subscriptions: Component = () => {
             fill={ChartColors.Purple}
             aria-roledescription={getItem(3)}
             tabindex='0'
+            onMouseEnter={() => handleHover(3)}
+            onFocus={() => handleHover(3)}
           />
           <circle
             cx='364'
@@ -88,6 +97,8 @@ const Subscriptions: Component = () => {
             fill={ChartColors.Purple}
             aria-roledescription={getItem(4)}
             tabindex='0'
+            onMouseEnter={() => handleHover(4)}
+            onFocus={() => handleHover(4)}
           />
           <circle
             cx='455'
@@ -96,6 +107,8 @@ const Subscriptions: Component = () => {
             fill={ChartColors.Purple}
             aria-roledescription={getItem(5)}
             tabindex='0'
+            onMouseEnter={() => handleHover(5)}
+            onFocus={() => handleHover(5)}
           />
           <circle
             cx='546'
@@ -104,6 +117,8 @@ const Subscriptions: Component = () => {
             fill={ChartColors.Purple}
             aria-roledescription={getItem(6)}
             tabindex='0'
+            onMouseEnter={() => handleHover(6)}
+            onFocus={() => handleHover(6)}
           />
           <circle
             cx='637'
@@ -112,6 +127,8 @@ const Subscriptions: Component = () => {
             fill={ChartColors.Purple}
             aria-roledescription={getItem(7)}
             tabindex='0'
+            onMouseEnter={() => handleHover(7)}
+            onFocus={() => handleHover(7)}
           />
           <circle
             cx='728'
@@ -120,6 +137,8 @@ const Subscriptions: Component = () => {
             fill={ChartColors.Purple}
             aria-roledescription={getItem(8)}
             tabindex='0'
+            onMouseEnter={() => handleHover(8)}
+            onFocus={() => handleHover(8)}
           />
           <circle
             cx='819'
@@ -128,6 +147,8 @@ const Subscriptions: Component = () => {
             fill={ChartColors.Purple}
             aria-roledescription={getItem(9)}
             tabindex='0'
+            onMouseEnter={() => handleHover(9)}
+            onFocus={() => handleHover(9)}
           />
           <circle
             cx='910'
@@ -136,6 +157,8 @@ const Subscriptions: Component = () => {
             fill={ChartColors.Purple}
             aria-roledescription={getItem(10)}
             tabindex='0'
+            onMouseEnter={() => handleHover(10)}
+            onFocus={() => handleHover(10)}
           />
           <circle
             cx='1001'
@@ -144,9 +167,12 @@ const Subscriptions: Component = () => {
             fill={ChartColors.Purple}
             aria-roledescription={getItem(11)}
             tabindex='0'
+            onMouseEnter={() => handleHover(11)}
+            onFocus={() => handleHover(11)}
           />
         </g>
       </svg>
+      <small class='conditions'>Selected - {getItem(legend())}$</small>
     </article>
   );
 };

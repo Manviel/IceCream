@@ -1,8 +1,9 @@
-import { Component, createSignal } from 'solid-js';
+import { Component } from 'solid-js';
 
 import { ChartColors } from '../../../models';
 import { CIRCLE_RADIUS } from '../../../models/config';
 import { average } from '../../../services/utils';
+import { useLegends } from '../charts';
 
 const source = {
   Dec: 180,
@@ -16,14 +17,10 @@ const source = {
 const chartID = 'chart-stocks';
 
 const Stocks: Component = () => {
-  const [legend, setLegend] = createSignal<number>(0);
-
   const labels = Object.keys(source);
   const datasets = Object.values(source);
 
-  const getItem = (index: number) => `${labels[index]}: ${datasets[index]}`;
-
-  const handleHover = (pos: number) => setLegend(pos);
+  const { legend, handleHover, getItem } = useLegends(labels, datasets);
 
   return (
     <article class='layer view rounded flex col widget-chart'>
@@ -31,7 +28,7 @@ const Stocks: Component = () => {
       <p class='term'>Average price is ${average(datasets)}</p>
       <svg
         id={chartID}
-        class='conditions'
+        class='conditions widget-line'
         viewBox='0 0 1000 500'
         xmlns='http://www.w3.org/2000/svg'
         aria-label='AAPL'
@@ -109,7 +106,7 @@ const Stocks: Component = () => {
           />
         </g>
       </svg>
-      <small class='conditions'>Selected - {getItem(legend())}</small>
+      <small class='conditions'>Selected - {getItem(legend())}$</small>
     </article>
   );
 };

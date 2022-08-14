@@ -22,13 +22,11 @@
   filter: var(--p-shadow);
 }
 
-.widget-chart circle {
-  stroke-width: 0;
-}
-
-.widget-chart circle:hover {
-  stroke: var(--c-black);
-  stroke-width: 4px;
+.widget-line circle:hover,
+.widget-line circle:focus,
+.widget-bar path:hover,
+.widget-bar path:focus {
+  filter: contrast(90%) brightness(125%) saturate(110%);
 }
 
 small {
