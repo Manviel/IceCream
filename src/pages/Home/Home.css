@@ -21,6 +21,10 @@
 }
 
 .tour-list-item:hover {
+  background-color: var(--c-action);
+}
+
+.tour-list-item-selected {
   background-color: var(--c-active);
 }
 

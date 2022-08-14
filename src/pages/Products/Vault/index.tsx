@@ -10,7 +10,9 @@ const Vault: Component = () => {
   const [budget, setBudget] = createSignal(1000);
   const [income, setIncome] = createSignal(0);
 
-  const valueNow = randomInRange(52, 98);
+  const valueNow = randomInRange(52, 94);
+
+  const circleRadius = 15.914;
 
   createEffect(() => {
     const interest = 12 * 0.01;
@@ -34,12 +36,25 @@ const Vault: Component = () => {
           <p class='term grey'>Up to 12 months</p>
 
           <div class='products conditions items-center'>
-            <div class='activity' role='progressbar' aria-valuenow={valueNow}>
+            <div
+              class='activity'
+              role='progressbar'
+              aria-label='Activity ring'
+              aria-valuenow={valueNow}
+            >
               <svg viewBox='0 0 37 37'>
                 <g class='ring'>
-                  <circle class='background' />
+                  <circle
+                    class='background'
+                    cx='50%'
+                    cy='50%'
+                    r={circleRadius}
+                  />
                   <circle
                     class='completed'
+                    cx='50%'
+                    cy='50%'
+                    r={circleRadius}
                     stroke-dasharray={`${valueNow}, 100`}
                   />
                 </g>

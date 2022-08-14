@@ -1,5 +1,5 @@
 import { Component, onMount } from 'solid-js';
-import { Link } from 'solid-app-router';
+import { Link } from '@solidjs/router';
 
 export interface BackwardNavigationType {
   subtitle: string;
@@ -15,7 +15,7 @@ const BackwardNavigation: Component<BackwardNavigationType> = ({
   });
 
   return (
-    <header class='flex justify-between items-center'>
+    <header class='sticky depth panel flex justify-between items-center'>
       <strong class='subtitle'>{subtitle}</strong>
 
       {!hideBackward && (

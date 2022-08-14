@@ -2,19 +2,17 @@ import { Index, ErrorBoundary, Component, createEffect } from 'solid-js';
 
 import { getNews } from '../../services/news';
 import { useNews } from '../../services/store';
+import { Category, LEVEL_2 } from '../../models/config';
 
 import Loader from '../../components/Loader';
-import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import PageDecorator from '../../components/PageDecorator';
-
-import { Category } from '../../models';
 
 import Rank from './Rank';
 import Leagues from './Leagues';
 
 import './NewsFeed.css';
 
-const fetchQuery = async (page: Category) => await getNews({ category: page });
+const fetchQuery = async (category: string) => await getNews({ category });
 
 const NewsFeed: Component = () => {
   const [data, { updateNews }] = useNews();
@@ -28,12 +26,10 @@ const NewsFeed: Component = () => {
   });
 
   return (
-    <PageDecorator>
-      <HeaderTemplate
-        subtitle='Discover'
-        headline={`${data.currentLeague} League`}
-      />
-
+    <PageDecorator
+      subtitle='Discover'
+      headline={`${data.currentLeague} League`}
+    >
       <Leagues currentLeague={data.currentLeague} />
 
       <ul>
@@ -51,9 +47,9 @@ const NewsFeed: Component = () => {
               return (
                 <li
                   class='screen layer view rounded content-full flex items-center justify-between'
-                  classList={{ place: com[0] === Category.Silver }}
+                  classList={{ place: com[0] === Category[LEVEL_2] }}
                 >
-                  <article class='paper-grid items-center'>
+                  <article class='products items-center'>
                     <Rank place={index} />
 
                     <p class='paper-description'>{com[0]}</p>

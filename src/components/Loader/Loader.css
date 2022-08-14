@@ -3,13 +3,17 @@
 }
 
 .loader {
-  background-color: var(--c-black);
-  height: 1.6rem;
-  margin: var(--s-medium) 0;
+  text-align: center;
+  height: var(--s-ellipse);
+  margin: var(--s-system) 0 var(--s-medium);
 }
 
-.loader-box {
-  height: 12rem;
+.skeleton {
+  width: var(--s-ellipse);
+}
+
+.spinner {
+  height: 1.8rem;
 }
 
 @keyframes pulse {

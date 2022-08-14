@@ -1,7 +1,8 @@
-import { Component, lazy } from 'solid-js';
-import { Routes, Route, NavLink } from 'solid-app-router';
+import { Component, lazy, Suspense } from 'solid-js';
+import { Routes, Route, NavLink } from '@solidjs/router';
 
 import { SuperEllipse } from './components/Superellipse';
+import { Skeleton } from './components/Loader';
 
 import FlameIcon from './assets/icons/flame.svg';
 import SquareTextIcon from './assets/icons/square-text.svg';
@@ -15,47 +16,45 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const Products = lazy(() => import('./pages/Products'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 
-const App: Component = () => {
-  return (
-    <div class='flex col items-center'>
-      <main class='app content-full'>
-        <Routes>
-          <Route path='/' element={<Home />} />
+const App: Component = () => (
+  <div class='flex col items-center'>
+    <Suspense fallback={<Skeleton />}>
+      <Routes>
+        <Route path='/' element={<Home />} />
 
-          <Route path='/league' element={<NewsFeed />} />
+        <Route path='/league' element={<NewsFeed />} />
 
-          <Route path='/profile' element={<Profile />} />
+        <Route path='/profile' element={<Profile />} />
 
-          <Route path='/products' element={<Products />} />
+        <Route path='/products' element={<Products />} />
 
-          <Route path='/privacy' element={<Privacy />} />
+        <Route path='/privacy' element={<Privacy />} />
 
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-      </main>
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+    </Suspense>
 
-      <nav
-        class='fixed-bottom dock content-full flex justify-between'
-        aria-label='Tabs'
-      >
-        <NavLink href='/products' aria-label='Products' class={SuperEllipse}>
-          <SquareTextIcon />
-        </NavLink>
+    <nav
+      class='fixed-bottom dock content-full flex justify-between'
+      aria-label='Tabs'
+    >
+      <NavLink href='/products' aria-label='Products' class={SuperEllipse}>
+        <SquareTextIcon />
+      </NavLink>
 
-        <NavLink href='/league' aria-label='Leagues' class={SuperEllipse}>
-          <FlameIcon />
-        </NavLink>
+      <NavLink href='/league' aria-label='Leagues' class={SuperEllipse}>
+        <FlameIcon />
+      </NavLink>
 
-        <NavLink href='/privacy' aria-label='Privacy' class={SuperEllipse}>
-          <LockIcon />
-        </NavLink>
+      <NavLink href='/privacy' aria-label='Privacy' class={SuperEllipse}>
+        <LockIcon />
+      </NavLink>
 
-        <NavLink href='/profile' aria-label='Profile' class={SuperEllipse}>
-          <PersonFinderIcon />
-        </NavLink>
-      </nav>
-    </div>
-  );
-};
+      <NavLink href='/profile' aria-label='Profile' class={SuperEllipse}>
+        <PersonFinderIcon />
+      </NavLink>
+    </nav>
+  </div>
+);
 
 export default App;

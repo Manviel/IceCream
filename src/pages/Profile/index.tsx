@@ -2,7 +2,6 @@ import { createSignal, Component, For } from 'solid-js';
 import { Label, RadioGroup, RadioGroupOption } from 'solid-a11y';
 
 import Quote from '../../components/Card/Quote';
-import HeaderTemplate from '../../components/Header/HeaderTemplate';
 import PageDecorator from '../../components/PageDecorator';
 
 import Breathe from './Breathe';
@@ -28,9 +27,7 @@ const Profile: Component = () => {
   const [theme, setTheme] = createSignal<string>(options[0].value);
 
   return (
-    <PageDecorator>
-      <HeaderTemplate subtitle='Your Profile' headline='And new superpower' />
-
+    <PageDecorator subtitle='Your Profile' headline='And new superpower'>
       <Quote />
 
       <article class='layer view rounded content-full screen'>

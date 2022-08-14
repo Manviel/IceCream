@@ -1,5 +1,5 @@
 import { Component } from 'solid-js';
-import { Link } from 'solid-app-router';
+import { Link } from '@solidjs/router';
 
 import TrayIcon from '../../../assets/icons/tray.svg';
 
@@ -14,7 +14,7 @@ const Inbox: Component = () => {
       triggerContent={
         <>
           <h3 class='widget-title'>Inbox</h3>
-          <p class='widget-main'>1</p>
+          <p class='widget-main conditions'>1</p>
 
           <div class='widget-group'>
             <TrayIcon />

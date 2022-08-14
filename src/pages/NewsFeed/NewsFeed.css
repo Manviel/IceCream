@@ -8,12 +8,6 @@
   font-size: var(--s-medium);
 }
 
-.paper-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: var(--s-system);
-}
-
 .rank {
   width: 4rem;
   height: 4rem;
@@ -47,7 +41,7 @@
 
 .notification {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 50%;
   background-color: var(--c-dark);
   backdrop-filter: var(--p-blur);
