@@ -30,7 +30,7 @@ const Health: Component = () => {
     <article class='layer view rounded flex col widget-chart'>
       <h3 class='widget-title'>Health</h3>
       <p class='term'>
-        Total protein is equal to {Math.round(total(Object.values(source)))}gm
+        Total protein is equal to {Math.round(total(datasets))}gm
       </p>
       <svg
         id={chartID}

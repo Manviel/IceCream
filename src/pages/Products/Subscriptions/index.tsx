@@ -29,9 +29,7 @@ const Subscriptions: Component = () => {
   return (
     <article class='layer view rounded flex col widget-chart'>
       <h3 class='widget-title'>Subscriptions</h3>
-      <p class='term'>
-        Average fee is ${Math.round(average(Object.values(source)))}
-      </p>
+      <p class='term'>Average fee is ${Math.round(average(datasets))}</p>
       <svg
         id={chartID}
         class='conditions'

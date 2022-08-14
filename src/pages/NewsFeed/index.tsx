@@ -6,14 +6,14 @@ import { useNews } from '../../services/store';
 import Loader from '../../components/Loader';
 import PageDecorator from '../../components/PageDecorator';
 
-import { Category } from '../../models';
+import { Category, LEVEL_2 } from '../../models/config';
 
 import Rank from './Rank';
 import Leagues from './Leagues';
 
 import './NewsFeed.css';
 
-const fetchQuery = async (page: Category) => await getNews({ category: page });
+const fetchQuery = async (page: string) => await getNews({ category: page });
 
 const NewsFeed: Component = () => {
   const [data, { updateNews }] = useNews();
@@ -48,7 +48,7 @@ const NewsFeed: Component = () => {
               return (
                 <li
                   class='screen layer view rounded content-full flex items-center justify-between'
-                  classList={{ place: com[0] === Category.Silver }}
+                  classList={{ place: com[0] === Category[LEVEL_2] }}
                 >
                   <article class='products items-center'>
                     <Rank place={index} />
