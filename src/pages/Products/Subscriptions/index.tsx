@@ -1,6 +1,7 @@
 import { Component } from 'solid-js';
 
 import { ChartColors } from '../../../models';
+import { CIRCLE_RADIUS } from '../../../models/config';
 import { average } from '../../../services/utils';
 
 const source = {
@@ -51,7 +52,7 @@ const Subscriptions: Component = () => {
           <circle
             cx='0'
             cy='126.73280556497213'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Purple}
             aria-roledescription={getItem(0)}
             tabindex='0'
@@ -59,7 +60,7 @@ const Subscriptions: Component = () => {
           <circle
             cx='91'
             cy='242.43111931453387'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Purple}
             aria-roledescription={getItem(1)}
             tabindex='0'
@@ -67,7 +68,7 @@ const Subscriptions: Component = () => {
           <circle
             cx='182'
             cy='351.95790444016257'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Purple}
             aria-roledescription={getItem(2)}
             tabindex='0'
@@ -75,7 +76,7 @@ const Subscriptions: Component = () => {
           <circle
             cx='273'
             cy='212.8630881294859'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Purple}
             aria-roledescription={getItem(3)}
             tabindex='0'
@@ -83,7 +84,7 @@ const Subscriptions: Component = () => {
           <circle
             cx='364'
             cy='323.18342301341926'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Purple}
             aria-roledescription={getItem(4)}
             tabindex='0'
@@ -91,7 +92,7 @@ const Subscriptions: Component = () => {
           <circle
             cx='455'
             cy='379.56977223047255'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Purple}
             aria-roledescription={getItem(5)}
             tabindex='0'
@@ -99,7 +100,7 @@ const Subscriptions: Component = () => {
           <circle
             cx='546'
             cy='112.66722452938495'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Purple}
             aria-roledescription={getItem(6)}
             tabindex='0'
@@ -107,7 +108,7 @@ const Subscriptions: Component = () => {
           <circle
             cx='637'
             cy='299.46337888862547'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Purple}
             aria-roledescription={getItem(7)}
             tabindex='0'
@@ -115,7 +116,7 @@ const Subscriptions: Component = () => {
           <circle
             cx='728'
             cy='219.446379742651'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Purple}
             aria-roledescription={getItem(8)}
             tabindex='0'
@@ -123,7 +124,7 @@ const Subscriptions: Component = () => {
           <circle
             cx='819'
             cy='337.55694550534827'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Purple}
             aria-roledescription={getItem(9)}
             tabindex='0'
@@ -131,7 +132,7 @@ const Subscriptions: Component = () => {
           <circle
             cx='910'
             cy='153.31077090049536'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Purple}
             aria-roledescription={getItem(10)}
             tabindex='0'
@@ -139,7 +140,7 @@ const Subscriptions: Component = () => {
           <circle
             cx='1001'
             cy='246.84830074101427'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Purple}
             aria-roledescription={getItem(11)}
             tabindex='0'

@@ -11,3 +11,5 @@ export const Category = {
   [LEVEL_4]: 'JPY',
   [LEVEL_5]: 'AUD',
 };
+
+export const CIRCLE_RADIUS = 10;

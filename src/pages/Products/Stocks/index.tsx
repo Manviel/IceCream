@@ -1,6 +1,7 @@
 import { Component } from 'solid-js';
 
 import { ChartColors } from '../../../models';
+import { CIRCLE_RADIUS } from '../../../models/config';
 import { average } from '../../../services/utils';
 
 const source = {
@@ -45,7 +46,7 @@ const Stocks: Component = () => {
           <circle
             cx='0'
             cy='360.2309720703133'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Green}
             aria-roledescription={getItem(0)}
             tabindex='0'
@@ -53,7 +54,7 @@ const Stocks: Component = () => {
           <circle
             cx='200'
             cy='376.2091017491312'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Green}
             aria-roledescription={getItem(1)}
             tabindex='0'
@@ -61,7 +62,7 @@ const Stocks: Component = () => {
           <circle
             cx='400'
             cy='182.90972702529194'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Green}
             aria-roledescription={getItem(2)}
             tabindex='0'
@@ -69,7 +70,7 @@ const Stocks: Component = () => {
           <circle
             cx='600'
             cy='162.86205677227252'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Green}
             aria-roledescription={getItem(3)}
             tabindex='0'
@@ -77,7 +78,7 @@ const Stocks: Component = () => {
           <circle
             cx='800'
             cy='280.5556192453138'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Green}
             aria-roledescription={getItem(4)}
             tabindex='0'
@@ -85,7 +86,7 @@ const Stocks: Component = () => {
           <circle
             cx='1000'
             cy='201.42133875125575'
-            r='8'
+            r={CIRCLE_RADIUS}
             fill={ChartColors.Green}
             aria-roledescription={getItem(5)}
             tabindex='0'
