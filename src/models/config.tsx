@@ -12,4 +12,4 @@ export const Category = {
   [LEVEL_5]: 'AUD',
 };
 
-export const CIRCLE_RADIUS = 12;
+export const CIRCLE_RADIUS = 18;

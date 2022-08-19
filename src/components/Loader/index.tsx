@@ -13,17 +13,17 @@ const Loader: Component = () => (
 export const Skeleton: Component = () => (
   <>
     <aside class='pulse-loading view rounded content-full' aria-busy>
-      <header class='flex justify-between items-center'>
+      <section class='flex justify-between items-center'>
         <div class='subtitle skeleton loader box rounded'></div>
         <div class='skeleton loader box rounded'></div>
-      </header>
+      </section>
       <div class='title loader box rounded'></div>
       <p class='info loader box rounded'>Please wait...</p>
       <div class='screen loader box rounded'></div>
-      <footer class='products'>
+      <section class='products'>
         <div class='loader box rounded content-full'></div>
         <div class='loader box rounded content-full'></div>
-      </footer>
+      </section>
     </aside>
 
     <Loader />

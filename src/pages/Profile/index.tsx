@@ -1,5 +1,6 @@
 import { createSignal, Component, For } from 'solid-js';
 import { Label, RadioGroup, RadioGroupOption } from 'solid-a11y';
+import { Link } from '@solidjs/router';
 
 import Quote from '../../components/Card/Quote';
 import PageDecorator from '../../components/PageDecorator';
@@ -56,6 +57,12 @@ const Profile: Component = () => {
       </article>
 
       <Breathe />
+
+      <div class='layer view rounded content-full screen'>
+        <Link href='/profile/expert' class='btn'>
+          Go to Onboarding
+        </Link>
+      </div>
     </PageDecorator>
   );
 };
