@@ -23,11 +23,6 @@
   stroke: var(--c-action);
 }
 
-input:focus-visible {
-  outline: 2px solid var(--c-ring);
-  outline-offset: 4px;
-}
-
 .conditions {
   margin-top: 1.6rem;
 }

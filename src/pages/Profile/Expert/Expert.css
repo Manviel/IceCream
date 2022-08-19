@@ -1,0 +1,12 @@
+.expert {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.sidebar {
+  box-shadow: inset 0px 1px 3px var(--c-depth);
+}
+
+.production {
+  grid-column: span 4;
+}
