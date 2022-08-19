@@ -35,7 +35,7 @@ const listItems: ListItem[] = [
 
 const LayeredTabs: Component = () => {
   return (
-    <TabGroup orientation='vertical'>
+    <TabGroup>
       <Tabs class='tour-list flex col'>
         <For each={listItems}>
           {(item) => (

@@ -5,7 +5,10 @@
   background-color: var(--c-glass);
 }
 
-.superellipse:hover,
+.superellipse:hover {
+  background-color: var(--c-active);
+}
+
 .superellipse.active {
   background-color: var(--c-white);
 }

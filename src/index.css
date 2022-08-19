@@ -65,6 +65,7 @@ button {
 
 a,
 button {
+  will-change: transform;
   transition: filter 0.25s, transform 0.4s var(--a-press),
     background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1),
     outline-offset 0.2s linear;
@@ -72,7 +73,7 @@ button {
 
 a:active,
 button:active {
-  transform: scale(0.95);
+  transform: scale(0.94);
 }
 
 .app {
@@ -92,7 +93,7 @@ button:active {
 }
 
 .title {
-  font-size: 4.8rem;
+  font-size: 4.6rem;
   margin: 2.8rem 0 0;
   letter-spacing: 0.35px;
 }
@@ -103,7 +104,7 @@ button:active {
 }
 
 .subtitle {
-  font-size: 3.4rem;
+  font-size: 3.2rem;
   margin: 1.6rem 0 1rem;
 }
 
