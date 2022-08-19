@@ -113,8 +113,45 @@ const Expert: Component = () => {
                   <p class='info'>
                     Once the business analysis has communicated with
                     stakeholders for understanding their requirements, it can be
-                    described as elicitation.
+                    described as elicitation. Requirements Elicitation
+                    Techniques:
                   </p>
+                  <p class='info'>
+                    Brainstorming is used to generate new ideas and find a
+                    solution for a specific issue. The members can be domain
+                    experts, subject matter experts. Multiple ideas and
+                    information give you a repository of knowledge and you can
+                    choose from different ideas.
+                  </p>
+                  <p class='info'>
+                    Interview techniques should be used for building strong
+                    relationships between business analysts and stakeholders. In
+                    this technique, the interviewer directs the question to
+                    stakeholders to obtain information.
+                  </p>
+                  <p class='info'>
+                    Document Analysis is used to gather business information by
+                    reviewing/examining the available materials that describe
+                    the business environment. This analysis is helpful to
+                    validate the implementation of current solutions and is also
+                    helpful in understanding the business need.
+                  </p>
+                  <p class='info'>
+                    For Survey, a set of questions is given to stakeholders to
+                    quantify their thoughts. After collecting the responses from
+                    stakeholders, data is analyzed to identify the area of
+                    interest of stakeholders.
+                  </p>
+                  <p class='info'>
+                    Prototyping is used to identify missing or unspecified
+                    requirements. In this technique, frequent demos are given to
+                    the client by creating the prototypes so that client can get
+                    an idea of how the product will look like. Prototypes can be
+                    used to create a mock-up of sites, and describe the process
+                    using diagrams.
+                  </p>
+
+                  <ConnectFactory href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/' />
                 </article>
               </TabPanel>
             )}
