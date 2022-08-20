@@ -2,10 +2,6 @@
   --s-radio: 2.4rem;
 }
 
-.profile {
-  background-color: var(--c-active);
-}
-
 .badge {
   padding: 1.2rem;
 }

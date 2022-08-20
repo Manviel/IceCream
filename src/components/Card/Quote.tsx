@@ -14,14 +14,14 @@ const Quote: Component = () => {
 
   return (
     <Switch
-      fallback={<h2 class='profile view rounded screen'>Failed to fetch</h2>}
+      fallback={<h2 class='token view rounded screen'>Failed to fetch</h2>}
     >
       <Match when={quote.loading}>
         <Loader />
       </Match>
       <Match when={quote()}>
         {(res) => (
-          <article class='profile view rounded screen'>
+          <article class='token view rounded screen'>
             <div class='flex justify-between items-center'>
               <p class='flex col'>
                 <time>{res.dateModified}</time>

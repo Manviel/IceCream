@@ -182,10 +182,15 @@ button:active {
   color: var(--c-white);
 }
 
+.token,
+.btn,
+.backward {
+  background-color: var(--c-active);
+}
+
 .btn {
   display: block;
   padding: 1.8rem var(--s-medium) 1.6rem;
-  background-color: var(--c-active);
   color: var(--c-black);
   font-weight: bold;
   font-size: 1.6rem;
@@ -212,7 +217,6 @@ button:active {
 }
 
 .backward {
-  background-color: var(--c-active);
   height: 3.4rem;
   width: 3.4rem;
   border-radius: 50%;
