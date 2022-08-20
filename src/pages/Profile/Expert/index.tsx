@@ -62,8 +62,6 @@ const Expert: Component = () => {
 
                   <Reviews />
                 </div>
-
-                <h3 class='subtitle'>Favourites</h3>
               </TabPanel>
             )}
           </For>

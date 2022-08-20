@@ -1,4 +1,5 @@
 import { Component } from 'solid-js';
+import { createSlider } from 'solid-slider';
 
 import { SuperEllipse } from '../../../components/Superellipse';
 import ConnectFactory from '../../../components/ConnectFactory';
@@ -7,21 +8,25 @@ import PlayNextIcon from '../../../assets/icons/play-next.svg';
 import PlayPrevIcon from '../../../assets/icons/play-prev.svg';
 import PlayFillIcon from '../../../assets/icons/play-fill.svg';
 
+import 'solid-slider/slider.css';
+
 const Reviews: Component = () => {
+  const [slider, { current, next, prev }] = createSlider({ loop: true });
+
   return (
     <>
       <article class='flex col text-center justify-between'>
         <h2 class='info'>Ratings</h2>
-        <p>4 out of 5</p>
+        <p>{current() + 1} out of 6</p>
 
         <nav class='flex justify-between sidebar' aria-label='Candidate'>
-          <button class={SuperEllipse} aria-label='Prev'>
+          <button class={SuperEllipse} aria-label='Prev' onClick={prev}>
             <PlayPrevIcon />
           </button>
           <button class={SuperEllipse} aria-label='Auto Play'>
             <PlayFillIcon />
           </button>
-          <button class={SuperEllipse} aria-label='Next'>
+          <button class={SuperEllipse} aria-label='Next' onClick={next}>
             <PlayNextIcon />
           </button>
         </nav>
@@ -42,12 +47,18 @@ const Reviews: Component = () => {
         <button class='btn sidebar'>Results</button>
       </article>
 
-      <article class='flex col production'>
-        <h4 class='subtitle'>Reviews</h4>
-        <p class='info'>
+      <article class='production flex justify-between'>
+        <h3 class='subtitle'>Reviews</h3>
+
+        <ConnectFactory href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/' />
+      </article>
+
+      <article class='production' use:slider>
+        <p class='info token view rounded'>
           Once the business analysis has communicated with stakeholders for
           understanding their requirements, it can be described as elicitation.
-          Requirements Elicitation Techniques:
+          Requirement elicitation can be done by communicating with stakeholders
+          directly or by doing some research, experiments.
         </p>
         <p class='info brainstorm view rounded'>
           Brainstorming is used to generate new ideas and find a solution for a
@@ -80,8 +91,6 @@ const Reviews: Component = () => {
           look like. Prototypes can be used to create a mock-up of sites, and
           describe the process using diagrams.
         </p>
-
-        <ConnectFactory href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/' />
       </article>
     </>
   );
