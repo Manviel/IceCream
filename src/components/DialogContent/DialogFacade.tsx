@@ -2,7 +2,7 @@ import { createSignal, Show, ParentComponent } from 'solid-js';
 import { JSX } from 'solid-js/jsx-runtime';
 import { Dialog, DialogTitle, Description } from 'solid-a11y';
 
-import DialogContent from '../DialogContent';
+import DialogContent from '.';
 
 type DialogFacadeType = {
   title: string;
