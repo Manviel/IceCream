@@ -40,7 +40,7 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
 
               <Description class='info'>{description}</Description>
 
-              {children}
+              <div class='scrollable'>{children}</div>
 
               <button class='btn content-full' onClick={handleClose}>
                 {closingName}

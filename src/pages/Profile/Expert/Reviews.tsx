@@ -8,6 +8,8 @@ import PlayNextIcon from '../../../assets/icons/play-next.svg';
 import PlayPrevIcon from '../../../assets/icons/play-prev.svg';
 import PlayFillIcon from '../../../assets/icons/play-fill.svg';
 
+import Results from './Results';
+
 import 'solid-slider/slider.css';
 
 const Reviews: Component = () => {
@@ -47,7 +49,7 @@ const Reviews: Component = () => {
 
         <ConnectFactory href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns' />
 
-        <button class='btn sidebar'>Results</button>
+        <Results />
       </article>
 
       <article class='production flex justify-between'>
