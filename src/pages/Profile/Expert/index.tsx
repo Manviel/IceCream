@@ -32,9 +32,9 @@ const listItems: TabItem[] = [
 const Expert: Component = () => {
   return (
     <PageDecorator subtitle='Expert' headline='Onboarding' customPath='profile'>
-      <div class='expert layer sidebar'>
+      <div class='expert layer sidebar rounded'>
         <TabGroup>
-          <Tabs class='tour-list flex col view depth'>
+          <Tabs class='tour-list flex col view depth border-edge'>
             <For each={listItems}>
               {(item) => (
                 <Tab

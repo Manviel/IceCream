@@ -20,6 +20,10 @@
   align-items: baseline;
 }
 
+.keen-slider .view {
+  height: 90%;
+}
+
 .toolbar {
   grid-gap: var(--s-medium);
 }
@@ -48,6 +52,10 @@
   background-color: var(--c-liver);
 }
 
+.border-edge {
+  border-radius: var(--s-medium) 0 0 var(--s-medium);
+}
+
 @media screen and (max-width: 768px) {
   .expert {
     grid-template-columns: repeat(1, 1fr);
@@ -55,5 +63,9 @@
 
   .production {
     grid-column: span 1;
+  }
+
+  .border-edge {
+    border-radius: var(--s-medium) var(--s-medium) 0 0;
   }
 }

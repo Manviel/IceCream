@@ -11,7 +11,10 @@ import PlayFillIcon from '../../../assets/icons/play-fill.svg';
 import 'solid-slider/slider.css';
 
 const Reviews: Component = () => {
-  const [slider, { current, next, prev }] = createSlider({ loop: true });
+  const [slider, { current, next, prev }] = createSlider({
+    loop: true,
+    slides: { perView: 1.2, spacing: 10 },
+  });
 
   return (
     <>
