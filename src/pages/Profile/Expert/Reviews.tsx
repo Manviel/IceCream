@@ -9,11 +9,12 @@ import PlayPrevIcon from '../../../assets/icons/play-prev.svg';
 import PlayFillIcon from '../../../assets/icons/play-fill.svg';
 
 import Results from './Results';
+import Notes from './Notes';
 
 import 'solid-slider/slider.css';
 
 const Reviews: Component = () => {
-  const [slider, { current, next, prev }] = createSlider({
+  const [slider, { current, next, prev, moveTo }] = createSlider({
     loop: true,
     slides: { perView: 1.2, spacing: 10 },
   });
@@ -28,7 +29,11 @@ const Reviews: Component = () => {
           <button class={SuperEllipse} aria-label='Prev' onClick={prev}>
             <PlayPrevIcon />
           </button>
-          <button class={SuperEllipse} aria-label='Auto Play'>
+          <button
+            class={SuperEllipse}
+            aria-label='Auto Play'
+            onClick={() => moveTo(5)}
+          >
             <PlayFillIcon />
           </button>
           <button class={SuperEllipse} aria-label='Next' onClick={next}>
@@ -41,7 +46,7 @@ const Reviews: Component = () => {
         <h2 class='info'>Usage</h2>
         <p>900 million</p>
 
-        <button class='btn sidebar'>Notes</button>
+        <Notes />
       </article>
 
       <article class='flex col text-center justify-between'>
