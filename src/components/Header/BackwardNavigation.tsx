@@ -4,14 +4,16 @@ import { Link } from '@solidjs/router';
 export interface BackwardNavigationType {
   subtitle: string;
   hideBackward?: boolean;
+  customPath?: string;
 }
 
 const BackwardNavigation: Component<BackwardNavigationType> = ({
   subtitle,
   hideBackward,
+  customPath,
 }) => {
   onMount(() => {
-    document.title = `iFruit - ${subtitle}`;
+    document.title = `${subtitle} - iFruit`;
   });
 
   return (
@@ -20,9 +22,9 @@ const BackwardNavigation: Component<BackwardNavigationType> = ({
 
       {!hideBackward && (
         <Link
-          href='/'
+          href={customPath ? `/${customPath}` : '/'}
           class='flex justify-center items-center backward'
-          aria-label='Back to Home page'
+          aria-label='Go Back'
         >
           <i class='arrow arrow-right'></i>
         </Link>

@@ -1,0 +1,109 @@
+:root {
+  --c-ghost: #eefbf3;
+  --c-show: #fff4f4;
+  --c-lavender: #fff8ee;
+  --c-alice: #f0fbff;
+  --c-liver: #fff7f7;
+}
+
+.expert {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.sidebar {
+  margin-top: var(--s-system);
+}
+
+.production {
+  grid-column: span 4;
+  align-items: baseline;
+}
+
+.keen-slider .view {
+  height: 90%;
+}
+
+.toolbar {
+  grid-gap: var(--s-medium);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.brainstorm {
+  background-color: var(--c-ghost);
+}
+
+.interview {
+  background-color: var(--c-show);
+}
+
+.document {
+  background-color: var(--c-lavender);
+}
+
+.survey {
+  background-color: var(--c-alice);
+}
+
+.prototyping {
+  background-color: var(--c-liver);
+}
+
+.border-edge {
+  border-radius: var(--s-medium) 0 0 var(--s-medium);
+}
+
+.bottom-sheet {
+  position: fixed;
+  top: var(--s-medium);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  border-radius: 1rem 1rem 0 0;
+  animation: toast-enter cubic-bezier(0.32, 0.72, 0, 1) 0.5s both;
+}
+
+.bottom-main {
+  transform: scale(0.94);
+}
+
+.hide-scroll {
+  overflow: hidden;
+}
+
+.hide-scroll .dock {
+  bottom: -9rem;
+}
+
+.scrollable {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .expert {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .production {
+    grid-column: span 1;
+  }
+
+  .border-edge {
+    border-radius: var(--s-medium) var(--s-medium) 0 0;
+  }
+}
+
+@keyframes toast-enter {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}

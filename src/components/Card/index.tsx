@@ -17,7 +17,7 @@ const Card: Component<CardType> = ({
 }) => (
   <div class='view card rounded'>
     <sup class='card-sub'>{phrase}</sup>
-    <strong class='card-text on-scroll'>
+    <strong class='card-text'>
       {number}
       <span class='card-measure'>{measure}</span>
     </strong>

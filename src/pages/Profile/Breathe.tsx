@@ -4,7 +4,7 @@ import './Breathe.css';
 
 const Breathe: Component = () => (
   <footer class='box view rounded screen flex col items-center'>
-    <strong class='subtitle'>The future of health</strong>
+    <h4 class='subtitle'>The future of health</h4>
     <p class='grey info'>Inhale and Exhale</p>
     <div class='breathe'>
       <div class='circle'></div>

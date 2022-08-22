@@ -47,7 +47,7 @@ const LayeredTabs: Component = () => {
             >
               {item.label}
 
-              <span class='chip'>{item.value}</span>
+              <span class='chip token'>{item.value}</span>
             </Tab>
           )}
         </For>

@@ -9,7 +9,6 @@
 }
 
 .widget-group {
-  background-color: var(--c-active);
   padding: 0.7rem 0.7rem 0.3rem;
   border-radius: 50%;
 }

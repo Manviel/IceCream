@@ -1,6 +1,6 @@
 import { Component, createSignal, createEffect } from 'solid-js';
 
-import DialogFacade from '../DialogContent/DialogFacade';
+import DialogFacade from '../../../components/DialogContent/DialogFacade';
 
 import { commasAdapter, randomInRange } from '../../../services/utils';
 

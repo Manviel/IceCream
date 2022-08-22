@@ -68,7 +68,7 @@ const Home: Component = () => {
       <div class='home-stats layer view screen content-full rounded items-center'>
         <LayeredTabs />
 
-        <article class='tour'>
+        <article class='tour on-scroll'>
           <h3 class='title'>What is Layered Architecture?</h3>
 
           <p class='info'>
