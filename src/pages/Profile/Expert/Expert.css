@@ -64,6 +64,7 @@
   height: 100%;
   z-index: 5;
   border-radius: 1rem 1rem 0 0;
+  animation: toast-enter cubic-bezier(0.32, 0.72, 0, 1) 0.5s both;
 }
 
 .bottom-main {
@@ -94,5 +95,15 @@
 
   .border-edge {
     border-radius: var(--s-medium) var(--s-medium) 0 0;
+  }
+}
+
+@keyframes toast-enter {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
   }
 }

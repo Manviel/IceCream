@@ -24,7 +24,8 @@
   border-color: var(--c-primary);
   box-shadow: 0 0 0 0.6rem var(--c-grey);
   border-radius: 50%;
-  transition: border 0.2s ease-out, background-color 0.25s;
+  transition: border 0.2s ease-out,
+    background-color 0.25s cubic-bezier(0.155, 1.105, 0.295, 1.12);
 }
 
 .form-radio:hover {

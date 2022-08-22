@@ -6,15 +6,15 @@ const Notes: Component = () => {
   const handleOpen = () => {
     setOpen(true);
 
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-
     const main = document.querySelector('.app');
 
     main?.classList.add('bottom-main');
     document.body.classList.add('hide-scroll');
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   const handleClose = () => {

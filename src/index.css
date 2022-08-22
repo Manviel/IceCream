@@ -17,7 +17,6 @@
   --s-dock: 2.3rem;
   --s-system: 1.4rem;
   --s-unit: 0.8rem;
-  --a-press: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --p-blur: blur(20px) saturate(180%);
   --p-shadow: drop-shadow(0px 0px 30px var(--c-dark));
 }
@@ -66,7 +65,8 @@ button {
 a,
 button {
   will-change: transform;
-  transition: filter 0.25s, transform 0.4s var(--a-press),
+  transition: filter 0.25s,
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
     background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1),
     outline-offset 0.2s linear;
 }
@@ -137,7 +137,7 @@ button:active {
   position: fixed;
   bottom: 1.2rem;
   left: 50%;
-  animation: toast-enter cubic-bezier(0.155, 1.105, 0.295, 1.12) 0.4s both;
+  transform: translateX(-50%);
 }
 
 .dock {
@@ -268,17 +268,5 @@ button:active {
 
   .subtitle {
     font-size: 2rem;
-  }
-}
-
-@keyframes toast-enter {
-  0% {
-    opacity: 0.01;
-    transform: translateY(100%) translateX(-50%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0%) translateX(-50%);
   }
 }
