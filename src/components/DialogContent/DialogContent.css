@@ -30,11 +30,6 @@
   margin-bottom: 1.6rem;
 }
 
-.scrollable {
-  max-height: 50vh;
-  overflow-y: auto;
-}
-
 @keyframes alert-enter {
   0% {
     opacity: 0.01;

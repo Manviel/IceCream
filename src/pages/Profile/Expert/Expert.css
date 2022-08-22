@@ -78,6 +78,11 @@
   bottom: -8rem;
 }
 
+.scrollable {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
 @media screen and (max-width: 768px) {
   .expert {
     grid-template-columns: repeat(1, 1fr);

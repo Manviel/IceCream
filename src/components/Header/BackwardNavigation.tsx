@@ -13,7 +13,7 @@ const BackwardNavigation: Component<BackwardNavigationType> = ({
   customPath,
 }) => {
   onMount(() => {
-    document.title = `iFruit - ${subtitle}`;
+    document.title = `${subtitle} - iFruit`;
   });
 
   return (
