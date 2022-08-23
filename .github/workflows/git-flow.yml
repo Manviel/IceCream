@@ -1,0 +1,12 @@
+name: Git Flow
+on:
+  pull_request:
+    types: ['opened']
+jobs:
+  check_branch_name:
+    name: Branch name MUST follow git-flow convention
+    runs-on: ubuntu-latest
+    steps:
+      - uses: deepakputhraya/action-branch-name@master
+        with:
+          allowed_prefixes: 'feature/,release/,hotfix/,revert,bug/,chore/,cherry-pick/'
