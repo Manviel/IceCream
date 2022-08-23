@@ -4,17 +4,17 @@ const Notes: Component = () => {
   const [open, setOpen] = createSignal(false);
 
   const handleOpen = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+
     setOpen(true);
 
     const main = document.querySelector('.app');
 
     main?.classList.add('bottom-main');
     document.body.classList.add('hide-scroll');
-
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
   };
 
   const handleClose = () => {
