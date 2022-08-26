@@ -60,7 +60,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  margin: var(--s-safe) 1rem 0;
   height: 100%;
   z-index: 5;
   border-radius: 1rem 1rem 0 0;
@@ -69,14 +69,6 @@
 
 .bottom-main {
   transform: scale(0.94);
-}
-
-.hide-scroll {
-  overflow: hidden;
-}
-
-.hide-scroll .dock {
-  bottom: -9rem;
 }
 
 .scrollable {
@@ -100,12 +92,10 @@
 
 @keyframes toast-enter {
   0% {
-    opacity: 0.75;
     transform: translateY(100%);
   }
 
   100% {
-    opacity: 1;
     transform: translateY(0%);
   }
 }
