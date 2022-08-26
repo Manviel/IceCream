@@ -17,6 +17,7 @@
   --s-dock: 2.3rem;
   --s-system: 1.4rem;
   --s-unit: 0.8rem;
+  --s-safe: 1.2rem;
   --p-blur: blur(20px) saturate(180%);
   --p-shadow: drop-shadow(0px 0px 30px var(--c-dark));
 }
@@ -135,7 +136,7 @@ button:active {
 
 .fixed-bottom {
   position: fixed;
-  bottom: 1.2rem;
+  bottom: var(--s-safe);
   left: 50%;
   transform: translateX(-50%);
 }
