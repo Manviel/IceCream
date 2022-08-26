@@ -1,8 +1,8 @@
 import { Component, createResource, Switch, Match } from 'solid-js';
 
 import Loader from '../Loader';
-import { SuperEllipse } from '../Superellipse';
 
+import { SuperEllipse } from '../../models/config';
 import { getQuote } from '../../services/news';
 
 import GoForwardIcon from '../../assets/icons/go-forward.svg';

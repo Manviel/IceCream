@@ -4,7 +4,7 @@
   --c-dark: rgba(0, 0, 0, 0.2);
   --c-active: rgba(0, 0, 0, 0.05);
   --c-secondary: #2c2c2e;
-  --c-glass: rgba(255, 255, 255, 0.72);
+  --c-glass: #f2f2f7;
   --c-primary: #f5f5f7;
   --c-action: rgba(118, 118, 128, 0.22);
   --c-depth: rgba(245, 245, 245, 0.5);
@@ -75,6 +75,24 @@ button {
 a:active,
 button:active {
   transform: scale(0.94);
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-ring);
+  outline-offset: 4px;
+}
+
+a.active {
+  transform: scale(1.18);
+}
+
+a:focus-visible {
+  transform: scale(1.03);
+}
+
+a:focus-visible,
+button:focus-visible {
+  border-radius: var(--s-system);
 }
 
 .app {
@@ -225,7 +243,22 @@ button:active {
 }
 
 .backward:hover {
-  background-color: var(--c-dark);
+  background-color: var(--c-action);
+}
+
+.superellipse {
+  min-width: var(--s-ellipse);
+  height: var(--s-ellipse);
+  border-radius: 25%;
+  background-color: var(--c-depth);
+}
+
+.superellipse.active {
+  background-color: var(--c-white);
+}
+
+.superellipse:hover {
+  background-color: var(--c-glass);
 }
 
 .products {

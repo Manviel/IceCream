@@ -1,7 +1,8 @@
 import { Component, lazy, Suspense } from 'solid-js';
 import { Routes, Route, NavLink } from '@solidjs/router';
 
-import { SuperEllipse } from './components/Superellipse';
+import { SuperEllipse } from './models/config';
+
 import { Skeleton } from './components/Loader';
 
 import FlameIcon from './assets/icons/flame.svg';

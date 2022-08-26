@@ -13,3 +13,5 @@ export const Category = {
 };
 
 export const CIRCLE_RADIUS = 18;
+
+export const SuperEllipse = 'superellipse flex items-center justify-center';

@@ -1,7 +1,8 @@
 import { Component } from 'solid-js';
 import { createSlider } from 'solid-slider';
 
-import { SuperEllipse } from '../../../components/Superellipse';
+import { SuperEllipse } from '../../../models/config';
+
 import ConnectFactory from '../../../components/ConnectFactory';
 
 import PlayNextIcon from '../../../assets/icons/play-next.svg';
