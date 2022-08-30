@@ -12,7 +12,7 @@ const Vault: Component = () => {
 
   const valueNow = randomInRange(52, 94);
 
-  const circleRadius = 15.914;
+  const circleRadius = 15.915;
 
   createEffect(() => {
     const interest = 12 * 0.01;

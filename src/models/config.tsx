@@ -12,6 +12,6 @@ export const Category = {
   [LEVEL_5]: 'AUD',
 };
 
-export const CIRCLE_RADIUS = 18;
+export const CIRCLE_RADIUS = 16;
 
 export const SuperEllipse = 'superellipse flex items-center justify-center';
