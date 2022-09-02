@@ -28,7 +28,7 @@ export const getNews = async (params: PaginateType) => {
 };
 
 export const getQuote = async () => {
-  const response = await fetch(`https://api.quotable.io/random`, {
+  const response = await fetch(`https://animechan.vercel.app/api/random`, {
     headers,
   });
 

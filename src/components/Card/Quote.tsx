@@ -1,4 +1,4 @@
-import { Component, createResource, Switch, Match } from 'solid-js';
+import { Component, createResource, ErrorBoundary, Show } from 'solid-js';
 
 import Loader from '../Loader';
 
@@ -7,25 +7,30 @@ import { getQuote } from '../../services/news';
 
 import GoForwardIcon from '../../assets/icons/go-forward.svg';
 
+type QuoteType = {
+  quote: string;
+  character: string;
+  anime: string;
+};
+
 const fetchQuote = async () => await getQuote();
 
 const Quote: Component = () => {
-  const [quote, { refetch }] = createResource(fetchQuote);
+  const [quote, { refetch }] = createResource<QuoteType>(fetchQuote);
 
   return (
-    <Switch
+    <ErrorBoundary
       fallback={<h2 class='token view rounded screen'>Failed to fetch</h2>}
     >
-      <Match when={quote.loading}>
-        <Loader />
-      </Match>
-      <Match when={quote()}>
+      {quote.loading && <Loader />}
+
+      <Show when={quote()}>
         {(res) => (
           <article class='token view rounded screen'>
             <div class='flex justify-between items-center'>
               <p class='flex col'>
-                <time>{res.dateModified}</time>
-                <span class='box-description'>{res.author}</span>
+                <span>{res.anime}</span>
+                <span class='box-description'>{res.character}</span>
               </p>
 
               <button
@@ -37,11 +42,11 @@ const Quote: Component = () => {
               </button>
             </div>
 
-            <h2 class='box view rounded screen'>{res.content}</h2>
+            <h2 class='box view rounded screen'>{res.quote}</h2>
           </article>
         )}
-      </Match>
-    </Switch>
+      </Show>
+    </ErrorBoundary>
   );
 };
 

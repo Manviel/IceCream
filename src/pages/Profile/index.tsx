@@ -1,7 +1,8 @@
-import { createSignal, Component, For } from 'solid-js';
+import { createSignal, Component, For, Suspense } from 'solid-js';
 import { Label, RadioGroup, RadioGroupOption } from 'solid-a11y';
 import { Link } from '@solidjs/router';
 
+import Loader from '../../components/Loader';
 import Quote from '../../components/Card/Quote';
 import PageDecorator from '../../components/PageDecorator';
 
@@ -29,7 +30,9 @@ const Profile: Component = () => {
 
   return (
     <PageDecorator subtitle='Your Profile' headline='And new superpower'>
-      <Quote />
+      <Suspense fallback={<Loader />}>
+        <Quote />
+      </Suspense>
 
       <article class='layer view rounded content-full screen'>
         <h3 class={`badge subtitle ${theme()}`}>Design Gallery</h3>
