@@ -39,8 +39,4 @@ You can deploy the `dist` folder to any static host provider (netlify, surge, no
 
 ### Dribble
 
-https://dribbble.com/shots/14845623-Vessel-Personal-Trainer-App-Modules
-
-https://dribbble.com/shots/18613894-MBOX-NFT-Marketplace-Mobile-App
-
-https://dribbble.com/shots/15872573-Fitness-App-Running-Tracker
+[Sticky Table of Contents with Scrolling Active States](https://css-tricks.com/sticky-table-of-contents-with-scrolling-active-states/)

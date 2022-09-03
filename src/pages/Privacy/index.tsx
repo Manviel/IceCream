@@ -250,6 +250,59 @@ const Privacy: Component = () => (
 
       <ConnectFactory href='https://meline.lviv.ua/development/other/ood/' />
     </Article>
+
+    <Article name='UML Diagram'>
+      <p class='info'>
+        UML is a way of visualizing a software program using a collection of
+        diagrams. A complex enterprise application with many collaborators will
+        require a solid foundation of planning and clear, concise communication
+        among team members as the project progresses. Visualizing user
+        interactions, processes, and the structure of the system you're trying
+        to build will help save time down the line and make sure everyone on the
+        team is on the same page.
+      </p>
+      <h3 class='info'>Class Diagram</h3>
+      <p class='info'>They describe the static structure of a system.</p>
+      <h3 class='info'>Package Diagram</h3>
+      <p class='info'>
+        They organize elements of a system into related groups to minimize
+        dependencies between packages.
+      </p>
+      <h3 class='info'>Object Diagram</h3>
+      <p class='info'>
+        They describe the static structure of a system at a particular time.
+      </p>
+      <h3 class='info'>Use Case Diagram</h3>
+      <p class='info'>
+        They model the functionality of a system using actors and use cases.
+      </p>
+      <h3 class='info'>Activity Diagram</h3>
+      <p class='info'>
+        They illustrate the dynamic nature of a system by modeling the flow of
+        control from activity to activity. An activity represents an operation
+        on some class in the system that results in a change in the state of the
+        system. Typically, they are used to model workflow or business processes
+        and internal operation.
+      </p>
+      <h3 class='info'>Sequence Diagram</h3>
+      <p class='info'>
+        They describe interactions among classes in terms of an exchange of
+        messages over time.
+      </p>
+      <h3 class='info'>State Diagram</h3>
+      <p class='info'>
+        They describe the dynamic behavior of a system in response to external
+        stimuli. They are especially useful in modeling reactive objects whose
+        states are triggered by specific events.
+      </p>
+      <h3 class='info'>Component Diagram</h3>
+      <p class='info'>
+        They describe the organization of physical software components,
+        including source code, run-time (binary) code, and executables.
+      </p>
+
+      <ConnectFactory href='https://www.smartdraw.com/uml-diagram/' />
+    </Article>
   </PageDecorator>
 );
 

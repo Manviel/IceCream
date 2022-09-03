@@ -27,7 +27,7 @@ const Reviews: Component = () => {
         <p>{current() + 1} out of 6</p>
 
         <nav class='flex justify-between sidebar' aria-label='Candidate'>
-          <button class={SuperEllipse} aria-label='Prev' onClick={prev}>
+          <button class={SuperEllipse} aria-label='Previous' onClick={prev}>
             <PlayPrevIcon />
           </button>
           <button
