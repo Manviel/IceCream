@@ -1,0 +1,36 @@
+.privacy {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-gap: 1.8rem;
+}
+
+.quicklink {
+  margin-top: 4.8rem;
+}
+
+.spy-nav {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
+  overflow: hidden;
+  padding: 1.4rem;
+}
+
+.spy-nav a {
+  padding: 1rem 0;
+  opacity: 0.8;
+  color: var(--c-secondary);
+  transform-origin: left;
+  max-width: 24rem;
+}
+
+.spy-nav a:hover,
+.spy-nav a:focus,
+.spy-nav a.active {
+  opacity: 1;
+  color: var(--c-black);
+}
+
+.spy-nav a.active {
+  transform: scale(1.14);
+}
