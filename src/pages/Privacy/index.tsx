@@ -251,11 +251,11 @@ const Privacy: Component = () => {
           if (entry.intersectionRatio > 0) {
             const article = document.querySelector(`.spy-nav a[href="#${id}"]`);
 
-            article?.classList.add('active');
+            article?.classList.add('live');
           } else {
             const article = document.querySelector(`.spy-nav a[href="#${id}"]`);
 
-            article?.classList.remove('active');
+            article?.classList.remove('live');
           }
         });
       },
@@ -272,7 +272,7 @@ const Privacy: Component = () => {
   return (
     <PageDecorator subtitle='Privacy' headline='Designed for your policy'>
       <div class='privacy'>
-        <div class='flex col'>
+        <div class='flex col quick'>
           <For each={containers}>
             {(section) => (
               <Article
@@ -295,7 +295,7 @@ const Privacy: Component = () => {
           </For>
         </div>
 
-        <nav class='spy-nav flex col screen' aria-label='Contents'>
+        <nav class='spy-nav flex col' aria-label='Contents'>
           <For each={containers}>
             {(section) => (
               <a href={`#${transformCase(section.name)}`}>{section.name}</a>
