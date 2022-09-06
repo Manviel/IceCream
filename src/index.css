@@ -92,7 +92,7 @@ a:focus-visible {
 
 a:focus-visible,
 button:focus-visible {
-  border-radius: var(--s-system);
+  border-radius: 4px;
 }
 
 .app {
