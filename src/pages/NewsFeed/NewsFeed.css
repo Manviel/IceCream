@@ -32,9 +32,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%) translateY(-4.8rem);
-  background-color: var(--c-secondary);
-  color: var(--c-white);
-  padding: 0.9rem 1.2rem;
+  padding: 0.9rem var(--s-safe);
   border-radius: var(--s-dock);
   animation: tooltip-enter var(--a-snack) 0.3s both;
 }
@@ -43,28 +41,21 @@
   position: fixed;
   z-index: 2;
   left: 50%;
-  background-color: var(--c-dark);
   backdrop-filter: var(--p-blur);
   border-radius: var(--s-dock);
+  padding: var(--s-safe) var(--s-system);
   animation: snack-path var(--a-snack) 4s both;
 }
 
-.snackbar {
-  display: block;
-  background-color: var(--c-depth);
-  border-radius: var(--s-dock);
-  padding: var(--s-safe) var(--s-system);
-  white-space: nowrap;
-}
-
 .snackbar-title {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   line-height: var(--s-medium);
 }
 
 .snackbar-desc {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   margin-top: 0.2rem;
+  white-space: nowrap;
 }
 
 .place {
@@ -91,6 +82,6 @@
   10%,
   85% {
     opacity: 1;
-    transform: translateY(0) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
   }
 }

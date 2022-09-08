@@ -55,7 +55,7 @@ const Leagues: Component<LeagueType> = ({ currentLeague }) => {
                 </button>
 
                 {tooltip() === id && (
-                  <div role='tooltip' id={id} class='tooltip'>
+                  <div role='tooltip' id={id} class='tooltip box'>
                     {league}
                   </div>
                 )}
