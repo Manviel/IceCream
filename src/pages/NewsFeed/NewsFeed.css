@@ -42,6 +42,7 @@
   z-index: 2;
   left: 50%;
   backdrop-filter: var(--p-blur);
+  -webkit-backdrop-filter: var(--p-blur);
   border-radius: var(--s-dock);
   padding: var(--s-safe) var(--s-system);
   animation: snack-path var(--a-snack) 4s both;

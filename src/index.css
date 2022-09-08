@@ -165,6 +165,7 @@ button:focus-visible {
   border-radius: var(--s-dock);
   background-color: var(--c-dark);
   backdrop-filter: var(--p-blur);
+  -webkit-backdrop-filter: var(--p-blur);
 }
 
 .layer {
@@ -274,6 +275,7 @@ button:focus-visible {
 .depth {
   background-color: var(--c-depth);
   backdrop-filter: var(--p-blur);
+  -webkit-backdrop-filter: var(--p-blur);
   color: #000;
 }
 
