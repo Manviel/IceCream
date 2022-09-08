@@ -52,7 +52,7 @@
 }
 
 .form-control {
-  padding: 0.9rem 1.2rem;
+  padding: 0.9rem var(--s-safe);
   font-size: 1.6rem;
 }
 

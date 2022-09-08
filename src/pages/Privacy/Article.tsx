@@ -1,15 +1,26 @@
 import { ParentComponent } from 'solid-js';
 
+import ConnectFactory from '../../components/ConnectFactory';
+
 type ArticleType = {
   name: string;
+  href: string;
+  id: string;
 };
 
-const Article: ParentComponent<ArticleType> = ({ name, children }) => (
-  <article class='layer view content-full rounded screen on-scroll'>
+const Article: ParentComponent<ArticleType> = ({
+  name,
+  children,
+  href,
+  id,
+}) => (
+  <section class='layer view content-full rounded on-scroll' id={id}>
     <h2 class='info'>{name}</h2>
 
     {children}
-  </article>
+
+    <ConnectFactory href={href} />
+  </section>
 );
 
 export default Article;
