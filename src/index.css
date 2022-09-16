@@ -92,7 +92,7 @@ a:focus-visible {
 
 a:focus-visible,
 button:focus-visible {
-  border-radius: 4px;
+  border-radius: 0.4rem;
 }
 
 .app {
@@ -304,5 +304,21 @@ button:focus-visible {
 
   .subtitle {
     font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  body {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body {
+    font-size: 2.2rem;
+  }
+
+  .info {
+    line-height: 3.4rem;
   }
 }

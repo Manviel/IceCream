@@ -39,7 +39,7 @@
 
 .spy-nav a.live {
   transform: scale(1.1);
-  border-left: 2px solid var(--c-heat);
+  border-left: 0.2rem solid var(--c-heat);
 }
 
 @media screen and (max-width: 768px) {
