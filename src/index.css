@@ -119,7 +119,7 @@ button:focus-visible {
 }
 
 .info {
-  line-height: 2.4rem;
+  line-height: 1.8;
   margin: var(--s-system) 0 var(--s-medium);
 }
 
@@ -308,17 +308,13 @@ button:focus-visible {
 }
 
 @media screen and (min-width: 1920px) {
-  body {
-    font-size: 1.8rem;
+  html {
+    font-size: 82%;
   }
 }
 
 @media screen and (min-width: 2560px) {
-  body {
-    font-size: 2.2rem;
-  }
-
-  .info {
-    line-height: 3.4rem;
+  html {
+    font-size: 110%;
   }
 }

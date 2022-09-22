@@ -8,7 +8,7 @@ import './NewsFeed.css';
 
 const NewsFeed: Component = () => {
   return (
-    <PageDecorator subtitle='Discover' headline='Leagues'>
+    <PageDecorator subtitle='Discover' headline='Top leagues'>
       <Suspense fallback={<Loader />}>
         <Leaderboard />
       </Suspense>
