@@ -23,6 +23,21 @@ const Reviews: Component = () => {
   return (
     <>
       <article class='flex col text-center justify-between'>
+        <h2 class='info'>Usage</h2>
+        <p>900 million</p>
+
+        <Notes />
+      </article>
+
+      <article class='flex col text-center justify-between'>
+        <h2 class='info'>Report</h2>
+
+        <ConnectFactory href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns' />
+
+        <Results />
+      </article>
+
+      <article class='flex col text-center justify-between'>
         <h2 class='info'>Ratings</h2>
         <p>{current() + 1} out of 6</p>
 
@@ -41,21 +56,6 @@ const Reviews: Component = () => {
             <PlayNextIcon />
           </button>
         </nav>
-      </article>
-
-      <article class='flex col text-center justify-between'>
-        <h2 class='info'>Usage</h2>
-        <p>900 million</p>
-
-        <Notes />
-      </article>
-
-      <article class='flex col text-center justify-between'>
-        <h2 class='info'>Report</h2>
-
-        <ConnectFactory href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns' />
-
-        <Results />
       </article>
 
       <article class='production flex justify-between'>
