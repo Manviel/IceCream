@@ -1,11 +1,13 @@
 :root {
   --s-petal: 12.5rem;
+  --s-inhale: 4s;
   --c-odd: #61bea2;
   --c-even: #529ca0;
 }
 
 .breathe {
-  animation: relax 4s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
+  animation: relax var(--s-inhale) cubic-bezier(0.5, 0, 0.5, 1) alternate
+    infinite;
 }
 
 .circle {
@@ -13,7 +15,6 @@
   position: absolute;
   mix-blend-mode: screen;
   transform: translate(0, 0);
-  animation: center 6s infinite;
 }
 
 .breathe,
@@ -31,27 +32,27 @@
 }
 
 .circle:nth-child(1) {
-  animation: circle-1 4s ease alternate infinite;
+  animation: circle-1 var(--s-inhale) ease alternate infinite;
 }
 
 .circle:nth-child(2) {
-  animation: circle-2 4s ease alternate infinite;
+  animation: circle-2 var(--s-inhale) ease alternate infinite;
 }
 
 .circle:nth-child(3) {
-  animation: circle-3 4s ease alternate infinite;
+  animation: circle-3 var(--s-inhale) ease alternate infinite;
 }
 
 .circle:nth-child(4) {
-  animation: circle-4 4s ease alternate infinite;
+  animation: circle-4 var(--s-inhale) ease alternate infinite;
 }
 
 .circle:nth-child(5) {
-  animation: circle-5 4s ease alternate infinite;
+  animation: circle-5 var(--s-inhale) ease alternate infinite;
 }
 
 .circle:nth-child(6) {
-  animation: circle-6 4s ease alternate infinite;
+  animation: circle-6 var(--s-inhale) ease alternate infinite;
 }
 
 @keyframes relax {

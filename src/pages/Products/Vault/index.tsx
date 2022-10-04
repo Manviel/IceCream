@@ -10,9 +10,13 @@ const Vault: Component = () => {
   const [budget, setBudget] = createSignal(1000);
   const [income, setIncome] = createSignal(0);
 
-  const valueNow = randomInRange(52, 94);
+  const valueNow = randomInRange(4, 50);
 
-  const circleRadius = 15.915;
+  const circleRadius = 40;
+  const circleCenter = 50;
+  const arcLength = Math.round(2 * 3.14 * circleRadius);
+  const arcOffset = Math.round(arcLength * ((100 - valueNow) / 100));
+  const progress = 100 - valueNow;
 
   createEffect(() => {
     const interest = 12 * 0.01;
@@ -40,24 +44,22 @@ const Vault: Component = () => {
               class='activity'
               role='progressbar'
               aria-label='Activity ring'
-              aria-valuenow={valueNow}
+              aria-valuenow={progress}
             >
-              <svg viewBox='0 0 37 37'>
-                <g class='ring'>
-                  <circle
-                    class='background'
-                    cx='50%'
-                    cy='50%'
-                    r={circleRadius}
-                  />
-                  <circle
-                    class='completed'
-                    cx='50%'
-                    cy='50%'
-                    r={circleRadius}
-                    stroke-dasharray={`${valueNow}, 100`}
-                  />
-                </g>
+              <svg class='ring'>
+                <circle
+                  class='background'
+                  cx={circleCenter}
+                  cy={circleCenter}
+                  r={circleRadius}
+                />
+                <circle
+                  class='completed'
+                  cx={circleCenter}
+                  cy={circleCenter}
+                  r={circleRadius}
+                  stroke-dasharray={`${arcOffset}, ${arcLength}`}
+                />
               </svg>
             </div>
 

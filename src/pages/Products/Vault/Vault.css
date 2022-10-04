@@ -1,16 +1,18 @@
 .activity {
-  height: 8rem;
-  width: 8rem;
+  height: 10rem;
+  width: 10rem;
 }
 
 .ring {
-  transform-origin: 50%;
-  transform: scale(1) rotate(-90deg);
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  transform: rotate(-90deg);
 }
 
 .ring circle {
   fill: none;
-  stroke-width: 0.52rem;
+  stroke-width: 1.2rem;
 }
 
 .completed {
@@ -44,7 +46,7 @@
 
 .accrued {
   color: var(--c-heat);
-  font-size: var(--s-medium);
+  font-size: 2.2rem;
 }
 
 .form-group {
@@ -64,7 +66,7 @@
 
 @keyframes progress {
   0% {
-    stroke-dasharray: 0 100;
+    stroke-dasharray: 0 251;
   }
 }
 
