@@ -1,6 +1,7 @@
 :root {
   --c-blue: #2094fa;
   --a-snack: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --s-gap: calc(-1 * var(--s-ellipse));
 }
 
 .paper-description {
@@ -31,7 +32,7 @@
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(-4.8rem);
+  transform: translateX(-50%) translateY(var(--s-gap));
   padding: 0.9rem var(--s-safe);
   border-radius: var(--s-dock);
   animation: tooltip-enter var(--a-snack) 0.3s both;

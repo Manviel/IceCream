@@ -12,7 +12,7 @@
   --c-grey: #a1a1a6;
   --c-heat: #fa124f;
   --c-purple: #b25fea;
-  --s-ellipse: 4.9rem;
+  --s-ellipse: 4.8rem;
   --s-medium: 2rem;
   --s-dock: 2.3rem;
   --s-system: 1.4rem;
@@ -185,7 +185,7 @@ button:focus-visible {
 
 .on-scroll {
   opacity: 0.01;
-  transform: translateY(4.8rem);
+  transform: translateY(var(--s-ellipse));
   transition: 0.4s opacity, 0.8s transform cubic-bezier(0.07, 0.89, 0.79, 0.95);
 }
 
