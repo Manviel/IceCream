@@ -16,6 +16,7 @@ const containers = [
       `Kanban delivers tasks continuously until the project is finished, while Scrum delivers chunks of
       deliverables in one to four-week periods.`,
     ],
+    titles: [`Project management`],
   },
   {
     name: 'Functional and non functional requirements',
@@ -55,13 +56,13 @@ const containers = [
       details do not change accordingly. The scope is expanded without
       considering the impact on your project schedule, budget, risks, and more.`,
     ],
+    titles: [`Project scope`],
   },
   {
     name: 'Estimation techniques',
     link: 'https://www.wrike.com/blog/project-estimation-techniques/',
     content: [
-      `An estimate is a rough calculation of something. For example, a project
-      cost estimate is a general idea of the price model for a project.
+      `For example, a project cost estimate is a general idea of the price model for a project.
       Without accurate estimates, it’s impossible to plan your project. If you
       don’t have an idea of how long the project will take or what resources
       you will need, there is no way to ensure you’ll have the right people,
@@ -88,7 +89,7 @@ const containers = [
       your actual estimate.`,
     ],
     titles: [
-      ,
+      `Rough calculation of something`,
       'Top-down',
       'Bottom-up',
       'Expert judgment',
@@ -108,6 +109,7 @@ const containers = [
       service's level of access. In technology, we use authorization to give
       users or services permission to access some data or perform a particular action.`,
     ],
+    titles: [`Process of verifying`],
   },
   {
     name: 'What is Unit testing',
@@ -159,7 +161,7 @@ const containers = [
       serving as a valuable resource for future extensions of the project.`,
     ],
     titles: [
-      ,
+      'Software development proces',
       'Write tests for a number of scenarios',
       'Write good test names',
       'Set up automated tests',
@@ -194,6 +196,7 @@ const containers = [
       lower-level modules, and lower-level modules should not depend on
       upper-level modules. Both types of modules must depend on abstractions.`,
     ],
+    titles: [`Code smells`],
   },
   {
     name: 'UML Diagram',
@@ -225,7 +228,7 @@ const containers = [
       including source code, run-time (binary) code, and executables.`,
     ],
     titles: [
-      ,
+      'General-purpose',
       'Class Diagram',
       'Package Diagram',
       'Object Diagram',
