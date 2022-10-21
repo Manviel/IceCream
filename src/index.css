@@ -84,10 +84,6 @@ button:active {
   outline-offset: 4px;
 }
 
-a.active {
-  transform: scale(1.18);
-}
-
 a:focus-visible {
   transform: scale(1.03);
 }
@@ -257,6 +253,7 @@ button:focus-visible {
 
 .superellipse.active {
   background-color: var(--c-white);
+  transform: scale(1.18);
 }
 
 .superellipse:hover {
