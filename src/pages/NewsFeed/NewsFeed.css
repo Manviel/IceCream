@@ -10,9 +10,6 @@
 }
 
 .rank {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
   font-size: 1.8rem;
 }
 
@@ -21,7 +18,7 @@
   position: relative;
 }
 
-.current-league .backward {
+.current-league .shape {
   background-color: var(--c-black);
   transform: scale(1.5);
   font-weight: bold;

@@ -16,7 +16,7 @@ const getRankColor = (place: number) => {
 
 const Rank: Component<RankType> = ({ place }) => (
   <h2
-    class='box rank flex items-center justify-center'
+    class='box shape rank flex items-center justify-center'
     style={{ color: getRankColor(place) }}
   >
     {place + 1}

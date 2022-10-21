@@ -43,7 +43,7 @@ const Leagues: Component<LeagueType> = ({ currentLeague }) => {
               >
                 <button
                   disabled={snackbar()}
-                  class='backward'
+                  class='shape token'
                   onClick={() => handleCopy(league)}
                   onFocusIn={() => handleDisplay(id)}
                   onMouseEnter={() => handleDisplay(id)}

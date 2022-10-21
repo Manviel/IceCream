@@ -23,7 +23,7 @@ const BackwardNavigation: Component<BackwardNavigationType> = ({
       {!hideBackward && (
         <Link
           href={customPath ? `/${customPath}` : '/'}
-          class='flex justify-center items-center backward'
+          class='flex justify-center items-center shape token'
           aria-label='Go Back'
         >
           <i class='arrow arrow-right'></i>

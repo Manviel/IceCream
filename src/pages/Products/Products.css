@@ -1,7 +1,6 @@
 :root {
   --c-stock: #00e3961a;
   --c-subscription: #b25fea1a;
-  --s-entry: 4.2rem;
 }
 
 .widget-title {
@@ -10,14 +9,8 @@
 }
 
 .widget-main {
-  font-size: var(--s-entry);
+  font-size: 4.6rem;
   margin-bottom: 1.6rem;
-}
-
-.widget-group {
-  width: var(--s-entry);
-  height: var(--s-entry);
-  border-radius: 50%;
 }
 
 .widget-chart {

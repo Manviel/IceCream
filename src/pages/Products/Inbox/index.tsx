@@ -16,7 +16,7 @@ const Inbox: Component = () => {
           <h3 class='widget-title'>Inbox</h3>
           <p class='widget-main conditions'>1</p>
 
-          <div class='widget-group token flex items-center justify-center'>
+          <div class='shape token flex items-center justify-center'>
             <TrayIcon />
           </div>
         </>
