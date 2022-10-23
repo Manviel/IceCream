@@ -1,7 +1,3 @@
-:root {
-  --s-radio: 2.4rem;
-}
-
 .badge {
   padding: 1.2rem;
 }
@@ -17,8 +13,8 @@
 }
 
 .form-radio {
-  height: var(--s-radio);
-  min-width: var(--s-radio);
+  height: var(--s-dock);
+  min-width: var(--s-dock);
   border-width: 0.6rem;
   border-style: solid;
   border-color: var(--c-primary);

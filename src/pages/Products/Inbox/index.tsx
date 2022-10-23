@@ -21,7 +21,7 @@ const Inbox: Component = () => {
           </div>
         </>
       }
-      triggerClassName='view layer rounded flex col'
+      triggerClassName='view layer rounded flex col items-start'
     >
       <Link href='/privacy' class='btn content-full dialog-action'>
         Go to Policy

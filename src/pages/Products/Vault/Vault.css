@@ -1,6 +1,10 @@
+:root {
+  --s-radio: 10rem;
+}
+
 .activity {
-  height: 10rem;
-  width: 10rem;
+  height: var(--s-radio);
+  width: var(--s-radio);
 }
 
 .ring {
