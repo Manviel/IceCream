@@ -1,51 +1,9 @@
 .badge {
-  padding: 1.2rem;
-}
-
-.form-item {
-  margin-bottom: var(--s-safe);
-  cursor: pointer;
-}
-
-.form-label {
-  padding-left: 1.8rem;
-  font-size: 1.6rem;
-}
-
-.form-radio {
-  height: var(--s-dock);
-  min-width: var(--s-dock);
-  border-width: 0.6rem;
-  border-style: solid;
-  border-color: var(--c-primary);
-  box-shadow: 0 0 0 0.6rem var(--c-grey);
-  border-radius: 50%;
-  transition: border 0.2s ease-out,
-    background-color 0.25s cubic-bezier(0.155, 1.105, 0.295, 1.12);
-}
-
-.form-radio:hover {
-  background-color: var(--c-dark);
-}
-
-.form-radio.radio-checked {
-  background-color: var(--c-ring);
+  padding: 1.2rem 0;
 }
 
 .box-description {
   font-size: 1.6rem;
   text-transform: uppercase;
   margin-top: 0.4rem;
-}
-
-.blue-theme {
-  color: var(--c-ring);
-}
-
-.night-theme {
-  color: var(--c-purple);
-}
-
-.orange-theme {
-  color: var(--c-heat);
 }

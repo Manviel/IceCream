@@ -1,10 +1,10 @@
-import { createSignal, Component, For, Suspense } from 'solid-js';
-import { Label, RadioGroup, RadioGroupOption } from 'solid-a11y';
+import { Component, For, Suspense } from 'solid-js';
 import { Link } from '@solidjs/router';
 
 import Loader from '../../components/Loader';
 import Quote from '../../components/Card/Quote';
 import PageDecorator from '../../components/PageDecorator';
+import ConnectFactory from '../../components/ConnectFactory';
 
 import Breathe from './Breathe';
 
@@ -12,60 +12,58 @@ import './Profile.css';
 
 const options = [
   {
-    value: 'blue-theme',
-    label: 'Blue',
+    value: 'https://www.informit.com/articles/article.aspx?p=1152528&seqNum=4',
+    label: 'Characteristics of Excellent Requirements',
   },
   {
-    value: 'orange-theme',
-    label: 'Orange',
+    value:
+      'https://www.jobilize.com/software/test/quantifiable-requirements-by-openstax',
+    label: 'Quantifiable Requirements',
   },
   {
-    value: 'night-theme',
-    label: 'Midnight',
+    value:
+      'https://ecomputernotes.com/software-engineering/requirementsvalidation',
+    label: 'Requirements validation techniques',
   },
 ];
 
 const Profile: Component = () => {
-  const [theme, setTheme] = createSignal<string>(options[0].value);
-
   return (
     <PageDecorator subtitle='Your Profile' headline='And new superpower'>
       <Suspense fallback={<Loader />}>
         <Quote />
       </Suspense>
 
-      <article class='layer view rounded content-full screen'>
-        <h3 class={`badge subtitle ${theme()}`}>Design Gallery</h3>
+      <div class='layer view rounded content-full screen'>
+        <h3 class='subtitle'>Software Design</h3>
 
-        <RadioGroup class='flex col' value={theme()} onChange={setTheme}>
-          <For each={options}>
-            {(option) => (
-              <RadioGroupOption
-                value={option.value}
-                class='flex items-center badge form-item rounded'
-              >
-                {({ checked }) => (
-                  <>
-                    <i
-                      class='form-radio'
-                      classList={{ 'radio-checked': checked() }}
-                    ></i>
-                    <Label class='form-label'>{option.label}</Label>
-                  </>
-                )}
-              </RadioGroupOption>
-            )}
-          </For>
-        </RadioGroup>
-      </article>
+        <div class='flex justify-between items-center'>
+          <ConnectFactory
+            href='https://www.freecodecamp.org/news/why-understanding-software-requirements-matter-to-you-as-a-software-engineer/'
+            text='Why is this important?'
+          />
+
+          <Link href='/profile/expert' class='btn'>
+            Go to Onboarding
+          </Link>
+        </div>
+      </div>
 
       <Breathe />
 
-      <div class='layer view rounded content-full screen'>
-        <Link href='/profile/expert' class='btn'>
-          Go to Onboarding
-        </Link>
-      </div>
+      <article class='layer view rounded content-full screen'>
+        <h3 class='subtitle'>Software Requirements</h3>
+
+        <ul class='flex col'>
+          <For each={options}>
+            {(option) => (
+              <li class='flex items-center badge'>
+                <ConnectFactory href={option.value} text={option.label} />
+              </li>
+            )}
+          </For>
+        </ul>
+      </article>
     </PageDecorator>
   );
 };

@@ -30,7 +30,7 @@ const Reviews: Component = () => {
       </article>
 
       <article class='flex col text-center justify-between'>
-        <h2 class='info'>Report</h2>
+        <h2 class='info'>Design Patterns</h2>
 
         <ConnectFactory href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns' />
 
@@ -59,9 +59,12 @@ const Reviews: Component = () => {
       </article>
 
       <article class='production flex justify-between'>
-        <h3 class='subtitle'>Reviews</h3>
+        <h3 class='subtitle'>Elicitation Techs</h3>
 
-        <ConnectFactory href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/' />
+        <ConnectFactory
+          href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
+          text='View All'
+        />
       </article>
 
       <article class='production' use:slider>
