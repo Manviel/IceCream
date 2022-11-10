@@ -239,6 +239,18 @@ const containers = [
       'Component Diagram',
     ],
   },
+  {
+    name: 'Calculating the Velocity',
+    link: 'https://michaellant.com/2010/07/23/calculating-the-velocity-of-your-agile-projects/',
+    content: [
+      `Time is the length of our Sprint which in my projects is two weeks.
+      Velocity is thus Units of Effort Completed / Sprint.`,
+      `The number and variety of factors that can affect the Velocity of a team are both significant in number, and difficult to quantify.
+      Many of the factors will cancel each other out (electronics systems depend on this principle for noise reduction), but the net effect will be a bias on the team Velocity.`,
+      `It is important to have a predictable Velocity. By reducing Friction and minimizing unnecessary Velocity changes prior to Calibration, you have optimized the individual and team Velocities.`,
+    ],
+    titles: [`Units of Effort Completed per Sprint`],
+  },
 ];
 
 const transformCase = (str: string) =>
