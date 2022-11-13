@@ -201,25 +201,25 @@ button:focus-visible {
   color: var(--c-white);
 }
 
+.btn {
+  display: block;
+  padding: 1.8rem var(--s-medium) 1.6rem;
+  font-weight: bold;
+  font-size: 1.6rem;
+  letter-spacing: 0.4px;
+  border-radius: var(--s-dock);
+  text-align: center;
+  background-color: var(--c-active);
+}
+
 .token,
 .btn {
   background-color: var(--c-active);
 }
 
-.btn {
-  display: block;
-  padding: 1.8rem var(--s-medium) 1.6rem;
-  color: var(--c-black);
-  font-weight: bold;
-  font-size: 1.6rem;
-  border-radius: var(--s-dock);
-  text-align: center;
-}
-
+.token:hover,
 .btn:hover {
-  filter: var(--p-shadow);
-  background-color: var(--c-black);
-  color: var(--c-white);
+  background-color: var(--c-action);
 }
 
 .arrow {
@@ -238,10 +238,6 @@ button:focus-visible {
   height: var(--s-entry);
   width: var(--s-entry);
   border-radius: 50%;
-}
-
-.token:hover {
-  background-color: var(--c-action);
 }
 
 .superellipse {

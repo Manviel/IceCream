@@ -85,7 +85,7 @@ const Vault: Component = () => {
           value={budget()}
           min={1000}
           step={200}
-          max={1000000}
+          max={100000}
           onChange={handleChange}
         />
       </div>

@@ -1,5 +1,4 @@
 import { Component, For, Suspense } from 'solid-js';
-import { Link } from '@solidjs/router';
 
 import Loader from '../../components/Loader';
 import Quote from '../../components/Card/Quote';
@@ -25,6 +24,15 @@ const options = [
       'https://ecomputernotes.com/software-engineering/requirementsvalidation',
     label: 'Requirements validation techniques',
   },
+  {
+    value:
+      'https://www.freecodecamp.org/news/why-understanding-software-requirements-matter-to-you-as-a-software-engineer/',
+    label: 'Why Software Design is important?',
+  },
+  {
+    value: 'https://www.javatpoint.com/software-engineering-software-metrics',
+    label: 'Process measurement metrics',
+  },
 ];
 
 const Profile: Component = () => {
@@ -34,24 +42,9 @@ const Profile: Component = () => {
         <Quote />
       </Suspense>
 
-      <div class='layer view rounded content-full screen'>
-        <h3 class='subtitle'>Software Design</h3>
-
-        <div class='flex justify-between items-center'>
-          <ConnectFactory
-            href='https://www.freecodecamp.org/news/why-understanding-software-requirements-matter-to-you-as-a-software-engineer/'
-            text='Why is this important?'
-          />
-
-          <Link href='/profile/expert' class='btn'>
-            Go to Onboarding
-          </Link>
-        </div>
-      </div>
-
       <Breathe />
 
-      <article class='layer view rounded content-full screen'>
+      <footer class='layer view rounded content-full screen'>
         <h3 class='subtitle'>Software Requirements</h3>
 
         <ul class='flex col'>
@@ -63,7 +56,7 @@ const Profile: Component = () => {
             )}
           </For>
         </ul>
-      </article>
+      </footer>
     </PageDecorator>
   );
 };
