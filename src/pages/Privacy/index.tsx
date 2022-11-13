@@ -16,7 +16,7 @@ const containers = [
       `Kanban delivers tasks continuously until the project is finished, while Scrum delivers chunks of
       deliverables in one to four-week periods.`,
     ],
-    titles: [`Project management`],
+    titles: ['Project management'],
   },
   {
     name: 'Functional and non functional requirements',
@@ -43,6 +43,7 @@ const containers = [
     name: 'Scope creep and Gold plating',
     link: 'https://projectmanagementacademy.net/resources/blog/gold-plating-vs-scope-creep/',
     content: [
+      `The scope of the project refers to all the work and processes required to be done to deliver the product and the product scope refers to technical specifications, features, functions of the product itself.`,
       `Gold plating happens when the project team adds extra features that were
       not part of the original scope, usually as “freebies” for the client.
       The client may appreciate the extra work, but they could also be upset
@@ -56,7 +57,7 @@ const containers = [
       details do not change accordingly. The scope is expanded without
       considering the impact on your project schedule, budget, risks, and more.`,
     ],
-    titles: [`Project scope`],
+    titles: ['Project scope', 'Product scope'],
   },
   {
     name: 'Estimation techniques',
@@ -89,7 +90,7 @@ const containers = [
       your actual estimate.`,
     ],
     titles: [
-      `Rough calculation of something`,
+      'Rough calculation of something',
       'Top-down',
       'Bottom-up',
       'Expert judgment',
@@ -109,7 +110,7 @@ const containers = [
       service's level of access. In technology, we use authorization to give
       users or services permission to access some data or perform a particular action.`,
     ],
-    titles: [`Process of verifying`],
+    titles: ['Process of verifying'],
   },
   {
     name: 'What is Unit testing',
@@ -196,7 +197,7 @@ const containers = [
       lower-level modules, and lower-level modules should not depend on
       upper-level modules. Both types of modules must depend on abstractions.`,
     ],
-    titles: [`Code smells`],
+    titles: ['Code smells'],
   },
   {
     name: 'UML Diagram',
@@ -249,7 +250,7 @@ const containers = [
       Many of the factors will cancel each other out (electronics systems depend on this principle for noise reduction), but the net effect will be a bias on the team Velocity.`,
       `It is important to have a predictable Velocity. By reducing Friction and minimizing unnecessary Velocity changes prior to Calibration, you have optimized the individual and team Velocities.`,
     ],
-    titles: [`Units of Effort Completed per Sprint`],
+    titles: ['Units of Effort Completed per Sprint'],
   },
 ];
 

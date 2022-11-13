@@ -65,7 +65,7 @@ const Vault: Component = () => {
 
             <article class='flex col context'>
               <h4 class='sum'>{commasAdapter(budget())}</h4>
-              <h5 class='term grey'>12%</h5>
+              <h5 class='term grey'>{progress}%</h5>
               <h6 class='accrued'>+{commasAdapter(income())}</h6>
             </article>
           </div>

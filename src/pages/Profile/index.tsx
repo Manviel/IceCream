@@ -33,6 +33,11 @@ const options = [
     value: 'https://www.javatpoint.com/software-engineering-software-metrics',
     label: 'Process measurement metrics',
   },
+  {
+    value:
+      'https://www.isixsigma.com/methodology/business-process-management-bpm/business-process-management-software-development/',
+    label: 'Process management',
+  },
 ];
 
 const Profile: Component = () => {
