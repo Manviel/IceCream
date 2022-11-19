@@ -58,17 +58,17 @@ const Reviews: Component = () => {
         </nav>
       </article>
 
-      <article class='production flex justify-between'>
+      <div class='production flex justify-between'>
         <h3 class='subtitle'>Elicitation Techs</h3>
 
         <ConnectFactory
           href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
           text='View All'
         />
-      </article>
+      </div>
 
-      <article class='production' use:slider>
-        <p class='info token view rounded'>
+      <div class='production' use:slider>
+        <p class='info card view rounded'>
           Once the business analysis has communicated with stakeholders for
           understanding their requirements, it can be described as elicitation.
           Requirement elicitation can be done by communicating with stakeholders
@@ -105,7 +105,7 @@ const Reviews: Component = () => {
           look like. Prototypes can be used to create a mock-up of sites, and
           describe the process using diagrams.
         </p>
-      </article>
+      </div>
     </>
   );
 };

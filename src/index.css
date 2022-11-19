@@ -279,6 +279,13 @@ button:focus-visible {
   z-index: 1;
 }
 
+.paper {
+  background-color: var(--c-active);
+  text-transform: uppercase;
+  padding: 0.6rem var(--s-safe);
+  border-radius: var(--s-unit);
+}
+
 @media screen and (max-width: 768px) {
   .view {
     padding: var(--s-system);

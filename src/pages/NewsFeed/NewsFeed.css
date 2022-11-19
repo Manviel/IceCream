@@ -1,5 +1,4 @@
 :root {
-  --c-blue: #2094fa;
   --a-snack: cubic-bezier(0.25, 0.1, 0.25, 1);
   --s-gap: calc(-1 * var(--s-ellipse));
 }
@@ -13,16 +12,8 @@
   font-size: 1.8rem;
 }
 
-.current-league,
 .league {
   position: relative;
-}
-
-.current-league .shape {
-  background-color: var(--c-black);
-  transform: scale(1.5);
-  font-weight: bold;
-  color: var(--c-blue);
 }
 
 .tooltip {

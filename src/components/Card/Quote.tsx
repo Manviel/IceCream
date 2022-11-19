@@ -24,7 +24,7 @@ const Quote: Component = () => {
     >
       {quote.loading && <Loader />}
 
-      <Show when={quote()}>
+      <Show when={quote()} keyed>
         {(res) => (
           <article class='token view rounded screen'>
             <div class='flex justify-between items-center'>

@@ -11,7 +11,7 @@ const getRankColor = (place: number) => {
 
   if (place > 27) return ChartColors.Red;
 
-  return null;
+  return undefined;
 };
 
 const Rank: Component<RankType> = ({ place }) => (

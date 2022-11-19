@@ -1,21 +1,18 @@
-import { Component, For, createSignal, createUniqueId } from 'solid-js';
-
-import { LeagueUnion } from '../../models';
-import { Category } from '../../models/config';
+import { Component, createSignal, createUniqueId } from 'solid-js';
 
 import Notification from './Notification';
 
 type LeagueType = {
-  currentLeague: LeagueUnion;
+  currentLeague: string | number;
 };
 
 const Leagues: Component<LeagueType> = ({ currentLeague }) => {
-  const [tooltip, setTooltip] = createSignal<string>();
+  const [tooltip, setTooltip] = createSignal(false);
   const [snackbar, setSnackbar] = createSignal(false);
 
-  const handleDisplay = (id: string) => setTooltip(id);
+  const handleDisplay = () => setTooltip(true);
 
-  const handleResetTooltip = () => setTooltip();
+  const handleResetTooltip = () => setTooltip(false);
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -28,43 +25,31 @@ const Leagues: Component<LeagueType> = ({ currentLeague }) => {
     });
   };
 
+  const id = createUniqueId();
+
   return (
-    <>
+    <div class='league'>
       {snackbar() && <Notification />}
 
-      <ul class='flex justify-between screen view rounded leagues'>
-        <For each={Object.keys(Category)}>
-          {(league) => {
-            const id = createUniqueId();
+      <button
+        disabled={snackbar()}
+        class='paper'
+        onClick={() => handleCopy(currentLeague.toString())}
+        onFocusIn={handleDisplay}
+        onMouseEnter={handleDisplay}
+        onMouseLeave={handleResetTooltip}
+        onFocusOut={handleResetTooltip}
+        aria-describedby={id}
+      >
+        {currentLeague}
+      </button>
 
-            return (
-              <li
-                class={currentLeague === league ? 'current-league' : 'league'}
-              >
-                <button
-                  disabled={snackbar()}
-                  class='shape token'
-                  onClick={() => handleCopy(league)}
-                  onFocusIn={() => handleDisplay(id)}
-                  onMouseEnter={() => handleDisplay(id)}
-                  onMouseLeave={handleResetTooltip}
-                  onFocusOut={handleResetTooltip}
-                  aria-describedby={id}
-                >
-                  {league.substring(0, 1)}
-                </button>
-
-                {tooltip() === id && (
-                  <div role='tooltip' id={id} class='tooltip box'>
-                    {league}
-                  </div>
-                )}
-              </li>
-            );
-          }}
-        </For>
-      </ul>
-    </>
+      {tooltip() && (
+        <div role='tooltip' id={id} class='tooltip box'>
+          {currentLeague}
+        </div>
+      )}
+    </div>
   );
 };
 
