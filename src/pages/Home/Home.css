@@ -15,9 +15,10 @@
 }
 
 .tour-list-item {
-  padding: var(--s-unit) var(--s-unit) var(--s-unit) var(--s-system);
+  padding: var(--s-unit) 1rem;
   font-size: inherit;
   background-color: transparent;
+  border-radius: var(--s-unit);
 }
 
 .tour-list-item:hover {

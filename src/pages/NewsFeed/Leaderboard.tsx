@@ -3,7 +3,6 @@ import { Index, ErrorBoundary, Component, createEffect } from 'solid-js';
 import { getNews } from '../../services/news';
 import { useNews } from '../../services/store';
 import {
-  Category,
   LEVEL_1,
   LEVEL_2,
   LEVEL_3,
@@ -12,11 +11,6 @@ import {
 } from '../../models/config';
 
 import Loader from '../../components/Loader';
-
-import Rank from './Rank';
-import Leagues from './Leagues';
-
-import './NewsFeed.css';
 
 const getEnumKeyByIndex = (place: number) => {
   if (place < 5) return LEVEL_1;
@@ -47,28 +41,33 @@ const Leaderboard: Component = () => {
     <ErrorBoundary
       fallback={<h2 class='token view rounded screen'>Failed to load</h2>}
     >
-      <ul>
-        <Index each={data.news} fallback={<Loader />}>
-          {(list, index) => {
-            const com = list();
+      <table class='layer content-full screen'>
+        <caption>Exchange 1 {data.currentRank}</caption>
+        <thead class='depth'>
+          <tr>
+            <th>Place</th>
+            <th>Currency</th>
+            <th>Value</th>
+            <th>League</th>
+          </tr>
+        </thead>
+        <tbody>
+          <Index each={data.news} fallback={<Loader />}>
+            {(list, index) => {
+              const com = list();
 
-            return (
-              <li
-                class='screen layer view rounded content-full flex items-center justify-between'
-                classList={{ place: com[0] === Category[LEVEL_2] }}
-              >
-                <article class='flex items-center justify-between content-full'>
-                  <Rank place={index} />
-                  <Leagues currentLeague={com[0]} />
-
-                  <p class='paper-description'>{com[1]}</p>
-                  <p class='paper'>{getEnumKeyByIndex(index)}</p>
-                </article>
-              </li>
-            );
-          }}
-        </Index>
-      </ul>
+              return (
+                <tr>
+                  <td>{index + 1}</td>
+                  <td>{com[0]}</td>
+                  <td>{com[1]}</td>
+                  <td>{getEnumKeyByIndex(index)}</td>
+                </tr>
+              );
+            }}
+          </Index>
+        </tbody>
+      </table>
     </ErrorBoundary>
   );
 };

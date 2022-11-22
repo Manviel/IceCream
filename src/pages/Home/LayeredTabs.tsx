@@ -40,7 +40,7 @@ const LayeredTabs: Component = () => {
         <For each={listItems}>
           {(item) => (
             <Tab
-              class='tour-list-item flex justify-between items-center content-full rounded'
+              class='tour-list-item flex justify-between items-center content-full'
               classList={({ selected }) => ({
                 'tour-list-item-selected': selected(),
               })}
