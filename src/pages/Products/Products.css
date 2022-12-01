@@ -3,10 +3,6 @@
   --c-subscription: #b25fea1a;
 }
 
-.items-start {
-  align-items: flex-start;
-}
-
 .widget-title {
   font-size: 1.7rem;
   margin-bottom: 0.2rem;

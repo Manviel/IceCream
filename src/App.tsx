@@ -11,7 +11,6 @@ import PersonFinderIcon from './assets/icons/person-finder.svg';
 import LockIcon from './assets/icons/lock.svg';
 
 const Home = lazy(() => import('./pages/Home'));
-const NewsFeed = lazy(() => import('./pages/NewsFeed'));
 const Profile = lazy(() => import('./pages/Profile'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Products = lazy(() => import('./pages/Products'));
@@ -20,32 +19,15 @@ const Expert = lazy(() => import('./pages/Profile/Expert'));
 
 const App: Component = () => (
   <div class='flex col items-center'>
-    <Suspense fallback={<Skeleton />}>
-      <Routes>
-        <Route path='/' element={<Home />} />
-
-        <Route path='/league' element={<NewsFeed />} />
-
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/profile/expert' element={<Expert />} />
-
-        <Route path='/products' element={<Products />} />
-
-        <Route path='/privacy' element={<Privacy />} />
-
-        <Route path='*' element={<NotFound />} />
-      </Routes>
-    </Suspense>
-
     <nav
-      class='fixed-bottom dock content-full flex justify-between'
+      class='fixed-bottom dock depth content-full flex justify-between'
       aria-label='Tabs'
     >
-      <NavLink href='/products' aria-label='Products' class={SuperEllipse}>
+      <NavLink href='/' end aria-label='Home' class={SuperEllipse}>
         <SquareTextIcon />
       </NavLink>
 
-      <NavLink href='/league' aria-label='Leagues' class={SuperEllipse}>
+      <NavLink href='/products' aria-label='Products' class={SuperEllipse}>
         <FlameIcon />
       </NavLink>
 
@@ -57,6 +39,21 @@ const App: Component = () => (
         <PersonFinderIcon />
       </NavLink>
     </nav>
+
+    <Suspense fallback={<Skeleton />}>
+      <Routes>
+        <Route path='/' element={<Home />} />
+
+        <Route path='/products' element={<Products />} />
+
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/profile/expert' element={<Expert />} />
+
+        <Route path='/privacy' element={<Privacy />} />
+
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+    </Suspense>
   </div>
 );
 

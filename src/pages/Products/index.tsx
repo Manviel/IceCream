@@ -1,6 +1,7 @@
 import { Component } from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
+import NewsFeed from '../NewsFeed';
 
 import Inbox from './Inbox';
 import Stocks from './Stocks';
@@ -14,7 +15,7 @@ import './Products.css';
 const Products: Component = () => {
   return (
     <PageDecorator subtitle='For You' headline='Products'>
-      <h2 class='info'>Quick actions and features</h2>
+      <h3 class='info'>Quick actions and features</h3>
 
       <div class='products'>
         <Vault />
@@ -24,6 +25,8 @@ const Products: Component = () => {
         <Promotions />
         <Subscriptions />
       </div>
+
+      <NewsFeed />
     </PageDecorator>
   );
 };

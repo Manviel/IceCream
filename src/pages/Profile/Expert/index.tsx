@@ -34,7 +34,7 @@ const Expert: Component = () => {
     <PageDecorator subtitle='Expert' headline='Onboarding' customPath='profile'>
       <div class='expert layer sidebar rounded'>
         <TabGroup>
-          <Tabs class='tour-list flex col view depth border-edge'>
+          <Tabs class='tour-list flex col items-start view depth border-edge'>
             <For each={listItems}>
               {(item) => (
                 <Tab

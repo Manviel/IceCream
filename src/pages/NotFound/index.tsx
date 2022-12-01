@@ -4,7 +4,7 @@ import { Link } from '@solidjs/router';
 import PageDecorator from '../../components/PageDecorator';
 
 const NotFound: Component = () => (
-  <PageDecorator subtitle='Not Found' headline='404' hideBackward>
+  <PageDecorator subtitle='Not Found' headline='404'>
     <div class='layer view rounded content-full flex col screen'>
       <h2 class='info'>Sorry, we can't find that page!</h2>
 

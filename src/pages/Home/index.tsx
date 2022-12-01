@@ -4,6 +4,7 @@ import { Link } from '@solidjs/router';
 import Card from '../../components/Card';
 import ConnectFactory from '../../components/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
+import Header from '../../components/Header';
 
 import { randomInRange } from '../../services/utils';
 
@@ -13,7 +14,7 @@ import './Home.css';
 
 const Home: Component = () => {
   return (
-    <PageDecorator subtitle='Home' headline='What is Cohesion?' hideBackward>
+    <PageDecorator subtitle='Home' headline='What is Cohesion?'>
       <p class='info'>
         The degree to which the elements inside a module belong together. It is
         a measure of how deeply each piece of device module functionality
@@ -27,7 +28,7 @@ const Home: Component = () => {
       </p>
 
       <article class='box view rounded'>
-        <h2 class='title'>What is Coupling?</h2>
+        <Header spot='What is Coupling?' />
 
         <p class='info grey'>
           The degree to which components have knowledge of other components.
@@ -47,7 +48,7 @@ const Home: Component = () => {
           />
           <Card
             phrase='Support'
-            number={randomInRange(10, 320)}
+            number={randomInRange(8, 99)}
             description='Countries'
           />
           <Card
@@ -69,7 +70,7 @@ const Home: Component = () => {
         <LayeredTabs />
 
         <article class='tour on-scroll'>
-          <h3 class='title'>What is Layered Architecture?</h3>
+          <Header spot='What is Layered Architecture?' />
 
           <p class='info'>
             It is describes an architectural pattern composed of several
@@ -87,7 +88,7 @@ const Home: Component = () => {
           <div class='flex justify-between items-center'>
             <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
 
-            <Link href='/league' class='btn'>
+            <Link href='/products' class='btn'>
               Go to News
             </Link>
           </div>

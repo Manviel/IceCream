@@ -23,14 +23,14 @@ const Reviews: Component = () => {
   return (
     <>
       <article class='flex col text-center justify-between'>
-        <h2 class='info'>Usage</h2>
+        <h3 class='info'>Usage</h3>
         <p>900 million</p>
 
         <Notes />
       </article>
 
       <article class='flex col text-center justify-between'>
-        <h2 class='info'>Design Patterns</h2>
+        <h3 class='info'>Design Patterns</h3>
 
         <ConnectFactory href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns' />
 
@@ -38,7 +38,7 @@ const Reviews: Component = () => {
       </article>
 
       <article class='flex col text-center justify-between'>
-        <h2 class='info'>Ratings</h2>
+        <h3 class='info'>Ratings</h3>
         <p>{current() + 1} out of 6</p>
 
         <nav class='flex justify-between sidebar' aria-label='Candidate'>
