@@ -1,6 +1,8 @@
 import type { Component } from 'solid-js';
 import { Link } from '@solidjs/router';
 
+import { Paths } from '../../models';
+
 import PageDecorator from '../../components/PageDecorator';
 
 const NotFound: Component = () => (
@@ -8,7 +10,7 @@ const NotFound: Component = () => (
     <div class='layer view rounded content-full flex col screen'>
       <h2 class='info card-sub'>Sorry, we can't find that page!</h2>
 
-      <Link href='/' class='btn'>
+      <Link href={Paths.Home} class='btn'>
         Back to Home page
       </Link>
     </div>

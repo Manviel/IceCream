@@ -22,7 +22,7 @@ const BackwardNavigation: Component<BackwardNavigationType> = ({
 
       {customPath && (
         <Link
-          href={`/${customPath}`}
+          href={customPath}
           class='flex justify-center items-center shape token'
           aria-label='Go Back'
         >

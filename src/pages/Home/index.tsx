@@ -1,6 +1,8 @@
 import { Component } from 'solid-js';
 import { Link } from '@solidjs/router';
 
+import { Paths } from '../../models';
+
 import Card from '../../components/Card';
 import ConnectFactory from '../../components/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
@@ -88,7 +90,7 @@ const Home: Component = () => {
           <div class='flex justify-between items-center screen'>
             <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
 
-            <Link href='/products' class='btn'>
+            <Link href={Paths.Products} class='btn'>
               Go to Products
             </Link>
           </div>

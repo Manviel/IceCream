@@ -1,6 +1,8 @@
 import { Component, For } from 'solid-js';
 import { Tab, TabGroup, TabPanel, Tabs } from 'solid-a11y';
 
+import { Paths } from '../../../models';
+
 import Card from '../../../components/Card';
 import PageDecorator from '../../../components/PageDecorator';
 
@@ -30,7 +32,11 @@ const listItems: TabItem[] = [
 
 const Expert: Component = () => {
   return (
-    <PageDecorator subtitle='Expert' headline='Onboarding' customPath='profile'>
+    <PageDecorator
+      subtitle='Expert'
+      headline='Onboarding'
+      customPath={Paths.Profile}
+    >
       <div class='expert layer sidebar rounded'>
         <TabGroup>
           <Tabs class='tour-list flex col items-start view depth border-edge'>

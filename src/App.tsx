@@ -2,6 +2,7 @@ import { Component, lazy, Suspense } from 'solid-js';
 import { Routes, Route, NavLink } from '@solidjs/router';
 
 import { SuperEllipse } from './models/config';
+import { Paths } from './models';
 
 import { Skeleton } from './components/Loader';
 
@@ -23,33 +24,33 @@ const App: Component = () => (
       class='fixed-bottom dock depth content-full flex justify-between'
       aria-label='Tabs'
     >
-      <NavLink href='/' end aria-label='Home' class={SuperEllipse}>
+      <NavLink href={Paths.Home} end aria-label='Home' class={SuperEllipse}>
         <SquareTextIcon />
       </NavLink>
 
-      <NavLink href='/products' aria-label='Products' class={SuperEllipse}>
+      <NavLink href={Paths.Products} aria-label='Products' class={SuperEllipse}>
         <FlameIcon />
       </NavLink>
 
-      <NavLink href='/privacy' aria-label='Privacy' class={SuperEllipse}>
+      <NavLink href={Paths.Privacy} aria-label='Privacy' class={SuperEllipse}>
         <LockIcon />
       </NavLink>
 
-      <NavLink href='/profile' aria-label='Profile' class={SuperEllipse}>
+      <NavLink href={Paths.Profile} aria-label='Profile' class={SuperEllipse}>
         <PersonFinderIcon />
       </NavLink>
     </nav>
 
     <Suspense fallback={<Skeleton />}>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path={Paths.Home} element={<Home />} />
 
-        <Route path='/products' element={<Products />} />
+        <Route path={Paths.Products} element={<Products />} />
 
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/profile/expert' element={<Expert />} />
+        <Route path={Paths.Profile} element={<Profile />} />
+        <Route path={Paths.Expert} element={<Expert />} />
 
-        <Route path='/privacy' element={<Privacy />} />
+        <Route path={Paths.Privacy} element={<Privacy />} />
 
         <Route path='*' element={<NotFound />} />
       </Routes>
