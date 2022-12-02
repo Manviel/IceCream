@@ -12,7 +12,7 @@ const NewsFeed: Component = () => {
     <article class='screen'>
       <Header spot='Discover' />
 
-      <h3 class='info'>Top leagues</h3>
+      <h3 class='info card-sub'>Top leagues</h3>
 
       <Suspense fallback={<Loader />}>
         <Leaderboard />

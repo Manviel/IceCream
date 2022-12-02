@@ -11,6 +11,38 @@
   grid-template-columns: repeat(5, 1fr);
 }
 
+.toolbar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: var(--s-medium);
+}
+
+.tour-list {
+  font-size: var(--s-system);
+  min-width: 18rem;
+  gap: 0.2rem;
+}
+
+.tour-list-item {
+  padding: var(--s-unit) 1rem;
+  font-size: inherit;
+  background-color: transparent;
+  border-radius: var(--s-unit);
+}
+
+.tour-list-item:hover {
+  background-color: var(--c-action);
+}
+
+.tour-list-item-selected {
+  background-color: var(--c-active);
+}
+
+.chip {
+  padding: 0.4rem var(--s-unit);
+  border-radius: 1rem;
+}
+
 .sidebar {
   margin-top: var(--s-system);
 }
@@ -22,10 +54,6 @@
 
 .keen-slider .view {
   height: 90%;
-}
-
-.toolbar {
-  grid-gap: var(--s-medium);
 }
 
 .text-center {

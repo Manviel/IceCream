@@ -18,7 +18,7 @@ const Article: ParentComponent<ArticleType> = ({
 }) => (
   <section class='layer view content-full rounded on-scroll' id={id}>
     <small class='paper'>{date}</small>
-    <h2 class='info'>{name}</h2>
+    <h2 class='info card-sub'>{name}</h2>
 
     {children}
 

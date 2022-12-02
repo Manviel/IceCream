@@ -8,7 +8,7 @@ import Header from '../../components/Header';
 
 import { randomInRange } from '../../services/utils';
 
-import LayeredTabs from './LayeredTabs';
+import LayeredLevels from './LayeredLevels';
 
 import './Home.css';
 
@@ -66,10 +66,8 @@ const Home: Component = () => {
         </div>
       </article>
 
-      <div class='home-stats layer view screen content-full rounded items-center'>
-        <LayeredTabs />
-
-        <article class='tour on-scroll'>
+      <div class='flex layer view screen content-full rounded items-center'>
+        <article class='on-scroll'>
           <Header spot='What is Layered Architecture?' />
 
           <p class='info'>
@@ -85,11 +83,13 @@ const Home: Component = () => {
             single function.
           </p>
 
-          <div class='flex justify-between items-center'>
+          <LayeredLevels />
+
+          <div class='flex justify-between items-center screen'>
             <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
 
             <Link href='/products' class='btn'>
-              Go to News
+              Go to Products
             </Link>
           </div>
         </article>

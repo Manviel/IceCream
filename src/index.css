@@ -92,7 +92,8 @@ button:focus-visible {
   border-radius: 0.4rem;
 }
 
-.app {
+.app,
+.dock {
   max-width: 142rem;
   transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
 }
@@ -265,11 +266,8 @@ button:focus-visible {
   z-index: 1;
 }
 
-.paper {
-  background-color: var(--c-active);
-  text-transform: uppercase;
-  padding: 0.6rem var(--s-safe);
-  border-radius: var(--s-unit);
+.card-sub {
+  font-size: var(--s-medium);
 }
 
 @media screen and (max-width: 768px) {
@@ -293,6 +291,10 @@ button:focus-visible {
 
   .dock {
     border-top: 1px solid var(--c-active);
+  }
+
+  .subtitle {
+    font-size: 2.4rem;
   }
 }
 

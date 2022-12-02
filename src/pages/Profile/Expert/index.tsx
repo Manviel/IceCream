@@ -6,7 +6,6 @@ import PageDecorator from '../../../components/PageDecorator';
 
 import Reviews from './Reviews';
 
-import '../../Home/Home.css';
 import './Expert.css';
 
 type TabItem = {
@@ -53,7 +52,7 @@ const Expert: Component = () => {
           <For each={listItems}>
             {(item) => (
               <TabPanel index={item.value} class='view production'>
-                <div class='home-stats toolbar'>
+                <div class='toolbar'>
                   <Card
                     phrase='Position'
                     number={item.value}

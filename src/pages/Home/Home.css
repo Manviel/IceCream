@@ -4,40 +4,6 @@
   grid-gap: var(--s-system);
 }
 
-.tour {
-  grid-column: span 2;
-}
-
-.tour-list {
-  font-size: var(--s-system);
-  min-width: 18rem;
-  gap: 0.2rem;
-}
-
-.tour-list-item {
-  padding: var(--s-unit) 1rem;
-  font-size: inherit;
-  background-color: transparent;
-  border-radius: var(--s-unit);
-}
-
-.tour-list-item:hover {
-  background-color: var(--c-action);
-}
-
-.tour-list-item-selected {
-  background-color: var(--c-active);
-}
-
-.tour-indicators {
-  max-width: 32rem;
-}
-
-.chip {
-  padding: 0.4rem var(--s-unit);
-  border-radius: 1rem;
-}
-
 .purple {
   color: var(--c-purple);
 }
@@ -45,9 +11,5 @@
 @media screen and (max-width: 768px) {
   .home-stats {
     grid-template-columns: repeat(1, 1fr);
-  }
-
-  .tour-list {
-    font-size: var(--s-system);
   }
 }

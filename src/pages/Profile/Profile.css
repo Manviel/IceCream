@@ -1,3 +1,7 @@
+:root {
+  --c-glass: #f2f2f7;
+}
+
 .badge {
   padding: var(--s-safe) 0;
 }
@@ -6,4 +10,8 @@
   font-size: 1.6rem;
   text-transform: uppercase;
   margin-top: 0.4rem;
+}
+
+.quote {
+  background-color: var(--c-glass);
 }
