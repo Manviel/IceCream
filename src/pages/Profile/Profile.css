@@ -2,7 +2,7 @@
   --c-glass: #f2f2f7;
 }
 
-.badge {
+.box-item {
   padding: var(--s-safe) 0;
 }
 

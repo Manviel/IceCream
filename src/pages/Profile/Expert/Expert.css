@@ -38,11 +38,6 @@
   background-color: var(--c-active);
 }
 
-.chip {
-  padding: 0.4rem var(--s-unit);
-  border-radius: 1rem;
-}
-
 .sidebar {
   margin-top: var(--s-system);
 }
@@ -106,7 +101,7 @@
 
 @media screen and (max-width: 768px) {
   .expert {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .production {
@@ -115,6 +110,10 @@
 
   .border-edge {
     border-radius: var(--s-medium) var(--s-medium) 0 0;
+  }
+
+  .toolbar {
+    grid-template-columns: 1fr;
   }
 }
 

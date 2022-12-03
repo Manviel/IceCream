@@ -264,10 +264,16 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 1;
+  border-bottom: 1px solid var(--c-active);
 }
 
 .card-sub {
   font-size: var(--s-medium);
+}
+
+.chip {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
 }
 
 @media screen and (max-width: 768px) {

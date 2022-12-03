@@ -310,7 +310,7 @@ const Privacy: Component = () => {
                   {(content, i) => (
                     <>
                       {section.titles && (
-                        <h3 class='info'>{section.titles[i()]}</h3>
+                        <h3 class='info card-sub'>{section.titles[i()]}</h3>
                       )}
                       <p class='info'>{content}</p>
                     </>

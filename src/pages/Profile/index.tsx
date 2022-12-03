@@ -55,7 +55,7 @@ const Profile: Component = () => {
         <ul class='flex col'>
           <For each={options}>
             {(option) => (
-              <li class='flex items-center badge'>
+              <li class='flex items-center box-item'>
                 <ConnectFactory href={option.value} text={option.label} />
               </li>
             )}
