@@ -17,7 +17,7 @@ const listItems: ListItem[] = [
   },
   {
     label: 'Domain',
-    explanation: 'Responsible for algorithms, and programming components',
+    explanation: 'Responsible for algorithms and programming components',
   },
   {
     label: 'Infrastructure',
