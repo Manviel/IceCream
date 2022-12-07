@@ -39,7 +39,7 @@ const Expert: Component = () => {
     >
       <div class='expert layer sidebar rounded'>
         <TabGroup>
-          <Tabs class='tour-list flex col items-start view depth border-edge'>
+          <Tabs class='tour-list flex col items-start view material border-edge'>
             <For each={listItems}>
               {(item) => (
                 <Tab

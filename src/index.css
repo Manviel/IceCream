@@ -12,6 +12,7 @@
   --c-grey: #a1a1a6;
   --c-heat: #fa124f;
   --c-purple: #b25fea;
+  --c-glass: #f2f2f7;
   --s-ellipse: 4.4rem;
   --s-medium: 2rem;
   --s-dock: 2.4rem;
@@ -274,6 +275,10 @@ button:focus-visible {
 .chip {
   padding: 0.5rem 1rem;
   border-radius: 1rem;
+}
+
+.material {
+  background-color: var(--c-glass);
 }
 
 @media screen and (max-width: 768px) {

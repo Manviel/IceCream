@@ -24,7 +24,7 @@ const Leaderboard: Component = () => {
     >
       <table class='layer content-full screen'>
         <caption>Exchange 1 {data.currentRank}</caption>
-        <thead class='depth'>
+        <thead class='material'>
           <tr>
             <th>Place</th>
             <th>Currency</th>

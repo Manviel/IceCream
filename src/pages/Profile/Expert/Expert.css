@@ -31,11 +31,11 @@
 }
 
 .tour-list-item:hover {
-  background-color: var(--c-action);
+  background-color: var(--c-active);
 }
 
 .tour-list-item-selected {
-  background-color: var(--c-active);
+  background-color: var(--c-action);
 }
 
 .sidebar {
