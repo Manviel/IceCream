@@ -13,6 +13,9 @@
   --c-heat: #fa124f;
   --c-purple: #b25fea;
   --c-glass: #f2f2f7;
+  --c-ghost: #eefbf3;
+  --c-show: #fff4f4;
+  --c-alice: #f0fbff;
   --s-ellipse: 4.4rem;
   --s-medium: 2rem;
   --s-dock: 2.4rem;
@@ -274,12 +277,24 @@ button:focus-visible {
 }
 
 .chip {
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
+  padding: 0.4rem var(--s-unit);
+  border-radius: var(--s-unit);
 }
 
 .material {
   background-color: var(--c-glass);
+}
+
+.ghost {
+  background-color: var(--c-ghost);
+}
+
+.price {
+  background-color: var(--c-show);
+}
+
+.alice {
+  background-color: var(--c-alice);
 }
 
 @media screen and (max-width: 768px) {

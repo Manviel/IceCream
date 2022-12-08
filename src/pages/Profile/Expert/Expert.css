@@ -1,9 +1,14 @@
 :root {
-  --c-ghost: #eefbf3;
-  --c-show: #fff4f4;
   --c-lavender: #fff8ee;
-  --c-alice: #f0fbff;
   --c-liver: #fff7f7;
+}
+
+.document {
+  background-color: var(--c-lavender);
+}
+
+.prototyping {
+  background-color: var(--c-liver);
 }
 
 .expert {
@@ -53,26 +58,6 @@
 
 .text-center {
   text-align: center;
-}
-
-.brainstorm {
-  background-color: var(--c-ghost);
-}
-
-.interview {
-  background-color: var(--c-show);
-}
-
-.document {
-  background-color: var(--c-lavender);
-}
-
-.survey {
-  background-color: var(--c-alice);
-}
-
-.prototyping {
-  background-color: var(--c-liver);
 }
 
 .border-edge {

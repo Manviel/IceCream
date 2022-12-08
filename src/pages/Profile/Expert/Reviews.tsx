@@ -74,13 +74,13 @@ const Reviews: Component = () => {
           Requirement elicitation can be done by communicating with stakeholders
           directly or by doing some research, experiments.
         </p>
-        <p class='info brainstorm view rounded'>
+        <p class='info ghost view rounded'>
           Brainstorming is used to generate new ideas and find a solution for a
           specific issue. The members can be domain experts, subject matter
           experts. Multiple ideas and information give you a repository of
           knowledge and you can choose from different ideas.
         </p>
-        <p class='info interview view rounded'>
+        <p class='info price view rounded'>
           Interview techniques should be used for building strong relationships
           between business analysts and stakeholders. In this technique, the
           interviewer directs the question to stakeholders to obtain
@@ -93,7 +93,7 @@ const Reviews: Component = () => {
           of current solutions and is also helpful in understanding the business
           need.
         </p>
-        <p class='info survey view rounded'>
+        <p class='info alice view rounded'>
           For Survey, a set of questions is given to stakeholders to quantify
           their thoughts. After collecting the responses from stakeholders, data
           is analyzed to identify the area of interest of stakeholders.

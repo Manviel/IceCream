@@ -22,25 +22,34 @@ const Leaderboard: Component = () => {
     <ErrorBoundary
       fallback={<h2 class='layer view rounded screen'>Failed to load</h2>}
     >
-      <table class='layer content-full screen'>
+      <table class='content-full screen'>
         <caption>Exchange 1 {data.currentRank}</caption>
         <thead class='material'>
           <tr>
-            <th>Place</th>
             <th>Currency</th>
             <th>Value</th>
           </tr>
         </thead>
         <tbody>
           <Index each={data.news} fallback={<Loader />}>
-            {(list, index) => {
+            {(list) => {
               const com = list();
 
               return (
                 <tr>
-                  <td>{index + 1}</td>
                   <td>{com[0]}</td>
-                  <td>{com[1]}</td>
+                  <td>
+                    <span
+                      class='chip'
+                      classList={{
+                        ghost: com[1] > 1,
+                        price: com[1] < 1,
+                        alice: com[1] > 100,
+                      }}
+                    >
+                      {com[1]}
+                    </span>
+                  </td>
                 </tr>
               );
             }}
