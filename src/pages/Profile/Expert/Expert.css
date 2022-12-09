@@ -1,14 +1,9 @@
 :root {
-  --c-lavender: #fff8ee;
-  --c-liver: #fff7f7;
+  --c-lavender: #eaddff;
 }
 
 .document {
   background-color: var(--c-lavender);
-}
-
-.prototyping {
-  background-color: var(--c-liver);
 }
 
 .expert {
