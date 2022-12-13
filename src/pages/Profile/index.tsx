@@ -49,7 +49,7 @@ const Profile: Component = () => {
 
       <Breathe />
 
-      <footer class='layer view rounded content-full screen'>
+      <footer class='material view rounded content-full screen'>
         <h3 class='subtitle'>Software Requirements</h3>
 
         <ul class='flex col'>

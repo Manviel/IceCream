@@ -30,12 +30,9 @@
   border-radius: var(--s-unit);
 }
 
-.tour-list-item:hover {
-  background-color: var(--c-active);
-}
-
+.tour-list-item:hover,
 .tour-list-item-selected {
-  background-color: var(--c-action);
+  background-color: var(--c-active);
 }
 
 .sidebar {
@@ -55,8 +52,17 @@
   text-align: center;
 }
 
-.border-edge {
+.left-edge {
   border-radius: var(--s-medium) 0 0 var(--s-medium);
+}
+
+.right-edge {
+  border-radius: 0 var(--s-medium) 0 var(--s-medium);
+}
+
+.left-edge,
+.right-edge {
+  border: 1px solid var(--c-active);
 }
 
 .bottom-sheet {
@@ -88,8 +94,12 @@
     grid-column: span 1;
   }
 
-  .border-edge {
+  .left-edge {
     border-radius: var(--s-medium) var(--s-medium) 0 0;
+  }
+
+  .right-edge {
+    border-radius: 0 0 var(--s-medium) var(--s-medium);
   }
 
   .toolbar {

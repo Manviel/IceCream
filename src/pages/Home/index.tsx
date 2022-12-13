@@ -68,34 +68,55 @@ const Home: Component = () => {
         </div>
       </article>
 
-      <div class='flex layer view screen content-full rounded items-center'>
-        <article class='on-scroll'>
-          <Header spot='What is Layered Architecture?' />
+      <article class='flex col on-scroll layer view screen content-full rounded'>
+        <Header spot='What is Layered Architecture?' />
 
-          <p class='info'>
-            It is describes an architectural pattern composed of several
-            separate horizontal layers that function together as a single unit
-            of software. A layer is a logical separation of components or code.
-            In these frameworks, components that are related or that are similar
-            are usually placed on the same layers. However, each layer is
-            different and contributes to a different part of the overall system.
-            This means that layers can be modified and the change won’t affect
-            other layers. Separation of concerns is another notable feature that
-            speaks to how the modules on a single layer together perform a
-            single function.
-          </p>
+        <p class='info'>
+          It is describes an architectural pattern composed of several separate
+          horizontal layers that function together as a single unit of software.
+          A layer is a logical separation of components or code. In these
+          frameworks, components that are related or that are similar are
+          usually placed on the same layers. However, each layer is different
+          and contributes to a different part of the overall system. This means
+          that layers can be modified and the change won’t affect other layers.
+          Separation of concerns is another notable feature that speaks to how
+          the modules on a single layer together perform a single function.
+        </p>
 
-          <LayeredLevels />
+        <LayeredLevels />
 
-          <div class='flex justify-between items-center screen'>
-            <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
+        <div class='flex justify-between items-center screen'>
+          <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
 
-            <Link href={Paths.Products} class='btn'>
-              Go to Products
-            </Link>
-          </div>
-        </article>
-      </div>
+          <Link href={Paths.Products} class='btn'>
+            Go to Products
+          </Link>
+        </div>
+      </article>
+
+      <article class='flex col on-scroll material view screen content-full rounded'>
+        <Header spot='The cost of ransomware' />
+
+        <p class='info'>
+          A successful ransomware attack costs the targeted organisation more
+          than the ransom payment itself.
+        </p>
+
+        <div class='products'>
+          <Card
+            phrase='The average payment was'
+            number='570,000'
+            description='in the first half of 2021'
+          />
+
+          <Card
+            phrase='With mega-breaches costing as much as'
+            number='100'
+            measure='times'
+            description='higher'
+          />
+        </div>
+      </article>
     </PageDecorator>
   );
 };
