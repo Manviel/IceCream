@@ -102,19 +102,26 @@ const Home: Component = () => {
           than the ransom payment itself.
         </p>
 
-        <div class='products'>
-          <Card
-            phrase='The average payment was'
-            number='570,000'
-            description='in the first half of 2021'
-          />
+        <div class='home-stats'>
+          <div class='os'>
+            <p class='os-title'>The average payment was</p>
+            <strong class='os-value'>570,000 in the first half of 2021</strong>
+          </div>
 
-          <Card
-            phrase='With mega-breaches costing as much as'
-            number='100'
-            measure='times'
-            description='higher'
-          />
+          <div class='os'>
+            <p class='os-title'>With mega-breaches costing as much as</p>
+            <strong class='os-value'>100 times higher</strong>
+          </div>
+
+          <div class='os'>
+            <p class='os-title'>To avoid revenue losses</p>
+            <strong class='os-value'>49% of organization paid</strong>
+          </div>
+
+          <div class='os'>
+            <p class='os-title'>Security budget increased</p>
+            <strong class='os-value'>between 11% and 50%</strong>
+          </div>
         </div>
       </article>
     </PageDecorator>

@@ -19,7 +19,6 @@
 
 .tour-list {
   font-size: var(--s-system);
-  min-width: 18rem;
   gap: 0.2rem;
 }
 
@@ -52,17 +51,15 @@
   text-align: center;
 }
 
-.left-edge {
-  border-radius: var(--s-medium) 0 0 var(--s-medium);
-}
-
-.right-edge {
-  border-radius: 0 var(--s-medium) 0 var(--s-medium);
-}
-
 .left-edge,
 .right-edge {
-  border: 1px solid var(--c-active);
+  border-radius: var(--s-unit);
+}
+
+.right-edge {
+  background-color: var(--c-white);
+  box-shadow: rgb(0 0 0 / 10%) 0px 1px 5px 0px;
+  margin: var(--s-unit) var(--s-unit) var(--s-unit) 0;
 }
 
 .bottom-sheet {
@@ -94,12 +91,8 @@
     grid-column: span 1;
   }
 
-  .left-edge {
-    border-radius: var(--s-medium) var(--s-medium) 0 0;
-  }
-
   .right-edge {
-    border-radius: 0 0 var(--s-medium) var(--s-medium);
+    margin: var(--s-unit);
   }
 
   .toolbar {
