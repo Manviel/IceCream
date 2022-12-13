@@ -23,14 +23,14 @@ const Reviews: Component = () => {
   return (
     <>
       <article class='flex col text-center justify-between'>
-        <h2 class='info'>Usage</h2>
+        <h3 class='info card-sub'>Usage</h3>
         <p>900 million</p>
 
         <Notes />
       </article>
 
       <article class='flex col text-center justify-between'>
-        <h2 class='info'>Design Patterns</h2>
+        <h3 class='info card-sub'>Design Patterns</h3>
 
         <ConnectFactory href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns' />
 
@@ -38,7 +38,7 @@ const Reviews: Component = () => {
       </article>
 
       <article class='flex col text-center justify-between'>
-        <h2 class='info'>Ratings</h2>
+        <h3 class='info card-sub'>Ratings</h3>
         <p>{current() + 1} out of 6</p>
 
         <nav class='flex justify-between sidebar' aria-label='Candidate'>
@@ -58,29 +58,29 @@ const Reviews: Component = () => {
         </nav>
       </article>
 
-      <article class='production flex justify-between'>
+      <div class='production flex justify-between'>
         <h3 class='subtitle'>Elicitation Techs</h3>
 
         <ConnectFactory
           href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
           text='View All'
         />
-      </article>
+      </div>
 
-      <article class='production' use:slider>
-        <p class='info token view rounded'>
+      <div class='production' use:slider>
+        <p class='info card view rounded'>
           Once the business analysis has communicated with stakeholders for
           understanding their requirements, it can be described as elicitation.
           Requirement elicitation can be done by communicating with stakeholders
           directly or by doing some research, experiments.
         </p>
-        <p class='info brainstorm view rounded'>
+        <p class='info ghost view rounded'>
           Brainstorming is used to generate new ideas and find a solution for a
           specific issue. The members can be domain experts, subject matter
           experts. Multiple ideas and information give you a repository of
           knowledge and you can choose from different ideas.
         </p>
-        <p class='info interview view rounded'>
+        <p class='info price view rounded'>
           Interview techniques should be used for building strong relationships
           between business analysts and stakeholders. In this technique, the
           interviewer directs the question to stakeholders to obtain
@@ -93,19 +93,19 @@ const Reviews: Component = () => {
           of current solutions and is also helpful in understanding the business
           need.
         </p>
-        <p class='info survey view rounded'>
+        <p class='info alice view rounded'>
           For Survey, a set of questions is given to stakeholders to quantify
           their thoughts. After collecting the responses from stakeholders, data
           is analyzed to identify the area of interest of stakeholders.
         </p>
-        <p class='info prototyping view rounded'>
+        <p class='info price view rounded'>
           Prototyping is used to identify missing or unspecified requirements.
           In this technique, frequent demos are given to the client by creating
           the prototypes so that client can get an idea of how the product will
           look like. Prototypes can be used to create a mock-up of sites, and
           describe the process using diagrams.
         </p>
-      </article>
+      </div>
     </>
   );
 };

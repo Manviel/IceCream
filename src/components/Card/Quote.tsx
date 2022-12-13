@@ -20,13 +20,13 @@ const Quote: Component = () => {
 
   return (
     <ErrorBoundary
-      fallback={<h2 class='token view rounded screen'>Failed to fetch</h2>}
+      fallback={<h2 class='material view rounded screen'>Failed to fetch</h2>}
     >
       {quote.loading && <Loader />}
 
-      <Show when={quote()}>
+      <Show when={quote()} keyed>
         {(res) => (
-          <article class='token view rounded screen'>
+          <article class='material view rounded screen'>
             <div class='flex justify-between items-center'>
               <p class='flex col'>
                 <span>{res.anime}</span>

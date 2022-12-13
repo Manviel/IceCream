@@ -1,12 +1,13 @@
 import { Component, For } from 'solid-js';
 import { Tab, TabGroup, TabPanel, Tabs } from 'solid-a11y';
 
+import { Paths } from '../../../models';
+
 import Card from '../../../components/Card';
 import PageDecorator from '../../../components/PageDecorator';
 
 import Reviews from './Reviews';
 
-import '../../Home/Home.css';
 import './Expert.css';
 
 type TabItem = {
@@ -31,14 +32,18 @@ const listItems: TabItem[] = [
 
 const Expert: Component = () => {
   return (
-    <PageDecorator subtitle='Expert' headline='Onboarding' customPath='profile'>
-      <div class='expert layer sidebar rounded'>
+    <PageDecorator
+      subtitle='Expert'
+      headline='Onboarding'
+      customPath={Paths.Profile}
+    >
+      <div class='expert sidebar material left-edge'>
         <TabGroup>
-          <Tabs class='tour-list flex col view depth border-edge'>
+          <Tabs class='tour-list flex col items-start view'>
             <For each={listItems}>
               {(item) => (
                 <Tab
-                  class='tour-list-item flex justify-between items-center content-full rounded'
+                  class='tour-list-item flex justify-between items-center content-full'
                   classList={({ selected }) => ({
                     'tour-list-item-selected': selected(),
                   })}
@@ -52,8 +57,8 @@ const Expert: Component = () => {
           </Tabs>
           <For each={listItems}>
             {(item) => (
-              <TabPanel index={item.value} class='view production'>
-                <div class='home-stats toolbar'>
+              <TabPanel index={item.value} class='view production right-edge'>
+                <div class='toolbar'>
                   <Card
                     phrase='Position'
                     number={item.value}

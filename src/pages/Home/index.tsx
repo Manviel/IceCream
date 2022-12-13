@@ -1,19 +1,22 @@
 import { Component } from 'solid-js';
 import { Link } from '@solidjs/router';
 
+import { Paths } from '../../models';
+
 import Card from '../../components/Card';
 import ConnectFactory from '../../components/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
+import Header from '../../components/Header';
 
 import { randomInRange } from '../../services/utils';
 
-import LayeredTabs from './LayeredTabs';
+import LayeredLevels from './LayeredLevels';
 
 import './Home.css';
 
 const Home: Component = () => {
   return (
-    <PageDecorator subtitle='Home' headline='What is Cohesion?' hideBackward>
+    <PageDecorator subtitle='Home' headline='What is Cohesion?'>
       <p class='info'>
         The degree to which the elements inside a module belong together. It is
         a measure of how deeply each piece of device module functionality
@@ -27,7 +30,7 @@ const Home: Component = () => {
       </p>
 
       <article class='box view rounded'>
-        <h2 class='title'>What is Coupling?</h2>
+        <Header spot='What is Coupling?' />
 
         <p class='info grey'>
           The degree to which components have knowledge of other components.
@@ -47,7 +50,7 @@ const Home: Component = () => {
           />
           <Card
             phrase='Support'
-            number={randomInRange(10, 320)}
+            number={randomInRange(8, 99)}
             description='Countries'
           />
           <Card
@@ -65,34 +68,62 @@ const Home: Component = () => {
         </div>
       </article>
 
-      <div class='home-stats layer view screen content-full rounded items-center'>
-        <LayeredTabs />
+      <article class='flex col on-scroll layer view screen content-full rounded'>
+        <Header spot='What is Layered Architecture?' />
 
-        <article class='tour on-scroll'>
-          <h3 class='title'>What is Layered Architecture?</h3>
+        <p class='info'>
+          It is describes an architectural pattern composed of several separate
+          horizontal layers that function together as a single unit of software.
+          A layer is a logical separation of components or code. In these
+          frameworks, components that are related or that are similar are
+          usually placed on the same layers. However, each layer is different
+          and contributes to a different part of the overall system. This means
+          that layers can be modified and the change won’t affect other layers.
+          Separation of concerns is another notable feature that speaks to how
+          the modules on a single layer together perform a single function.
+        </p>
 
-          <p class='info'>
-            It is describes an architectural pattern composed of several
-            separate horizontal layers that function together as a single unit
-            of software. A layer is a logical separation of components or code.
-            In these frameworks, components that are related or that are similar
-            are usually placed on the same layers. However, each layer is
-            different and contributes to a different part of the overall system.
-            This means that layers can be modified and the change won’t affect
-            other layers. Separation of concerns is another notable feature that
-            speaks to how the modules on a single layer together perform a
-            single function.
-          </p>
+        <LayeredLevels />
 
-          <div class='flex justify-between items-center'>
-            <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
+        <div class='flex justify-between items-center screen'>
+          <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
 
-            <Link href='/league' class='btn'>
-              Go to News
-            </Link>
+          <Link href={Paths.Products} class='btn'>
+            Go to Products
+          </Link>
+        </div>
+      </article>
+
+      <article class='flex col on-scroll material view screen content-full rounded'>
+        <Header spot='The cost of ransomware' />
+
+        <p class='info'>
+          A successful ransomware attack costs the targeted organisation more
+          than the ransom payment itself.
+        </p>
+
+        <div class='home-stats'>
+          <div class='os'>
+            <p class='os-title'>The average payment was</p>
+            <strong class='os-value'>570,000 in the first half of 2021</strong>
           </div>
-        </article>
-      </div>
+
+          <div class='os'>
+            <p class='os-title'>With mega-breaches costing as much as</p>
+            <strong class='os-value'>100 times higher</strong>
+          </div>
+
+          <div class='os'>
+            <p class='os-title'>To avoid revenue losses</p>
+            <strong class='os-value'>49% of organization paid</strong>
+          </div>
+
+          <div class='os'>
+            <p class='os-title'>Security budget increased</p>
+            <strong class='os-value'>between 11% and 50%</strong>
+          </div>
+        </div>
+      </article>
     </PageDecorator>
   );
 };

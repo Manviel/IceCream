@@ -5,6 +5,11 @@
   padding-top: var(--s-ellipse);
 }
 
+.paper {
+  background-color: var(--c-active);
+  text-transform: uppercase;
+}
+
 .quick {
   gap: var(--s-ellipse);
 }

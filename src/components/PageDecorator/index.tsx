@@ -16,7 +16,6 @@ const PageDecorator: ParentComponent<HeaderTemplateType> = ({
   children,
   headline,
   subtitle,
-  hideBackward,
   customPath,
 }) => {
   const isRouting = useIsRouting();
@@ -30,11 +29,7 @@ const PageDecorator: ParentComponent<HeaderTemplateType> = ({
       class='app flex col content-full'
       classList={{ 'pulse-loading': isRouting() }}
     >
-      <BackwardNavigation
-        subtitle={subtitle}
-        hideBackward={hideBackward}
-        customPath={customPath}
-      />
+      <BackwardNavigation subtitle={subtitle} customPath={customPath} />
 
       <div class='panel content-full flex col'>
         <Header spot={headline} />

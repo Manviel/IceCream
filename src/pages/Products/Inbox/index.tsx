@@ -1,6 +1,8 @@
 import { Component } from 'solid-js';
 import { Link } from '@solidjs/router';
 
+import { Paths } from '../../../models';
+
 import TrayIcon from '../../../assets/icons/tray.svg';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
@@ -23,7 +25,7 @@ const Inbox: Component = () => {
       }
       triggerClassName='view layer rounded flex col items-start'
     >
-      <Link href='/privacy' class='btn content-full dialog-action'>
+      <Link href={Paths.Privacy} class='btn content-full dialog-action'>
         Go to Policy
       </Link>
     </DialogFacade>

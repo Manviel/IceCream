@@ -6,6 +6,7 @@ type ArticleType = {
   name: string;
   href: string;
   id: string;
+  date: string;
 };
 
 const Article: ParentComponent<ArticleType> = ({
@@ -13,9 +14,11 @@ const Article: ParentComponent<ArticleType> = ({
   children,
   href,
   id,
+  date,
 }) => (
   <section class='layer view content-full rounded on-scroll' id={id}>
-    <h2 class='info'>{name}</h2>
+    <small class='chip paper'>{date}</small>
+    <h2 class='subtitle'>{name}</h2>
 
     {children}
 

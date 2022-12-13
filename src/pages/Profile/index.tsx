@@ -49,13 +49,13 @@ const Profile: Component = () => {
 
       <Breathe />
 
-      <footer class='layer view rounded content-full screen'>
+      <footer class='material view rounded content-full screen'>
         <h3 class='subtitle'>Software Requirements</h3>
 
         <ul class='flex col'>
           <For each={options}>
             {(option) => (
-              <li class='flex items-center badge'>
+              <li class='flex items-center box-item'>
                 <ConnectFactory href={option.value} text={option.label} />
               </li>
             )}

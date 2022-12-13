@@ -1,6 +1,8 @@
 import { Component, createSignal, Show } from 'solid-js';
 import { Dialog, DialogTitle, Description, DialogOverlay } from 'solid-a11y';
 
+import CloseIcon from '../../../assets/icons/close.svg';
+
 const Notes: Component = () => {
   const [open, setOpen] = createSignal(false);
 
@@ -33,8 +35,11 @@ const Notes: Component = () => {
             <div class='flex col view layer bottom-sheet'>
               <div class='flex justify-between items-center'>
                 <DialogTitle class='subtitle'>Notes</DialogTitle>
-                <button class='btn' onClick={handleClose}>
-                  Close
+                <button
+                  class='flex justify-center items-center shape token'
+                  onClick={handleClose}
+                >
+                  <CloseIcon />
                 </button>
               </div>
               <Description class='info'>

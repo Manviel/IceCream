@@ -4,49 +4,27 @@
   grid-gap: var(--s-system);
 }
 
-.tour {
-  grid-column: span 2;
-}
-
-.tour-list {
-  font-size: var(--s-system);
-  align-items: flex-start;
-  min-width: 18rem;
-}
-
-.tour-list-item {
-  padding: var(--s-unit) var(--s-unit) var(--s-unit) var(--s-system);
-  font-size: inherit;
-  background-color: transparent;
-}
-
-.tour-list-item:hover {
-  background-color: var(--c-action);
-}
-
-.tour-list-item-selected {
-  background-color: var(--c-active);
-}
-
-.tour-indicators {
-  max-width: 32rem;
-}
-
-.chip {
-  padding: 0.4rem var(--s-unit);
-  border-radius: 1rem;
-}
-
 .purple {
   color: var(--c-purple);
 }
 
+.os {
+  background-color: var(--c-white);
+  border-radius: 1rem;
+  padding: var(--s-system);
+}
+
+.os-title {
+  font-size: 1.6rem;
+  margin-bottom: var(--s-safe);
+}
+
+.os-value {
+  font-size: 2.8rem;
+}
+
 @media screen and (max-width: 768px) {
   .home-stats {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .tour-list {
-    font-size: var(--s-system);
+    grid-template-columns: 1fr;
   }
 }

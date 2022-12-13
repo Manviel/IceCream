@@ -2,14 +2,8 @@ import { Index, ErrorBoundary, Component, createEffect } from 'solid-js';
 
 import { getNews } from '../../services/news';
 import { useNews } from '../../services/store';
-import { Category, LEVEL_2 } from '../../models/config';
 
 import Loader from '../../components/Loader';
-
-import Rank from './Rank';
-import Leagues from './Leagues';
-
-import './NewsFeed.css';
 
 const fetchQuery = async (category: string) => await getNews({ category });
 
@@ -26,32 +20,42 @@ const Leaderboard: Component = () => {
 
   return (
     <ErrorBoundary
-      fallback={<h2 class='token view rounded screen'>Failed to load</h2>}
+      fallback={<h2 class='layer view rounded screen'>Failed to load</h2>}
     >
-      <Leagues currentLeague={data.currentLeague} />
+      <table class='content-full screen'>
+        <caption>Exchange 1 {data.currentRank}</caption>
+        <thead class='material'>
+          <tr>
+            <th>Currency</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <Index each={data.news} fallback={<Loader />}>
+            {(list) => {
+              const com = list();
 
-      <ul>
-        <Index each={data.news} fallback={<Loader />}>
-          {(list, index) => {
-            const com = list();
-
-            return (
-              <li
-                class='screen layer view rounded content-full flex items-center justify-between'
-                classList={{ place: com[0] === Category[LEVEL_2] }}
-              >
-                <article class='products items-center'>
-                  <Rank place={index} />
-
-                  <p class='paper-description'>{com[0]}</p>
-                </article>
-
-                <p class='paper-description'>{com[1]}</p>
-              </li>
-            );
-          }}
-        </Index>
-      </ul>
+              return (
+                <tr>
+                  <td>{com[0]}</td>
+                  <td>
+                    <span
+                      class='chip'
+                      classList={{
+                        ghost: com[1] > 1,
+                        price: com[1] < 1,
+                        alice: com[1] > 100,
+                      }}
+                    >
+                      {com[1]}
+                    </span>
+                  </td>
+                </tr>
+              );
+            }}
+          </Index>
+        </tbody>
+      </table>
     </ErrorBoundary>
   );
 };

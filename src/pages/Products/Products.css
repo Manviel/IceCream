@@ -3,17 +3,13 @@
   --c-subscription: #b25fea1a;
 }
 
-.items-start {
-  align-items: flex-start;
-}
-
 .widget-title {
   font-size: 1.7rem;
   margin-bottom: 0.2rem;
 }
 
 .widget-main {
-  font-size: 4.6rem;
+  font-size: var(--s-ellipse);
   margin-bottom: 1.6rem;
 }
 

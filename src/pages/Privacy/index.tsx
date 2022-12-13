@@ -17,6 +17,7 @@ const containers = [
       deliverables in one to four-week periods.`,
     ],
     titles: ['Project management'],
+    date: 'Jul 9, 2022',
   },
   {
     name: 'Functional and non functional requirements',
@@ -38,6 +39,7 @@ const containers = [
       'Functional requirements - Something the system must do',
       'Non functional - Requirements that describe how the system works',
     ],
+    date: 'Jul 10, 2022',
   },
   {
     name: 'Scope creep and Gold plating',
@@ -58,6 +60,7 @@ const containers = [
       considering the impact on your project schedule, budget, risks, and more.`,
     ],
     titles: ['Project scope', 'Product scope'],
+    date: 'Jul 11, 2022',
   },
   {
     name: 'Estimation techniques',
@@ -98,6 +101,7 @@ const containers = [
       'Parametric model',
       'Three-point',
     ],
+    date: 'Jul 12, 2022',
   },
   {
     name: 'Authentication and Authorization',
@@ -111,6 +115,7 @@ const containers = [
       users or services permission to access some data or perform a particular action.`,
     ],
     titles: ['Process of verifying'],
+    date: 'Jul 19, 2022',
   },
   {
     name: 'What is Unit testing',
@@ -175,6 +180,7 @@ const containers = [
       'Aim for maximum test coverage',
       'Keep proper test documentation',
     ],
+    date: 'Jul 21, 2022',
   },
   {
     name: 'OOD principles',
@@ -198,6 +204,7 @@ const containers = [
       upper-level modules. Both types of modules must depend on abstractions.`,
     ],
     titles: ['Code smells'],
+    date: 'Aug 12, 2022',
   },
   {
     name: 'UML Diagram',
@@ -239,6 +246,7 @@ const containers = [
       'State Diagram',
       'Component Diagram',
     ],
+    date: 'Sep 8, 2022',
   },
   {
     name: 'Calculating the Velocity',
@@ -251,6 +259,7 @@ const containers = [
       `It is important to have a predictable Velocity. By reducing Friction and minimizing unnecessary Velocity changes prior to Calibration, you have optimized the individual and team Velocities.`,
     ],
     titles: ['Units of Effort Completed per Sprint'],
+    date: 'Nov 10, 2022',
   },
 ];
 
@@ -295,12 +304,13 @@ const Privacy: Component = () => {
                 name={section.name}
                 href={section.link}
                 id={transformCase(section.name)}
+                date={section.date}
               >
                 <For each={section.content}>
                   {(content, i) => (
                     <>
                       {section.titles && (
-                        <h3 class='info'>{section.titles[i()]}</h3>
+                        <h3 class='info card-sub'>{section.titles[i()]}</h3>
                       )}
                       <p class='info'>{content}</p>
                     </>
