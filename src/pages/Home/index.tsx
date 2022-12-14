@@ -7,6 +7,7 @@ import Card from '../../components/Card';
 import ConnectFactory from '../../components/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
 import Header from '../../components/Header';
+import Shelf from '../../components/Card/Shelf';
 
 import { randomInRange } from '../../services/utils';
 
@@ -102,26 +103,65 @@ const Home: Component = () => {
           than the ransom payment itself.
         </p>
 
-        <div class='home-stats'>
-          <div class='os'>
-            <p class='os-title'>The average payment was</p>
-            <strong class='os-value'>570,000 in the first half of 2021</strong>
-          </div>
-
-          <div class='os'>
-            <p class='os-title'>With mega-breaches costing as much as</p>
-            <strong class='os-value'>100 times higher</strong>
-          </div>
-
-          <div class='os'>
-            <p class='os-title'>To avoid revenue losses</p>
-            <strong class='os-value'>49% of organization paid</strong>
-          </div>
-
-          <div class='os'>
-            <p class='os-title'>Security budget increased</p>
-            <strong class='os-value'>between 11% and 50%</strong>
-          </div>
+        <div class='os-grid'>
+          <Shelf phrase='USED TO' description='Use with Be and Get' />
+          <Shelf
+            phrase='BE ABOUT TO'
+            description='Use a variety of phrases to refer to future actions'
+          />
+          <Shelf phrase='IRREGULAR VERBS' description='Use all' hasColSpan />
+          <Shelf
+            phrase='FUTURE CONTINUOUS'
+            description='For future actions in progress'
+          />
+          <Shelf phrase='PASSIVE FORMS' description='In various tenses' />
+          <Shelf phrase='giving opinion' description='Use varied phrases' />
+          <Shelf
+            phrase='figure out'
+            description='Use common verbs, nouns, adjectives with prepositions and adverbs. Set up, Give up'
+            hasRowSpan
+          />
+          <Shelf
+            phrase='Sophisticated vocabulary'
+            description='To talk about everyday'
+            hasRowSpan
+            hasColSpan
+          />
+          <Shelf
+            phrase='PRESENT PERFECT CONTINUOUS'
+            description='For unfinished situations'
+            hasColSpan
+          />
+          <Shelf
+            phrase='I managed to'
+            description='Proper vocabulary to describe problems / solutions'
+          />
+          <Shelf
+            phrase='exceed expectations'
+            description='Use varied collocations'
+          />
+          <Shelf
+            phrase='on the one hand'
+            description='Use linkers to provide reasons and examples'
+          />
+          <Shelf
+            phrase='Well, you know'
+            description='Use simple fillers to fill in pauses in a conversation'
+            hasColSpan
+          />
+          <Shelf phrase='Produce moderately' description='Lengthy answers' />
+          <Shelf
+            phrase='Speak at a natural pace'
+            description='In a variety of situations not limited by language incompetence'
+          />
+          <Shelf
+            phrase='Speak without strain'
+            description='With substantial natural flow'
+          />
+          <Shelf
+            phrase='Linking words efficiently'
+            description='To show the relationship between ideas, explain cause and effect'
+          />
         </div>
       </article>
     </PageDecorator>
