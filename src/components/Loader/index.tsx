@@ -1,32 +1,31 @@
 import type { Component } from 'solid-js';
 
+import Header from '../Header';
+
 import './Loader.css';
 
 const Loader: Component = () => (
-  <aside class='pulse-loading view rounded content-full' aria-busy>
-    <p class='loader box rounded'>Loading...</p>
+  <aside class='pulse-loading view rounded content-full material' aria-busy>
     <div class='loader box rounded'></div>
-    <div class='spinner box rounded'></div>
+    <div class='skeleton box rounded screen'></div>
   </aside>
 );
 
 export const Skeleton: Component = () => (
   <>
-    <aside class='pulse-loading view rounded content-full' aria-busy>
-      <section class='flex justify-between items-center'>
-        <div class='subtitle skeleton loader box rounded'></div>
-        <div class='skeleton loader box rounded'></div>
+    <aside class='pulse-loading panel rounded content-full' aria-busy>
+      <section class='sticky'>
+        <h1 class='subtitle'>Please wait</h1>
       </section>
-      <div class='title loader box rounded'></div>
-      <p class='info loader box rounded'>Please wait...</p>
-      <div class='screen loader box rounded'></div>
-      <section class='products'>
-        <div class='loader box rounded content-full'></div>
-        <div class='loader box rounded content-full'></div>
-      </section>
+
+      <Header spot='Loading' />
+
+      <div class='info skeleton box rounded'></div>
     </aside>
 
-    <Loader />
+    <div class='panel content-full'>
+      <Loader />
+    </div>
   </>
 );
 

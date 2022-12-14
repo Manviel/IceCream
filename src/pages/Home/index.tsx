@@ -123,7 +123,7 @@ const Home: Component = () => {
           />
           <Shelf
             phrase='Sophisticated vocabulary'
-            description='To talk about everyday'
+            description='To talk about everyday. Upside, Fatigued, Frankly, Covenant, Affable, Assertive, Distinctive, Slacker'
             hasRowSpan
             hasColSpan
           />

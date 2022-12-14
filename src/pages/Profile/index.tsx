@@ -43,9 +43,11 @@ const options = [
 const Profile: Component = () => {
   return (
     <PageDecorator subtitle='Your Profile' headline='And new superpower'>
-      <Suspense fallback={<Loader />}>
-        <Quote />
-      </Suspense>
+      <div class='screen'>
+        <Suspense fallback={<Loader />}>
+          <Quote />
+        </Suspense>
+      </div>
 
       <Breathe />
 
