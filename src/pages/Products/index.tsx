@@ -17,7 +17,7 @@ const Products: Component = () => {
     <PageDecorator subtitle='For You' headline='Products'>
       <h3 class='info'>Quick actions and features</h3>
 
-      <div class='products'>
+      <div class='grid products'>
         <Vault />
         <Inbox />
         <Stocks />

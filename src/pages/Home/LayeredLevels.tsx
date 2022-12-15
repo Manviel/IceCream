@@ -27,7 +27,7 @@ const listItems: ListItem[] = [
 
 const LayeredLevels: Component = () => {
   return (
-    <ul class='home-stats items-start'>
+    <ul class='grid home-stats items-start'>
       <For each={listItems}>
         {(item) => (
           <li class='box view rounded flex col'>

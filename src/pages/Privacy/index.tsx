@@ -253,12 +253,21 @@ const containers = [
     link: 'https://michaellant.com/2010/07/23/calculating-the-velocity-of-your-agile-projects/',
     content: [
       `Time is the length of our Sprint which in my projects is two weeks.
-      Velocity is thus Units of Effort Completed / Sprint.`,
-      `The number and variety of factors that can affect the Velocity of a team are both significant in number, and difficult to quantify.
-      Many of the factors will cancel each other out (electronics systems depend on this principle for noise reduction), but the net effect will be a bias on the team Velocity.`,
-      `It is important to have a predictable Velocity. By reducing Friction and minimizing unnecessary Velocity changes prior to Calibration, you have optimized the individual and team Velocities.`,
+      Velocity is thus Units of Effort Completed / Sprint.
+      The number and variety of factors that can affect the Velocity of a team are both significant in number, and difficult to quantify.
+      Many of the factors will cancel each other out (electronics systems depend on this principle for noise reduction), but the net effect will be a bias on the team Velocity.
+      It is important to have a predictable Velocity.
+      By reducing Friction and minimizing unnecessary Velocity changes prior to Calibration, you have optimized the individual and team Velocities.`,
+      `Practice of integrating all your code changes into the main branch of a shared source code repository early and often, automatically testing each change when you commit or merge them, and automatically kicking off a build.
+      With CI, errors and security issues can be identified and fixed more easily, and much earlier in the software development lifecycle.`,
+      `Practice that works in conjunction with CI to automate the infrastructure provisioning and application release process.
+      Once code has been tested and built as part of the CI process, CD takes over during the final stages to ensure it can be deployed’s packaged with everything it needs to deploy to any environment at any time.`,
     ],
-    titles: ['Units of Effort Completed per Sprint'],
+    titles: [
+      'Units of Effort Completed per Sprint',
+      'Continuous Integration',
+      'Continuous Delivery',
+    ],
     date: 'Nov 10, 2022',
   },
 ];
@@ -296,7 +305,7 @@ const Privacy: Component = () => {
 
   return (
     <PageDecorator subtitle='Privacy' headline='Designed for your policy'>
-      <div class='privacy'>
+      <div class='grid privacy'>
         <div class='flex col quick'>
           <For each={containers}>
             {(section) => (

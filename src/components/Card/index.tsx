@@ -1,13 +1,13 @@
 import type { Component } from 'solid-js';
 
+import { ShelfType } from './Shelf';
+
 import './Card.css';
 
-type CardType = {
-  description: string;
+interface CardType extends ShelfType {
   number: string | number;
-  phrase: string;
   measure?: string;
-};
+}
 
 const Card: Component<CardType> = ({
   number,

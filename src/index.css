@@ -4,7 +4,7 @@
   --c-dark: rgba(0, 0, 0, 0.2);
   --c-active: rgba(0, 0, 0, 0.05);
   --c-secondary: #2c2c2e;
-  --c-surface: #49454f;
+  --c-surface: #6e6e73;
   --c-primary: #fbfbfd;
   --c-action: rgba(118, 118, 128, 0.22);
   --c-depth: rgba(245, 245, 245, 0.5);
@@ -47,7 +47,7 @@ body {
   background-color: var(--c-white);
   color: var(--c-black);
   min-height: 100vh;
-  padding-bottom: var(--s-unit);
+  padding-bottom: var(--s-safe);
 }
 
 a {
@@ -109,6 +109,10 @@ button:focus-visible {
 
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .col {
@@ -250,7 +254,6 @@ button:focus-visible {
 }
 
 .products {
-  display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.6rem;
 }
