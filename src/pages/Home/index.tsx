@@ -109,7 +109,11 @@ const Home: Component = () => {
             phrase='BE ABOUT TO'
             description='Use a variety of phrases to refer to future actions'
           />
-          <Shelf phrase='IRREGULAR VERBS' description='Use all' hasColSpan />
+          <Shelf
+            phrase='IRREGULAR VERBS'
+            description='Use all: say, make, go, take, come, give, think, become, feel, put, lead, choose'
+            hasColSpan
+          />
           <Shelf
             phrase='FUTURE CONTINUOUS'
             description='For future actions in progress'
@@ -123,7 +127,7 @@ const Home: Component = () => {
           />
           <Shelf
             phrase='Sophisticated vocabulary'
-            description='To talk about everyday. Upside, Fatigued, Frankly, Covenant, Affable, Assertive, Distinctive, Slacker'
+            description='To talk about everyday. Upside, Fatigued, Frankly, Covenant, Affable, Assertive, Distinctive, Slacker, Crucially, To commence, Admittedly'
             hasRowSpan
             hasColSpan
           />
