@@ -37,7 +37,7 @@ const Expert: Component = () => {
       headline='Onboarding'
       customPath={Paths.Profile}
     >
-      <div class='expert sidebar material left-edge'>
+      <div class='grid expert sidebar material left-edge'>
         <TabGroup>
           <Tabs class='tour-list flex col items-start view'>
             <For each={listItems}>
@@ -58,7 +58,7 @@ const Expert: Component = () => {
           <For each={listItems}>
             {(item) => (
               <TabPanel index={item.value} class='view production right-edge'>
-                <div class='toolbar'>
+                <div class='grid toolbar'>
                   <Card
                     phrase='Position'
                     number={item.value}

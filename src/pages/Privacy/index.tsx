@@ -305,7 +305,7 @@ const Privacy: Component = () => {
 
   return (
     <PageDecorator subtitle='Privacy' headline='Designed for your policy'>
-      <div class='privacy'>
+      <div class='grid privacy'>
         <div class='flex col quick'>
           <For each={containers}>
             {(section) => (

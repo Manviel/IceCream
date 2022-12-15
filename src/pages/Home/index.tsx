@@ -42,7 +42,7 @@ const Home: Component = () => {
           among them work mostly independently of each other.
         </p>
 
-        <div class='home-stats'>
+        <div class='grid home-stats'>
           <Card
             phrase='Up to'
             number={randomInRange(11, 98)}
@@ -103,7 +103,7 @@ const Home: Component = () => {
           than the ransom payment itself.
         </p>
 
-        <div class='os-grid'>
+        <div class='grid os-grid'>
           <Shelf phrase='USED TO' description='Use with Be and Get' />
           <Shelf
             phrase='BE ABOUT TO'

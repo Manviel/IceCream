@@ -39,7 +39,7 @@ const Vault: Component = () => {
 
           <p class='term grey'>Up to 12 months</p>
 
-          <div class='products conditions items-center'>
+          <div class='grid products conditions items-center'>
             <div
               class='activity'
               role='progressbar'

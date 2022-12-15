@@ -111,6 +111,10 @@ button:focus-visible {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .col {
   flex-direction: column;
 }
@@ -250,7 +254,6 @@ button:focus-visible {
 }
 
 .products {
-  display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.6rem;
 }
