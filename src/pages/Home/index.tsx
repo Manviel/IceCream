@@ -116,9 +116,12 @@ const Home: Component = () => {
           />
           <Shelf
             phrase='FUTURE CONTINUOUS'
-            description='For future actions in progress'
+            description='For future actions in progress. He will be drinking tea with us.'
           />
-          <Shelf phrase='PASSIVE FORMS' description='In various tenses' />
+          <Shelf
+            phrase='PASSIVE FORMS'
+            description='In various tenses. My room is being cleaned.'
+          />
           <Shelf phrase='giving opinion' description='Use varied phrases' />
           <Shelf
             phrase='figure out'
@@ -133,7 +136,7 @@ const Home: Component = () => {
           />
           <Shelf
             phrase='PRESENT PERFECT CONTINUOUS'
-            description='For unfinished situations'
+            description='For unfinished situations. I have been working for an hour.'
             hasColSpan
           />
           <Shelf
