@@ -92,11 +92,6 @@ a:focus-visible {
   transform: scale(1.03);
 }
 
-a:focus-visible,
-button:focus-visible {
-  border-radius: 0.4rem;
-}
-
 .app,
 .dock {
   max-width: 142rem;
