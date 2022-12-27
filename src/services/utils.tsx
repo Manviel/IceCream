@@ -8,8 +8,7 @@ export const randomInRange = (min: number, max: number) => {
   return min + (byteArray[0] % range);
 };
 
-export const commasAdapter = (x: number) =>
-  x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+export const commasAdapter = (x: number) => new Intl.NumberFormat().format(x);
 
 export const useObserver = (query: string) => {
   const observer = new IntersectionObserver((entries) => {

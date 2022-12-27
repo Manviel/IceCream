@@ -14,15 +14,22 @@ type NewsContextState = {
   readonly currentRank: string;
 };
 
-const defaultState: NewsContextState = {
+type NewsContextValue = [
+  state: NewsContextState,
+  actions: {
+    updateNews: (news: Entity[]) => void;
+  }
+];
+
+const defaultState = {
   news: [],
   currentRank: Category[LEVEL_2],
 };
 
-const NewsContext = createContext([
+const NewsContext = createContext<NewsContextValue>([
   defaultState,
   {
-    updateNews: (data: Entity[]) => {},
+    updateNews: () => undefined,
   },
 ]);
 
@@ -36,7 +43,10 @@ export const NewsProvider: ParentComponent<{
 
   const updateNews = (data: Entity[]) => setState('news', data);
 
-  const contextValue = createMemo(() => [state, { updateNews }], []);
+  const contextValue = createMemo<NewsContextValue>(() => [
+    state,
+    { updateNews },
+  ]);
 
   return (
     <NewsContext.Provider value={contextValue()}>

@@ -2,6 +2,7 @@ import { Index, ErrorBoundary, Component, createEffect } from 'solid-js';
 
 import { getNews } from '../../services/news';
 import { useNews } from '../../services/store';
+import { commasAdapter } from '../../services/utils';
 
 import Loader from '../../components/Loader';
 
@@ -47,7 +48,7 @@ const Leaderboard: Component = () => {
                         alice: com[1] > 100,
                       }}
                     >
-                      {com[1]}
+                      {commasAdapter(Number(com[1]))}
                     </span>
                   </td>
                 </tr>
