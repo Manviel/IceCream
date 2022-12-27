@@ -1,4 +1,9 @@
-import { createContext, useContext, ParentComponent } from 'solid-js';
+import {
+  createContext,
+  useContext,
+  ParentComponent,
+  createMemo,
+} from 'solid-js';
 import { createStore } from 'solid-js/store';
 
 import { Entity } from '../models';
@@ -38,15 +43,13 @@ export const NewsProvider: ParentComponent<{
 
   const updateNews = (data: Entity[]) => setState('news', data);
 
+  const contextValue = createMemo<NewsContextValue>(() => [
+    state,
+    { updateNews },
+  ]);
+
   return (
-    <NewsContext.Provider
-      value={[
-        state,
-        {
-          updateNews,
-        },
-      ]}
-    >
+    <NewsContext.Provider value={contextValue()}>
       {props.children}
     </NewsContext.Provider>
   );

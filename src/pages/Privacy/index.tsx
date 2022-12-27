@@ -272,8 +272,7 @@ const containers = [
   },
 ];
 
-const transformCase = (str: string) =>
-  (str = str.replace(/\s+/g, '-').toLowerCase());
+const transformCase = (str: string) => str.replace(/\s+/g, '-').toLowerCase();
 
 const Privacy: Component = () => {
   createEffect(() => {

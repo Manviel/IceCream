@@ -10,8 +10,8 @@ import DialogFacade from '../../../components/DialogContent/DialogFacade';
 const Inbox: Component = () => {
   return (
     <DialogFacade
-      title='Payment successful'
-      description='You can read more on our payment policy'
+      title='Abstract'
+      description='This helps the user to focus on what the object does, rather than how it performs.'
       closingName='Close'
       triggerContent={
         <>

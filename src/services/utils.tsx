@@ -1,8 +1,14 @@
-export const randomInRange = (min: number, max: number) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
+export const randomInRange = (min: number, max: number) => {
+  const byteArray = new Uint8Array(1);
 
-export const commasAdapter = (x: number) =>
-  x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  window.crypto.getRandomValues(byteArray);
+
+  const range = max - min + 1;
+
+  return min + (byteArray[0] % range);
+};
+
+export const commasAdapter = (x: number) => new Intl.NumberFormat().format(x);
 
 export const useObserver = (query: string) => {
   const observer = new IntersectionObserver((entries) => {

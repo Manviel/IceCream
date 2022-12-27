@@ -20,7 +20,7 @@ const Vault: Component = () => {
 
   createEffect(() => {
     const interest = 12 * 0.01;
-    const years = 12 / 12;
+    const years = 1;
     const result = Math.round(budget() * interest ** years);
 
     setIncome(result);

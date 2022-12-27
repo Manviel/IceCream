@@ -16,11 +16,6 @@ const options = [
   },
   {
     value:
-      'https://www.jobilize.com/software/test/quantifiable-requirements-by-openstax',
-    label: 'Quantifiable Requirements',
-  },
-  {
-    value:
       'https://ecomputernotes.com/software-engineering/requirementsvalidation',
     label: 'Requirements validation techniques',
   },
@@ -37,6 +32,11 @@ const options = [
     value:
       'https://www.isixsigma.com/methodology/business-process-management-bpm/business-process-management-software-development/',
     label: 'Process management',
+  },
+  {
+    value:
+      'https://towardsdatascience.com/10-common-software-architectural-patterns-in-a-nutshell-a0b47a1e9013',
+    label: 'Common Software Architectural Patterns',
   },
 ];
 

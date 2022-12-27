@@ -28,7 +28,7 @@
 }
 
 .tour-list-item:hover,
-.tour-list-item-selected {
+.tour-list-item[aria-selected='true'] {
   background-color: var(--c-active);
 }
 

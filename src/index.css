@@ -92,11 +92,6 @@ a:focus-visible {
   transform: scale(1.03);
 }
 
-a:focus-visible,
-button:focus-visible {
-  border-radius: 0.4rem;
-}
-
 .app,
 .dock {
   max-width: 142rem;
@@ -246,7 +241,7 @@ button:focus-visible {
 
 .superellipse.active {
   transform: scale(1.1);
-  border: 1px solid var(--c-ring);
+  border: 1px solid var(--c-action);
 }
 
 .superellipse.inactive svg {

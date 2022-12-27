@@ -1,5 +1,6 @@
 :root {
-  --s-radio: 10rem;
+  --s-radio: 100px;
+  --s-stroke: 12px;
 }
 
 .activity {
@@ -16,7 +17,7 @@
 
 .ring circle {
   fill: none;
-  stroke-width: 1.2rem;
+  stroke-width: var(--s-stroke);
 }
 
 .completed {

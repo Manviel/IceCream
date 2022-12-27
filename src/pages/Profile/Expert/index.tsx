@@ -42,12 +42,7 @@ const Expert: Component = () => {
           <Tabs class='tour-list flex col items-start view'>
             <For each={listItems}>
               {(item) => (
-                <Tab
-                  class='tour-list-item flex justify-between items-center content-full'
-                  classList={({ selected }) => ({
-                    'tour-list-item-selected': selected(),
-                  })}
-                >
+                <Tab class='tour-list-item flex justify-between items-center content-full'>
                   {item.label}
 
                   <span class='chip token'>{item.value}</span>
