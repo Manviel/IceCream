@@ -241,7 +241,7 @@ a:focus-visible {
 
 .superellipse.active {
   transform: scale(1.1);
-  border: 1px solid var(--c-ring);
+  border: 1px solid var(--c-action);
 }
 
 .superellipse.inactive svg {
