@@ -96,11 +96,13 @@ const Home: Component = () => {
       </article>
 
       <article class='flex col on-scroll material view screen content-full rounded'>
-        <Header spot='The cost of ransomware' />
+        <Header spot='The Separation of Concerns' />
 
         <p class='info'>
-          A successful ransomware attack costs the targeted organisation more
-          than the ransom payment itself.
+          The application of the SoC involves two processes: reduction of
+          coupling and increasing cohesion. Don’t write your program as one
+          solid block, instead, break up the code into chunks that are finalized
+          tiny pieces of the system each able to complete a simple distinct job.
         </p>
 
         <div class='grid os-grid'>
@@ -122,7 +124,10 @@ const Home: Component = () => {
             phrase='PASSIVE FORMS'
             description='In various tenses. My room is being cleaned.'
           />
-          <Shelf phrase='giving opinion' description='Use varied phrases' />
+          <Shelf
+            phrase='giving opinion'
+            description='Use varied phrases: I assume, would say, certain that.'
+          />
           <Shelf
             phrase='figure out'
             description='Use common verbs, nouns, adjectives with prepositions and adverbs. Set up, Give up'
@@ -145,7 +150,7 @@ const Home: Component = () => {
           />
           <Shelf
             phrase='exceed expectations'
-            description='Use varied collocations'
+            description='otherwise, the consequence is, likewise, however, additionally, moreover, eventually, overall'
           />
           <Shelf
             phrase='on the one hand'

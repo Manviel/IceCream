@@ -13,8 +13,9 @@ const containers = [
     content: [
       `Kanban is a methodology centered around visualizing tasks, while Scrum is a methodology that
       structures workflow and team culture to deliver projects in short timelines.`,
-      `Kanban delivers tasks continuously until the project is finished, while Scrum delivers chunks of
-      deliverables in one to four-week periods.`,
+      `Scrum software development process consists of "sprints" – brief, time-boxed stages in which a team works to accomplish a specific set of tasks.
+      Kanban is an approach to project management that facilitates prioritizing tasks via visual cues.
+      Kanban method typically involves a board that displays the status and progression of each task.`,
     ],
     titles: ['Project management'],
     date: 'Jul 9, 2022',
@@ -250,14 +251,16 @@ const containers = [
   },
   {
     name: 'Calculating the Velocity',
-    link: 'https://michaellant.com/2010/07/23/calculating-the-velocity-of-your-agile-projects/',
+    link: 'https://business.adobe.com/blog/basics/velocity',
     content: [
-      `Time is the length of our Sprint which in my projects is two weeks.
-      Velocity is thus Units of Effort Completed / Sprint.
-      The number and variety of factors that can affect the Velocity of a team are both significant in number, and difficult to quantify.
-      Many of the factors will cancel each other out (electronics systems depend on this principle for noise reduction), but the net effect will be a bias on the team Velocity.
-      It is important to have a predictable Velocity.
-      By reducing Friction and minimizing unnecessary Velocity changes prior to Calibration, you have optimized the individual and team Velocities.`,
+      `Metric used to measure the ongoing efficiency and quality of a project.
+      Determining your velocity will let you understand when you can reach milestones or, if you’re planning on delivering a product in completion, what dates you can reach the finish line.
+      Using velocity can also help reduce the chances of you over-promising when agreeing client deliverables.`,
+      `To work through the formula, you will need to know how many points each user story, or bite-sized piece of work, is worth.
+      The rule of thumb in determining a story point is to find the simplest story, assign it one point, and then use it to assess the rest.
+      To calculate the velocity of a sprint, you need to know:
+      How many user stories the team has to complete;
+      The number of points that a user story is worth.`,
       `Practice of integrating all your code changes into the main branch of a shared source code repository early and often, automatically testing each change when you commit or merge them, and automatically kicking off a build.
       With CI, errors and security issues can be identified and fixed more easily, and much earlier in the software development lifecycle.`,
       `Practice that works in conjunction with CI to automate the infrastructure provisioning and application release process.
@@ -265,6 +268,7 @@ const containers = [
     ],
     titles: [
       'Units of Effort Completed per Sprint',
+      'Before you begin',
       'Continuous Integration',
       'Continuous Delivery',
     ],
@@ -274,32 +278,33 @@ const containers = [
 
 const transformCase = (str: string) => str.replace(/\s+/g, '-').toLowerCase();
 
+const useStickyNavigation = () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute('id');
+        const article = document.querySelector(`.spy-nav a[href="#${id}"]`);
+
+        if (entry.intersectionRatio > 0) {
+          article?.classList.add('live');
+        } else {
+          article?.classList.remove('live');
+        }
+      });
+    },
+    {
+      rootMargin: '-50px 0px -55%',
+    }
+  );
+
+  document.querySelectorAll('section[id]').forEach((section) => {
+    observer.observe(section);
+  });
+};
+
 const Privacy: Component = () => {
   createEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const id = entry.target.getAttribute('id');
-
-          if (entry.intersectionRatio > 0) {
-            const article = document.querySelector(`.spy-nav a[href="#${id}"]`);
-
-            article?.classList.add('live');
-          } else {
-            const article = document.querySelector(`.spy-nav a[href="#${id}"]`);
-
-            article?.classList.remove('live');
-          }
-        });
-      },
-      {
-        rootMargin: '-50px 0px -55%',
-      }
-    );
-
-    document.querySelectorAll('section[id]').forEach((section) => {
-      observer.observe(section);
-    });
+    useStickyNavigation();
   });
 
   return (
