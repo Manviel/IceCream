@@ -149,12 +149,12 @@ const Home: Component = () => {
             description='Proper vocabulary to describe problems / solutions'
           />
           <Shelf
-            phrase='exceed expectations'
-            description='otherwise, the consequence is, likewise, however, additionally, moreover, eventually, overall'
+            phrase='Scalability'
+            description='If the design or system fails when a quantity increases, it does not scale.'
           />
           <Shelf
             phrase='on the one hand'
-            description='Use linkers to provide reasons and examples'
+            description='Use linkers to provide reasons and examples. Otherwise, however, additionally, moreover, eventually, overall.'
           />
           <Shelf
             phrase='Well, you know'

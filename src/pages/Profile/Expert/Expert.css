@@ -1,9 +1,14 @@
 :root {
+  --c-alice: #e8f0fe;
   --c-lavender: #eaddff;
 }
 
 .document {
   background-color: var(--c-lavender);
+}
+
+.alice {
+  background-color: var(--c-alice);
 }
 
 .expert {

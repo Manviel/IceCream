@@ -15,7 +15,6 @@
   --c-glass: #f6f9fc;
   --c-ghost: #ebfff0;
   --c-show: #fce8e6;
-  --c-alice: #e8f0fe;
   --s-ellipse: 4.4rem;
   --s-medium: 2rem;
   --s-dock: 2.4rem;
@@ -290,10 +289,6 @@ a:focus-visible {
 
 .price {
   background-color: var(--c-show);
-}
-
-.alice {
-  background-color: var(--c-alice);
 }
 
 @media screen and (max-width: 768px) {

@@ -45,7 +45,6 @@ const Leaderboard: Component = () => {
                       classList={{
                         ghost: com[1] > 1,
                         price: com[1] < 1,
-                        alice: com[1] > 100,
                       }}
                     >
                       {commasAdapter(Number(com[1]))}

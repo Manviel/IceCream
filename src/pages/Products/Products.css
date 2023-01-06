@@ -14,11 +14,12 @@
 }
 
 .widget-chart {
-  transition: filter 0.4s;
+  transition: filter 0.34s, transform 0.34s cubic-bezier(0.666, 0, 0.4, 1);
 }
 
 .widget-chart:hover {
   filter: var(--p-shadow);
+  transform: scale(1.04);
 }
 
 .widget-line circle {
