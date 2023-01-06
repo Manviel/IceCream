@@ -1,8 +1,15 @@
-import { Component, createResource, ErrorBoundary, Show } from 'solid-js';
+import {
+  Component,
+  createResource,
+  ErrorBoundary,
+  Show,
+  ParentComponent,
+} from 'solid-js';
 
 import Loader from '../Loader';
 
 import { SuperEllipse } from '../../models/config';
+import { SegregationType } from '../../models';
 import { getQuote } from '../../services/news';
 
 import GoForwardIcon from '../../assets/icons/go-forward.svg';
@@ -13,7 +20,30 @@ type QuoteType = {
   anime: string;
 };
 
+interface QuoteViewType extends SegregationType {
+  author: string;
+}
+
 const fetchQuote = async () => await getQuote();
+
+const QuoteView: ParentComponent<QuoteViewType> = (props) => {
+  const { title, description, author, children } = props;
+
+  return (
+    <article class='material view rounded'>
+      <div class='flex justify-between items-center'>
+        <p class='flex col'>
+          <span>{title}</span>
+          <span class='box-description'>{author}</span>
+        </p>
+
+        {children}
+      </div>
+
+      <h2 class='box view rounded screen'>{description}</h2>
+    </article>
+  );
+};
 
 const Quote: Component = () => {
   const [quote, { refetch }] = createResource<QuoteType>(fetchQuote);
@@ -26,24 +56,19 @@ const Quote: Component = () => {
 
       <Show when={quote()} keyed>
         {(res) => (
-          <article class='material view rounded'>
-            <div class='flex justify-between items-center'>
-              <p class='flex col'>
-                <span>{res.anime}</span>
-                <span class='box-description'>{res.character}</span>
-              </p>
-
-              <button
-                class={SuperEllipse}
-                onClick={refetch}
-                aria-label='Get new quote'
-              >
-                <GoForwardIcon />
-              </button>
-            </div>
-
-            <h2 class='box view rounded screen'>{res.quote}</h2>
-          </article>
+          <QuoteView
+            title={res.anime}
+            author={res.character}
+            description={res.quote}
+          >
+            <button
+              class={SuperEllipse}
+              onClick={refetch}
+              aria-label='Get new quote'
+            >
+              <GoForwardIcon />
+            </button>
+          </QuoteView>
         )}
       </Show>
     </ErrorBoundary>
