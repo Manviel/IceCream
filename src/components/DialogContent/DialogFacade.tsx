@@ -2,15 +2,15 @@ import { createSignal, Show, ParentComponent } from 'solid-js';
 import { JSX } from 'solid-js/jsx-runtime';
 import { Dialog, DialogTitle, Description } from 'solid-a11y';
 
+import { SegregationType } from '../../models';
+
 import DialogContent from '.';
 
-type DialogFacadeType = {
-  title: string;
-  description: string;
+interface DialogFacadeType extends SegregationType {
   closingName: string;
   triggerClassName: string;
   triggerContent: JSX.Element;
-};
+}
 
 const DialogFacade: ParentComponent<DialogFacadeType> = ({
   title,

@@ -16,3 +16,8 @@ export enum Paths {
 export type Entity = {
   [key: string]: number | string;
 };
+
+export interface SegregationType {
+  title: string;
+  description: string;
+}

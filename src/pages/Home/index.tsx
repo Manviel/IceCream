@@ -44,24 +44,24 @@ const Home: Component = () => {
 
         <div class='grid home-stats'>
           <Card
-            phrase='Up to'
+            title='Up to'
             number={randomInRange(11, 98)}
             measure='million'
             description='Active users'
           />
           <Card
-            phrase='Support'
+            title='Support'
             number={randomInRange(8, 99)}
             description='Countries'
           />
           <Card
-            phrase='Up to'
+            title='Up to'
             number={randomInRange(1, 10)}
             measure='x'
             description='Faster than previous versions'
           />
           <Card
-            phrase='Down to'
+            title='Down to'
             number={randomInRange(1, 3)}
             measure='sec'
             description='Time to interactive'
@@ -106,72 +106,72 @@ const Home: Component = () => {
         </p>
 
         <div class='grid os-grid'>
-          <Shelf phrase='USED TO' description='Use with Be and Get' />
+          <Shelf title='USED TO' description='Use with Be and Get' />
           <Shelf
-            phrase='BE ABOUT TO'
+            title='BE ABOUT TO'
             description='Use a variety of phrases to refer to future actions'
           />
           <Shelf
-            phrase='IRREGULAR VERBS'
+            title='IRREGULAR VERBS'
             description='Use all: say, make, go, take, come, give, think, become, feel, put, lead, choose'
             hasColSpan
           />
           <Shelf
-            phrase='FUTURE CONTINUOUS'
+            title='FUTURE CONTINUOUS'
             description='For future actions in progress. He will be drinking tea with us.'
           />
           <Shelf
-            phrase='PASSIVE FORMS'
+            title='PASSIVE FORMS'
             description='In various tenses. My room is being cleaned.'
           />
           <Shelf
-            phrase='giving opinion'
+            title='giving opinion'
             description='Use varied phrases: I assume, would say, certain that.'
           />
           <Shelf
-            phrase='figure out'
+            title='figure out'
             description='Use common verbs, nouns, adjectives with prepositions and adverbs. Set up, Give up'
             hasRowSpan
           />
           <Shelf
-            phrase='Sophisticated vocabulary'
+            title='Sophisticated vocabulary'
             description='To talk about everyday. Upside, Fatigued, Frankly, Covenant, Affable, Assertive, Distinctive, Slacker, Crucially, To commence, Admittedly'
             hasRowSpan
             hasColSpan
           />
           <Shelf
-            phrase='PRESENT PERFECT CONTINUOUS'
+            title='PRESENT PERFECT CONTINUOUS'
             description='For unfinished situations. I have been working for an hour.'
             hasColSpan
           />
           <Shelf
-            phrase='I managed to'
+            title='I managed to'
             description='Proper vocabulary to describe problems / solutions'
           />
           <Shelf
-            phrase='Scalability'
+            title='Scalability'
             description='If the design or system fails when a quantity increases, it does not scale.'
           />
           <Shelf
-            phrase='on the one hand'
+            title='on the one hand'
             description='Use linkers to provide reasons and examples. Otherwise, however, additionally, moreover, eventually, overall.'
           />
           <Shelf
-            phrase='Well, you know'
+            title='Well, you know'
             description='Use simple fillers to fill in pauses in a conversation'
             hasColSpan
           />
-          <Shelf phrase='Produce moderately' description='Lengthy answers' />
+          <Shelf title='Produce moderately' description='Lengthy answers' />
           <Shelf
-            phrase='Speak at a natural pace'
+            title='Speak at a natural pace'
             description='In a variety of situations not limited by language incompetence'
           />
           <Shelf
-            phrase='Speak without strain'
+            title='Speak without strain'
             description='With substantial natural flow'
           />
           <Shelf
-            phrase='Linking words efficiently'
+            title='Linking words efficiently'
             description='To show the relationship between ideas, explain cause and effect'
           />
         </div>

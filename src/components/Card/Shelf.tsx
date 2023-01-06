@@ -1,23 +1,20 @@
 import type { Component } from 'solid-js';
 
-export interface ShelfType {
-  description: string;
-  phrase: string;
-}
+import { SegregationType } from '../../models';
 
-interface ProtoType extends ShelfType {
+interface ProtoType extends SegregationType {
   hasColSpan?: boolean;
   hasRowSpan?: boolean;
 }
 
 const Shelf: Component<ProtoType> = ({
   description,
-  phrase,
+  title,
   hasColSpan = false,
   hasRowSpan = false,
 }) => (
   <div class='os' classList={{ 'os-column': hasColSpan, 'os-row': hasRowSpan }}>
-    <strong class='os-title'>{phrase}</strong>
+    <strong class='os-title'>{title}</strong>
     <p class='os-value'>{description}</p>
   </div>
 );

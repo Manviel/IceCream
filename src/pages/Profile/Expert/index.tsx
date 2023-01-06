@@ -55,7 +55,7 @@ const Expert: Component = () => {
               <TabPanel index={item.value} class='view production right-edge'>
                 <div class='grid toolbar'>
                   <Card
-                    phrase='Position'
+                    title='Position'
                     number={item.value}
                     description='Coming Soon'
                   />

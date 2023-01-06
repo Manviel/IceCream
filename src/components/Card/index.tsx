@@ -1,22 +1,17 @@
 import type { Component } from 'solid-js';
 
-import { ShelfType } from './Shelf';
+import { SegregationType } from '../../models';
 
 import './Card.css';
 
-interface CardType extends ShelfType {
+interface CardType extends SegregationType {
   number: string | number;
   measure?: string;
 }
 
-const Card: Component<CardType> = ({
-  number,
-  description,
-  phrase,
-  measure,
-}) => (
+const Card: Component<CardType> = ({ number, description, title, measure }) => (
   <div class='view card rounded'>
-    <sup class='card-sub'>{phrase}</sup>
+    <sup class='card-sub'>{title}</sup>
     <strong class='card-text'>
       {number}
       <span class='card-measure'>{measure}</span>
