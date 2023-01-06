@@ -1,4 +1,4 @@
-import { Entity } from '../models';
+import { sortByAsc } from './utils';
 
 type PaginateType = {
   category: string;
@@ -8,9 +8,6 @@ const headers = {
   'Content-Type': 'application/json',
   mode: 'no-cors',
 };
-
-const sortObjByValue = (obj: Entity) =>
-  Object.entries(obj).sort(([, a]: any, [, b]: any) => a - b);
 
 export const getNews = async (params: PaginateType) => {
   const { category } = params;
@@ -24,7 +21,7 @@ export const getNews = async (params: PaginateType) => {
 
   const { rates } = await response.json();
 
-  return sortObjByValue(rates);
+  return sortByAsc(rates);
 };
 
 export const getQuote = async () => {

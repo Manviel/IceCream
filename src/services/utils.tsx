@@ -31,5 +31,5 @@ export const total = (arr: number[]) =>
 
 export const average = (arr: number[]) => total(arr) / arr.length;
 
-export const sortByMaxValue = (obj: {}, pos: number) =>
-  Object.entries(obj).sort((x: any, y: any) => y[1] - x[1])[pos];
+export const sortByAsc = (obj: {}) =>
+  Object.entries(obj).sort((x: any, y: any) => x[1] - y[1]);

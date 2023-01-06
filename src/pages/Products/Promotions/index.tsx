@@ -1,7 +1,7 @@
 import { Component } from 'solid-js';
 
 import { ChartColors } from '../../../models';
-import { sortByMaxValue } from '../../../services/utils';
+import { sortByAsc } from '../../../services/utils';
 import { useLegends } from '../charts';
 
 const source = {
@@ -17,6 +17,8 @@ const source = {
 
 const chartID = 'chart-promotions';
 
+const sortByMaxValue = (obj: {}, pos: number) => sortByAsc(obj)[pos];
+
 const Promotions: Component = () => {
   const labels = Object.keys(source);
   const datasets = Object.values(source);
@@ -27,8 +29,9 @@ const Promotions: Component = () => {
     <article class='box view rounded flex col widget-chart'>
       <h3 class='widget-title'>Promotions</h3>
       <p class='term grey'>
-        Most productive hours from {sortByMaxValue(source, 0)[0]} to{' '}
-        {sortByMaxValue(source, 1)[0]}
+        Most productive hours from{' '}
+        {sortByMaxValue(source, datasets.length - 1)[0]} to{' '}
+        {sortByMaxValue(source, datasets.length - 2)[0]}
       </p>
 
       <svg
