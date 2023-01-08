@@ -1,27 +1,23 @@
 import { For, Component } from 'solid-js';
 
-type ListItem = {
-  label: string;
-  explanation: string;
-};
+import { ListItemGen } from '../../models';
 
-const listItems: ListItem[] = [
+const listItems: ListItemGen<string>[] = [
   {
     label: 'Presentation',
-    explanation: 'Responsible for user interactions with the software system',
+    value: 'Responsible for user interactions with the software system',
   },
   {
     label: 'Business',
-    explanation:
-      'Handles aspects related to accomplishing functional requirements',
+    value: 'Handles aspects related to accomplishing functional requirements',
   },
   {
     label: 'Domain',
-    explanation: 'Responsible for algorithms and programming components',
+    value: 'Responsible for algorithms and programming components',
   },
   {
     label: 'Infrastructure',
-    explanation: 'Responsible for handling data, databases',
+    value: 'Responsible for handling data, databases',
   },
 ];
 
@@ -32,7 +28,7 @@ const LayeredLevels: Component = () => {
         {(item) => (
           <li class='box view rounded flex col'>
             <strong class='card-sub purple'>{item.label}</strong>
-            <p class='info'>{item.explanation}</p>
+            <p class='info'>{item.value}</p>
           </li>
         )}
       </For>

@@ -5,7 +5,7 @@ import { SegregationType } from '../../models';
 import './Card.css';
 
 interface CardType extends SegregationType {
-  number: string | number;
+  number: number;
   measure?: string;
 }
 

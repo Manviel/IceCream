@@ -21,3 +21,8 @@ export interface SegregationType {
   title: string;
   description: string;
 }
+
+export interface ListItemGen<T> {
+  label: string;
+  value: T;
+}
