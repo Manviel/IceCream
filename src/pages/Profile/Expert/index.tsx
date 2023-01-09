@@ -1,7 +1,7 @@
 import { Component, For } from 'solid-js';
 import { Tab, TabGroup, TabPanel, Tabs } from 'solid-a11y';
 
-import { Paths } from '../../../models';
+import { Paths, ListItemGen } from '../../../models';
 
 import Card from '../../../components/Card';
 import PageDecorator from '../../../components/PageDecorator';
@@ -10,12 +10,7 @@ import Reviews from './Reviews';
 
 import './Expert.css';
 
-type TabItem = {
-  label: string;
-  value: number;
-};
-
-const listItems: TabItem[] = [
+const listItems: ListItemGen<number>[] = [
   {
     label: 'Ready',
     value: 1,

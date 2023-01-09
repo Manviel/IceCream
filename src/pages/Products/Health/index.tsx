@@ -2,7 +2,7 @@ import { Component } from 'solid-js';
 
 import { ChartColors } from '../../../models';
 import { total } from '../../../services/utils';
-import { useLegends } from '../charts';
+import { useChartSource, useLegends } from '../charts';
 
 const source = {
   Eggs: 6.3,
@@ -22,9 +22,7 @@ const source = {
 const chartID = 'chart-health';
 
 const Health: Component = () => {
-  const labels = Object.keys(source);
-  const datasets = Object.values(source);
-
+  const { labels, datasets } = useChartSource(source);
   const { legend, handleHover, getItem } = useLegends(labels, datasets);
 
   return (

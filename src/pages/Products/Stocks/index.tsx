@@ -3,7 +3,7 @@ import { Component } from 'solid-js';
 import { ChartColors } from '../../../models';
 import { CIRCLE_RADIUS } from '../../../models/config';
 import { average } from '../../../services/utils';
-import { useLegends } from '../charts';
+import { useChartSource, useLegends } from '../charts';
 
 const source = {
   Dec: 180,
@@ -17,9 +17,7 @@ const source = {
 const chartID = 'chart-stocks';
 
 const Stocks: Component = () => {
-  const labels = Object.keys(source);
-  const datasets = Object.values(source);
-
+  const { labels, datasets } = useChartSource(source);
   const { legend, handleHover, getItem } = useLegends(labels, datasets);
 
   return (

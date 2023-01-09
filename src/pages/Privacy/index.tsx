@@ -297,9 +297,9 @@ const useStickyNavigation = () => {
     }
   );
 
-  document.querySelectorAll('section[id]').forEach((section) => {
-    observer.observe(section);
-  });
+  document
+    .querySelectorAll('section[id]')
+    .forEach((section) => observer.observe(section));
 };
 
 const Privacy: Component = () => {

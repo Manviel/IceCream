@@ -5,11 +5,17 @@ import Quote from '../../components/Card/Quote';
 import PageDecorator from '../../components/PageDecorator';
 import ConnectFactory from '../../components/ConnectFactory';
 
+import { ListItemGen } from '../../models';
+
 import Breathe from './Breathe';
 
 import './Profile.css';
 
-const options = [
+const options: ListItemGen<string>[] = [
+  {
+    value: 'https://refactoring.guru/refactoring/what-is-refactoring',
+    label: 'What is Refactoring?',
+  },
   {
     value: 'https://www.informit.com/articles/article.aspx?p=1152528&seqNum=4',
     label: 'Characteristics of Excellent Requirements',
