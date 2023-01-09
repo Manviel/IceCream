@@ -1,7 +1,26 @@
-import { Component, createSignal, Show } from 'solid-js';
-import { Dialog, DialogTitle, Description, DialogOverlay } from 'solid-a11y';
+import { Component, createSignal, Show, ParentComponent } from 'solid-js';
+import { Dialog, DialogTitle, Description } from 'solid-a11y';
+
+import AbstractDialogContent from '../../../components/DialogContent/AbstractDialogContent';
 
 import CloseIcon from '../../../assets/icons/close.svg';
+
+const SheetContent: ParentComponent = ({ children }) => {
+  return (
+    <AbstractDialogContent
+      parentClassName='flex col view layer bottom-sheet'
+      childClassName='flex justify-between items-center'
+      factory={children}
+    >
+      <Description class='info'>
+        The Event Loop has one simple job — to monitor the Call Stack and the
+        Callback Queue. If the Call Stack is empty, the Event Loop will take the
+        first event from the queue and will push it to the Call Stack, which
+        effectively runs it.
+      </Description>
+    </AbstractDialogContent>
+  );
+};
 
 const Notes: Component = () => {
   const [open, setOpen] = createSignal(false);
@@ -30,25 +49,15 @@ const Notes: Component = () => {
       <Show when={open()}>
         {() => (
           <Dialog onClose={setOpen}>
-            <DialogOverlay class='backdrop' />
-
-            <div class='flex col view layer bottom-sheet'>
-              <div class='flex justify-between items-center'>
-                <DialogTitle class='subtitle'>Notes</DialogTitle>
-                <button
-                  class='flex justify-center items-center shape token'
-                  onClick={handleClose}
-                >
-                  <CloseIcon />
-                </button>
-              </div>
-              <Description class='info'>
-                The Event Loop has one simple job — to monitor the Call Stack
-                and the Callback Queue. If the Call Stack is empty, the Event
-                Loop will take the first event from the queue and will push it
-                to the Call Stack, which effectively runs it.
-              </Description>
-            </div>
+            <SheetContent>
+              <DialogTitle class='subtitle'>Notes</DialogTitle>
+              <button
+                class='flex justify-center items-center shape token'
+                onClick={handleClose}
+              >
+                <CloseIcon />
+              </button>
+            </SheetContent>
           </Dialog>
         )}
       </Show>
