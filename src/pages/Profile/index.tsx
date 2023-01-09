@@ -13,6 +13,10 @@ import './Profile.css';
 
 const options: ListItemGen<string>[] = [
   {
+    value: 'https://refactoring.guru/refactoring/what-is-refactoring',
+    label: 'What is Refactoring?',
+  },
+  {
     value: 'https://www.informit.com/articles/article.aspx?p=1152528&seqNum=4',
     label: 'Characteristics of Excellent Requirements',
   },
