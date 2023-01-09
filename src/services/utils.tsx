@@ -21,9 +21,7 @@ export const useObserver = (query: string) => {
     });
   });
 
-  const animationItems = document.querySelectorAll(query);
-
-  animationItems.forEach((item) => observer.observe(item));
+  document.querySelectorAll(query).forEach((item) => observer.observe(item));
 };
 
 export const total = (arr: number[]) =>

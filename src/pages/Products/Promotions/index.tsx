@@ -2,7 +2,7 @@ import { Component } from 'solid-js';
 
 import { ChartColors } from '../../../models';
 import { sortByAsc } from '../../../services/utils';
-import { useLegends } from '../charts';
+import { useChartSource, useLegends } from '../charts';
 
 const source = {
   '0:00': 1,
@@ -20,9 +20,7 @@ const chartID = 'chart-promotions';
 const sortByMaxValue = (obj: {}, pos: number) => sortByAsc(obj)[pos];
 
 const Promotions: Component = () => {
-  const labels = Object.keys(source);
-  const datasets = Object.values(source);
-
+  const { labels, datasets } = useChartSource(source);
   const { legend, handleHover, getItem } = useLegends(labels, datasets);
 
   return (
