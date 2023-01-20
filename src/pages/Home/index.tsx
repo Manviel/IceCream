@@ -106,14 +106,17 @@ const Home: Component = () => {
         </p>
 
         <div class='grid os-grid'>
-          <Shelf title='USED TO' description='Use with Be and Get' />
+          <Shelf
+            title='Get USED TO'
+            description='To talk about the process of becoming familiar with something.'
+          />
           <Shelf
             title='BE ABOUT TO'
-            description='Use a variety of phrases to refer to future actions'
+            description='If you are about to do something, you are going to do it very soon.'
           />
           <Shelf
             title='IRREGULAR VERBS'
-            description='Use all: say, make, go, take, come, give, think, become, feel, put, lead, choose'
+            description='Use all: say, make, go, take, come, give, think, become, feel, put, lead, choose.'
             hasColSpan
           />
           <Shelf
@@ -130,12 +133,12 @@ const Home: Component = () => {
           />
           <Shelf
             title='figure out'
-            description='Use common verbs, nouns, adjectives with prepositions and adverbs. Set up, Give up'
+            description='Use common verbs, nouns, adjectives with prepositions and adverbs. Set up, Give up.'
             hasRowSpan
           />
           <Shelf
             title='Sophisticated vocabulary'
-            description='To talk about everyday. Upside, Fatigued, Frankly, Covenant, Affable, Assertive, Distinctive, Slacker, Crucially, To commence, Admittedly'
+            description='To talk about everyday. Upside, Fatigued, Frankly, Covenant, Affable, Assertive, Distinctive, Crucially, To commence, Admittedly.'
             hasRowSpan
             hasColSpan
           />
@@ -146,7 +149,7 @@ const Home: Component = () => {
           />
           <Shelf
             title='I managed to'
-            description='Proper vocabulary to describe problems / solutions'
+            description='Proper vocabulary to describe problems / solutions.'
           />
           <Shelf
             title='Scalability'
@@ -158,21 +161,24 @@ const Home: Component = () => {
           />
           <Shelf
             title='Well, you know'
-            description='Use simple fillers to fill in pauses in a conversation'
+            description='Use simple fillers to fill in pauses in a conversation.'
             hasColSpan
           />
-          <Shelf title='Produce moderately' description='Lengthy answers' />
+          <Shelf
+            title='Produce moderately'
+            description='Have a positive impact on, meet the deadline.'
+          />
           <Shelf
             title='Speak at a natural pace'
-            description='In a variety of situations not limited by language incompetence'
+            description='In a variety of situations not limited by language incompetence.'
           />
           <Shelf
             title='Speak without strain'
-            description='With substantial natural flow'
+            description='With substantial natural flow.'
           />
           <Shelf
             title='Linking words efficiently'
-            description='To show the relationship between ideas, explain cause and effect'
+            description='To show the relationship between ideas, explain cause and effect.'
           />
         </div>
       </article>

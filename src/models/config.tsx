@@ -14,4 +14,6 @@ export const Category = {
 
 export const CIRCLE_RADIUS = 16;
 
-export const SuperEllipse = 'superellipse flex items-center justify-center';
+export const SuperEllipse =
+  'superellipse icon flex items-center justify-center';
+export const ShapeIcon = 'shape token icon flex justify-center items-center';

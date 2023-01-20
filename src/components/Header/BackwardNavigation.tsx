@@ -1,6 +1,8 @@
 import { Component, onMount } from 'solid-js';
 import { Link } from '@solidjs/router';
 
+import { ShapeIcon } from '../../models/config';
+
 import CloseIcon from '../../assets/icons/close.svg';
 
 export interface BackwardNavigationType {
@@ -21,11 +23,7 @@ const BackwardNavigation: Component<BackwardNavigationType> = ({
       <h1 class='subtitle'>{subtitle}</h1>
 
       {customPath && (
-        <Link
-          href={customPath}
-          class='flex justify-center items-center shape token'
-          aria-label='Go Back'
-        >
+        <Link href={customPath} class={ShapeIcon} aria-label='Go Back'>
           <CloseIcon />
         </Link>
       )}

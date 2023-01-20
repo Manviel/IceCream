@@ -247,6 +247,10 @@ a:focus-visible {
   fill: var(--c-surface);
 }
 
+.icon {
+  padding: 0.6rem;
+}
+
 .products {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.6rem;

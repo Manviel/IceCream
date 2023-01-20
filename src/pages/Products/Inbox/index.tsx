@@ -2,10 +2,11 @@ import { Component } from 'solid-js';
 import { Link } from '@solidjs/router';
 
 import { Paths } from '../../../models';
-
-import TrayIcon from '../../../assets/icons/tray.svg';
+import { ShapeIcon } from '../../../models/config';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
+
+import TrayIcon from '../../../assets/icons/tray.svg';
 
 const Inbox: Component = () => {
   return (
@@ -18,7 +19,7 @@ const Inbox: Component = () => {
           <h3 class='widget-title'>Inbox</h3>
           <p class='widget-main conditions'>1</p>
 
-          <div class='shape token flex items-center justify-center'>
+          <div class={ShapeIcon}>
             <TrayIcon />
           </div>
         </>

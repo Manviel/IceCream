@@ -1,6 +1,8 @@
 import { Component, createSignal, Show, ParentComponent } from 'solid-js';
 import { Dialog, DialogTitle, Description } from 'solid-a11y';
 
+import { ShapeIcon } from '../../../models/config';
+
 import AbstractDialogContent from '../../../components/DialogContent/AbstractDialogContent';
 
 import CloseIcon from '../../../assets/icons/close.svg';
@@ -51,10 +53,7 @@ const Notes: Component = () => {
           <Dialog onClose={setOpen}>
             <SheetContent>
               <DialogTitle class='subtitle'>Notes</DialogTitle>
-              <button
-                class='flex justify-center items-center shape token'
-                onClick={handleClose}
-              >
+              <button class={ShapeIcon} onClick={handleClose}>
                 <CloseIcon />
               </button>
             </SheetContent>
