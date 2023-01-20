@@ -1,5 +1,5 @@
 :root {
-  --c-stock: #00e3961a;
+  --c-stock: #00e396;
   --c-subscription: #b25fea1a;
 }
 
@@ -20,11 +20,14 @@
 
 .widget-chart:hover {
   filter: var(--p-shadow);
-  transform: scale(1.03);
 }
 
 .widget-line circle {
   stroke-width: 0.2rem;
+}
+
+.widget-bar {
+  height: 100%;
 }
 
 .widget-line circle:hover,
@@ -39,12 +42,16 @@ small {
   text-align: center;
 }
 
-#chart-stocks {
-  color: var(--c-stock);
+#chart-stocks .ct-series .ct-point {
+  stroke: var(--c-stock);
 }
 
-#chart-stocks circle {
+#chart-stocks .ct-series .ct-line {
   stroke: var(--c-stock);
+}
+
+#chart-stocks .ct-series .ct-area {
+  fill: var(--c-stock);
 }
 
 #chart-subscriptions {
@@ -53,6 +60,10 @@ small {
 
 #chart-subscriptions circle {
   stroke: var(--c-subscription);
+}
+
+#chart-health .ct-series .ct-bar {
+  stroke: #007aff;
 }
 
 @media screen and (max-width: 768px) {
