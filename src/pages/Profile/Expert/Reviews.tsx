@@ -7,7 +7,6 @@ import ConnectFactory from '../../../components/ConnectFactory';
 
 import PlayNextIcon from '../../../assets/icons/play-next.svg';
 import PlayPrevIcon from '../../../assets/icons/play-prev.svg';
-import PlayFillIcon from '../../../assets/icons/play-fill.svg';
 
 import Results from './Results';
 import Notes from './Notes';
@@ -15,7 +14,7 @@ import Notes from './Notes';
 import 'solid-slider/slider.css';
 
 const Reviews: Component = () => {
-  const [slider, { current, next, prev, moveTo }] = createSlider({
+  const [slider, { current, next, prev }] = createSlider({
     loop: true,
     slides: { perView: 1.2, spacing: 10 },
   });
@@ -24,7 +23,7 @@ const Reviews: Component = () => {
     <>
       <article class='flex col text-center justify-between'>
         <h3 class='info card-sub'>Usage</h3>
-        <p>900 million</p>
+        <p class='move-to'>900 million</p>
 
         <Notes />
       </article>
@@ -39,32 +38,28 @@ const Reviews: Component = () => {
 
       <article class='flex col text-center justify-between'>
         <h3 class='info card-sub'>Ratings</h3>
-        <p>{current() + 1} out of 6</p>
-
-        <nav class='flex justify-between sidebar' aria-label='Candidate'>
-          <button class={SuperEllipse} aria-label='Previous' onClick={prev}>
-            <PlayPrevIcon />
-          </button>
-          <button
-            class={SuperEllipse}
-            aria-label='Auto Play'
-            onClick={() => moveTo(5)}
-          >
-            <PlayFillIcon />
-          </button>
-          <button class={SuperEllipse} aria-label='Next' onClick={next}>
-            <PlayNextIcon />
-          </button>
-        </nav>
-      </article>
-
-      <div class='production flex justify-between'>
-        <h3 class='subtitle'>Elicitation Techs</h3>
 
         <ConnectFactory
           href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
           text='View All'
         />
+
+        <p class='info'>{current() + 1} out of 6</p>
+      </article>
+
+      <div class='production flex justify-between items-center'>
+        <h3 class='subtitle' id='candidate'>
+          Elicitation Techs
+        </h3>
+
+        <nav class='flex justify-between sidebar' aria-labelledby='candidate'>
+          <button class={SuperEllipse} aria-label='Previous' onClick={prev}>
+            <PlayPrevIcon />
+          </button>
+          <button class={SuperEllipse} aria-label='Next' onClick={next}>
+            <PlayNextIcon />
+          </button>
+        </nav>
       </div>
 
       <div class='production' use:slider>
