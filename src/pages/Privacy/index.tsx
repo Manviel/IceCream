@@ -322,7 +322,7 @@ const Privacy: Component = () => {
                 <For each={section.content}>
                   {(content, i) => (
                     <>
-                      {section.titles && (
+                      {section.titles && section.titles[i()] && (
                         <h3 class='info card-sub'>{section.titles[i()]}</h3>
                       )}
                       <p class='info'>{content}</p>

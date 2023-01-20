@@ -11,7 +11,6 @@
   --c-ring: #0066cc;
   --c-grey: #a1a1a6;
   --c-heat: #fa124f;
-  --c-purple: #b25fea;
   --c-glass: #f6f9fc;
   --c-ghost: #ebfff0;
   --c-show: #fce8e6;
@@ -208,7 +207,6 @@ a:focus-visible {
   letter-spacing: 0.4px;
   border-radius: var(--s-dock);
   text-align: center;
-  background-color: var(--c-active);
 }
 
 .token,

@@ -3,10 +3,6 @@
   grid-gap: var(--s-system);
 }
 
-.purple {
-  color: var(--c-purple);
-}
-
 .os-grid {
   grid-template-columns: repeat(6, 1fr);
   grid-gap: var(--s-system);

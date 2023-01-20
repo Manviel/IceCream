@@ -10,9 +10,12 @@
 .card-text {
   display: block;
   font-size: 6.4rem;
-  color: var(--c-olive);
 }
 
 .card-measure {
   font-size: 3rem;
+}
+
+.accent {
+  color: var(--c-olive);
 }

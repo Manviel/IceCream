@@ -27,7 +27,7 @@ const LayeredLevels: Component = () => {
       <For each={listItems}>
         {(item) => (
           <li class='box view rounded flex col'>
-            <strong class='card-sub purple'>{item.label}</strong>
+            <h3 class='card-sub accent'>{item.label}</h3>
             <p class='info'>{item.value}</p>
           </li>
         )}

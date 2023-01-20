@@ -11,6 +11,7 @@
 .widget-main {
   font-size: var(--s-ellipse);
   margin-bottom: 1.6rem;
+  font-weight: normal;
 }
 
 .widget-chart {
