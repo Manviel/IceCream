@@ -17,10 +17,10 @@ const chartID = 'chart-stocks';
 
 const Stocks: Component = () => {
   const { labels, datasets } = useChartSource(source);
-  const { legend, handleHover, getItem } = useLegends(labels, datasets);
+  const { handleHover } = useLegends({ labels, datasets });
 
   onMount(() => {
-    new LineChart(
+    const chart = new LineChart(
       `#${chartID}`,
       {
         labels: labels,
@@ -34,6 +34,14 @@ const Stocks: Component = () => {
         },
       }
     );
+
+    chart.on('draw', (data) => {
+      if (data.type === 'point') {
+        const node = data.element.getNode();
+
+        handleHover(node, data.seriesIndex, '$');
+      }
+    });
   });
 
   return (
@@ -43,13 +51,7 @@ const Stocks: Component = () => {
         <p class='term'>Average price is ${average(datasets)}</p>
       </div>
 
-      <div
-        id={chartID}
-        class='conditions widget-line'
-        role='presentation'
-        aria-label='AAPL'
-      />
-      <small class='form-group'>Selected - {getItem(legend())}$</small>
+      <section id={chartID} class='conditions widget-line' aria-label='AAPL' />
     </article>
   );
 };

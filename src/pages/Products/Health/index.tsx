@@ -23,10 +23,10 @@ const chartID = 'chart-health';
 
 const Health: Component = () => {
   const { labels, datasets } = useChartSource(source);
-  const { legend, handleHover, getItem } = useLegends(labels, datasets);
+  const { handleHover } = useLegends({ labels, datasets });
 
   onMount(() => {
-    new BarChart(
+    const chart = new BarChart(
       `#${chartID}`,
       {
         labels: labels,
@@ -39,6 +39,14 @@ const Health: Component = () => {
         },
       }
     );
+
+    chart.on('draw', (data) => {
+      if (data.type === 'bar') {
+        const node = data.element.getNode();
+
+        handleHover(node, data.seriesIndex, 'gm');
+      }
+    });
   });
 
   return (
@@ -50,13 +58,7 @@ const Health: Component = () => {
         </p>
       </div>
 
-      <div
-        id={chartID}
-        class='conditions widget-bar'
-        role='presentation'
-        aria-label='Food'
-      />
-      <small class='form-group'>Selected - {getItem(legend())}gm</small>
+      <section id={chartID} class='conditions widget-bar' aria-label='Food' />
     </article>
   );
 };

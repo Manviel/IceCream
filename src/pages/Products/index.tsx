@@ -23,8 +23,8 @@ const Products: Component = () => {
         <Inbox />
         <Stocks />
         <Health />
-        {/* <Promotions />
-        <Subscriptions /> */}
+        <Promotions />
+        <Subscriptions />
       </div>
 
       <NewsFeed />

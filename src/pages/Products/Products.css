@@ -1,6 +1,9 @@
 :root {
   --c-stock: #00e396;
-  --c-subscription: #b25fea1a;
+  --c-blue: #007aff;
+  --c-subscription: #b25fea;
+  --c-neon: #04de71;
+  --p-shadow: drop-shadow(0px 0px 30px var(--c-dark));
 }
 
 .widget-title {
@@ -22,24 +25,23 @@
   filter: var(--p-shadow);
 }
 
-.widget-line circle {
-  stroke-width: 0.2rem;
+.ct-label {
+  color: var(--c-surface);
 }
 
-.widget-bar {
-  height: 100%;
+.ct-grid {
+  stroke: var(--c-action);
 }
 
-.widget-line circle:hover,
-.widget-line circle:focus,
-.widget-bar path:hover,
-.widget-bar path:focus {
+.widget-bar .ct-bar {
+  stroke-width: 8%;
+}
+
+.widget-line .ct-point:hover,
+.widget-line .ct-point:focus,
+.widget-bar .ct-bar:hover,
+.widget-bar .ct-bar:focus {
   filter: contrast(90%) brightness(125%) saturate(110%);
-}
-
-small {
-  font-size: 1.2rem;
-  text-align: center;
 }
 
 #chart-stocks .ct-series .ct-point {
@@ -54,24 +56,28 @@ small {
   fill: var(--c-stock);
 }
 
-#chart-subscriptions {
-  color: var(--c-subscription);
+#chart-health .ct-series .ct-bar {
+  stroke: var(--c-blue);
 }
 
-#chart-subscriptions circle {
+#chart-promotions .ct-series .ct-bar {
+  stroke: var(--c-neon);
+}
+
+#chart-subscriptions .ct-series .ct-point {
   stroke: var(--c-subscription);
 }
 
-#chart-health .ct-series .ct-bar {
-  stroke: #007aff;
+#chart-subscriptions .ct-series .ct-line {
+  stroke: var(--c-subscription);
+}
+
+#chart-subscriptions .ct-series .ct-area {
+  fill: var(--c-subscription);
 }
 
 @media screen and (max-width: 768px) {
   .widget-chart {
     grid-column: span 2;
-  }
-
-  .widget-line circle {
-    stroke-width: var(--s-dock);
   }
 }
