@@ -39,7 +39,7 @@ const Stocks: Component = () => {
       if (data.type === 'point') {
         const node = data.element.getNode();
 
-        handleHover(node, data.seriesIndex, '$');
+        handleHover(node, data.index, '$');
       }
     });
   });

@@ -18,7 +18,7 @@
 }
 
 .widget-chart {
-  transition: filter 0.36s, transform 0.34s cubic-bezier(0.666, 0, 0.4, 1);
+  transition: filter 0.4s cubic-bezier(0.666, 0, 0.4, 1);
 }
 
 .widget-chart:hover {
@@ -31,6 +31,10 @@
 
 .ct-grid {
   stroke: var(--c-action);
+}
+
+.widget-line .ct-point {
+  stroke-width: var(--s-system);
 }
 
 .widget-bar .ct-bar {
