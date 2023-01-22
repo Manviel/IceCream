@@ -19,3 +19,7 @@ export interface ListItemGen<T> {
   label: string;
   value: T;
 }
+
+export interface IDType {
+  id: string;
+}

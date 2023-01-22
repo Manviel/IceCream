@@ -2,12 +2,13 @@ import { ParentComponent } from 'solid-js';
 
 import ConnectFactory from '../../components/ConnectFactory';
 
-type ArticleType = {
+import { IDType } from '../../models';
+
+interface ArticleType extends IDType {
   name: string;
   href: string;
-  id: string;
   date: string;
-};
+}
 
 const Article: ParentComponent<ArticleType> = ({
   name,
