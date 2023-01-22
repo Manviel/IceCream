@@ -10,6 +10,7 @@ import Vault from './Vault';
 import Promotions from './Promotions';
 import Subscriptions from './Subscriptions';
 
+import 'chartist/dist/index.css';
 import './Products.css';
 
 const Products: Component = () => {

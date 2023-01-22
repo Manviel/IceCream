@@ -37,7 +37,7 @@ const Vault: Component = () => {
         <>
           <h3 class='widget-title'>Vault</h3>
 
-          <p class='term grey'>Up to 12 months</p>
+          <p class='term grey-dark'>Up to 12 months</p>
 
           <div class='grid products conditions items-center'>
             <div
@@ -65,7 +65,7 @@ const Vault: Component = () => {
 
             <article class='flex col context'>
               <h4 class='sum'>{commasAdapter(budget())}</h4>
-              <h5 class='term grey'>{progress}%</h5>
+              <h5 class='term grey-dark'>{progress}%</h5>
               <h6 class='accrued'>+{commasAdapter(income())}</h6>
             </article>
           </div>

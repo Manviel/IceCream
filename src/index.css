@@ -23,7 +23,6 @@
   --s-screen: 3.4rem;
   --s-entry: 4rem;
   --p-blur: blur(20px) saturate(180%);
-  --p-shadow: drop-shadow(0px 0px 30px var(--c-dark));
 }
 
 html {
@@ -180,18 +179,20 @@ a:focus-visible {
 }
 
 .on-scroll {
-  opacity: 0.01;
   transform: translateY(var(--s-ellipse));
-  transition: 0.4s opacity, 0.8s transform cubic-bezier(0.07, 0.89, 0.79, 0.95);
+  transition: 0.8s transform cubic-bezier(0.07, 0.89, 0.79, 0.95);
 }
 
 .animate {
-  opacity: 1;
   transform: translateY(0);
 }
 
-.grey {
+.grey-dark {
   color: var(--c-grey);
+}
+
+.grey-light {
+  color: var(--c-surface);
 }
 
 .box {

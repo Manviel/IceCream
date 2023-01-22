@@ -1,10 +1,3 @@
-export enum ChartColors {
-  Blue = '#007AFF',
-  Green = '#00e396',
-  Purple = '#b25fea',
-  Neon = '#04DE71',
-}
-
 export enum Paths {
   Home = '/',
   Products = '/products',
@@ -25,4 +18,8 @@ export interface SegregationType {
 export interface ListItemGen<T> {
   label: string;
   value: T;
+}
+
+export interface IDType {
+  id: string;
 }
