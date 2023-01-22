@@ -1,8 +1,10 @@
-import { Component, onMount } from 'solid-js';
-import { BarChart } from 'chartist';
+import { Component } from 'solid-js';
 
 import { total } from '../../../services/utils';
-import { useChartSource, useLegends } from '../charts';
+
+import { ChartTypes } from '../Charts';
+import { useChartSource } from '../Charts/Context';
+import ChartStrategy from '../Charts/ChartStrategy';
 
 const source = {
   Eggs: 6.3,
@@ -22,44 +24,18 @@ const source = {
 const chartID = 'chart-health';
 
 const Health: Component = () => {
-  const { labels, datasets } = useChartSource(source);
-  const { handleHover } = useLegends({ labels, datasets });
-
-  onMount(() => {
-    const chart = new BarChart(
-      `#${chartID}`,
-      {
-        labels: labels,
-        series: datasets,
-      },
-      {
-        distributeSeries: true,
-        axisX: {
-          showGrid: false,
-        },
-      }
-    );
-
-    chart.on('draw', (data) => {
-      if (data.type === 'bar') {
-        const node = data.element.getNode();
-
-        handleHover(node, data.seriesIndex, 'gm');
-      }
-    });
-  });
+  const { datasets } = useChartSource(source);
 
   return (
-    <article class='layer rounded flex col widget-chart'>
-      <div class='view'>
-        <h3 class='widget-title'>Health</h3>
-        <p class='term'>
-          Total protein is equal to {Math.round(total(datasets))}gm
-        </p>
-      </div>
-
-      <section id={chartID} class='conditions widget-bar' aria-label='Food' />
-    </article>
+    <ChartStrategy
+      isDark={false}
+      strategy={ChartTypes.Bar}
+      id={chartID}
+      title='Health'
+      description={`Total protein is equal to ${Math.round(total(datasets))}gm`}
+      ariaLabel='Food'
+      source={source}
+    />
   );
 };
 

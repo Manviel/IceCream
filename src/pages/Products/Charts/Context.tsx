@@ -6,9 +6,9 @@ type ChartSource = {
 export const useLegends = ({ labels, datasets }: ChartSource) => {
   const getItem = (index: number) => `${labels[index]}: ${datasets[index]}`;
 
-  const handleHover = (node: Element, pos: number, legend: string) => {
+  const handleHover = (node: Element, pos: number) => {
     node.setAttribute('tabindex', '0');
-    node.setAttribute('aria-label', `${getItem(pos)} ${legend}`);
+    node.setAttribute('aria-label', getItem(pos));
   };
 
   return { handleHover, getItem };

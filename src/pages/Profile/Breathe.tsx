@@ -8,7 +8,7 @@ import './Breathe.css';
 const Breathe: Component = () => (
   <article class='box view rounded screen flex col items-center'>
     <h3 class='subtitle'>The future of health</h3>
-    <p class='grey info'>Inhale and Exhale</p>
+    <p class='grey-dark info'>Inhale and Exhale</p>
     <ul class='breathe'>
       <li class='circle'></li>
       <li class='circle'></li>
@@ -17,7 +17,7 @@ const Breathe: Component = () => (
       <li class='circle'></li>
       <li class='circle'></li>
     </ul>
-    <p class='grey info'>
+    <p class='grey-dark info'>
       Taking moments throughout the day to stop, relax, and practice mindfulness
       can help reduce stress and improve overall health.
     </p>

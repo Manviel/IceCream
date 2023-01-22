@@ -1,8 +1,10 @@
-import { Component, onMount } from 'solid-js';
-import { LineChart } from 'chartist';
+import { Component } from 'solid-js';
 
 import { average } from '../../../services/utils';
-import { useChartSource, useLegends } from '../charts';
+
+import { ChartTypes } from '../Charts';
+import { useChartSource } from '../Charts/Context';
+import ChartStrategy from '../Charts/ChartStrategy';
 
 const source = {
   Ipsy: 10,
@@ -22,47 +24,18 @@ const source = {
 const chartID = 'chart-subscriptions';
 
 const Subscriptions: Component = () => {
-  const { labels, datasets } = useChartSource(source);
-  const { handleHover, getItem } = useLegends({ labels, datasets });
-
-  onMount(() => {
-    const chart = new LineChart(
-      `#${chartID}`,
-      {
-        labels: labels,
-        series: [datasets],
-      },
-      {
-        showArea: true,
-        fullWidth: true,
-        axisX: {
-          showGrid: false,
-        },
-      }
-    );
-
-    chart.on('draw', (data) => {
-      if (data.type === 'point') {
-        const node = data.element.getNode();
-
-        handleHover(node, data.index, '$');
-      }
-    });
-  });
+  const { datasets } = useChartSource(source);
 
   return (
-    <article class='layer rounded flex col widget-chart'>
-      <div class='view'>
-        <h3 class='widget-title'>Subscriptions</h3>
-        <p class='term'>Average fee is ${Math.round(average(datasets))}</p>
-      </div>
-
-      <section
-        id={chartID}
-        class='conditions widget-line'
-        aria-label='Services'
-      />
-    </article>
+    <ChartStrategy
+      isDark={false}
+      strategy={ChartTypes.Line}
+      id={chartID}
+      title='Subscriptions'
+      description={`Average fee is $${Math.round(average(datasets))}`}
+      ariaLabel='Services'
+      source={source}
+    />
   );
 };
 

@@ -15,7 +15,7 @@ const Shelf: Component<ProtoType> = ({
 }) => (
   <div class='os' classList={{ 'os-column': hasColSpan, 'os-row': hasRowSpan }}>
     <strong class='os-title'>{title}</strong>
-    <p class='os-value'>{description}</p>
+    <p class='os-value grey-light'>{description}</p>
   </div>
 );
 

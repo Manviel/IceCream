@@ -1,8 +1,10 @@
-import { Component, onMount } from 'solid-js';
-import { BarChart } from 'chartist';
+import { Component } from 'solid-js';
 
 import { sortByAsc } from '../../../services/utils';
-import { useChartSource, useLegends } from '../charts';
+
+import { ChartTypes } from '../Charts';
+import { useChartSource } from '../Charts/Context';
+import ChartStrategy from '../Charts/ChartStrategy';
 
 const source = {
   '0:00': 1,
@@ -20,50 +22,21 @@ const chartID = 'chart-promotions';
 const sortByMaxValue = (obj: {}, pos: number) => sortByAsc(obj)[pos];
 
 const Promotions: Component = () => {
-  const { labels, datasets } = useChartSource(source);
-  const { handleHover } = useLegends({ labels, datasets });
-
-  onMount(() => {
-    const chart = new BarChart(
-      `#${chartID}`,
-      {
-        labels: labels,
-        series: datasets,
-      },
-      {
-        distributeSeries: true,
-        axisX: {
-          showGrid: false,
-        },
-      }
-    );
-
-    chart.on('draw', (data) => {
-      if (data.type === 'bar') {
-        const node = data.element.getNode();
-
-        handleHover(node, data.seriesIndex, '%');
-      }
-    });
-  });
+  const { datasets } = useChartSource(source);
 
   return (
-    <article class='box rounded flex col widget-chart'>
-      <div class='view'>
-        <h3 class='widget-title'>Promotions</h3>
-        <p class='term grey'>
-          Most productive hours from{' '}
-          {sortByMaxValue(source, datasets.length - 1)[0]} to{' '}
-          {sortByMaxValue(source, datasets.length - 2)[0]}
-        </p>
-      </div>
-
-      <section
-        id={chartID}
-        class='conditions widget-bar'
-        aria-label='Timeline'
-      />
-    </article>
+    <ChartStrategy
+      isDark
+      strategy={ChartTypes.Bar}
+      id={chartID}
+      title='Promotions'
+      description={`Most productive hours from ${
+        sortByMaxValue(source, datasets.length - 1)[0]
+      } to 
+        ${sortByMaxValue(source, datasets.length - 2)[0]}`}
+      ariaLabel='Food'
+      source={source}
+    />
   );
 };
 

@@ -22,7 +22,6 @@
 .os-value {
   font-size: 1.5rem;
   margin-top: var(--s-safe);
-  color: var(--c-surface);
 }
 
 .os-column {

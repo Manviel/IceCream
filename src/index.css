@@ -187,8 +187,12 @@ a:focus-visible {
   transform: translateY(0);
 }
 
-.grey {
+.grey-dark {
   color: var(--c-grey);
+}
+
+.grey-light {
+  color: var(--c-surface);
 }
 
 .box {
