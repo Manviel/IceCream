@@ -1,9 +1,8 @@
 :root {
-  --c-stock: #00e396;
   --c-blue: #007aff;
   --c-subscription: #b25fea;
   --c-neon: #04de71;
-  --p-shadow: drop-shadow(0px 0px 30px var(--c-dark));
+  --p-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .widget-title {
@@ -18,11 +17,11 @@
 }
 
 .widget-chart {
-  transition: filter 0.4s cubic-bezier(0.666, 0, 0.4, 1);
+  transition: box-shadow 0.4s cubic-bezier(0.666, 0, 0.4, 1);
 }
 
 .widget-chart:hover {
-  filter: var(--p-shadow);
+  box-shadow: var(--p-shadow);
 }
 
 .ct-label {
@@ -49,15 +48,15 @@
 }
 
 #chart-stocks .ct-series .ct-point {
-  stroke: var(--c-stock);
+  stroke: var(--c-neon);
 }
 
 #chart-stocks .ct-series .ct-line {
-  stroke: var(--c-stock);
+  stroke: var(--c-neon);
 }
 
 #chart-stocks .ct-series .ct-area {
-  fill: var(--c-stock);
+  fill: var(--c-neon);
 }
 
 #chart-health .ct-series .ct-bar {
