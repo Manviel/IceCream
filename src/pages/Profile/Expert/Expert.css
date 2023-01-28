@@ -37,10 +37,6 @@
   background-color: var(--c-active);
 }
 
-.sidebar {
-  gap: var(--s-system);
-}
-
 .production {
   grid-column: span 4;
 }
@@ -89,7 +85,9 @@
 }
 
 @media screen and (max-width: 768px) {
-  .expert {
+  .expert,
+  .toolbar,
+  .portfolio {
     grid-template-columns: 1fr;
   }
 
@@ -99,10 +97,6 @@
 
   .right-edge {
     margin: var(--s-unit);
-  }
-
-  .toolbar {
-    grid-template-columns: 1fr;
   }
 }
 

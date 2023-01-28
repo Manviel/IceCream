@@ -298,6 +298,10 @@ a:focus-visible {
   margin-top: 1.6rem;
 }
 
+.gap {
+  gap: var(--s-system);
+}
+
 @media screen and (max-width: 768px) {
   body {
     padding-bottom: 9.2rem;

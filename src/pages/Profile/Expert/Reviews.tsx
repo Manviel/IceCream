@@ -52,7 +52,7 @@ const Reviews: Component = () => {
           Elicitation Tech
         </h3>
 
-        <nav class='flex justify-between sidebar' aria-labelledby='candidate'>
+        <nav class='flex justify-between gap' aria-labelledby='candidate'>
           <button class={SuperEllipse} aria-label='Previous' onClick={prev}>
             <PlayPrevIcon />
           </button>

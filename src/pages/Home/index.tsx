@@ -42,7 +42,7 @@ const Home: Component = () => {
           among them work mostly independently of each other.
         </p>
 
-        <div class='grid home-stats'>
+        <div class='grid home-stats gap'>
           <Card
             title='Up to'
             number={randomInRange(11, 98)}
@@ -105,7 +105,7 @@ const Home: Component = () => {
           tiny pieces of the system each able to complete a simple distinct job.
         </p>
 
-        <div class='grid os-grid'>
+        <div class='grid os-grid gap'>
           <Shelf
             title='Get USED TO'
             description='To talk about the process of becoming familiar with something.'

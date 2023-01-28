@@ -5,11 +5,14 @@ import Field from '../../../../components/Field';
 
 const Growth: Component = () => {
   const [budget, setBudget] = createSignal(1000);
+  const [ticker, setTicker] = createSignal('');
 
   const handleChange = ({ target }: any) => setBudget(target.value);
 
+  const handleText = ({ target }: any) => setTicker(target.value);
+
   return (
-    <div class='grid toolbar'>
+    <div class='grid products portfolio'>
       <Field
         name='price-data'
         label='Price (in $)'
@@ -63,6 +66,14 @@ const Growth: Component = () => {
         step={200}
         max={100000}
         onChange={handleChange}
+      />
+
+      <Field
+        name='ticker'
+        label='Ticker'
+        type='text'
+        value={ticker()}
+        onChange={handleText}
       />
 
       <Card title='Fair Price' number={0} measure='$' description='' />

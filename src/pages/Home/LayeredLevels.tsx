@@ -23,7 +23,7 @@ const listItems: ListItemGen<string>[] = [
 
 const LayeredLevels: Component = () => {
   return (
-    <ul class='grid home-stats items-start'>
+    <ul class='grid home-stats gap items-start'>
       <For each={listItems}>
         {(item) => (
           <li class='box view rounded flex col'>
