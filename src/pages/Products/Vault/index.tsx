@@ -36,10 +36,9 @@ const Vault: Component = () => {
       triggerContent={
         <>
           <h3 class='widget-title'>Vault</h3>
-
           <p class='term grey-dark'>Up to 12 months</p>
 
-          <div class='grid products conditions items-center'>
+          <div class='grid products provision items-center'>
             <div
               class='activity'
               role='progressbar'

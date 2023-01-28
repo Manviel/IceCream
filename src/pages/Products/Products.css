@@ -2,7 +2,6 @@
   --c-blue: #007aff;
   --c-subscription: #b25fea;
   --c-neon: #04de71;
-  --p-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .widget-title {
@@ -14,14 +13,6 @@
   font-size: var(--s-ellipse);
   margin-bottom: 1.6rem;
   font-weight: normal;
-}
-
-.widget-chart {
-  transition: box-shadow 0.4s cubic-bezier(0.666, 0, 0.4, 1);
-}
-
-.widget-chart:hover {
-  box-shadow: var(--p-shadow);
 }
 
 .ct-label {

@@ -23,7 +23,7 @@ const Reviews: Component = () => {
     <>
       <article class='flex col text-center justify-between'>
         <h3 class='info card-sub'>Usage</h3>
-        <p class='move-to'>900 million</p>
+        <p>900 million</p>
 
         <Notes />
       </article>
@@ -49,7 +49,7 @@ const Reviews: Component = () => {
 
       <div class='production flex justify-between items-center'>
         <h3 class='subtitle' id='candidate'>
-          Elicitation Techs
+          Elicitation Tech
         </h3>
 
         <nav class='flex justify-between sidebar' aria-labelledby='candidate'>

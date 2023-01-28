@@ -5,7 +5,7 @@ import { ChartIDType } from '../Charts';
 import { useChartSource, useLegends } from './Context';
 
 const BarStrategy: Component<ChartIDType> = (props) => {
-  const { id, ariaLabel, source } = props;
+  const { id, source } = props;
 
   const { labels, datasets } = useChartSource(source);
   const { handleHover } = useLegends({ labels, datasets });
@@ -34,9 +34,7 @@ const BarStrategy: Component<ChartIDType> = (props) => {
     });
   });
 
-  return (
-    <section id={id} class='conditions widget-bar' aria-label={ariaLabel} />
-  );
+  return <figure id={id} class='provision widget-bar' />;
 };
 
 export default BarStrategy;
