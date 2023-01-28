@@ -3,27 +3,29 @@ import { Tab, TabGroup, TabPanel, Tabs } from 'solid-a11y';
 
 import { Paths, ListItemGen } from '../../../models';
 
-import Card from '../../../components/Card';
 import PageDecorator from '../../../components/PageDecorator';
 
-import Reviews from './Reviews';
+import Review from './Tabs/Review';
+import Growth from './Tabs/Growth';
 
 import './Expert.css';
 
-const listItems: ListItemGen<number>[] = [
-  {
-    label: 'Ready',
-    value: 1,
-  },
-  {
-    label: 'In Progress',
-    value: 2,
-  },
-  {
-    label: 'Done',
-    value: 3,
-  },
-];
+const OverviewTab = {
+  label: 'Ready',
+  value: 1,
+};
+
+const GrowthTab = {
+  label: 'In Progress',
+  value: 2,
+};
+
+const DividendTab = {
+  label: 'Done',
+  value: 3,
+};
+
+const listItems: ListItemGen<number>[] = [OverviewTab, GrowthTab, DividendTab];
 
 const Expert: Component = () => {
   return (
@@ -45,21 +47,22 @@ const Expert: Component = () => {
               )}
             </For>
           </Tabs>
-          <For each={listItems}>
-            {(item) => (
-              <TabPanel index={item.value} class='view production right-edge'>
-                <div class='grid toolbar'>
-                  <Card
-                    title='Position'
-                    number={item.value}
-                    description='Coming Soon'
-                  />
 
-                  <Reviews />
-                </div>
-              </TabPanel>
-            )}
-          </For>
+          <TabPanel
+            index={OverviewTab.value}
+            class='view production right-edge'
+          >
+            <Review />
+          </TabPanel>
+          <TabPanel index={GrowthTab.value} class='view production right-edge'>
+            <Growth />
+          </TabPanel>
+          <TabPanel
+            index={DividendTab.value}
+            class='view production right-edge'
+          >
+            <Review />
+          </TabPanel>
         </TabGroup>
       </div>
     </PageDecorator>
