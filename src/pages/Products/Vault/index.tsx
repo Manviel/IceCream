@@ -1,6 +1,7 @@
 import { Component, createSignal, createEffect } from 'solid-js';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
+import Field from '../../../components/Field';
 
 import { commasAdapter, randomInRange } from '../../../services/utils';
 
@@ -72,22 +73,16 @@ const Vault: Component = () => {
       }
       triggerClassName='view box rounded flex col items-start'
     >
-      <div class='flex col form-group'>
-        <label for='budget' class='form-control'>
-          Sum:
-        </label>
-        <input
-          id='budget'
-          type='number'
-          name='budget'
-          class='form-control form-action'
-          value={budget()}
-          min={1000}
-          step={200}
-          max={100000}
-          onChange={handleChange}
-        />
-      </div>
+      <Field
+        name='budget'
+        label='Sum'
+        type='number'
+        value={budget()}
+        min={1000}
+        step={200}
+        max={100000}
+        onChange={handleChange}
+      />
     </DialogFacade>
   );
 };

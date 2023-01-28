@@ -1,0 +1,14 @@
+.form-group {
+  margin: var(--s-medium) 0;
+}
+
+.form-control {
+  padding: 0.9rem var(--s-safe);
+  font-size: 1.6rem;
+}
+
+.form-action {
+  background-color: var(--c-action);
+  border-radius: 1.2rem;
+  border: 0;
+}
