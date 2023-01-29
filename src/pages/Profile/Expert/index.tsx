@@ -7,6 +7,7 @@ import PageDecorator from '../../../components/PageDecorator';
 
 import Review from './Tabs/Review';
 import Growth from './Tabs/Growth';
+import Dividend from './Tabs/Dividend';
 
 import './Expert.css';
 
@@ -61,7 +62,7 @@ const Expert: Component = () => {
             index={DividendTab.value}
             class='view production right-edge'
           >
-            <Review />
+            <Dividend />
           </TabPanel>
         </TabGroup>
       </div>
