@@ -12,17 +12,17 @@ import Dividend from './Tabs/Dividend';
 import './Expert.css';
 
 const OverviewTab = {
-  label: 'Ready',
+  label: 'Overview',
   value: 1,
 };
 
 const GrowthTab = {
-  label: 'In Progress',
+  label: 'Growth',
   value: 2,
 };
 
 const DividendTab = {
-  label: 'Done',
+  label: 'Dividend',
   value: 3,
 };
 

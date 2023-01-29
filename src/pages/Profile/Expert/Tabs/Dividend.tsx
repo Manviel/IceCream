@@ -17,8 +17,6 @@ const Dividend: Component = () => {
   const [store, setStore] = createStore({
     priceData: 143.66,
     sharesOut: 16030,
-    dividend: 0.92,
-    dividendPercent: 0,
     netIncome: 99800,
     netIncomeGrowth: 8.28,
     roe: 160.9,
@@ -28,14 +26,13 @@ const Dividend: Component = () => {
   });
 
   createEffect(() => {
-    const dividendPercent = store.priceData / store.dividend;
     const fairPriceCost =
-      (store.pb * store.netIncome * (1 + store.netIncomeGrowth)) /
-      store.roe /
+      (store.pb * store.netIncome * (1 + store.netIncomeGrowth / 100)) /
+      (store.roe / 100) /
       store.sharesOut;
-    const fairPricePercent = fairPriceCost / (store.priceData - 1);
+    const fairPricePercent = fairPriceCost / store.priceData - 1;
 
-    setStore({ dividendPercent, fairPriceCost, fairPricePercent });
+    setStore({ fairPriceCost, fairPricePercent });
   });
 
   const handleChange = ({ target }: any) =>
@@ -66,30 +63,8 @@ const Dividend: Component = () => {
       />
 
       <Field
-        name='dividend'
-        label='Dividents (in $)'
-        type='number'
-        value={store.dividend}
-        min={MIN_PERCENT}
-        step={STEP}
-        max={MAX_PERCENT}
-        onChange={handleChange}
-      />
-
-      <Field
-        name='dividendPercent'
-        label='Dividents (in %)'
-        type='number'
-        value={store.dividendPercent}
-        min={MIN_PERCENT}
-        step={STEP}
-        max={MAX_PERCENT}
-        onChange={handleChange}
-      />
-
-      <Field
         name='netIncome'
-        label='Income'
+        label='Income (in M)'
         type='number'
         value={store.netIncome}
         min={MIN_COST}
@@ -141,7 +116,7 @@ const Dividend: Component = () => {
       <div class='price view rounded'>
         <p>Fair Price (in %)</p>
         <strong class='box-description'>
-          {store.fairPricePercent.toFixed(2)}
+          {(store.fairPricePercent * 100).toFixed(2)}
         </strong>
       </div>
     </div>

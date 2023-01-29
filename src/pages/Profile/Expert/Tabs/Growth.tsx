@@ -20,15 +20,16 @@ const Growth: Component = () => {
     revenue: 394330,
     revenueGrowth: 11.5,
     ps: 5.67,
-    ticker: 'AAPL',
     fairPriceCost: 0,
     fairPricePercent: 0,
+    ticker: 'AAPL',
   });
 
   createEffect(() => {
     const fairPriceCost =
-      (store.revenue * (1 + store.revenueGrowth) * store.ps) / store.sharesOut;
-    const fairPricePercent = fairPriceCost / (store.priceData - 1);
+      (store.revenue * (1 + store.revenueGrowth / 100) * store.ps) /
+      store.sharesOut;
+    const fairPricePercent = fairPriceCost / store.priceData - 1;
 
     setStore({ fairPriceCost, fairPricePercent });
   });
@@ -111,7 +112,7 @@ const Growth: Component = () => {
       <div class='document view rounded'>
         <p>Fair Price (in %)</p>
         <strong class='box-description'>
-          {store.fairPricePercent.toFixed(2)}
+          {(store.fairPricePercent * 100).toFixed(2)}
         </strong>
       </div>
     </div>
