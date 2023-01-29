@@ -26,7 +26,7 @@
 }
 
 .tour-list-item {
-  padding: var(--s-unit) 1rem;
+  padding: var(--s-unit) 1rem var(--s-unit) var(--s-safe);
   font-size: inherit;
   background-color: transparent;
   border-radius: var(--s-unit);

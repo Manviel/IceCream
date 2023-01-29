@@ -11,7 +11,7 @@ const Field: Component<FieldType> = (props) => {
 
   return (
     <div class='flex col form-group'>
-      <label for={name} class='form-control'>
+      <label for={name} class='form-label'>
         {label}
       </label>
       <input {...rest} id={name} name={name} class='form-control form-action' />

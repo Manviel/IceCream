@@ -15,3 +15,9 @@ export const Category = {
 export const SuperEllipse =
   'superellipse icon flex items-center justify-center';
 export const ShapeIcon = 'shape token icon flex justify-center items-center';
+
+export const MIN_PERCENT = -100;
+export const MAX_PERCENT = 300;
+export const MIN_COST = 0;
+export const MAX_COST = 900000;
+export const STEP = 2;

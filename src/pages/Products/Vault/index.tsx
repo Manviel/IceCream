@@ -5,6 +5,8 @@ import Field from '../../../components/Field';
 
 import { commasAdapter, randomInRange } from '../../../services/utils';
 
+import { MIN_COST, MAX_COST, STEP } from '../../../models/config';
+
 import './Vault.css';
 
 const Vault: Component = () => {
@@ -78,9 +80,9 @@ const Vault: Component = () => {
         label='Sum'
         type='number'
         value={budget()}
-        min={1000}
-        step={200}
-        max={100000}
+        min={MIN_COST}
+        step={STEP}
+        max={MAX_COST}
         onChange={handleChange}
       />
     </DialogFacade>

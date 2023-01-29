@@ -1,37 +1,62 @@
-import { Component, createSignal } from 'solid-js';
+import { Component, createEffect } from 'solid-js';
+import { createStore } from 'solid-js/store';
 
-import Card from '../../../../components/Card';
 import Field from '../../../../components/Field';
 
+import {
+  MIN_PERCENT,
+  MAX_PERCENT,
+  MIN_COST,
+  MAX_COST,
+  STEP,
+} from '../../../../models/config';
+
+import '../../Profile.css';
+
 const Growth: Component = () => {
-  const [budget, setBudget] = createSignal(1000);
-  const [ticker, setTicker] = createSignal('');
+  const [store, setStore] = createStore({
+    priceData: 143.66,
+    sharesOut: 16030,
+    revenue: 394330,
+    revenueGrowth: 11.5,
+    ps: 5.67,
+    ticker: 'AAPL',
+    fairPriceCost: 0,
+    fairPricePercent: 0,
+  });
 
-  const handleChange = ({ target }: any) => setBudget(target.value);
+  createEffect(() => {
+    const fairPriceCost =
+      (store.revenue * (1 + store.revenueGrowth) * store.ps) / store.sharesOut;
+    const fairPricePercent = fairPriceCost / (store.priceData - 1);
 
-  const handleText = ({ target }: any) => setTicker(target.value);
+    setStore({ fairPriceCost, fairPricePercent });
+  });
+
+  const handleChange = ({ target }: any) =>
+    setStore({ [target.name]: target.value });
 
   return (
     <div class='grid products portfolio'>
       <Field
-        name='price-data'
+        name='priceData'
         label='Price (in $)'
         type='number'
-        value={budget()}
-        min={1000}
-        step={200}
-        max={100000}
+        value={store.priceData}
+        min={MIN_COST}
+        step={STEP}
+        max={MAX_COST}
         onChange={handleChange}
       />
 
       <Field
-        name='shares-out'
+        name='sharesOut'
         label='Shares Outstanding (in M)'
         type='number'
-        value={budget()}
-        min={1000}
-        step={200}
-        max={100000}
+        value={store.sharesOut}
+        min={MIN_COST}
+        step={STEP}
+        max={MAX_COST}
         onChange={handleChange}
       />
 
@@ -39,32 +64,32 @@ const Growth: Component = () => {
         name='revenue'
         label='Sales (in M)'
         type='number'
-        value={budget()}
-        min={1000}
-        step={200}
-        max={100000}
+        value={store.revenue}
+        min={MIN_COST}
+        step={STEP}
+        max={MAX_COST}
         onChange={handleChange}
       />
 
       <Field
-        name='revenue-growth'
+        name='revenueGrowth'
         label='Sales past 5Y (in %)'
         type='number'
-        value={budget()}
-        min={1000}
-        step={200}
-        max={100000}
+        value={store.revenueGrowth}
+        min={MIN_PERCENT}
+        step={STEP}
+        max={MAX_PERCENT}
         onChange={handleChange}
       />
 
       <Field
-        name='p-s'
+        name='ps'
         label='P / S'
         type='number'
-        value={budget()}
-        min={1000}
-        step={200}
-        max={100000}
+        value={store.ps}
+        min={MIN_PERCENT}
+        step={STEP}
+        max={MAX_PERCENT}
         onChange={handleChange}
       />
 
@@ -72,12 +97,23 @@ const Growth: Component = () => {
         name='ticker'
         label='Ticker'
         type='text'
-        value={ticker()}
-        onChange={handleText}
+        value={store.ticker}
+        onChange={handleChange}
       />
 
-      <Card title='Fair Price' number={0} measure='$' description='' />
-      <Card title='Fair Price' number={1} measure='%' description='' />
+      <div class='ghost view rounded'>
+        <p>Fair Price (in $)</p>
+        <strong class='box-description'>
+          {store.fairPriceCost.toFixed(2)}
+        </strong>
+      </div>
+
+      <div class='document view rounded'>
+        <p>Fair Price (in %)</p>
+        <strong class='box-description'>
+          {store.fairPricePercent.toFixed(2)}
+        </strong>
+      </div>
     </div>
   );
 };

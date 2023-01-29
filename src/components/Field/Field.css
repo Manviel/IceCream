@@ -1,5 +1,5 @@
 .form-group {
-  margin: var(--s-medium) 0;
+  margin: var(--s-medium) 0 var(--s-unit);
 }
 
 .form-control {
@@ -9,6 +9,11 @@
 
 .form-action {
   background-color: var(--c-action);
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   border: 0;
+}
+
+.form-label {
+  font-size: var(--s-system);
+  padding: 0.9rem 1rem;
 }
