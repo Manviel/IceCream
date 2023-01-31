@@ -26,7 +26,7 @@
 }
 
 .tour-list-item {
-  padding: var(--s-unit) 1rem;
+  padding: var(--s-unit) 1rem var(--s-unit) var(--s-safe);
   font-size: inherit;
   background-color: transparent;
   border-radius: var(--s-unit);
@@ -35,10 +35,6 @@
 .tour-list-item:hover,
 .tour-list-item[aria-selected='true'] {
   background-color: var(--c-active);
-}
-
-.sidebar {
-  gap: var(--s-system);
 }
 
 .production {
@@ -88,12 +84,18 @@
   overflow-y: auto;
 }
 
-.move-to {
-  margin-bottom: var(--s-unit);
+.portfolio {
+  border: 0;
+}
+
+.portfolio legend {
+  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
-  .expert {
+  .expert,
+  .toolbar,
+  .portfolio {
     grid-template-columns: 1fr;
   }
 
@@ -103,10 +105,6 @@
 
   .right-edge {
     margin: var(--s-unit);
-  }
-
-  .toolbar {
-    grid-template-columns: 1fr;
   }
 }
 

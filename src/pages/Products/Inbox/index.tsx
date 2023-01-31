@@ -17,7 +17,7 @@ const Inbox: Component = () => {
       triggerContent={
         <>
           <h3 class='widget-title'>Inbox</h3>
-          <h4 class='widget-main conditions'>1</h4>
+          <h4 class='widget-main provision'>1</h4>
 
           <div class={ShapeIcon}>
             <TrayIcon />
@@ -26,7 +26,7 @@ const Inbox: Component = () => {
       }
       triggerClassName='view layer rounded flex col items-start'
     >
-      <Link href={Paths.Privacy} class='btn content-full dialog-action'>
+      <Link href={Paths.Privacy} class='btn content-full'>
         Go to Policy
       </Link>
     </DialogFacade>

@@ -3,27 +3,30 @@ import { Tab, TabGroup, TabPanel, Tabs } from 'solid-a11y';
 
 import { Paths, ListItemGen } from '../../../models';
 
-import Card from '../../../components/Card';
 import PageDecorator from '../../../components/PageDecorator';
 
-import Reviews from './Reviews';
+import Review from './Tabs/Review';
+import Growth from './Tabs/Growth';
+import Dividend from './Tabs/Dividend';
 
 import './Expert.css';
 
-const listItems: ListItemGen<number>[] = [
-  {
-    label: 'Ready',
-    value: 1,
-  },
-  {
-    label: 'In Progress',
-    value: 2,
-  },
-  {
-    label: 'Done',
-    value: 3,
-  },
-];
+const OverviewTab = {
+  label: 'Overview',
+  value: 1,
+};
+
+const GrowthTab = {
+  label: 'Growth',
+  value: 2,
+};
+
+const DividendTab = {
+  label: 'Dividend',
+  value: 3,
+};
+
+const listItems: ListItemGen<number>[] = [OverviewTab, GrowthTab, DividendTab];
 
 const Expert: Component = () => {
   return (
@@ -32,7 +35,7 @@ const Expert: Component = () => {
       headline='Onboarding'
       customPath={Paths.Profile}
     >
-      <div class='grid expert sidebar material left-edge'>
+      <div class='grid expert material left-edge provision'>
         <TabGroup>
           <Tabs class='tour-list flex col items-start view'>
             <For each={listItems}>
@@ -45,21 +48,22 @@ const Expert: Component = () => {
               )}
             </For>
           </Tabs>
-          <For each={listItems}>
-            {(item) => (
-              <TabPanel index={item.value} class='view production right-edge'>
-                <div class='grid toolbar'>
-                  <Card
-                    title='Position'
-                    number={item.value}
-                    description='Coming Soon'
-                  />
 
-                  <Reviews />
-                </div>
-              </TabPanel>
-            )}
-          </For>
+          <TabPanel
+            index={OverviewTab.value}
+            class='view production right-edge'
+          >
+            <Review />
+          </TabPanel>
+          <TabPanel index={GrowthTab.value} class='view production right-edge'>
+            <Growth />
+          </TabPanel>
+          <TabPanel
+            index={DividendTab.value}
+            class='view production right-edge'
+          >
+            <Dividend />
+          </TabPanel>
         </TabGroup>
       </div>
     </PageDecorator>

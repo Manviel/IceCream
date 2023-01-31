@@ -34,7 +34,7 @@ const Promotions: Component = () => {
         sortByMaxValue(source, datasets.length - 1)[0]
       } to 
         ${sortByMaxValue(source, datasets.length - 2)[0]}`}
-      ariaLabel='Food'
+      ariaLabel='Timeline'
       source={source}
     />
   );

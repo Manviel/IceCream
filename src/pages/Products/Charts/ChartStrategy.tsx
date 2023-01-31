@@ -16,9 +16,10 @@ const ChartStrategy: Component<ChartStrategyType> = (props) => {
   const { title, description, id, strategy, ariaLabel, source, isDark } = props;
 
   return (
-    <article
+    <section
       class='rounded flex col widget-chart'
       classList={{ box: isDark, layer: !isDark }}
+      aria-label={ariaLabel}
     >
       <div class='view'>
         <h3 class='widget-title'>{title}</h3>
@@ -30,14 +31,10 @@ const ChartStrategy: Component<ChartStrategyType> = (props) => {
         </p>
       </div>
 
-      {strategy === ChartTypes.Bar && (
-        <BarStrategy id={id} ariaLabel={ariaLabel} source={source} />
-      )}
+      {strategy === ChartTypes.Bar && <BarStrategy id={id} source={source} />}
 
-      {strategy === ChartTypes.Line && (
-        <LineStrategy id={id} ariaLabel={ariaLabel} source={source} />
-      )}
-    </article>
+      {strategy === ChartTypes.Line && <LineStrategy id={id} source={source} />}
+    </section>
   );
 };
 

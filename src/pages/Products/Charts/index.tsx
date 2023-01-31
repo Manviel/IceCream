@@ -7,5 +7,5 @@ export enum ChartTypes {
 
 export interface ChartIDType extends IDType {
   source: Entity;
-  ariaLabel: string;
+  ariaLabel?: string;
 }

@@ -30,10 +30,6 @@
   stroke: var(--c-action);
 }
 
-.conditions {
-  margin-top: 1.6rem;
-}
-
 .context {
   gap: 0.4rem;
   text-align: right;
@@ -51,21 +47,6 @@
 .accrued {
   color: var(--c-heat);
   font-size: 2.2rem;
-}
-
-.form-group {
-  margin: var(--s-medium) 0;
-}
-
-.form-control {
-  padding: 0.9rem var(--s-safe);
-  font-size: 1.6rem;
-}
-
-.form-action {
-  background-color: var(--c-action);
-  border-radius: 1.2rem;
-  border: 0;
 }
 
 @keyframes progress {

@@ -1,6 +1,7 @@
 import { Component, createSignal, createEffect } from 'solid-js';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
+import NumberField from '../../../components/Field/NumberField';
 
 import { commasAdapter, randomInRange } from '../../../services/utils';
 
@@ -36,10 +37,9 @@ const Vault: Component = () => {
       triggerContent={
         <>
           <h3 class='widget-title'>Vault</h3>
-
           <p class='term grey-dark'>Up to 12 months</p>
 
-          <div class='grid products conditions items-center'>
+          <div class='grid products provision items-center'>
             <div
               class='activity'
               role='progressbar'
@@ -73,22 +73,12 @@ const Vault: Component = () => {
       }
       triggerClassName='view box rounded flex col items-start'
     >
-      <div class='flex col form-group'>
-        <label for='budget' class='form-control'>
-          Sum:
-        </label>
-        <input
-          id='budget'
-          type='number'
-          name='budget'
-          class='form-control form-action'
-          value={budget()}
-          min={1000}
-          step={200}
-          max={100000}
-          onChange={handleChange}
-        />
-      </div>
+      <NumberField
+        name='budget'
+        label='Sum'
+        value={budget()}
+        onChange={handleChange}
+      />
     </DialogFacade>
   );
 };

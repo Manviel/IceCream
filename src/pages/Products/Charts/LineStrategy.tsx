@@ -5,7 +5,7 @@ import { ChartIDType } from '../Charts';
 import { useChartSource, useLegends } from './Context';
 
 const LineStrategy: Component<ChartIDType> = (props) => {
-  const { id, ariaLabel, source } = props;
+  const { id, source } = props;
 
   const { labels, datasets } = useChartSource(source);
   const { handleHover } = useLegends({ labels, datasets });
@@ -35,9 +35,7 @@ const LineStrategy: Component<ChartIDType> = (props) => {
     });
   });
 
-  return (
-    <section id={id} class='conditions widget-line' aria-label={ariaLabel} />
-  );
+  return <figure id={id} class='provision widget-line' />;
 };
 
 export default LineStrategy;
