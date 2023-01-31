@@ -8,7 +8,7 @@ import { useStore } from './useStore';
 import Portfolio from './Portfolio';
 
 const Dividend: Component = () => {
-  const { store, handleChangeStore } = useStore();
+  const { store, handleChangeStore, fairPricePercent } = useStore();
 
   const [fairPriceCost, setFairPriceCost] = createSignal(0);
 
@@ -22,7 +22,11 @@ const Dividend: Component = () => {
   });
 
   return (
-    <Portfolio id='Dividend' fairPriceCost={fairPriceCost}>
+    <Portfolio
+      id='Dividend'
+      fairPriceCost={fairPriceCost}
+      fairPricePercent={fairPricePercent}
+    >
       <NumberField
         name='priceData'
         label='Price (in $)'

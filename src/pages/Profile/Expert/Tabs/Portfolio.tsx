@@ -2,18 +2,15 @@ import { ParentComponent, Accessor } from 'solid-js';
 
 import { IDType } from '../../../../models';
 
-import { useStore } from './useStore';
-
 import '../../Profile.css';
 
 interface PortfolioType<T> extends IDType {
   fairPriceCost: Accessor<T>;
+  fairPricePercent: (cost: number) => string;
 }
 
 const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
-  const { fairPricePercent } = useStore();
-
-  const { children, id, fairPriceCost } = props;
+  const { children, id, fairPriceCost, fairPricePercent } = props;
 
   return (
     <fieldset class='grid products portfolio'>
