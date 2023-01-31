@@ -1,36 +1,26 @@
-import { Component, createEffect } from 'solid-js';
-import { createStore } from 'solid-js/store';
+import { Component, createEffect, createSignal } from 'solid-js';
 
 import NumberField, {
   PercentField,
 } from '../../../../components/Field/NumberField';
 
+import { useStore } from './useStore';
+
 import '../../Profile.css';
 
 const Dividend: Component = () => {
-  const [store, setStore] = createStore({
-    priceData: 143.66,
-    sharesOut: 16030,
-    netIncome: 99800,
-    netIncomeGrowth: 8.28,
-    roe: 160.9,
-    pb: 23.18,
-    fairPriceCost: 0,
-    fairPricePercent: 0,
-  });
+  const { store, handleChangeStore, fairPricePercent } = useStore();
+
+  const [fairPriceCost, setFairPriceCost] = createSignal(0);
 
   createEffect(() => {
-    const fairPriceCost =
+    const FPC =
       (store.pb * store.netIncome * (1 + store.netIncomeGrowth / 100)) /
       (store.roe / 100) /
       store.sharesOut;
-    const fairPricePercent = fairPriceCost / store.priceData - 1;
 
-    setStore({ fairPriceCost, fairPricePercent });
+    setFairPriceCost(FPC);
   });
-
-  const handleChange = ({ target }: any) =>
-    setStore({ [target.name]: target.value });
 
   return (
     <div class='grid products portfolio'>
@@ -38,55 +28,53 @@ const Dividend: Component = () => {
         name='priceData'
         label='Price (in $)'
         value={store.priceData}
-        onChange={handleChange}
+        onChange={handleChangeStore}
       />
 
       <NumberField
         name='sharesOut'
         label='Shares Outstanding (in M)'
         value={store.sharesOut}
-        onChange={handleChange}
+        onChange={handleChangeStore}
       />
 
       <NumberField
         name='netIncome'
         label='Income (in M)'
         value={store.netIncome}
-        onChange={handleChange}
+        onChange={handleChangeStore}
       />
 
       <PercentField
         name='netIncomeGrowth'
         label='EPS next 5Y (in %)'
         value={store.netIncomeGrowth}
-        onChange={handleChange}
+        onChange={handleChangeStore}
       />
 
       <PercentField
         name='roe'
         label='ROE (in %)'
         value={store.roe}
-        onChange={handleChange}
+        onChange={handleChangeStore}
       />
 
       <PercentField
         name='pb'
         label='P / B'
         value={store.pb}
-        onChange={handleChange}
+        onChange={handleChangeStore}
       />
 
       <div class='ghost view rounded'>
         <p>Fair Price (in $)</p>
-        <strong class='box-description'>
-          {store.fairPriceCost.toFixed(2)}
-        </strong>
+        <strong class='box-description'>{fairPriceCost().toFixed(2)}</strong>
       </div>
 
       <div class='price view rounded'>
         <p>Fair Price (in %)</p>
         <strong class='box-description'>
-          {(store.fairPricePercent * 100).toFixed(2)}
+          {fairPricePercent(fairPriceCost())}
         </strong>
       </div>
     </div>
