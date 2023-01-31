@@ -1,15 +1,9 @@
 import { Component, createEffect } from 'solid-js';
 import { createStore } from 'solid-js/store';
 
-import Field from '../../../../components/Field';
-
-import {
-  MIN_PERCENT,
-  MAX_PERCENT,
-  MIN_COST,
-  MAX_COST,
-  STEP,
-} from '../../../../models/config';
+import NumberField, {
+  PercentField,
+} from '../../../../components/Field/NumberField';
 
 import '../../Profile.css';
 
@@ -40,69 +34,45 @@ const Dividend: Component = () => {
 
   return (
     <div class='grid products portfolio'>
-      <Field
+      <NumberField
         name='priceData'
         label='Price (in $)'
-        type='number'
         value={store.priceData}
-        min={MIN_COST}
-        step={STEP}
-        max={MAX_COST}
         onChange={handleChange}
       />
 
-      <Field
+      <NumberField
         name='sharesOut'
         label='Shares Outstanding (in M)'
-        type='number'
         value={store.sharesOut}
-        min={MIN_COST}
-        step={STEP}
-        max={MAX_COST}
         onChange={handleChange}
       />
 
-      <Field
+      <NumberField
         name='netIncome'
         label='Income (in M)'
-        type='number'
         value={store.netIncome}
-        min={MIN_COST}
-        step={STEP}
-        max={MAX_COST}
         onChange={handleChange}
       />
 
-      <Field
+      <PercentField
         name='netIncomeGrowth'
         label='EPS next 5Y (in %)'
-        type='number'
         value={store.netIncomeGrowth}
-        min={MIN_PERCENT}
-        step={STEP}
-        max={MAX_PERCENT}
         onChange={handleChange}
       />
 
-      <Field
+      <PercentField
         name='roe'
         label='ROE (in %)'
-        type='number'
         value={store.roe}
-        min={MIN_PERCENT}
-        step={STEP}
-        max={MAX_PERCENT}
         onChange={handleChange}
       />
 
-      <Field
+      <PercentField
         name='pb'
         label='P / B'
-        type='number'
         value={store.pb}
-        min={MIN_PERCENT}
-        step={STEP}
-        max={MAX_PERCENT}
         onChange={handleChange}
       />
 

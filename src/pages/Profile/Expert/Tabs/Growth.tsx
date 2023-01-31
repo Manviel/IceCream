@@ -2,14 +2,9 @@ import { Component, createEffect } from 'solid-js';
 import { createStore } from 'solid-js/store';
 
 import Field from '../../../../components/Field';
-
-import {
-  MIN_PERCENT,
-  MAX_PERCENT,
-  MIN_COST,
-  MAX_COST,
-  STEP,
-} from '../../../../models/config';
+import NumberField, {
+  PercentField,
+} from '../../../../components/Field/NumberField';
 
 import '../../Profile.css';
 
@@ -39,58 +34,38 @@ const Growth: Component = () => {
 
   return (
     <div class='grid products portfolio'>
-      <Field
+      <NumberField
         name='priceData'
         label='Price (in $)'
-        type='number'
         value={store.priceData}
-        min={MIN_COST}
-        step={STEP}
-        max={MAX_COST}
         onChange={handleChange}
       />
 
-      <Field
+      <NumberField
         name='sharesOut'
         label='Shares Outstanding (in M)'
-        type='number'
         value={store.sharesOut}
-        min={MIN_COST}
-        step={STEP}
-        max={MAX_COST}
         onChange={handleChange}
       />
 
-      <Field
+      <NumberField
         name='revenue'
         label='Sales (in M)'
-        type='number'
         value={store.revenue}
-        min={MIN_COST}
-        step={STEP}
-        max={MAX_COST}
         onChange={handleChange}
       />
 
-      <Field
+      <PercentField
         name='revenueGrowth'
         label='Sales past 5Y (in %)'
-        type='number'
         value={store.revenueGrowth}
-        min={MIN_PERCENT}
-        step={STEP}
-        max={MAX_PERCENT}
         onChange={handleChange}
       />
 
-      <Field
+      <PercentField
         name='ps'
         label='P / S'
-        type='number'
         value={store.ps}
-        min={MIN_PERCENT}
-        step={STEP}
-        max={MAX_PERCENT}
         onChange={handleChange}
       />
 

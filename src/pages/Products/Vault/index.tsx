@@ -1,11 +1,9 @@
 import { Component, createSignal, createEffect } from 'solid-js';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
-import Field from '../../../components/Field';
+import NumberField from '../../../components/Field/NumberField';
 
 import { commasAdapter, randomInRange } from '../../../services/utils';
-
-import { MIN_COST, MAX_COST, STEP } from '../../../models/config';
 
 import './Vault.css';
 
@@ -75,14 +73,10 @@ const Vault: Component = () => {
       }
       triggerClassName='view box rounded flex col items-start'
     >
-      <Field
+      <NumberField
         name='budget'
         label='Sum'
-        type='number'
         value={budget()}
-        min={MIN_COST}
-        step={STEP}
-        max={MAX_COST}
         onChange={handleChange}
       />
     </DialogFacade>
