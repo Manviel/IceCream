@@ -84,6 +84,14 @@
   overflow-y: auto;
 }
 
+.portfolio {
+  border: 0;
+}
+
+.portfolio legend {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 768px) {
   .expert,
   .toolbar,

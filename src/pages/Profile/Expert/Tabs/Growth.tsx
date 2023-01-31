@@ -6,11 +6,10 @@ import NumberField, {
 } from '../../../../components/Field/NumberField';
 
 import { useStore } from './useStore';
-
-import '../../Profile.css';
+import Portfolio from './Portfolio';
 
 const Growth: Component = () => {
-  const { store, handleChangeStore, fairPricePercent } = useStore();
+  const { store, handleChangeStore } = useStore();
 
   const [fairPriceCost, setFairPriceCost] = createSignal(0);
 
@@ -23,7 +22,7 @@ const Growth: Component = () => {
   });
 
   return (
-    <div class='grid products portfolio'>
+    <Portfolio id='Growth' fairPriceCost={fairPriceCost}>
       <NumberField
         name='priceData'
         label='Price (in $)'
@@ -66,19 +65,7 @@ const Growth: Component = () => {
         value={store.ticker}
         onChange={handleChangeStore}
       />
-
-      <div class='ghost view rounded'>
-        <p>Fair Price (in $)</p>
-        <strong class='box-description'>{fairPriceCost().toFixed(2)}</strong>
-      </div>
-
-      <div class='document view rounded'>
-        <p>Fair Price (in %)</p>
-        <strong class='box-description'>
-          {fairPricePercent(fairPriceCost())}
-        </strong>
-      </div>
-    </div>
+    </Portfolio>
   );
 };
 

@@ -5,11 +5,10 @@ import NumberField, {
 } from '../../../../components/Field/NumberField';
 
 import { useStore } from './useStore';
-
-import '../../Profile.css';
+import Portfolio from './Portfolio';
 
 const Dividend: Component = () => {
-  const { store, handleChangeStore, fairPricePercent } = useStore();
+  const { store, handleChangeStore } = useStore();
 
   const [fairPriceCost, setFairPriceCost] = createSignal(0);
 
@@ -23,7 +22,7 @@ const Dividend: Component = () => {
   });
 
   return (
-    <div class='grid products portfolio'>
+    <Portfolio id='Dividend' fairPriceCost={fairPriceCost}>
       <NumberField
         name='priceData'
         label='Price (in $)'
@@ -65,19 +64,7 @@ const Dividend: Component = () => {
         value={store.pb}
         onChange={handleChangeStore}
       />
-
-      <div class='ghost view rounded'>
-        <p>Fair Price (in $)</p>
-        <strong class='box-description'>{fairPriceCost().toFixed(2)}</strong>
-      </div>
-
-      <div class='price view rounded'>
-        <p>Fair Price (in %)</p>
-        <strong class='box-description'>
-          {fairPricePercent(fairPriceCost())}
-        </strong>
-      </div>
-    </div>
+    </Portfolio>
   );
 };
 
