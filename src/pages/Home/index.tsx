@@ -138,7 +138,7 @@ const Home: Component = () => {
           />
           <Shelf
             title='Sophisticated vocabulary'
-            description='To talk about everyday. Upside, Fatigued, Frankly, Covenant, Affable, Assertive, Distinctive, Crucially, To commence, Admittedly.'
+            description='Beautiful - gorgeous, stunning. Sad - heartbroken, devastated. Tired - exhausted, drained, worn out, shattered. Happy - thrilled, on cloud nine, delighted. Surprised - astonished. Small - tiny, miniscule. Big - huge, tremendous, enormous, massive. Bad - terrible, horrible, horrendous, dreadful, appalling. Good - incredible, awesome, terrific, superb. Important - crucial, essential, vital. Interesting - fascinating, captivating, appealing. Hungry - starving, famished, ravenous. Angry - furious, mad. Clean - spotless, pristine. Dirty - filthy. Funny - hilarious. Cold - freezing. Hot - boiling, scorching.'
             hasRowSpan
             hasColSpan
           />
