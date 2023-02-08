@@ -7,7 +7,7 @@ type ConnectFactoryType = {
 
 const ConnectFactory: Component<ConnectFactoryType> = ({
   href,
-  text = 'Learn More',
+  text = 'Watch Now',
 }) => (
   <a href={href} target='_blank' rel='noopener noreferrer' class='connect'>
     {text}
