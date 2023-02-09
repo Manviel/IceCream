@@ -23,7 +23,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
         <strong class='box-description'>{fairPriceCost().toFixed(2)}</strong>
       </div>
 
-      <div class='document view rounded'>
+      <div class='document view rounded' role='log'>
         <p>Fair Price (in %)</p>
         <strong class='box-description'>
           {fairPricePercent(fairPriceCost())}

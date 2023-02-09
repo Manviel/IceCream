@@ -22,7 +22,7 @@
   --s-safe: 1.2rem;
   --s-screen: 3.4rem;
   --s-entry: 4rem;
-  --p-blur: blur(20px) saturate(180%);
+  --p-blur: blur(16px) saturate(180%);
 }
 
 html {
