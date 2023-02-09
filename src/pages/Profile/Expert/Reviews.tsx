@@ -65,7 +65,7 @@ const Reviews: Component = () => {
       </div>
 
       <div class='production' use:slider>
-        <p class='info card view rounded'>
+        <p class='info box view rounded'>
           Once the business analysis has communicated with stakeholders for
           understanding their requirements, it can be described as elicitation.
           Requirement elicitation can be done by communicating with stakeholders

@@ -30,10 +30,10 @@ const Home: Component = () => {
         change actions, only a single microservice has to be modified.
       </p>
 
-      <article class='box view rounded'>
+      <article class='material view rounded'>
         <Header spot='What is Coupling?' />
 
-        <p class='info grey-dark'>
+        <p class='info grey-light'>
           The degree to which components have knowledge of other components.
           Effectively, the coupling is about how changing one thing required
           change in another. Two modules have high coupling if they are closely
