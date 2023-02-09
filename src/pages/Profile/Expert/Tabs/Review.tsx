@@ -7,7 +7,12 @@ import Reviews from '../Reviews';
 const Review: Component = () => {
   return (
     <div class='grid toolbar'>
-      <Card title='Position' number={1} description='Coming Soon' />
+      <Card
+        title='People in 2022'
+        number={2.2}
+        measure='billion'
+        description='With vision impairment'
+      />
 
       <Reviews />
     </div>

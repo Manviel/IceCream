@@ -16,7 +16,7 @@ const Card: Component<CardType> = ({ number, description, title, measure }) => (
       {number}
       <span class='card-measure'>{measure}</span>
     </strong>
-    <sub class='card-sub'>{description}</sub>
+    <sub class='term'>{description}</sub>
   </div>
 );
 

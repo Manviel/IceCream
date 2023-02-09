@@ -54,11 +54,7 @@ const Reviews: Component = () => {
           Elicitation Tech
         </h3>
 
-        <nav
-          class='flex justify-between gap'
-          aria-labelledby='candidate'
-          aria-describedby='carousel'
-        >
+        <nav class='flex justify-between gap' aria-labelledby='candidate'>
           <button class={SuperEllipse} aria-label='Previous' onClick={prev}>
             <PlayPrevIcon />
           </button>
@@ -68,7 +64,7 @@ const Reviews: Component = () => {
         </nav>
       </div>
 
-      <div class='production' use:slider id='carousel'>
+      <div class='production' use:slider>
         <p class='info card view rounded'>
           Once the business analysis has communicated with stakeholders for
           understanding their requirements, it can be described as elicitation.
