@@ -22,7 +22,7 @@ const Breathe: Component = () => (
       can help reduce stress and improve overall health.
     </p>
 
-    <Link href={Paths.Expert} class='btn'>
+    <Link href={Paths.Expert} class='btn contained'>
       Go to Onboarding
     </Link>
   </article>

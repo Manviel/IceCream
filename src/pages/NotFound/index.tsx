@@ -10,7 +10,7 @@ const NotFound: Component = () => (
     <div class='layer view rounded content-full flex col screen'>
       <h2 class='info card-sub'>Sorry, we can't find that page!</h2>
 
-      <Link href={Paths.Home} class='btn'>
+      <Link href={Paths.Home} class='btn contained'>
         Back to Home page
       </Link>
     </div>

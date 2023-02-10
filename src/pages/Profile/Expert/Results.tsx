@@ -9,7 +9,7 @@ const Results: Component = () => {
       description='JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading.'
       closingName='Close'
       triggerContent='Results'
-      triggerClassName='btn provision'
+      triggerClassName='btn token provision'
     >
       <div class='scrollable' tabIndex={0}>
         <p class='info'>

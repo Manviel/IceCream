@@ -42,7 +42,10 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
 
               {children}
 
-              <button class='btn content-full provision' onClick={handleClose}>
+              <button
+                class='btn token content-full provision'
+                onClick={handleClose}
+              >
                 {closingName}
               </button>
             </DialogContent>

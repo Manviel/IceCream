@@ -26,7 +26,7 @@ const Inbox: Component = () => {
       }
       triggerClassName='view layer rounded flex col items-start'
     >
-      <Link href={Paths.Privacy} class='btn content-full'>
+      <Link href={Paths.Privacy} class='btn token content-full'>
         Go to Policy
       </Link>
     </DialogFacade>

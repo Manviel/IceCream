@@ -1,5 +1,6 @@
 :root {
   --c-backdrop: rgba(0, 0, 0, 0.4);
+  --p-spec: blur(8px);
 }
 
 .backdrop {
@@ -10,6 +11,8 @@
   bottom: 0;
   left: 0;
   z-index: 3;
+  backdrop-filter: var(--p-spec);
+  -webkit-backdrop-filter: var(--p-spec);
 }
 
 .dialog {

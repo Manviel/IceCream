@@ -13,9 +13,10 @@
   --c-glass: #f6f9fc;
   --c-ghost: #ebfff0;
   --c-show: #fce8e6;
+  --c-blue: #0071e3;
   --s-ellipse: 4.4rem;
   --s-medium: 2rem;
-  --s-dock: 2.4rem;
+  --s-dock: 2.2rem;
   --s-system: 1.4rem;
   --s-unit: 0.8rem;
   --s-safe: 1.2rem;
@@ -209,13 +210,20 @@ a:focus-visible {
   text-align: center;
 }
 
-.token,
-.btn {
+.contained {
+  background-color: var(--c-blue);
+  color: #fff;
+}
+
+.contained:hover {
+  background-color: var(--c-ring);
+}
+
+.token {
   background-color: var(--c-active);
 }
 
-.token:hover,
-.btn:hover {
+.token:hover {
   background-color: var(--c-action);
 }
 

@@ -45,7 +45,7 @@ const Notes: Component = () => {
 
   return (
     <>
-      <button class='btn provision' onClick={handleOpen}>
+      <button class='btn token provision' onClick={handleOpen}>
         Notes
       </button>
       <Show when={open()}>

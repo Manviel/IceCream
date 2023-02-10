@@ -89,7 +89,7 @@ const Home: Component = () => {
         <div class='flex justify-between items-center screen'>
           <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
 
-          <Link href={Paths.Products} class='btn'>
+          <Link href={Paths.Products} class='btn contained'>
             Go to Products
           </Link>
         </div>
