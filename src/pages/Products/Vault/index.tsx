@@ -79,6 +79,8 @@ const Vault: Component = () => {
         value={budget()}
         onChange={handleChange}
       />
+
+      <p class='info'>The amount does not include taxes. *</p>
     </DialogFacade>
   );
 };
