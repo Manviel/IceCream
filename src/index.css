@@ -212,7 +212,7 @@ a:focus-visible {
 
 .contained {
   background-color: var(--c-blue);
-  color: #fff;
+  color: var(--c-white);
 }
 
 .contained:hover {

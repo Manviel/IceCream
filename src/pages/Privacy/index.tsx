@@ -1,6 +1,7 @@
 import { Component, For, createEffect } from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
+import { useObserver } from '../../services/utils';
 
 import Article from './Article';
 import { containers } from './library';
@@ -10,27 +11,22 @@ import './Privacy.css';
 const transformCase = (str: string) => str.replace(/\s+/g, '-').toLowerCase();
 
 const useStickyNavigation = () => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.getAttribute('id');
-        const article = document.querySelector(`.spy-nav a[href="#${id}"]`);
+  useObserver(
+    'section[id]',
+    (entry) => {
+      const id = entry.target.getAttribute('id');
+      const article = document.querySelector(`.spy-nav a[href="#${id}"]`);
 
-        if (entry.intersectionRatio > 0) {
-          article?.classList.add('live');
-        } else {
-          article?.classList.remove('live');
-        }
-      });
+      if (entry.intersectionRatio > 0) {
+        article?.classList.add('live');
+      } else {
+        article?.classList.remove('live');
+      }
     },
     {
       rootMargin: '-50px 0px -55%',
     }
   );
-
-  document
-    .querySelectorAll('section[id]')
-    .forEach((section) => observer.observe(section));
 };
 
 const Privacy: Component = () => {

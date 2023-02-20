@@ -10,16 +10,14 @@ export const randomInRange = (min: number, max: number) => {
 
 export const commasAdapter = (x: number) => new Intl.NumberFormat().format(x);
 
-export const useObserver = (query: string) => {
+export const useObserver = (
+  query: string,
+  execute: (e: IntersectionObserverEntry) => void,
+  options = {}
+) => {
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      } else {
-        entry.target.classList.remove('animate');
-      }
-    });
-  });
+    entries.forEach((entry) => execute(entry));
+  }, options);
 
   document.querySelectorAll(query).forEach((item) => observer.observe(item));
 };

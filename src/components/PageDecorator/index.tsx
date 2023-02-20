@@ -21,7 +21,13 @@ const PageDecorator: ParentComponent<HeaderTemplateType> = ({
   const isRouting = useIsRouting();
 
   createEffect(() => {
-    useObserver('.on-scroll');
+    useObserver('.on-scroll', (entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      } else {
+        entry.target.classList.remove('animate');
+      }
+    });
   });
 
   return (
