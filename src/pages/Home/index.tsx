@@ -182,6 +182,15 @@ const Home: Component = () => {
           />
         </div>
       </article>
+
+      <footer class='layer view screen content-full rounded flex items-center justify-between'>
+        <p class='grey-light'>Provide feedback</p>
+
+        <ConnectFactory
+          href='https://github.com/Manviel/IceCream/issues'
+          text='Contact Us'
+        />
+      </footer>
     </PageDecorator>
   );
 };
