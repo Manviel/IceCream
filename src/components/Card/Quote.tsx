@@ -32,10 +32,10 @@ const QuoteView: ParentComponent<QuoteViewType> = (props) => {
   return (
     <article class='material view rounded'>
       <div class='flex justify-between items-center'>
-        <p class='flex col'>
+        <blockquote class='flex col'>
           <span>{title}</span>
           <strong class='box-description'>{author}</strong>
-        </p>
+        </blockquote>
 
         {children}
       </div>

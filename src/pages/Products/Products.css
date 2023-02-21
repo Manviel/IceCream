@@ -74,3 +74,9 @@
     grid-column: span 2;
   }
 }
+
+@media screen and (min-width: 2560px) {
+  .insights {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
