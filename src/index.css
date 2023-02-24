@@ -327,6 +327,10 @@ a:focus-visible {
     padding: 0.1rem var(--s-system);
   }
 
+  .provision {
+    margin-top: var(--s-system);
+  }
+
   .fixed-bottom {
     position: fixed;
     bottom: 0;

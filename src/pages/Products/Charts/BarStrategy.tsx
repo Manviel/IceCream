@@ -34,7 +34,7 @@ const BarStrategy: Component<ChartIDType> = (props) => {
     });
   });
 
-  return <figure id={id} class='provision widget-bar' />;
+  return <figure id={id} class='widget-bar' />;
 };
 
 export default BarStrategy;

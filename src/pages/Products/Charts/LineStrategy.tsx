@@ -35,7 +35,7 @@ const LineStrategy: Component<ChartIDType> = (props) => {
     });
   });
 
-  return <figure id={id} class='provision widget-line' />;
+  return <figure id={id} class='widget-line' />;
 };
 
 export default LineStrategy;

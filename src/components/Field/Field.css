@@ -10,7 +10,7 @@
 .form-action {
   background-color: var(--c-action);
   border-radius: 1rem;
-  border: 0;
+  border: 1px solid var(--c-active);
 }
 
 .form-label {
