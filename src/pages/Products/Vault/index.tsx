@@ -5,6 +5,8 @@ import NumberField from '../../../components/Field/NumberField';
 
 import { commasAdapter, randomInRange } from '../../../services/utils';
 
+import Ring from './Ring';
+
 import './Vault.css';
 
 const Vault: Component = () => {
@@ -12,11 +14,6 @@ const Vault: Component = () => {
   const [income, setIncome] = createSignal(0);
 
   const valueNow = randomInRange(4, 50);
-
-  const circleRadius = 40;
-  const circleCenter = 50;
-  const arcLength = Math.round(2 * 3.14 * circleRadius);
-  const arcOffset = Math.round(arcLength * ((100 - valueNow) / 100));
   const progress = 100 - valueNow;
 
   createEffect(() => {
@@ -32,41 +29,21 @@ const Vault: Component = () => {
   return (
     <DialogFacade
       title='I want multiply'
-      description='Making a deposit'
+      description='Making a deposit for 12 months.'
       closingName='Apply'
       triggerContent={
         <>
           <h3 class='widget-title'>Vault</h3>
-          <p class='term grey-dark'>Up to 12 months</p>
+          <p class='term grey-dark'>Up to {progress}%</p>
 
           <div class='grid products provision items-center'>
-            <div
-              class='activity'
-              role='progressbar'
-              aria-label='Activity ring'
-              aria-valuenow={progress}
-            >
-              <svg class='ring'>
-                <circle
-                  class='background'
-                  cx={circleCenter}
-                  cy={circleCenter}
-                  r={circleRadius}
-                />
-                <circle
-                  class='completed'
-                  cx={circleCenter}
-                  cy={circleCenter}
-                  r={circleRadius}
-                  stroke-dasharray={`${arcOffset}, ${arcLength}`}
-                />
-              </svg>
-            </div>
+            <Ring progress={progress} />
 
             <article class='flex col context'>
-              <h4 class='sum'>{commasAdapter(budget())}</h4>
-              <h5 class='term grey-dark'>{progress}%</h5>
-              <h5 class='accrued'>+{commasAdapter(income())}</h5>
+              <p class='term'>Profit</p>
+              <h4 class='sum accrued'>{commasAdapter(income())}</h4>
+              <p class='term'>Investing</p>
+              <h4 class='sum grey-dark'>{commasAdapter(budget())}</h4>
             </article>
           </div>
         </>

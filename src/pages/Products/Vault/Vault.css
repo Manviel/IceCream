@@ -1,6 +1,6 @@
 :root {
   --s-radio: 100px;
-  --s-stroke: 12px;
+  --s-stroke: 13px;
 }
 
 .activity {
@@ -31,27 +31,20 @@
 }
 
 .context {
-  gap: 0.4rem;
+  gap: 0.2rem;
   text-align: right;
 }
 
 .sum {
-  font-size: 2.8rem;
+  font-size: var(--s-dock);
 }
 
 .accrued {
   color: var(--c-heat);
-  font-size: var(--s-dock);
 }
 
 @keyframes progress {
   0% {
     stroke-dasharray: 0 251;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .sum {
-    font-size: 1.8rem;
   }
 }
