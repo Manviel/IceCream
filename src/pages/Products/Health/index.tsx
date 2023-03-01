@@ -28,7 +28,6 @@ const Health: Component = () => {
 
   return (
     <ChartStrategy
-      isDark={false}
       strategy={ChartTypes.Bar}
       id={chartID}
       title='Health'

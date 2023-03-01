@@ -24,7 +24,7 @@ const Inbox: Component = () => {
           </div>
         </>
       }
-      triggerClassName='view layer rounded flex col items-start justify-between'
+      triggerClassName='view card rounded flex col items-start justify-between'
     >
       <Link href={Paths.Privacy} class='btn token content-full'>
         Go to Policy

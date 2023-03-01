@@ -9,16 +9,24 @@ import LineStrategy from './LineStrategy';
 interface ChartStrategyType extends SegregationType, ChartIDType {
   strategy: ChartTypes;
   ariaLabel: string;
-  isDark: boolean;
+  isDark?: boolean;
 }
 
 const ChartStrategy: Component<ChartStrategyType> = (props) => {
-  const { title, description, id, strategy, ariaLabel, source, isDark } = props;
+  const {
+    title,
+    description,
+    id,
+    strategy,
+    ariaLabel,
+    source,
+    isDark = false,
+  } = props;
 
   return (
     <section
       class='rounded flex col widget-chart'
-      classList={{ box: isDark, layer: !isDark }}
+      classList={{ box: isDark, card: !isDark }}
       aria-label={ariaLabel}
     >
       <div class='view'>

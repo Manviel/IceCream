@@ -10,6 +10,7 @@ import { useObserver } from '../../services/utils';
 
 interface HeaderTemplateType extends BackwardNavigationType {
   headline: string;
+  isDark?: boolean;
 }
 
 const PageDecorator: ParentComponent<HeaderTemplateType> = ({
@@ -17,6 +18,7 @@ const PageDecorator: ParentComponent<HeaderTemplateType> = ({
   headline,
   subtitle,
   customPath,
+  isDark = false,
 }) => {
   const isRouting = useIsRouting();
 
@@ -33,7 +35,7 @@ const PageDecorator: ParentComponent<HeaderTemplateType> = ({
   return (
     <main
       class='app flex col content-full'
-      classList={{ 'pulse-loading': isRouting() }}
+      classList={{ 'pulse-loading': isRouting(), layer: isDark }}
     >
       <BackwardNavigation subtitle={subtitle} customPath={customPath} />
 

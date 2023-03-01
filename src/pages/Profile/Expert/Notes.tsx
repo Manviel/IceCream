@@ -10,7 +10,7 @@ import CloseIcon from '../../../assets/icons/close.svg';
 const SheetContent: ParentComponent = ({ children }) => {
   return (
     <AbstractDialogContent
-      parentClassName='flex col view layer bottom-sheet'
+      parentClassName='flex col view card bottom-sheet'
       childClassName='flex justify-between items-center'
       factory={children}
     >

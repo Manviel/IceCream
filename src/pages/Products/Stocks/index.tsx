@@ -22,7 +22,6 @@ const Stocks: Component = () => {
 
   return (
     <ChartStrategy
-      isDark={false}
       strategy={ChartTypes.Line}
       id={chartID}
       title='Stocks'

@@ -51,16 +51,19 @@ const Expert: Component = () => {
 
           <TabPanel
             index={OverviewTab.value}
-            class='view production right-edge'
+            class='view production right-edge card'
           >
             <Review />
           </TabPanel>
-          <TabPanel index={GrowthTab.value} class='view production right-edge'>
+          <TabPanel
+            index={GrowthTab.value}
+            class='view production right-edge card'
+          >
             <Growth />
           </TabPanel>
           <TabPanel
             index={DividendTab.value}
-            class='view production right-edge'
+            class='view production right-edge card'
           >
             <Dividend />
           </TabPanel>

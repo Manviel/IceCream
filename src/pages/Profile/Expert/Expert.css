@@ -59,7 +59,6 @@
 }
 
 .right-edge {
-  background-color: var(--c-white);
   box-shadow: rgb(0 0 0 / 10%) 0px 1px 5px 0px;
   margin: var(--s-unit) var(--s-unit) var(--s-unit) 0;
 }

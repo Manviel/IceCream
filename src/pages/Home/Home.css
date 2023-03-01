@@ -7,7 +7,6 @@
 }
 
 .os {
-  background-color: var(--c-white);
   border-radius: 1rem;
   padding: var(--s-system);
 }

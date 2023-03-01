@@ -67,6 +67,14 @@ const Home: Component = () => {
             description='Time to interactive'
           />
         </div>
+
+        <div class='flex justify-between items-center screen'>
+          <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
+
+          <Link href={Paths.Products} class='btn contained'>
+            Go to Products
+          </Link>
+        </div>
       </article>
 
       <article class='flex col on-scroll layer view screen content-full rounded'>
@@ -85,14 +93,6 @@ const Home: Component = () => {
         </p>
 
         <LayeredLevels />
-
-        <div class='flex justify-between items-center screen'>
-          <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
-
-          <Link href={Paths.Products} class='btn contained'>
-            Go to Products
-          </Link>
-        </div>
       </article>
 
       <article class='flex col on-scroll material view screen content-full rounded'>

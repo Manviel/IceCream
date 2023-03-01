@@ -9,7 +9,7 @@ import './NewsFeed.css';
 
 const NewsFeed: Component = () => {
   return (
-    <article class='screen layer view rounded'>
+    <article class='screen card view rounded'>
       <Header spot='Discover' />
 
       <h3 class='info card-sub'>Top leagues</h3>

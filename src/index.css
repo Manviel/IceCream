@@ -4,9 +4,9 @@
   --c-dark: rgba(0, 0, 0, 0.2);
   --c-active: rgba(0, 0, 0, 0.05);
   --c-surface: #6e6e73;
-  --c-primary: #fbfbfd;
+  --c-primary: #f2f2f7;
   --c-action: rgba(118, 118, 128, 0.22);
-  --c-depth: rgba(245, 245, 245, 0.54);
+  --c-depth: rgba(245, 245, 247, 0.56);
   --c-ring: #0066cc;
   --c-grey: #a1a1a6;
   --c-heat: #fa124f;
@@ -165,6 +165,10 @@ a:focus-visible {
 
 .layer {
   background-color: var(--c-primary);
+}
+
+.card {
+  background-color: var(--c-white);
 }
 
 .connect {

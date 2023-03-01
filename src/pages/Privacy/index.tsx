@@ -35,7 +35,11 @@ const Privacy: Component = () => {
   });
 
   return (
-    <PageDecorator subtitle='Privacy' headline='Designed for your policy'>
+    <PageDecorator
+      subtitle='Privacy'
+      headline='Designed for your policy'
+      isDark
+    >
       <div class='grid privacy'>
         <div class='flex col quick'>
           <For each={containers}>

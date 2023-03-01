@@ -15,7 +15,7 @@ import './Products.css';
 
 const Products: Component = () => {
   return (
-    <PageDecorator subtitle='For You' headline='Products'>
+    <PageDecorator subtitle='For You' headline='Products' isDark>
       <h3 class='info'>Quick actions and features</h3>
 
       <div class='grid products insights'>
