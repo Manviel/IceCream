@@ -8,8 +8,8 @@ import { Skeleton } from './components/Loader';
 
 import FlameIcon from './assets/icons/flame.svg';
 import SquareTextIcon from './assets/icons/square-text.svg';
-import PersonFinderIcon from './assets/icons/person-finder.svg';
-import LockIcon from './assets/icons/lock.svg';
+import TextFinderIcon from './assets/icons/text-finder.svg';
+import BookIcon from './assets/icons/book.svg';
 
 const Home = lazy(() => import('./pages/Home'));
 const Profile = lazy(() => import('./pages/Profile'));
@@ -33,11 +33,11 @@ const App: Component = () => (
       </NavLink>
 
       <NavLink href={Paths.Privacy} aria-label='Privacy' class={SuperEllipse}>
-        <LockIcon />
+        <BookIcon />
       </NavLink>
 
       <NavLink href={Paths.Profile} aria-label='Profile' class={SuperEllipse}>
-        <PersonFinderIcon />
+        <TextFinderIcon />
       </NavLink>
     </nav>
 

@@ -1,6 +1,7 @@
 :root {
   --c-alice: #e8f0fe;
   --c-lavender: #eaddff;
+  --s-line: 0.6rem;
 }
 
 .document {
@@ -59,8 +60,7 @@
 }
 
 .right-edge {
-  box-shadow: rgb(0 0 0 / 10%) 0px 1px 5px 0px;
-  margin: var(--s-unit) var(--s-unit) var(--s-unit) 0;
+  margin: var(--s-line) var(--s-line) var(--s-line) 0;
 }
 
 .bottom-sheet {
@@ -103,7 +103,7 @@
   }
 
   .right-edge {
-    margin: var(--s-unit);
+    margin: var(--s-line);
   }
 }
 
