@@ -1,11 +1,12 @@
 :root {
   --c-subscription: #b25fea;
   --c-neon: #04de71;
+  --s-stroke: 13px;
 }
 
 .widget-title {
   font-size: 1.7rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
 .widget-main {
@@ -22,13 +23,18 @@
   stroke: var(--c-action);
 }
 
+.widget-line .ct-point,
+.widget-bar .ct-bar {
+  stroke-width: var(--s-stroke);
+}
+
 .widget-line .ct-point:hover,
 .widget-line .ct-point:focus {
   stroke-width: var(--s-system);
 }
 
 .widget-bar .ct-bar {
-  stroke-width: 8%;
+  stroke-linecap: round;
 }
 
 .widget-line .ct-point:hover,

@@ -21,6 +21,10 @@ const BarStrategy: Component<ChartIDType> = (props) => {
         distributeSeries: true,
         axisX: {
           showGrid: false,
+          labelOffset: {
+            x: 0,
+            y: 8,
+          },
         },
       }
     );
