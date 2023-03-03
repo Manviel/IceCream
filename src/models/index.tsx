@@ -23,3 +23,7 @@ export interface ListItemGen<T> {
 export interface IDType {
   id: string;
 }
+
+export interface DarkThemeType {
+  isDark?: boolean;
+}

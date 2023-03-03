@@ -39,7 +39,7 @@
 }
 
 .widget-legend {
-  padding: 0 var(--s-system) var(--s-safe);
+  padding: 0.4rem var(--s-system) var(--s-safe);
   justify-content: flex-end;
 }
 

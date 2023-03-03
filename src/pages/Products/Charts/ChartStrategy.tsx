@@ -1,15 +1,17 @@
 import { Component } from 'solid-js';
 
-import { SegregationType } from '../../../models';
+import { DarkThemeType, SegregationType } from '../../../models';
 import { ChartTypes, ChartIDType } from '.';
 
 import BarStrategy from './BarStrategy';
 import LineStrategy from './LineStrategy';
 
-interface ChartStrategyType extends SegregationType, ChartIDType {
+interface ChartStrategyType
+  extends SegregationType,
+    ChartIDType,
+    DarkThemeType {
   strategy: ChartTypes;
   ariaLabel: string;
-  isDark?: boolean;
 }
 
 const ChartStrategy: Component<ChartStrategyType> = (props) => {
