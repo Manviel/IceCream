@@ -5,7 +5,7 @@
 
 .widget-title {
   font-size: 1.7rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
 }
 
 .widget-main {
@@ -22,7 +22,8 @@
   stroke: var(--c-action);
 }
 
-.widget-line .ct-point {
+.widget-line .ct-point:hover,
+.widget-line .ct-point:focus {
   stroke-width: var(--s-system);
 }
 
@@ -35,6 +36,16 @@
 .widget-bar .ct-bar:hover,
 .widget-bar .ct-bar:focus {
   filter: contrast(90%) brightness(125%) saturate(110%);
+}
+
+.widget-legend {
+  padding: 0 var(--s-system) var(--s-safe);
+  justify-content: flex-end;
+}
+
+.widget-tooltip {
+  display: block;
+  background-color: var(--c-action);
 }
 
 #chart-stocks .ct-series .ct-point {
