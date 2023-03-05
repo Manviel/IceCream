@@ -45,7 +45,7 @@ const Notes: Component = () => {
 
   return (
     <>
-      <button class='btn token provision' onClick={handleOpen}>
+      <button type='button' class='btn token provision' onClick={handleOpen}>
         Notes
       </button>
       <Show when={open()}>
@@ -53,7 +53,7 @@ const Notes: Component = () => {
           <Dialog onClose={setOpen}>
             <SheetContent>
               <DialogTitle class='subtitle'>Notes</DialogTitle>
-              <button class={ShapeIcon} onClick={handleClose}>
+              <button type='button' class={ShapeIcon} onClick={handleClose}>
                 <CloseIcon />
               </button>
             </SheetContent>

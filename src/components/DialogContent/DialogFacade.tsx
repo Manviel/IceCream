@@ -28,7 +28,7 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
 
   return (
     <>
-      <button class={triggerClassName} onClick={handleOpen}>
+      <button type='button' class={triggerClassName} onClick={handleOpen}>
         {triggerContent}
       </button>
 
@@ -43,6 +43,7 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
               {children}
 
               <button
+                type='button'
                 class='btn token content-full provision'
                 onClick={handleClose}
               >
