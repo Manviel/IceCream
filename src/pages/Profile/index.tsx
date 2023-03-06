@@ -49,13 +49,13 @@ const options: ListItemGen<string>[] = [
 const Profile: Component = () => {
   return (
     <PageDecorator subtitle='Your Profile' headline='And new superpower'>
+      <Breathe />
+
       <div class='screen'>
         <Suspense fallback={<Loader />}>
           <Quote />
         </Suspense>
       </div>
-
-      <Breathe />
 
       <footer class='material view rounded content-full screen'>
         <h3 class='subtitle'>Software Requirements</h3>
