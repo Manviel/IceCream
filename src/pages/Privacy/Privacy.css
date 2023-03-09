@@ -1,7 +1,7 @@
 .privacy {
   grid-template-columns: 4fr 1fr;
   grid-gap: 1.8rem;
-  padding-top: var(--s-ellipse);
+  padding-top: var(--s-finger);
 }
 
 .paper {
@@ -10,7 +10,7 @@
 }
 
 .quick {
-  gap: var(--s-ellipse);
+  gap: var(--s-finger);
 }
 
 .spy-nav {
