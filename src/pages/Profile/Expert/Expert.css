@@ -67,7 +67,7 @@
   position: fixed;
   top: 0;
   left: 50%;
-  min-width: 90vw;
+  min-width: var(--s-modal);
   height: 100%;
   z-index: 5;
   border-radius: 1rem 1rem 0 0;

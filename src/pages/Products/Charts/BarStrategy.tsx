@@ -2,13 +2,13 @@ import { Component, onMount } from 'solid-js';
 import { BarChart } from 'chartist';
 
 import { ChartIDType } from '../Charts';
-import { useChartSource, useLegends } from './Context';
+import { ChartLegend, useChartSource, useLegends } from './Context';
 
 const BarStrategy: Component<ChartIDType> = (props) => {
   const { id, source } = props;
 
   const { labels, datasets } = useChartSource(source);
-  const { handleHover } = useLegends({ labels, datasets });
+  const { handleReader, legend } = useLegends({ labels, datasets });
 
   onMount(() => {
     const chart = new BarChart(
@@ -21,6 +21,10 @@ const BarStrategy: Component<ChartIDType> = (props) => {
         distributeSeries: true,
         axisX: {
           showGrid: false,
+          labelOffset: {
+            x: 0,
+            y: 8,
+          },
         },
       }
     );
@@ -29,12 +33,18 @@ const BarStrategy: Component<ChartIDType> = (props) => {
       if (data.type === 'bar') {
         const node = data.element.getNode();
 
-        handleHover(node, data.seriesIndex);
+        handleReader(node, data.seriesIndex);
       }
     });
   });
 
-  return <figure id={id} class='widget-bar' />;
+  return (
+    <>
+      <figure id={id} class='widget-bar' />
+
+      <ChartLegend legend={legend} />
+    </>
+  );
 };
 
 export default BarStrategy;

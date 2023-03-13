@@ -3,7 +3,7 @@
 }
 
 .loader {
-  height: var(--s-ellipse);
+  height: var(--s-finger);
 }
 
 .skeleton {

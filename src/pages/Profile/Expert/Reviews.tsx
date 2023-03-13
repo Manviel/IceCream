@@ -55,10 +55,20 @@ const Reviews: Component = () => {
         </h3>
 
         <nav class='flex justify-between gap' aria-labelledby='candidate'>
-          <button class={SuperEllipse} aria-label='Previous' onClick={prev}>
+          <button
+            type='button'
+            class={SuperEllipse}
+            aria-label='Previous'
+            onClick={prev}
+          >
             <PlayPrevIcon />
           </button>
-          <button class={SuperEllipse} aria-label='Next' onClick={next}>
+          <button
+            type='button'
+            class={SuperEllipse}
+            aria-label='Next'
+            onClick={next}
+          >
             <PlayNextIcon />
           </button>
         </nav>

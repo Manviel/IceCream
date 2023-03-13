@@ -1,6 +1,7 @@
 :root {
   --c-backdrop: rgba(0, 0, 0, 0.4);
   --p-spec: blur(8px);
+  --s-modal: 94vw;
 }
 
 .backdrop {
@@ -42,6 +43,6 @@
 
 @media screen and (max-width: 768px) {
   .dialog {
-    min-width: 90vw;
+    min-width: var(--s-modal);
   }
 }

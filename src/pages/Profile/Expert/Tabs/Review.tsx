@@ -4,8 +4,9 @@ import Card from '../../../../components/Card';
 
 import Reviews from '../Reviews';
 
-const Review: Component = () => {
-  return (
+const Review: Component = () => (
+  <>
+    <h3 class='subtitle'>Overview</h3>
     <div class='grid toolbar'>
       <Card
         title='People in 2022'
@@ -16,7 +17,7 @@ const Review: Component = () => {
 
       <Reviews />
     </div>
-  );
-};
+  </>
+);
 
 export default Review;

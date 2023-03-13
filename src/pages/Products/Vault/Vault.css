@@ -1,6 +1,5 @@
 :root {
   --s-radio: 100px;
-  --s-stroke: 13px;
 }
 
 .activity {
@@ -41,6 +40,7 @@
 
 .accrued {
   color: var(--c-heat);
+  font-weight: bold;
 }
 
 @keyframes progress {

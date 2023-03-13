@@ -1,6 +1,7 @@
 :root {
   --c-subscription: #b25fea;
   --c-neon: #04de71;
+  --s-stroke: 13px;
 }
 
 .widget-title {
@@ -9,7 +10,7 @@
 }
 
 .widget-main {
-  font-size: var(--s-ellipse);
+  font-size: var(--s-finger);
   margin-bottom: 1.6rem;
   font-weight: normal;
 }
@@ -22,12 +23,18 @@
   stroke: var(--c-action);
 }
 
-.widget-line .ct-point {
+.widget-line .ct-point,
+.widget-bar .ct-bar {
+  stroke-width: var(--s-stroke);
+}
+
+.widget-line .ct-point:hover,
+.widget-line .ct-point:focus {
   stroke-width: var(--s-system);
 }
 
 .widget-bar .ct-bar {
-  stroke-width: 8%;
+  stroke-linecap: round;
 }
 
 .widget-line .ct-point:hover,
@@ -35,6 +42,15 @@
 .widget-bar .ct-bar:hover,
 .widget-bar .ct-bar:focus {
   filter: contrast(90%) brightness(125%) saturate(110%);
+}
+
+.widget-legend {
+  padding: 0.4rem var(--s-system) var(--s-safe);
+}
+
+.widget-tooltip {
+  display: block;
+  background-color: var(--c-action);
 }
 
 #chart-stocks .ct-series .ct-point {

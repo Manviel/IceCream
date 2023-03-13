@@ -7,10 +7,10 @@ import BackwardNavigation, {
 } from '../Header/BackwardNavigation';
 
 import { useObserver } from '../../services/utils';
+import { DarkThemeType } from '../../models';
 
-interface HeaderTemplateType extends BackwardNavigationType {
+interface HeaderTemplateType extends BackwardNavigationType, DarkThemeType {
   headline: string;
-  isDark?: boolean;
 }
 
 const PageDecorator: ParentComponent<HeaderTemplateType> = ({

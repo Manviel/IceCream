@@ -3,7 +3,7 @@
 }
 
 .form-control {
-  padding: 0.9rem var(--s-safe);
+  padding: 1.1rem var(--s-safe) 1rem;
   font-size: 1.6rem;
 }
 
@@ -15,5 +15,5 @@
 
 .form-label {
   font-size: var(--s-system);
-  padding: 0.9rem 1rem;
+  padding: 0.9rem 1rem var(--s-unit);
 }
