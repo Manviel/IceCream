@@ -46,7 +46,6 @@
 
 .widget-legend {
   padding: 0.4rem var(--s-system) var(--s-safe);
-  justify-content: flex-end;
 }
 
 .widget-tooltip {

@@ -39,12 +39,12 @@ const Vault: Component = () => {
           <div class='grid products provision items-center'>
             <Ring progress={progress} />
 
-            <article class='flex col context'>
-              <p class='term'>Profit</p>
-              <h4 class='sum accrued'>{commasAdapter(income())}</h4>
-              <p class='term'>Investing</p>
-              <h4 class='sum grey-dark'>{commasAdapter(budget())}</h4>
-            </article>
+            <dl class='flex col context'>
+              <dt class='term'>Profit</dt>
+              <dd class='sum accrued'>{commasAdapter(income())}</dd>
+              <dt class='term'>Investing</dt>
+              <dd class='sum grey-dark'>{commasAdapter(budget())}</dd>
+            </dl>
           </div>
         </>
       }

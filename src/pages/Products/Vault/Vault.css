@@ -40,6 +40,7 @@
 
 .accrued {
   color: var(--c-heat);
+  font-weight: bold;
 }
 
 @keyframes progress {
