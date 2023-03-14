@@ -15,8 +15,12 @@
   font-weight: normal;
 }
 
-.ct-label {
+.card .ct-label {
   color: var(--c-surface);
+}
+
+.box .ct-label {
+  color: var(--c-grey);
 }
 
 .ct-grid {
@@ -46,6 +50,10 @@
 
 .widget-legend {
   padding: 0.4rem var(--s-system) var(--s-safe);
+}
+
+.widget-legend .ct-label {
+  font-size: var(--s-safe);
 }
 
 .widget-tooltip {

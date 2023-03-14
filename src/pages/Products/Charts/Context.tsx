@@ -47,7 +47,7 @@ export const ChartLegend: Component<ChartLegendType<string | null>> = (
 
   return (
     <dl class='flex content-full justify-between items-center widget-legend'>
-      <dt>Selected:</dt>
+      <dt class='ct-label'>Selected:</dt>
       <dd class='chip widget-tooltip'>{legend()}</dd>
     </dl>
   );
