@@ -1,3 +1,10 @@
+export enum ActionTypes {
+  SuperEllipse = 'superellipse icon flex items-center justify-center',
+  ShapeIcon = 'shape token icon flex justify-center items-center',
+  Secondary = 'btn token content-full provision',
+  Contained = 'btn contained',
+}
+
 export const LEVEL_1 = 'Bronze';
 export const LEVEL_2 = 'Silver';
 export const LEVEL_3 = 'Gold';
@@ -11,10 +18,6 @@ export const Category = {
   [LEVEL_4]: 'JPY',
   [LEVEL_5]: 'AUD',
 };
-
-export const SuperEllipse =
-  'superellipse icon flex items-center justify-center';
-export const ShapeIcon = 'shape token icon flex justify-center items-center';
 
 export const MIN_PERCENT = -100;
 export const MAX_PERCENT = 300;

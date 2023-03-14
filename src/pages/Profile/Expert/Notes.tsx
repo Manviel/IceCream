@@ -1,7 +1,7 @@
 import { Component, createSignal, Show, ParentComponent } from 'solid-js';
 import { Dialog, DialogTitle, Description } from 'solid-a11y';
 
-import { ShapeIcon } from '../../../models/config';
+import { ActionTypes } from '../../../models/config';
 
 import AbstractDialogContent from '../../../components/DialogContent/AbstractDialogContent';
 
@@ -45,7 +45,7 @@ const Notes: Component = () => {
 
   return (
     <>
-      <button type='button' class='btn token provision' onClick={handleOpen}>
+      <button type='button' class={ActionTypes.Secondary} onClick={handleOpen}>
         Notes
       </button>
       <Show when={open()}>
@@ -53,7 +53,11 @@ const Notes: Component = () => {
           <Dialog onClose={setOpen}>
             <SheetContent>
               <DialogTitle class='subtitle'>Notes</DialogTitle>
-              <button type='button' class={ShapeIcon} onClick={handleClose}>
+              <button
+                type='button'
+                class={ActionTypes.ShapeIcon}
+                onClick={handleClose}
+              >
                 <CloseIcon />
               </button>
             </SheetContent>

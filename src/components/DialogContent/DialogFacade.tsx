@@ -3,6 +3,7 @@ import { JSX } from 'solid-js/jsx-runtime';
 import { Dialog, DialogTitle, Description } from 'solid-a11y';
 
 import { SegregationType } from '../../models';
+import { ActionTypes } from '../../models/config';
 
 import DialogContent from '.';
 
@@ -44,7 +45,7 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
 
               <button
                 type='button'
-                class='btn token content-full provision'
+                class={ActionTypes.Secondary}
                 onClick={handleClose}
               >
                 {closingName}

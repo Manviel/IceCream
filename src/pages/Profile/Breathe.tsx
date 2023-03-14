@@ -2,6 +2,7 @@ import type { Component } from 'solid-js';
 import { Link } from '@solidjs/router';
 
 import { Paths } from '../../models';
+import { ActionTypes } from '../../models/config';
 
 import './Breathe.css';
 
@@ -22,7 +23,7 @@ const Breathe: Component = () => (
       can help reduce stress and improve overall health.
     </p>
 
-    <Link href={Paths.Expert} class='btn contained'>
+    <Link href={Paths.Expert} class={ActionTypes.Contained}>
       Go to Onboarding
     </Link>
   </article>

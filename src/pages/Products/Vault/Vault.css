@@ -36,11 +36,11 @@
 
 .sum {
   font-size: var(--s-dock);
+  font-weight: bold;
 }
 
 .accrued {
   color: var(--c-heat);
-  font-weight: bold;
 }
 
 @keyframes progress {

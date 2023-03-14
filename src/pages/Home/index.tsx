@@ -2,6 +2,7 @@ import { Component } from 'solid-js';
 import { Link } from '@solidjs/router';
 
 import { Paths } from '../../models';
+import { ActionTypes } from '../../models/config';
 
 import Card from '../../components/Card';
 import ConnectFactory from '../../components/ConnectFactory';
@@ -71,7 +72,7 @@ const Home: Component = () => {
         <div class='flex justify-between items-center screen'>
           <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
 
-          <Link href={Paths.Products} class='btn contained'>
+          <Link href={Paths.Products} class={ActionTypes.Contained}>
             Go to Products
           </Link>
         </div>

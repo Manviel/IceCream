@@ -1,7 +1,7 @@
 import { Component } from 'solid-js';
 import { createSlider } from 'solid-slider';
 
-import { SuperEllipse } from '../../../models/config';
+import { ActionTypes } from '../../../models/config';
 
 import ConnectFactory from '../../../components/ConnectFactory';
 
@@ -57,7 +57,7 @@ const Reviews: Component = () => {
         <nav class='flex justify-between gap' aria-labelledby='candidate'>
           <button
             type='button'
-            class={SuperEllipse}
+            class={ActionTypes.SuperEllipse}
             aria-label='Previous'
             onClick={prev}
           >
@@ -65,7 +65,7 @@ const Reviews: Component = () => {
           </button>
           <button
             type='button'
-            class={SuperEllipse}
+            class={ActionTypes.SuperEllipse}
             aria-label='Next'
             onClick={next}
           >

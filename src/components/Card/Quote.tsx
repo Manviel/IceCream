@@ -8,7 +8,7 @@ import {
 
 import Loader from '../Loader';
 
-import { SuperEllipse } from '../../models/config';
+import { ActionTypes } from '../../models/config';
 import { SegregationType } from '../../models';
 import { getQuote } from '../../services/news';
 
@@ -63,7 +63,7 @@ const Quote: Component = () => {
           >
             <button
               type='button'
-              class={SuperEllipse}
+              class={ActionTypes.SuperEllipse}
               onClick={refetch}
               aria-label='Get new quote'
             >

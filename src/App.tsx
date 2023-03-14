@@ -1,7 +1,7 @@
 import { Component, lazy, Suspense } from 'solid-js';
 import { Routes, Route, NavLink } from '@solidjs/router';
 
-import { SuperEllipse } from './models/config';
+import { ActionTypes } from './models/config';
 import { Paths } from './models';
 
 import { Skeleton } from './components/Loader';
@@ -24,19 +24,36 @@ const App: Component = () => (
       class='fixed-bottom dock depth content-full flex justify-between'
       aria-label='Tabs'
     >
-      <NavLink href={Paths.Home} end aria-label='Home' class={SuperEllipse}>
+      <NavLink
+        href={Paths.Home}
+        end
+        aria-label='Home'
+        class={ActionTypes.SuperEllipse}
+      >
         <SquareTextIcon />
       </NavLink>
 
-      <NavLink href={Paths.Products} aria-label='Products' class={SuperEllipse}>
+      <NavLink
+        href={Paths.Products}
+        aria-label='Products'
+        class={ActionTypes.SuperEllipse}
+      >
         <FlameIcon />
       </NavLink>
 
-      <NavLink href={Paths.Privacy} aria-label='Privacy' class={SuperEllipse}>
+      <NavLink
+        href={Paths.Privacy}
+        aria-label='Privacy'
+        class={ActionTypes.SuperEllipse}
+      >
         <BookIcon />
       </NavLink>
 
-      <NavLink href={Paths.Profile} aria-label='Profile' class={SuperEllipse}>
+      <NavLink
+        href={Paths.Profile}
+        aria-label='Profile'
+        class={ActionTypes.SuperEllipse}
+      >
         <TextFinderIcon />
       </NavLink>
     </nav>
