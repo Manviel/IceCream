@@ -50,7 +50,7 @@ const Quote: Component = () => {
 
   return (
     <ErrorBoundary
-      fallback={<h2 class='material view rounded'>Failed to fetch</h2>}
+      fallback={<h2 class='price view rounded'>Failed to fetch</h2>}
     >
       {quote.loading && <Loader />}
 

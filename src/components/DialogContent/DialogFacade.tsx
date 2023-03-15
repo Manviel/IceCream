@@ -5,6 +5,8 @@ import { Dialog, DialogTitle, Description } from 'solid-a11y';
 import { SegregationType } from '../../models';
 import { ActionTypes } from '../../models/config';
 
+import CloseIcon from '../../assets/icons/close.svg';
+
 import DialogContent from '.';
 
 interface DialogFacadeType extends SegregationType {
@@ -37,7 +39,18 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
         {() => (
           <Dialog onClose={setOpen}>
             <DialogContent>
-              <DialogTitle class='subtitle'>{title}</DialogTitle>
+              <div class='flex justify-between items-center'>
+                <DialogTitle class='subtitle'>{title}</DialogTitle>
+
+                <button
+                  type='button'
+                  class={ActionTypes.ShapeIcon}
+                  onClick={handleClose}
+                  aria-label='Close'
+                >
+                  <CloseIcon />
+                </button>
+              </div>
 
               <Description class='info'>{description}</Description>
 

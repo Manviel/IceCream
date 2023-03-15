@@ -57,6 +57,7 @@ const Notes: Component = () => {
                 type='button'
                 class={ActionTypes.ShapeIcon}
                 onClick={handleClose}
+                aria-label='Close'
               >
                 <CloseIcon />
               </button>

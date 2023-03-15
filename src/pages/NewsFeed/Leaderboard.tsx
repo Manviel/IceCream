@@ -1,62 +1,66 @@
-import { Index, ErrorBoundary, Component, createEffect } from 'solid-js';
+import { For, createSignal, Component, createEffect } from 'solid-js';
 
 import { getNews } from '../../services/news';
 import { useNews } from '../../services/store';
 import { commasAdapter } from '../../services/utils';
 
-import Loader from '../../components/Loader';
-
 const fetchQuery = async (category: string) => await getNews({ category });
 
 const Leaderboard: Component = () => {
+  const [loading, setLoading] = createSignal(false);
+
   const [data, { updateNews }] = useNews();
 
   createEffect(() => {
     if (data.news.length === 0) {
-      fetchQuery(data.currentRank).then((entities: any) =>
-        updateNews(entities)
-      );
+      fetchQuery(data.currentRank)
+        .then((entities: any) => {
+          updateNews(entities);
+          setLoading(false);
+        })
+        .catch(() => setLoading(true));
     }
   });
 
   return (
-    <ErrorBoundary
-      fallback={<h2 class='layer view rounded screen'>Failed to load</h2>}
-    >
-      <table class='content-full screen'>
-        <caption>Exchange 1 {data.currentRank}</caption>
-        <thead class='material'>
+    <table class='content-full screen'>
+      <caption>Exchange 1 {data.currentRank}</caption>
+      <thead class='material'>
+        <tr>
+          <th>Currency</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        {loading() ? (
           <tr>
-            <th>Currency</th>
-            <th>Value</th>
+            <td>Error</td>
+            <td>
+              <span class='chip price'>Failed to load</span>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          <Index each={data.news} fallback={<Loader />}>
-            {(list) => {
-              const com = list();
-
-              return (
-                <tr>
-                  <td>{com[0]}</td>
-                  <td>
-                    <span
-                      class='chip'
-                      classList={{
-                        ghost: com[1] > 1,
-                        price: com[1] < 1,
-                      }}
-                    >
-                      {commasAdapter(Number(com[1]))}
-                    </span>
-                  </td>
-                </tr>
-              );
-            }}
-          </Index>
-        </tbody>
-      </table>
-    </ErrorBoundary>
+        ) : (
+          <For each={data.news}>
+            {(list) => (
+              <tr>
+                <td>{list[0]}</td>
+                <td>
+                  <span
+                    class='chip'
+                    classList={{
+                      ghost: list[1] > 1,
+                      price: list[1] < 1,
+                    }}
+                  >
+                    {commasAdapter(Number(list[1]))}
+                  </span>
+                </td>
+              </tr>
+            )}
+          </For>
+        )}
+      </tbody>
+    </table>
   );
 };
 
