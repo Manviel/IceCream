@@ -13,7 +13,7 @@ const Inbox: Component = () => {
     <DialogFacade
       title='Abstract'
       description='This helps the user to focus on what the object does, rather than how it performs.'
-      closingName='Close'
+      closingName='Cancel'
       triggerContent={
         <>
           <h3 class='widget-title'>Inbox</h3>

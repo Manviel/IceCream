@@ -7,7 +7,7 @@ const Results: Component = () => {
     <DialogFacade
       title='Event loop'
       description='JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading.'
-      closingName='Close'
+      closingName='Cancel'
       triggerContent='Results'
       triggerClassName='btn token provision'
     >
