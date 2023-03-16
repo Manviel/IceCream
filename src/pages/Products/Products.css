@@ -15,6 +15,10 @@
   font-weight: normal;
 }
 
+.ct-label {
+  font-size: 11px;
+}
+
 .card .ct-label {
   color: var(--c-surface);
 }

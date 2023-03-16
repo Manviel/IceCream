@@ -1,9 +1,17 @@
-import { Component, createSignal, Show, ParentComponent } from 'solid-js';
+import {
+  Component,
+  createSignal,
+  Show,
+  ParentComponent,
+  Suspense,
+} from 'solid-js';
 import { Dialog, DialogTitle, Description } from 'solid-a11y';
 
 import { ActionTypes } from '../../../models/config';
 
 import AbstractDialogContent from '../../../components/DialogContent/AbstractDialogContent';
+import Loader from '../../../components/Loader';
+import Quote from '../../../components/Card/Quote';
 
 import CloseIcon from '../../../assets/icons/close.svg';
 
@@ -20,6 +28,12 @@ const SheetContent: ParentComponent = ({ children }) => {
         first event from the queue and will push it to the Call Stack, which
         effectively runs it.
       </Description>
+
+      <div class='screen'>
+        <Suspense fallback={<Loader />}>
+          <Quote />
+        </Suspense>
+      </div>
     </AbstractDialogContent>
   );
 };

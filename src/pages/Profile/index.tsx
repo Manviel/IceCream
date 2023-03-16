@@ -1,7 +1,7 @@
-import { Component, For, Suspense } from 'solid-js';
+import { Component, For, Suspense, lazy } from 'solid-js';
 
 import Loader from '../../components/Loader';
-import Quote from '../../components/Card/Quote';
+
 import PageDecorator from '../../components/PageDecorator';
 import ConnectFactory from '../../components/ConnectFactory';
 
@@ -10,6 +10,8 @@ import { ListItemGen } from '../../models';
 import Breathe from './Breathe';
 
 import './Profile.css';
+
+const Expert = lazy(() => import('./Expert'));
 
 const options: ListItemGen<string>[] = [
   {
@@ -51,11 +53,9 @@ const Profile: Component = () => {
     <PageDecorator subtitle='Your Profile' headline='And new superpower'>
       <Breathe />
 
-      <div class='screen'>
-        <Suspense fallback={<Loader />}>
-          <Quote />
-        </Suspense>
-      </div>
+      <Suspense fallback={<Loader />}>
+        <Expert />
+      </Suspense>
 
       <footer class='material view rounded content-full screen'>
         <h3 class='subtitle'>Software Requirements</h3>

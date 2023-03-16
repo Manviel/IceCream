@@ -1,8 +1,4 @@
 import type { Component } from 'solid-js';
-import { Link } from '@solidjs/router';
-
-import { Paths } from '../../models';
-import { ActionTypes } from '../../models/config';
 
 import './Breathe.css';
 
@@ -22,10 +18,6 @@ const Breathe: Component = () => (
       Taking moments throughout the day to stop, relax, and practice mindfulness
       can help reduce stress and improve overall health.
     </p>
-
-    <Link href={Paths.Expert} class={ActionTypes.Contained}>
-      Go to Onboarding
-    </Link>
   </article>
 );
 

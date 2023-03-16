@@ -40,7 +40,7 @@ const QuoteView: ParentComponent<QuoteViewType> = (props) => {
         {children}
       </div>
 
-      <h2 class='box view rounded screen'>{description}</h2>
+      <h3 class='box view rounded screen card-sub'>{description}</h3>
     </article>
   );
 };
