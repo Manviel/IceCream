@@ -8,9 +8,8 @@ import ChartStrategy from '../Charts/ChartStrategy';
 
 const source = {
   Eggs: 6.3,
-  'Chicken breast': 26.7,
-  'Cottage cheese': 28,
-  'Greek yogurt': 19.9,
+  Chicken: 26.7,
+  Yogurt: 19.9,
   Milk: 8.3,
   Lentils: 9,
   'Lean beef': 24.6,
@@ -18,7 +17,7 @@ const source = {
   Peanuts: 7.3,
   Almonds: 5.8,
   Quinoa: 8,
-  'Turkey breast': 25.6,
+  Turkey: 25.6,
 };
 
 const chartID = 'chart-health';

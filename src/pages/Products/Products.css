@@ -101,6 +101,11 @@
   .widget-chart {
     grid-column: span 2;
   }
+
+  .ct-label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 @media screen and (min-width: 2560px) {
