@@ -13,12 +13,16 @@
 }
 
 .expert {
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .toolbar {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--s-medium);
+}
+
+.production {
+  grid-column: span 3;
 }
 
 .tour-list {
@@ -36,10 +40,6 @@
 .tour-list-item:hover,
 .tour-list-item[aria-selected='true'] {
   background-color: var(--c-active);
-}
-
-.production {
-  grid-column: span 4;
 }
 
 .keen-slider {

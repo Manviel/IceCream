@@ -23,7 +23,11 @@ const Reviews: Component = () => {
     <>
       <article class='flex col text-center justify-between layer rounded'>
         <h3 class='info card-sub'>Usage</h3>
-        <p>900 million</p>
+
+        <ConnectFactory
+          href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
+          text='View All'
+        />
 
         <Notes />
       </article>
@@ -34,19 +38,6 @@ const Reviews: Component = () => {
         <ConnectFactory href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns' />
 
         <Results />
-      </article>
-
-      <article class='flex col text-center justify-between layer rounded'>
-        <h3 class='info card-sub'>Ratings</h3>
-
-        <ConnectFactory
-          href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
-          text='View All'
-        />
-
-        <p class='info' role='status'>
-          {current() + 1} out of 6
-        </p>
       </article>
 
       <div class='production flex justify-between items-center'>
@@ -113,6 +104,10 @@ const Reviews: Component = () => {
           describe the process using diagrams.
         </p>
       </div>
+
+      <p class='production text-center grey-light term' role='status'>
+        {current() + 1} out of 6
+      </p>
     </>
   );
 };
