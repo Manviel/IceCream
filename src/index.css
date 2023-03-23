@@ -62,6 +62,7 @@ a {
 
 svg {
   fill: currentColor;
+  height: 100%;
 }
 
 ul {
@@ -364,7 +365,7 @@ a:focus-visible {
 
 @media screen and (min-width: 1920px) {
   html {
-    font-size: 80%;
+    font-size: 84%;
   }
 }
 
