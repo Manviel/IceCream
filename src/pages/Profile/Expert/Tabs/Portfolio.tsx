@@ -2,8 +2,6 @@ import { ParentComponent, Accessor } from 'solid-js';
 
 import { IDType } from '../../../../models';
 
-import '../../Profile.css';
-
 interface PortfolioType<T> extends IDType {
   fairPriceCost: Accessor<T>;
   fairPricePercent: (cost: number) => string;
@@ -18,16 +16,14 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
 
       {children}
 
-      <div class='ghost view rounded' role='status'>
+      <div class='flex col ghost os' role='status'>
         <p>Fair Price (in $)</p>
-        <strong class='box-description'>{fairPriceCost().toFixed(2)}</strong>
+        <strong class='os-title'>{fairPriceCost().toFixed(2)}</strong>
       </div>
 
-      <div class='document view rounded' role='log'>
+      <div class='flex col document os' role='log'>
         <p>Fair Price (in %)</p>
-        <strong class='box-description'>
-          {fairPricePercent(fairPriceCost())}
-        </strong>
+        <strong class='os-title'>{fairPricePercent(fairPriceCost())}</strong>
       </div>
     </fieldset>
   );

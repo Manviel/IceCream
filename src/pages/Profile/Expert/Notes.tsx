@@ -2,7 +2,6 @@ import { Component } from 'solid-js';
 
 import { ActionTypes } from '../../../models/config';
 
-import Quote from '../../../components/Card/Quote';
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
 
 const SheetContent = `The Event Loop has one simple job — to monitor the Call Stack and the
@@ -27,11 +26,7 @@ const Notes: Component = () => {
       parentClassName='bottom-sheet view card'
       childClassName='flex col'
       toggleActionSheet={toggleActionSheet}
-    >
-      <div class='screen scrollable'>
-        <Quote />
-      </div>
-    </DialogFacade>
+    />
   );
 };
 

@@ -8,8 +8,6 @@ import { ListItemGen } from '../../models';
 import Breathe from './Breathe';
 import Expert from './Expert';
 
-import './Profile.css';
-
 const options: ListItemGen<string>[] = [
   {
     value: 'https://refactoring.guru/refactoring/what-is-refactoring',
@@ -55,10 +53,10 @@ const Profile: Component = () => {
       <footer class='material view rounded content-full screen'>
         <h3 class='subtitle'>Software Requirements</h3>
 
-        <ul class='flex col'>
+        <ul class='flex col info gap'>
           <For each={options}>
             {(option) => (
-              <li class='flex items-center box-item'>
+              <li class='flex items-center'>
                 <ConnectFactory href={option.value} text={option.label} />
               </li>
             )}

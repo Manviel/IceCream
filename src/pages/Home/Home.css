@@ -6,21 +6,6 @@
   grid-template-columns: repeat(6, 1fr);
 }
 
-.os {
-  border-radius: 1rem;
-  padding: var(--s-system);
-}
-
-.os-title {
-  font-weight: bold;
-  font-size: var(--s-dock);
-  text-transform: uppercase;
-}
-
-.os-value {
-  margin-top: var(--s-safe);
-}
-
 .os-column {
   grid-column: span 2;
 }

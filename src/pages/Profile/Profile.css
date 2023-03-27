@@ -1,9 +1,0 @@
-.box-item {
-  padding: var(--s-safe) 0;
-}
-
-.box-description {
-  font-size: var(--s-dock);
-  text-transform: uppercase;
-  line-height: 2;
-}

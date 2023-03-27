@@ -14,3 +14,15 @@
 .accent {
   color: var(--c-olive);
 }
+
+.os {
+  border-radius: 1rem;
+  padding: var(--s-system);
+  gap: var(--s-safe);
+}
+
+.os-title {
+  font-weight: bold;
+  font-size: var(--s-dock);
+  text-transform: uppercase;
+}

@@ -14,6 +14,8 @@ import { getQuote } from '../../services/news';
 
 import GoForwardIcon from '../../assets/icons/go-forward.svg';
 
+import './Card.css';
+
 type QuoteType = {
   quote: string;
   character: string;
@@ -32,9 +34,9 @@ const QuoteView: ParentComponent<QuoteViewType> = (props) => {
   return (
     <article class='material view rounded'>
       <div class='flex justify-between items-center'>
-        <blockquote class='flex col'>
+        <blockquote class='flex col gap'>
           <span>{title}</span>
-          <strong class='box-description'>{author}</strong>
+          <strong class='os-title'>{author}</strong>
         </blockquote>
 
         {children}
