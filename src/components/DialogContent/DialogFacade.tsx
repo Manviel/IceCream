@@ -7,12 +7,13 @@ import { ActionTypes } from '../../models/config';
 
 import CloseIcon from '../../assets/icons/close.svg';
 
-import DialogContent from '.';
+import DialogContent, { ActionSheetType } from '.';
 
-interface DialogFacadeType extends SegregationType {
+interface DialogFacadeType extends SegregationType, ActionSheetType {
   closingName: string;
   triggerClassName: string;
   triggerContent: JSX.Element;
+  toggleActionSheet?: () => void;
 }
 
 const DialogFacade: ParentComponent<DialogFacadeType> = ({
@@ -22,12 +23,21 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
   children,
   triggerContent,
   triggerClassName,
+  parentClassName,
+  childClassName,
+  toggleActionSheet,
 }) => {
   const [open, setOpen] = createSignal(false);
 
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    setOpen(true);
+    toggleActionSheet?.();
+  };
 
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    toggleActionSheet?.();
+  };
 
   return (
     <>
@@ -38,7 +48,10 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
       <Show when={open()}>
         {() => (
           <Dialog onClose={setOpen}>
-            <DialogContent>
+            <DialogContent
+              parentClassName={parentClassName}
+              childClassName={childClassName}
+            >
               <div class='flex justify-between items-center'>
                 <DialogTitle class='subtitle'>{title}</DialogTitle>
 

@@ -1,85 +1,40 @@
-import {
-  Component,
-  createSignal,
-  Show,
-  ParentComponent,
-  Suspense,
-} from 'solid-js';
-import { Dialog, DialogTitle, Description } from 'solid-a11y';
+import { Component, Suspense } from 'solid-js';
 
 import { ActionTypes } from '../../../models/config';
 
-import AbstractDialogContent from '../../../components/DialogContent/AbstractDialogContent';
 import Loader from '../../../components/Loader';
 import Quote from '../../../components/Card/Quote';
+import DialogFacade from '../../../components/DialogContent/DialogFacade';
 
-import CloseIcon from '../../../assets/icons/close.svg';
+const SheetContent = `The Event Loop has one simple job — to monitor the Call Stack and the
+Callback Queue. If the Call Stack is empty, the Event Loop will take the
+first event from the queue and will push it to the Call Stack, which
+effectively runs it.`;
 
-const SheetContent: ParentComponent = ({ children }) => {
+const Notes: Component = () => {
+  const toggleActionSheet = () => {
+    const main = document.querySelector('.app');
+
+    main?.classList.toggle('bottom-main');
+  };
+
   return (
-    <AbstractDialogContent
-      parentClassName='flex col view card bottom-sheet'
-      childClassName='flex justify-between items-center'
-      factory={children}
+    <DialogFacade
+      title='Notes'
+      description={SheetContent}
+      closingName='Understand'
+      triggerContent='Notes'
+      triggerClassName={ActionTypes.Secondary}
+      parentClassName='bottom-sheet view card'
+      childClassName='flex col'
+      toggleActionSheet={toggleActionSheet}
     >
-      <Description class='info'>
-        The Event Loop has one simple job — to monitor the Call Stack and the
-        Callback Queue. If the Call Stack is empty, the Event Loop will take the
-        first event from the queue and will push it to the Call Stack, which
-        effectively runs it.
-      </Description>
-
-      <div class='screen'>
+      <div class='screen scrollable'>
         <Suspense fallback={<Loader />}>
           <Quote />
         </Suspense>
       </div>
-    </AbstractDialogContent>
-  );
-};
-
-const Notes: Component = () => {
-  const [open, setOpen] = createSignal(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-
-    const main = document.querySelector('.app');
-
-    main?.classList.add('bottom-main');
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-
-    const main = document.querySelector('.app');
-
-    main?.classList.remove('bottom-main');
-  };
-
-  return (
-    <>
-      <button type='button' class={ActionTypes.Secondary} onClick={handleOpen}>
-        Notes
-      </button>
-      <Show when={open()}>
-        {() => (
-          <Dialog onClose={setOpen}>
-            <SheetContent>
-              <DialogTitle class='subtitle'>Notes</DialogTitle>
-              <button
-                type='button'
-                class={ActionTypes.ShapeIcon}
-                onClick={handleClose}
-                aria-label='Close'
-              >
-                <CloseIcon />
-              </button>
-            </SheetContent>
-          </Dialog>
-        )}
-      </Show>
-    </>
+    </DialogFacade>
   );
 };
 

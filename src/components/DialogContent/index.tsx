@@ -4,11 +4,20 @@ import AbstractDialogContent from './AbstractDialogContent';
 
 import './DialogContent.css';
 
-const DialogContent: ParentComponent = ({ children }) => {
+export interface ActionSheetType {
+  parentClassName?: string;
+  childClassName?: string;
+}
+
+const DialogContent: ParentComponent<ActionSheetType> = ({
+  children,
+  parentClassName = 'dialog',
+  childClassName = 'depth view rounded alert',
+}) => {
   return (
     <AbstractDialogContent
-      parentClassName='dialog'
-      childClassName='depth view rounded alert'
+      parentClassName={parentClassName}
+      childClassName={childClassName}
       factory={children}
     />
   );
