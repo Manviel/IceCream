@@ -1,8 +1,7 @@
-import { Component, Suspense } from 'solid-js';
+import { Component } from 'solid-js';
 
 import { ActionTypes } from '../../../models/config';
 
-import Loader from '../../../components/Loader';
 import Quote from '../../../components/Card/Quote';
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
 
@@ -30,9 +29,7 @@ const Notes: Component = () => {
       toggleActionSheet={toggleActionSheet}
     >
       <div class='screen scrollable'>
-        <Suspense fallback={<Loader />}>
-          <Quote />
-        </Suspense>
+        <Quote />
       </div>
     </DialogFacade>
   );

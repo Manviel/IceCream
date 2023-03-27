@@ -34,11 +34,12 @@
 .widget-line .ct-point,
 .widget-bar .ct-bar {
   stroke-width: var(--s-stroke);
+  transition: stroke-width 0.2s cubic-bezier(0.666, 0, 0.4, 1);
 }
 
 .widget-line .ct-point:hover,
 .widget-line .ct-point:focus {
-  stroke-width: var(--s-system);
+  stroke-width: 1.6rem;
 }
 
 .widget-bar .ct-bar {

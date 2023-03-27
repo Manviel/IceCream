@@ -1,7 +1,7 @@
 import { For, createSignal, Component, createEffect } from 'solid-js';
 
 import { getNews } from '../../services/news';
-import { useNews } from '../../services/store';
+import { useStore } from '../../services/store';
 import { commasAdapter } from '../../services/utils';
 
 const fetchQuery = async (category: string) => await getNews({ category });
@@ -9,7 +9,7 @@ const fetchQuery = async (category: string) => await getNews({ category });
 const Leaderboard: Component = () => {
   const [loading, setLoading] = createSignal(false);
 
-  const [data, { updateNews }] = useNews();
+  const [data, { updateNews }] = useStore();
 
   createEffect(() => {
     if (data.news.length === 0) {

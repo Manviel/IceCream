@@ -6,6 +6,5 @@ export default defineConfig({
   plugins: [solidPlugin(), solidSvg()],
   build: {
     target: 'esnext',
-    polyfillDynamicImport: false,
   },
 });

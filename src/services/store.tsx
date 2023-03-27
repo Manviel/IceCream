@@ -33,9 +33,7 @@ const NewsContext = createContext<NewsContextValue>([
   },
 ]);
 
-export const NewsProvider: ParentComponent<{
-  news?: Entity[];
-}> = (props) => {
+export const NewsProvider: ParentComponent<NewsContextState> = (props) => {
   const [state, setState] = createStore({
     news: props.news ?? defaultState.news,
     currentRank: defaultState.currentRank,
@@ -55,4 +53,4 @@ export const NewsProvider: ParentComponent<{
   );
 };
 
-export const useNews = () => useContext(NewsContext);
+export const useStore = () => useContext(NewsContext);
