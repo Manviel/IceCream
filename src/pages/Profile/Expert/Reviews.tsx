@@ -96,7 +96,7 @@ const Reviews: Component = () => {
           their thoughts. After collecting the responses from stakeholders, data
           is analyzed to identify the area of interest of stakeholders.
         </p>
-        <p class='info price view rounded'>
+        <p class='info layer view rounded'>
           Prototyping is used to identify missing or unspecified requirements.
           In this technique, frequent demos are given to the client by creating
           the prototypes so that client can get an idea of how the product will
