@@ -73,6 +73,7 @@ button {
   cursor: pointer;
   border: 0;
   font-family: inherit;
+  color: inherit;
 }
 
 a,
@@ -254,14 +255,15 @@ a:focus-visible {
   min-width: var(--s-finger);
   height: var(--s-finger);
   border-radius: 25%;
+  background-color: transparent;
 }
 
-.superellipse.active,
 .superellipse:hover {
-  background-color: var(--c-white);
+  background-color: var(--c-active);
 }
 
 .superellipse.active {
+  background-color: var(--c-white);
   transform: scale(1.1);
   border: 1px solid var(--c-action);
 }
