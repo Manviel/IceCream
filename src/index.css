@@ -367,12 +367,12 @@ a:focus-visible {
 
 @media screen and (min-width: 1920px) {
   html {
-    font-size: 84%;
+    font-size: 80%;
   }
 }
 
 @media screen and (min-width: 2560px) {
   html {
-    font-size: 108%;
+    font-size: 100%;
   }
 }
