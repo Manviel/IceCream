@@ -12,7 +12,7 @@ const transformCase = (str: string) => str.replace(/\s+/g, '-').toLowerCase();
 
 const useStickyNavigation = () => {
   useObserver(
-    'section[id]',
+    'article[id]',
     (entry) => {
       const id = entry.target.getAttribute('id');
       const article = document.querySelector(`.spy-nav a[href="#${id}"]`);
@@ -41,7 +41,7 @@ const Privacy: Component = () => {
       isDark
     >
       <div class='grid privacy'>
-        <div class='flex col quick'>
+        <section class='flex col quick' role='feed'>
           <For each={containers}>
             {(section) => (
               <Article
@@ -63,7 +63,7 @@ const Privacy: Component = () => {
               </Article>
             )}
           </For>
-        </div>
+        </section>
 
         <nav class='spy-nav flex col' aria-label='Contents'>
           <For each={containers}>

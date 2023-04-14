@@ -28,7 +28,7 @@ const listItems: ListItemGen<number>[] = [OverviewTab, GrowthTab, DividendTab];
 
 const Expert: Component = () => {
   return (
-    <div class='grid expert material left-edge screen'>
+    <section class='grid expert material left-edge screen'>
       <TabGroup>
         <Tabs class='tour-list flex col items-start view'>
           <For each={listItems}>
@@ -61,7 +61,7 @@ const Expert: Component = () => {
           <Dividend />
         </TabPanel>
       </TabGroup>
-    </div>
+    </section>
   );
 };
 

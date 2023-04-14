@@ -14,7 +14,6 @@ const Vault: Component = () => {
   const [income, setIncome] = createSignal(0);
 
   const valueNow = randomInRange(4, 50);
-  const progress = 100 - valueNow;
 
   createEffect(() => {
     const interest = 12 * 0.01;
@@ -34,25 +33,27 @@ const Vault: Component = () => {
       triggerContent={
         <>
           <h3 class='widget-title'>Vault</h3>
-          <p class='term grey-dark'>Up to {progress}%</p>
+          <p class='term grey-dark accrued'>Only {valueNow}% remained</p>
 
-          <div class='grid products provision items-center'>
-            <Ring progress={progress} />
-
-            <dl class='flex col context'>
-              <dt class='term'>Profit</dt>
-              <dd class='sum accrued'>{commasAdapter(income())}</dd>
-              <dt class='term'>Investing</dt>
-              <dd class='sum grey-dark'>{commasAdapter(budget())}</dd>
-            </dl>
+          <div
+            class='provision'
+            role='progressbar'
+            aria-label='Activity ring'
+            aria-valuenow={valueNow}
+          >
+            <Ring progress={valueNow} />
           </div>
         </>
       }
       triggerClassName='view box rounded flex col items-start'
     >
+      <output name='profit' for='budget' class='sum'>
+        Profit: {commasAdapter(income())}
+      </output>
+
       <NumberField
         name='budget'
-        label='Sum'
+        label='Investing'
         value={budget()}
         onChange={handleChange}
       />

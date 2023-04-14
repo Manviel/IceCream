@@ -1,5 +1,5 @@
 :root {
-  --s-radio: 100px;
+  --s-radio: 12rem;
 }
 
 .activity {
@@ -7,44 +7,20 @@
   width: var(--s-radio);
 }
 
-.ring {
-  max-width: 100%;
-  max-height: 100%;
-  vertical-align: middle;
-  transform: rotate(-90deg);
-}
-
-.ring circle {
-  fill: none;
-  stroke-width: var(--s-stroke);
-}
-
-.completed {
-  animation: progress 1s ease-in-out forwards;
+.activity .ct-series-a .ct-slice-donut {
   stroke-linecap: round;
   stroke: var(--c-heat);
 }
 
-.background {
+.activity .ct-series-b .ct-slice-donut {
   stroke: var(--c-action);
 }
 
-.context {
-  gap: 0.2rem;
-  text-align: right;
+.accrued {
+  text-align: left;
 }
 
 .sum {
   font-size: var(--s-dock);
   font-weight: bold;
-}
-
-.accrued {
-  color: var(--c-heat);
-}
-
-@keyframes progress {
-  0% {
-    stroke-dasharray: 0 251;
-  }
 }

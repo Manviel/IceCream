@@ -6,6 +6,8 @@ import { ChartTypes, ChartIDType } from '.';
 import BarStrategy from './BarStrategy';
 import LineStrategy from './LineStrategy';
 
+import 'chartist/dist/index.css';
+
 interface ChartStrategyType
   extends SegregationType,
     ChartIDType,

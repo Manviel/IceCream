@@ -1,41 +1,32 @@
-import { Component } from 'solid-js';
+import { Component, onMount } from 'solid-js';
+import { PieChart } from 'chartist';
 
 type RingType = {
   progress: number;
 };
 
+const id = 'activity-ring';
+
 const Ring: Component<RingType> = (props) => {
   const { progress } = props;
 
-  const circleRadius = 40;
-  const circleCenter = 50;
-  const arcLength = Math.round(2 * 3.14 * circleRadius);
-  const arcOffset = Math.round(arcLength * (progress / 100));
+  const completed = 100 - progress;
 
-  return (
-    <div
-      class='activity'
-      role='progressbar'
-      aria-label='Activity ring'
-      aria-valuenow={progress}
-    >
-      <svg class='ring'>
-        <circle
-          class='background'
-          cx={circleCenter}
-          cy={circleCenter}
-          r={circleRadius}
-        />
-        <circle
-          class='completed'
-          cx={circleCenter}
-          cy={circleCenter}
-          r={circleRadius}
-          stroke-dasharray={`${arcOffset}, ${arcLength}`}
-        />
-      </svg>
-    </div>
-  );
+  onMount(() => {
+    new PieChart(
+      `#${id}`,
+      {
+        series: [completed, progress],
+      },
+      {
+        donut: true,
+        donutWidth: 13,
+        showLabel: false,
+      }
+    );
+  });
+
+  return <figure id={id} class='activity' />;
 };
 
 export default Ring;

@@ -30,7 +30,7 @@ const Promotions: Component = () => {
       strategy={ChartTypes.Bar}
       id={chartID}
       title='Promotions'
-      description={`Most productive hours from ${
+      description={`Productive hours from ${
         sortByMaxValue(source, datasets.length - 1)[0]
       } to 
         ${sortByMaxValue(source, datasets.length - 2)[0]}`}
