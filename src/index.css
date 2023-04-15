@@ -197,12 +197,12 @@ a:focus-visible {
 }
 
 .on-scroll {
-  transform: translateY(var(--s-finger));
-  transition: 0.8s transform cubic-bezier(0.07, 0.89, 0.79, 0.95);
+  opacity: 0.5;
+  transition: 0.8s opacity cubic-bezier(0.07, 0.89, 0.79, 0.95);
 }
 
 .animate {
-  transform: translateY(0);
+  opacity: 1;
 }
 
 .grey-dark {

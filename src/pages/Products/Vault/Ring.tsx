@@ -1,22 +1,29 @@
 import { Component, onMount } from 'solid-js';
 import { PieChart } from 'chartist';
 
-type RingType = {
-  progress: number;
-};
+import { useChartSource } from '../Charts/Context';
+import { IDType } from '../../../models';
 
-const id = 'activity-ring';
+interface RingType extends IDType {
+  progress: number;
+}
 
 const Ring: Component<RingType> = (props) => {
-  const { progress } = props;
+  const { progress, id } = props;
 
-  const completed = 100 - progress;
+  const source = {
+    Used: 100 - progress,
+    Free: progress,
+  };
+
+  const { labels, datasets } = useChartSource(source);
 
   onMount(() => {
-    new PieChart(
+    const chart = new PieChart(
       `#${id}`,
       {
-        series: [completed, progress],
+        series: datasets,
+        labels: labels,
       },
       {
         donut: true,
@@ -24,6 +31,15 @@ const Ring: Component<RingType> = (props) => {
         showLabel: false,
       }
     );
+
+    chart.on('draw', (data) => {
+      if (data.type === 'slice') {
+        const node = data.element.getNode();
+        const index = data.index;
+
+        node.setAttribute('aria-label', `${labels[index]}: ${datasets[index]}`);
+      }
+    });
   });
 
   return <figure id={id} class='activity' />;

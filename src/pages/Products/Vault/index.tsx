@@ -9,11 +9,13 @@ import Ring from './Ring';
 
 import './Vault.css';
 
+const chartID = 'chart-activity';
+
 const Vault: Component = () => {
   const [budget, setBudget] = createSignal(1000);
   const [income, setIncome] = createSignal(0);
 
-  const valueNow = randomInRange(4, 50);
+  const valueNow = randomInRange(5, 50);
 
   createEffect(() => {
     const interest = 12 * 0.01;
@@ -41,7 +43,7 @@ const Vault: Component = () => {
             aria-label='Activity ring'
             aria-valuenow={valueNow}
           >
-            <Ring progress={valueNow} />
+            <Ring progress={valueNow} id={chartID} />
           </div>
         </>
       }
