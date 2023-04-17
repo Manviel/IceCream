@@ -33,6 +33,7 @@ const PageDecorator: ParentComponent<HeaderTemplateType> = ({
 
   return (
     <main
+      id='app'
       class='app flex col content-full'
       classList={{ 'pulse-loading': isRouting(), layer: isDark }}
     >

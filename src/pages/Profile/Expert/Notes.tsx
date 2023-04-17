@@ -11,7 +11,7 @@ effectively runs it.`;
 
 const Notes: Component = () => {
   const toggleActionSheet = () => {
-    const main = document.querySelector('.app');
+    const main = document.getElementById('app');
 
     main?.classList.toggle('bottom-main');
   };
