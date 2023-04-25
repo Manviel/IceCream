@@ -106,7 +106,12 @@ const Home: Component = () => {
           tiny pieces of the system each able to complete a simple distinct job.
         </p>
 
-        <div class='grid os-grid gap'>
+        <ConnectFactory
+          href='https://www.wikihow.com/Respond-to-a-%22How-Was-Your-Weekend%3F%22-Text'
+          text='How was your weekend?'
+        />
+
+        <div class='grid os-grid gap screen'>
           <Shelf
             title='Get USED TO'
             description='To talk about the process of becoming familiar with something.'
@@ -139,7 +144,7 @@ const Home: Component = () => {
           />
           <Shelf
             title='Sophisticated vocabulary'
-            description='Beautiful - gorgeous, stunning. Sad - heartbroken, devastated. Tired - exhausted, drained, worn out, shattered. Happy - thrilled, on cloud nine, delighted. Surprised - astonished. Small - tiny, miniscule. Big - huge, tremendous, enormous, massive. Bad - terrible, horrible, horrendous, dreadful, appalling. Good - incredible, awesome, terrific, superb. Important - crucial, essential, vital. Interesting - fascinating, captivating, appealing. Hungry - starving, famished, ravenous. Angry - furious, mad. Clean - spotless, pristine. Dirty - filthy. Funny - hilarious. Cold - freezing. Hot - boiling, scorching.'
+            description='Beautiful - gorgeous, stunning. Sad - heartbroken, devastated. Tired - exhausted, drained, worn out, shattered. Happy - thrilled, on cloud nine, delighted. Surprised - astonished, overwhelmed. Small - tiny, miniscule. Big - huge, tremendous, enormous, massive. Bad - terrible, horrible, horrendous, dreadful, appalling. Good - incredible, awesome, terrific, superb. Important - crucial, essential, vital. Interesting - fascinating, captivating, appealing. Hungry - starving, famished, ravenous. Angry - furious, mad. Clean - spotless, pristine. Dirty - filthy. Funny - hilarious. Cold - freezing. Hot - boiling, scorching.'
             hasRowSpan
             hasColSpan
           />
@@ -158,11 +163,11 @@ const Home: Component = () => {
           />
           <Shelf
             title='on the one hand'
-            description='Use linkers to provide reasons and examples. Otherwise, however, additionally, moreover, eventually, overall.'
+            description='Use linkers to provide reasons. Otherwise, however, additionally, moreover, eventually, overall.'
           />
           <Shelf
             title='Well, you know'
-            description='Use simple fillers to fill in pauses in a conversation.'
+            description='Use simple fillers to fill in pauses in a conversation. The way I see it.'
             hasColSpan
           />
           <Shelf
@@ -171,11 +176,11 @@ const Home: Component = () => {
           />
           <Shelf
             title='Speak at a natural pace'
-            description='In a variety of situations not limited by language incompetence.'
+            description='Life has taught me that, I first realised this when I was.'
           />
           <Shelf
             title='Speak without strain'
-            description='With substantial natural flow.'
+            description='Struggle with, perform at a very.'
           />
           <Shelf
             title='Linking words efficiently'

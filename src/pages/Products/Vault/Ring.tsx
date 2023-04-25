@@ -27,7 +27,7 @@ const Ring: Component<RingType> = (props) => {
       },
       {
         donut: true,
-        donutWidth: 13,
+        donutWidth: 14,
         showLabel: false,
       }
     );
