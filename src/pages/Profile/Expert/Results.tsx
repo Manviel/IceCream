@@ -1,5 +1,7 @@
 import { Component } from 'solid-js';
 
+import { ActionTypes } from '../../../models/config';
+
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
 
 const Results: Component = () => {
@@ -9,7 +11,7 @@ const Results: Component = () => {
       description='JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading.'
       closingName='Cancel'
       triggerContent='Results'
-      triggerClassName='btn token provision'
+      triggerClassName={ActionTypes.Secondary}
     >
       <div class='scrollable' tabIndex={0}>
         <p class='info'>

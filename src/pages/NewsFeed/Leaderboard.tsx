@@ -48,8 +48,8 @@ const Leaderboard: Component = () => {
                   <span
                     class='chip'
                     classList={{
-                      ghost: list[1] > 1,
-                      price: list[1] < 1,
+                      ghost: Number(list[1]) > 1,
+                      price: Number(list[1]) < 1,
                     }}
                   >
                     {commasAdapter(Number(list[1]))}
