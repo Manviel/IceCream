@@ -1,5 +1,6 @@
 :root {
   --c-backdrop: rgba(0, 0, 0, 0.4);
+  --c-elevation: rgba(255, 255, 255, 0.72);
   --p-spec: blur(8px);
   --s-modal: 94vw;
 }
@@ -26,6 +27,10 @@
 }
 
 .alert {
+  background-color: var(--c-elevation);
+  backdrop-filter: var(--p-blur);
+  -webkit-backdrop-filter: var(--p-blur);
+  color: var(--c-dark);
   animation: alert-enter ease-in-out 0.2s;
 }
 

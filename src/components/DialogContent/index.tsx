@@ -12,7 +12,7 @@ export interface ActionSheetType {
 const DialogContent: ParentComponent<ActionSheetType> = ({
   children,
   parentClassName = 'dialog',
-  childClassName = 'depth view rounded alert',
+  childClassName = 'view rounded alert',
 }) => {
   return (
     <AbstractDialogContent
