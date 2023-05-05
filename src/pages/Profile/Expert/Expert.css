@@ -75,7 +75,7 @@
 }
 
 .bottom-main {
-  transform: scale(0.94);
+  transform: scale(0.96);
 }
 
 .scrollable {
@@ -115,6 +115,6 @@
 
   100% {
     opacity: 1;
-    transform: translateY(var(--s-safe)) translateX(-50%);
+    transform: translateY(var(--s-system)) translateX(-50%);
   }
 }
