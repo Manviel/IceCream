@@ -1,8 +1,8 @@
 :root {
   --c-backdrop: rgba(0, 0, 0, 0.4);
-  --c-elevation: rgba(255, 255, 255, 0.72);
+  --c-elevation: rgba(255, 255, 255, 0.8);
   --p-spec: blur(8px);
-  --s-modal: 94vw;
+  --s-modal: 96vw;
 }
 
 .backdrop {

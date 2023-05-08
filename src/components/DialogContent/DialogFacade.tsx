@@ -29,6 +29,8 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
 }) => {
   const [open, setOpen] = createSignal(false);
 
+  let restoreFocus: HTMLButtonElement;
+
   const handleOpen = () => {
     setOpen(true);
     toggleActionSheet?.();
@@ -37,11 +39,18 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
   const handleClose = () => {
     setOpen(false);
     toggleActionSheet?.();
+
+    restoreFocus.focus();
   };
 
   return (
     <>
-      <button type='button' class={triggerClassName} onClick={handleOpen}>
+      <button
+        type='button'
+        class={triggerClassName}
+        onClick={handleOpen}
+        ref={restoreFocus!}
+      >
         {triggerContent}
       </button>
 
