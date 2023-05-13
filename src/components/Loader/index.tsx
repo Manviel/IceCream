@@ -15,7 +15,7 @@ export const Skeleton: Component = () => (
   <>
     <aside class='pulse-loading panel rounded content-full' aria-busy>
       <section class='sticky'>
-        <h1 class='subtitle'>Please wait</h1>
+        <h1 class='card-sub card-measure'>Please wait</h1>
       </section>
 
       <Header spot='Loading' />

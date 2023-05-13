@@ -4,7 +4,7 @@
   --c-dark: #000;
   --c-active: rgba(0, 0, 0, 0.05);
   --c-surface: #6e6e73;
-  --c-primary: #f4f6f7;
+  --c-primary: #f7f7f9;
   --c-action: rgba(118, 118, 128, 0.22);
   --c-depth: rgba(245, 245, 247, 0.6);
   --c-ring: #0066cc;
@@ -126,14 +126,14 @@ a:focus-visible {
 }
 
 .title {
-  font-size: var(--s-screen);
-  margin: 2.8rem 0 0;
+  font-size: var(--s-entry);
+  margin: var(--s-screen) 0 var(--s-unit);
   letter-spacing: 0.35px;
 }
 
 .info {
   line-height: var(--s-leading);
-  margin: var(--s-system) 0 var(--s-medium);
+  margin: var(--s-unit) 0 var(--s-medium);
 }
 
 .subtitle {
@@ -300,7 +300,11 @@ a:focus-visible {
 }
 
 .card-sub {
-  font-size: var(--s-medium);
+  font-size: 2.1rem;
+}
+
+.card-measure {
+  margin: 1rem 0 var(--s-unit);
 }
 
 .chip {
@@ -343,7 +347,7 @@ a:focus-visible {
   }
 
   .panel {
-    padding: 0.1rem var(--s-system);
+    padding: 0.1rem 1.6rem;
   }
 
   .provision {
@@ -360,8 +364,16 @@ a:focus-visible {
     border-top: 1px solid var(--c-active);
   }
 
+  .title {
+    font-size: var(--s-screen);
+  }
+
   .subtitle {
     font-size: 2.4rem;
+  }
+
+  .card-sub {
+    font-size: 1.9rem;
   }
 }
 

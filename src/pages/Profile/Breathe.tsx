@@ -1,10 +1,12 @@
 import type { Component } from 'solid-js';
 
+import { SubTitle } from '../../components/Header';
+
 import './Breathe.css';
 
 const Breathe: Component = () => (
   <article class='box view rounded screen flex col items-center'>
-    <h3 class='subtitle'>The future of health</h3>
+    <SubTitle spot='The future of health' />
     <p class='grey-dark info'>Inhale and Exhale</p>
     <ul class='breathe'>
       <li class='circle'></li>

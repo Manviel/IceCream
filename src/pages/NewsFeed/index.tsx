@@ -10,21 +10,22 @@ import './NewsFeed.css';
 
 const NewsFeed: Component = () => {
   return (
-    <article class='screen card view rounded'>
+    <>
       <Header spot='Discover' />
-
       <h3 class='info card-sub'>Top leagues</h3>
 
-      <Suspense fallback={<Loader />}>
-        <Leaderboard />
-      </Suspense>
+      <div class='card view rounded'>
+        <Suspense fallback={<Loader />}>
+          <Leaderboard />
+        </Suspense>
+      </div>
 
       <div class='screen'>
         <Suspense fallback={<Loader />}>
           <Quote />
         </Suspense>
       </div>
-    </article>
+    </>
   );
 };
 

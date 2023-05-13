@@ -1,12 +1,13 @@
 import { Component } from 'solid-js';
 
 import Card from '../../../../components/Card';
+import { SubTitle } from '../../../../components/Header';
 
 import Reviews from '../Reviews';
 
 const Review: Component = () => (
   <>
-    <h3 class='subtitle'>Overview</h3>
+    <SubTitle spot='Overview' />
     <div class='grid toolbar'>
       <Card
         title='People in 2022'

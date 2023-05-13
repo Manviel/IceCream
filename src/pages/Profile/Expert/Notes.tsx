@@ -21,7 +21,7 @@ const Notes: Component = () => {
     <DialogFacade
       title='Notes'
       description={SheetContent}
-      closingName='Understand'
+      closingName='Done'
       triggerContent='Notes'
       triggerClassName={ActionTypes.Secondary}
       parentClassName='bottom-sheet view card'

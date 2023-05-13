@@ -3,12 +3,8 @@
 }
 
 .card-text {
-  display: block;
-  font-size: 6.4rem;
-}
-
-.card-measure {
-  font-size: 3rem;
+  margin-top: var(--s-unit);
+  font-size: var(--s-finger);
 }
 
 .accent {

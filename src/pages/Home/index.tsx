@@ -7,7 +7,7 @@ import { ActionTypes } from '../../models/config';
 import Card from '../../components/Card';
 import ConnectFactory from '../../components/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
-import Header from '../../components/Header';
+import { SubTitle } from '../../components/Header';
 import Shelf from '../../components/Card/Shelf';
 
 import { randomInRange } from '../../services/utils';
@@ -31,8 +31,8 @@ const Home: Component = () => {
         change actions, only a single microservice has to be modified.
       </p>
 
-      <article class='material view rounded'>
-        <Header spot='What is Coupling?' />
+      <article class='material view rounded screen'>
+        <SubTitle spot='What is Coupling?' />
 
         <p class='info grey-light'>
           The degree to which components have knowledge of other components.
@@ -79,7 +79,7 @@ const Home: Component = () => {
       </article>
 
       <article class='flex col on-scroll layer view screen content-full rounded'>
-        <Header spot='What is Layered Architecture?' />
+        <SubTitle spot='What is Layered Architecture?' />
 
         <p class='info'>
           It is describes an architectural pattern composed of several separate
@@ -97,7 +97,7 @@ const Home: Component = () => {
       </article>
 
       <article class='flex col on-scroll material view screen content-full rounded'>
-        <Header spot='The Separation of Concerns' />
+        <SubTitle spot='The Separation of Concerns' />
 
         <p class='info'>
           The application of the SoC involves two processes: reduction of

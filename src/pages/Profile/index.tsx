@@ -2,6 +2,7 @@ import { Component, For } from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
 import ConnectFactory from '../../components/ConnectFactory';
+import { SubTitle } from '../../components/Header';
 
 import { ListItemGen } from '../../models';
 
@@ -51,7 +52,7 @@ const Profile: Component = () => {
       <Breathe />
 
       <footer class='material view rounded content-full screen'>
-        <h3 class='subtitle'>Software Requirements</h3>
+        <SubTitle spot='Software Requirements' />
 
         <ul class='flex col info gap'>
           <For each={options}>

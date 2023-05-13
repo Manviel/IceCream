@@ -32,7 +32,7 @@ const QuoteView: ParentComponent<QuoteViewType> = (props) => {
   const { title, description, author, children } = props;
 
   return (
-    <section class='material view rounded'>
+    <section class='card view rounded'>
       <div class='flex justify-between items-center'>
         <blockquote class='flex col gap'>
           <span>{title}</span>

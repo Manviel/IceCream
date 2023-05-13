@@ -34,7 +34,7 @@ const Vault: Component = () => {
       closingName='Apply'
       triggerContent={
         <>
-          <h3 class='widget-title'>Vault</h3>
+          <h3 class='widget-title card-sub'>Vault</h3>
           <p class='term grey-dark accrued'>Only {valueNow}% remained</p>
 
           <div
