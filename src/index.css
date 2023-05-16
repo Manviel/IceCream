@@ -22,6 +22,7 @@
   --s-safe: 1.2rem;
   --s-screen: 3.4rem;
   --s-entry: 4rem;
+  --s-line: 0.6rem;
   --s-leading: 1.6;
   --p-blur: blur(14px) saturate(180%);
 }
@@ -273,7 +274,7 @@ a:focus-visible {
 }
 
 .icon {
-  padding: 0.6rem;
+  padding: var(--s-line);
 }
 
 .products {

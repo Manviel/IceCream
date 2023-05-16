@@ -6,8 +6,9 @@ import { SubTitle } from '../../../../components/Header';
 import Reviews from '../Reviews';
 
 const Review: Component = () => (
-  <>
-    <SubTitle spot='Overview' />
+  <section class='screen'>
+    <SubTitle spot='Insights' />
+
     <div class='grid toolbar'>
       <Card
         title='Visually Impaired People'
@@ -17,7 +18,7 @@ const Review: Component = () => (
 
       <Reviews />
     </div>
-  </>
+  </section>
 );
 
 export default Review;

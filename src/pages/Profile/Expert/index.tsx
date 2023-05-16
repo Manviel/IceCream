@@ -9,59 +9,42 @@ import Dividend from './Tabs/Dividend';
 
 import './Expert.css';
 
-const OverviewTab = {
-  label: 'Overview',
-  value: 1,
-};
-
 const GrowthTab = {
   label: 'Growth',
-  value: 2,
+  value: 1,
 };
 
 const DividendTab = {
   label: 'Dividend',
-  value: 3,
+  value: 2,
 };
 
-const listItems: ListItemGen<number>[] = [OverviewTab, GrowthTab, DividendTab];
+const listItems: ListItemGen<number>[] = [GrowthTab, DividendTab];
 
 const Expert: Component = () => {
   return (
-    <section class='grid expert material left-edge screen'>
+    <>
       <TabGroup>
-        <Tabs class='tour-list flex col items-start view'>
+        <Tabs class='tour-list flex items-start'>
           <For each={listItems}>
             {(item) => (
-              <Tab class='tour-list-item flex justify-between items-center content-full'>
+              <Tab class='tour-list-item flex justify-center content-full'>
                 {item.label}
-
-                <span class='chip token'>{item.value}</span>
               </Tab>
             )}
           </For>
         </Tabs>
 
-        <TabPanel
-          index={OverviewTab.value}
-          class='view production right-edge card'
-        >
-          <Review />
-        </TabPanel>
-        <TabPanel
-          index={GrowthTab.value}
-          class='view production right-edge card'
-        >
+        <TabPanel index={GrowthTab.value} class='provision card'>
           <Growth />
         </TabPanel>
-        <TabPanel
-          index={DividendTab.value}
-          class='view production right-edge card'
-        >
+        <TabPanel index={DividendTab.value} class='provision card'>
           <Dividend />
         </TabPanel>
       </TabGroup>
-    </section>
+
+      <Review />
+    </>
   );
 };
 

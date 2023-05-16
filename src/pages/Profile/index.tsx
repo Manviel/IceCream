@@ -46,7 +46,7 @@ const options: ListItemGen<string>[] = [
 
 const Profile: Component = () => {
   return (
-    <PageDecorator subtitle='Your Profile' headline='And new superpower'>
+    <PageDecorator subtitle='Your Profile' headline='Overview'>
       <Expert />
 
       <Breathe />

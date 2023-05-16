@@ -1,7 +1,6 @@
 :root {
   --c-alice: #fff4e5;
   --c-lavender: #eaddff;
-  --s-line: 0.6rem;
 }
 
 .document {
@@ -10,10 +9,6 @@
 
 .alice {
   background-color: var(--c-alice);
-}
-
-.expert {
-  grid-template-columns: repeat(4, 1fr);
 }
 
 .toolbar {
@@ -28,18 +23,29 @@
 .tour-list {
   font-size: var(--s-system);
   gap: 0.2rem;
+  border-radius: var(--s-unit);
+  padding: 0.2rem;
+  background-color: var(--c-active);
 }
 
 .tour-list-item {
-  padding: var(--s-unit) 1rem var(--s-unit) var(--s-safe);
+  padding: var(--s-unit) var(--s-safe);
   font-size: inherit;
   background-color: transparent;
   border-radius: var(--s-unit);
+  font-weight: 500;
+  border: 1px solid transparent;
+  color: var(--c-dark);
 }
 
-.tour-list-item:hover,
+.tour-list-item:hover {
+  background-color: var(--c-glass);
+}
+
 .tour-list-item[aria-selected='true'] {
-  background-color: var(--c-active);
+  background-color: var(--c-white);
+  font-weight: 600;
+  border: 1px solid var(--c-active);
 }
 
 .keen-slider {
@@ -48,19 +54,6 @@
 
 .keen-slider .view {
   height: 90%;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.left-edge,
-.right-edge {
-  border-radius: var(--s-unit);
-}
-
-.right-edge {
-  margin: var(--s-line) var(--s-line) var(--s-line) 0;
 }
 
 .bottom-sheet {
@@ -92,7 +85,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .expert,
   .toolbar,
   .portfolio {
     grid-template-columns: 1fr;
@@ -100,10 +92,6 @@
 
   .production {
     grid-column: span 1;
-  }
-
-  .right-edge {
-    margin: var(--s-line);
   }
 }
 
