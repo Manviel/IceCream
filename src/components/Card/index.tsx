@@ -6,17 +6,15 @@ import './Card.css';
 
 interface CardType extends SegregationType {
   number: number;
-  measure?: string;
 }
 
-const Card: Component<CardType> = ({ number, description, title, measure }) => (
+const Card: Component<CardType> = ({ number, description, title }) => (
   <div class='flex col view box rounded'>
     <sup class='card-sub'>{title}</sup>
-    <strong class='card-text accent'>
+    <strong class='flex card-text accent'>
       {number}
-      <span class='card-sub'>{measure}</span>
+      <span class='term grey-dark'>{description}</span>
     </strong>
-    <sub class='term grey-dark'>{description}</sub>
   </div>
 );
 

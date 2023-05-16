@@ -3,8 +3,10 @@
 }
 
 .card-text {
-  margin-top: var(--s-unit);
+  margin-top: 1.8rem;
   font-size: var(--s-finger);
+  gap: 0.4rem;
+  align-items: baseline;
 }
 
 .accent {

@@ -45,27 +45,24 @@ const Home: Component = () => {
 
         <div class='grid home-stats gap'>
           <Card
-            title='Up to'
+            title='Active Users'
             number={randomInRange(11, 98)}
-            measure='million'
-            description='Active users'
+            description='million'
           />
           <Card
             title='Support'
             number={randomInRange(8, 99)}
-            description='Countries'
+            description='countries'
           />
           <Card
-            title='Up to'
-            number={randomInRange(1, 10)}
-            measure='x'
-            description='Faster than previous versions'
-          />
-          <Card
-            title='Down to'
+            title='Time to Interactive'
             number={randomInRange(1, 3)}
-            measure='sec'
-            description='Time to interactive'
+            description='sec'
+          />
+          <Card
+            title='Heart Rate'
+            number={randomInRange(60, 100)}
+            description='bpm'
           />
         </div>
 

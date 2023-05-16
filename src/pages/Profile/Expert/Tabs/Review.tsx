@@ -10,10 +10,9 @@ const Review: Component = () => (
     <SubTitle spot='Overview' />
     <div class='grid toolbar'>
       <Card
-        title='People in 2022'
+        title='Visually Impaired People'
         number={2.2}
-        measure='billion'
-        description='With vision impairment'
+        description='billion'
       />
 
       <Reviews />
