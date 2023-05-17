@@ -48,10 +48,10 @@ const options: ListItemGen<string>[] = [
 const Profile: Component = () => {
   return (
     <PageDecorator subtitle='Your Profile' headline='Overview'>
+      <h3 class='info'>You seem rested</h3>
+
       <Expert />
-
       <Review />
-
       <Breathe />
 
       <footer class='material view rounded content-full screen'>
