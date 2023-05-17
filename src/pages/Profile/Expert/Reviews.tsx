@@ -22,7 +22,7 @@ const Reviews: Component = () => {
   return (
     <>
       <article class='flex col items-center justify-between layer rounded'>
-        <h3 class='info card-sub'>Usage</h3>
+        <h4 class='info card-sub'>Usage</h4>
 
         <ConnectFactory
           href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
@@ -33,7 +33,7 @@ const Reviews: Component = () => {
       </article>
 
       <article class='flex col items-center justify-between layer rounded'>
-        <h3 class='info card-sub'>Design Patterns</h3>
+        <h4 class='info card-sub'>Design Patterns</h4>
 
         <ConnectFactory href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns' />
 

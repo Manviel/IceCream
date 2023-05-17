@@ -11,21 +11,16 @@
   background-color: var(--c-alice);
 }
 
-.toolbar {
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--s-medium);
-}
-
 .production {
-  grid-column: span 3;
+  grid-column: span 2;
 }
 
 .tour-list {
   font-size: var(--s-system);
   gap: 0.2rem;
-  border-radius: var(--s-unit);
-  padding: 0.2rem;
   background-color: var(--c-active);
+  padding: 0.2rem;
+  border-radius: var(--s-unit);
 }
 
 .tour-list-item {
@@ -39,13 +34,13 @@
 }
 
 .tour-list-item:hover {
-  background-color: var(--c-glass);
+  background-color: var(--c-active);
 }
 
 .tour-list-item[aria-selected='true'] {
   background-color: var(--c-white);
   font-weight: 600;
-  border: 1px solid var(--c-active);
+  border: 1px solid var(--c-action);
 }
 
 .keen-slider {
@@ -54,6 +49,11 @@
 
 .keen-slider .view {
   height: 90%;
+}
+
+.edge {
+  padding: var(--s-line);
+  border-radius: var(--s-unit);
 }
 
 .bottom-sheet {
@@ -85,7 +85,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .toolbar,
   .portfolio {
     grid-template-columns: 1fr;
   }

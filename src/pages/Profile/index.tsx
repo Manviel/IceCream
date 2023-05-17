@@ -8,6 +8,7 @@ import { ListItemGen } from '../../models';
 
 import Breathe from './Breathe';
 import Expert from './Expert';
+import Review from './Expert/Tabs/Review';
 
 const options: ListItemGen<string>[] = [
   {
@@ -48,6 +49,8 @@ const Profile: Component = () => {
   return (
     <PageDecorator subtitle='Your Profile' headline='Overview'>
       <Expert />
+
+      <Review />
 
       <Breathe />
 

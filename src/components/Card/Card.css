@@ -1,7 +1,3 @@
-:root {
-  --c-olive: #78b589;
-}
-
 .card-text {
   margin-top: 1.8rem;
   font-size: var(--s-finger);
@@ -11,12 +7,6 @@
 
 .accent {
   color: var(--c-olive);
-}
-
-.os {
-  border-radius: 1rem;
-  padding: var(--s-system);
-  gap: var(--s-safe);
 }
 
 .os-title {

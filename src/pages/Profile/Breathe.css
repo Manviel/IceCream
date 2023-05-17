@@ -1,7 +1,6 @@
 :root {
   --s-petal: 12.5rem;
   --s-inhale: 4s;
-  --c-odd: #61bea2;
   --c-even: #529ca0;
 }
 
@@ -24,7 +23,7 @@
 }
 
 .circle:nth-child(odd) {
-  background: var(--c-odd);
+  background: var(--c-olive);
 }
 
 .circle:nth-child(even) {

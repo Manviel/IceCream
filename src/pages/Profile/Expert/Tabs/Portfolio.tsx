@@ -12,18 +12,18 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
 
   return (
     <fieldset class='grid products portfolio'>
-      <legend class='subtitle'>{id}</legend>
+      <legend class='subtitle card-measure'>{id}</legend>
 
       {children}
 
       <div class='flex col ghost os' role='status'>
         <p>Fair Price (in $)</p>
-        <strong class='os-title'>{fairPriceCost().toFixed(2)}</strong>
+        <strong class='subtitle'>{fairPriceCost().toFixed(2)}</strong>
       </div>
 
       <div class='flex col document os' role='log'>
         <p>Fair Price (in %)</p>
-        <strong class='os-title'>{fairPricePercent(fairPriceCost())}</strong>
+        <strong class='subtitle'>{fairPricePercent(fairPriceCost())}</strong>
       </div>
     </fieldset>
   );

@@ -14,15 +14,16 @@
   --c-ghost: #ebfff0;
   --c-show: #fce8e6;
   --c-blue: #0071e3;
-  --s-finger: 4.4rem;
-  --s-medium: 2rem;
-  --s-dock: 2.2rem;
-  --s-system: 1.4rem;
+  --c-olive: #61bea2;
+  --s-line: 0.6rem;
   --s-unit: 0.8rem;
   --s-safe: 1.2rem;
+  --s-system: 1.4rem;
+  --s-medium: 2rem;
+  --s-dock: 2.2rem;
   --s-screen: 3.4rem;
   --s-entry: 4rem;
-  --s-line: 0.6rem;
+  --s-finger: 4.4rem;
   --s-leading: 1.6;
   --p-blur: blur(14px) saturate(180%);
 }
@@ -139,7 +140,6 @@ a:focus-visible {
 
 .subtitle {
   font-size: 2.8rem;
-  margin: 1.2rem 0 1rem;
 }
 
 .items-center {
@@ -336,6 +336,12 @@ a:focus-visible {
 .term {
   font-size: 1.5rem;
   line-height: var(--s-leading);
+}
+
+.os {
+  border-radius: 1rem;
+  padding: var(--s-system);
+  gap: var(--s-safe);
 }
 
 @media screen and (max-width: 768px) {

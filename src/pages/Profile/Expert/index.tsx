@@ -3,7 +3,6 @@ import { Tab, TabGroup, TabPanel, Tabs } from 'solid-a11y';
 
 import { ListItemGen } from '../../../models';
 
-import Review from './Tabs/Review';
 import Growth from './Tabs/Growth';
 import Dividend from './Tabs/Dividend';
 
@@ -23,7 +22,7 @@ const listItems: ListItemGen<number>[] = [GrowthTab, DividendTab];
 
 const Expert: Component = () => {
   return (
-    <>
+    <section class='material edge'>
       <TabGroup>
         <Tabs class='tour-list flex items-start'>
           <For each={listItems}>
@@ -35,16 +34,14 @@ const Expert: Component = () => {
           </For>
         </Tabs>
 
-        <TabPanel index={GrowthTab.value} class='provision card'>
+        <TabPanel index={GrowthTab.value} class='provision card edge'>
           <Growth />
         </TabPanel>
-        <TabPanel index={DividendTab.value} class='provision card'>
+        <TabPanel index={DividendTab.value} class='provision card edge'>
           <Dividend />
         </TabPanel>
       </TabGroup>
-
-      <Review />
-    </>
+    </section>
   );
 };
 
