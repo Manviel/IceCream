@@ -13,7 +13,7 @@ const Results: Component = () => {
       triggerContent='Results'
       triggerClassName={ActionTypes.Secondary}
     >
-      <div class='scrollable' tabIndex={0}>
+      <div class='alert-content scrollable' tabIndex={0}>
         <p class='info'>
           The call stack is responsible for keeping track of all the operations
           in line to be executed. Whenever a function is finished, it is popped
