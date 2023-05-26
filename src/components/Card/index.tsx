@@ -10,10 +10,10 @@ interface CardType extends SegregationType {
 
 const Card: Component<CardType> = ({ number, description, title }) => (
   <div class='flex col view box rounded'>
-    <p class='card-sub'>{title}</p>
+    <p class='card-sub grey-dark'>{title}</p>
     <strong class='flex card-text accent'>
       {number}
-      <span class='term grey-dark'>{description}</span>
+      <span class='term card-sup'>{description}</span>
     </strong>
   </div>
 );
