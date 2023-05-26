@@ -34,10 +34,10 @@ const Expert: Component = () => {
           </For>
         </Tabs>
 
-        <TabPanel index={GrowthTab.value} class='provision card edge'>
+        <TabPanel index={GrowthTab.value} class='provision card os'>
           <Growth />
         </TabPanel>
-        <TabPanel index={DividendTab.value} class='provision card edge'>
+        <TabPanel index={DividendTab.value} class='provision card os'>
           <Dividend />
         </TabPanel>
       </TabGroup>

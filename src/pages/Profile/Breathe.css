@@ -1,7 +1,7 @@
 :root {
   --s-petal: 12.5rem;
   --s-inhale: 4s;
-  --c-even: #529ca0;
+  --c-even: #87e3e1;
 }
 
 .breathe {
@@ -14,20 +14,13 @@
   position: absolute;
   mix-blend-mode: screen;
   transform: translate(0, 0);
+  background-color: var(--c-even);
 }
 
 .breathe,
 .circle {
   height: var(--s-petal);
   width: var(--s-petal);
-}
-
-.circle:nth-child(odd) {
-  background: var(--c-olive);
-}
-
-.circle:nth-child(even) {
-  background: var(--c-even);
 }
 
 .circle:nth-child(1) {
