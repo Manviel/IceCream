@@ -9,7 +9,7 @@ import { ListItemGen } from '../../models';
 import Breathe from './Breathe';
 import Expert from './Expert';
 import Review from './Expert/Tabs/Review';
-import Toolbar from './Expert/Tabs/Toolbar';
+import Results from './Expert/Results';
 
 const options: ListItemGen<string>[] = [
   {
@@ -56,10 +56,33 @@ const Profile: Component = () => {
       <div class='flex items-center justify-between screen'>
         <SubTitle spot='Insights' />
 
-        <Toolbar />
+        <Results />
       </div>
 
       <p class='info'>2.2 Billion Visually Impaired People in 2022.</p>
+
+      <div class='flex col gap view os material'>
+        <ConnectFactory
+          href='https://finviz.com/'
+          text='Finviz Stock screener'
+        />
+        <ConnectFactory
+          href='https://www.w3.org/WAI/business-case/'
+          text='Business case for Accessibility'
+        />
+        <ConnectFactory
+          href='https://www.appcues.com/blog/saas-growth-metrics'
+          text='Business metrics that matter'
+        />
+        <ConnectFactory
+          href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
+          text='View All techniques'
+        />
+        <ConnectFactory
+          href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns'
+          text='Design Patterns'
+        />
+      </div>
 
       <Breathe />
       <Review />

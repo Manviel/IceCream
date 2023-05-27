@@ -17,7 +17,7 @@ const Results: Component = () => {
           <SquareArrowIcon />
         </div>
       }
-      triggerClassName={ActionTypes.ShapeIcon}
+      triggerClassName={ActionTypes.SuperEllipse}
     >
       <div class='alert-content scrollable' tabIndex={0}>
         <p class='info'>

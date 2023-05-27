@@ -1,24 +1,66 @@
-import { Component } from 'solid-js';
+import { Component, onMount, createSignal, For } from 'solid-js';
+import { openDB } from 'idb';
 
 import LineDecreaseIcon from '../../../assets/icons/line-decrease-circle.svg';
 
 import { ActionTypes } from '../../../models/config';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
-import ConnectFactory from '../../../components/ConnectFactory';
+import NumberField from '../../../components/Field/NumberField';
+import Field from '../../../components/Field';
 
 const Notes: Component = () => {
+  const [price, setPrice] = createSignal(undefined);
+  const [ticker, setTicker] = createSignal(new Date().toDateString());
+  const [transactions, setTransations] = createSignal<IDBValidKey[]>();
+
   const toggleActionSheet = () => {
     const main = document.getElementById('app');
 
     main?.classList.toggle('bottom-main');
   };
 
+  const loadFromStorage = async () => {
+    const db = await openDB('activities', 1, {
+      upgrade(db) {
+        db.createObjectStore('store');
+      },
+    });
+
+    const result = await db.getAllKeys('store');
+
+    setTransations(result);
+
+    db.close();
+  };
+
+  onMount(() => {
+    loadFromStorage();
+  });
+
+  const handleSave = async () => {
+    const db = await openDB('activities', 1, {
+      upgrade(db) {
+        db.createObjectStore('store');
+      },
+    });
+
+    db.put('store', price(), ticker());
+
+    db.close();
+
+    loadFromStorage();
+  };
+
+  const handlePriceChange = ({ target }: any) => setPrice(target.value);
+
+  const handleTickerChange = ({ target }: any) => setTicker(target.value);
+
   return (
     <DialogFacade
       title='Notes'
-      description='The Event Loop has one simple job — to monitor the Call Stack and the Callback Queue.'
-      closingName='Got It'
+      description='Activity of transactions.'
+      closingName='Cancel'
       triggerContent={
         <div aria-label='Notes' class='content-full content-tall'>
           <LineDecreaseIcon />
@@ -30,41 +72,31 @@ const Notes: Component = () => {
       toggleActionSheet={toggleActionSheet}
     >
       <div class='scrollable content-tall'>
-        <p class='info'>
-          If the Call Stack is empty, the Event Loop will take the first event
-          from the queue and will push it to the Call Stack, which effectively
-          runs it.
-        </p>
+        <Field
+          type='text'
+          name='ticker'
+          label='Save ticker as'
+          value={ticker()}
+          onChange={handleTickerChange}
+        />
 
-        <div class='flex col gap view os material'>
-          <ConnectFactory
-            href='https://www.w3.org/WAI/business-case/'
-            text='Business case for Accessibility'
-          />
-          <ConnectFactory
-            href='https://www.appcues.com/blog/saas-growth-metrics'
-            text='Business metrics that matter'
-          />
+        <NumberField
+          name='price'
+          label='Fair Price'
+          value={price()}
+          onChange={handlePriceChange}
+        />
 
-          <ConnectFactory
-            href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
-            text='View All techniques'
-          />
-          <ConnectFactory
-            href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns'
-            text='Design Patterns'
-          />
-        </div>
+        <ul class='flex col gap view os material'>
+          <For each={transactions()}>
+            {(item) => <li>{item.toString()}</li>}
+          </For>
+        </ul>
       </div>
 
-      <a
-        href='https://finviz.com/'
-        target='_blank'
-        rel='noopener noreferrer'
-        class={ActionTypes.Contained}
-      >
-        Finviz Stock screener
-      </a>
+      <button type='button' onClick={handleSave} class={ActionTypes.Contained}>
+        Save
+      </button>
     </DialogFacade>
   );
 };
