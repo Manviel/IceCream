@@ -1,5 +1,7 @@
 import { Component } from 'solid-js';
 
+import SquareArrowIcon from '../../../assets/icons/square-arrow-circle.svg';
+
 import { ActionTypes } from '../../../models/config';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
@@ -10,8 +12,12 @@ const Results: Component = () => {
       title='Event loop'
       description='JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading.'
       closingName='Continue'
-      triggerContent='Results'
-      triggerClassName={ActionTypes.Secondary}
+      triggerContent={
+        <div aria-label='Results' class='content-full content-tall'>
+          <SquareArrowIcon />
+        </div>
+      }
+      triggerClassName={ActionTypes.ShapeIcon}
     >
       <div class='alert-content scrollable' tabIndex={0}>
         <p class='info'>

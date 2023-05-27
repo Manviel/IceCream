@@ -3,13 +3,8 @@ import { createSlider } from 'solid-slider';
 
 import { ActionTypes } from '../../../models/config';
 
-import ConnectFactory from '../../../components/ConnectFactory';
-
 import PlayNextIcon from '../../../assets/icons/play-next.svg';
 import PlayPrevIcon from '../../../assets/icons/play-prev.svg';
-
-import Results from './Results';
-import Notes from './Notes';
 
 import 'solid-slider/slider.css';
 
@@ -21,25 +16,6 @@ const Reviews: Component = () => {
 
   return (
     <>
-      <article class='flex col items-center justify-between layer rounded'>
-        <h4 class='info card-sub'>Usage</h4>
-
-        <ConnectFactory
-          href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
-          text='View All'
-        />
-
-        <Notes />
-      </article>
-
-      <article class='flex col items-center justify-between layer rounded'>
-        <h4 class='info card-sub'>Design Patterns</h4>
-
-        <ConnectFactory href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns' />
-
-        <Results />
-      </article>
-
       <div class='production flex justify-between items-center'>
         <h3 class='card-sub' id='candidate'>
           Elicitation Tech
