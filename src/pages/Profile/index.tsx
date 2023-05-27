@@ -9,6 +9,7 @@ import { ListItemGen } from '../../models';
 import Breathe from './Breathe';
 import Expert from './Expert';
 import Review from './Expert/Tabs/Review';
+import Toolbar from './Expert/Tabs/Toolbar';
 
 const options: ListItemGen<string>[] = [
   {
@@ -51,8 +52,17 @@ const Profile: Component = () => {
       <h3 class='info'>You seem rested</h3>
 
       <Expert />
-      <Review />
+
+      <div class='flex items-center justify-between screen'>
+        <SubTitle spot='Insights' />
+
+        <Toolbar />
+      </div>
+
+      <p class='info'>2.2 Billion Visually Impaired People in 2022.</p>
+
       <Breathe />
+      <Review />
 
       <footer class='material view rounded content-full screen'>
         <SubTitle spot='Software Requirements' />
