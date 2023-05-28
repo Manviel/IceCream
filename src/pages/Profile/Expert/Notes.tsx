@@ -73,7 +73,7 @@ const Notes: Component = () => {
       description='Activity of transactions.'
       closingName='Cancel'
       triggerContent={
-        <div aria-label='Notes' class='content-full content-tall'>
+        <div role='img' aria-label='Notes' class='content-full content-tall'>
           <LineDecreaseIcon />
         </div>
       }

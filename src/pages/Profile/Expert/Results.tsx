@@ -13,7 +13,7 @@ const Results: Component = () => {
       description='JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading.'
       closingName='Continue'
       triggerContent={
-        <div aria-label='Results' class='content-full content-tall'>
+        <div role='img' aria-label='Results' class='content-full content-tall'>
           <BellIcon />
         </div>
       }

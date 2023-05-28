@@ -62,7 +62,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
               class={ActionTypes.ShapeIcon}
               onClick={handleCopy}
               aria-label='Clone'
-              aria-describedby={ID_HELP}
+              aria-describedby={snackbar() ? ID_HELP : undefined}
               onFocusIn={handleDisplay}
               onMouseEnter={handleDisplay}
               onMouseLeave={handleResetTooltip}
