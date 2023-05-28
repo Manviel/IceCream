@@ -2,6 +2,11 @@
   --c-lavender: #eaddff;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  color: var(--c-backdrop);
+}
+
 .document {
   background-color: var(--c-lavender);
 }

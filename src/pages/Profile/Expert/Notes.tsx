@@ -9,8 +9,10 @@ import DialogFacade from '../../../components/DialogContent/DialogFacade';
 import NumberField from '../../../components/Field/NumberField';
 import Field from '../../../components/Field';
 
-const DB_NAME = 'activities';
-const DB_TABLE = 'store';
+import Details from './Details';
+
+export const DB_NAME = 'activities';
+export const DB_TABLE = 'store';
 
 const Notes: Component = () => {
   const [price, setPrice] = createSignal(undefined);
@@ -74,31 +76,37 @@ const Notes: Component = () => {
       childClassName='flex col content-tall'
       toggleActionSheet={toggleActionSheet}
     >
-      <div class='scrollable content-tall'>
-        <Field
-          type='text'
-          name='save-as'
-          label='Save ticker as'
-          value={ticker()}
-          onChange={handleTickerChange}
-        />
+      <Field
+        type='text'
+        name='save-as'
+        label='Save ticker as'
+        value={ticker()}
+        onChange={handleTickerChange}
+      />
 
-        <NumberField
-          name='price'
-          label='Fair Price'
-          value={price()}
-          onChange={handlePriceChange}
-        />
+      <NumberField
+        name='price'
+        label='Fair Price'
+        value={price()}
+        onChange={handlePriceChange}
+      />
 
+      <div class='scrollable content-tall' tabIndex={0}>
         <ul class='flex col gap view os material'>
           <For each={transactions()}>
-            {(item) => <li>{item.toString()}</li>}
+            {(item) => (
+              <li class='flex items-center justify-between'>
+                {item.toString()}
+
+                <Details id={item.toString()} />
+              </li>
+            )}
           </For>
         </ul>
       </div>
 
       <button type='button' onClick={handleSave} class={ActionTypes.Contained}>
-        Save
+        Add
       </button>
     </DialogFacade>
   );

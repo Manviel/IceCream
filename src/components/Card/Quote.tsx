@@ -65,7 +65,7 @@ const Quote: Component = () => {
           >
             <button
               type='button'
-              class={ActionTypes.SuperEllipse}
+              class={ActionTypes.ShapeIcon}
               onClick={refetch}
               aria-label='Get new quote'
             >
