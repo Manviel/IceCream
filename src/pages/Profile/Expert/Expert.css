@@ -1,7 +1,10 @@
 :root {
-  --c-alice: #fff4e5;
   --c-lavender: #eaddff;
-  --s-line: 0.6rem;
+}
+
+button[aria-disabled='true'] {
+  cursor: not-allowed;
+  color: var(--c-backdrop);
 }
 
 .document {
@@ -12,34 +15,36 @@
   background-color: var(--c-alice);
 }
 
-.expert {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.toolbar {
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--s-medium);
-}
-
 .production {
-  grid-column: span 3;
+  grid-column: span 2;
 }
 
 .tour-list {
   font-size: var(--s-system);
   gap: 0.2rem;
-}
-
-.tour-list-item {
-  padding: var(--s-unit) 1rem var(--s-unit) var(--s-safe);
-  font-size: inherit;
-  background-color: transparent;
+  background-color: var(--c-active);
+  padding: 0.2rem;
   border-radius: var(--s-unit);
 }
 
-.tour-list-item:hover,
-.tour-list-item[aria-selected='true'] {
+.tour-list-item {
+  padding: var(--s-unit) var(--s-safe);
+  font-size: inherit;
+  background-color: transparent;
+  border-radius: var(--s-unit);
+  font-weight: 500;
+  border: 1px solid transparent;
+  color: var(--c-dark);
+}
+
+.tour-list-item:hover {
   background-color: var(--c-active);
+}
+
+.tour-list-item[aria-selected='true'] {
+  background-color: var(--c-white);
+  font-weight: 600;
+  border: 1px solid var(--c-action);
 }
 
 .keen-slider {
@@ -50,17 +55,9 @@
   height: 90%;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.left-edge,
-.right-edge {
+.edge {
+  padding: var(--s-line);
   border-radius: var(--s-unit);
-}
-
-.right-edge {
-  margin: var(--s-line) var(--s-line) var(--s-line) 0;
 }
 
 .bottom-sheet {
@@ -68,10 +65,18 @@
   top: 0;
   left: 50%;
   min-width: var(--s-modal);
-  height: 100%;
+  height: calc(100% - var(--s-system));
   z-index: 5;
   border-radius: 1rem 1rem 0 0;
   animation: toast-enter cubic-bezier(0.36, 0.66, 0.04, 1) 0.5s both;
+}
+
+.content-tall {
+  height: 100%;
+}
+
+.alert-content {
+  max-height: 50vh;
 }
 
 .bottom-main {
@@ -79,8 +84,8 @@
 }
 
 .scrollable {
-  max-height: 50vh;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .portfolio {
@@ -91,19 +96,34 @@
   font-weight: bold;
 }
 
+.snackbar {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: var(--s-finger);
+  left: 0;
+  white-space: nowrap;
+  background-color: var(--c-backdrop);
+  color: var(--c-white);
+}
+
+.danger {
+  margin-top: var(--s-unit);
+}
+
+.danger button {
+  flex-grow: 1;
+}
+
 @media screen and (max-width: 768px) {
-  .expert,
-  .toolbar,
   .portfolio {
     grid-template-columns: 1fr;
   }
 
   .production {
     grid-column: span 1;
-  }
-
-  .right-edge {
-    margin: var(--s-line);
   }
 }
 

@@ -1,5 +1,7 @@
 import { Component } from 'solid-js';
 
+import BellIcon from '../../../assets/icons/bell.svg';
+
 import { ActionTypes } from '../../../models/config';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
@@ -9,11 +11,15 @@ const Results: Component = () => {
     <DialogFacade
       title='Event loop'
       description='JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading.'
-      closingName='Cancel'
-      triggerContent='Results'
-      triggerClassName={ActionTypes.Secondary}
+      closingName='Continue'
+      triggerContent={
+        <div role='img' aria-label='Results' class='content-full content-tall'>
+          <BellIcon />
+        </div>
+      }
+      triggerClassName={ActionTypes.ShapeIcon}
     >
-      <div class='scrollable' tabIndex={0}>
+      <div class='alert-content scrollable' tabIndex={0}>
         <p class='info'>
           The call stack is responsible for keeping track of all the operations
           in line to be executed. Whenever a function is finished, it is popped

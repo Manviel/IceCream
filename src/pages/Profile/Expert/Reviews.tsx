@@ -3,13 +3,8 @@ import { createSlider } from 'solid-slider';
 
 import { ActionTypes } from '../../../models/config';
 
-import ConnectFactory from '../../../components/ConnectFactory';
-
 import PlayNextIcon from '../../../assets/icons/play-next.svg';
 import PlayPrevIcon from '../../../assets/icons/play-prev.svg';
-
-import Results from './Results';
-import Notes from './Notes';
 
 import 'solid-slider/slider.css';
 
@@ -21,27 +16,8 @@ const Reviews: Component = () => {
 
   return (
     <>
-      <article class='flex col text-center justify-between layer rounded'>
-        <h3 class='info card-sub'>Usage</h3>
-
-        <ConnectFactory
-          href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
-          text='View All'
-        />
-
-        <Notes />
-      </article>
-
-      <article class='flex col text-center justify-between layer rounded'>
-        <h3 class='info card-sub'>Design Patterns</h3>
-
-        <ConnectFactory href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns' />
-
-        <Results />
-      </article>
-
       <div class='production flex justify-between items-center'>
-        <h3 class='subtitle' id='candidate'>
+        <h3 class='card-sub' id='candidate'>
           Elicitation Tech
         </h3>
 
@@ -105,7 +81,7 @@ const Reviews: Component = () => {
         </p>
       </div>
 
-      <p class='production text-center grey-light term' role='status'>
+      <p class='production grey-light term flex justify-center' role='status'>
         {current() + 1} out of 6
       </p>
     </>

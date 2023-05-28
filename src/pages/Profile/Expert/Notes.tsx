@@ -1,47 +1,133 @@
-import { Component } from 'solid-js';
+import { Component, onMount, createSignal, For } from 'solid-js';
+import { openDB } from 'idb';
+
+import LineDecreaseIcon from '../../../assets/icons/line-decrease-circle.svg';
 
 import { ActionTypes } from '../../../models/config';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
-import ConnectFactory from '../../../components/ConnectFactory';
+import NumberField from '../../../components/Field/NumberField';
+import Field from '../../../components/Field';
 
-const SheetContent = `The Event Loop has one simple job — to monitor the Call Stack and the
-Callback Queue. If the Call Stack is empty, the Event Loop will take the
-first event from the queue and will push it to the Call Stack, which
-effectively runs it.`;
+import Details from './Details';
+
+export const DB_NAME = 'activities';
+export const DB_TABLE = 'store';
 
 const Notes: Component = () => {
+  const [price, setPrice] = createSignal(undefined);
+  const [ticker, setTicker] = createSignal(new Date().toDateString());
+  const [transactions, setTransations] = createSignal<IDBValidKey[]>();
+
   const toggleActionSheet = () => {
     const main = document.getElementById('app');
 
     main?.classList.toggle('bottom-main');
   };
 
+  const loadFromStorage = async () => {
+    const db = await openDB(DB_NAME, 1, {
+      upgrade(db) {
+        db.createObjectStore(DB_TABLE);
+      },
+    });
+
+    const result = await db.getAllKeys(DB_TABLE);
+
+    setTransations(result);
+
+    db.close();
+  };
+
+  onMount(async () => {
+    await loadFromStorage();
+  });
+
+  const handleSave = async () => {
+    const db = await openDB(DB_NAME, 1);
+
+    db.put(DB_TABLE, price(), ticker());
+
+    db.close();
+
+    await loadFromStorage();
+  };
+
+  const handlePriceChange = ({ target }: any) => setPrice(target.value);
+
+  const handleTickerChange = ({ target }: any) => setTicker(target.value);
+
+  const handleClear = async () => {
+    const db = await openDB(DB_NAME, 1);
+
+    db.clear(DB_TABLE);
+
+    db.close();
+
+    await loadFromStorage();
+  };
+
   return (
     <DialogFacade
       title='Notes'
-      description={SheetContent}
-      closingName='Understand'
-      triggerContent='Notes'
-      triggerClassName={ActionTypes.Secondary}
+      description='Activity of transactions.'
+      closingName='Cancel'
+      triggerContent={
+        <div role='img' aria-label='Notes' class='content-full content-tall'>
+          <LineDecreaseIcon />
+        </div>
+      }
+      triggerClassName={ActionTypes.ShapeIcon}
       parentClassName='bottom-sheet view card'
-      childClassName='flex col'
+      childClassName='flex col content-tall'
       toggleActionSheet={toggleActionSheet}
     >
-      <div class='flex col gap'>
-        <ConnectFactory
-          href='https://finviz.com/'
-          text='Finviz Stock screener'
-        />
-        <ConnectFactory
-          href='https://www.w3.org/WAI/business-case/'
-          text='Business case for Accessibility'
-        />
-        <ConnectFactory
-          href='https://www.appcues.com/blog/saas-growth-metrics'
-          text='Business metrics that matter'
-        />
+      <Field
+        type='text'
+        name='save-as'
+        label='Save ticker as'
+        value={ticker()}
+        onChange={handleTickerChange}
+      />
+
+      <NumberField
+        name='price'
+        label='Fair Price'
+        value={price()}
+        onChange={handlePriceChange}
+      />
+
+      <div class='flex justify-between gap danger'>
+        <button
+          type='button'
+          onClick={handleSave}
+          class={ActionTypes.Contained}
+        >
+          Add
+        </button>
+
+        <button type='button' onClick={handleClear} class={ActionTypes.Danger}>
+          Clear
+        </button>
       </div>
+
+      <section
+        class='scrollable content-tall provision'
+        tabIndex={0}
+        role='log'
+      >
+        <ul class='flex col os material'>
+          <For each={transactions()}>
+            {(item) => (
+              <li class='flex items-center justify-between'>
+                {item.toString()}
+
+                <Details id={item.toString()} />
+              </li>
+            )}
+          </For>
+        </ul>
+      </section>
     </DialogFacade>
   );
 };

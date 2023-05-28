@@ -16,7 +16,7 @@ const Inbox: Component = () => {
       closingName='Cancel'
       triggerContent={
         <>
-          <h3 class='widget-title'>Inbox</h3>
+          <h3 class='widget-title card-sub'>Inbox</h3>
           <h4 class='widget-main provision'>1</h4>
 
           <div class={ActionTypes.ShapeIcon}>

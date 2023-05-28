@@ -1,4 +1,4 @@
-import { ParentComponent, createEffect } from 'solid-js';
+import { ParentComponent } from 'solid-js';
 import { useIsRouting } from '@solidjs/router';
 
 import Header from '../Header';
@@ -6,7 +6,6 @@ import BackwardNavigation, {
   BackwardNavigationType,
 } from '../Header/BackwardNavigation';
 
-import { useObserver } from '../../services/utils';
 import { DarkThemeType } from '../../models';
 
 interface HeaderTemplateType extends BackwardNavigationType, DarkThemeType {
@@ -20,16 +19,6 @@ const PageDecorator: ParentComponent<HeaderTemplateType> = ({
   isDark = false,
 }) => {
   const isRouting = useIsRouting();
-
-  createEffect(() => {
-    useObserver('.on-scroll', (entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      } else {
-        entry.target.classList.remove('animate');
-      }
-    });
-  });
 
   return (
     <main

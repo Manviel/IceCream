@@ -4,7 +4,7 @@
   --c-dark: #000;
   --c-active: rgba(0, 0, 0, 0.05);
   --c-surface: #6e6e73;
-  --c-primary: #f4f6f7;
+  --c-primary: #f7f7f9;
   --c-action: rgba(118, 118, 128, 0.22);
   --c-depth: rgba(245, 245, 247, 0.6);
   --c-ring: #0066cc;
@@ -14,14 +14,17 @@
   --c-ghost: #ebfff0;
   --c-show: #fce8e6;
   --c-blue: #0071e3;
-  --s-finger: 4.4rem;
-  --s-medium: 2rem;
-  --s-dock: 2.2rem;
-  --s-system: 1.4rem;
+  --c-energy: #f2a33c;
+  --c-alice: #fef6d6;
+  --s-line: 0.6rem;
   --s-unit: 0.8rem;
   --s-safe: 1.2rem;
+  --s-system: 1.4rem;
+  --s-medium: 2rem;
+  --s-dock: 2.2rem;
   --s-screen: 3.4rem;
   --s-entry: 4rem;
+  --s-finger: 4.4rem;
   --s-leading: 1.6;
   --p-blur: blur(14px) saturate(180%);
 }
@@ -126,19 +129,18 @@ a:focus-visible {
 }
 
 .title {
-  font-size: var(--s-screen);
-  margin: 2.8rem 0 0;
+  font-size: var(--s-entry);
+  margin: var(--s-screen) 0 var(--s-unit);
   letter-spacing: 0.35px;
 }
 
 .info {
   line-height: var(--s-leading);
-  margin: var(--s-system) 0 var(--s-medium);
+  margin: var(--s-unit) 0 var(--s-medium);
 }
 
 .subtitle {
   font-size: 2.8rem;
-  margin: 1.2rem 0 1rem;
 }
 
 .items-center {
@@ -196,15 +198,6 @@ a:focus-visible {
   text-decoration: underline;
 }
 
-.on-scroll {
-  opacity: 0.5;
-  transition: 0.8s opacity cubic-bezier(0.07, 0.89, 0.79, 0.95);
-}
-
-.animate {
-  opacity: 1;
-}
-
 .grey-dark {
   color: var(--c-grey);
 }
@@ -214,7 +207,7 @@ a:focus-visible {
 }
 
 .box {
-  background-color: var(--c-black);
+  background-color: var(--c-dark);
   color: var(--c-white);
 }
 
@@ -265,7 +258,6 @@ a:focus-visible {
 .superellipse.active {
   background-color: var(--c-white);
   transform: scale(1.1);
-  border: 1px solid var(--c-action);
 }
 
 .superellipse.inactive svg {
@@ -273,7 +265,7 @@ a:focus-visible {
 }
 
 .icon {
-  padding: 0.6rem;
+  padding: var(--s-line);
 }
 
 .products {
@@ -300,7 +292,11 @@ a:focus-visible {
 }
 
 .card-sub {
-  font-size: var(--s-medium);
+  font-size: 2.1rem;
+}
+
+.card-measure {
+  margin: 1rem 0 var(--s-unit);
 }
 
 .chip {
@@ -333,6 +329,12 @@ a:focus-visible {
   line-height: var(--s-leading);
 }
 
+.os {
+  border-radius: 1rem;
+  padding: var(--s-system);
+  gap: var(--s-safe);
+}
+
 @media screen and (max-width: 768px) {
   .app {
     padding-bottom: 9.2rem;
@@ -343,7 +345,7 @@ a:focus-visible {
   }
 
   .panel {
-    padding: 0.1rem var(--s-system);
+    padding: 0.1rem 1.6rem;
   }
 
   .provision {
@@ -360,8 +362,16 @@ a:focus-visible {
     border-top: 1px solid var(--c-active);
   }
 
+  .title {
+    font-size: var(--s-screen);
+  }
+
   .subtitle {
     font-size: 2.4rem;
+  }
+
+  .card-sub {
+    font-size: 1.9rem;
   }
 }
 

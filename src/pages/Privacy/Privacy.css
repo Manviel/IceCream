@@ -1,7 +1,7 @@
 .privacy {
   grid-template-columns: 4fr 1fr;
   grid-gap: 1.8rem;
-  padding-top: var(--s-finger);
+  padding-top: var(--s-entry);
 }
 
 .paper {
@@ -23,7 +23,7 @@
 
 .spy-nav a {
   padding: 0.4rem var(--s-unit);
-  margin: 0.6rem 0;
+  margin: var(--s-line) 0;
   color: var(--c-surface);
   transform-origin: left;
   max-width: 24rem;

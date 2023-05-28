@@ -2,11 +2,14 @@ import { Component, For } from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
 import ConnectFactory from '../../components/ConnectFactory';
+import { SubTitle } from '../../components/Header';
 
 import { ListItemGen } from '../../models';
 
 import Breathe from './Breathe';
 import Expert from './Expert';
+import Review from './Expert/Tabs/Review';
+import Results from './Expert/Results';
 
 const options: ListItemGen<string>[] = [
   {
@@ -45,13 +48,47 @@ const options: ListItemGen<string>[] = [
 
 const Profile: Component = () => {
   return (
-    <PageDecorator subtitle='Your Profile' headline='And new superpower'>
+    <PageDecorator subtitle='Your Profile' headline='Overview'>
+      <h3 class='info'>You seem rested</h3>
+
       <Expert />
 
+      <div class='flex items-center justify-between screen'>
+        <SubTitle spot='Insights' />
+
+        <Results />
+      </div>
+
+      <p class='info'>2.2 Billion Visually Impaired People in 2022.</p>
+
+      <div class='flex col os material'>
+        <ConnectFactory
+          href='https://finviz.com/'
+          text='Finviz Stock screener'
+        />
+        <ConnectFactory
+          href='https://www.w3.org/WAI/business-case/'
+          text='Business case for Accessibility'
+        />
+        <ConnectFactory
+          href='https://www.appcues.com/blog/saas-growth-metrics'
+          text='Business metrics that matter'
+        />
+        <ConnectFactory
+          href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
+          text='View All techniques'
+        />
+        <ConnectFactory
+          href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns'
+          text='Design Patterns'
+        />
+      </div>
+
       <Breathe />
+      <Review />
 
       <footer class='material view rounded content-full screen'>
-        <h3 class='subtitle'>Software Requirements</h3>
+        <SubTitle spot='Software Requirements' />
 
         <ul class='flex col info gap'>
           <For each={options}>

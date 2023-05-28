@@ -62,7 +62,7 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
               childClassName={childClassName}
             >
               <div class='flex justify-between items-center'>
-                <DialogTitle class='subtitle'>{title}</DialogTitle>
+                <DialogTitle class='subtitle card-measure'>{title}</DialogTitle>
 
                 <button
                   type='button'

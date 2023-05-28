@@ -65,7 +65,7 @@ const Privacy: Component = () => {
           </For>
         </section>
 
-        <nav class='spy-nav flex col' aria-label='Contents'>
+        <nav class='spy-nav flex col' aria-label='Table of Contents'>
           <For each={containers}>
             {(section) => (
               <a href={`#${transformCase(section.name)}`}>{section.name}</a>

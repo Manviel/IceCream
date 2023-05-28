@@ -8,4 +8,8 @@ const Header: Component<HeaderType> = ({ spot }) => {
   return <h2 class='title'>{spot}</h2>;
 };
 
+export const SubTitle: Component<HeaderType> = ({ spot }) => {
+  return <h3 class='subtitle card-measure'>{spot}</h3>;
+};
+
 export default Header;
