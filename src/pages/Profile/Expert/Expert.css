@@ -2,7 +2,7 @@
   --c-lavender: #eaddff;
 }
 
-button:disabled {
+button[aria-disabled='true'] {
   cursor: not-allowed;
   color: var(--c-backdrop);
 }
@@ -107,6 +107,14 @@ button:disabled {
   white-space: nowrap;
   background-color: var(--c-backdrop);
   color: var(--c-white);
+}
+
+.danger {
+  margin-top: var(--s-unit);
+}
+
+.danger button {
+  flex-grow: 1;
 }
 
 @media screen and (max-width: 768px) {

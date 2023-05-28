@@ -3,6 +3,7 @@ export enum ActionTypes {
   ShapeIcon = 'shape token icon flex justify-center items-center',
   Secondary = 'btn token content-full provision',
   Contained = 'btn contained',
+  Danger = 'btn price',
 }
 
 export const LEVEL_1 = 'Bronze';

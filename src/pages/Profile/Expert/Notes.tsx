@@ -44,11 +44,7 @@ const Notes: Component = () => {
   });
 
   const handleSave = async () => {
-    const db = await openDB(DB_NAME, 1, {
-      upgrade(db) {
-        db.createObjectStore(DB_TABLE);
-      },
-    });
+    const db = await openDB(DB_NAME, 1);
 
     db.put(DB_TABLE, price(), ticker());
 
@@ -60,6 +56,16 @@ const Notes: Component = () => {
   const handlePriceChange = ({ target }: any) => setPrice(target.value);
 
   const handleTickerChange = ({ target }: any) => setTicker(target.value);
+
+  const handleClear = async () => {
+    const db = await openDB(DB_NAME, 1);
+
+    db.clear(DB_TABLE);
+
+    db.close();
+
+    await loadFromStorage();
+  };
 
   return (
     <DialogFacade
@@ -91,8 +97,26 @@ const Notes: Component = () => {
         onChange={handlePriceChange}
       />
 
-      <div class='scrollable content-tall' tabIndex={0}>
-        <ul class='flex col gap view os material'>
+      <div class='flex justify-between gap danger'>
+        <button
+          type='button'
+          onClick={handleSave}
+          class={ActionTypes.Contained}
+        >
+          Add
+        </button>
+
+        <button type='button' onClick={handleClear} class={ActionTypes.Danger}>
+          Clear
+        </button>
+      </div>
+
+      <section
+        class='scrollable content-tall provision'
+        tabIndex={0}
+        role='log'
+      >
+        <ul class='flex col os material'>
           <For each={transactions()}>
             {(item) => (
               <li class='flex items-center justify-between'>
@@ -103,11 +127,7 @@ const Notes: Component = () => {
             )}
           </For>
         </ul>
-      </div>
-
-      <button type='button' onClick={handleSave} class={ActionTypes.Contained}>
-        Add
-      </button>
+      </section>
     </DialogFacade>
   );
 };

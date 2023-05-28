@@ -12,17 +12,15 @@ const Details: Component<IDType> = ({ id }) => {
   const [modal, setModal] = createSignal('');
 
   const handleSubmit = async () => {
-    const db = await openDB(DB_NAME, 1, {
-      upgrade(db) {
-        db.createObjectStore(DB_TABLE);
-      },
-    });
+    if (!modal()) {
+      const db = await openDB(DB_NAME, 1);
 
-    const result = await db.get(DB_TABLE, id);
+      const result = await db.get(DB_TABLE, id);
 
-    setModal(result);
+      setModal(result);
 
-    db.close();
+      db.close();
+    }
   };
 
   return (
@@ -32,7 +30,7 @@ const Details: Component<IDType> = ({ id }) => {
         aria-label='View Details'
         class={ActionTypes.ShapeIcon}
         onClick={handleSubmit}
-        disabled={!!modal()}
+        aria-disabled={!!modal()}
       >
         <ArrowDownIcon />
       </button>

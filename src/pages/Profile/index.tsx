@@ -61,7 +61,7 @@ const Profile: Component = () => {
 
       <p class='info'>2.2 Billion Visually Impaired People in 2022.</p>
 
-      <div class='flex col gap view os material'>
+      <div class='flex col os material'>
         <ConnectFactory
           href='https://finviz.com/'
           text='Finviz Stock screener'
