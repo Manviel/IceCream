@@ -91,6 +91,19 @@
   font-weight: bold;
 }
 
+.snackbar {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: var(--s-finger);
+  left: 0;
+  white-space: nowrap;
+  background-color: var(--c-backdrop);
+  color: var(--c-white);
+}
+
 @media screen and (max-width: 768px) {
   .portfolio {
     grid-template-columns: 1fr;

@@ -1,4 +1,4 @@
-import { ParentComponent, Accessor } from 'solid-js';
+import { ParentComponent, Accessor, createSignal } from 'solid-js';
 
 import DocCopyIcon from '../../../../assets/icons/doc-copy.svg';
 
@@ -12,14 +12,29 @@ interface PortfolioType<T> extends IDType {
   fairPricePercent: (cost: number) => string;
 }
 
+const INIT_HELP = 'Copy to clipboad';
+const ID_HELP = 'snackbar-tooltip';
+
 const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
   const { children, id, fairPriceCost, fairPricePercent } = props;
+
+  const [tooltip, setTooltip] = createSignal<string>(INIT_HELP);
+  const [snackbar, setSnackbar] = createSignal(false);
+
+  const handleDisplay = () => setSnackbar(true);
+
+  const handleResetTooltip = () => {
+    setSnackbar(false);
+    setTooltip(INIT_HELP);
+  };
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(fairPriceCost().toFixed(2));
+
+      setTooltip('Copied');
     } catch (err) {
-      console.error('Failed to copy: ', err);
+      setTooltip('Failed to copy');
     }
   };
 
@@ -35,13 +50,27 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
         <div class='flex items-center justify-between'>
           <strong class='subtitle'>{fairPriceCost().toFixed(2)}</strong>
 
-          <button
-            type='button'
-            class={ActionTypes.ShapeIcon}
-            onClick={handleCopy}
-          >
-            <DocCopyIcon />
-          </button>
+          <div class='snackbar'>
+            {snackbar() && (
+              <span role='tooltip' id={ID_HELP} class='tooltip chip'>
+                {tooltip}
+              </span>
+            )}
+
+            <button
+              type='button'
+              class={ActionTypes.ShapeIcon}
+              onClick={handleCopy}
+              aria-label='Clone'
+              aria-describedby={ID_HELP}
+              onFocusIn={handleDisplay}
+              onMouseEnter={handleDisplay}
+              onMouseLeave={handleResetTooltip}
+              onFocusOut={handleResetTooltip}
+            >
+              <DocCopyIcon />
+            </button>
+          </div>
         </div>
       </div>
 

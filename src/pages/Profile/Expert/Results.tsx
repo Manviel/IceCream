@@ -1,6 +1,6 @@
 import { Component } from 'solid-js';
 
-import SquareArrowIcon from '../../../assets/icons/square-arrow-circle.svg';
+import BellIcon from '../../../assets/icons/bell.svg';
 
 import { ActionTypes } from '../../../models/config';
 
@@ -14,10 +14,10 @@ const Results: Component = () => {
       closingName='Continue'
       triggerContent={
         <div aria-label='Results' class='content-full content-tall'>
-          <SquareArrowIcon />
+          <BellIcon />
         </div>
       }
-      triggerClassName={ActionTypes.SuperEllipse}
+      triggerClassName={ActionTypes.ShapeIcon}
     >
       <div class='alert-content scrollable' tabIndex={0}>
         <p class='info'>

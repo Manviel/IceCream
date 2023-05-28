@@ -9,6 +9,9 @@ import DialogFacade from '../../../components/DialogContent/DialogFacade';
 import NumberField from '../../../components/Field/NumberField';
 import Field from '../../../components/Field';
 
+const DB_NAME = 'activities';
+const DB_TABLE = 'store';
+
 const Notes: Component = () => {
   const [price, setPrice] = createSignal(undefined);
   const [ticker, setTicker] = createSignal(new Date().toDateString());
@@ -21,35 +24,35 @@ const Notes: Component = () => {
   };
 
   const loadFromStorage = async () => {
-    const db = await openDB('activities', 1, {
+    const db = await openDB(DB_NAME, 1, {
       upgrade(db) {
-        db.createObjectStore('store');
+        db.createObjectStore(DB_TABLE);
       },
     });
 
-    const result = await db.getAllKeys('store');
+    const result = await db.getAllKeys(DB_TABLE);
 
     setTransations(result);
 
     db.close();
   };
 
-  onMount(() => {
-    loadFromStorage();
+  onMount(async () => {
+    await loadFromStorage();
   });
 
   const handleSave = async () => {
-    const db = await openDB('activities', 1, {
+    const db = await openDB(DB_NAME, 1, {
       upgrade(db) {
-        db.createObjectStore('store');
+        db.createObjectStore(DB_TABLE);
       },
     });
 
-    db.put('store', price(), ticker());
+    db.put(DB_TABLE, price(), ticker());
 
     db.close();
 
-    loadFromStorage();
+    await loadFromStorage();
   };
 
   const handlePriceChange = ({ target }: any) => setPrice(target.value);
@@ -74,7 +77,7 @@ const Notes: Component = () => {
       <div class='scrollable content-tall'>
         <Field
           type='text'
-          name='ticker'
+          name='save-as'
           label='Save ticker as'
           value={ticker()}
           onChange={handleTickerChange}
