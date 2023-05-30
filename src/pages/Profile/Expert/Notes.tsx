@@ -107,7 +107,7 @@ const Notes: Component = () => {
         </button>
 
         <button type='button' onClick={handleClear} class={ActionTypes.Danger}>
-          Clear
+          Clear All
         </button>
       </div>
 

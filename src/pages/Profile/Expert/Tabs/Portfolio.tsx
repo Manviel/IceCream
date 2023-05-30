@@ -1,4 +1,5 @@
 import { ParentComponent, Accessor, createSignal } from 'solid-js';
+import { computePosition, offset } from '@floating-ui/dom';
 
 import DocCopyIcon from '../../../../assets/icons/doc-copy.svg';
 
@@ -18,24 +19,45 @@ const ID_HELP = 'snackbar-tooltip';
 const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
   const { children, id, fairPriceCost, fairPricePercent } = props;
 
-  const [tooltip, setTooltip] = createSignal<string>(INIT_HELP);
-  const [snackbar, setSnackbar] = createSignal(false);
+  const [snackbar, setSnackbar] = createSignal<string>(INIT_HELP);
 
-  const handleDisplay = () => setSnackbar(true);
+  let tooltip: HTMLButtonElement;
+  let button: HTMLButtonElement;
+
+  const updateTooltip = () => {
+    computePosition(button, tooltip, {
+      placement: 'top',
+      middleware: [offset(4)],
+    }).then(({ x, y }) => {
+      Object.assign(tooltip.style, {
+        left: `${x}px`,
+        top: `${y}px`,
+      });
+    });
+  };
+
+  const handleDisplay = () => {
+    tooltip.style.display = 'block';
+
+    updateTooltip();
+  };
 
   const handleResetTooltip = () => {
-    setSnackbar(false);
-    setTooltip(INIT_HELP);
+    tooltip.style.display = '';
+
+    setSnackbar(INIT_HELP);
   };
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(fairPriceCost().toFixed(2));
 
-      setTooltip('Copied');
+      setSnackbar('Copied');
     } catch (err) {
-      setTooltip('Failed to copy');
+      setSnackbar('Failed to copy');
     }
+
+    updateTooltip();
   };
 
   return (
@@ -51,18 +73,22 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
           <strong class='subtitle'>{fairPriceCost().toFixed(2)}</strong>
 
           <div class='snackbar'>
-            {snackbar() && (
-              <span role='tooltip' id={ID_HELP} class='tooltip chip'>
-                {tooltip}
-              </span>
-            )}
+            <span
+              role='tooltip'
+              id={ID_HELP}
+              class='tooltip chip'
+              ref={tooltip!}
+            >
+              {snackbar}
+            </span>
 
             <button
               type='button'
+              ref={button!}
               class={ActionTypes.ShapeIcon}
               onClick={handleCopy}
               aria-label='Clone'
-              aria-describedby={snackbar() ? ID_HELP : undefined}
+              aria-describedby={ID_HELP}
               onFocusIn={handleDisplay}
               onMouseEnter={handleDisplay}
               onMouseLeave={handleResetTooltip}

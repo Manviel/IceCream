@@ -101,8 +101,10 @@ button[aria-disabled='true'] {
 }
 
 .tooltip {
+  display: none;
+  width: max-content;
   position: absolute;
-  bottom: var(--s-finger);
+  top: 0;
   left: 0;
   white-space: nowrap;
   background-color: var(--c-backdrop);
