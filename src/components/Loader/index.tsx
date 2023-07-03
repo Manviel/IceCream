@@ -1,6 +1,7 @@
 import type { Component } from 'solid-js';
 
 import Header from '../Header';
+import BackwardNavigation from '../Header/BackwardNavigation';
 
 import './Loader.css';
 
@@ -12,21 +13,19 @@ const Loader: Component = () => (
 );
 
 export const Skeleton: Component = () => (
-  <>
-    <aside class='pulse-loading panel rounded content-full' aria-busy>
-      <section class='sticky'>
-        <h1 class='card-sub card-measure'>Please wait</h1>
-      </section>
+  <aside class='app flex col content-full' aria-busy>
+    <BackwardNavigation subtitle='Please wait' />
 
-      <Header spot='Loading' />
+    <div class='panel content-full flex col'>
+      <Header spot='Downloading updates' />
 
       <div class='info skeleton box rounded'></div>
-    </aside>
+    </div>
 
     <div class='panel content-full'>
       <Loader />
     </div>
-  </>
+  </aside>
 );
 
 export default Loader;
