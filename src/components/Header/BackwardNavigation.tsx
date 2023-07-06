@@ -13,7 +13,7 @@ const BackwardNavigation: Component<BackwardNavigationType> = ({
 
   return (
     <header class='sticky depth panel flex justify-between items-center'>
-      <h1 class='card-sub card-measure'>{subtitle}</h1>
+      <h1 class='card-sub card-navigation'>{subtitle}</h1>
     </header>
   );
 };

@@ -28,7 +28,7 @@ const LayeredLevels: Component = () => {
         {(item) => (
           <li class='box view rounded flex col'>
             <h4 class='card-sub accent'>{item.label}</h4>
-            <p class='card-measure term'>{item.value}</p>
+            <p class='card-navigation term'>{item.value}</p>
           </li>
         )}
       </For>

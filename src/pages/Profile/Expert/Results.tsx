@@ -19,7 +19,7 @@ const Results: Component = () => {
       }
       triggerClassName={ActionTypes.ShapeIcon}
     >
-      <div class='alert-content scrollable' tabIndex={0}>
+      <section class='alert-content scrollable' tabIndex={0}>
         <p class='info'>
           The call stack is responsible for keeping track of all the operations
           in line to be executed. Whenever a function is finished, it is popped
@@ -48,7 +48,7 @@ const Results: Component = () => {
           are added from the event queue. If it is not, then the current
           function call is processed.
         </p>
-      </div>
+      </section>
     </DialogFacade>
   );
 };

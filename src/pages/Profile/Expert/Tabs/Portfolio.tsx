@@ -62,7 +62,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
 
   return (
     <fieldset class='grid products portfolio'>
-      <legend class='subtitle card-measure'>{id}</legend>
+      <legend class='subtitle card-navigation'>{id}</legend>
 
       {children}
 

@@ -139,8 +139,17 @@ a:focus-visible {
   margin: var(--s-unit) 0 var(--s-medium);
 }
 
+.term {
+  font-size: 1.5rem;
+  line-height: var(--s-leading);
+}
+
 .subtitle {
   font-size: 2.8rem;
+}
+
+.card-sub {
+  font-size: 2.1rem;
 }
 
 .items-center {
@@ -165,14 +174,6 @@ a:focus-visible {
 
 .view {
   padding: var(--s-medium);
-}
-
-.screen {
-  margin-top: var(--s-screen);
-}
-
-.fixed-bottom {
-  z-index: 2;
 }
 
 .dock {
@@ -238,6 +239,18 @@ a:focus-visible {
   background-color: var(--c-action);
 }
 
+.material {
+  background-color: var(--c-glass);
+}
+
+.ghost {
+  background-color: var(--c-ghost);
+}
+
+.price {
+  background-color: var(--c-show);
+}
+
 .shape {
   height: var(--s-entry);
   width: var(--s-entry);
@@ -270,7 +283,7 @@ a:focus-visible {
 
 .products {
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1.6rem;
+  gap: 1.6rem;
 }
 
 .panel {
@@ -291,12 +304,8 @@ a:focus-visible {
   border-bottom: 1px solid var(--c-active);
 }
 
-.card-sub {
-  font-size: 2.1rem;
-}
-
-.card-measure {
-  margin: 1rem 0 var(--s-unit);
+.fixed-bottom {
+  z-index: 2;
 }
 
 .chip {
@@ -304,16 +313,12 @@ a:focus-visible {
   border-radius: var(--s-unit);
 }
 
-.material {
-  background-color: var(--c-glass);
+.card-navigation {
+  margin: 1rem 0 var(--s-unit);
 }
 
-.ghost {
-  background-color: var(--c-ghost);
-}
-
-.price {
-  background-color: var(--c-show);
+.screen {
+  margin-top: var(--s-screen);
 }
 
 .provision {
@@ -322,11 +327,6 @@ a:focus-visible {
 
 .gap {
   gap: var(--s-system);
-}
-
-.term {
-  font-size: 1.5rem;
-  line-height: var(--s-leading);
 }
 
 .os {

@@ -255,7 +255,7 @@ export const containers = [
       The number of points that a user story is worth.`,
       `Practice of integrating all your code changes into the main branch of a shared source code repository early and often, automatically testing each change when you commit or merge them, and automatically kicking off a build.
       With CI, errors and security issues can be identified and fixed more easily, and much earlier in the software development lifecycle.`,
-      `Practice that works in conjunction with CI to automate the infrastructure provisioning and application release process.
+      `Practice that works in conjunction with CI to automate the infrastructure equipping and application release process.
       Once code has been tested and built as part of the CI process, CD takes over during the final stages to ensure it can be deployed’s packaged with everything it needs to deploy to any environment at any time.`,
     ],
     titles: [

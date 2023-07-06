@@ -19,7 +19,7 @@ const Article: ParentComponent<ArticleType> = ({
 }) => (
   <article class='card view content-full rounded on-scroll' id={id}>
     <small class='chip paper'>{date}</small>
-    <h2 class='subtitle card-measure'>{name}</h2>
+    <h2 class='subtitle card-navigation'>{name}</h2>
 
     {children}
 
