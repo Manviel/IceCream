@@ -3,6 +3,7 @@ export enum Paths {
   Products = '/products',
   Privacy = '/privacy',
   Profile = '/profile',
+  Relax = '/dev',
 }
 
 export type Entity = {

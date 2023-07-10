@@ -5,7 +5,7 @@ import { SubTitle } from '../../components/Header';
 import './Breathe.css';
 
 const Breathe: Component = () => (
-  <article class='box view rounded screen flex col items-center'>
+  <article class='box view rounded flex col items-center'>
     <SubTitle spot='The future of health' />
     <p class='grey-dark info'>Inhale and Exhale</p>
     <ul class='breathe'>

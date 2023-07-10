@@ -16,6 +16,7 @@ const Profile = lazy(() => import('./pages/Profile'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Products = lazy(() => import('./pages/Products'));
 const Privacy = lazy(() => import('./pages/Privacy'));
+const Relax = lazy(() => import('./pages/Relax'));
 
 const App: Component = () => (
   <div class='flex col items-center'>
@@ -66,6 +67,8 @@ const App: Component = () => (
         <Route path={Paths.Profile} element={<Profile />} />
 
         <Route path={Paths.Privacy} element={<Privacy />} />
+
+        <Route path={Paths.Relax} element={<Relax />} />
 
         <Route path='*' element={<NotFound />} />
       </Routes>

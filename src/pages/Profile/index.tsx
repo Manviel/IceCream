@@ -6,7 +6,6 @@ import { SubTitle } from '../../components/Header';
 
 import { ListItemGen } from '../../models';
 
-import Breathe from './Breathe';
 import Expert from './Expert';
 import Review from './Expert/Tabs/Review';
 import Results from './Expert/Results';
@@ -84,13 +83,12 @@ const Profile: Component = () => {
         />
       </div>
 
-      <Breathe />
       <Review />
 
       <footer class='material view rounded content-full screen'>
         <SubTitle spot='Software Requirements' />
 
-        <ul class='flex col info gap'>
+        <ul class='flex col gap'>
           <For each={options}>
             {(option) => (
               <li class='flex items-center'>

@@ -1,5 +1,4 @@
 :root {
-  --c-subscription: #b25fea;
   --c-neon: #04de71;
   --s-stroke: 14px;
 }
@@ -86,15 +85,15 @@
 }
 
 #chart-subscriptions .ct-series .ct-point {
-  stroke: var(--c-subscription);
+  stroke: var(--c-blue);
 }
 
 #chart-subscriptions .ct-series .ct-line {
-  stroke: var(--c-subscription);
+  stroke: var(--c-blue);
 }
 
 #chart-subscriptions .ct-series .ct-area {
-  fill: var(--c-subscription);
+  fill: var(--c-blue);
 }
 
 @media screen and (max-width: 768px) {
