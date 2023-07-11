@@ -53,12 +53,14 @@ const Vault: Component = () => {
         Profit: {commasAdapter(income())}
       </output>
 
-      <NumberField
-        name='budget'
-        label='Investing'
-        value={budget()}
-        onChange={handleChange}
-      />
+      <div class='provision'>
+        <NumberField
+          name='budget'
+          label='Investing'
+          value={budget()}
+          onChange={handleChange}
+        />
+      </div>
 
       <p class='info'>The amount does not include taxes. *</p>
     </DialogFacade>
