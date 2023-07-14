@@ -6,7 +6,6 @@ type PaginateType = {
 
 const headers = {
   'Content-Type': 'application/json',
-  mode: 'no-cors',
 };
 
 export const getNews = async (params: PaginateType) => {
@@ -25,9 +24,12 @@ export const getNews = async (params: PaginateType) => {
 };
 
 export const getQuote = async () => {
-  const response = await fetch(`https://animechan.vercel.app/api/random`, {
-    headers,
-  });
+  const response = await fetch(
+    `https://uselessfacts.jsph.pl/api/v2/facts/random`,
+    {
+      headers,
+    }
+  );
 
   const json = await response.json();
 

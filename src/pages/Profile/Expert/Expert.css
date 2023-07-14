@@ -112,7 +112,7 @@ button[aria-disabled='true'] {
 }
 
 .danger {
-  margin-top: var(--s-unit);
+  margin-top: var(--s-line);
 }
 
 .danger button {

@@ -17,26 +17,22 @@ import GoForwardIcon from '../../assets/icons/go-forward.svg';
 import './Card.css';
 
 type QuoteType = {
-  quote: string;
-  character: string;
-  anime: string;
+  source: string;
+  text: string;
 };
 
-interface QuoteViewType extends SegregationType {
-  author: string;
-}
+interface QuoteViewType extends SegregationType {}
 
 const fetchQuote = async () => await getQuote();
 
 const QuoteView: ParentComponent<QuoteViewType> = (props) => {
-  const { title, description, author, children } = props;
+  const { title, description, children } = props;
 
   return (
     <section class='card view rounded'>
       <div class='flex justify-between items-center'>
         <blockquote class='flex col gap'>
-          <span>{title}</span>
-          <strong class='os-title'>{author}</strong>
+          <strong class='os-title'>{title}</strong>
         </blockquote>
 
         {children}
@@ -58,11 +54,7 @@ const Quote: Component = () => {
 
       <Show when={quote()} keyed>
         {(res) => (
-          <QuoteView
-            title={res.anime}
-            author={res.character}
-            description={res.quote}
-          >
+          <QuoteView title={res.source} description={res.text}>
             <button
               type='button'
               class={ActionTypes.ShapeIcon}
