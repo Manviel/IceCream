@@ -1,12 +1,17 @@
-import { Component } from 'solid-js';
+import { Component, ParentComponent } from 'solid-js';
 import { createSlider } from 'solid-slider';
 
 import { ActionTypes } from '../../../models/config';
+import { IDType } from '../../../models';
 
 import PlayNextIcon from '../../../assets/icons/play-next.svg';
 import PlayPrevIcon from '../../../assets/icons/play-prev.svg';
 
 import 'solid-slider/slider.css';
+
+const SlideItem: ParentComponent<IDType> = ({ children, id }) => (
+  <p class={`box view rounded ${id}`}>{children}</p>
+);
 
 const Reviews: Component = () => {
   const [slider, { current, next, prev }] = createSlider({
@@ -42,43 +47,43 @@ const Reviews: Component = () => {
       </div>
 
       <div class='production' use:slider>
-        <p class='info box view rounded'>
+        <SlideItem id='box'>
           Once the business analysis has communicated with stakeholders for
           understanding their requirements, it can be described as elicitation.
           Requirement elicitation can be done by communicating with stakeholders
           directly or by doing some research, experiments.
-        </p>
-        <p class='info ghost view rounded'>
+        </SlideItem>
+        <SlideItem id='ghost'>
           Brainstorming is used to generate new ideas and find a solution for a
           specific issue. The members can be domain experts, subject matter
           experts. Multiple ideas and information give you a repository of
           knowledge and you can choose from different ideas.
-        </p>
-        <p class='info price view rounded'>
+        </SlideItem>
+        <SlideItem id='price'>
           Interview techniques should be used for building strong relationships
           between business analysts and stakeholders. In this technique, the
           interviewer directs the question to stakeholders to obtain
           information.
-        </p>
-        <p class='info document view rounded'>
+        </SlideItem>
+        <SlideItem id='document'>
           Document Analysis is used to gather business information by
           reviewing/examining the available materials that describe the business
           environment. This analysis is helpful to validate the implementation
           of current solutions and is also helpful in understanding the business
           need.
-        </p>
-        <p class='info alice view rounded'>
+        </SlideItem>
+        <SlideItem id='alice'>
           For Survey, a set of questions is given to stakeholders to quantify
           their thoughts. After collecting the responses from stakeholders, data
           is analyzed to identify the area of interest of stakeholders.
-        </p>
-        <p class='info layer view rounded'>
+        </SlideItem>
+        <SlideItem id='layer'>
           Prototyping is used to identify missing or unspecified requirements.
           In this technique, frequent demos are given to the client by creating
           the prototypes so that client can get an idea of how the product will
           look like. Prototypes can be used to create a mock-up of sites, and
           describe the process using diagrams.
-        </p>
+        </SlideItem>
       </div>
 
       <p class='production grey-light term flex justify-center' role='status'>
