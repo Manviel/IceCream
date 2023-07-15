@@ -10,7 +10,7 @@ import PlayPrevIcon from '../../../assets/icons/play-prev.svg';
 import 'solid-slider/slider.css';
 
 const SlideItem: ParentComponent<IDType> = ({ children, id }) => (
-  <p class={`box view rounded ${id}`}>{children}</p>
+  <p class={`view rounded info ${id}`}>{children}</p>
 );
 
 const Reviews: Component = () => {
