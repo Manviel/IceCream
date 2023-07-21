@@ -14,7 +14,12 @@ const Field: Component<FieldType> = (props) => {
       <label for={name} class='form-label'>
         {label}
       </label>
-      <input {...rest} id={name} name={name} class='form-control form-action' />
+      <input
+        {...rest}
+        id={name}
+        name={name}
+        class='form-control form-action token'
+      />
     </div>
   );
 };

@@ -2,10 +2,10 @@
   --c-black: #1c1c1e;
   --c-white: #fff;
   --c-dark: #000;
-  --c-active: rgba(0, 0, 0, 0.05);
+  --c-active: rgba(118, 118, 128, 0.12);
   --c-surface: #6e6e73;
   --c-primary: #f7f7f9;
-  --c-action: rgba(118, 118, 128, 0.22);
+  --c-action: rgba(118, 118, 128, 0.24);
   --c-depth: rgba(245, 245, 247, 0.6);
   --c-ring: #0066cc;
   --c-grey: #a1a1a6;
@@ -177,7 +177,7 @@ a:focus-visible {
 }
 
 .dock {
-  padding: var(--s-safe) 1.6rem 2.4rem;
+  padding: var(--s-safe) 1.6rem var(--s-dock);
 }
 
 .layer {
@@ -208,7 +208,7 @@ a:focus-visible {
 }
 
 .box {
-  background-color: var(--c-dark);
+  background-color: var(--c-black);
   color: var(--c-white);
 }
 
