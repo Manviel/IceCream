@@ -364,6 +364,7 @@ a:focus-visible {
 
   .title {
     font-size: var(--s-screen);
+    margin: 2.4rem 0 0;
   }
 
   .subtitle {

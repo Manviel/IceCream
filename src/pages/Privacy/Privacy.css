@@ -1,7 +1,7 @@
 .privacy {
   grid-template-columns: 4fr 1fr;
   gap: 1.8rem;
-  padding-top: var(--s-screen);
+  padding-top: var(--s-dock);
 }
 
 .paper {
