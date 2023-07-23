@@ -1,5 +1,5 @@
 :root {
-  --c-neon: #04de71;
+  --c-neon: color(display-p3 0.397 0.858 0.488);
   --s-stroke: 14px;
 }
 
