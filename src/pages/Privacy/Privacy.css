@@ -6,6 +6,7 @@
 .paper {
   background-color: var(--c-active);
   text-transform: uppercase;
+  font-size: var(--s-safe);
 }
 
 .quick {

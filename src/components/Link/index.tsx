@@ -10,7 +10,12 @@ interface TabLinkType extends IDType {
 }
 
 const TabLink: ParentComponent<TabLinkType> = ({ href, id, children, end }) => (
-  <NavLink href={href} end={end} class='flex col items-center tab' title={id}>
+  <NavLink
+    href={href}
+    end={end}
+    class='flex col items-center tab'
+    aria-label={id}
+  >
     <div class={ActionTypes.SuperEllipse}>{children}</div>
 
     <small class='tab-link'>{id}</small>

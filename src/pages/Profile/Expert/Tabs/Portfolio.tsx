@@ -79,7 +79,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
               class='tooltip chip'
               ref={tooltip!}
             >
-              {snackbar}
+              {snackbar()}
             </span>
 
             <button
