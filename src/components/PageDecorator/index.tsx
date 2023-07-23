@@ -1,7 +1,6 @@
 import { ParentComponent } from 'solid-js';
 import { useIsRouting } from '@solidjs/router';
 
-import Header from '../Header';
 import BackwardNavigation, {
   BackwardNavigationType,
 } from '../Header/BackwardNavigation';
@@ -26,10 +25,10 @@ const PageDecorator: ParentComponent<HeaderTemplateType> = ({
       class='app flex col content-full'
       classList={{ 'pulse-loading': isRouting(), layer: isDark }}
     >
-      <BackwardNavigation subtitle={subtitle} />
-
       <div class='panel content-full flex col'>
-        <Header spot={headline} />
+        <BackwardNavigation subtitle={headline} />
+
+        <h2 class='info card-sub'>{subtitle}</h2>
 
         {children}
       </div>

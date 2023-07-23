@@ -6,9 +6,7 @@ import Breathe from './Breathe';
 import LoginForm from './LoginForm';
 
 const Relax: Component = () => (
-  <PageDecorator subtitle='Keep calm' headline='And carry on'>
-    <h3 class='info'>Add a fixed toolbar at the bottom</h3>
-
+  <PageDecorator headline='Keep calm' subtitle='And carry on'>
     <Breathe />
 
     <LoginForm />

@@ -5,7 +5,7 @@ type HeaderType = {
 };
 
 const Header: Component<HeaderType> = ({ spot }) => {
-  return <h2 class='title'>{spot}</h2>;
+  return <h1 class='title'>{spot}</h1>;
 };
 
 export const SubTitle: Component<HeaderType> = ({ spot }) => {

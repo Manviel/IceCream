@@ -2,6 +2,7 @@ import { Component, For, createEffect } from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
 import { useObserver } from '../../services/utils';
+import { Pages } from '../../models';
 
 import Article from './Article';
 import { containers } from './library';
@@ -36,8 +37,8 @@ const Privacy: Component = () => {
 
   return (
     <PageDecorator
-      subtitle='Privacy'
-      headline='Designed for your policy'
+      headline={Pages.Privacy}
+      subtitle='Designed for your policy'
       isDark
     >
       <div class='grid privacy'>

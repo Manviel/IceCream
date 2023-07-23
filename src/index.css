@@ -177,7 +177,7 @@ a:focus-visible {
 }
 
 .dock {
-  padding: var(--s-safe) 1.6rem var(--s-dock);
+  padding: var(--s-unit) 1.6rem;
 }
 
 .layer {
@@ -252,29 +252,21 @@ a:focus-visible {
 }
 
 .shape {
-  height: var(--s-entry);
-  width: var(--s-entry);
   border-radius: 50%;
 }
 
 .superellipse {
-  min-width: var(--s-finger);
-  height: var(--s-finger);
   border-radius: 25%;
   background-color: transparent;
 }
 
+.touch {
+  min-width: var(--s-entry);
+  height: var(--s-entry);
+}
+
 .superellipse:hover {
   background-color: var(--c-active);
-}
-
-.superellipse.active {
-  background-color: var(--c-white);
-  transform: scale(1.1);
-}
-
-.superellipse.inactive svg {
-  fill: var(--c-surface);
 }
 
 .icon {
@@ -304,8 +296,27 @@ a:focus-visible {
   border-bottom: 1px solid var(--c-active);
 }
 
-.fixed-bottom {
-  z-index: 2;
+.tab {
+  gap: 0.2rem;
+}
+
+.tab.active {
+  transform: scale(1.1);
+  color: var(--c-dark);
+}
+
+.tab.active .superellipse {
+  background-color: var(--c-white);
+  color: var(--c-ring);
+}
+
+.tab.inactive {
+  color: var(--c-surface);
+}
+
+.tab-link {
+  font-size: 1rem;
+  display: none;
 }
 
 .chip {
@@ -352,14 +363,17 @@ a:focus-visible {
     margin-top: var(--s-system);
   }
 
-  .fixed-bottom {
+  .sticky {
     position: fixed;
     bottom: 0;
     left: 0;
+    top: unset;
+    border-bottom: 0;
   }
 
   .dock {
     border-top: 1px solid var(--c-active);
+    padding: var(--s-unit) 1.6rem 1.7rem;
   }
 
   .title {
@@ -372,7 +386,11 @@ a:focus-visible {
   }
 
   .card-sub {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
+  }
+
+  .tab-link {
+    display: block;
   }
 }
 

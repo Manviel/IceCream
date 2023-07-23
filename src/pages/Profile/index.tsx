@@ -47,9 +47,7 @@ const options: ListItemGen<string>[] = [
 
 const Profile: Component = () => {
   return (
-    <PageDecorator subtitle='Your Profile' headline='Overview'>
-      <h3 class='info'>You seem rested</h3>
-
+    <PageDecorator headline='Overview' subtitle='You seem rested'>
       <Expert />
 
       <div class='flex items-center justify-between screen'>
