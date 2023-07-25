@@ -1,12 +1,12 @@
 .privacy {
   grid-template-columns: 4fr 1fr;
   gap: 1.8rem;
-  padding-top: var(--s-screen);
 }
 
 .paper {
   background-color: var(--c-active);
   text-transform: uppercase;
+  font-size: var(--s-safe);
 }
 
 .quick {

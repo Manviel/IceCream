@@ -1,5 +1,7 @@
 import { Component, onMount } from 'solid-js';
 
+import Header from '.';
+
 export interface BackwardNavigationType {
   subtitle: string;
 }
@@ -11,11 +13,7 @@ const BackwardNavigation: Component<BackwardNavigationType> = ({
     document.title = `${subtitle} - iFruit`;
   });
 
-  return (
-    <header class='sticky depth panel flex justify-between items-center'>
-      <h1 class='card-sub card-navigation'>{subtitle}</h1>
-    </header>
-  );
+  return <Header spot={subtitle} />;
 };
 
 export default BackwardNavigation;

@@ -7,7 +7,7 @@ import { ActionTypes } from '../../models/config';
 import PageDecorator from '../../components/PageDecorator';
 
 const NotFound: Component = () => (
-  <PageDecorator subtitle='Not Found' headline='404'>
+  <PageDecorator headline='404' subtitle='Not Found'>
     <div class='layer view rounded content-full flex col screen'>
       <h2 class='info card-sub'>Sorry, we can't find that page!</h2>
 

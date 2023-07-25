@@ -1,21 +1,21 @@
 :root {
-  --c-black: #1c1c1e;
-  --c-white: #fff;
-  --c-dark: #000;
-  --c-active: rgba(0, 0, 0, 0.05);
-  --c-surface: #6e6e73;
-  --c-primary: #f7f7f9;
-  --c-action: rgba(118, 118, 128, 0.22);
-  --c-depth: rgba(245, 245, 247, 0.6);
-  --c-ring: #0066cc;
-  --c-grey: #a1a1a6;
-  --c-heat: #fa124f;
-  --c-glass: rgb(246, 249, 255);
-  --c-ghost: #ebfff0;
-  --c-show: #fce8e6;
-  --c-blue: #0071e3;
-  --c-energy: #f2a33c;
-  --c-alice: #fef6d6;
+  --c-black: color(display-p3 0.11 0.11 0.117);
+  --c-white: color(display-p3 1 1 1);
+  --c-dark: color(display-p3 0 0 0);
+  --c-active: color(display-p3 0.463 0.463 0.499 / 0.12);
+  --c-surface: color(display-p3 0.431 0.431 0.449);
+  --c-primary: color(display-p3 0.969 0.969 0.976);
+  --c-action: color(display-p3 0.463 0.463 0.499 / 0.24);
+  --c-depth: color(display-p3 0.961 0.961 0.968 / 0.6);
+  --c-ring: color(display-p3 0.166 0.394 0.773);
+  --c-grey: color(display-p3 0.631 0.631 0.649);
+  --c-heat: color(display-p3 0.9 0.214 0.328);
+  --c-glass: color(display-p3 0.967 0.976 0.998);
+  --c-ghost: color(display-p3 0.936 0.998 0.945);
+  --c-show: color(display-p3 0.975 0.913 0.904);
+  --c-blue: color(display-p3 0.187 0.436 0.86);
+  --c-energy: color(display-p3 0.904 0.653 0.319);
+  --c-alice: color(display-p3 0.991 0.966 0.852);
   --s-line: 0.6rem;
   --s-unit: 0.8rem;
   --s-safe: 1.2rem;
@@ -177,7 +177,7 @@ a:focus-visible {
 }
 
 .dock {
-  padding: var(--s-safe) 1.6rem 2.4rem;
+  padding: var(--s-unit) var(--s-medium);
 }
 
 .layer {
@@ -208,7 +208,7 @@ a:focus-visible {
 }
 
 .box {
-  background-color: var(--c-dark);
+  background-color: var(--c-black);
   color: var(--c-white);
 }
 
@@ -252,29 +252,21 @@ a:focus-visible {
 }
 
 .shape {
-  height: var(--s-entry);
-  width: var(--s-entry);
   border-radius: 50%;
 }
 
 .superellipse {
-  min-width: var(--s-finger);
-  height: var(--s-finger);
   border-radius: 25%;
   background-color: transparent;
 }
 
+.touch {
+  min-width: var(--s-entry);
+  height: var(--s-entry);
+}
+
 .superellipse:hover {
   background-color: var(--c-active);
-}
-
-.superellipse.active {
-  background-color: var(--c-white);
-  transform: scale(1.1);
-}
-
-.superellipse.inactive svg {
-  fill: var(--c-surface);
 }
 
 .icon {
@@ -304,8 +296,22 @@ a:focus-visible {
   border-bottom: 1px solid var(--c-active);
 }
 
-.fixed-bottom {
-  z-index: 2;
+.tab.active {
+  transform: scale(1.16);
+  color: var(--c-dark);
+}
+
+.tab.active .superellipse {
+  background-color: transparent;
+}
+
+.tab.inactive {
+  color: var(--c-surface);
+}
+
+.tab-link {
+  font-size: 1rem;
+  display: none;
 }
 
 .chip {
@@ -352,18 +358,22 @@ a:focus-visible {
     margin-top: var(--s-system);
   }
 
-  .fixed-bottom {
+  .sticky {
     position: fixed;
     bottom: 0;
     left: 0;
+    top: unset;
+    border-bottom: 0;
   }
 
   .dock {
     border-top: 1px solid var(--c-active);
+    padding: var(--s-line) 1.6rem var(--s-medium);
   }
 
   .title {
     font-size: var(--s-screen);
+    margin: 2.4rem 0 0;
   }
 
   .subtitle {
@@ -371,7 +381,11 @@ a:focus-visible {
   }
 
   .card-sub {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
+  }
+
+  .tab-link {
+    display: block;
   }
 }
 

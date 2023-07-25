@@ -1,7 +1,7 @@
 import { Component, For } from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
-import ConnectFactory from '../../components/ConnectFactory';
+import ConnectFactory from '../../components/Link/ConnectFactory';
 import { SubTitle } from '../../components/Header';
 
 import { ListItemGen } from '../../models';
@@ -47,9 +47,7 @@ const options: ListItemGen<string>[] = [
 
 const Profile: Component = () => {
   return (
-    <PageDecorator subtitle='Your Profile' headline='Overview'>
-      <h3 class='info'>You seem rested</h3>
-
+    <PageDecorator headline='Overview' subtitle='You seem rested'>
       <Expert />
 
       <div class='flex items-center justify-between screen'>

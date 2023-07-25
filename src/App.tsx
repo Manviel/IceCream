@@ -1,10 +1,10 @@
 import { Component, lazy, Suspense } from 'solid-js';
-import { Routes, Route, NavLink } from '@solidjs/router';
+import { Routes, Route } from '@solidjs/router';
 
-import { ActionTypes } from './models/config';
-import { Paths } from './models';
+import { Pages, Paths } from './models';
 
 import { Skeleton } from './components/Loader';
+import TabLink from './components/Link';
 
 import FlameIcon from './assets/icons/flame.svg';
 import SquareTextIcon from './assets/icons/square-text.svg';
@@ -21,41 +21,24 @@ const Relax = lazy(() => import('./pages/Relax'));
 const App: Component = () => (
   <div class='flex col items-center'>
     <nav
-      class='fixed-bottom dock depth content-full flex justify-between'
+      class='sticky dock depth content-full flex justify-between'
       aria-label='Tabs'
     >
-      <NavLink
-        href={Paths.Home}
-        end
-        aria-label='Home'
-        class={ActionTypes.SuperEllipse}
-      >
+      <TabLink href={Paths.Home} end id={Pages.Home}>
         <SquareTextIcon />
-      </NavLink>
+      </TabLink>
 
-      <NavLink
-        href={Paths.Products}
-        aria-label='Products'
-        class={ActionTypes.SuperEllipse}
-      >
+      <TabLink href={Paths.Products} id={Pages.Products}>
         <FlameIcon />
-      </NavLink>
+      </TabLink>
 
-      <NavLink
-        href={Paths.Privacy}
-        aria-label='Privacy'
-        class={ActionTypes.SuperEllipse}
-      >
+      <TabLink href={Paths.Privacy} id={Pages.Privacy}>
         <BookIcon />
-      </NavLink>
+      </TabLink>
 
-      <NavLink
-        href={Paths.Profile}
-        aria-label='Profile'
-        class={ActionTypes.SuperEllipse}
-      >
+      <TabLink href={Paths.Profile} id={Pages.Profile}>
         <TextFinderIcon />
-      </NavLink>
+      </TabLink>
     </nav>
 
     <Suspense fallback={<Skeleton />}>

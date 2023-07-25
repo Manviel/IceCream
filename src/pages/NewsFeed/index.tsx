@@ -1,6 +1,5 @@
 import { Component, Suspense } from 'solid-js';
 
-import Header from '../../components/Header';
 import Loader from '../../components/Loader';
 import Quote from '../../components/Card/Quote';
 
@@ -11,7 +10,7 @@ import './NewsFeed.css';
 const NewsFeed: Component = () => {
   return (
     <>
-      <Header spot='Discover' />
+      <h2 class='title'>Discover</h2>
       <h3 class='info card-sub'>Top leagues</h3>
 
       <div class='card view rounded'>

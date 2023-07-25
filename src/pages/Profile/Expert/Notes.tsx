@@ -71,7 +71,7 @@ const Notes: Component = () => {
     <DialogFacade
       title='Notes'
       description='Activity of transactions.'
-      closingName='Cancel'
+      closingName='Go back'
       triggerContent={
         <div role='img' aria-label='Notes' class='content-full content-tall'>
           <LineDecreaseIcon />
@@ -98,16 +98,16 @@ const Notes: Component = () => {
       />
 
       <div class='flex justify-between gap danger'>
+        <button type='button' onClick={handleClear} class={ActionTypes.Danger}>
+          Clear All
+        </button>
+
         <button
           type='button'
           onClick={handleSave}
           class={ActionTypes.Contained}
         >
           Add
-        </button>
-
-        <button type='button' onClick={handleClear} class={ActionTypes.Danger}>
-          Clear All
         </button>
       </div>
 

@@ -35,7 +35,7 @@ const Details: Component<IDType> = ({ id }) => {
         <ArrowDownIcon />
       </button>
 
-      <span class='chip document term'>{modal}</span>
+      <span class='chip document term'>{modal()}</span>
     </div>
   );
 };

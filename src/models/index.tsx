@@ -6,6 +6,13 @@ export enum Paths {
   Relax = '/dev',
 }
 
+export enum Pages {
+  Home = 'Home',
+  Products = 'For You',
+  Privacy = 'Privacy',
+  Profile = 'Profile',
+}
+
 export type Entity = {
   [key: string]: number | string;
 };
@@ -26,4 +33,8 @@ export interface IDType {
 
 export interface DarkThemeType {
   isDark?: boolean;
+}
+
+export interface AnchorType {
+  href: string;
 }

@@ -1,11 +1,11 @@
 import { Component } from 'solid-js';
 import { Link } from '@solidjs/router';
 
-import { Paths } from '../../models';
+import { Pages, Paths } from '../../models';
 import { ActionTypes } from '../../models/config';
 
 import Card from '../../components/Card';
-import ConnectFactory from '../../components/ConnectFactory';
+import ConnectFactory from '../../components/Link/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
 import { SubTitle } from '../../components/Header';
 import Shelf from '../../components/Card/Shelf';
@@ -18,7 +18,7 @@ import './Home.css';
 
 const Home: Component = () => {
   return (
-    <PageDecorator subtitle='Home' headline='What is Cohesion?'>
+    <PageDecorator headline={Pages.Home} subtitle='What is Cohesion?'>
       <p class='info'>
         The degree to which the elements inside a module belong together. It is
         a measure of how deeply each piece of device module functionality
