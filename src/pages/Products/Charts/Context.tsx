@@ -17,7 +17,7 @@ export const useLegends = ({ labels, datasets }: ChartSource) => {
   const handleHover = (e: Event) => {
     const { target } = e;
 
-    const value = (target as HTMLInputElement).ariaLabel;
+    const value = (target as HTMLInputElement).getAttribute('aria-label');
 
     setLegend(value);
   };
