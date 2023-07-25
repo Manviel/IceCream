@@ -1,12 +1,11 @@
 import { ParentComponent } from 'solid-js';
 
-import ConnectFactory from '../../components/ConnectFactory';
+import ConnectFactory from '../../components/Link/ConnectFactory';
 
-import { IDType } from '../../models';
+import { AnchorType, IDType } from '../../models';
 
-interface ArticleType extends IDType {
+interface ArticleType extends IDType, AnchorType {
   name: string;
-  href: string;
   date: string;
 }
 

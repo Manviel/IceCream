@@ -1,11 +1,10 @@
 import { ParentComponent } from 'solid-js';
 import { NavLink } from '@solidjs/router';
 
-import { IDType } from '../../models';
+import { AnchorType, IDType } from '../../models';
 import { ActionTypes } from '../../models/config';
 
-interface TabLinkType extends IDType {
-  href: string;
+interface TabLinkType extends IDType, AnchorType {
   end?: boolean;
 }
 

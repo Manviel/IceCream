@@ -1,9 +1,10 @@
 import type { Component } from 'solid-js';
 
-type ConnectFactoryType = {
-  href: string;
+import { AnchorType } from '../../../models';
+
+interface ConnectFactoryType extends AnchorType {
   text?: string;
-};
+}
 
 const ConnectFactory: Component<ConnectFactoryType> = ({
   href,

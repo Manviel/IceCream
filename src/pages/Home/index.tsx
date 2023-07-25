@@ -5,7 +5,7 @@ import { Pages, Paths } from '../../models';
 import { ActionTypes } from '../../models/config';
 
 import Card from '../../components/Card';
-import ConnectFactory from '../../components/ConnectFactory';
+import ConnectFactory from '../../components/Link/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';
 import { SubTitle } from '../../components/Header';
 import Shelf from '../../components/Card/Shelf';

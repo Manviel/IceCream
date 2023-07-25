@@ -34,3 +34,7 @@ export interface IDType {
 export interface DarkThemeType {
   isDark?: boolean;
 }
+
+export interface AnchorType {
+  href: string;
+}

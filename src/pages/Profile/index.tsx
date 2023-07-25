@@ -1,7 +1,7 @@
 import { Component, For } from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
-import ConnectFactory from '../../components/ConnectFactory';
+import ConnectFactory from '../../components/Link/ConnectFactory';
 import { SubTitle } from '../../components/Header';
 
 import { ListItemGen } from '../../models';
