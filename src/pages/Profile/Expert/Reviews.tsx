@@ -10,7 +10,9 @@ import PlayPrevIcon from '../../../assets/icons/play-prev.svg';
 import 'solid-slider/slider.css';
 
 const SlideItem: ParentComponent<IDType> = ({ children, id }) => (
-  <p class={`view rounded info ${id}`}>{children}</p>
+  <p class={`view rounded info ${id}`} aria-roledescription='slide'>
+    {children}
+  </p>
 );
 
 const Reviews: Component = () => {
@@ -46,7 +48,7 @@ const Reviews: Component = () => {
         </nav>
       </div>
 
-      <div class='production' use:slider>
+      <section class='production' aria-roledescription='carousel' use:slider>
         <SlideItem id='box'>
           Once the business analysis has communicated with stakeholders for
           understanding their requirements, it can be described as elicitation.
@@ -84,7 +86,7 @@ const Reviews: Component = () => {
           look like. Prototypes can be used to create a mock-up of sites, and
           describe the process using diagrams.
         </SlideItem>
-      </div>
+      </section>
 
       <p class='production grey-light term flex justify-center' role='status'>
         {current() + 1} out of 6
