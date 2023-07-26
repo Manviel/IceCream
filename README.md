@@ -41,6 +41,8 @@ You can deploy the `dist` folder to any static host provider (netlify, surge, no
 
 [Waffle](https://github.com/Manviel/Waffle) uses mongo database atlas
 
-### Dribble
+## Tools
 
 [Sticky Table of Contents with Scrolling Active States](https://css-tricks.com/sticky-table-of-contents-with-scrolling-active-states/)
+[CSS Color Guide Convertor](https://colorjs.io/apps/convert/?color=lime&precision=4)
+[Browse UX apps](https://mobbin.com/browse/ios/apps?sort=publishedAt)

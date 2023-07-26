@@ -4,7 +4,7 @@ import PageDecorator from '../../components/PageDecorator';
 import ConnectFactory from '../../components/Link/ConnectFactory';
 import { SubTitle } from '../../components/Header';
 
-import { ListItemGen } from '../../models';
+import { ListItemGen, Pages } from '../../models';
 
 import Expert from './Expert';
 import Review from './Expert/Tabs/Review';
@@ -47,7 +47,7 @@ const options: ListItemGen<string>[] = [
 
 const Profile: Component = () => {
   return (
-    <PageDecorator headline='Overview' subtitle='You seem rested'>
+    <PageDecorator headline={Pages.Profile} subtitle='Overview'>
       <Expert />
 
       <div class='flex items-center justify-between screen'>
