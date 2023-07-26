@@ -12,7 +12,7 @@ button[aria-disabled='true'] {
 }
 
 .alice {
-  background-color: var(--c-alice);
+  background-color: var(--c-lamp);
 }
 
 .production {

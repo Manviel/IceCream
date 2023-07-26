@@ -8,8 +8,6 @@ This is the reason you see a `pnpm-lock.yaml`. That being said, any package mana
 $ npm install # or pnpm install or yarn install
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -29,6 +27,8 @@ It correctly bundles Solid in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
+### Learn more about shortcuts
+
 - C - color.
 - S - size.
 - P - pseudo.
@@ -43,6 +43,6 @@ You can deploy the `dist` folder to any static host provider (netlify, surge, no
 
 ## Tools
 
-[Sticky Table of Contents with Scrolling Active States](https://css-tricks.com/sticky-table-of-contents-with-scrolling-active-states/)
-[CSS Color Guide Convertor](https://colorjs.io/apps/convert/?color=lime&precision=4)
-[Browse UX apps](https://mobbin.com/browse/ios/apps?sort=publishedAt)
+- [Sticky Table of Contents with Scrolling Active States](https://css-tricks.com/sticky-table-of-contents-with-scrolling-active-states/)
+- [CSS Color Guide Convertor](https://colorjs.io/apps/convert/?color=lime&precision=4)
+- [Browse UX apps](https://mobbin.com/browse/ios/apps?sort=publishedAt)
