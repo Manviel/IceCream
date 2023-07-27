@@ -37,4 +37,5 @@ export interface DarkThemeType {
 
 export interface AnchorType {
   href: string;
+  end?: boolean;
 }

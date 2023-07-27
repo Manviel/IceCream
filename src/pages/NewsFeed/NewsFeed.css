@@ -1,6 +1,5 @@
 table {
   border-collapse: collapse;
-  font-size: 1.6rem;
   border: 1px solid var(--c-active);
 }
 

@@ -32,7 +32,7 @@ const Subscriptions: Component = () => {
       title='Subscribers'
       description={`Average annual number is ${Math.round(
         average(datasets)
-      )} million`}
+      )} mil`}
       ariaLabel='Netflix'
       source={source}
     />

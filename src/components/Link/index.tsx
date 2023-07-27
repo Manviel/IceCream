@@ -4,9 +4,7 @@ import { NavLink } from '@solidjs/router';
 import { AnchorType, IDType } from '../../models';
 import { ActionTypes } from '../../models/config';
 
-interface TabLinkType extends IDType, AnchorType {
-  end?: boolean;
-}
+interface TabLinkType extends IDType, AnchorType {}
 
 const TabLink: ParentComponent<TabLinkType> = ({ href, id, children, end }) => (
   <NavLink

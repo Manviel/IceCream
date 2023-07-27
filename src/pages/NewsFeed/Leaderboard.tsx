@@ -23,7 +23,7 @@ const Leaderboard: Component = () => {
   });
 
   return (
-    <table class='content-full'>
+    <table class='content-full concise'>
       <caption>Exchange 1 {data.currentRank}</caption>
       <thead class='material'>
         <tr>

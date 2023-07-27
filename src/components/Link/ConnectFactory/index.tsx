@@ -9,8 +9,15 @@ interface ConnectFactoryType extends AnchorType {
 const ConnectFactory: Component<ConnectFactoryType> = ({
   href,
   text = 'Watch Now',
+  end = true,
 }) => (
-  <a href={href} target='_blank' rel='noopener noreferrer' class='connect'>
+  <a
+    href={href}
+    target='_blank'
+    rel='noopener noreferrer'
+    class='connect'
+    classList={{ concise: end }}
+  >
     {text}
   </a>
 );

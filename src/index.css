@@ -140,7 +140,6 @@ a:focus-visible {
 }
 
 .term {
-  font-size: 1.5rem;
   line-height: var(--s-leading);
 }
 
@@ -150,6 +149,11 @@ a:focus-visible {
 
 .card-sub {
   font-size: 2.1rem;
+}
+
+.term,
+.concise {
+  font-size: 1.6rem;
 }
 
 .items-center {
@@ -191,8 +195,7 @@ a:focus-visible {
 .connect {
   display: inline-block;
   color: var(--c-ring);
-  padding: 0.2rem;
-  font-size: 1.6rem;
+  padding: 0.4rem 0;
 }
 
 .connect:hover {
@@ -216,7 +219,6 @@ a:focus-visible {
   display: block;
   padding: 1.8rem var(--s-medium) 1.6rem;
   font-weight: bold;
-  font-size: 1.6rem;
   letter-spacing: 0.4px;
   border-radius: var(--s-dock);
   text-align: center;

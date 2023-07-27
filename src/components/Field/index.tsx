@@ -18,7 +18,7 @@ const Field: Component<FieldType> = (props) => {
         {...rest}
         id={name}
         name={name}
-        class='form-control form-action token'
+        class='form-control form-action token concise'
       />
     </div>
   );

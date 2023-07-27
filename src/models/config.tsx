@@ -1,9 +1,9 @@
 export enum ActionTypes {
   SuperEllipse = 'superellipse touch icon flex items-center justify-center',
   ShapeIcon = 'shape touch token icon flex justify-center items-center',
-  Secondary = 'btn token content-full provision',
-  Contained = 'btn contained',
-  Danger = 'btn price',
+  Secondary = 'btn concise token content-full provision',
+  Contained = 'btn concise contained',
+  Danger = 'btn concise price',
 }
 
 export const LEVEL_1 = 'Bronze';
