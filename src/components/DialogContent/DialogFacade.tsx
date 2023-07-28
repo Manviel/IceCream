@@ -23,7 +23,7 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
   children,
   triggerContent,
   triggerClassName,
-  parentClassName,
+  isFullScreen,
   childClassName,
   toggleActionSheet,
 }) => {
@@ -55,41 +55,39 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
       </button>
 
       <Show when={open()}>
-        {() => (
-          <Dialog onClose={setOpen}>
-            <DialogContent
-              parentClassName={parentClassName}
-              childClassName={childClassName}
-            >
-              <div class='flex justify-between items-center'>
-                <DialogTitle class='subtitle card-navigation'>
-                  {title}
-                </DialogTitle>
-
-                <button
-                  type='button'
-                  class={ActionTypes.ShapeIcon}
-                  onClick={handleClose}
-                  aria-label='Close'
-                >
-                  <CloseIcon />
-                </button>
-              </div>
-
-              <Description class='info'>{description}</Description>
-
-              {children}
+        <Dialog onClose={setOpen}>
+          <DialogContent
+            isFullScreen={isFullScreen}
+            childClassName={childClassName}
+          >
+            <div class='flex justify-between items-center'>
+              <DialogTitle class='subtitle card-navigation'>
+                {title}
+              </DialogTitle>
 
               <button
                 type='button'
-                class={ActionTypes.Secondary}
+                class={ActionTypes.ShapeIcon}
                 onClick={handleClose}
+                aria-label='Close'
               >
-                {closingName}
+                <CloseIcon />
               </button>
-            </DialogContent>
-          </Dialog>
-        )}
+            </div>
+
+            <Description class='info'>{description}</Description>
+
+            {children}
+
+            <button
+              type='button'
+              class={ActionTypes.Secondary}
+              onClick={handleClose}
+            >
+              {closingName}
+            </button>
+          </DialogContent>
+        </Dialog>
       </Show>
     </>
   );

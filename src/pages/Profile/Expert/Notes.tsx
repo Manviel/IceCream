@@ -1,4 +1,4 @@
-import { Component, onMount, createSignal, For } from 'solid-js';
+import { Component, onMount, createSignal, For, Show } from 'solid-js';
 import { openDB } from 'idb';
 
 import LineDecreaseIcon from '../../../assets/icons/line-decrease-circle.svg';
@@ -78,8 +78,8 @@ const Notes: Component = () => {
         </div>
       }
       triggerClassName={ActionTypes.ShapeIcon}
-      parentClassName='bottom-sheet view card'
-      childClassName='flex col content-tall'
+      isFullScreen
+      childClassName='bottom-sheet card'
       toggleActionSheet={toggleActionSheet}
     >
       <Field
@@ -107,16 +107,20 @@ const Notes: Component = () => {
           onClick={handleSave}
           class={ActionTypes.Contained}
         >
-          Add
+          Add Note
         </button>
       </div>
 
       <section
-        class='scrollable content-tall provision'
+        class='scrollable provision content-tall'
         tabIndex={0}
         role='log'
       >
         <ul class='flex col os material'>
+          <Show when={!transactions()?.length}>
+            <li>Your list is empty.</li>
+          </Show>
+
           <For each={transactions()}>
             {(item) => (
               <li class='flex items-center justify-between'>

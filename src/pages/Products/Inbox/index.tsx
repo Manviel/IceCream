@@ -19,7 +19,11 @@ const Inbox: Component = () => {
           <h3 class='widget-title card-sub'>Inbox</h3>
           <h4 class='widget-main provision'>1</h4>
 
-          <div class={ActionTypes.ShapeIcon}>
+          <div
+            role='img'
+            aria-label='View details'
+            class={ActionTypes.ShapeIcon}
+          >
             <TrayIcon />
           </div>
         </>

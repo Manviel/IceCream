@@ -19,19 +19,26 @@
 
 .dialog {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 54vw;
+  top: 0;
+  left: 0;
   z-index: 4;
 }
 
 .alert {
+  max-width: 54vw;
   background-color: var(--c-elevation);
   backdrop-filter: var(--p-blur);
   -webkit-backdrop-filter: var(--p-blur);
-  color: var(--c-dark);
   animation: alert-enter ease-in-out 0.2s;
+}
+
+.modal {
+  color: var(--c-dark);
+  max-height: calc(100% - var(--s-system));
+}
+
+.content-tall {
+  height: 100%;
 }
 
 @keyframes alert-enter {
@@ -46,8 +53,14 @@
   }
 }
 
+@media screen and (max-width: 1032px) {
+  .modal {
+    overflow-y: auto;
+  }
+}
+
 @media screen and (max-width: 768px) {
-  .dialog {
-    min-width: var(--s-modal);
+  .alert {
+    max-width: var(--s-modal);
   }
 }
