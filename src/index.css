@@ -343,6 +343,10 @@ a:focus-visible {
   gap: var(--s-safe);
 }
 
+.widget-title {
+  gap: 0.2rem;
+}
+
 @media screen and (max-width: 768px) {
   .app {
     padding-bottom: 9.2rem;

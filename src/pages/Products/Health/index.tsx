@@ -30,7 +30,9 @@ const Health: Component = () => {
       strategy={ChartTypes.Bar}
       id={chartID}
       title='Health'
-      description={`Total protein is equal to ${Math.round(total(datasets))}gm`}
+      description={`Total protein is equal to ${Math.round(
+        total(datasets)
+      )} gm`}
       ariaLabel='Food'
       source={source}
     />

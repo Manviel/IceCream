@@ -16,7 +16,7 @@ const Inbox: Component = () => {
       closingName='Go back'
       triggerContent={
         <>
-          <h3 class='widget-title card-sub'>Inbox</h3>
+          <h3 class='card-sub'>Inbox</h3>
           <h4 class='widget-main provision'>1</h4>
 
           <div
@@ -28,7 +28,7 @@ const Inbox: Component = () => {
           </div>
         </>
       }
-      triggerClassName='view card rounded flex col items-start justify-between'
+      triggerClassName='view card rounded flex col items-start justify-between widget-title'
     >
       <Link href={Paths.Privacy} class={ActionTypes.Secondary}>
         Go to Policy

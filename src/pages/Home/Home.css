@@ -1,3 +1,7 @@
+:root {
+  --c-teal: color(display-p3 0.652 0.825 0.937);
+}
+
 .home-stats {
   grid-template-columns: repeat(4, 1fr);
 }
@@ -12,6 +16,10 @@
 
 .os-row {
   grid-row: span 2;
+}
+
+.teal {
+  color: var(--c-teal);
 }
 
 @media screen and (max-width: 1032px) {

@@ -24,7 +24,7 @@ const Expert: Component = () => {
   return (
     <section class='material edge'>
       <TabGroup>
-        <Tabs class='tour-list flex items-start'>
+        <Tabs class='tour-list flex items-start widget-title'>
           <For each={listItems}>
             {(item) => (
               <Tab class='tour-list-item flex justify-center content-full'>

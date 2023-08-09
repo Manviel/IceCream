@@ -21,7 +21,6 @@ button[aria-disabled='true'] {
 
 .tour-list {
   font-size: var(--s-system);
-  gap: 0.2rem;
   background-color: var(--c-active);
   padding: 0.2rem;
   border-radius: var(--s-unit);

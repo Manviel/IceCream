@@ -13,12 +13,15 @@ import Shelf from '../../components/Card/Shelf';
 import { randomInRange } from '../../services/utils';
 
 import LayeredLevels from './LayeredLevels';
+import FullScreenMode from './FullScreenMode';
 
 import './Home.css';
 
 const Home: Component = () => {
   return (
     <PageDecorator headline={Pages.Home} subtitle='What is Cohesion?'>
+      <FullScreenMode />
+
       <p class='info'>
         The degree to which the elements inside a module belong together. It is
         a measure of how deeply each piece of device module functionality

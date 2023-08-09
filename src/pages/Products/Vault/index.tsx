@@ -34,7 +34,7 @@ const Vault: Component = () => {
       closingName='Apply'
       triggerContent={
         <>
-          <h3 class='widget-title card-sub'>Vault</h3>
+          <h3 class='card-sub'>Vault</h3>
           <p class='term grey-dark accrued'>Only {valueNow}% remained</p>
 
           <div
@@ -47,7 +47,7 @@ const Vault: Component = () => {
           </div>
         </>
       }
-      triggerClassName='view box rounded flex col items-start'
+      triggerClassName='view box rounded flex col items-start widget-title'
     >
       <output name='profit' for='budget' class='sum'>
         Profit: {commasAdapter(income())}

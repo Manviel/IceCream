@@ -3,10 +3,6 @@
   --s-stroke: 14px;
 }
 
-.widget-title {
-  margin-bottom: 0.2rem;
-}
-
 .widget-main {
   font-size: var(--s-finger);
   margin-bottom: 1.6rem;

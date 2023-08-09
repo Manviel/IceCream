@@ -1,7 +1,6 @@
 :root {
   --s-petal: 12.5rem;
   --s-inhale: 4s;
-  --c-even: color(display-p3 0.652 0.825 0.937);
 }
 
 .breathe {
@@ -14,7 +13,7 @@
   position: absolute;
   mix-blend-mode: screen;
   transform: translate(0, 0);
-  background-color: var(--c-even);
+  background-color: var(--c-teal);
 }
 
 .breathe,
