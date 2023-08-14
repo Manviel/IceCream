@@ -50,11 +50,11 @@ const Profile: Component = () => {
     <PageDecorator headline={Pages.Profile} subtitle='Overview'>
       <Expert />
 
-      <div class='flex items-center justify-between screen'>
+      <header class='flex items-center justify-between screen'>
         <SubTitle spot='Insights' />
 
         <Results />
-      </div>
+      </header>
 
       <p class='info'>2.2 Billion Visually Impaired People in 2022.</p>
 

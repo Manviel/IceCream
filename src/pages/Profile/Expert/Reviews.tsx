@@ -23,7 +23,7 @@ const Reviews: Component = () => {
 
   return (
     <>
-      <div class='production flex justify-between items-center'>
+      <header class='production flex justify-between items-center'>
         <h3 class='card-sub' id='candidate'>
           Elicitation Tech
         </h3>
@@ -46,7 +46,7 @@ const Reviews: Component = () => {
             <PlayNextIcon />
           </button>
         </nav>
-      </div>
+      </header>
 
       <section class='production' aria-roledescription='carousel' use:slider>
         <SlideItem id='box'>

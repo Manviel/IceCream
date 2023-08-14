@@ -6,7 +6,9 @@ import ExitScreenIcon from '../../assets/icons/exit-screen.svg';
 import { ActionTypes } from '../../models/config';
 
 const FullScreenMode: Component = () => {
-  const [hasFullscreen, setHasFullscreen] = createSignal(false);
+  const [hasFullscreen, setHasFullscreen] = createSignal(
+    !!document.fullscreenElement
+  );
 
   const toggleFullScreen = () => {
     if (!document.fullscreenElement) {
@@ -22,10 +24,10 @@ const FullScreenMode: Component = () => {
 
   return (
     <article class='box os flex justify-between items-center'>
-      <div class='flex col widget-title'>
+      <header class='flex col widget-title'>
         <h3 class='card-sub grey-dark'>Full screen</h3>
         <p class='term teal'>{hasFullscreen() ? 'Active' : 'Inactive'}</p>
-      </div>
+      </header>
 
       <button
         type='button'

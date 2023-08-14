@@ -69,13 +69,13 @@ const Home: Component = () => {
           />
         </div>
 
-        <div class='flex justify-between items-center screen'>
+        <header class='flex justify-between items-center screen'>
           <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
 
           <Link href={Paths.Products} class={ActionTypes.Contained}>
             Go to Products
           </Link>
-        </div>
+        </header>
       </article>
 
       <article class='flex col on-scroll layer view screen content-full rounded'>
