@@ -7,6 +7,7 @@ import {
 } from 'solid-js';
 
 import Loader from '../Loader';
+import HelpTooltip from '../Tooltip/HelpTooltip';
 
 import { ActionTypes } from '../../models/config';
 import { SegregationType } from '../../models';
@@ -59,9 +60,10 @@ const Quote: Component = () => {
               type='button'
               class={ActionTypes.ShapeIcon}
               onClick={refetch}
-              aria-label='Get new quote'
             >
-              <GoForwardIcon />
+              <HelpTooltip name='Get new quote' id='refetch-quote'>
+                <GoForwardIcon />
+              </HelpTooltip>
             </button>
           </QuoteView>
         )}

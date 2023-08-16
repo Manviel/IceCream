@@ -1,0 +1,14 @@
+.snackbar {
+  position: relative;
+}
+
+.tooltip {
+  display: none;
+  width: max-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  background-color: var(--c-backdrop);
+  color: var(--c-white);
+}

@@ -3,6 +3,8 @@ import { computePosition, offset } from '@floating-ui/dom';
 
 import { IDType } from '../../models';
 
+import './Tooltip.css';
+
 export interface HelpTooltipType extends IDType {
   name: string;
 }

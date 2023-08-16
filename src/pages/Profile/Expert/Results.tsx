@@ -5,6 +5,7 @@ import BellIcon from '../../../assets/icons/bell.svg';
 import { ActionTypes } from '../../../models/config';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
+import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
 const Results: Component = () => {
   return (
@@ -13,9 +14,9 @@ const Results: Component = () => {
       description='JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading.'
       closingName='Continue'
       triggerContent={
-        <div role='img' aria-label='Results' class='content-full content-tall'>
+        <HelpTooltip name='Results' id='event-loop-results'>
           <BellIcon />
-        </div>
+        </HelpTooltip>
       }
       triggerClassName={ActionTypes.ShapeIcon}
     >
