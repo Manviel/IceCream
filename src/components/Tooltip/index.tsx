@@ -1,11 +1,11 @@
 import { ParentComponent, Accessor } from 'solid-js';
 import { computePosition, offset } from '@floating-ui/dom';
 
-import { IDType } from '../../models';
 import { ActionTypes } from '../../models/config';
 
-interface TooltipType<T> extends IDType {
-  name: string;
+import { HelpTooltipType } from './HelpTooltip';
+
+interface TooltipType<T> extends HelpTooltipType {
   onClose: () => void;
   onClick: () => Promise<void>;
   snackbar: Accessor<T>;

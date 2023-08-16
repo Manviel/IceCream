@@ -8,6 +8,7 @@ import { ActionTypes } from '../../../models/config';
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
 import NumberField from '../../../components/Field/NumberField';
 import Field from '../../../components/Field';
+import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
 import Details from './Details';
 
@@ -73,9 +74,9 @@ const Notes: Component = () => {
       description='Activity of transactions.'
       closingName='Go back'
       triggerContent={
-        <div role='img' aria-label='Notes' class='content-full content-tall'>
+        <HelpTooltip name='Notes' id='transactions-notes'>
           <LineDecreaseIcon />
-        </div>
+        </HelpTooltip>
       }
       triggerClassName={ActionTypes.ShapeIcon}
       isFullScreen
