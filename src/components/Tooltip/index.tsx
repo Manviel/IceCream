@@ -11,6 +11,12 @@ interface TooltipType<T> extends HelpTooltipType {
   snackbar: Accessor<T>;
 }
 
+export const showBlock = (block: HTMLButtonElement) =>
+  (block.style.display = 'block');
+
+export const hideBlock = (block: HTMLButtonElement) =>
+  (block.style.display = '');
+
 const Tooltip: ParentComponent<TooltipType<string>> = (props) => {
   const { children, id, onClick, name, onClose, snackbar } = props;
 
@@ -30,14 +36,12 @@ const Tooltip: ParentComponent<TooltipType<string>> = (props) => {
   };
 
   const handleDisplay = () => {
-    tooltip.style.display = 'block';
-
+    showBlock(tooltip);
     updateTooltip();
   };
 
   const handleResetTooltip = () => {
-    tooltip.style.display = '';
-
+    hideBlock(tooltip);
     onClose();
   };
 

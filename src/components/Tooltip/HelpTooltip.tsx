@@ -3,6 +3,8 @@ import { computePosition, offset } from '@floating-ui/dom';
 
 import { IDType } from '../../models';
 
+import { hideBlock, showBlock } from '.';
+
 import './Tooltip.css';
 
 export interface HelpTooltipType extends IDType {
@@ -18,7 +20,7 @@ const HelpTooltip: ParentComponent<HelpTooltipType> = (props) => {
   const updateTooltip = () => {
     computePosition(button, tooltip, {
       placement: 'top',
-      middleware: [offset(6)],
+      middleware: [offset(8)],
     }).then(({ x, y }) => {
       Object.assign(tooltip.style, {
         left: `${x}px`,
@@ -28,14 +30,11 @@ const HelpTooltip: ParentComponent<HelpTooltipType> = (props) => {
   };
 
   const handleDisplay = () => {
-    tooltip.style.display = 'block';
-
+    showBlock(tooltip);
     updateTooltip();
   };
 
-  const handleResetTooltip = () => {
-    tooltip.style.display = '';
-  };
+  const handleResetTooltip = () => hideBlock(tooltip);
 
   return (
     <div
