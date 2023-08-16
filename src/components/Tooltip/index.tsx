@@ -3,19 +3,13 @@ import { computePosition, offset } from '@floating-ui/dom';
 
 import { ActionTypes } from '../../models/config';
 
-import { HelpTooltipType } from './HelpTooltip';
+import { HelpTooltipType, hideBlock, showBlock } from './HelpTooltip';
 
 interface TooltipType<T> extends HelpTooltipType {
   onClose: () => void;
   onClick: () => Promise<void>;
   snackbar: Accessor<T>;
 }
-
-export const showBlock = (block: HTMLButtonElement) =>
-  (block.style.display = 'block');
-
-export const hideBlock = (block: HTMLButtonElement) =>
-  (block.style.display = '');
 
 const Tooltip: ParentComponent<TooltipType<string>> = (props) => {
   const { children, id, onClick, name, onClose, snackbar } = props;

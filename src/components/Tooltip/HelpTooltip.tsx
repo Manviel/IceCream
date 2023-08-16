@@ -3,13 +3,17 @@ import { computePosition, offset } from '@floating-ui/dom';
 
 import { IDType } from '../../models';
 
-import { hideBlock, showBlock } from '.';
-
 import './Tooltip.css';
 
 export interface HelpTooltipType extends IDType {
   name: string;
 }
+
+export const showBlock = (block: HTMLButtonElement) =>
+  (block.style.display = 'block');
+
+export const hideBlock = (block: HTMLButtonElement) =>
+  (block.style.display = '');
 
 const HelpTooltip: ParentComponent<HelpTooltipType> = (props) => {
   const { children, id, name } = props;
