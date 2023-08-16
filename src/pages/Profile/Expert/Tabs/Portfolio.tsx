@@ -1,12 +1,11 @@
 import { ParentComponent, Accessor, createSignal } from 'solid-js';
-import { computePosition, offset } from '@floating-ui/dom';
 
 import DocCopyIcon from '../../../../assets/icons/doc-copy.svg';
 
 import { IDType } from '../../../../models';
-import { ActionTypes } from '../../../../models/config';
 
 import Notes from '../Notes';
+import Tooltip from '../../../../components/Tooltip';
 
 interface PortfolioType<T> extends IDType {
   fairPriceCost: Accessor<T>;
@@ -21,30 +20,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
 
   const [snackbar, setSnackbar] = createSignal<string>(INIT_HELP);
 
-  let tooltip: HTMLButtonElement;
-  let button: HTMLButtonElement;
-
-  const updateTooltip = () => {
-    computePosition(button, tooltip, {
-      placement: 'top',
-      middleware: [offset(4)],
-    }).then(({ x, y }) => {
-      Object.assign(tooltip.style, {
-        left: `${x}px`,
-        top: `${y}px`,
-      });
-    });
-  };
-
-  const handleDisplay = () => {
-    tooltip.style.display = 'block';
-
-    updateTooltip();
-  };
-
   const handleResetTooltip = () => {
-    tooltip.style.display = '';
-
     setSnackbar(INIT_HELP);
   };
 
@@ -56,8 +32,6 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
     } catch (err) {
       setSnackbar('Failed to copy');
     }
-
-    updateTooltip();
   };
 
   return (
@@ -72,31 +46,15 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
         <div class='flex items-center justify-between'>
           <strong class='subtitle'>{fairPriceCost().toFixed(2)}</strong>
 
-          <div class='snackbar'>
-            <span
-              role='tooltip'
-              id={ID_HELP}
-              class='tooltip chip'
-              ref={tooltip!}
-            >
-              {snackbar()}
-            </span>
-
-            <button
-              type='button'
-              ref={button!}
-              class={ActionTypes.ShapeIcon}
-              onClick={handleCopy}
-              aria-label='Clone'
-              aria-describedby={ID_HELP}
-              onFocusIn={handleDisplay}
-              onMouseEnter={handleDisplay}
-              onMouseLeave={handleResetTooltip}
-              onFocusOut={handleResetTooltip}
-            >
-              <DocCopyIcon />
-            </button>
-          </div>
+          <Tooltip
+            id={ID_HELP}
+            name='Clone'
+            onClick={handleCopy}
+            onClose={handleResetTooltip}
+            snackbar={snackbar}
+          >
+            <DocCopyIcon />
+          </Tooltip>
         </div>
       </div>
 
