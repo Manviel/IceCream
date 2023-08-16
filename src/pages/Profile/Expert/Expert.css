@@ -15,6 +15,10 @@ button[aria-disabled='true'] {
   background-color: var(--c-lamp);
 }
 
+.items-end {
+  align-items: flex-end;
+}
+
 .production {
   grid-column: span 2;
 }

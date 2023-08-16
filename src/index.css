@@ -340,6 +340,10 @@ a:focus-visible {
 .os {
   border-radius: 1rem;
   padding: var(--s-system);
+}
+
+.os,
+.lockup {
   gap: var(--s-safe);
 }
 
