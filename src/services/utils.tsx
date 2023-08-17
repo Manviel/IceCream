@@ -29,3 +29,6 @@ export const average = (arr: number[]) => total(arr) / arr.length;
 
 export const sortByAsc = (obj: {}) =>
   Object.entries(obj).sort((x: any, y: any) => x[1] - y[1]);
+
+export const transformCase = (str: string) =>
+  str.replace(/\s+/g, '-').toLowerCase();

@@ -3,8 +3,11 @@ import { openDB } from 'idb';
 
 import ArrowDownIcon from '../../../assets/icons/arrow-down-circle.svg';
 
+import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
+
 import { ActionTypes } from '../../../models/config';
 import { IDType } from '../../../models';
+import { transformCase } from '../../../services/utils';
 
 import { DB_NAME, DB_TABLE } from './Notes';
 
@@ -27,12 +30,13 @@ const Details: Component<IDType> = ({ id }) => {
     <div class='flex gap items-center'>
       <button
         type='button'
-        aria-label='View Details'
         class={ActionTypes.ShapeIcon}
         onClick={handleSubmit}
         aria-disabled={!!modal()}
       >
-        <ArrowDownIcon />
+        <HelpTooltip name='Peek' id={transformCase(id)}>
+          <ArrowDownIcon />
+        </HelpTooltip>
       </button>
 
       {modal() && <span class='chip document term'>{modal()}</span>}

@@ -1,15 +1,13 @@
 import { Component, For, createEffect } from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
-import { useObserver } from '../../services/utils';
+import { transformCase, useObserver } from '../../services/utils';
 import { Pages } from '../../models';
 
 import Article from './Article';
 import { containers } from './library';
 
 import './Privacy.css';
-
-const transformCase = (str: string) => str.replace(/\s+/g, '-').toLowerCase();
 
 const useStickyNavigation = () => {
   useObserver(
