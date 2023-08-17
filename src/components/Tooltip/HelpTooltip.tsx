@@ -23,7 +23,6 @@ const HelpTooltip: ParentComponent<HelpTooltipType> = (props) => {
 
   const updateTooltip = () => {
     computePosition(button, tooltip, {
-      placement: 'top',
       middleware: [offset(8)],
     }).then(({ x, y }) => {
       Object.assign(tooltip.style, {

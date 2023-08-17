@@ -19,7 +19,6 @@ const Tooltip: ParentComponent<TooltipType<string>> = (props) => {
 
   const updateTooltip = () => {
     computePosition(button, tooltip, {
-      placement: 'top',
       middleware: [offset(4)],
     }).then(({ x, y }) => {
       Object.assign(tooltip.style, {
