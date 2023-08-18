@@ -7,7 +7,7 @@ import { SubTitle } from '../../components/Header';
 import { ListItemGen, Pages } from '../../models';
 
 import Expert from './Expert';
-import Review from './Expert/Tabs/Review';
+import Reviews from './Expert/Reviews';
 import Results from './Expert/Results';
 
 const options: ListItemGen<string>[] = [
@@ -58,7 +58,7 @@ const Profile: Component = () => {
 
       <p class='info'>2.2 Billion Visually Impaired People in 2022.</p>
 
-      <div class='flex col os material'>
+      <aside class='flex col os material'>
         <ConnectFactory
           href='https://finviz.com/'
           text='Finviz Stock screener'
@@ -79,22 +79,24 @@ const Profile: Component = () => {
           href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns'
           text='Design Patterns'
         />
-      </div>
+      </aside>
 
-      <Review />
+      <article class='grid products portfolio screen'>
+        <Reviews />
+      </article>
 
-      <footer class='material view rounded content-full screen'>
+      <footer class='content-full screen'>
         <SubTitle spot='Software Requirements' />
 
-        <ul class='flex col gap'>
+        <p class='info'>Consistency is great but efficiency is better.</p>
+
+        <aside class='flex col os material'>
           <For each={options}>
             {(option) => (
-              <li class='flex items-center'>
-                <ConnectFactory href={option.value} text={option.label} />
-              </li>
+              <ConnectFactory href={option.value} text={option.label} />
             )}
           </For>
-        </ul>
+        </aside>
       </footer>
     </PageDecorator>
   );
