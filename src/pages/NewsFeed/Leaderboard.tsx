@@ -1,5 +1,7 @@
 import { For, createSignal, Component, createEffect } from 'solid-js';
 
+import ArrowUpIcon from '../../assets/icons/arrow-up.svg';
+
 import { getNews } from '../../services/news';
 import { useStore } from '../../services/store';
 import { commasAdapter } from '../../services/utils';
@@ -41,22 +43,34 @@ const Leaderboard: Component = () => {
           </tr>
         ) : (
           <For each={data.news}>
-            {(list) => (
-              <tr>
-                <td>{list[0]}</td>
-                <td>
-                  <span
-                    class='chip'
-                    classList={{
-                      ghost: Number(list[1]) > 1,
-                      price: Number(list[1]) < 1,
-                    }}
-                  >
-                    {commasAdapter(Number(list[1]))}
-                  </span>
-                </td>
-              </tr>
-            )}
+            {(list) => {
+              const didGrewUp = Number(list[1]) > 1;
+
+              return (
+                <tr>
+                  <td>{list[0]}</td>
+                  <td>
+                    <span
+                      class='chip movement widget-title items-center'
+                      classList={{
+                        ghost: didGrewUp,
+                        price: Number(list[1]) < 1,
+                      }}
+                    >
+                      <div
+                        class='flex items-center justify-center movement-direction'
+                        role='img'
+                        aria-label={didGrewUp ? 'Up by' : 'Down by'}
+                      >
+                        <ArrowUpIcon />
+                      </div>
+
+                      {commasAdapter(Number(list[1]))}
+                    </span>
+                  </td>
+                </tr>
+              );
+            }}
           </For>
         )}
       </tbody>

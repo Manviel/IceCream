@@ -20,26 +20,25 @@ const Relax = lazy(() => import('./pages/Relax'));
 
 const App: Component = () => (
   <div class='flex col items-center'>
-    <nav
-      class='sticky dock depth content-full flex justify-between'
-      aria-label='Tabs'
-    >
-      <TabLink href={Paths.Home} end id={Pages.Home}>
-        <SquareTextIcon />
-      </TabLink>
+    <div class='sticky depth content-full flex justify-center'>
+      <nav class='dock flex justify-between content-full' aria-label='Tabs'>
+        <TabLink href={Paths.Home} end id={Pages.Home}>
+          <SquareTextIcon />
+        </TabLink>
 
-      <TabLink href={Paths.Products} id={Pages.Products}>
-        <FlameIcon />
-      </TabLink>
+        <TabLink href={Paths.Products} id={Pages.Products}>
+          <FlameIcon />
+        </TabLink>
 
-      <TabLink href={Paths.Privacy} id={Pages.Privacy}>
-        <BookIcon />
-      </TabLink>
+        <TabLink href={Paths.Privacy} id={Pages.Privacy}>
+          <BookIcon />
+        </TabLink>
 
-      <TabLink href={Paths.Profile} id={Pages.Profile}>
-        <TextFinderIcon />
-      </TabLink>
-    </nav>
+        <TabLink href={Paths.Profile} id={Pages.Profile}>
+          <TextFinderIcon />
+        </TabLink>
+      </nav>
+    </div>
 
     <Suspense fallback={<Skeleton />}>
       <Routes>

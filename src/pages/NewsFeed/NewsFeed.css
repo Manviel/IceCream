@@ -22,3 +22,17 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   background-color: transparent;
 }
+
+.movement {
+  display: inline-flex;
+}
+
+.movement-direction {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--c-backdrop);
+}
+
+.price .movement-direction {
+  transform: rotate(180deg);
+}

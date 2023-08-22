@@ -21,11 +21,10 @@ const PageDecorator: ParentComponent<HeaderTemplateType> = ({
 
   return (
     <main
-      id='app'
-      class='app flex col content-full'
+      class='flex justify-center content-full'
       classList={{ 'pulse-loading': isRouting(), layer: isDark }}
     >
-      <div class='panel content-full flex col'>
+      <div class='panel content-full flex col app' id='app'>
         <BackwardNavigation subtitle={headline} />
 
         <h2 class='info card-sub'>{subtitle}</h2>
