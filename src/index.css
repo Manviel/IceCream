@@ -108,7 +108,7 @@ a:focus-visible {
 
 .app,
 .dock {
-  max-width: 142rem;
+  max-width: 140rem;
   transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
 }
 

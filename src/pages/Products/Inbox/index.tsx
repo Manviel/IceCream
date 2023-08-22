@@ -30,7 +30,7 @@ const Inbox: Component = () => {
       }
       triggerClassName='view card rounded flex col items-start justify-between widget-title'
     >
-      <Link href={Paths.Privacy} class={ActionTypes.Secondary}>
+      <Link href={Paths.Privacy} class={ActionTypes.Contained}>
         Go to Policy
       </Link>
     </DialogFacade>

@@ -25,7 +25,7 @@ const Home: Component = () => {
       <p class='info'>
         The degree to which the elements inside a module belong together. It is
         a measure of how deeply each piece of device module functionality
-        relates. Therefore, the most suitable term for defining cohesion is
+        relates. The most suitable term for defining cohesion is
         <em> the code that shifts together, stays together</em>. As we can see,
         strong cohesion makes thinking smoother and reduces dependency. Low
         coupling is generally associated with strong stability. In microservices
