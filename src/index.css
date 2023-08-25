@@ -217,7 +217,7 @@ a:focus-visible {
 
 .btn {
   display: block;
-  padding: 1.8rem var(--s-medium) 1.6rem;
+  padding: 1.48rem var(--s-medium) var(--s-system);
   font-weight: bold;
   letter-spacing: 0.4px;
   border-radius: var(--s-dock);

@@ -19,7 +19,7 @@ const LoginForm: Component = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} class='view'>
+    <form onSubmit={handleSubmit} class='layer view rounded'>
       <Field
         name='email'
         label='Email'
@@ -38,9 +38,13 @@ const LoginForm: Component = () => {
         required
       />
 
-      <button type='submit' class={ActionTypes.Contained}>
-        Sign In
-      </button>
+      <div class='flex items-center justify-between'>
+        <button type='submit' class={ActionTypes.Contained}>
+          Submit
+        </button>
+
+        <p>Dont have an account?</p>
+      </div>
     </form>
   );
 };

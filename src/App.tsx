@@ -17,10 +17,11 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const Products = lazy(() => import('./pages/Products'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Relax = lazy(() => import('./pages/Relax'));
+const SignIn = lazy(() => import('./pages/SignIn'));
 
 const App: Component = () => (
   <div class='flex col items-center'>
-    <div class='sticky depth content-full flex justify-center'>
+    <header class='sticky depth content-full flex justify-center'>
       <nav class='dock flex justify-between content-full' aria-label='Tabs'>
         <TabLink href={Paths.Home} end id={Pages.Home}>
           <SquareTextIcon />
@@ -38,7 +39,7 @@ const App: Component = () => (
           <TextFinderIcon />
         </TabLink>
       </nav>
-    </div>
+    </header>
 
     <Suspense fallback={<Skeleton />}>
       <Routes>
@@ -51,6 +52,8 @@ const App: Component = () => (
         <Route path={Paths.Privacy} element={<Privacy />} />
 
         <Route path={Paths.Relax} element={<Relax />} />
+
+        <Route path={Paths.SignIn} element={<SignIn />} />
 
         <Route path='*' element={<NotFound />} />
       </Routes>
