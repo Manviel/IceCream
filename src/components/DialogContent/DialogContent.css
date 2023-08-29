@@ -58,7 +58,7 @@
   }
 }
 
-@media screen and (max-width: 1032px) {
+@media screen and (max-width: 1052px) {
   .modal {
     overflow-y: auto;
   }

@@ -22,7 +22,7 @@
   color: var(--c-teal);
 }
 
-@media screen and (max-width: 1032px) {
+@media screen and (max-width: 1052px) {
   .os-grid {
     grid-template-columns: repeat(4, 1fr);
   }

@@ -80,6 +80,7 @@ button[aria-disabled='true'] {
   z-index: 2;
   margin: 0 -2rem;
   border-top: 1px solid var(--c-active);
+  border-radius: 1.6rem;
 }
 
 .portfolio {
@@ -92,6 +93,12 @@ button[aria-disabled='true'] {
 
 .danger button {
   flex-grow: 1;
+}
+
+@media screen and (max-width: 1052px) {
+  .ornament {
+    border-radius: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
