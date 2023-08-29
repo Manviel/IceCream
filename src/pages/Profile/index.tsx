@@ -24,7 +24,7 @@ const Profile: Component = () => {
 
       <p class='info'>2.2 Billion Visually Impaired People in 2022.</p>
 
-      <header class='flex items-center justify-between depth ornament view rounded'>
+      <header class='flex items-center justify-between depth ornament view'>
         <h4 class='card-sub'>Want more?</h4>
 
         <Link href={Paths.SignIn} class={ActionTypes.Contained}>

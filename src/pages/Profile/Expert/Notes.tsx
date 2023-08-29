@@ -68,6 +68,12 @@ const Notes: Component = () => {
     await loadFromStorage();
   };
 
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    handleSave();
+  };
+
   return (
     <DialogFacade
       title='Notes'
@@ -83,34 +89,38 @@ const Notes: Component = () => {
       childClassName='bottom-sheet card'
       toggleActionSheet={toggleActionSheet}
     >
-      <Field
-        type='text'
-        name='save-as'
-        label='Save ticker as'
-        value={ticker()}
-        onChange={handleTickerChange}
-      />
+      <form onSubmit={handleSubmit}>
+        <Field
+          type='text'
+          name='save-as'
+          label='Save ticker as'
+          value={ticker()}
+          onChange={handleTickerChange}
+          required
+        />
 
-      <NumberField
-        name='price'
-        label='Fair Price'
-        value={price()}
-        onChange={handlePriceChange}
-      />
+        <NumberField
+          name='price'
+          label='Fair Price'
+          value={price()}
+          onChange={handlePriceChange}
+          required
+        />
 
-      <div class='flex justify-between gap danger'>
-        <button type='button' onClick={handleClear} class={ActionTypes.Danger}>
-          Clear All
-        </button>
+        <div class='flex justify-between gap danger'>
+          <button
+            type='button'
+            onClick={handleClear}
+            class={ActionTypes.Danger}
+          >
+            Clear All
+          </button>
 
-        <button
-          type='button'
-          onClick={handleSave}
-          class={ActionTypes.Contained}
-        >
-          Add Note
-        </button>
-      </div>
+          <button type='submit' class={ActionTypes.Contained}>
+            Add Note
+          </button>
+        </div>
+      </form>
 
       <section
         class='scrollable provision content-tall'

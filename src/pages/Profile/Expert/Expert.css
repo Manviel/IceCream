@@ -78,6 +78,8 @@ button[aria-disabled='true'] {
   position: sticky;
   bottom: 0;
   z-index: 2;
+  margin: 0 -2rem;
+  border-top: 1px solid var(--c-active);
 }
 
 .portfolio {
@@ -102,7 +104,8 @@ button[aria-disabled='true'] {
   }
 
   .ornament {
-    bottom: 8rem;
+    bottom: 7.94rem;
+    margin: 0 -1.6rem;
   }
 }
 
