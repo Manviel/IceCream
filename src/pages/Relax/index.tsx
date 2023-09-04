@@ -43,13 +43,13 @@ const options: ListItemGen<string>[] = [
   },
 ];
 
-import '../Home/Home.css';
+import '../../shared/index.css';
 
 const Relax: Component = () => (
   <PageDecorator headline='Keep calm' subtitle='And carry on'>
     <Breathe />
 
-    <aside class='flex col os material'>
+    <aside class='flex col os material screen'>
       <ConnectFactory href='https://finviz.com/' text='Finviz Stock screener' />
       <ConnectFactory
         href='https://www.w3.org/WAI/business-case/'

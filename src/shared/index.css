@@ -1,0 +1,11 @@
+:root {
+  --c-teal: color(display-p3 0.652 0.825 0.937);
+}
+
+.teal {
+  color: var(--c-teal);
+}
+
+.danger-grow > * {
+  flex-grow: 1;
+}

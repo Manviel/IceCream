@@ -15,6 +15,8 @@ import Details from './Details';
 export const DB_NAME = 'activities';
 export const DB_TABLE = 'store';
 
+import '../../../shared/index.css';
+
 const Notes: Component = () => {
   const [price, setPrice] = createSignal(undefined);
   const [ticker, setTicker] = createSignal(new Date().toDateString());
@@ -107,7 +109,7 @@ const Notes: Component = () => {
           required
         />
 
-        <div class='flex justify-between gap danger'>
+        <div class='flex justify-between gap danger-grow'>
           <button
             type='button'
             onClick={handleClear}

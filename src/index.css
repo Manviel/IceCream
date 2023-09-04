@@ -103,7 +103,7 @@ a:focus-visible {
 }
 
 .app {
-  padding-bottom: var(--s-safe);
+  margin-bottom: var(--s-safe);
 }
 
 .app,
@@ -353,7 +353,7 @@ a:focus-visible {
 
 @media screen and (max-width: 768px) {
   .app {
-    padding-bottom: 9.2rem;
+    margin-bottom: 9.2rem;
   }
 
   .view {

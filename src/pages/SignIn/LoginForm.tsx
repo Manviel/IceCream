@@ -4,6 +4,7 @@ import { createStore } from 'solid-js/store';
 import Field from '../../components/Field';
 
 import { ActionTypes } from '../../models/config';
+import { Pages } from '../../models';
 
 const LoginForm: Component = () => {
   const [form, setForm] = createStore({
@@ -19,7 +20,7 @@ const LoginForm: Component = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} class='layer view rounded'>
+    <form onSubmit={handleSubmit} class='layer view rounded flex col'>
       <Field
         name='email'
         label='Email'
@@ -38,13 +39,9 @@ const LoginForm: Component = () => {
         required
       />
 
-      <div class='flex items-center justify-between'>
-        <button type='submit' class={ActionTypes.Contained}>
-          Submit
-        </button>
-
-        <p>Dont have an account?</p>
-      </div>
+      <button type='submit' class={ActionTypes.Contained}>
+        {Pages.SignIn}
+      </button>
     </form>
   );
 };

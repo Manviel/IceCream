@@ -91,10 +91,6 @@ button[aria-disabled='true'] {
   font-weight: bold;
 }
 
-.danger button {
-  flex-grow: 1;
-}
-
 @media screen and (max-width: 1052px) {
   .ornament {
     border-radius: 0;
