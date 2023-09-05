@@ -21,3 +21,7 @@ export const MAX_PERCENT = 300;
 export const MIN_COST = 0;
 export const MAX_COST = 900000;
 export const STEP = 2;
+
+export const DB_NAME = 'activities';
+export const DB_STORE_TABLE = 'store';
+export const DB_USERS_TABLE = 'users';

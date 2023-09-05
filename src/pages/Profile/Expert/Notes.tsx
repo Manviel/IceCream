@@ -3,7 +3,7 @@ import { openDB } from 'idb';
 
 import LineDecreaseIcon from '../../../assets/icons/line-decrease-circle.svg';
 
-import { ActionTypes } from '../../../models/config';
+import { ActionTypes, DB_NAME, DB_STORE_TABLE } from '../../../models/config';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
 import NumberField from '../../../components/Field/NumberField';
@@ -11,9 +11,6 @@ import Field from '../../../components/Field';
 import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
 import Details from './Details';
-
-export const DB_NAME = 'activities';
-export const DB_TABLE = 'store';
 
 import '../../../shared/index.css';
 
@@ -31,11 +28,11 @@ const Notes: Component = () => {
   const loadFromStorage = async () => {
     const db = await openDB(DB_NAME, 1, {
       upgrade(db) {
-        db.createObjectStore(DB_TABLE);
+        db.createObjectStore(DB_STORE_TABLE);
       },
     });
 
-    const result = await db.getAllKeys(DB_TABLE);
+    const result = await db.getAllKeys(DB_STORE_TABLE);
 
     setTransations(result);
 
@@ -49,7 +46,7 @@ const Notes: Component = () => {
   const handleSave = async () => {
     const db = await openDB(DB_NAME, 1);
 
-    db.put(DB_TABLE, price(), ticker());
+    db.put(DB_STORE_TABLE, price(), ticker());
 
     db.close();
 
@@ -63,7 +60,7 @@ const Notes: Component = () => {
   const handleClear = async () => {
     const db = await openDB(DB_NAME, 1);
 
-    db.clear(DB_TABLE);
+    db.clear(DB_STORE_TABLE);
 
     db.close();
 

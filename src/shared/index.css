@@ -1,9 +1,14 @@
 :root {
   --c-teal: color(display-p3 0.652 0.825 0.937);
+  --c-red: color(display-p3 0.77 0.182 0.164);
 }
 
 .teal {
   color: var(--c-teal);
+}
+
+.red {
+  color: var(--c-red);
 }
 
 .danger-grow > * {
