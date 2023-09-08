@@ -3,7 +3,7 @@ import { Link } from '@solidjs/router';
 
 import PageDecorator from '../../components/PageDecorator';
 
-import { Pages } from '../../models';
+import { Pages, Paths } from '../../models';
 
 import LoginForm from './LoginForm';
 
@@ -12,7 +12,7 @@ const SignIn: Component = () => (
     <LoginForm />
 
     <div class='flex col os material screen'>
-      <Link href='/register' class='connect concise'>
+      <Link href={Paths.SignUp} class='connect concise'>
         Dont have an account?
       </Link>
 
