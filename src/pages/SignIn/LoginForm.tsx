@@ -5,7 +5,12 @@ import { openDB } from 'idb';
 import Field from '../../components/Field';
 import ErrorMessage from '../../components/Field/ErrorMessage';
 
-import { ActionTypes, DB_NAME, DB_USERS_TABLE } from '../../models/config';
+import {
+  ActionTypes,
+  DB_NAME,
+  DB_USERS_TABLE,
+  LEVEL,
+} from '../../models/config';
 import { Pages } from '../../models';
 
 import '../../shared/index.css';
@@ -24,11 +29,7 @@ const LoginForm: Component = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    const db = await openDB(DB_NAME, 1, {
-      upgrade(db) {
-        db.createObjectStore(DB_USERS_TABLE);
-      },
-    });
+    const db = await openDB(DB_NAME, LEVEL);
 
     try {
       await db.get(DB_USERS_TABLE, form.email);

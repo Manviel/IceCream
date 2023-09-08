@@ -6,21 +6,14 @@ export enum ActionTypes {
   Danger = 'btn concise price',
 }
 
-export const LEVEL_1 = 'Bronze';
-export const LEVEL_2 = 'Silver';
-export const LEVEL_3 = 'Gold';
-
-export const Category = {
-  [LEVEL_1]: 'USD',
-  [LEVEL_2]: 'EUR',
-  [LEVEL_3]: 'GBP',
-};
+export const LEVEL = 1;
+export const Category = 'USD';
 
 export const MIN_PERCENT = -100;
 export const MAX_PERCENT = 300;
 export const MIN_COST = 0;
 export const MAX_COST = 900000;
-export const STEP = 2;
+export const STEP = 1;
 
 export const DB_NAME = 'activities';
 export const DB_STORE_TABLE = 'store';

@@ -13,6 +13,7 @@ export enum Pages {
   Products = 'For You',
   Privacy = 'Privacy',
   Profile = 'Profile',
+  Relax = 'Keep calm',
   SignIn = 'Sign In',
   SignUp = 'Sign Up',
 }
