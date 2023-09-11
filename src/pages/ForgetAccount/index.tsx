@@ -4,6 +4,7 @@ import { Link } from '@solidjs/router';
 import PageDecorator from '../../components/PageDecorator';
 
 import { Pages, Paths } from '../../models';
+import { ActionTypes } from '../../models/config';
 
 import ForgetForm from './ForgetForm';
 
@@ -15,11 +16,11 @@ const ForgetAccount: Component = () => (
     <ForgetForm />
 
     <div class='flex col os material screen'>
-      <Link href={Paths.SignUp} class='connect concise'>
+      <Link href={Paths.SignUp} class={ActionTypes.Link}>
         Create an account
       </Link>
 
-      <Link href={Paths.SignIn} class='connect concise'>
+      <Link href={Paths.SignIn} class={ActionTypes.Link}>
         Log into account
       </Link>
     </div>

@@ -4,6 +4,7 @@ export enum ActionTypes {
   Secondary = 'btn concise token content-full provision',
   Contained = 'btn concise contained',
   Danger = 'btn concise price',
+  Link = 'connect concise',
 }
 
 export const Category = 'USD';
