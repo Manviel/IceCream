@@ -1,11 +1,10 @@
 import { Component } from 'solid-js';
-import { Link } from '@solidjs/router';
 
 import PageDecorator from '../../components/PageDecorator';
 import { SubTitle } from '../../components/Header';
+import AuthOutlet from '../../components/Header/AuthOutlet';
 
-import { Pages, Paths } from '../../models';
-import { ActionTypes } from '../../models/config';
+import { Pages } from '../../models';
 
 import Expert from './Expert';
 import Reviews from './Expert/Reviews';
@@ -24,13 +23,7 @@ const Profile: Component = () => {
 
       <p class='info'>2.2 Billion Visually Impaired People in 2022.</p>
 
-      <header class='flex items-center justify-between depth ornament view'>
-        <h4 class='card-sub'>Want more?</h4>
-
-        <Link href={Paths.SignIn} class={ActionTypes.Contained}>
-          Sign In
-        </Link>
-      </header>
+      <AuthOutlet />
 
       <article class='grid products portfolio screen'>
         <Reviews />

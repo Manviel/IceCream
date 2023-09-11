@@ -7,7 +7,7 @@ import ErrorMessage from '../../components/Field/ErrorMessage';
 
 import { ActionTypes } from '../../models/config';
 import { Pages, Paths } from '../../models';
-import { DB_USERS_TABLE, useDataBase } from '../../services/db';
+import { DB_LOGS_TABLE, DB_USERS_TABLE, useDataBase } from '../../services/db';
 
 import '../../shared/index.css';
 
@@ -36,6 +36,7 @@ const RegisterForm: Component = () => {
         email: form.email,
         password: form.password,
       });
+      await db.add(DB_LOGS_TABLE, { authorized: 'true' });
 
       navigate(Paths.Relax, { replace: true });
     } catch {
