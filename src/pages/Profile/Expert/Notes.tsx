@@ -28,9 +28,9 @@ const Notes: Component = () => {
   const loadFromStorage = async () => {
     const db = await useDataBase();
 
-    const result = await db.getAllKeys(DB_STORE_TABLE);
+    const response = await db.getAllKeys(DB_STORE_TABLE);
 
-    setTransations(result);
+    setTransations(response);
 
     db.close();
   };

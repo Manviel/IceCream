@@ -5,22 +5,25 @@ import PageDecorator from '../../components/PageDecorator';
 
 import { Pages, Paths } from '../../models';
 
-import LoginForm from './LoginForm';
+import ForgetForm from './ForgetForm';
 
-const SignIn: Component = () => (
-  <PageDecorator headline={Pages.SignIn} subtitle='For faster checkout'>
-    <LoginForm />
+const ForgetAccount: Component = () => (
+  <PageDecorator
+    headline={Pages.ForgetAccount}
+    subtitle='All your data will be wiped'
+  >
+    <ForgetForm />
 
     <div class='flex col os material screen'>
       <Link href={Paths.SignUp} class='connect concise'>
-        Dont have an account?
+        Create an account
       </Link>
 
-      <Link href={Paths.ForgetAccount} class='connect concise'>
-        Want to delete an account
+      <Link href={Paths.SignIn} class='connect concise'>
+        Log into account
       </Link>
     </div>
   </PageDecorator>
 );
 
-export default SignIn;
+export default ForgetAccount;

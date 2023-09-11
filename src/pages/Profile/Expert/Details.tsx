@@ -16,9 +16,9 @@ const Details: Component<IDType> = ({ id }) => {
     if (!modal()) {
       const db = await useDataBase();
 
-      const result = await db.get(DB_STORE_TABLE, id);
+      const response = await db.get(DB_STORE_TABLE, id);
 
-      setModal(result.price);
+      setModal(response.price);
 
       db.close();
     }

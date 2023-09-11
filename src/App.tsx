@@ -19,6 +19,7 @@ const Privacy = lazy(() => import('./pages/Privacy'));
 const Relax = lazy(() => import('./pages/Relax'));
 const SignIn = lazy(() => import('./pages/SignIn'));
 const SignUp = lazy(() => import('./pages/SignUp'));
+const ForgetAccount = lazy(() => import('./pages/ForgetAccount'));
 
 const App: Component = () => (
   <div class='flex col items-center'>
@@ -57,6 +58,8 @@ const App: Component = () => (
         <Route path={Paths.SignIn} element={<SignIn />} />
 
         <Route path={Paths.SignUp} element={<SignUp />} />
+
+        <Route path={Paths.ForgetAccount} element={<ForgetAccount />} />
 
         <Route path='*' element={<NotFound />} />
       </Routes>

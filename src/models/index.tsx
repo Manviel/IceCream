@@ -6,6 +6,7 @@ export enum Paths {
   Relax = '/dev',
   SignIn = '/sign-in',
   SignUp = '/register',
+  ForgetAccount = '/delete-account',
 }
 
 export enum Pages {
@@ -16,6 +17,7 @@ export enum Pages {
   Relax = 'Keep calm',
   SignIn = 'Sign In',
   SignUp = 'Sign Up',
+  ForgetAccount = 'Delete account',
 }
 
 export type Entity = {
