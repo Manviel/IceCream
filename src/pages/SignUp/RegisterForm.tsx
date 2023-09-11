@@ -7,7 +7,7 @@ import ErrorMessage from '../../components/Field/ErrorMessage';
 
 import { ActionTypes } from '../../models/config';
 import { Pages, Paths } from '../../models';
-import { DB_USERS_TABLE, useDataBase } from '../../shared/db';
+import { DB_USERS_TABLE, useDataBase } from '../../services/db';
 
 import '../../shared/index.css';
 
@@ -31,7 +31,7 @@ const RegisterForm: Component = () => {
     const db = await useDataBase();
 
     try {
-      db.add(DB_USERS_TABLE, {
+      await db.add(DB_USERS_TABLE, {
         fullName: form.fullName,
         email: form.email,
         password: form.password,
@@ -40,7 +40,7 @@ const RegisterForm: Component = () => {
       navigate(Paths.Relax, { replace: true });
     } catch {
       setStatus(
-        'Something went wrong. Check your details and please try again.'
+        'Account already exist. Check your details and please try again.'
       );
     }
 

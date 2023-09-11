@@ -8,7 +8,7 @@ import Field from '../../../components/Field';
 import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
 import { ActionTypes } from '../../../models/config';
-import { useDataBase, DB_STORE_TABLE } from '../../../shared/db';
+import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
 
 import Details from './Details';
 

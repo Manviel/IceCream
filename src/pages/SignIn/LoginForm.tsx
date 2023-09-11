@@ -1,12 +1,13 @@
 import { Component, createSignal } from 'solid-js';
 import { createStore } from 'solid-js/store';
+import { useNavigate } from '@solidjs/router';
 
 import Field from '../../components/Field';
 import ErrorMessage from '../../components/Field/ErrorMessage';
 
 import { ActionTypes } from '../../models/config';
-import { Pages } from '../../models';
-import { DB_USERS_TABLE, useDataBase } from '../../shared/db';
+import { Pages, Paths } from '../../models';
+import { DB_USERS_TABLE, useDataBase } from '../../services/db';
 
 import '../../shared/index.css';
 
@@ -18,6 +19,8 @@ const LoginForm: Component = () => {
 
   const [status, setStatus] = createSignal('');
 
+  const navigate = useNavigate();
+
   const handleChangeForm = ({ target }: any) =>
     setForm({ [target.name]: target.value });
 
@@ -26,9 +29,11 @@ const LoginForm: Component = () => {
 
     const db = await useDataBase();
 
-    try {
-      await db.get(DB_USERS_TABLE, form.email);
-    } catch {
+    const response = await db.get(DB_USERS_TABLE, form.email);
+
+    if (response) {
+      navigate(Paths.Relax, { replace: true });
+    } else {
       setStatus('Account not found. Check your details and please try again.');
     }
 

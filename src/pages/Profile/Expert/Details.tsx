@@ -7,7 +7,7 @@ import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 import { ActionTypes } from '../../../models/config';
 import { IDType } from '../../../models';
 import { transformCase } from '../../../services/utils';
-import { useDataBase, DB_STORE_TABLE } from '../../../shared/db';
+import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
 
 const Details: Component<IDType> = ({ id }) => {
   const [modal, setModal] = createSignal('');
