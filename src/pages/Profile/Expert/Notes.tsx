@@ -1,20 +1,14 @@
 import { Component, onMount, createSignal, For, Show } from 'solid-js';
-import { openDB } from 'idb';
 
 import LineDecreaseIcon from '../../../assets/icons/line-decrease-circle.svg';
-
-import {
-  ActionTypes,
-  DB_NAME,
-  DB_STORE_TABLE,
-  DB_USERS_TABLE,
-  LEVEL,
-} from '../../../models/config';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
 import NumberField from '../../../components/Field/NumberField';
 import Field from '../../../components/Field';
 import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
+
+import { ActionTypes } from '../../../models/config';
+import { useDataBase, DB_STORE_TABLE } from '../../../shared/db';
 
 import Details from './Details';
 
@@ -32,17 +26,7 @@ const Notes: Component = () => {
   };
 
   const loadFromStorage = async () => {
-    const db = await openDB(DB_NAME, LEVEL, {
-      upgrade(db) {
-        db.createObjectStore(DB_STORE_TABLE, {
-          keyPath: 'ticker',
-        });
-
-        db.createObjectStore(DB_USERS_TABLE, {
-          keyPath: 'email',
-        });
-      },
-    });
+    const db = await useDataBase();
 
     const result = await db.getAllKeys(DB_STORE_TABLE);
 
@@ -56,7 +40,7 @@ const Notes: Component = () => {
   });
 
   const handleSave = async () => {
-    const db = await openDB(DB_NAME, LEVEL);
+    const db = await useDataBase();
 
     db.add(DB_STORE_TABLE, { price: price(), ticker: ticker() });
 
@@ -70,7 +54,7 @@ const Notes: Component = () => {
   const handleTickerChange = ({ target }: any) => setTicker(target.value);
 
   const handleClear = async () => {
-    const db = await openDB(DB_NAME, LEVEL);
+    const db = await useDataBase();
 
     db.clear(DB_STORE_TABLE);
 
