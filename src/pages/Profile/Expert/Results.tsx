@@ -1,13 +1,19 @@
 import { Component } from 'solid-js';
+import { deleteDB } from 'idb';
 
 import BellIcon from '../../../assets/icons/bell.svg';
 
 import { ActionTypes } from '../../../models/config';
+import { DB_NAME } from '../../../services/db';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
 import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
 const Results: Component = () => {
+  const handleSubmit = async () => {
+    await deleteDB(DB_NAME);
+  };
+
   return (
     <DialogFacade
       title='Event loop'
@@ -50,6 +56,10 @@ const Results: Component = () => {
           function call is processed.
         </p>
       </section>
+
+      <button type='button' class={ActionTypes.Danger} onClick={handleSubmit}>
+        Drop database
+      </button>
     </DialogFacade>
   );
 };

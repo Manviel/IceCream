@@ -1,7 +1,3 @@
-:root {
-  --c-teal: color(display-p3 0.652 0.825 0.937);
-}
-
 .home-stats {
   grid-template-columns: repeat(4, 1fr);
 }
@@ -18,11 +14,7 @@
   grid-row: span 2;
 }
 
-.teal {
-  color: var(--c-teal);
-}
-
-@media screen and (max-width: 1032px) {
+@media screen and (max-width: 1052px) {
   .os-grid {
     grid-template-columns: repeat(4, 1fr);
   }

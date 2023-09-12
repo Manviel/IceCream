@@ -83,6 +83,7 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
               type='button'
               class={ActionTypes.Secondary}
               onClick={handleClose}
+              classList={{ provision: true }}
             >
               {closingName}
             </button>

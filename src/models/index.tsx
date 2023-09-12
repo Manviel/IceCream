@@ -4,6 +4,10 @@ export enum Paths {
   Privacy = '/privacy',
   Profile = '/profile',
   Relax = '/dev',
+  SignIn = '/sign-in',
+  SignUp = '/register',
+  ForgetAccount = '/delete-account',
+  Forbidden = '/403',
 }
 
 export enum Pages {
@@ -11,6 +15,11 @@ export enum Pages {
   Products = 'For You',
   Privacy = 'Privacy',
   Profile = 'Profile',
+  Relax = 'Keep calm',
+  SignIn = 'Sign In',
+  SignUp = 'Sign Up',
+  ForgetAccount = 'Delete account',
+  Forbidden = 'Access Denied',
 }
 
 export type Entity = {

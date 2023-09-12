@@ -41,6 +41,11 @@
   height: 100%;
 }
 
+.scrollable {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 @keyframes alert-enter {
   0% {
     opacity: 0.01;
@@ -53,7 +58,7 @@
   }
 }
 
-@media screen and (max-width: 1032px) {
+@media screen and (max-width: 1052px) {
   .modal {
     overflow-y: auto;
   }
@@ -62,5 +67,9 @@
 @media screen and (max-width: 768px) {
   .alert {
     max-width: var(--s-modal);
+  }
+
+  .scrollable {
+    min-height: 14vh;
   }
 }

@@ -7,7 +7,7 @@ import {
 import { createStore } from 'solid-js/store';
 
 import { Entity } from '../models';
-import { Category, LEVEL_2 } from '../models/config';
+import { Category } from '../models/config';
 
 type NewsContextState = {
   readonly news: Entity[];
@@ -23,7 +23,7 @@ type NewsContextValue = [
 
 const defaultState = {
   news: [],
-  currentRank: Category[LEVEL_2],
+  currentRank: Category,
 };
 
 const NewsContext = createContext<NewsContextValue>([
@@ -53,4 +53,4 @@ export const NewsProvider: ParentComponent<NewsContextState> = (props) => {
   );
 };
 
-export const useStore = () => useContext(NewsContext);
+export const useNewsStore = () => useContext(NewsContext);

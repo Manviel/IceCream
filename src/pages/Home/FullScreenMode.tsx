@@ -5,6 +5,8 @@ import ExitScreenIcon from '../../assets/icons/exit-screen.svg';
 
 import { ActionTypes } from '../../models/config';
 
+import '../../shared/index.css';
+
 const FullScreenMode: Component = () => {
   const [hasFullscreen, setHasFullscreen] = createSignal(
     !!document.fullscreenElement

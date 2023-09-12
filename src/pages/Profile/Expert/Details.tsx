@@ -1,5 +1,4 @@
 import { Component, createSignal } from 'solid-js';
-import { openDB } from 'idb';
 
 import ArrowDownIcon from '../../../assets/icons/arrow-down-circle.svg';
 
@@ -8,19 +7,18 @@ import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 import { ActionTypes } from '../../../models/config';
 import { IDType } from '../../../models';
 import { transformCase } from '../../../services/utils';
-
-import { DB_NAME, DB_TABLE } from './Notes';
+import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
 
 const Details: Component<IDType> = ({ id }) => {
   const [modal, setModal] = createSignal('');
 
   const handleSubmit = async () => {
     if (!modal()) {
-      const db = await openDB(DB_NAME, 1);
+      const db = await useDataBase();
 
-      const result = await db.get(DB_TABLE, id);
+      const response = await db.get(DB_STORE_TABLE, id);
 
-      setModal(result);
+      setModal(response.price);
 
       db.close();
     }

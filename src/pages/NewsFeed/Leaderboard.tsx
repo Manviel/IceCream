@@ -3,7 +3,7 @@ import { For, createSignal, Component, createEffect } from 'solid-js';
 import ArrowUpIcon from '../../assets/icons/arrow-up.svg';
 
 import { getNews } from '../../services/news';
-import { useStore } from '../../services/store';
+import { useNewsStore } from '../../services/store';
 import { commasAdapter } from '../../services/utils';
 
 const fetchQuery = async (category: string) => await getNews({ category });
@@ -11,7 +11,7 @@ const fetchQuery = async (category: string) => await getNews({ category });
 const Leaderboard: Component = () => {
   const [loading, setLoading] = createSignal(false);
 
-  const [data, { updateNews }] = useStore();
+  const [data, { updateNews }] = useNewsStore();
 
   createEffect(() => {
     if (data.news.length === 0) {

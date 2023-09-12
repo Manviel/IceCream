@@ -74,9 +74,13 @@ button[aria-disabled='true'] {
   transform: scale(0.96);
 }
 
-.scrollable {
-  overflow-y: auto;
-  overflow-x: hidden;
+.ornament {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  margin: 0 -2rem;
+  border-top: 1px solid var(--c-active);
+  border-radius: 1.6rem;
 }
 
 .portfolio {
@@ -87,8 +91,10 @@ button[aria-disabled='true'] {
   font-weight: bold;
 }
 
-.danger button {
-  flex-grow: 1;
+@media screen and (max-width: 1052px) {
+  .ornament {
+    border-radius: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -100,8 +106,9 @@ button[aria-disabled='true'] {
     grid-column: span 1;
   }
 
-  .scrollable {
-    min-height: 14vh;
+  .ornament {
+    bottom: 7.94rem;
+    margin: 0 -1.6rem;
   }
 }
 
