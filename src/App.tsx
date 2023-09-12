@@ -20,6 +20,7 @@ const Relax = lazy(() => import('./pages/Relax'));
 const SignIn = lazy(() => import('./pages/SignIn'));
 const SignUp = lazy(() => import('./pages/SignUp'));
 const ForgetAccount = lazy(() => import('./pages/ForgetAccount'));
+const Forbidden = lazy(() => import('./pages/NotFound/Forbidden'));
 
 const App: Component = () => (
   <div class='flex col items-center'>
@@ -60,6 +61,8 @@ const App: Component = () => (
         <Route path={Paths.SignUp} element={<SignUp />} />
 
         <Route path={Paths.ForgetAccount} element={<ForgetAccount />} />
+
+        <Route path={Paths.Forbidden} element={<Forbidden />} />
 
         <Route path='*' element={<NotFound />} />
       </Routes>

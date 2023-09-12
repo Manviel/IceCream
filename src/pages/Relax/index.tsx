@@ -7,6 +7,9 @@ import ConnectFactory from '../../components/Link/ConnectFactory';
 import { ListItemGen } from '../../models';
 
 import Breathe from './Breathe';
+import Guard from './Guard';
+
+import '../../shared/index.css';
 
 const options: ListItemGen<string>[] = [
   {
@@ -43,46 +46,49 @@ const options: ListItemGen<string>[] = [
   },
 ];
 
-import '../../shared/index.css';
-
 const Relax: Component = () => (
-  <PageDecorator headline='Keep calm' subtitle='And carry on'>
-    <Breathe />
+  <Guard>
+    <PageDecorator headline='Keep calm' subtitle='And carry on'>
+      <Breathe />
 
-    <aside class='flex col os material screen'>
-      <ConnectFactory href='https://finviz.com/' text='Finviz Stock screener' />
-      <ConnectFactory
-        href='https://www.w3.org/WAI/business-case/'
-        text='Business case for Accessibility'
-      />
-      <ConnectFactory
-        href='https://www.appcues.com/blog/saas-growth-metrics'
-        text='Business metrics that matter'
-      />
-      <ConnectFactory
-        href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
-        text='View All techniques'
-      />
-      <ConnectFactory
-        href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns'
-        text='Design Patterns'
-      />
-    </aside>
-
-    <footer class='content-full screen'>
-      <SubTitle spot='Software Requirements' />
-
-      <p class='info'>Consistency is great but efficiency is better.</p>
-
-      <aside class='flex col os material'>
-        <For each={options}>
-          {(option) => (
-            <ConnectFactory href={option.value} text={option.label} />
-          )}
-        </For>
+      <aside class='flex col os material screen'>
+        <ConnectFactory
+          href='https://finviz.com/'
+          text='Finviz Stock screener'
+        />
+        <ConnectFactory
+          href='https://www.w3.org/WAI/business-case/'
+          text='Business case for Accessibility'
+        />
+        <ConnectFactory
+          href='https://www.appcues.com/blog/saas-growth-metrics'
+          text='Business metrics that matter'
+        />
+        <ConnectFactory
+          href='https://www.softwaretestinghelp.com/requirements-elicitation-techniques/'
+          text='View All techniques'
+        />
+        <ConnectFactory
+          href='https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns'
+          text='Design Patterns'
+        />
       </aside>
-    </footer>
-  </PageDecorator>
+
+      <footer class='content-full screen'>
+        <SubTitle spot='Software Requirements' />
+
+        <p class='info'>Consistency is great but efficiency is better.</p>
+
+        <aside class='flex col os material'>
+          <For each={options}>
+            {(option) => (
+              <ConnectFactory href={option.value} text={option.label} />
+            )}
+          </For>
+        </aside>
+      </footer>
+    </PageDecorator>
+  </Guard>
 );
 
 export default Relax;
