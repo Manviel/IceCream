@@ -3,7 +3,7 @@ export enum ActionTypes {
   ShapeIcon = 'shape touch token icon flex justify-center items-center',
   Secondary = 'btn concise token',
   Contained = 'btn concise contained',
-  Danger = 'btn concise price',
+  Danger = 'btn concise price red',
   Link = 'connect concise',
 }
 
