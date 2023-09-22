@@ -1,4 +1,4 @@
-import { Component } from 'solid-js';
+import { Component, createSignal } from 'solid-js';
 import { deleteDB } from 'idb';
 
 import BellIcon from '../../../assets/icons/bell.svg';
@@ -8,10 +8,20 @@ import { DB_NAME } from '../../../services/db';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
 import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
+import Tooltip from '../../../components/Tooltip';
+
+const INIT_HELP = 'Are you sure?';
+const ID_HELP = 'confirm-tooltip';
 
 const Results: Component = () => {
+  const [snackbar, setSnackbar] = createSignal<string>(INIT_HELP);
+
+  const handleResetTooltip = () => setSnackbar(INIT_HELP);
+
   const handleSubmit = async () => {
     await deleteDB(DB_NAME);
+
+    setSnackbar('Done. Please reload the page');
   };
 
   return (
@@ -57,9 +67,16 @@ const Results: Component = () => {
         </p>
       </section>
 
-      <button type='button' class={ActionTypes.Danger} onClick={handleSubmit}>
+      <Tooltip
+        id={ID_HELP}
+        name='Clean'
+        onClose={handleResetTooltip}
+        snackbar={snackbar}
+        className={ActionTypes.Danger}
+        onClick={handleSubmit}
+      >
         Drop database
-      </button>
+      </Tooltip>
     </DialogFacade>
   );
 };

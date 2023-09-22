@@ -9,10 +9,19 @@ interface TooltipType<T> extends HelpTooltipType {
   onClose: () => void;
   onClick: () => Promise<void>;
   snackbar: Accessor<T>;
+  className?: string;
 }
 
 const Tooltip: ParentComponent<TooltipType<string>> = (props) => {
-  const { children, id, onClick, name, onClose, snackbar } = props;
+  const {
+    children,
+    id,
+    onClick,
+    name,
+    onClose,
+    snackbar,
+    className = ActionTypes.ShapeIcon,
+  } = props;
 
   let tooltip: HTMLButtonElement;
   let button: HTMLButtonElement;
@@ -53,7 +62,7 @@ const Tooltip: ParentComponent<TooltipType<string>> = (props) => {
       <button
         type='button'
         ref={button!}
-        class={ActionTypes.ShapeIcon}
+        class={className}
         aria-label={name}
         aria-describedby={id}
         onClick={handleClick}

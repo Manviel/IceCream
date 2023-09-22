@@ -13,3 +13,7 @@
   color: var(--c-white);
   font-size: var(--s-system);
 }
+
+.snackbar button {
+  width: 100%;
+}
