@@ -8,7 +8,20 @@ import DialogFacade from '../../../components/DialogContent/DialogFacade';
 
 import TrayIcon from '../../../assets/icons/tray.svg';
 
+import { useChartSource } from '../Charts/Context';
+
+import { average } from '../../../services/utils';
+
+const source = {
+  '04.10.2021': 30436,
+  '08.11.2021': 28683,
+  '03.10.2022': 40741,
+  '07.11.2022': 36975,
+};
+
 const Inbox: Component = () => {
+  const { datasets } = useChartSource(source);
+
   return (
     <DialogFacade
       title='Abstract'
@@ -30,6 +43,10 @@ const Inbox: Component = () => {
       }
       triggerClassName='view card rounded flex col items-start justify-between widget-title'
     >
+      <p class='info'>
+        Average price of a base iPhone is {average(datasets).toFixed(2)} UAH.
+      </p>
+
       <Link href={Paths.Privacy} class={ActionTypes.Contained}>
         Go to Policy
       </Link>
