@@ -298,13 +298,17 @@ a:focus-visible {
   border-bottom: 1px solid var(--c-active);
 }
 
+.tab {
+  gap: 0.3rem;
+}
+
 .tab.active {
   transform: scale(1.16);
   color: var(--c-dark);
 }
 
 .tab.active .superellipse {
-  background-color: transparent;
+  background-color: color(display-p3 1 1 1 / 0.3);
 }
 
 .tab.inactive {
@@ -378,7 +382,7 @@ a:focus-visible {
 
   .dock {
     border-top: 1px solid var(--c-active);
-    padding: var(--s-line) 1.6rem var(--s-medium);
+    padding: var(--s-line) 1.6rem 1.8rem;
   }
 
   .title {
