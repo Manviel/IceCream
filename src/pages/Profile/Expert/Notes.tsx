@@ -12,8 +12,6 @@ import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
 
 import Details from './Details';
 
-import '../../../shared/index.css';
-
 const Notes: Component = () => {
   const [price, setPrice] = createSignal(undefined);
   const [ticker, setTicker] = createSignal(new Date().toDateString());

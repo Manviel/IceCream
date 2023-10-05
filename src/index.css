@@ -9,8 +9,10 @@
   --c-grey: color(display-p3 0.631 0.631 0.649);
   --c-blue: color(display-p3 0.187 0.436 0.86);
   --c-ring: color(display-p3 0.166 0.394 0.773);
+  --c-teal: color(display-p3 0.652 0.825 0.937);
   --c-pressure: color(display-p3 0.975 0.913 0.904);
   --c-heat: color(display-p3 0.9 0.214 0.328);
+  --c-red: color(display-p3 0.77 0.182 0.164);
   --c-ghost: color(display-p3 0.936 0.998 0.945);
   --c-energy: color(display-p3 0.904 0.653 0.319);
   --c-lamp: color(display-p3 0.991 0.966 0.852);
@@ -251,6 +253,14 @@ a:focus-visible {
 
 .price {
   background-color: var(--c-pressure);
+}
+
+.teal {
+  color: var(--c-teal);
+}
+
+.red {
+  color: var(--c-red);
 }
 
 .shape {

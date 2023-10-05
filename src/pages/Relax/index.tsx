@@ -9,8 +9,6 @@ import { ListItemGen } from '../../models';
 import Breathe from './Breathe';
 import Guard from './Guard';
 
-import '../../shared/index.css';
-
 const options: ListItemGen<string>[] = [
   {
     value: 'https://refactoring.guru/refactoring/what-is-refactoring',

@@ -9,8 +9,6 @@ import { ActionTypes } from '../../models/config';
 import { Pages, Paths } from '../../models';
 import { DB_LOGS_TABLE, DB_USERS_TABLE, useDataBase } from '../../services/db';
 
-import '../../shared/index.css';
-
 const LoginForm: Component = () => {
   const [form, setForm] = createStore({
     email: '',

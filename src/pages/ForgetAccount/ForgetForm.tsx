@@ -8,8 +8,6 @@ import { ActionTypes } from '../../models/config';
 import { Pages } from '../../models';
 import { DB_USERS_TABLE, useDataBase } from '../../services/db';
 
-import '../../shared/index.css';
-
 const ForgetForm: Component = () => {
   const [form, setForm] = createStore({
     email: '',
