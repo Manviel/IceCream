@@ -2,6 +2,8 @@ import { Component, createSignal } from 'solid-js';
 
 import './FaceTime.css';
 
+// https://www.apple.com/ios/ios-17/
+// https://www.apple.com/apple-fitness-plus/
 const constraints = {
   video: {
     width: {
