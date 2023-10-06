@@ -1,0 +1,38 @@
+.face-time {
+  position: relative;
+}
+
+.screenshot-image {
+  width: 15rem;
+  height: 9rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: var(--c-backdrop);
+}
+
+.display-cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 5% auto;
+  position: relative;
+}
+
+video {
+  width: 100%;
+  background-color: var(--c-backdrop);
+}
+
+.controls {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background-color: var(--c-backdrop);
+}
+
+.d-none {
+  display: none;
+}

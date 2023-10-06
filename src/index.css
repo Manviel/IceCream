@@ -17,6 +17,7 @@
   --c-energy: color(display-p3 0.904 0.653 0.319);
   --c-lamp: color(display-p3 0.991 0.966 0.852);
   --c-black: color(display-p3 0.11 0.11 0.117);
+  --c-backdrop: color(display-p3 0 0 0 / 0.4);
   --c-dark: color(display-p3 0 0 0);
   --s-line: 0.6rem;
   --s-unit: 0.8rem;

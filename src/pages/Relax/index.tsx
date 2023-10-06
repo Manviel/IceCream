@@ -8,6 +8,7 @@ import { ListItemGen } from '../../models';
 
 import Breathe from './Breathe';
 import Guard from './Guard';
+import FaceTime from './FaceTime';
 
 const options: ListItemGen<string>[] = [
   {
@@ -71,6 +72,8 @@ const Relax: Component = () => (
           text='Design Patterns'
         />
       </aside>
+
+      <FaceTime />
 
       <footer class='content-full screen'>
         <SubTitle spot='Software Requirements' />
