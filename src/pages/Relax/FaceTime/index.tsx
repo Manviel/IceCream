@@ -19,28 +19,63 @@ const constraints = {
   },
 };
 
-// https://codepen.io/chrisbeast/pen/ebYwpX
 const FaceTime: Component = () => {
-  const [streamStarted, setStreamStarted] = createSignal();
+  const [streamStarted, setStreamStarted] = createSignal(false);
+
+  let video: HTMLVideoElement;
+
+  const handleStream = (stream: MediaStream) => {
+    video.srcObject = stream;
+
+    setStreamStarted(true);
+  };
+
+  const startStream = async (constraints: MediaStreamConstraints) => {
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+    handleStream(stream);
+  };
+
+  const handlePlay = () => {
+    if (streamStarted()) {
+      video.play();
+
+      return;
+    }
+
+    startStream(constraints);
+  };
+
+  const pauseStream = () => {
+    video.pause();
+
+    setStreamStarted(false);
+  };
 
   return (
     <section class='layer view rounded flex col items-center face-time screen'>
-      <div class='video-options'>
-        <select name='' id='' class='custom-select'>
-          <option value=''>Select camera</option>
-        </select>
-      </div>
+      <video
+        autoplay
+        class='rounded'
+        ref={video!}
+        aria-label='Face time'
+      ></video>
 
-      <video autoplay class='rounded'></video>
-      <canvas class='d-none'></canvas>
+      <nav class='stream-controls view flex rounded gap'>
+        <button
+          class='btn btn-danger play'
+          onClick={handlePlay}
+          disabled={streamStarted()}
+        >
+          Play
+        </button>
 
-      <img class='screenshot-image rounded' alt='Face time' />
-
-      <nav class='controls view flex rounded'>
-        <button class='btn btn-danger play'>Play</button>
-        <button class='btn btn-info pause d-none'>Pause</button>
-        <button class='btn btn-outline-success screenshot d-none'>
-          ScreenShot
+        <button
+          class='btn btn-info pause'
+          onClick={pauseStream}
+          disabled={!streamStarted()}
+        >
+          Pause
         </button>
       </nav>
     </section>
