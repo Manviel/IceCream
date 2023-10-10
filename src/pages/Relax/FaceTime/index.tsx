@@ -7,20 +7,12 @@ import { ShapeIcon } from '../../../models/theme';
 
 import './FaceTime.css';
 
-// https://www.apple.com/ios/ios-17/
+// https://stackblitz.com/edit/vitejs-vite-cyvcgd?file=src%2Fcomponents%2FStopWatch.tsx
 // https://www.apple.com/apple-fitness-plus/
 const constraints = {
   video: {
-    width: {
-      min: 1280,
-      ideal: 1920,
-      max: 2560,
-    },
-    height: {
-      min: 720,
-      ideal: 1080,
-      max: 1440,
-    },
+    width: { min: 800, ideal: 1920, max: 2560 },
+    height: { min: 600, ideal: 1080, max: 1440 },
   },
 };
 
@@ -66,7 +58,10 @@ const FaceTime: Component = () => {
         aria-label='Face time'
       ></video>
 
-      <nav class='stream-controls view flex rounded gap'>
+      <nav
+        class='stream-controls view flex rounded gap'
+        aria-label='Video controls'
+      >
         <button
           type='button'
           class={ShapeIcon.Dark}
