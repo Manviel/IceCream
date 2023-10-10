@@ -1,6 +1,5 @@
 export enum ActionTypes {
   SuperEllipse = 'superellipse touch icon flex items-center justify-center',
-  ShapeIcon = 'shape touch token icon flex justify-center items-center',
   Secondary = 'btn concise token',
   Contained = 'btn concise contained',
   Danger = 'btn concise price red',

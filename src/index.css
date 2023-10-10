@@ -366,6 +366,11 @@ a:focus-visible {
   gap: 0.2rem;
 }
 
+button[aria-disabled='true'] {
+  cursor: not-allowed;
+  color: var(--c-backdrop);
+}
+
 @media screen and (max-width: 768px) {
   .app {
     margin-bottom: 9.2rem;

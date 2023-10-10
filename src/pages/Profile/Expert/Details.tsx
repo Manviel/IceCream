@@ -4,7 +4,7 @@ import ArrowDownIcon from '../../../assets/icons/arrow-down-circle.svg';
 
 import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
-import { ActionTypes } from '../../../models/config';
+import { ShapeIcon } from '../../../models/theme';
 import { IDType } from '../../../models';
 import { transformCase } from '../../../services/utils';
 import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
@@ -28,7 +28,7 @@ const Details: Component<IDType> = ({ id }) => {
     <div class='flex gap items-center'>
       <button
         type='button'
-        class={ActionTypes.ShapeIcon}
+        class={ShapeIcon.Default}
         onClick={handleSubmit}
         aria-disabled={!!modal()}
       >

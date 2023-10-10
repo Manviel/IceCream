@@ -1,5 +1,10 @@
 import { Component, createSignal } from 'solid-js';
 
+import VideoIcon from '../../../assets/icons/video.svg';
+import StopCircleIcon from '../../../assets/icons/stop-circle.svg';
+
+import { ShapeIcon } from '../../../models/theme';
+
 import './FaceTime.css';
 
 // https://www.apple.com/ios/ios-17/
@@ -63,19 +68,23 @@ const FaceTime: Component = () => {
 
       <nav class='stream-controls view flex rounded gap'>
         <button
-          class='btn btn-danger play'
+          type='button'
+          class={ShapeIcon.Dark}
           onClick={handlePlay}
-          disabled={streamStarted()}
+          aria-disabled={streamStarted()}
+          aria-label='Start stream'
         >
-          Play
+          <VideoIcon />
         </button>
 
         <button
-          class='btn btn-info pause'
+          type='button'
+          class={ShapeIcon.Danger}
           onClick={pauseStream}
-          disabled={!streamStarted()}
+          aria-disabled={!streamStarted()}
+          aria-label='End stream'
         >
-          Pause
+          <StopCircleIcon />
         </button>
       </nav>
     </section>

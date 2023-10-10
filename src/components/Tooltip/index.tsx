@@ -1,7 +1,7 @@
 import { ParentComponent, Accessor } from 'solid-js';
 import { computePosition, offset } from '@floating-ui/dom';
 
-import { ActionTypes } from '../../models/config';
+import { ShapeIcon } from '../../models/theme';
 
 import { HelpTooltipType, hideBlock, showBlock } from './HelpTooltip';
 
@@ -20,7 +20,7 @@ const Tooltip: ParentComponent<TooltipType<string>> = (props) => {
     name,
     onClose,
     snackbar,
-    className = ActionTypes.ShapeIcon,
+    className = ShapeIcon.Default,
   } = props;
 
   let tooltip: HTMLButtonElement;

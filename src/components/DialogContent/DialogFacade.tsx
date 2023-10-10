@@ -4,6 +4,7 @@ import { Dialog, DialogTitle, Description } from 'solid-a11y';
 
 import { SegregationType } from '../../models';
 import { ActionTypes } from '../../models/config';
+import { ShapeIcon } from '../../models/theme';
 
 import CloseIcon from '../../assets/icons/close.svg';
 
@@ -67,7 +68,7 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
 
               <button
                 type='button'
-                class={ActionTypes.ShapeIcon}
+                class={ShapeIcon.Default}
                 onClick={handleClose}
                 aria-label='Close'
               >

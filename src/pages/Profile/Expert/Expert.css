@@ -2,11 +2,6 @@
   --c-lavender: color(display-p3 0.909 0.868 0.99);
 }
 
-button[aria-disabled='true'] {
-  cursor: not-allowed;
-  color: var(--c-backdrop);
-}
-
 .document {
   background-color: var(--c-lavender);
 }

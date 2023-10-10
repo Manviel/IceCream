@@ -8,6 +8,7 @@ import Field from '../../../components/Field';
 import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
 import { ActionTypes } from '../../../models/config';
+import { ShapeIcon } from '../../../models/theme';
 import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
 
 import Details from './Details';
@@ -77,7 +78,7 @@ const Notes: Component = () => {
           <LineDecreaseIcon />
         </HelpTooltip>
       }
-      triggerClassName={ActionTypes.ShapeIcon}
+      triggerClassName={ShapeIcon.Default}
       isFullScreen
       childClassName='bottom-sheet card'
       toggleActionSheet={toggleActionSheet}
