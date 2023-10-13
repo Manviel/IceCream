@@ -9,7 +9,6 @@
   top: 0;
   left: 0;
   white-space: nowrap;
-  background-color: var(--c-backdrop);
   color: var(--c-white);
   font-size: var(--s-system);
 }

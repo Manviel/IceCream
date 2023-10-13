@@ -16,7 +16,7 @@ const AbstractDialogContent: ParentComponent<FactoryType> = ({
   childClassName,
 }) => (
   <>
-    <DialogOverlay class='backdrop' />
+    <DialogOverlay class='backdrop vibrancy' />
 
     <div class='dialog content-tall content-full flex items-center justify-center'>
       <div

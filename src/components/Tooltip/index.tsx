@@ -55,7 +55,7 @@ const Tooltip: ParentComponent<TooltipType<string>> = (props) => {
 
   return (
     <div class='snackbar'>
-      <span role='tooltip' id={id} class='tooltip chip' ref={tooltip!}>
+      <span role='tooltip' id={id} class='tooltip vibrancy chip' ref={tooltip!}>
         {snackbar()}
       </span>
 

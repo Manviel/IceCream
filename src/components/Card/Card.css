@@ -8,10 +8,6 @@
   color: var(--c-energy);
 }
 
-.card-sup {
-  color: var(--c-lamp);
-}
-
 .os-title {
   font-weight: bold;
   font-size: var(--s-dock);

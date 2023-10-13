@@ -45,7 +45,7 @@ const HelpTooltip: ParentComponent<HelpTooltipType> = (props) => {
       role='img'
       aria-label={name}
     >
-      <span role='tooltip' id={id} class='tooltip chip' ref={tooltip!}>
+      <span role='tooltip' id={id} class='tooltip vibrancy chip' ref={tooltip!}>
         {name}
       </span>
 

@@ -49,11 +49,8 @@ export const StopWatch = (exposedProps: StopWatchInterface) => {
   const formatter = new Intl.DateTimeFormat(props.locales, props.options);
 
   return (
-    <div
-      class='vibrancy stop-watch os'
-      classList={{ isRunning: timer.isRunning }}
-    >
-      <p class='term card-sup'>{formatter.format(elapsedTimeDate())}</p>
+    <div class='vibrancy stop-watch flex os' role='timer'>
+      <p class='concise card-sup'>{formatter.format(elapsedTimeDate())}</p>
     </div>
   );
 };
