@@ -5,6 +5,8 @@ import StopCircleIcon from '../../../assets/icons/stop-circle.svg';
 
 import { ShapeIcon } from '../../../models/theme';
 
+import { StopWatch, setTimer } from './StopWatch';
+
 import './FaceTime.css';
 
 // https://stackblitz.com/edit/vitejs-vite-cyvcgd?file=src%2Fcomponents%2FStopWatch.tsx
@@ -20,11 +22,29 @@ const FaceTime: Component = () => {
   const [streamStarted, setStreamStarted] = createSignal(false);
 
   let video: HTMLVideoElement;
+  let interval: any;
+
+  const handleWatchStop = () => {
+    setTimer('isRunning', false);
+    setTimer('end', new Date());
+
+    clearInterval(interval);
+  };
+
+  const handleWatchStart = () => {
+    setTimer('start', new Date());
+    setTimer('isRunning', true);
+
+    interval = setInterval(() => {
+      setTimer('end', new Date());
+    }, 10);
+  };
 
   const handleStream = (stream: MediaStream) => {
     video.srcObject = stream;
 
     setStreamStarted(true);
+    handleWatchStart();
   };
 
   const startStream = async (constraints: MediaStreamConstraints) => {
@@ -47,19 +67,22 @@ const FaceTime: Component = () => {
     video.pause();
 
     setStreamStarted(false);
+    handleWatchStop();
   };
 
   return (
     <section class='layer view rounded flex col items-center face-time screen'>
       <video
         autoplay
-        class='rounded'
+        class='vibrancy rounded'
         ref={video!}
         aria-label='Face time'
       ></video>
 
+      <StopWatch />
+
       <nav
-        class='stream-controls view flex rounded gap'
+        class='vibrancy stream-controls view flex rounded gap'
         aria-label='Video controls'
       >
         <button

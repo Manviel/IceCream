@@ -2,9 +2,12 @@
   position: relative;
 }
 
+.vibrancy {
+  background-color: var(--c-backdrop);
+}
+
 video {
   width: 100%;
-  background-color: var(--c-backdrop);
 }
 
 .stream-controls {
@@ -12,5 +15,10 @@ video {
   left: 50%;
   bottom: var(--s-screen);
   transform: translateX(-50%);
-  background-color: var(--c-backdrop);
+}
+
+.stop-watch {
+  position: absolute;
+  top: var(--s-screen);
+  left: var(--s-screen);
 }
