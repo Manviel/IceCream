@@ -3,7 +3,7 @@ export enum Paths {
   Products = '/products',
   Privacy = '/privacy',
   Profile = '/profile',
-  Relax = '/dev',
+  Relax = '/profile/dev',
   SignIn = '/sign-in',
   SignUp = '/register',
   ForgetAccount = '/delete-account',

@@ -3,6 +3,7 @@ import { Link } from '@solidjs/router';
 
 import { Paths } from '../../../models';
 import { ActionTypes } from '../../../models/config';
+import { ShapeIcon } from '../../../models/theme';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
 
@@ -33,11 +34,7 @@ const Inbox: Component = () => {
           <h3 class='card-sub'>Inbox</h3>
           <h4 class='widget-main provision'>1</h4>
 
-          <div
-            role='img'
-            aria-label='View details'
-            class={ActionTypes.ShapeIcon}
-          >
+          <div role='img' aria-label='View details' class={ShapeIcon.Default}>
             <TrayIcon />
           </div>
         </>

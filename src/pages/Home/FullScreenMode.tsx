@@ -3,7 +3,7 @@ import { Component, createSignal } from 'solid-js';
 import EnterScreenIcon from '../../assets/icons/enter-screen.svg';
 import ExitScreenIcon from '../../assets/icons/exit-screen.svg';
 
-import { ActionTypes } from '../../models/config';
+import { ShapeIcon } from '../../models/theme';
 
 const FullScreenMode: Component = () => {
   const [hasFullscreen, setHasFullscreen] = createSignal(
@@ -32,7 +32,7 @@ const FullScreenMode: Component = () => {
       <button
         type='button'
         onClick={toggleFullScreen}
-        class={ActionTypes.ShapeIcon}
+        class={ShapeIcon.Default}
         aria-label='Full screen mode'
         aria-pressed={hasFullscreen()}
       >

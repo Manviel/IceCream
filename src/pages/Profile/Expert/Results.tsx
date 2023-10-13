@@ -4,6 +4,7 @@ import { deleteDB } from 'idb';
 import BellIcon from '../../../assets/icons/bell.svg';
 
 import { ActionTypes } from '../../../models/config';
+import { ShapeIcon } from '../../../models/theme';
 import { DB_NAME } from '../../../services/db';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
@@ -34,7 +35,7 @@ const Results: Component = () => {
           <BellIcon />
         </HelpTooltip>
       }
-      triggerClassName={ActionTypes.ShapeIcon}
+      triggerClassName={ShapeIcon.Default}
     >
       <section class='scrollable' tabIndex={0}>
         <p class='info'>

@@ -1,0 +1,20 @@
+.face-time {
+  position: relative;
+}
+
+video {
+  width: 100%;
+}
+
+.stream-controls {
+  position: absolute;
+  left: 50%;
+  bottom: var(--s-screen);
+  transform: translateX(-50%);
+}
+
+.stop-watch {
+  position: absolute;
+  top: var(--s-screen);
+  left: var(--s-screen);
+}

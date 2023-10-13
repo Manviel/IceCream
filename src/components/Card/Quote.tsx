@@ -9,7 +9,7 @@ import {
 import Loader from '../Loader';
 import HelpTooltip from '../Tooltip/HelpTooltip';
 
-import { ActionTypes } from '../../models/config';
+import { ShapeIcon } from '../../models/theme';
 import { SegregationType } from '../../models';
 import { getQuote } from '../../services/news';
 
@@ -56,11 +56,7 @@ const Quote: Component = () => {
       <Show when={quote()} keyed>
         {(res) => (
           <QuoteView title={res.source} description={res.text}>
-            <button
-              type='button'
-              class={ActionTypes.ShapeIcon}
-              onClick={refetch}
-            >
+            <button type='button' class={ShapeIcon.Default} onClick={refetch}>
               <HelpTooltip name='Get new quote' id='refetch-quote'>
                 <GoForwardIcon />
               </HelpTooltip>
