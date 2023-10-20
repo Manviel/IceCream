@@ -18,7 +18,7 @@ const Article: ParentComponent<ArticleType> = ({
 }) => (
   <article class='card view content-full rounded on-scroll' id={id}>
     <small class='chip paper'>{date}</small>
-    <h2 class='subtitle card-navigation'>
+    <h2 class='subtitle card-header'>
       <ConnectFactory href={href} text={name} end={false} />
     </h2>
 

@@ -2,8 +2,6 @@ import type { Component } from 'solid-js';
 
 import { SegregationType } from '../../models';
 
-import './Card.css';
-
 interface CardType extends SegregationType {
   number: number;
 }

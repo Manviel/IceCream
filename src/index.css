@@ -152,6 +152,7 @@ a:focus-visible {
 
 .card-sub {
   font-size: 2.1rem;
+  text-transform: capitalize;
 }
 
 .term,
@@ -344,7 +345,7 @@ a:focus-visible {
   border-radius: var(--s-unit);
 }
 
-.card-navigation {
+.card-header {
   margin: 1rem 0 var(--s-unit);
 }
 

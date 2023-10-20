@@ -9,7 +9,7 @@ const Header: Component<HeaderType> = ({ spot }) => {
 };
 
 export const SubTitle: Component<HeaderType> = ({ spot }) => {
-  return <h3 class='subtitle card-navigation'>{spot}</h3>;
+  return <h3 class='subtitle card-header'>{spot}</h3>;
 };
 
 export default Header;
