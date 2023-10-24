@@ -25,6 +25,7 @@ const ChartStrategy: Component<ChartStrategyType> = (props) => {
     ariaLabel,
     source,
     isDark = false,
+    config,
   } = props;
 
   return (
@@ -43,7 +44,9 @@ const ChartStrategy: Component<ChartStrategyType> = (props) => {
         </p>
       </header>
 
-      {strategy === ChartTypes.Bar && <BarStrategy id={id} source={source} />}
+      {strategy === ChartTypes.Bar && (
+        <BarStrategy id={id} source={source} config={config} />
+      )}
 
       {strategy === ChartTypes.Line && <LineStrategy id={id} source={source} />}
     </section>

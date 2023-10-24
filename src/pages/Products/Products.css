@@ -25,6 +25,11 @@
   stroke: var(--c-action);
 }
 
+.widget-bar,
+.widget-line {
+  aspect-ratio: auto;
+}
+
 .widget-line .ct-point,
 .widget-bar .ct-bar {
   stroke-width: var(--s-stroke);
@@ -100,6 +105,11 @@
   .ct-label {
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+
+  .widget-bar,
+  .widget-line {
+    aspect-ratio: 3 / 2;
   }
 }
 

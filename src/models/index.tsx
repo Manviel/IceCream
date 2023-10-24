@@ -23,7 +23,7 @@ export enum Pages {
 }
 
 export type Entity = {
-  [key: string]: number | string;
+  [key: string]: number | string | boolean;
 };
 
 export interface SegregationType {

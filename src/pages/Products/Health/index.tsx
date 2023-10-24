@@ -8,16 +8,11 @@ import ChartStrategy from '../Charts/ChartStrategy';
 
 const source = {
   Eggs: 6.3,
-  Chicken: 26.7,
-  Yogurt: 19.9,
   Milk: 8.3,
-  Lentils: 9,
-  'Lean beef': 24.6,
-  Salmon: 30.5,
-  Peanuts: 7.3,
-  Almonds: 5.8,
-  Quinoa: 8,
+  Yogurt: 19.9,
   Turkey: 25.6,
+  Chicken: 26.7,
+  Salmon: 30.5,
 };
 
 const chartID = 'chart-health';
@@ -35,6 +30,9 @@ const Health: Component = () => {
       )} gm`}
       ariaLabel='Food'
       source={source}
+      config={{
+        horizontalBars: true,
+      }}
     />
   );
 };

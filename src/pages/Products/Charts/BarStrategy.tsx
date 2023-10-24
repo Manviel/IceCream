@@ -5,7 +5,7 @@ import { ChartIDType } from '../Charts';
 import { ChartLegend, useChartSource, useLegends } from './Context';
 
 const BarStrategy: Component<ChartIDType> = (props) => {
-  const { id, source } = props;
+  const { id, source, config } = props;
 
   const { labels, datasets } = useChartSource(source);
   const { handleReader, legend } = useLegends({ labels, datasets });
@@ -18,6 +18,7 @@ const BarStrategy: Component<ChartIDType> = (props) => {
         series: datasets,
       },
       {
+        ...config,
         distributeSeries: true,
         axisX: {
           showGrid: false,
