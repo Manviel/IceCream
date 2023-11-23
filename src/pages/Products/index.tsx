@@ -21,7 +21,7 @@ const Products: Component = () => {
       subtitle='Quick actions and features'
       isDark
     >
-      <div class='grid products insights'>
+      <div class='grid products proximity insights'>
         <Vault />
         <Inbox />
         <Stocks />

@@ -39,7 +39,7 @@ const Privacy: Component = () => {
       subtitle='Designed for your policy'
       isDark
     >
-      <div class='grid privacy'>
+      <div class='grid privacy proximity'>
         <section class='flex col quick' role='feed'>
           <For each={containers}>
             {(section) => (

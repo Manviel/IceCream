@@ -1,5 +1,4 @@
 :root {
-  --c-elevation: color(display-p3 1 1 1 / 0.84);
   --p-spec: blur(8px);
   --s-modal: 96vw;
 }

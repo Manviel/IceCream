@@ -1,5 +1,7 @@
 :root {
   --c-white: color(display-p3 1 1 1);
+  --c-elevation: color(display-p3 1 1 1 / 0.84);
+  --c-ambient: color(display-p3 1 1 1 / 0.42);
   --c-active: color(display-p3 0.463 0.463 0.499 / 0.12);
   --c-action: color(display-p3 0.463 0.463 0.499 / 0.24);
   --c-depth: color(display-p3 0.961 0.961 0.968 / 0.6);
@@ -297,6 +299,9 @@ a:focus-visible {
 
 .products {
   grid-template-columns: repeat(2, 1fr);
+}
+
+.proximity {
   gap: 1.6rem;
 }
 
@@ -328,7 +333,7 @@ a:focus-visible {
 }
 
 .tab.active .superellipse {
-  background-color: color(display-p3 1 1 1 / 0.3);
+  background-color: var(--c-ambient);
 }
 
 .tab.inactive {
