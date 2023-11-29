@@ -1,25 +1,23 @@
-import { onMount, ParentComponent } from 'solid-js';
+import { onMount, ParentComponent, Show } from 'solid-js';
 import { useNavigate } from '@solidjs/router';
 
 import { Paths } from '../../models';
-import { DB_LOGS_TABLE, useDataBase } from '../../services/db';
+import { useAuthorization } from '../../services/db';
 
 const Guard: ParentComponent = ({ children }) => {
   const navigate = useNavigate();
 
+  const { isAuthed, verifyStorage } = useAuthorization();
+
   onMount(async () => {
-    const db = await useDataBase();
+    await verifyStorage();
 
-    const response = await db.get(DB_LOGS_TABLE, 'true');
-
-    if (!response) {
+    if (!isAuthed()) {
       navigate(Paths.Forbidden, { replace: true });
     }
-
-    db.close();
   });
 
-  return children;
+  return <Show when={isAuthed()}>{children}</Show>;
 };
 
 export default Guard;

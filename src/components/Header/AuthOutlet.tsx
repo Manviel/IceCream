@@ -1,29 +1,19 @@
-import { Component, createSignal, onMount } from 'solid-js';
+import { Component, onMount } from 'solid-js';
 import { Link } from '@solidjs/router';
 
 import { ActionTypes } from '../../models/config';
-import { DB_LOGS_TABLE, useDataBase } from '../../services/db';
+import {
+  DB_LOGS_TABLE,
+  useAuthorization,
+  useDataBase,
+} from '../../services/db';
 import { Pages, Paths } from '../../models';
 
 const AuthOutlet: Component = () => {
-  const [isAuthed, setIsAuthed] = createSignal(false);
-
-  const loadFromStorage = async () => {
-    const db = await useDataBase();
-
-    const response = await db.get(DB_LOGS_TABLE, 'true');
-
-    if (response) {
-      setIsAuthed(true);
-    } else {
-      setIsAuthed(false);
-    }
-
-    db.close();
-  };
+  const { isAuthed, verifyStorage } = useAuthorization();
 
   onMount(async () => {
-    await loadFromStorage();
+    await verifyStorage();
   });
 
   const logOut = async () => {
@@ -31,7 +21,7 @@ const AuthOutlet: Component = () => {
 
     db.clear(DB_LOGS_TABLE);
 
-    await loadFromStorage();
+    await verifyStorage();
   };
 
   return (

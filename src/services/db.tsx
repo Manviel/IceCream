@@ -1,4 +1,5 @@
 import { openDB } from 'idb';
+import { createSignal } from 'solid-js';
 
 export const LEVEL = 1;
 export const DB_NAME = 'activities';
@@ -24,4 +25,27 @@ export const useDataBase = async () => {
   });
 
   return db;
+};
+
+export const useAuthorization = () => {
+  const [isAuthed, setIsAuthed] = createSignal(false);
+
+  const verifyStorage = async () => {
+    const db = await useDataBase();
+
+    const response = await db.get(DB_LOGS_TABLE, 'true');
+
+    if (response) {
+      setIsAuthed(true);
+    } else {
+      setIsAuthed(false);
+    }
+
+    db.close();
+  };
+
+  return {
+    isAuthed,
+    verifyStorage,
+  };
 };
