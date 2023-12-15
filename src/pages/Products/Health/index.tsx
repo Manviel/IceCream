@@ -9,10 +9,9 @@ import ChartStrategy from '../Charts/ChartStrategy';
 const source = {
   Eggs: 6.3,
   Milk: 8.3,
-  Yogurt: 19.9,
-  Turkey: 25.6,
-  Chicken: 26.7,
-  Salmon: 30.5,
+  Yogu: 19.9,
+  Chic: 26.7,
+  Salm: 30.5,
 };
 
 const chartID = 'chart-health';

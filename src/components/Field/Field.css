@@ -9,7 +9,7 @@
 .form-action {
   border-radius: 1rem;
   border: 1px solid var(--c-action);
-  transition: background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: background-color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .form-label {

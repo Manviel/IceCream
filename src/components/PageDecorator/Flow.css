@@ -1,0 +1,24 @@
+.flow {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0 -2rem;
+}
+
+.flow .icon {
+  transform: rotate(-90deg);
+}
+
+.flow-mode .sticky {
+  display: none;
+}
+
+.flow-mode .app {
+  margin-bottom: var(--s-safe);
+}
+
+@media screen and (max-width: 768px) {
+  .flow {
+    margin: 0 -1.6rem;
+  }
+}
