@@ -35,3 +35,13 @@ export const getQuote = async () => {
 
   return json;
 };
+
+export const getUsers = async () => {
+  const response = await fetch(`https://dummyjson.com/users`, {
+    headers,
+  });
+
+  const { users } = await response.json();
+
+  return users;
+};

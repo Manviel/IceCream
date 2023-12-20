@@ -1,26 +1,25 @@
 import { ParentComponent } from 'solid-js';
 
-import ConnectFactory from '../../components/Link/ConnectFactory';
+import { IDType } from '../../models';
 
-import { AnchorType, IDType } from '../../models';
-
-interface ArticleType extends IDType, AnchorType {
+interface ArticleType extends IDType {
   name: string;
   date: string;
+  job: string;
 }
 
 const Article: ParentComponent<ArticleType> = ({
   name,
   children,
-  href,
+  job,
   id,
   date,
 }) => (
   <article class='card view content-full rounded on-scroll' id={id}>
     <small class='chip paper'>{date}</small>
-    <h2 class='subtitle card-header'>
-      <ConnectFactory href={href} text={name} end={false} />
-    </h2>
+    <h2 class='subtitle card-header'>{name}</h2>
+
+    <p class='info'>{job}</p>
 
     {children}
   </article>

@@ -39,7 +39,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
 
       {children}
 
-      <div class='flex items-center justify-between items-end ghost os'>
+      <div class='flex justify-between items-end ghost os'>
         <div class='flex col lockup' role='status'>
           <p>Fair Price (in $)</p>
           <strong class='subtitle'>{fairPriceCost().toFixed(2)}</strong>
@@ -56,7 +56,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
         </Tooltip>
       </div>
 
-      <div class='flex items-center justify-between items-end document os'>
+      <div class='flex justify-between items-end document os'>
         <div class='flex col lockup' role='status'>
           <p>Fair Price (in %)</p>
           <strong class='subtitle'>{fairPricePercent(fairPriceCost())}</strong>

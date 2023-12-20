@@ -40,7 +40,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  .privacy {
+  .privacy,
+  .users {
     grid-template-columns: 1fr;
   }
 }
