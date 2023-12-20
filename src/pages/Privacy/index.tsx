@@ -75,46 +75,44 @@ const Privacy: Component = () => {
           <div class='grid privacy proximity'>
             <section class='flex col quick' role='feed'>
               <For each={res}>
-                {(section) => (
+                {(client) => (
                   <Article
-                    name={getFullName(section)}
-                    job={section.university}
-                    id={transformCase(getFullName(section))}
-                    date={section.birthDate}
+                    name={getFullName(client)}
+                    job={client.university}
+                    id={transformCase(getFullName(client))}
+                    date={client.birthDate}
                   >
                     <div class='grid products proximity users'>
                       <Card
                         title='Height'
-                        number={section.height}
+                        number={client.height}
                         description='cm'
                       />
 
                       <Card
                         title='Weight'
-                        number={section.weight}
+                        number={client.weight}
                         description='kg'
                       />
 
                       <div class='flex col price os'>
-                        <p>{section.gender}</p>
-                        <strong class='subtitle'>
-                          {section.age} years old
-                        </strong>
+                        <p>{client.gender}</p>
+                        <strong class='subtitle'>{client.age} years old</strong>
                       </div>
 
                       <div class='flex col ghost os'>
                         <p>Phone</p>
-                        <strong class='subtitle'>{section.phone}</strong>
+                        <strong class='subtitle'>{client.phone}</strong>
                       </div>
 
                       <div class='flex col layer os'>
-                        <p>{section.address.address}</p>
-                        <strong class='subtitle'>{section.address.city}</strong>
+                        <p>{client.address.address}</p>
+                        <strong class='subtitle'>{client.address.city}</strong>
                       </div>
 
                       <div class='flex col material os'>
                         <p>Email</p>
-                        <strong class='subtitle'>{section.email}</strong>
+                        <strong class='subtitle'>{client.email}</strong>
                       </div>
                     </div>
                   </Article>
@@ -124,9 +122,9 @@ const Privacy: Component = () => {
 
             <nav class='spy-nav flex col' aria-label='Table of Contents'>
               <For each={res}>
-                {(section) => (
-                  <a href={`#${transformCase(getFullName(section))}`}>
-                    {getFullName(section)}
+                {(client) => (
+                  <a href={`#${transformCase(getFullName(client))}`}>
+                    {getFullName(client)}
                   </a>
                 )}
               </For>

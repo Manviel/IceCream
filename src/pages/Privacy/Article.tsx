@@ -19,7 +19,7 @@ const Article: ParentComponent<ArticleType> = ({
     <small class='chip paper'>{date}</small>
     <h2 class='subtitle card-header'>{name}</h2>
 
-    <p class='info'>{job}</p>
+    <h3 class='concise info'>{job}</h3>
 
     {children}
   </article>
