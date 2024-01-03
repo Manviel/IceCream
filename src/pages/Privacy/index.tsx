@@ -96,22 +96,22 @@ const Privacy: Component = () => {
                       />
 
                       <div class='flex col price os'>
-                        <p>{client.gender}</p>
+                        <p class='concise'>{client.gender}</p>
                         <strong class='subtitle'>{client.age} years old</strong>
                       </div>
 
                       <div class='flex col ghost os'>
-                        <p>Phone</p>
+                        <p class='concise'>Phone</p>
                         <strong class='subtitle'>{client.phone}</strong>
                       </div>
 
                       <div class='flex col layer os'>
-                        <p>{client.address.address}</p>
+                        <p class='concise'>{client.address.address}</p>
                         <strong class='subtitle'>{client.address.city}</strong>
                       </div>
 
                       <div class='flex col material os'>
-                        <p>Email</p>
+                        <p class='concise'>Email</p>
                         <strong class='subtitle'>{client.email}</strong>
                       </div>
                     </div>

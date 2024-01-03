@@ -58,7 +58,7 @@ const Home: Component = () => {
             description='countries'
           />
           <Card
-            title='Time to Interactive'
+            title='Response Time'
             number={randomInRange(1, 3)}
             description='sec'
           />
