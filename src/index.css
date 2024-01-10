@@ -431,10 +431,6 @@ button[aria-disabled='true'] {
   .tab-link {
     display: block;
   }
-
-  .os {
-    overflow: hidden;
-  }
 }
 
 @media screen and (min-width: 1920px) {
