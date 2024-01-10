@@ -11,11 +11,11 @@
   --c-grey: color(display-p3 0.631 0.631 0.649);
   --c-blue: color(display-p3 0.187 0.436 0.86);
   --c-ring: color(display-p3 0.166 0.394 0.773);
-  --c-pressure: color(display-p3 0.975 0.913 0.904);
+  --c-pressure: color(display-p3 0.984 0.909 0.904);
   --c-heat: color(display-p3 0.9 0.214 0.328);
   --c-red: color(display-p3 0.77 0.182 0.164);
-  --c-ghost: color(display-p3 0.936 0.998 0.945);
-  --c-lamp: color(display-p3 0.991 0.966 0.852);
+  --c-ghost: color(display-p3 0.926 0.998 0.945);
+  --c-lamp: color(display-p3 0.991 0.966 0.802);
   --c-black: color(display-p3 0.11 0.11 0.117);
   --c-backdrop: color(display-p3 0.259 0.259 0.27 / 0.7);
   --c-dark: color(display-p3 0 0 0);
@@ -138,7 +138,7 @@ a:focus-visible {
 
 .info {
   line-height: var(--s-leading);
-  margin: var(--s-unit) 0 var(--s-medium);
+  margin: var(--s-unit) 0 2.4rem;
 }
 
 .term {
