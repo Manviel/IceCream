@@ -1,37 +1,14 @@
 import { Component, For, createEffect, Show, createResource } from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
-import Card from '../../components/Card';
 
 import { transformCase, useObserver } from '../../services/utils';
 import { getUsers } from '../../services/news';
 import { Pages } from '../../models';
 
-import Article from './Article';
+import Report, { FullNameType, UserType } from './Report';
 
 import './Privacy.css';
-
-type AddressType = {
-  address: string;
-  city: string;
-};
-
-interface FullNameType {
-  firstName: string;
-  lastName: string;
-}
-
-interface UserType extends FullNameType {
-  email: string;
-  birthDate: string;
-  gender: string;
-  age: number;
-  phone: string;
-  height: number;
-  weight: number;
-  address: AddressType;
-  university: string;
-}
 
 const fetchUsers = async () => await getUsers();
 
@@ -76,46 +53,11 @@ const Privacy: Component = () => {
             <section class='flex col quick' role='feed'>
               <For each={res}>
                 {(client) => (
-                  <Article
+                  <Report
+                    client={client}
                     name={getFullName(client)}
-                    job={client.university}
                     id={transformCase(getFullName(client))}
-                    date={client.birthDate}
-                  >
-                    <div class='grid products proximity users'>
-                      <Card
-                        title='Height'
-                        number={client.height}
-                        description='cm'
-                      />
-
-                      <Card
-                        title='Weight'
-                        number={client.weight}
-                        description='kg'
-                      />
-
-                      <div class='flex col price os'>
-                        <p class='concise'>{client.gender}</p>
-                        <strong class='subtitle'>{client.age} years old</strong>
-                      </div>
-
-                      <div class='flex col ghost os'>
-                        <p class='concise'>Phone</p>
-                        <strong class='subtitle'>{client.phone}</strong>
-                      </div>
-
-                      <div class='flex col layer os'>
-                        <p class='concise'>{client.address.address}</p>
-                        <strong class='subtitle'>{client.address.city}</strong>
-                      </div>
-
-                      <div class='flex col material os'>
-                        <p class='concise'>Email</p>
-                        <strong class='subtitle'>{client.email}</strong>
-                      </div>
-                    </div>
-                  </Article>
+                  />
                 )}
               </For>
             </section>

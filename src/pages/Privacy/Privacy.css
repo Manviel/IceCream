@@ -4,8 +4,12 @@
 
 .paper {
   background-color: var(--c-active);
-  text-transform: uppercase;
-  font-size: var(--s-safe);
+}
+
+.report-logo {
+  width: 7.8rem;
+  height: 7.8rem;
+  font-size: var(--s-screen);
 }
 
 .quick {
