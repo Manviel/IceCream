@@ -132,13 +132,13 @@ a:focus-visible {
 
 .title {
   font-size: var(--s-entry);
-  margin: var(--s-screen) 0 var(--s-unit);
+  margin: var(--s-screen) 0 var(--s-line);
   letter-spacing: 0.35px;
 }
 
 .info {
   line-height: var(--s-leading);
-  margin: var(--s-unit) 0 2.4rem;
+  margin: var(--s-line) 0 2.4rem;
 }
 
 .term {
