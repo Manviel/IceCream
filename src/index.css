@@ -28,6 +28,7 @@
   --s-screen: 3.4rem;
   --s-entry: 4.2rem;
   --s-finger: 4.4rem;
+  --s-indicator: 4px;
   --s-leading: 1.6;
   --p-blur: blur(14px) saturate(180%);
 }
@@ -97,7 +98,7 @@ button:active {
 
 :focus-visible {
   outline: 2px solid var(--c-ring);
-  outline-offset: 4px;
+  outline-offset: var(--s-indicator);
 }
 
 a:focus-visible {
@@ -189,7 +190,7 @@ a:focus-visible {
 }
 
 .dock {
-  padding: var(--s-unit) var(--s-medium);
+  padding: var(--s-unit) var(--s-medium) var(--s-safe);
 }
 
 .layer {
@@ -326,12 +327,22 @@ a:focus-visible {
 }
 
 .tab.active {
-  transform: scale(1.16);
+  transform: scale(1.1);
   color: var(--c-dark);
 }
 
 .tab.active .superellipse {
   background-color: var(--c-ambient);
+}
+
+.tab.active::after {
+  position: absolute;
+  width: var(--s-safe);
+  height: var(--s-indicator);
+  border-radius: var(--s-medium);
+  background-color: var(--c-ring);
+  content: '';
+  bottom: -1rem;
 }
 
 .tab.inactive {

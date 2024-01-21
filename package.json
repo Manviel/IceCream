@@ -1,6 +1,6 @@
 {
   "name": "vite-template-solid",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "iFruit",
   "scripts": {
     "start": "vite",

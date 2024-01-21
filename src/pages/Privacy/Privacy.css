@@ -40,7 +40,17 @@
 
 .spy-nav a.live {
   transform: scale(1.1);
-  border-left: 0.4rem solid var(--c-heat);
+}
+
+.spy-nav a.live::before {
+  position: absolute;
+  width: var(--s-indicator);
+  height: 100%;
+  border-radius: var(--s-medium);
+  background-color: var(--c-heat);
+  content: '';
+  left: -0.3rem;
+  top: 0;
 }
 
 @media screen and (max-width: 768px) {
