@@ -33,7 +33,7 @@ const Inbox: Component = () => {
       triggerContent={
         <>
           <h3 class='card-sub'>Inbox</h3>
-          <h4 class='widget-main provision'>1</h4>
+          <h4 class='flex card-text'>1</h4>
 
           <div role='img' aria-label='View details' class={ShapeIcon.Default}>
             <TrayIcon />

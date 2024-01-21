@@ -7,14 +7,14 @@ import BackwardNavigation, {
 
 import { DarkThemeType } from '../../models';
 
-interface HeaderTemplateType extends BackwardNavigationType, DarkThemeType {
+export interface HeaderTemplateType
+  extends BackwardNavigationType,
+    DarkThemeType {
   headline: string;
 }
 
-const PageDecorator: ParentComponent<HeaderTemplateType> = ({
+export const HeaderTemplate: ParentComponent<HeaderTemplateType> = ({
   children,
-  headline,
-  subtitle,
   isDark = false,
 }) => {
   const isRouting = useIsRouting();
@@ -25,13 +25,26 @@ const PageDecorator: ParentComponent<HeaderTemplateType> = ({
       classList={{ 'pulse-loading': isRouting(), layer: isDark }}
     >
       <div class='panel content-full flex col app' id='app'>
-        <BackwardNavigation subtitle={headline} />
-
-        <h2 class='info card-sub'>{subtitle}</h2>
-
         {children}
       </div>
     </main>
+  );
+};
+
+const PageDecorator: ParentComponent<HeaderTemplateType> = ({
+  children,
+  headline,
+  subtitle,
+  isDark = false,
+}) => {
+  return (
+    <HeaderTemplate headline={headline} subtitle={subtitle} isDark={isDark}>
+      <BackwardNavigation subtitle={headline} />
+
+      <h2 class='info card-sub'>{subtitle}</h2>
+
+      {children}
+    </HeaderTemplate>
   );
 };
 

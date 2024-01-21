@@ -1,6 +1,6 @@
 import { Component, For } from 'solid-js';
 
-import PageDecorator from '../../components/PageDecorator';
+import Flow from '../../components/PageDecorator/Flow';
 import { SubTitle } from '../../components/Header';
 import ConnectFactory from '../../components/Link/ConnectFactory';
 
@@ -47,14 +47,10 @@ const options: ListItemGen<string>[] = [
 
 const Relax: Component = () => (
   <Guard>
-    <PageDecorator headline='Keep calm' subtitle='And carry on'>
+    <Flow headline='View' subtitle='My account'>
       <Breathe />
 
       <aside class='flex col os material screen'>
-        <ConnectFactory
-          href='https://finviz.com/'
-          text='Finviz Stock screener'
-        />
         <ConnectFactory
           href='https://www.w3.org/WAI/business-case/'
           text='Business case for Accessibility'
@@ -73,6 +69,8 @@ const Relax: Component = () => (
         />
       </aside>
 
+      <h3 class='subtitle screen'>Leave a message</h3>
+
       <FaceTime />
 
       <footer class='content-full screen'>
@@ -88,7 +86,7 @@ const Relax: Component = () => (
           </For>
         </aside>
       </footer>
-    </PageDecorator>
+    </Flow>
   </Guard>
 );
 

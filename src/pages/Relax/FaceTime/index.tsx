@@ -9,8 +9,6 @@ import { StopWatch, setTimer } from './StopWatch';
 
 import './FaceTime.css';
 
-// https://stackblitz.com/edit/vitejs-vite-cyvcgd?file=src%2Fcomponents%2FStopWatch.tsx
-// https://www.apple.com/apple-fitness-plus/
 const constraints = {
   video: {
     width: { min: 800, ideal: 1920, max: 2560 },
@@ -71,7 +69,7 @@ const FaceTime: Component = () => {
   };
 
   return (
-    <section class='layer view rounded flex col items-center face-time screen'>
+    <section class='layer view rounded flex col items-center face-time provision'>
       <video
         autoplay
         class='vibrancy rounded'

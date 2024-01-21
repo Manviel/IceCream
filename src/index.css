@@ -11,13 +11,11 @@
   --c-grey: color(display-p3 0.631 0.631 0.649);
   --c-blue: color(display-p3 0.187 0.436 0.86);
   --c-ring: color(display-p3 0.166 0.394 0.773);
-  --c-teal: color(display-p3 0.652 0.825 0.937);
-  --c-pressure: color(display-p3 0.975 0.913 0.904);
+  --c-pressure: color(display-p3 0.984 0.909 0.904);
   --c-heat: color(display-p3 0.9 0.214 0.328);
   --c-red: color(display-p3 0.77 0.182 0.164);
-  --c-ghost: color(display-p3 0.936 0.998 0.945);
-  --c-energy: color(display-p3 0.904 0.653 0.319);
-  --c-lamp: color(display-p3 0.991 0.966 0.852);
+  --c-ghost: color(display-p3 0.926 0.998 0.945);
+  --c-lamp: color(display-p3 0.991 0.966 0.802);
   --c-black: color(display-p3 0.11 0.11 0.117);
   --c-backdrop: color(display-p3 0.259 0.259 0.27 / 0.7);
   --c-dark: color(display-p3 0 0 0);
@@ -30,6 +28,7 @@
   --s-screen: 3.4rem;
   --s-entry: 4.2rem;
   --s-finger: 4.4rem;
+  --s-indicator: 4px;
   --s-leading: 1.6;
   --p-blur: blur(14px) saturate(180%);
 }
@@ -87,9 +86,8 @@ button {
 a,
 button {
   will-change: transform;
-  transition: filter 0.25s,
-    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1),
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.4s cubic-bezier(0.28, 0.11, 0.32, 1),
     outline-offset 0.2s linear;
 }
 
@@ -100,7 +98,7 @@ button:active {
 
 :focus-visible {
   outline: 2px solid var(--c-ring);
-  outline-offset: 4px;
+  outline-offset: var(--s-indicator);
 }
 
 a:focus-visible {
@@ -114,7 +112,7 @@ a:focus-visible {
 .app,
 .dock {
   max-width: 140rem;
-  transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+  transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .content-full {
@@ -135,13 +133,13 @@ a:focus-visible {
 
 .title {
   font-size: var(--s-entry);
-  margin: var(--s-screen) 0 var(--s-unit);
+  margin: var(--s-screen) 0 var(--s-line);
   letter-spacing: 0.35px;
 }
 
 .info {
   line-height: var(--s-leading);
-  margin: var(--s-unit) 0 var(--s-medium);
+  margin: var(--s-line) 0 2.4rem;
 }
 
 .term {
@@ -155,6 +153,11 @@ a:focus-visible {
 .card-sub {
   font-size: 2.1rem;
   text-transform: capitalize;
+}
+
+.card-text {
+  font-size: var(--s-finger);
+  align-items: baseline;
 }
 
 .term,
@@ -179,7 +182,7 @@ a:focus-visible {
 }
 
 .rounded {
-  border-radius: var(--s-medium);
+  border-radius: 1.8rem;
 }
 
 .view {
@@ -187,7 +190,7 @@ a:focus-visible {
 }
 
 .dock {
-  padding: var(--s-unit) var(--s-medium);
+  padding: var(--s-unit) var(--s-medium) var(--s-safe);
 }
 
 .layer {
@@ -263,10 +266,6 @@ a:focus-visible {
   background-color: var(--c-backdrop);
 }
 
-.teal {
-  color: var(--c-teal);
-}
-
 .red {
   color: var(--c-red);
 }
@@ -306,7 +305,7 @@ a:focus-visible {
 }
 
 .panel {
-  padding: 0.1rem var(--s-medium);
+  padding: 0.2rem var(--s-medium);
 }
 
 .depth {
@@ -328,12 +327,22 @@ a:focus-visible {
 }
 
 .tab.active {
-  transform: scale(1.16);
+  transform: scale(1.1);
   color: var(--c-dark);
 }
 
 .tab.active .superellipse {
   background-color: var(--c-ambient);
+}
+
+.tab.active::after {
+  position: absolute;
+  width: var(--s-safe);
+  height: var(--s-indicator);
+  border-radius: var(--s-medium);
+  background-color: var(--c-ring);
+  content: '';
+  bottom: -1rem;
 }
 
 .tab.inactive {
@@ -422,6 +431,8 @@ button[aria-disabled='true'] {
 
   .subtitle {
     font-size: 2.4rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   .card-sub {

@@ -1,6 +1,11 @@
 :root {
+  --c-teal: color(display-p3 0.652 0.825 0.937);
   --s-petal: 12.5rem;
   --s-inhale: 4s;
+}
+
+.teal {
+  color: var(--c-teal);
 }
 
 .breathe {

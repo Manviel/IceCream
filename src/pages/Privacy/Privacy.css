@@ -4,8 +4,12 @@
 
 .paper {
   background-color: var(--c-active);
-  text-transform: uppercase;
-  font-size: var(--s-safe);
+}
+
+.report-logo {
+  width: 7.8rem;
+  height: 7.8rem;
+  font-size: var(--s-screen);
 }
 
 .quick {
@@ -36,11 +40,26 @@
 
 .spy-nav a.live {
   transform: scale(1.1);
-  border-left: 0.3rem solid var(--c-heat);
+}
+
+.spy-nav a.live::before {
+  position: absolute;
+  width: var(--s-indicator);
+  height: 100%;
+  border-radius: var(--s-medium);
+  background-color: var(--c-heat);
+  content: '';
+  left: -0.3rem;
+  top: 0;
 }
 
 @media screen and (max-width: 768px) {
-  .privacy {
+  .privacy,
+  .users {
     grid-template-columns: 1fr;
+  }
+
+  .users .os {
+    overflow: hidden;
   }
 }

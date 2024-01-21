@@ -18,3 +18,9 @@ video {
   top: var(--s-screen);
   left: var(--s-screen);
 }
+
+.stream-controls,
+.stop-watch {
+  backdrop-filter: blur(var(--s-indicator));
+  -webkit-backdrop-filter: blur(var(--s-indicator));
+}

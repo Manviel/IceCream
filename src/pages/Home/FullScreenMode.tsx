@@ -25,8 +25,8 @@ const FullScreenMode: Component = () => {
   return (
     <article class='box os flex justify-between items-center'>
       <header class='flex col widget-title'>
-        <h3 class='card-sub grey-dark'>Full screen</h3>
-        <p class='term teal'>{hasFullscreen() ? 'Active' : 'Inactive'}</p>
+        <h3 class='card-sub'>Full screen</h3>
+        <p class='term grey-dark'>{hasFullscreen() ? 'Active' : 'Inactive'}</p>
       </header>
 
       <button

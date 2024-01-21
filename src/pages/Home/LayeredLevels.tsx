@@ -26,9 +26,9 @@ const LayeredLevels: Component = () => {
     <ul class='grid home-stats gap items-start'>
       <For each={listItems}>
         {(item) => (
-          <li class='box view rounded flex col'>
-            <h4 class='card-sub accent'>{item.label}</h4>
-            <p class='card-header term'>{item.value}</p>
+          <li class='box view rounded flex col widget-title'>
+            <h4 class='card-sub'>{item.label}</h4>
+            <p class='term grey-dark'>{item.value}</p>
           </li>
         )}
       </For>

@@ -58,7 +58,7 @@ const Home: Component = () => {
             description='countries'
           />
           <Card
-            title='Time to Interactive'
+            title='Response Time'
             number={randomInRange(1, 3)}
             description='sec'
           />
@@ -78,7 +78,7 @@ const Home: Component = () => {
         </header>
       </article>
 
-      <article class='flex col on-scroll layer view screen content-full rounded'>
+      <article class='flex col layer view screen content-full rounded'>
         <SubTitle spot='What is Layered Architecture?' />
 
         <p class='info'>
@@ -96,7 +96,7 @@ const Home: Component = () => {
         <LayeredLevels />
       </article>
 
-      <article class='flex col on-scroll material view screen content-full rounded'>
+      <article class='flex col material view screen content-full rounded'>
         <SubTitle spot='The Separation of Concerns' />
 
         <p class='info'>
