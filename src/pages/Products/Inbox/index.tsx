@@ -1,5 +1,5 @@
 import { Component } from 'solid-js';
-import { Link } from '@solidjs/router';
+import { A } from '@solidjs/router';
 
 import { Paths } from '../../../models';
 import { ActionTypes } from '../../../models/config';
@@ -46,9 +46,9 @@ const Inbox: Component = () => {
         Average price of a base iPhone is {average(datasets).toFixed(2)} UAH.
       </p>
 
-      <Link href={Paths.Privacy} class={ActionTypes.Contained}>
+      <A href={Paths.Privacy} class={ActionTypes.Contained}>
         Go to Policy
-      </Link>
+      </A>
     </DialogFacade>
   );
 };

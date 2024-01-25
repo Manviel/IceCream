@@ -1,5 +1,5 @@
 import { Component } from 'solid-js';
-import { Link } from '@solidjs/router';
+import { A } from '@solidjs/router';
 
 import PageDecorator from '../../components/PageDecorator';
 
@@ -13,9 +13,9 @@ const SignUp: Component = () => (
     <RegisterForm />
 
     <div class='flex col os material screen'>
-      <Link href={Paths.SignIn} class={ActionTypes.Link}>
+      <A href={Paths.SignIn} class={ActionTypes.Link}>
         Already have an account?
-      </Link>
+      </A>
     </div>
   </PageDecorator>
 );

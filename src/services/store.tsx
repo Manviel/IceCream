@@ -10,8 +10,8 @@ import { Entity } from '../models';
 import { Category } from '../models/config';
 
 type NewsContextState = {
-  readonly news: Entity[];
-  readonly currentRank: string;
+  readonly news?: Entity[];
+  readonly currentRank?: string;
 };
 
 type NewsContextValue = [

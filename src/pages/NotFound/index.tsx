@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { Link } from '@solidjs/router';
+import { A } from '@solidjs/router';
 
 import { Paths } from '../../models';
 import { ActionTypes } from '../../models/config';
@@ -11,9 +11,9 @@ const NotFound: Component = () => (
     <div class='layer view rounded content-full flex col'>
       <h3 class='info card-sub'>Sorry, we can't find that page!</h3>
 
-      <Link href={Paths.Home} class={ActionTypes.Contained}>
+      <A href={Paths.Home} class={ActionTypes.Contained}>
         Back to Home page
-      </Link>
+      </A>
     </div>
   </PageDecorator>
 );

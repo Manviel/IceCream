@@ -1,5 +1,5 @@
 import { ParentComponent } from 'solid-js';
-import { NavLink } from '@solidjs/router';
+import { A } from '@solidjs/router';
 
 import { AnchorType, IDType } from '../../models';
 import { ActionTypes } from '../../models/config';
@@ -7,16 +7,11 @@ import { ActionTypes } from '../../models/config';
 interface TabLinkType extends IDType, AnchorType {}
 
 const TabLink: ParentComponent<TabLinkType> = ({ href, id, children, end }) => (
-  <NavLink
-    href={href}
-    end={end}
-    class='flex col items-center tab'
-    aria-label={id}
-  >
+  <A href={href} end={end} class='flex col items-center tab' aria-label={id}>
     <div class={ActionTypes.SuperEllipse}>{children}</div>
 
     <small class='tab-link'>{id}</small>
-  </NavLink>
+  </A>
 );
 
 export default TabLink;

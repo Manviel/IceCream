@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { Link } from '@solidjs/router';
+import { A } from '@solidjs/router';
 
 import { Pages, Paths } from '../../models';
 import { ActionTypes } from '../../models/config';
@@ -13,9 +13,9 @@ const Forbidden: Component = () => (
         You don't have permissions to access this resource!
       </h3>
 
-      <Link href={Paths.SignIn} class={ActionTypes.Contained}>
+      <A href={Paths.SignIn} class={ActionTypes.Contained}>
         {Pages.SignIn}
-      </Link>
+      </A>
     </div>
   </PageDecorator>
 );
