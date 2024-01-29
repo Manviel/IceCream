@@ -150,7 +150,7 @@ const Home: Component = () => {
           />
           <Shelf
             title='Sophisticated vocabulary'
-            description='Beautiful - gorgeous, stunning. Sad - heartbroken, devastated. Tired - exhausted, drained, worn out, shattered. Happy - thrilled, on cloud nine, delighted. Surprised - astonished, overwhelmed. Small - tiny, miniscule. Big - huge, tremendous, enormous, massive. Bad - terrible, horrible, horrendous, dreadful, appalling. Good - incredible, awesome, terrific, superb. Important - crucial, essential, vital. Interesting - fascinating, captivating, appealing. Hungry - starving, famished, ravenous. Angry - furious, mad. Clean - spotless, pristine. Dirty - filthy. Funny - hilarious. Cold - freezing. Hot - boiling, scorching.'
+            description='Beautiful - gorgeous, stunning. Sad - heartbroken, devastated. Tired - exhausted, drained, worn out, shattered. Happy - thrilled, on cloud nine, delighted. Surprised - astonished, overwhelmed. Small - tiny, miniscule. Big - huge, tremendous, enormous, massive. Bad - terrible, horrible, horrendous, dreadful, appalling. Good - incredible, awesome, terrific, superb. Important - crucial, essential, vital. Hungry - starving, famished, ravenous. Angry - furious, mad. Clean - spotless, pristine. Dirty - filthy. Funny - hilarious. Cold - freezing. Hot - boiling.'
             hasRowSpan
             hasColSpan
           />
@@ -173,7 +173,7 @@ const Home: Component = () => {
           />
           <Shelf
             title='Well, you know'
-            description='Use simple fillers to fill in pauses in a conversation. The way I see it.'
+            description='Use simple fillers to fill in pauses in a conversation. The way I see it. Interesting - fascinating, captivating, appealing.'
             hasColSpan
           />
           <Shelf
@@ -190,7 +190,7 @@ const Home: Component = () => {
           />
           <Shelf
             title='Linking words efficiently'
-            description='To show the relationship between ideas, explain cause and effect.'
+            description='To show the relationship between ideas, cause and effect.'
           />
         </section>
       </article>
