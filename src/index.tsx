@@ -5,7 +5,6 @@ import { lazy } from 'solid-js';
 import App from './App';
 
 import { NewsProvider } from './services/store';
-
 import { Paths } from './models';
 
 const Home = lazy(() => import('./pages/Home'));

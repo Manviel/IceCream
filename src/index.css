@@ -266,6 +266,10 @@ a:focus-visible {
   background-color: var(--c-backdrop);
 }
 
+.alice {
+  background-color: var(--c-lamp);
+}
+
 .red {
   color: var(--c-red);
 }
@@ -301,7 +305,7 @@ a:focus-visible {
 }
 
 .proximity {
-  gap: 1.6rem;
+  gap: 1.8rem;
 }
 
 .panel {
