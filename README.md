@@ -46,3 +46,4 @@ You can deploy the `dist` folder to any static host provider (netlify, surge, no
 - [Sticky Table of Contents with Scrolling Active States](https://css-tricks.com/sticky-table-of-contents-with-scrolling-active-states/)
 - [CSS Color Guide Convertor](https://colorjs.io/apps/convert/?color=lime&precision=4)
 - [Browse UX apps](https://mobbin.com/browse/ios/apps?sort=publishedAt)
+- [Color Language](https://design.duolingo.com/illustration/shape-language#color)

@@ -1,5 +1,4 @@
 import { ParentComponent } from 'solid-js';
-import { useIsRouting } from '@solidjs/router';
 
 import BackwardNavigation, {
   BackwardNavigationType,
@@ -17,12 +16,10 @@ export const HeaderTemplate: ParentComponent<HeaderTemplateType> = ({
   children,
   isDark = false,
 }) => {
-  const isRouting = useIsRouting();
-
   return (
     <main
       class='flex justify-center content-full'
-      classList={{ 'pulse-loading': isRouting(), layer: isDark }}
+      classList={{ layer: isDark }}
     >
       <div class='panel content-full flex col app' id='app'>
         {children}

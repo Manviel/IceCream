@@ -17,6 +17,7 @@
 .readable-icon {
   height: 18rem;
   width: 18rem;
+  color: var(--c-backdrop);
 }
 
 .cohesion {
