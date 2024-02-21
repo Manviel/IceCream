@@ -35,7 +35,7 @@ const Privacy: Component = () => {
   const [containers] = createResource<UserType[]>(fetchUsers);
 
   createEffect(() => {
-    useStickyNavigation();
+    if (containers()) useStickyNavigation();
   });
 
   const getFullName = (user: FullNameType) =>
