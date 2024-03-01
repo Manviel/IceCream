@@ -56,7 +56,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
         </Tooltip>
       </div>
 
-      <div class='flex justify-between items-end document os'>
+      <div class='flex justify-between items-end material os'>
         <div class='flex col lockup' role='status'>
           <p>Fair Price (in %)</p>
           <strong class='subtitle'>{fairPricePercent(fairPriceCost())}</strong>

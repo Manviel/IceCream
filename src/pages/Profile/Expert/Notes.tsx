@@ -128,7 +128,7 @@ const Notes: Component = () => {
 
           <For each={transactions()}>
             {(item) => (
-              <li class='flex items-center justify-between'>
+              <li class='flex items-center justify-between list-item chip'>
                 {item.toString()}
 
                 <Details id={item.toString()} />

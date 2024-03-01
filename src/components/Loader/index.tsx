@@ -1,7 +1,5 @@
 import type { Component } from 'solid-js';
 
-import PageDecorator from '../PageDecorator';
-
 import './Loader.css';
 
 const Loader: Component = () => (
@@ -13,14 +11,6 @@ const Loader: Component = () => (
     ></div>
     <div class='skeleton box rounded screen'></div>
   </aside>
-);
-
-export const Skeleton: Component = () => (
-  <PageDecorator headline='Please wait' subtitle='Downloading updates'>
-    <div class='pulse-loading info skeleton box rounded'></div>
-
-    <Loader />
-  </PageDecorator>
 );
 
 export default Loader;

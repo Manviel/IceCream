@@ -67,7 +67,7 @@ const Reviews: Component = () => {
           interviewer directs the question to stakeholders to obtain
           information.
         </SlideItem>
-        <SlideItem id='document'>
+        <SlideItem id='material'>
           Document Analysis is used to gather business information by
           reviewing/examining the available materials that describe the business
           environment. This analysis is helpful to validate the implementation
