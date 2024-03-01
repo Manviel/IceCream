@@ -14,7 +14,7 @@ const Leaderboard: Component = () => {
   const [data, { updateNews }] = useNewsStore();
 
   createEffect(() => {
-    if (data.news.length === 0) {
+    if (data.news?.length === 0 && data.currentRank) {
       fetchQuery(data.currentRank)
         .then((entities: any) => {
           updateNews(entities);

@@ -1,3 +1,7 @@
+:root {
+  --c-lamp: color(display-p3 0.945 0.911 0.993);
+}
+
 .items-end {
   align-items: flex-end;
 }
@@ -76,6 +80,14 @@
 
 .danger-grow > * {
   flex-grow: 1;
+}
+
+.alice {
+  background-color: var(--c-lamp);
+}
+
+.list-item {
+  background-color: var(--c-ambient);
 }
 
 @media screen and (max-width: 1052px) {

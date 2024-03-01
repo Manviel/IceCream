@@ -37,7 +37,7 @@ const Details: Component<IDType> = ({ id }) => {
         </HelpTooltip>
       </button>
 
-      {modal() && <span class='chip document term'>{modal()}</span>}
+      {modal() && <span class='chip alice term'>{modal()}</span>}
     </div>
   );
 };
