@@ -31,14 +31,14 @@ const Home: Component = () => {
           <p class='info'>
             The degree to which the elements inside a module belong together. It
             is a measure of how deeply each piece of device module functionality
-            relates. The most suitable term for defining cohesion is
-            <em> the code that shifts together, stays together</em>. As we can
-            see, strong cohesion makes thinking smoother and reduces dependency.
-            Low coupling is generally associated with strong stability. In
-            microservices - oriented systems, a low degree of cohesion is
-            accomplished by pooling specific business processes together, such
-            that, if developers need to change actions, only a single
-            microservice has to be modified.
+            relates. The most suitable term for defining cohesion is the code
+            that shifts together, stays together. As we can see, strong cohesion
+            makes thinking smoother and reduces dependency. Low coupling is
+            generally associated with strong stability. In microservices -
+            oriented systems, a low degree of cohesion is accomplished by
+            pooling specific business processes together, such that, if
+            developers need to change actions, only a single microservice has to
+            be modified.
           </p>
 
           <ConnectFactory href='https://www.baeldung.com/cs/layered-architecture' />
@@ -59,7 +59,7 @@ const Home: Component = () => {
             </div>
           </div>
 
-          <div class=' view'>
+          <div class='view'>
             <SubTitle spot='What is Coupling?' />
 
             <p class='info grey-light'>
@@ -96,26 +96,29 @@ const Home: Component = () => {
         </section>
       </article>
 
-      <article class='flex col card view screen content-full rounded'>
-        <SubTitle spot='The Separation of Concerns' />
+      <article class='grid home-grid proximity screen card rounded'>
+        <header class='flex col view os-column'>
+          <SubTitle spot='The Separation of Concerns' />
 
-        <p class='info'>
-          The application of the SoC involves two processes: reduction of
-          coupling and increasing cohesion. Don’t write your program as one
-          solid block, instead, break up the code into chunks that are finalized
-          tiny pieces of the system each able to complete a simple distinct job.
-        </p>
+          <p class='info'>
+            The application of the SoC involves two processes: reduction of
+            coupling and increasing cohesion. Don’t write your program as one
+            solid block, instead, break up the code into chunks that are
+            finalized tiny pieces of the system each able to complete a simple
+            distinct job.
+          </p>
 
-        <header class='flex justify-between items-center gap'>
           <ConnectFactory
             href='https://www.wikihow.com/Respond-to-a-%22How-Was-Your-Weekend%3F%22-Text'
             text='How was your weekend?'
           />
+        </header>
 
-          <A href={Paths.Products} class={ActionTypes.Contained}>
+        <section class='ghost flex justify-center items-center cohesion view'>
+          <A href={Paths.Products} class={ActionTypes.Secondary}>
             Go to Products
           </A>
-        </header>
+        </section>
       </article>
 
       <article class='grid os-grid gap screen'>
