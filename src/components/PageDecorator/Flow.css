@@ -1,8 +1,8 @@
 .flow {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 1;
-  margin: 0 -2rem;
 }
 
 .flow .icon {
@@ -13,12 +13,10 @@
   display: none;
 }
 
-.flow-mode .app {
-  margin-bottom: var(--s-safe);
+.flow-mode #app {
+  padding-top: 5.2rem;
 }
 
-@media screen and (max-width: 768px) {
-  .flow {
-    margin: 0 -1.6rem;
-  }
+.flow-mode .app {
+  margin-bottom: var(--s-unit);
 }

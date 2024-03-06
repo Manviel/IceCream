@@ -31,19 +31,24 @@ const Flow: ParentComponent<HeaderTemplateType> = ({
 
   return (
     <HeaderTemplate headline={headline} subtitle={subtitle} isDark={isDark}>
-      <div class='flex justify-between items-center depth flow panel'>
-        <button
-          class={ShapeIcon.Default}
-          aria-label='Go Back'
-          onClick={handleGoBack}
+      <header class='flex justify-center depth flow content-full'>
+        <nav
+          class='app flex justify-between items-center panel content-full'
+          aria-label='Navigation bar'
         >
-          <ArrowUpIcon />
-        </button>
+          <button
+            class={ShapeIcon.Default}
+            aria-label='Go Back'
+            onClick={handleGoBack}
+          >
+            <ArrowUpIcon />
+          </button>
 
-        <h1 class='card-sub'>{subtitle}</h1>
+          <h1 class='card-sub'>{subtitle}</h1>
 
-        <ConnectFactory href='https://finviz.com/' text={headline} />
-      </div>
+          <ConnectFactory href='https://finviz.com/' text={headline} />
+        </nav>
+      </header>
 
       {children}
     </HeaderTemplate>
