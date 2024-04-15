@@ -1,6 +1,14 @@
-import { Component, For, createEffect, Show, createResource } from 'solid-js';
+import {
+  Component,
+  For,
+  createEffect,
+  Show,
+  createResource,
+  ErrorBoundary,
+} from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
+import Loader from '../../components/Loader';
 
 import { transformCase, useObserver } from '../../services/utils';
 import { getUsers } from '../../services/news';
@@ -47,33 +55,39 @@ const Privacy: Component = () => {
       subtitle='Designed for your policy'
       isDark
     >
-      <Show when={containers()} keyed>
-        {(res) => (
-          <div class='grid privacy proximity'>
-            <section class='flex col quick' role='feed'>
-              <For each={res}>
-                {(client) => (
-                  <Report
-                    client={client}
-                    name={getFullName(client)}
-                    id={transformCase(getFullName(client))}
-                  />
-                )}
-              </For>
-            </section>
+      <ErrorBoundary
+        fallback={<h2 class='price view rounded'>Failed to fetch</h2>}
+      >
+        {containers.loading && <Loader />}
 
-            <nav class='spy-nav flex col' aria-label='Table of Contents'>
-              <For each={res}>
-                {(client) => (
-                  <a href={`#${transformCase(getFullName(client))}`}>
-                    {getFullName(client)}
-                  </a>
-                )}
-              </For>
-            </nav>
-          </div>
-        )}
-      </Show>
+        <Show when={containers()} keyed>
+          {(res) => (
+            <div class='grid privacy proximity'>
+              <section class='flex col quick' role='feed'>
+                <For each={res}>
+                  {(client) => (
+                    <Report
+                      client={client}
+                      name={getFullName(client)}
+                      id={transformCase(getFullName(client))}
+                    />
+                  )}
+                </For>
+              </section>
+
+              <nav class='spy-nav flex col' aria-label='Table of Contents'>
+                <For each={res}>
+                  {(client) => (
+                    <a href={`#${transformCase(getFullName(client))}`}>
+                      {getFullName(client)}
+                    </a>
+                  )}
+                </For>
+              </nav>
+            </div>
+          )}
+        </Show>
+      </ErrorBoundary>
     </PageDecorator>
   );
 };
