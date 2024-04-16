@@ -24,3 +24,10 @@ video {
   backdrop-filter: blur(var(--s-indicator));
   -webkit-backdrop-filter: blur(var(--s-indicator));
 }
+
+.stream-status {
+  position: absolute;
+  left: 50%;
+  top: var(--s-screen);
+  transform: translateX(-50%);
+}

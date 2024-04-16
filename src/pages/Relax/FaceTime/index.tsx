@@ -1,4 +1,4 @@
-import { Component, createSignal } from 'solid-js';
+import { Component, createSignal, onCleanup } from 'solid-js';
 
 import VideoIcon from '../../../assets/icons/video.svg';
 import StopCircleIcon from '../../../assets/icons/stop-circle.svg';
@@ -18,6 +18,7 @@ const constraints = {
 
 const FaceTime: Component = () => {
   const [streamStarted, setStreamStarted] = createSignal(false);
+  const [status, setStatus] = createSignal('');
 
   let video: HTMLVideoElement;
   let interval: any;
@@ -46,9 +47,14 @@ const FaceTime: Component = () => {
   };
 
   const startStream = async (constraints: MediaStreamConstraints) => {
-    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia(constraints);
 
-    handleStream(stream);
+      handleStream(stream);
+      setStatus('');
+    } catch (err: any) {
+      setStatus(err.message);
+    }
   };
 
   const handlePlay = () => {
@@ -67,6 +73,10 @@ const FaceTime: Component = () => {
     setStreamStarted(false);
     handleWatchStop();
   };
+
+  onCleanup(() => {
+    pauseStream();
+  });
 
   return (
     <section class='layer view rounded flex col items-center face-time provision'>
@@ -103,6 +113,12 @@ const FaceTime: Component = () => {
           <StopCircleIcon />
         </button>
       </nav>
+
+      {status() && (
+        <div class='depth view rounded stream-status' role='alert'>
+          {status()}
+        </div>
+      )}
     </section>
   );
 };
