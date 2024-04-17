@@ -12,12 +12,9 @@ import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 import Tooltip from '../../../components/Tooltip';
 
 const INIT_HELP = 'Are you sure?';
-const ID_HELP = 'confirm-tooltip';
 
 const Results: Component = () => {
   const [snackbar, setSnackbar] = createSignal<string>(INIT_HELP);
-
-  const handleResetTooltip = () => setSnackbar(INIT_HELP);
 
   const handleSubmit = async () => {
     await deleteDB(DB_NAME);
@@ -31,7 +28,7 @@ const Results: Component = () => {
       description='JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading.'
       closingName='Continue'
       triggerContent={
-        <HelpTooltip name='Results' id='event-loop-results'>
+        <HelpTooltip name='Results'>
           <BellIcon />
         </HelpTooltip>
       }
@@ -69,9 +66,7 @@ const Results: Component = () => {
       </section>
 
       <Tooltip
-        id={ID_HELP}
         name='Clean'
-        onClose={handleResetTooltip}
         snackbar={snackbar}
         className={ActionTypes.Danger}
         onClick={handleSubmit}

@@ -14,14 +14,11 @@ interface PortfolioType<T> extends IDType {
 }
 
 const INIT_HELP = 'Copy to clipboad';
-const ID_HELP = 'snackbar-tooltip';
 
 const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
   const { children, id, fairPriceCost, fairPricePercent } = props;
 
   const [snackbar, setSnackbar] = createSignal<string>(INIT_HELP);
-
-  const handleResetTooltip = () => setSnackbar(INIT_HELP);
 
   const handleCopy = async () => {
     try {
@@ -45,13 +42,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
           <strong class='subtitle'>{fairPriceCost().toFixed(2)}</strong>
         </div>
 
-        <Tooltip
-          id={ID_HELP}
-          name='Clone'
-          onClick={handleCopy}
-          onClose={handleResetTooltip}
-          snackbar={snackbar}
-        >
+        <Tooltip name='Clone' onClick={handleCopy} snackbar={snackbar}>
           <DocCopyIcon />
         </Tooltip>
       </div>

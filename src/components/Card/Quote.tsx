@@ -55,7 +55,7 @@ const Quote: Component = () => {
         {(res) => (
           <QuoteView title={res.source} description={res.text}>
             <button type='button' class={ShapeIcon.Default} onClick={refetch}>
-              <HelpTooltip name='Get new quote' id='refetch-quote'>
+              <HelpTooltip name='Get new quote'>
                 <GoForwardIcon />
               </HelpTooltip>
             </button>

@@ -11,9 +11,6 @@ importers:
       '@ark-ui/solid':
         specifier: ^2.2.0
         version: 2.2.0(@internationalized/date@3.5.2)(solid-js@1.8.16)
-      '@floating-ui/dom':
-        specifier: ^1.6.3
-        version: 1.6.3
       '@solidjs/router':
         specifier: ^0.13.2
         version: 0.13.2(solid-js@1.8.16)

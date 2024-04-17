@@ -31,8 +31,6 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
 }) => {
   const [open, setOpen] = createSignal(false);
 
-  let restoreFocus: HTMLButtonElement;
-
   const handleOpen = () => {
     setOpen(true);
     toggleActionSheet?.();
@@ -41,61 +39,55 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
   const handleClose = () => {
     setOpen(false);
     toggleActionSheet?.();
-
-    restoreFocus.focus();
   };
 
   return (
-    <>
-      <button
+    <Dialog.Root
+      lazyMount
+      unmountOnExit
+      restoreFocus
+      open={open()}
+      onExitComplete={handleClose}
+    >
+      <Dialog.Trigger
         type='button'
         class={triggerClassName}
         onClick={handleOpen}
-        ref={restoreFocus!}
       >
         {triggerContent}
-      </button>
+      </Dialog.Trigger>
 
-      <Dialog.Root
-        lazyMount
-        unmountOnExit
-        open={open()}
-        onOpenChange={handleClose}
-      >
-        <Portal>
-          <DialogContent
-            isFullScreen={isFullScreen}
-            childClassName={childClassName}
-          >
-            <Dialog.Content class='flex justify-between items-center'>
-              <Dialog.Title class='subtitle card-header'>{title}</Dialog.Title>
+      <Portal>
+        <DialogContent
+          isFullScreen={isFullScreen}
+          childClassName={childClassName}
+        >
+          <div class='flex justify-between items-center'>
+            <Dialog.Title class='subtitle card-header'>{title}</Dialog.Title>
 
-              <Dialog.CloseTrigger
-                type='button'
-                class={ShapeIcon.Default}
-                onClick={handleClose}
-                aria-label='Close'
-              >
-                <CloseIcon />
-              </Dialog.CloseTrigger>
-            </Dialog.Content>
-
-            <Dialog.Description class='info'>{description}</Dialog.Description>
-
-            {children}
-
-            <button
+            <Dialog.CloseTrigger
               type='button'
-              class={ActionTypes.Secondary}
-              onClick={handleClose}
-              classList={{ provision: true }}
+              class={ShapeIcon.Default}
+              aria-label='Close'
             >
-              {closingName}
-            </button>
-          </DialogContent>
-        </Portal>
-      </Dialog.Root>
-    </>
+              <CloseIcon />
+            </Dialog.CloseTrigger>
+          </div>
+
+          <Dialog.Description class='info'>{description}</Dialog.Description>
+
+          {children}
+
+          <Dialog.CloseTrigger
+            type='button'
+            class={ActionTypes.Secondary}
+            classList={{ provision: true }}
+          >
+            {closingName}
+          </Dialog.CloseTrigger>
+        </DialogContent>
+      </Portal>
+    </Dialog.Root>
   );
 };
 

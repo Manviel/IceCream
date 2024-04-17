@@ -6,7 +6,6 @@ import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
 import { ShapeIcon } from '../../../models/theme';
 import { IDType } from '../../../models';
-import { transformCase } from '../../../services/utils';
 import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
 
 const Details: Component<IDType> = ({ id }) => {
@@ -32,7 +31,7 @@ const Details: Component<IDType> = ({ id }) => {
         onClick={handleSubmit}
         aria-disabled={!!modal()}
       >
-        <HelpTooltip name='Peek' id={transformCase(id)}>
+        <HelpTooltip name='Peek'>
           <ArrowDownIcon />
         </HelpTooltip>
       </button>

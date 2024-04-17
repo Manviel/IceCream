@@ -9,7 +9,6 @@ interface FactoryType extends ActionSheetType {
 }
 
 const AbstractDialogContent: ParentComponent<FactoryType> = ({
-  children,
   factory,
   isFullScreen,
   childClassName,
@@ -18,14 +17,12 @@ const AbstractDialogContent: ParentComponent<FactoryType> = ({
     <Dialog.Backdrop class='backdrop vibrancy' />
 
     <Dialog.Positioner class='dialog content-tall content-full flex items-center justify-center'>
-      <div
+      <Dialog.Content
         class={`modal view flex col content-full ${childClassName}`}
         classList={{ 'content-tall': isFullScreen }}
       >
         {factory}
-      </div>
-
-      {children}
+      </Dialog.Content>
     </Dialog.Positioner>
   </>
 );

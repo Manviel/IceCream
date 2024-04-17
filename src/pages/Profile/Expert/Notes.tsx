@@ -74,7 +74,7 @@ const Notes: Component = () => {
       description='Activity of transactions.'
       closingName='Go back'
       triggerContent={
-        <HelpTooltip name='Notes' id='transactions-notes'>
+        <HelpTooltip name='Notes'>
           <LineDecreaseIcon />
         </HelpTooltip>
       }

@@ -1,80 +1,50 @@
 import { ParentComponent, Accessor } from 'solid-js';
-import { computePosition, offset } from '@floating-ui/dom';
+import { Tooltip } from '@ark-ui/solid';
+import { Portal } from 'solid-js/web';
 
 import { ShapeIcon } from '../../models/theme';
 
-import { HelpTooltipType, hideBlock, showBlock } from './HelpTooltip';
+import { HelpTooltipType } from './HelpTooltip';
 
 interface TooltipType<T> extends HelpTooltipType {
-  onClose: () => void;
   onClick: () => Promise<void>;
   snackbar: Accessor<T>;
   className?: string;
 }
 
-const Tooltip: ParentComponent<TooltipType<string>> = (props) => {
+const FloatingTooltip: ParentComponent<TooltipType<string>> = (props) => {
   const {
     children,
-    id,
-    onClick,
     name,
-    onClose,
+    onClick,
     snackbar,
     className = ShapeIcon.Default,
   } = props;
 
-  let tooltip: HTMLButtonElement;
-  let button: HTMLButtonElement;
-
-  const updateTooltip = () => {
-    computePosition(button, tooltip, {
-      middleware: [offset(4)],
-    }).then(({ x, y }) => {
-      Object.assign(tooltip.style, {
-        left: `${x}px`,
-        top: `${y}px`,
-      });
-    });
-  };
-
-  const handleDisplay = () => {
-    showBlock(tooltip);
-    updateTooltip();
-  };
-
-  const handleResetTooltip = () => {
-    hideBlock(tooltip);
-    onClose();
-  };
-
   const handleClick = async () => {
     await onClick();
-
-    updateTooltip();
   };
 
   return (
-    <div class='snackbar'>
-      <span role='tooltip' id={id} class='tooltip vibrancy chip' ref={tooltip!}>
-        {snackbar()}
-      </span>
+    <Tooltip.Root openDelay={0} closeDelay={0}>
+      <Portal>
+        <Tooltip.Positioner class='snackbar'>
+          <Tooltip.Content class='tooltip vibrancy chip'>
+            {snackbar()}
+          </Tooltip.Content>
+        </Tooltip.Positioner>
+      </Portal>
 
-      <button
+      <Tooltip.Trigger
         type='button'
-        ref={button!}
         class={className}
         aria-label={name}
-        aria-describedby={id}
         onClick={handleClick}
-        onFocusIn={handleDisplay}
-        onMouseEnter={handleDisplay}
-        onMouseLeave={handleResetTooltip}
-        onFocusOut={handleResetTooltip}
       >
         {children}
-      </button>
-    </div>
+      </Tooltip.Trigger>
+    </Tooltip.Root>
   );
 };
 
-export default Tooltip;
+export default FloatingTooltip;
