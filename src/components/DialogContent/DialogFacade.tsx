@@ -1,6 +1,7 @@
-import { createSignal, Show, ParentComponent } from 'solid-js';
+import { createSignal, ParentComponent } from 'solid-js';
 import { JSX } from 'solid-js/jsx-runtime';
-import { Dialog, DialogTitle, Description } from 'solid-a11y';
+import { Portal } from 'solid-js/web';
+import { Dialog } from '@ark-ui/solid';
 
 import { SegregationType } from '../../models';
 import { ActionTypes } from '../../models/config';
@@ -55,26 +56,31 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
         {triggerContent}
       </button>
 
-      <Show when={open()}>
-        <Dialog onClose={setOpen}>
+      <Dialog.Root
+        lazyMount
+        unmountOnExit
+        open={open()}
+        onOpenChange={handleClose}
+      >
+        <Portal>
           <DialogContent
             isFullScreen={isFullScreen}
             childClassName={childClassName}
           >
-            <div class='flex justify-between items-center'>
-              <DialogTitle class='subtitle card-header'>{title}</DialogTitle>
+            <Dialog.Content class='flex justify-between items-center'>
+              <Dialog.Title class='subtitle card-header'>{title}</Dialog.Title>
 
-              <button
+              <Dialog.CloseTrigger
                 type='button'
                 class={ShapeIcon.Default}
                 onClick={handleClose}
                 aria-label='Close'
               >
                 <CloseIcon />
-              </button>
-            </div>
+              </Dialog.CloseTrigger>
+            </Dialog.Content>
 
-            <Description class='info'>{description}</Description>
+            <Dialog.Description class='info'>{description}</Dialog.Description>
 
             {children}
 
@@ -87,8 +93,8 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
               {closingName}
             </button>
           </DialogContent>
-        </Dialog>
-      </Show>
+        </Portal>
+      </Dialog.Root>
     </>
   );
 };

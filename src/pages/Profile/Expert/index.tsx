@@ -1,5 +1,5 @@
 import { Component, For } from 'solid-js';
-import { Tab, TabGroup, TabPanel, Tabs } from 'solid-a11y';
+import { Tabs } from '@ark-ui/solid';
 
 import { ListItemGen } from '../../../models';
 
@@ -10,37 +10,40 @@ import './Expert.css';
 
 const GrowthTab = {
   label: 'Growth',
-  value: 1,
+  value: '1',
 };
 
 const DividendTab = {
   label: 'Dividend',
-  value: 2,
+  value: '2',
 };
 
-const listItems: ListItemGen<number>[] = [GrowthTab, DividendTab];
+const listItems: ListItemGen<string>[] = [GrowthTab, DividendTab];
 
 const Expert: Component = () => {
   return (
     <section class='material edge'>
-      <TabGroup>
-        <Tabs class='tour-list flex items-start widget-title'>
+      <Tabs.Root lazyMount unmountOnExit value={GrowthTab.value}>
+        <Tabs.List class='tour-list flex items-start widget-title'>
           <For each={listItems}>
             {(item) => (
-              <Tab class='tour-list-item flex justify-center content-full'>
+              <Tabs.Trigger
+                value={item.value}
+                class='tour-list-item flex justify-center content-full'
+              >
                 {item.label}
-              </Tab>
+              </Tabs.Trigger>
             )}
           </For>
-        </Tabs>
+        </Tabs.List>
 
-        <TabPanel index={GrowthTab.value} class='provision card os'>
+        <Tabs.Content value={GrowthTab.value} class='provision card os'>
           <Growth />
-        </TabPanel>
-        <TabPanel index={DividendTab.value} class='provision card os'>
+        </Tabs.Content>
+        <Tabs.Content value={DividendTab.value} class='provision card os'>
           <Dividend />
-        </TabPanel>
-      </TabGroup>
+        </Tabs.Content>
+      </Tabs.Root>
     </section>
   );
 };

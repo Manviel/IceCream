@@ -1,7 +1,6 @@
 import type { ParentComponent } from 'solid-js';
 import { JSX } from 'solid-js/jsx-runtime';
-
-import { DialogOverlay } from 'solid-a11y';
+import { Dialog } from '@ark-ui/solid';
 
 import { ActionSheetType } from '.';
 
@@ -16,9 +15,9 @@ const AbstractDialogContent: ParentComponent<FactoryType> = ({
   childClassName,
 }) => (
   <>
-    <DialogOverlay class='backdrop vibrancy' />
+    <Dialog.Backdrop class='backdrop vibrancy' />
 
-    <div class='dialog content-tall content-full flex items-center justify-center'>
+    <Dialog.Positioner class='dialog content-tall content-full flex items-center justify-center'>
       <div
         class={`modal view flex col content-full ${childClassName}`}
         classList={{ 'content-tall': isFullScreen }}
@@ -27,7 +26,7 @@ const AbstractDialogContent: ParentComponent<FactoryType> = ({
       </div>
 
       {children}
-    </div>
+    </Dialog.Positioner>
   </>
 );
 
