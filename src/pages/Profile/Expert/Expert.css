@@ -37,12 +37,15 @@
   border: 1px solid var(--c-action);
 }
 
-.keen-slider {
-  align-items: baseline;
+.slider {
+  padding: var(--s-system) 0;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 }
 
-.keen-slider .view {
-  height: 90%;
+.slider-item {
+  font-size: var(--s-system);
+  scroll-snap-align: start;
 }
 
 .edge {
@@ -99,10 +102,6 @@
 @media screen and (max-width: 768px) {
   .portfolio {
     grid-template-columns: 1fr;
-  }
-
-  .production {
-    grid-column: span 1;
   }
 
   .ornament {
