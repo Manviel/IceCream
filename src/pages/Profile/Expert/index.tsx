@@ -1,5 +1,5 @@
 import { Component, For } from 'solid-js';
-import { Tabs } from '@ark-ui/solid';
+import { Tabs } from '@kobalte/core';
 
 import { ListItemGen } from '../../../models';
 
@@ -23,7 +23,7 @@ const listItems: ListItemGen<string>[] = [GrowthTab, DividendTab];
 const Expert: Component = () => {
   return (
     <section class='material edge'>
-      <Tabs.Root lazyMount unmountOnExit value={GrowthTab.value}>
+      <Tabs.Root defaultValue={GrowthTab.value}>
         <Tabs.List class='tour-list flex items-start widget-title'>
           <For each={listItems}>
             {(item) => (

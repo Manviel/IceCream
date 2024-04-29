@@ -1,5 +1,4 @@
-import { Component, Index } from 'solid-js';
-import { Carousel } from '@ark-ui/solid';
+import { Component, For } from 'solid-js';
 
 import { ListItemGen } from '../../../models';
 
@@ -51,22 +50,19 @@ const listItems: ListItemGen<string>[] = [
 
 const Reviews: Component = () => {
   return (
-    <Carousel.Root class='production' slidesPerView={1.1}>
+    <section class='production flex col'>
       <h3 class='card-sub'>Elicitation Tech</h3>
 
-      <Carousel.Viewport class='slider flex gap'>
-        <Index each={listItems}>
-          {(slide, index) => (
-            <Carousel.Item
-              index={index}
-              class={`slider-item view rounded term ${slide().value}`}
-            >
-              {slide().label}
-            </Carousel.Item>
+      <ul class='carousel flex gap' tabindex='0'>
+        <For each={listItems}>
+          {(slide) => (
+            <li class={`grid carousel-item view rounded term ${slide.value}`}>
+              {slide.label}
+            </li>
           )}
-        </Index>
-      </Carousel.Viewport>
-    </Carousel.Root>
+        </For>
+      </ul>
+    </section>
   );
 };
 

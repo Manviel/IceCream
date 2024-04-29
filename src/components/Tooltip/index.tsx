@@ -1,6 +1,5 @@
 import { ParentComponent, Accessor } from 'solid-js';
-import { Tooltip } from '@ark-ui/solid';
-import { Portal } from 'solid-js/web';
+import { Tooltip } from '@kobalte/core';
 
 import { ShapeIcon } from '../../models/theme';
 
@@ -26,14 +25,12 @@ const FloatingTooltip: ParentComponent<TooltipType<string>> = (props) => {
   };
 
   return (
-    <Tooltip.Root openDelay={0} closeDelay={0}>
-      <Portal>
-        <Tooltip.Positioner class='snackbar'>
-          <Tooltip.Content class='tooltip vibrancy chip'>
-            {snackbar()}
-          </Tooltip.Content>
-        </Tooltip.Positioner>
-      </Portal>
+    <Tooltip.Root openDelay={0}>
+      <Tooltip.Portal>
+        <Tooltip.Content class='tooltip vibrancy chip'>
+          {snackbar()}
+        </Tooltip.Content>
+      </Tooltip.Portal>
 
       <Tooltip.Trigger
         type='button'

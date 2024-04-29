@@ -11,7 +11,7 @@ const HelpTooltip: ParentComponent<HelpTooltipType> = (props) => {
 
   return (
     <div
-      class='snackbar content-full content-tall'
+      class='content-full content-tall'
       role='img'
       aria-label={name}
       title={name}

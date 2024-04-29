@@ -1,6 +1,8 @@
-import type { Component } from 'solid-js';
+import { Component, For } from 'solid-js';
 
 import './Breathe.css';
+
+const LIST = [1, 2, 3, 4, 5, 6];
 
 const Breathe: Component = () => (
   <article class='box view rounded flex col items-center'>
@@ -8,12 +10,7 @@ const Breathe: Component = () => (
 
     <p class='grey-dark info'>Inhale and Exhale</p>
     <ul class='breathe'>
-      <li class='circle'></li>
-      <li class='circle'></li>
-      <li class='circle'></li>
-      <li class='circle'></li>
-      <li class='circle'></li>
-      <li class='circle'></li>
+      <For each={LIST}>{() => <li class='circle shape'></li>}</For>
     </ul>
     <p class='grey-dark info'>
       Taking moments throughout the day to stop, relax, and practice mindfulness

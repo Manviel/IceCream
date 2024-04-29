@@ -1,7 +1,6 @@
-import { createSignal, ParentComponent } from 'solid-js';
+import { ParentComponent } from 'solid-js';
 import { JSX } from 'solid-js/jsx-runtime';
-import { Portal } from 'solid-js/web';
-import { Dialog } from '@ark-ui/solid';
+import { Dialog } from '@kobalte/core';
 
 import { SegregationType } from '../../models';
 import { ActionTypes } from '../../models/config';
@@ -29,35 +28,17 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
   childClassName,
   toggleActionSheet,
 }) => {
-  const [open, setOpen] = createSignal(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-    toggleActionSheet?.();
-  };
-
-  const handleClose = () => {
-    setOpen(false);
+  const handleOpenChange = () => {
     toggleActionSheet?.();
   };
 
   return (
-    <Dialog.Root
-      lazyMount
-      unmountOnExit
-      restoreFocus
-      open={open()}
-      onExitComplete={handleClose}
-    >
-      <Dialog.Trigger
-        type='button'
-        class={triggerClassName}
-        onClick={handleOpen}
-      >
+    <Dialog.Root onOpenChange={handleOpenChange}>
+      <Dialog.Trigger type='button' class={triggerClassName}>
         {triggerContent}
       </Dialog.Trigger>
 
-      <Portal>
+      <Dialog.Portal>
         <DialogContent
           isFullScreen={isFullScreen}
           childClassName={childClassName}
@@ -65,28 +46,28 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
           <div class='flex justify-between items-center'>
             <Dialog.Title class='subtitle card-header'>{title}</Dialog.Title>
 
-            <Dialog.CloseTrigger
+            <Dialog.CloseButton
               type='button'
               class={ShapeIcon.Default}
               aria-label='Close'
             >
               <CloseIcon />
-            </Dialog.CloseTrigger>
+            </Dialog.CloseButton>
           </div>
 
           <Dialog.Description class='info'>{description}</Dialog.Description>
 
           {children}
 
-          <Dialog.CloseTrigger
+          <Dialog.CloseButton
             type='button'
             class={ActionTypes.Secondary}
             classList={{ provision: true }}
           >
             {closingName}
-          </Dialog.CloseTrigger>
+          </Dialog.CloseButton>
         </DialogContent>
-      </Portal>
+      </Dialog.Portal>
     </Dialog.Root>
   );
 };

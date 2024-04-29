@@ -37,15 +37,18 @@
   border: 1px solid var(--c-action);
 }
 
-.slider {
+.carousel {
   padding: var(--s-system) 0;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
-.slider-item {
+.carousel-item {
   font-size: var(--s-system);
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+  flex: 100% 0 0;
+  place-content: center;
 }
 
 .edge {
