@@ -50,7 +50,7 @@ const listItems: ListItemGen<string>[] = [
 
 const Reviews: Component = () => {
   return (
-    <section class='production flex col'>
+    <section class='screen flex col'>
       <h3 class='card-sub'>Elicitation Tech</h3>
 
       <ul class='carousel flex gap' tabindex='0'>

@@ -25,9 +25,7 @@ const Profile: Component = () => {
 
       <AuthOutlet />
 
-      <article class='grid products proximity portfolio screen'>
-        <Reviews />
-      </article>
+      <Reviews />
     </PageDecorator>
   );
 };
