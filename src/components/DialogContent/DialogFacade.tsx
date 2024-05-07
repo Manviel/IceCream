@@ -1,6 +1,6 @@
 import { ParentComponent } from 'solid-js';
 import { JSX } from 'solid-js/jsx-runtime';
-import { Dialog } from '@kobalte/core';
+import { Dialog } from '@kobalte/core/dialog';
 
 import { SegregationType } from '../../models';
 import { ActionTypes } from '../../models/config';
@@ -33,7 +33,7 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
   };
 
   return (
-    <Dialog.Root onOpenChange={handleOpenChange}>
+    <Dialog onOpenChange={handleOpenChange}>
       <Dialog.Trigger type='button' class={triggerClassName}>
         {triggerContent}
       </Dialog.Trigger>
@@ -68,7 +68,7 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
           </Dialog.CloseButton>
         </DialogContent>
       </Dialog.Portal>
-    </Dialog.Root>
+    </Dialog>
   );
 };
 

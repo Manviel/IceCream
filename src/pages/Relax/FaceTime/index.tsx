@@ -1,6 +1,6 @@
 import { Component, createSignal, onCleanup } from 'solid-js';
 import { Portal } from 'solid-js/web';
-import { Toast, toaster } from '@kobalte/core';
+import { Toast, toaster } from '@kobalte/core/toast';
 
 import VideoIcon from '../../../assets/icons/video.svg';
 import StopCircleIcon from '../../../assets/icons/stop-circle.svg';
@@ -28,7 +28,7 @@ const FaceTime: Component = () => {
 
   const showToast = ({ title, description }: SegregationType) => {
     toaster.show((props) => (
-      <Toast.Root toastId={props.toastId} class='depth view rounded'>
+      <Toast toastId={props.toastId} class='depth view rounded'>
         <div class='toast__content'>
           <Toast.Title class='toast__title'>{title}</Toast.Title>
           <Toast.Description class='toast__description'>
@@ -42,7 +42,7 @@ const FaceTime: Component = () => {
         <Toast.ProgressTrack class='toast__progress-track'>
           <Toast.ProgressFill class='toast__progress-fill' />
         </Toast.ProgressTrack>
-      </Toast.Root>
+      </Toast>
     ));
   };
 

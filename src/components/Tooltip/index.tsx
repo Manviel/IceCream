@@ -1,5 +1,5 @@
 import { ParentComponent, Accessor } from 'solid-js';
-import { Tooltip } from '@kobalte/core';
+import { Tooltip } from '@kobalte/core/tooltip';
 
 import { ShapeIcon } from '../../models/theme';
 
@@ -25,7 +25,7 @@ const FloatingTooltip: ParentComponent<TooltipType<string>> = (props) => {
   };
 
   return (
-    <Tooltip.Root openDelay={0}>
+    <Tooltip openDelay={0}>
       <Tooltip.Portal>
         <Tooltip.Content class='tooltip vibrancy chip'>
           {snackbar()}
@@ -40,7 +40,7 @@ const FloatingTooltip: ParentComponent<TooltipType<string>> = (props) => {
       >
         {children}
       </Tooltip.Trigger>
-    </Tooltip.Root>
+    </Tooltip>
   );
 };
 

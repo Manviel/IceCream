@@ -1,6 +1,6 @@
 import type { ParentComponent } from 'solid-js';
 import { JSX } from 'solid-js/jsx-runtime';
-import { Dialog } from '@kobalte/core';
+import { Dialog } from '@kobalte/core/dialog';
 
 import { ActionSheetType } from '.';
 
