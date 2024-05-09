@@ -48,7 +48,6 @@
     opacity: 0.01;
     transform: scale(1.1);
   }
-
   100% {
     opacity: 1;
     transform: scale(1);

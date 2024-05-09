@@ -32,3 +32,32 @@ video {
   transform: translate(-50%, -50%);
   list-style: none;
 }
+
+.toast {
+  border-radius: var(--s-indicator);
+}
+
+.toast__progress-track {
+  height: var(--s-unit);
+  background-color: var(--c-ambient);
+  margin-top: var(--s-safe);
+}
+
+.toast__progress-fill {
+  height: 100%;
+  width: var(--kb-toast-progress-fill-width);
+  transition: width 250ms linear;
+}
+
+.toast[data-closed] {
+  animation: hide 0.1s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
