@@ -34,7 +34,7 @@ video {
 }
 
 .toast {
-  border-radius: var(--s-indicator);
+  border-radius: 1rem;
 }
 
 .toast__progress-track {

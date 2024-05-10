@@ -7,7 +7,13 @@ import { ActionTypes } from '../../models/config';
 interface TabLinkType extends IDType, AnchorType {}
 
 const TabLink: ParentComponent<TabLinkType> = ({ href, id, children, end }) => (
-  <A href={href} end={end} class='flex col items-center tab' aria-label={id}>
+  <A
+    href={href}
+    end={end}
+    class='flex col items-center tab'
+    aria-label={id}
+    title={id}
+  >
     <div class={ActionTypes.SuperEllipse}>{children}</div>
 
     <small class='tab-link'>{id}</small>

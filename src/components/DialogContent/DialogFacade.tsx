@@ -46,11 +46,7 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
           <div class='flex justify-between items-center'>
             <Dialog.Title class='subtitle card-header'>{title}</Dialog.Title>
 
-            <Dialog.CloseButton
-              type='button'
-              class={ShapeIcon.Default}
-              aria-label='Close'
-            >
+            <Dialog.CloseButton type='button' class={ShapeIcon.Default}>
               <CloseIcon />
             </Dialog.CloseButton>
           </div>
@@ -63,6 +59,7 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
             type='button'
             class={ActionTypes.Secondary}
             classList={{ provision: true }}
+            aria-label={closingName}
           >
             {closingName}
           </Dialog.CloseButton>

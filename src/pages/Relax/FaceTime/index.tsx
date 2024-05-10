@@ -73,7 +73,7 @@ const FaceTime: Component = () => {
 
       handleStream(stream);
     } catch (err: any) {
-      showToast({ title: 'Error', description: err.message });
+      showToast({ title: err.name, description: err.message });
     }
   };
 
