@@ -1,6 +1,6 @@
 table {
-  border-collapse: collapse;
-  border: 1px solid var(--c-active);
+  border-spacing: 1px;
+  background-color: var(--c-active);
 }
 
 th,
@@ -11,7 +11,7 @@ caption {
 }
 
 caption {
-  background-color: var(--c-action);
+  background-color: inherit;
   border-radius: var(--s-unit) var(--s-unit) 0 0;
 }
 
@@ -20,7 +20,7 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:nth-child(even) {
-  background-color: transparent;
+  background-color: var(--c-white);
 }
 
 .movement {
