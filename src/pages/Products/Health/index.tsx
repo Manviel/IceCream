@@ -1,17 +1,19 @@
 import { Component } from 'solid-js';
 
-import { total } from '../../../services/utils';
+import { average } from '../../../services/utils';
 
 import { ChartTypes } from '../Charts';
 import { useChartSource } from '../Charts/Context';
 import ChartStrategy from '../Charts/ChartStrategy';
 
 const source = {
-  Eggs: 6.3,
-  Milk: 8.3,
-  Yogu: 19.9,
-  Chic: 26.7,
-  Salm: 30.5,
+  Whisper: 30,
+  Conversation: 60,
+  WashingMachine: 70,
+  Traffic: 80,
+  Motorcycle: 95,
+  SubwayTrain: 100,
+  LoudStereo: 110,
 };
 
 const chartID = 'chart-health';
@@ -23,14 +25,12 @@ const Health: Component = () => {
     <ChartStrategy
       strategy={ChartTypes.Bar}
       id={chartID}
-      title='Health'
-      description={`Total protein is equal to ${Math.round(
-        total(datasets)
-      )} gm`}
-      ariaLabel='Food'
+      title='Volume'
+      description={`Average noise is ${average(datasets).toFixed(2)} dB`}
+      ariaLabel='Levels'
       source={source}
       config={{
-        horizontalBars: true,
+        low: 20,
       }}
     />
   );

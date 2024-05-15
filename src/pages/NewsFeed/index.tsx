@@ -13,11 +13,9 @@ const NewsFeed: Component = () => {
       <h2 class='title'>Discover</h2>
       <h3 class='info card-sub'>Top leagues</h3>
 
-      <div class='card view rounded'>
-        <Suspense fallback={<Loader />}>
-          <Leaderboard />
-        </Suspense>
-      </div>
+      <Suspense fallback={<Loader />}>
+        <Leaderboard />
+      </Suspense>
 
       <div class='screen'>
         <Suspense fallback={<Loader />}>

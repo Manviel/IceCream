@@ -1,6 +1,6 @@
 :root {
   --c-neon: color(display-p3 0.397 0.858 0.488);
-  --s-stroke: 14px;
+  --s-stroke: 1.8rem;
 }
 
 .ct-label {
@@ -26,13 +26,13 @@
 
 .widget-line .ct-point,
 .widget-bar .ct-bar {
-  stroke-width: var(--s-stroke);
+  stroke-width: var(--s-system);
   transition: stroke-width 0.2s cubic-bezier(0.666, 0, 0.4, 1);
 }
 
 .widget-line .ct-point:hover,
 .widget-line .ct-point:focus {
-  stroke-width: 1.6rem;
+  stroke-width: var(--s-stroke);
 }
 
 .widget-bar .ct-bar {

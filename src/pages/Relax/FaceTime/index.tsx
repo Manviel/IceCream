@@ -20,6 +20,22 @@ const constraints = {
   },
 };
 
+const Notification = ({ title, description }: SegregationType) => (
+  <>
+    <div class='flex col items-center'>
+      <Toast.CloseButton class={ShapeIcon.Default}>
+        <CloseIcon />
+      </Toast.CloseButton>
+
+      <Toast.Title class='subtitle card-header'>{title}</Toast.Title>
+      <Toast.Description>{description}</Toast.Description>
+    </div>
+    <Toast.ProgressTrack class='toast content-full toast__progress-track'>
+      <Toast.ProgressFill class='toast toast__progress-fill vibrancy' />
+    </Toast.ProgressTrack>
+  </>
+)
+
 const FaceTime: Component = () => {
   const [streamStarted, setStreamStarted] = createSignal(false);
 
@@ -29,17 +45,7 @@ const FaceTime: Component = () => {
   const showToast = ({ title, description }: SegregationType) => {
     toaster.show((props) => (
       <Toast toastId={props.toastId} class='depth view toast'>
-        <div class='flex col items-center'>
-          <Toast.CloseButton class={ShapeIcon.Default}>
-            <CloseIcon />
-          </Toast.CloseButton>
-
-          <Toast.Title class='subtitle card-header'>{title}</Toast.Title>
-          <Toast.Description>{description}</Toast.Description>
-        </div>
-        <Toast.ProgressTrack class='toast content-full toast__progress-track'>
-          <Toast.ProgressFill class='toast toast__progress-fill vibrancy' />
-        </Toast.ProgressTrack>
+        <Notification title={title} description={description} />
       </Toast>
     ));
   };
