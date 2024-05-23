@@ -4,19 +4,20 @@
 
 video {
   width: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 .stream-controls {
   position: absolute;
   left: 50%;
-  bottom: var(--s-screen);
+  bottom: var(--s-dock);
   transform: translateX(-50%);
 }
 
 .stop-watch {
   position: absolute;
-  top: var(--s-screen);
-  left: var(--s-screen);
+  top: var(--s-dock);
+  left: var(--s-dock);
 }
 
 .stream-controls,
@@ -53,11 +54,34 @@ video {
   animation: hide 0.1s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
+.room {
+  grid-template-columns: 4fr 1fr;
+}
+
+.youtube {
+  position: relative;
+}
+
+.youtube iframe {
+  height: 100%;
+  border: 0;
+}
+
 @keyframes hide {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .room {
+    grid-template-columns: 1fr;
   }
 }

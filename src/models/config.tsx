@@ -6,7 +6,7 @@ export enum ActionTypes {
   Link = 'connect concise',
 }
 
-export const Category = 'USD';
+export const Category = 'laptops';
 
 export const MIN_PERCENT = -100;
 export const MAX_PERCENT = 300;

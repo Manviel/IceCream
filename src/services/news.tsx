@@ -1,5 +1,3 @@
-import { sortByAsc } from './utils';
-
 type PaginateType = {
   category: string;
 };
@@ -8,19 +6,18 @@ const headers = {
   'Content-Type': 'application/json',
 };
 
+const BASE_URL = 'https://dummyjson.com';
+
 export const getNews = async (params: PaginateType) => {
   const { category } = params;
 
-  const response = await fetch(
-    `https://api.frankfurter.app/latest?from=${category}`,
-    {
-      headers,
-    }
-  );
+  const response = await fetch(`${BASE_URL}/products/category/${category}`, {
+    headers,
+  });
 
-  const { rates } = await response.json();
+  const { products } = await response.json();
 
-  return sortByAsc(rates);
+  return products;
 };
 
 export const getQuote = async () => {
@@ -37,7 +34,7 @@ export const getQuote = async () => {
 };
 
 export const getUsers = async () => {
-  const response = await fetch(`https://dummyjson.com/users`, {
+  const response = await fetch(`${BASE_URL}/users`, {
     headers,
   });
 

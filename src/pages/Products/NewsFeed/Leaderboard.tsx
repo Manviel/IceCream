@@ -6,6 +6,8 @@ import { getNews } from '../../../services/news';
 import { useNewsStore } from '../../../services/store';
 import { commasAdapter } from '../../../services/utils';
 
+const DEAL = 10;
+
 const fetchQuery = async (category: string) => await getNews({ category });
 
 const Leaderboard: Component = () => {
@@ -29,8 +31,9 @@ const Leaderboard: Component = () => {
       <caption>Exchange 1 {data.currentRank}</caption>
       <thead class='material'>
         <tr>
-          <th>Currency</th>
+          <th>Title</th>
           <th>Value</th>
+          <th>Rating</th>
         </tr>
       </thead>
       <tbody>
@@ -44,17 +47,18 @@ const Leaderboard: Component = () => {
         ) : (
           <For each={data.news}>
             {(list) => {
-              const didGrewUp = Number(list[1]) > 1;
+              const didGrewUp = Number(list.discountPercentage) > DEAL;
+              const hasDiscount = Number(list.discountPercentage) < DEAL;
 
               return (
                 <tr>
-                  <td>{list[0]}</td>
+                  <td>{list.title}</td>
                   <td>
                     <span
                       class='chip movement widget-title items-center'
                       classList={{
                         ghost: didGrewUp,
-                        price: Number(list[1]) < 1,
+                        price: hasDiscount,
                       }}
                     >
                       <div
@@ -65,9 +69,10 @@ const Leaderboard: Component = () => {
                         <ArrowUpIcon />
                       </div>
 
-                      {commasAdapter(Number(list[1]))}
+                      {commasAdapter(Number(list.price))}
                     </span>
                   </td>
+                  <td>{list.rating}</td>
                 </tr>
               );
             }}

@@ -34,7 +34,7 @@ const Notification = ({ title, description }: SegregationType) => (
       <Toast.ProgressFill class='toast toast__progress-fill vibrancy' />
     </Toast.ProgressTrack>
   </>
-)
+);
 
 const FaceTime: Component = () => {
   const [streamStarted, setStreamStarted] = createSignal(false);
@@ -105,40 +105,53 @@ const FaceTime: Component = () => {
   });
 
   return (
-    <section class='layer view rounded flex col items-center face-time provision'>
-      <video
-        autoplay
-        class='vibrancy rounded'
-        ref={video!}
-        aria-label='Face time'
-      ></video>
+    <section class='layer os grid room items-start flex-wrap provision'>
+      <div class='face-time content-full'>
+        <video
+          autoplay
+          class='vibrancy rounded'
+          ref={video!}
+          aria-label='Face time'
+        ></video>
 
-      <StopWatch />
+        <StopWatch />
 
-      <nav
-        class='vibrancy stream-controls view flex rounded gap'
-        aria-label='Video controls'
-      >
-        <button
-          type='button'
-          class={ShapeIcon.Dark}
-          onClick={handlePlay}
-          aria-disabled={streamStarted()}
-          aria-label='Start stream'
+        <nav
+          class='vibrancy stream-controls view flex rounded gap'
+          aria-label='Video controls'
         >
-          <VideoIcon />
-        </button>
+          <button
+            type='button'
+            class={ShapeIcon.Dark}
+            onClick={handlePlay}
+            aria-disabled={streamStarted()}
+            aria-label='Start stream'
+          >
+            <VideoIcon />
+          </button>
 
-        <button
-          type='button'
-          class={ShapeIcon.Danger}
-          onClick={pauseStream}
-          aria-disabled={!streamStarted()}
-          aria-label='End stream'
-        >
-          <StopCircleIcon />
-        </button>
-      </nav>
+          <button
+            type='button'
+            class={ShapeIcon.Danger}
+            onClick={pauseStream}
+            aria-disabled={!streamStarted()}
+            aria-label='End stream'
+          >
+            <StopCircleIcon />
+          </button>
+        </nav>
+      </div>
+
+      <aside class='youtube flex content-full'>
+        <iframe
+          src='https://www.youtube.com/embed/evkIu2e5g1M?si=cVBNk9XNumOTyLpz'
+          title='YouTube video player'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+          referrerpolicy='strict-origin-when-cross-origin'
+          allowfullscreen
+          class='content-full rounded'
+        ></iframe>
+      </aside>
 
       <Portal>
         <Toast.Region>
