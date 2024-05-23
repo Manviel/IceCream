@@ -1,10 +1,10 @@
 import { For, createSignal, Component, createEffect } from 'solid-js';
 
-import ArrowUpIcon from '../../assets/icons/arrow-up.svg';
+import ArrowUpIcon from '../../../assets/icons/arrow-up.svg';
 
-import { getNews } from '../../services/news';
-import { useNewsStore } from '../../services/store';
-import { commasAdapter } from '../../services/utils';
+import { getNews } from '../../../services/news';
+import { useNewsStore } from '../../../services/store';
+import { commasAdapter } from '../../../services/utils';
 
 const fetchQuery = async (category: string) => await getNews({ category });
 

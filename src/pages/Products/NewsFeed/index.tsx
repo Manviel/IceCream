@@ -1,7 +1,7 @@
 import { Component, Suspense } from 'solid-js';
 
-import Loader from '../../components/Loader';
-import Quote from '../../components/Card/Quote';
+import Loader from '../../../components/Loader';
+import Quote from '../../../components/Card/Quote';
 
 import Leaderboard from './Leaderboard';
 

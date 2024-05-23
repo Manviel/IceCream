@@ -1,10 +1,10 @@
 import { Component } from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
-import NewsFeed from '../NewsFeed';
 
 import { Pages } from '../../models';
 
+import NewsFeed from './NewsFeed';
 import Inbox from './Inbox';
 import Stocks from './Stocks';
 import Health from './Health';
