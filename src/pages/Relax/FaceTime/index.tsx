@@ -112,6 +112,7 @@ const FaceTime: Component = () => {
           class='vibrancy rounded'
           ref={video!}
           aria-label='Face time'
+          playsinline
         ></video>
 
         <StopWatch />
@@ -142,14 +143,20 @@ const FaceTime: Component = () => {
         </nav>
       </div>
 
-      <aside class='youtube flex content-full'>
+      <aside class='youtube flex col content-full'>
+        <h4 class='card-sub'>Lean</h4>
+        <p class='term grey-light'>
+          Any component of a business enterprise that fails to directly benefit
+          a final product is superfluous.
+        </p>
+
         <iframe
           src='https://www.youtube.com/embed/evkIu2e5g1M?si=cVBNk9XNumOTyLpz'
           title='YouTube video player'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
           referrerpolicy='strict-origin-when-cross-origin'
           allowfullscreen
-          class='content-full rounded'
+          class='content-full rounded screen'
         ></iframe>
       </aside>
 
