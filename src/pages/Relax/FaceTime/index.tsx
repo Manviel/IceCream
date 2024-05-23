@@ -116,7 +116,7 @@ const FaceTime: Component = () => {
       <div class='face-time'>
         <video
           autoplay
-          class='vibrancy rounded'
+          class='vibrancy rounded content-full'
           ref={video!}
           aria-label='Face time'
           playsinline
