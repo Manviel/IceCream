@@ -76,11 +76,7 @@ video {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .flex-wrap {
-    flex-wrap: wrap;
-  }
-
+@media screen and (max-width: 1052px) {
   .room {
     grid-template-columns: 1fr;
   }

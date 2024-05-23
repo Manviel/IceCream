@@ -41,6 +41,7 @@ const FaceTime: Component = () => {
 
   let video: HTMLVideoElement;
   let interval: any;
+  let localStream: MediaStream;
 
   const showToast = ({ title, description }: SegregationType) => {
     toaster.show((props) => (
@@ -68,6 +69,7 @@ const FaceTime: Component = () => {
 
   const handleStream = (stream: MediaStream) => {
     video.srcObject = stream;
+    localStream = stream;
 
     setStreamStarted(true);
     handleWatchStart();
@@ -100,13 +102,18 @@ const FaceTime: Component = () => {
     handleWatchStop();
   };
 
+  const stopStream = () => {
+    localStream.getTracks().forEach((track) => track.stop());
+  };
+
   onCleanup(() => {
     pauseStream();
+    stopStream();
   });
 
   return (
-    <section class='layer os grid room items-start flex-wrap provision'>
-      <div class='face-time content-full'>
+    <section class='layer os grid room items-start provision'>
+      <div class='face-time'>
         <video
           autoplay
           class='vibrancy rounded'
@@ -143,7 +150,7 @@ const FaceTime: Component = () => {
         </nav>
       </div>
 
-      <aside class='youtube flex col content-full'>
+      <aside class='youtube flex col'>
         <h4 class='card-sub'>Lean</h4>
         <p class='term grey-light'>
           Any component of a business enterprise that fails to directly benefit
