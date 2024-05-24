@@ -9,14 +9,14 @@ video {
 .stream-controls {
   position: absolute;
   left: 50%;
-  bottom: var(--s-dock);
+  bottom: var(--s-medium);
   transform: translateX(-50%);
 }
 
 .stop-watch {
   position: absolute;
-  top: var(--s-dock);
-  left: var(--s-dock);
+  top: var(--s-medium);
+  left: var(--s-medium);
 }
 
 .stream-controls,
@@ -83,6 +83,6 @@ video {
 
 @media screen and (max-width: 768px) {
   video {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 2 / 3;
   }
 }

@@ -103,7 +103,7 @@ const FaceTime: Component = () => {
   };
 
   const stopStream = () => {
-    localStream.getTracks().forEach((track) => track.stop());
+    localStream?.getTracks().forEach((track) => track.stop());
   };
 
   onCleanup(() => {
