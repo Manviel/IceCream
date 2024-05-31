@@ -22,8 +22,6 @@ type QuoteType = {
 
 interface QuoteViewType extends SegregationType {}
 
-const fetchQuote = async () => await getQuote();
-
 const QuoteView: ParentComponent<QuoteViewType> = (props) => {
   const { title, description, children } = props;
 
@@ -43,7 +41,7 @@ const QuoteView: ParentComponent<QuoteViewType> = (props) => {
 };
 
 const Quote: Component = () => {
-  const [quote, { refetch }] = createResource<QuoteType>(fetchQuote);
+  const [quote, { refetch }] = createResource<QuoteType>(getQuote);
 
   return (
     <ErrorBoundary

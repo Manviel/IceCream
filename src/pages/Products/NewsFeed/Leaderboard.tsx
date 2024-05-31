@@ -8,8 +8,6 @@ import { commasAdapter } from '../../../services/utils';
 
 const DEAL = 10;
 
-const fetchQuery = async (category: string) => await getNews({ category });
-
 const Leaderboard: Component = () => {
   const [loading, setLoading] = createSignal(false);
 
@@ -17,7 +15,7 @@ const Leaderboard: Component = () => {
 
   createEffect(() => {
     if (data.news?.length === 0 && data.currentRank) {
-      fetchQuery(data.currentRank)
+      getNews({ category: data.currentRank })
         .then((entities: any) => {
           updateNews(entities);
           setLoading(false);
