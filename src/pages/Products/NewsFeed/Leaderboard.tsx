@@ -3,7 +3,7 @@ import { For, createSignal, Component, onMount } from 'solid-js';
 import ArrowUpIcon from '../../../assets/icons/arrow-up.svg';
 
 import { getNews } from '../../../services/news';
-import { useWeekStore } from '../../../services/store';
+import { useCacheStore } from '../../../services/store';
 import { commasAdapter } from '../../../services/utils';
 import { Category } from '../../../models/config';
 import { Entity } from '../../../models';
@@ -16,7 +16,7 @@ const Leaderboard: Component = () => {
   const [loading, setLoading] = createSignal(false);
   const [news, setNews] = createSignal<Entity[]>();
 
-  const { getStore, setStore } = useWeekStore();
+  const { getStore, setStore } = useCacheStore();
 
   const refetch = async () => {
     setLoading(true);
@@ -26,10 +26,11 @@ const Leaderboard: Component = () => {
 
       setNews(data);
       setStore(requestKey, data);
-      setLoading(false);
     } catch {
-      setLoading(false);
+      setNews([]);
     }
+
+    setLoading(false);
   };
 
   onMount(() => {

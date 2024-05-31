@@ -13,7 +13,7 @@ import HelpTooltip from '../Tooltip/HelpTooltip';
 import { ShapeIcon } from '../../models/theme';
 import { SegregationType } from '../../models';
 import { getQuote } from '../../services/news';
-import { useWeekStore } from '../../services/store';
+import { useCacheStore } from '../../services/store';
 
 import GoForwardIcon from '../../assets/icons/go-forward.svg';
 
@@ -48,7 +48,7 @@ const Quote: Component = () => {
   const [loading, setLoading] = createSignal(false);
   const [quote, setQuote] = createSignal<QuoteType>();
 
-  const { getStore, setStore } = useWeekStore();
+  const { getStore, setStore } = useCacheStore();
 
   const refetch = async () => {
     setLoading(true);
@@ -58,10 +58,11 @@ const Quote: Component = () => {
 
       setQuote(data);
       setStore(requestKey, data);
-      setLoading(false);
     } catch {
-      setLoading(false);
+      setQuote({ source: 'Error', text: 'Failed to load' });
     }
+
+    setLoading(false);
   };
 
   onMount(() => {

@@ -6,7 +6,7 @@ type ContextState = {
 
 const defaultState = new WeakMap();
 
-export const useWeekStore = () => {
+export const useCacheStore = () => {
   const setStore = (requestKey: ContextState, data: Entity) =>
     defaultState.set(requestKey, data);
 
