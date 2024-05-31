@@ -59,7 +59,7 @@ const Quote: Component = () => {
       setQuote(data);
       setStore(requestKey, data);
     } catch (err) {
-      console.error(err);
+      console.error('Error fetching quote:', err);
     } finally {
       setLoading(false);
     }

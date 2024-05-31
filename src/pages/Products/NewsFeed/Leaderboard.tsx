@@ -27,7 +27,7 @@ const Leaderboard: Component = () => {
       setNews(data);
       setStore(requestKey, data);
     } catch (err) {
-      console.error(err);
+      console.error('Error fetching news:', err);
     } finally {
       setLoading(false);
     }
