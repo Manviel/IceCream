@@ -46,12 +46,16 @@ const requestKey = { url: 'uselessfacts' };
 const Quote: Component = () => {
   const [quote, setQuote] = createSignal<QuoteType>();
 
-  const refetch = () => {
-    getQuote().then((data) => {
+  const refetch = async () => {
+    try {
+      const data = await getQuote();
+
       setQuote(data);
 
       requestCache.set(requestKey, data);
-    });
+    } catch {
+      requestCache.delete(requestKey);
+    }
   };
 
   onMount(() => {

@@ -11,22 +11,24 @@ const DEAL = 10;
 const Leaderboard: Component = () => {
   const [loading, setLoading] = createSignal(false);
 
-  const [data, { updateNews }] = useNewsStore();
+  const [{ news, currentRank }, { updateNews }] = useNewsStore();
 
-  createEffect(() => {
-    if (data.news?.length === 0 && data.currentRank) {
-      getNews({ category: data.currentRank })
-        .then((entities: any) => {
-          updateNews(entities);
-          setLoading(false);
-        })
-        .catch(() => setLoading(true));
+  createEffect(async () => {
+    if (news?.length === 0 && currentRank) {
+      try {
+        const entities = await getNews({ category: currentRank });
+
+        updateNews(entities);
+        setLoading(false);
+      } catch {
+        setLoading(true);
+      }
     }
   });
 
   return (
     <table class='content-full concise'>
-      <caption>Exchange 1 {data.currentRank}</caption>
+      <caption>Exchange 1 {currentRank}</caption>
       <thead class='material'>
         <tr>
           <th>Title</th>
@@ -43,7 +45,7 @@ const Leaderboard: Component = () => {
             </td>
           </tr>
         ) : (
-          <For each={data.news}>
+          <For each={news}>
             {(list) => {
               const didGrewUp = Number(list.discountPercentage) > DEAL;
               const hasDiscount = Number(list.discountPercentage) < DEAL;
