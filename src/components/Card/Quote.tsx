@@ -1,12 +1,12 @@
 import {
   Component,
-  createResource,
+  createSignal,
+  onMount,
   ErrorBoundary,
   Show,
   ParentComponent,
 } from 'solid-js';
 
-import Loader from '../Loader';
 import HelpTooltip from '../Tooltip/HelpTooltip';
 
 import { ShapeIcon } from '../../models/theme';
@@ -40,15 +40,34 @@ const QuoteView: ParentComponent<QuoteViewType> = (props) => {
   );
 };
 
+const requestCache = new WeakMap();
+const requestKey = { url: 'uselessfacts' };
+
 const Quote: Component = () => {
-  const [quote, { refetch }] = createResource<QuoteType>(getQuote);
+  const [quote, setQuote] = createSignal<QuoteType>();
+
+  const refetch = () => {
+    getQuote().then((data) => {
+      setQuote(data);
+
+      requestCache.set(requestKey, data);
+    });
+  };
+
+  onMount(() => {
+    if (requestCache.has(requestKey)) {
+      setQuote(requestCache.get(requestKey));
+
+      return;
+    }
+
+    refetch();
+  });
 
   return (
     <ErrorBoundary
       fallback={<h2 class='price view rounded'>Failed to fetch</h2>}
     >
-      {quote.loading && <Loader />}
-
       <Show when={quote()} keyed>
         {(res) => (
           <QuoteView title={res.source} description={res.text}>
