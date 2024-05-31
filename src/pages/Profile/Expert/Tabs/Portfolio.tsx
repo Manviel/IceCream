@@ -25,7 +25,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
       await navigator.clipboard.writeText(fairPriceCost().toFixed(2));
 
       setSnackbar('Copied');
-    } catch (err) {
+    } catch {
       setSnackbar('Failed to copy');
     }
   };

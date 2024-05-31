@@ -18,8 +18,6 @@ import Report, { FullNameType, UserType } from './Report';
 
 import './Privacy.css';
 
-const fetchUsers = async () => await getUsers();
-
 const useStickyNavigation = () => {
   useObserver(
     'article[id]',
@@ -40,7 +38,7 @@ const useStickyNavigation = () => {
 };
 
 const Privacy: Component = () => {
-  const [containers] = createResource<UserType[]>(fetchUsers);
+  const [containers] = createResource<UserType[]>(getUsers);
 
   createEffect(() => {
     if (containers()) useStickyNavigation();

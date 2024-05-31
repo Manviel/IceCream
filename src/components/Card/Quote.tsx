@@ -1,6 +1,7 @@
 import {
   Component,
-  createResource,
+  createSignal,
+  onMount,
   ErrorBoundary,
   Show,
   ParentComponent,
@@ -12,6 +13,7 @@ import HelpTooltip from '../Tooltip/HelpTooltip';
 import { ShapeIcon } from '../../models/theme';
 import { SegregationType } from '../../models';
 import { getQuote } from '../../services/news';
+import { useCacheStore } from '../../services/store';
 
 import GoForwardIcon from '../../assets/icons/go-forward.svg';
 
@@ -21,8 +23,6 @@ type QuoteType = {
 };
 
 interface QuoteViewType extends SegregationType {}
-
-const fetchQuote = async () => await getQuote();
 
 const QuoteView: ParentComponent<QuoteViewType> = (props) => {
   const { title, description, children } = props;
@@ -42,14 +42,46 @@ const QuoteView: ParentComponent<QuoteViewType> = (props) => {
   );
 };
 
+const requestKey = { url: 'uselessfacts' };
+
 const Quote: Component = () => {
-  const [quote, { refetch }] = createResource<QuoteType>(fetchQuote);
+  const [loading, setLoading] = createSignal(false);
+  const [quote, setQuote] = createSignal<QuoteType>();
+
+  const { getStore, setStore } = useCacheStore();
+
+  const refetch = async () => {
+    setLoading(true);
+
+    try {
+      const data = await getQuote();
+
+      setQuote(data);
+      setStore(requestKey, data);
+    } catch (err) {
+      console.error('Error fetching quote:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  onMount(() => {
+    const requestCache = getStore(requestKey);
+
+    if (requestCache) {
+      setQuote(requestCache);
+
+      return;
+    }
+
+    refetch();
+  });
 
   return (
     <ErrorBoundary
       fallback={<h2 class='price view rounded'>Failed to fetch</h2>}
     >
-      {quote.loading && <Loader />}
+      {loading() && <Loader />}
 
       <Show when={quote()} keyed>
         {(res) => (

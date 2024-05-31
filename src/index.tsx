@@ -4,7 +4,6 @@ import { lazy } from 'solid-js';
 
 import App from './App';
 
-import { NewsProvider } from './services/store';
 import { Paths } from './models';
 
 const Home = lazy(() => import('./pages/Home'));
@@ -20,29 +19,27 @@ const Forbidden = lazy(() => import('./pages/NotFound/Forbidden'));
 
 render(
   () => (
-    <NewsProvider>
-      <Router root={App}>
-        <Route path={Paths.Home} component={Home} />
+    <Router root={App}>
+      <Route path={Paths.Home} component={Home} />
 
-        <Route path={Paths.Products} component={Products} />
+      <Route path={Paths.Products} component={Products} />
 
-        <Route path={Paths.Profile} component={Profile} />
+      <Route path={Paths.Profile} component={Profile} />
 
-        <Route path={Paths.Privacy} component={Privacy} />
+      <Route path={Paths.Privacy} component={Privacy} />
 
-        <Route path={Paths.Relax} component={Relax} />
+      <Route path={Paths.Relax} component={Relax} />
 
-        <Route path={Paths.SignIn} component={SignIn} />
+      <Route path={Paths.SignIn} component={SignIn} />
 
-        <Route path={Paths.SignUp} component={SignUp} />
+      <Route path={Paths.SignUp} component={SignUp} />
 
-        <Route path={Paths.ForgetAccount} component={ForgetAccount} />
+      <Route path={Paths.ForgetAccount} component={ForgetAccount} />
 
-        <Route path={Paths.Forbidden} component={Forbidden} />
+      <Route path={Paths.Forbidden} component={Forbidden} />
 
-        <Route path='*' component={NotFound} />
-      </Router>
-    </NewsProvider>
+      <Route path='*' component={NotFound} />
+    </Router>
   ),
   document.getElementById('root') as HTMLElement
 );
