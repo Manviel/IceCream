@@ -7,11 +7,13 @@ import {
   ParentComponent,
 } from 'solid-js';
 
+import Loader from '../Loader';
 import HelpTooltip from '../Tooltip/HelpTooltip';
 
 import { ShapeIcon } from '../../models/theme';
 import { SegregationType } from '../../models';
 import { getQuote } from '../../services/news';
+import { useWeekStore } from '../../services/store';
 
 import GoForwardIcon from '../../assets/icons/go-forward.svg';
 
@@ -40,27 +42,33 @@ const QuoteView: ParentComponent<QuoteViewType> = (props) => {
   );
 };
 
-const requestCache = new WeakMap();
 const requestKey = { url: 'uselessfacts' };
 
 const Quote: Component = () => {
+  const [loading, setLoading] = createSignal(false);
   const [quote, setQuote] = createSignal<QuoteType>();
 
+  const { getStore, setStore } = useWeekStore();
+
   const refetch = async () => {
+    setLoading(true);
+
     try {
       const data = await getQuote();
 
       setQuote(data);
-
-      requestCache.set(requestKey, data);
+      setStore(requestKey, data);
+      setLoading(false);
     } catch {
-      requestCache.delete(requestKey);
+      setLoading(false);
     }
   };
 
   onMount(() => {
-    if (requestCache.has(requestKey)) {
-      setQuote(requestCache.get(requestKey));
+    const requestCache = getStore(requestKey);
+
+    if (requestCache) {
+      setQuote(requestCache);
 
       return;
     }
@@ -72,6 +80,8 @@ const Quote: Component = () => {
     <ErrorBoundary
       fallback={<h2 class='price view rounded'>Failed to fetch</h2>}
     >
+      {loading() && <Loader />}
+
       <Show when={quote()} keyed>
         {(res) => (
           <QuoteView title={res.source} description={res.text}>
