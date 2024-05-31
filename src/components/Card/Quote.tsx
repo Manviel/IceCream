@@ -58,11 +58,11 @@ const Quote: Component = () => {
 
       setQuote(data);
       setStore(requestKey, data);
-    } catch {
-      setQuote({ source: 'Error', text: 'Failed to load' });
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   onMount(() => {

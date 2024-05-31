@@ -26,11 +26,11 @@ const Leaderboard: Component = () => {
 
       setNews(data);
       setStore(requestKey, data);
-    } catch {
-      setNews([]);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   onMount(() => {
