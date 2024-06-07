@@ -241,7 +241,8 @@ a:focus-visible {
   background-color: var(--c-ring);
 }
 
-.token {
+.token,
+.superellipse:hover {
   background-color: var(--c-active);
 }
 
@@ -287,8 +288,8 @@ a:focus-visible {
   height: var(--s-entry);
 }
 
-.superellipse:hover {
-  background-color: var(--c-active);
+.content-tall {
+  height: 100%;
 }
 
 .icon {

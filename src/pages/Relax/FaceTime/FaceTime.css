@@ -44,7 +44,6 @@ video {
 }
 
 .toast__progress-fill {
-  height: 100%;
   width: var(--kb-toast-progress-fill-width);
   transition: width 250ms linear;
 }
@@ -55,15 +54,6 @@ video {
 
 .room {
   grid-template-columns: 4fr 1fr;
-}
-
-.youtube {
-  position: relative;
-}
-
-.youtube iframe {
-  height: 100%;
-  border: 0;
 }
 
 @keyframes hide {

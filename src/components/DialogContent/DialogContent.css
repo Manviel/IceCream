@@ -34,10 +34,6 @@
   max-height: calc(100% - var(--s-system));
 }
 
-.content-tall {
-  height: 100%;
-}
-
 .scrollable {
   overflow-y: auto;
   overflow-x: hidden;

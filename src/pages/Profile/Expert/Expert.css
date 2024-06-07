@@ -12,7 +12,6 @@
 
 .tour-list {
   font-size: var(--s-system);
-  background-color: var(--c-active);
   padding: 0.2rem;
   border-radius: var(--s-unit);
 }
@@ -27,6 +26,7 @@
   color: var(--c-dark);
 }
 
+.tour-list,
 .tour-list-item:hover {
   background-color: var(--c-active);
 }
