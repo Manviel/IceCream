@@ -12,3 +12,5 @@ export const ShapeIcon = {
   Danger: getVariant(VariantTypes.Danger),
   Dark: getVariant(VariantTypes.Dark),
 };
+
+export const getStack = (variant: string) => `flex col os ${variant}`;

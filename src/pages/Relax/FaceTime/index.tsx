@@ -23,16 +23,16 @@ const constraints = {
 
 const Notification = ({ title, description }: SegregationType) => (
   <>
-    <div class="flex col items-center">
+    <div class='flex col items-center'>
       <Toast.CloseButton class={ShapeIcon.Default}>
         <CloseIcon />
       </Toast.CloseButton>
 
-      <Toast.Title class="subtitle card-header">{title}</Toast.Title>
+      <Toast.Title class='subtitle card-header'>{title}</Toast.Title>
       <Toast.Description>{description}</Toast.Description>
     </div>
-    <Toast.ProgressTrack class="toast content-full toast__progress-track">
-      <Toast.ProgressFill class="toast toast__progress-fill vibrancy content-tall" />
+    <Toast.ProgressTrack class='toast content-full toast__progress-track'>
+      <Toast.ProgressFill class='toast toast__progress-fill vibrancy content-tall' />
     </Toast.ProgressTrack>
   </>
 );
@@ -46,7 +46,7 @@ const FaceTime: Component = () => {
 
   const showToast = ({ title, description }: SegregationType) => {
     toaster.show((props) => (
-      <Toast toastId={props.toastId} class="depth view toast">
+      <Toast toastId={props.toastId} class='depth view toast'>
         <Notification title={title} description={description} />
       </Toast>
     ));
@@ -113,67 +113,67 @@ const FaceTime: Component = () => {
   });
 
   return (
-    <section class="layer os grid room items-start provision">
-      <div class="face-time">
+    <section class='layer os grid room items-start provision'>
+      <div class='face-time'>
         <video
           autoplay
-          class="vibrancy rounded content-full"
+          class='vibrancy rounded content-full'
           ref={video!}
-          aria-label="Face time"
+          aria-label='Face time'
           playsinline
         ></video>
 
         <StopWatch />
 
         <nav
-          class="vibrancy stream-controls view flex rounded gap"
-          aria-label="Video controls"
+          class='vibrancy stream-controls view flex rounded gap'
+          aria-label='Video controls'
         >
           <button
-            type="button"
+            type='button'
             class={ShapeIcon.Dark}
             onClick={handlePlay}
             aria-disabled={streamStarted()}
-            aria-label="Start stream"
+            aria-label='Start stream'
           >
             <VideoIcon />
           </button>
 
           <button
-            type="button"
+            type='button'
             class={ShapeIcon.Danger}
             onClick={pauseStream}
             aria-disabled={!streamStarted()}
-            aria-label="End stream"
+            aria-label='End stream'
           >
             <StopCircleIcon />
           </button>
         </nav>
       </div>
 
-      <aside class="flex col">
-        <h4 class="card-sub">Lean</h4>
-        <p class="term grey-light">
+      <aside class='flex col widget-title'>
+        <h4 class='card-sub'>Lean</h4>
+        <p class='term grey-light'>
           Any component of a business enterprise that fails to directly benefit
           a final product is superfluous.
         </p>
 
-        <article class="box os flex justify-between items-center screen">
-          <header class="flex col widget-title">
-            <h4 class="card-sub">Wake Up</h4>
-            <p class="term grey-dark">Tomorrow</p>
+        <article class='box os flex justify-between items-center screen'>
+          <header class='flex col widget-title'>
+            <h4 class='card-sub'>Wake Up</h4>
+            <p class='term grey-dark'>Tomorrow</p>
           </header>
 
           <a
-            href="https://youtu.be/evkIu2e5g1M?si=mCS7fNgzV45wL9fm"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://youtu.be/evkIu2e5g1M?si=mCS7fNgzV45wL9fm'
+            target='_blank'
+            rel='noopener noreferrer'
             class={ShapeIcon.Default}
           >
             <div
-              role="img"
-              class="content-full content-tall"
-              aria-label="Design widgets for the Smart Stack"
+              role='img'
+              class='content-full content-tall'
+              aria-label='Design widgets for the Smart Stack'
             >
               <PlayIcon />
             </div>
@@ -183,7 +183,7 @@ const FaceTime: Component = () => {
 
       <Portal>
         <Toast.Region>
-          <Toast.List class="toast-list" />
+          <Toast.List class='toast-list' />
         </Toast.Region>
       </Portal>
     </section>

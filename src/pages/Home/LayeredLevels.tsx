@@ -1,6 +1,7 @@
 import { For, Component } from 'solid-js';
 
 import { ListItemGen } from '../../models';
+import { getStack } from '../../models/theme';
 
 const listItems: ListItemGen<string>[] = [
   {
@@ -26,7 +27,7 @@ const LayeredLevels: Component = () => {
     <ul class='flex justify-between items-start proximity flex-wrap'>
       <For each={listItems}>
         {(item) => (
-          <li class='box view rounded flex col widget-title'>
+          <li class={getStack('box')}>
             <h4 class='card-sub'>{item.label}</h4>
             <p class='term grey-dark'>{item.value}</p>
           </li>

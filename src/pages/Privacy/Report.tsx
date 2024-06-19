@@ -3,6 +3,7 @@ import { ParentComponent } from 'solid-js';
 import Card from '../../components/Card';
 
 import { IDType } from '../../models';
+import { getStack } from '../../models/theme';
 
 type AddressType = {
   address: string;
@@ -68,12 +69,12 @@ const Report: ParentComponent<ReportType> = ({ name, id, client }) => {
       <h4 class='card-sub provision'>Contacts</h4>
 
       <section class='grid products proximity users'>
-        <div class='flex col material os'>
+        <div class={getStack('material')}>
           <p class='concise'>Email</p>
           <strong class='subtitle'>{email}</strong>
         </div>
 
-        <div class='flex col ghost os'>
+        <div class={getStack('ghost')}>
           <p class='concise'>Phone</p>
           <strong class='subtitle'>{phone}</strong>
         </div>
@@ -82,12 +83,12 @@ const Report: ParentComponent<ReportType> = ({ name, id, client }) => {
       <h4 class='card-sub provision'>Experience</h4>
 
       <section class='grid products proximity users'>
-        <div class='flex col layer os'>
+        <div class={getStack('layer')}>
           <p class='concise'>{age} years old</p>
           <strong class='subtitle'>{company.title}</strong>
         </div>
 
-        <div class='flex col price os'>
+        <div class={getStack('price')}>
           <p class='concise'>{university}</p>
           <strong class='subtitle'>{company.department}</strong>
         </div>

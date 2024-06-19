@@ -121,7 +121,7 @@ const Home: Component = () => {
         </section>
       </article>
 
-      <article class='grid os-grid gap screen'>
+      <article class='grid os-grid proximity screen'>
         <Shelf
           title='Get USED TO'
           description='To talk about the process of becoming familiar with something.'

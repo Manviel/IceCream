@@ -382,7 +382,7 @@ a:focus-visible {
 
 .os,
 .lockup {
-  gap: var(--s-safe);
+  gap: 1rem;
 }
 
 .widget-title {

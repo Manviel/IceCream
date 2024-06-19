@@ -1,6 +1,7 @@
 import type { Component } from 'solid-js';
 
 import { SegregationType } from '../../models';
+import { getStack } from '../../models/theme';
 
 interface ProtoType extends SegregationType {
   hasColSpan?: boolean;
@@ -14,7 +15,7 @@ const Shelf: Component<ProtoType> = ({
   hasRowSpan = false,
 }) => (
   <div
-    class='flex col os card'
+    class={getStack('card')}
     classList={{ 'os-column': hasColSpan, 'os-row': hasRowSpan }}
   >
     <strong class='card-sub'>{title}</strong>
