@@ -6,6 +6,10 @@
   background-color: var(--c-active);
 }
 
+.users {
+  gap: var(--s-safe) 1.8rem;
+}
+
 .report-logo {
   width: 7.8rem;
   height: 7.8rem;

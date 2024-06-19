@@ -15,7 +15,7 @@ const Shelf: Component<ProtoType> = ({
 }) => (
   <div
     class='flex col os card'
-    classList={{ 'os-column': hasColSpan, 'os-row': hasRowSpan }}
+    classList={{ 'col-span-2': hasColSpan, 'os-row': hasRowSpan }}
   >
     <strong class='card-sub'>{title}</strong>
     <p class='term grey-light'>{description}</p>

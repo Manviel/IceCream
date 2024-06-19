@@ -6,10 +6,6 @@
   align-items: flex-end;
 }
 
-.production {
-  grid-column: span 2;
-}
-
 .tour-list {
   font-size: var(--s-system);
   padding: 0.2rem;

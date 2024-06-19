@@ -46,8 +46,8 @@ const Report: ParentComponent<ReportType> = ({ name, id, client }) => {
     client;
 
   return (
-    <article class='card view content-full rounded flex col lockup' id={id}>
-      <header class='flex proximity items-center'>
+    <article class='grid products card view content-full rounded users' id={id}>
+      <header class='flex proximity items-center col-span-2'>
         <figure class='flex items-center justify-center paper shape report-logo'>
           <figcaption>{getFirstLetters(name)}</figcaption>
         </figure>
@@ -58,41 +58,34 @@ const Report: ParentComponent<ReportType> = ({ name, id, client }) => {
         </div>
       </header>
 
-      <h4 class='card-sub provision'>Body measurements</h4>
+      <h4 class='card-sub provision col-span-2'>Body measurements</h4>
 
-      <section class='grid products proximity users'>
-        <Card title='Height' number={height} description='cm' />
+      <Card title='Height' number={height} description='cm' />
+      <Card title='Weight' number={weight} description='kg' />
 
-        <Card title='Weight' number={weight} description='kg' />
-      </section>
+      <h4 class='card-sub provision col-span-2'>Contacts</h4>
 
-      <h4 class='card-sub provision'>Contacts</h4>
+      <div class={getStack('material')}>
+        <p class='concise'>Email</p>
+        <strong class='subtitle'>{email}</strong>
+      </div>
 
-      <section class='grid products proximity users'>
-        <div class={getStack('material')}>
-          <p class='concise'>Email</p>
-          <strong class='subtitle'>{email}</strong>
-        </div>
+      <div class={getStack('ghost')}>
+        <p class='concise'>Phone</p>
+        <strong class='subtitle'>{phone}</strong>
+      </div>
 
-        <div class={getStack('ghost')}>
-          <p class='concise'>Phone</p>
-          <strong class='subtitle'>{phone}</strong>
-        </div>
-      </section>
+      <h4 class='card-sub provision col-span-2'>Experience</h4>
 
-      <h4 class='card-sub provision'>Experience</h4>
+      <div class={getStack('layer')}>
+        <p class='concise'>{age} years old</p>
+        <strong class='subtitle'>{company.title}</strong>
+      </div>
 
-      <section class='grid products proximity users'>
-        <div class={getStack('layer')}>
-          <p class='concise'>{age} years old</p>
-          <strong class='subtitle'>{company.title}</strong>
-        </div>
-
-        <div class={getStack('price')}>
-          <p class='concise'>{university}</p>
-          <strong class='subtitle'>{company.department}</strong>
-        </div>
-      </section>
+      <div class={getStack('price')}>
+        <p class='concise'>{university}</p>
+        <strong class='subtitle'>{company.department}</strong>
+      </div>
     </article>
   );
 };

@@ -25,7 +25,7 @@ const Home: Component = () => {
       isDark
     >
       <article class='grid home-grid proximity card rounded'>
-        <header class='flex col view os-column'>
+        <header class='flex col view col-span-2'>
           <SubTitle spot='What is Cohesion?' />
 
           <p class='info'>
@@ -76,7 +76,7 @@ const Home: Component = () => {
           </div>
         </header>
 
-        <section class='flex col card view rounded os-column'>
+        <section class='flex col card view rounded col-span-2'>
           <SubTitle spot='What is Layered Architecture?' />
 
           <p class='info'>
@@ -97,7 +97,7 @@ const Home: Component = () => {
       </article>
 
       <article class='grid home-grid proximity screen card rounded'>
-        <header class='flex col view os-column'>
+        <header class='flex col view col-span-2'>
           <SubTitle spot='The Separation of Concerns' />
 
           <p class='info'>
