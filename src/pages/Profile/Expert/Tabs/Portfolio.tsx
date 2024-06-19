@@ -3,6 +3,7 @@ import { ParentComponent, Accessor, createSignal } from 'solid-js';
 import DocCopyIcon from '../../../../assets/icons/doc-copy.svg';
 
 import { IDType } from '../../../../models';
+import { getGroup } from '../../../../models/theme';
 
 import Tooltip from '../../../../components/Tooltip';
 
@@ -36,7 +37,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
 
       {children}
 
-      <div class='flex justify-between items-end ghost os'>
+      <div class={getGroup('ghost items-end')}>
         <div class='flex col lockup' role='status'>
           <p>Fair Price (in $)</p>
           <strong class='subtitle'>{fairPriceCost().toFixed(2)}</strong>
@@ -47,7 +48,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
         </Tooltip>
       </div>
 
-      <div class='flex justify-between items-end material os'>
+      <div class={getGroup('material items-end')}>
         <div class='flex col lockup' role='status'>
           <p>Fair Price (in %)</p>
           <strong class='subtitle'>{fairPricePercent(fairPriceCost())}</strong>

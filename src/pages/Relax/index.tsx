@@ -5,6 +5,7 @@ import { SubTitle } from '../../components/Header';
 import ConnectFactory from '../../components/Link/ConnectFactory';
 
 import { ListItemGen } from '../../models';
+import { getStack } from '../../models/theme';
 
 import Breathe from './Breathe';
 import Guard from './Guard';
@@ -77,7 +78,7 @@ const Relax: Component = () => (
 
         <p class='info'>Consistency is great but efficiency is better.</p>
 
-        <aside class='flex col os material'>
+        <aside class={getStack('material')}>
           <For each={options}>
             {(option) => (
               <ConnectFactory href={option.value} text={option.label} />

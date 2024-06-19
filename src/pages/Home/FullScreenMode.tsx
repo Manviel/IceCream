@@ -3,7 +3,7 @@ import { Component, createSignal } from 'solid-js';
 import EnterScreenIcon from '../../assets/icons/enter-screen.svg';
 import ExitScreenIcon from '../../assets/icons/exit-screen.svg';
 
-import { ShapeIcon } from '../../models/theme';
+import { ShapeIcon, getGroup } from '../../models/theme';
 
 const FullScreenMode: Component = () => {
   const [hasFullscreen, setHasFullscreen] = createSignal(
@@ -23,7 +23,7 @@ const FullScreenMode: Component = () => {
   };
 
   return (
-    <article class='box os flex justify-between items-center'>
+    <article class={getGroup('box items-center')}>
       <header class='flex col widget-title'>
         <h3 class='card-sub'>Full screen</h3>
         <p class='term grey-dark'>{hasFullscreen() ? 'Active' : 'Inactive'}</p>

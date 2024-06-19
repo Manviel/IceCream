@@ -10,7 +10,7 @@ import {
 import Loader from '../Loader';
 import HelpTooltip from '../Tooltip/HelpTooltip';
 
-import { ShapeIcon } from '../../models/theme';
+import { ShapeIcon, getGroup } from '../../models/theme';
 import { SegregationType } from '../../models';
 import { getQuote } from '../../services/news';
 import { useCacheStore } from '../../services/store';
@@ -29,7 +29,7 @@ const QuoteView: ParentComponent<QuoteViewType> = (props) => {
 
   return (
     <section class='card view rounded'>
-      <div class='flex justify-between items-center os layer'>
+      <div class={getGroup('layer items-center')}>
         <blockquote class='flex col gap'>
           <strong class='subtitle'>{title}</strong>
         </blockquote>

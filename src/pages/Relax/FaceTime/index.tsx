@@ -7,7 +7,7 @@ import StopCircleIcon from '../../../assets/icons/stop-circle.svg';
 import CloseIcon from '../../../assets/icons/close.svg';
 import PlayIcon from '../../../assets/icons/play-fill.svg';
 
-import { ShapeIcon } from '../../../models/theme';
+import { ShapeIcon, getGroup } from '../../../models/theme';
 import { SegregationType } from '../../../models';
 
 import { StopWatch, setTimer } from './StopWatch';
@@ -158,7 +158,7 @@ const FaceTime: Component = () => {
           a final product is superfluous.
         </p>
 
-        <article class='box os flex justify-between items-center screen'>
+        <article class={getGroup('box items-center screen')}>
           <header class='flex col widget-title'>
             <h4 class='card-sub'>Wake Up</h4>
             <p class='term grey-dark'>Tomorrow</p>

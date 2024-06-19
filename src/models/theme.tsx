@@ -14,3 +14,6 @@ export const ShapeIcon = {
 };
 
 export const getStack = (variant: string) => `flex col os ${variant}`;
+
+export const getGroup = (variant: string) =>
+  `flex os justify-between ${variant}`;

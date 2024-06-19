@@ -8,7 +8,7 @@ import Field from '../../../components/Field';
 import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
 import { ActionTypes } from '../../../models/config';
-import { ShapeIcon } from '../../../models/theme';
+import { ShapeIcon, getStack } from '../../../models/theme';
 import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
 
 import Details from './Details';
@@ -121,7 +121,7 @@ const Notes: Component = () => {
         tabIndex={0}
         role='log'
       >
-        <ul class='flex col os material'>
+        <ul class={getStack('material')}>
           <Show when={!transactions()?.length}>
             <li>Your list is empty.</li>
           </Show>
