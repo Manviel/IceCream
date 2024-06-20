@@ -41,7 +41,7 @@ render(
 
       <Route path={Paths.Bag} component={Bag} />
 
-      <Route path="*" component={NotFound} />
+      <Route path='*' component={NotFound} />
     </Router>
   ),
   document.getElementById('root') as HTMLElement
