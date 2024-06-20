@@ -1,16 +1,12 @@
 import { Entity } from '../models';
 
-type ContextState = {
-  url: string;
-};
-
 const defaultState = new WeakMap();
 
 export const useCacheStore = () => {
-  const setStore = (requestKey: ContextState, data: Entity) =>
+  const setStore = (requestKey: WeakKey, data: Entity) =>
     defaultState.set(requestKey, data);
 
-  const getStore = (requestKey: ContextState) => {
+  const getStore = (requestKey: WeakKey) => {
     if (defaultState.has(requestKey)) {
       return defaultState.get(requestKey);
     }
