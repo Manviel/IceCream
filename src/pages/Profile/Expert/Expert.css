@@ -80,10 +80,6 @@
   font-weight: bold;
 }
 
-.danger-grow > * {
-  flex-grow: 1;
-}
-
 .alice {
   background-color: var(--c-lamp);
 }

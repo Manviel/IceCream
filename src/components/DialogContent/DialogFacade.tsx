@@ -3,7 +3,6 @@ import { JSX } from 'solid-js/jsx-runtime';
 import { Dialog } from '@kobalte/core/dialog';
 
 import { SegregationType } from '../../models';
-import { ActionTypes } from '../../models/config';
 import { ShapeIcon } from '../../models/theme';
 
 import CloseIcon from '../../assets/icons/close.svg';
@@ -11,7 +10,7 @@ import CloseIcon from '../../assets/icons/close.svg';
 import DialogContent, { ActionSheetType } from '.';
 
 interface DialogFacadeType extends SegregationType, ActionSheetType {
-  closingName: string;
+  closingActions?: JSX.Element;
   triggerClassName: string;
   triggerContent: JSX.Element;
   toggleActionSheet?: () => void;
@@ -20,7 +19,7 @@ interface DialogFacadeType extends SegregationType, ActionSheetType {
 const DialogFacade: ParentComponent<DialogFacadeType> = ({
   title,
   description,
-  closingName,
+  closingActions,
   children,
   triggerContent,
   triggerClassName,
@@ -55,14 +54,9 @@ const DialogFacade: ParentComponent<DialogFacadeType> = ({
 
           {children}
 
-          <Dialog.CloseButton
-            type='button'
-            class={ActionTypes.Secondary}
-            classList={{ provision: true }}
-            aria-label={closingName}
-          >
-            {closingName}
-          </Dialog.CloseButton>
+          <div class='flex gap justify-between closing-actions'>
+            {closingActions}
+          </div>
         </DialogContent>
       </Dialog.Portal>
     </Dialog>

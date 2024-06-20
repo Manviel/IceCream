@@ -39,6 +39,14 @@
   overflow-x: hidden;
 }
 
+.closing-actions {
+  padding-top: 0.4rem;
+}
+
+.closing-actions > * {
+  flex-grow: 1;
+}
+
 @keyframes alert-enter {
   0% {
     opacity: 0.01;

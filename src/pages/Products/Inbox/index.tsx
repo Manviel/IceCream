@@ -29,7 +29,11 @@ const Inbox: Component = () => {
     <DialogFacade
       title='Abstract'
       description='This helps the user to focus on what the object does, rather than how it performs.'
-      closingName='Go back'
+      closingActions={
+        <A href={Paths.Privacy} class={ActionTypes.Contained}>
+          Go to Policy
+        </A>
+      }
       triggerContent={
         <>
           <h3 class='card-sub'>Inbox</h3>
@@ -45,10 +49,6 @@ const Inbox: Component = () => {
       <p class='info'>
         Average price of a base iPhone is {average(datasets).toFixed(2)} UAH.
       </p>
-
-      <A href={Paths.Privacy} class={ActionTypes.Contained}>
-        Go to Policy
-      </A>
     </DialogFacade>
   );
 };

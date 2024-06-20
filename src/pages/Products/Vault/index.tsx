@@ -31,7 +31,6 @@ const Vault: Component = () => {
     <DialogFacade
       title='I want multiply'
       description='Making a deposit for 12 months.'
-      closingName='Apply'
       triggerContent={
         <>
           <h3 class='card-sub'>Vault</h3>

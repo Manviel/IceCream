@@ -72,7 +72,25 @@ const Notes: Component = () => {
     <DialogFacade
       title='Notes'
       description='Activity of transactions.'
-      closingName='Go back'
+      closingActions={
+        <>
+          <button
+            type='button'
+            onClick={handleClear}
+            class={ActionTypes.Danger}
+          >
+            Clear All
+          </button>
+
+          <button
+            type='button'
+            onClick={handleSubmit}
+            class={ActionTypes.Contained}
+          >
+            Add Note
+          </button>
+        </>
+      }
       triggerContent={
         <HelpTooltip name='Notes'>
           <LineDecreaseIcon />
@@ -83,44 +101,24 @@ const Notes: Component = () => {
       childClassName='bottom-sheet card'
       toggleActionSheet={toggleActionSheet}
     >
-      <form onSubmit={handleSubmit}>
-        <Field
-          type='text'
-          name='save-as'
-          label='Save ticker as'
-          value={ticker()}
-          onChange={handleTickerChange}
-          required
-        />
+      <Field
+        type='text'
+        name='save-as'
+        label='Save ticker as'
+        value={ticker()}
+        onChange={handleTickerChange}
+        required
+      />
 
-        <NumberField
-          name='price'
-          label='Fair Price'
-          value={price()}
-          onChange={handlePriceChange}
-          required
-        />
+      <NumberField
+        name='price'
+        label='Fair Price'
+        value={price()}
+        onChange={handlePriceChange}
+        required
+      />
 
-        <div class='flex justify-between gap danger-grow'>
-          <button
-            type='button'
-            onClick={handleClear}
-            class={ActionTypes.Danger}
-          >
-            Clear All
-          </button>
-
-          <button type='submit' class={ActionTypes.Contained}>
-            Add Note
-          </button>
-        </div>
-      </form>
-
-      <section
-        class='scrollable provision content-tall'
-        tabIndex={0}
-        role='log'
-      >
+      <section class='scrollable content-tall' tabIndex={0} role='log'>
         <ul class={getStack('material')}>
           <Show when={!transactions()?.length}>
             <li>Your list is empty.</li>
