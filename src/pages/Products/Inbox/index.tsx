@@ -40,7 +40,7 @@ const Inbox: Component = () => {
           </div>
         </>
       }
-      triggerClassName='view card rounded flex col items-start justify-between widget-title'
+      triggerClassName='view card rounded flex col items-start justify-between tab'
     >
       <p class='info'>
         Average price of a base iPhone is {average(datasets).toFixed(2)} UAH.

@@ -52,7 +52,7 @@ const Report: ParentComponent<ReportType> = ({ name, id, client }) => {
           <figcaption>{getFirstLetters(name)}</figcaption>
         </figure>
 
-        <div class='flex col widget-title'>
+        <div class='flex col tab'>
           <h3 class='subtitle'>{name}</h3>
           <p class='term grey-light'>{address.city}</p>
         </div>

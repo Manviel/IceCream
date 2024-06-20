@@ -34,7 +34,7 @@ const ChartStrategy: Component<ChartStrategyType> = (props) => {
       classList={{ box: isDark, card: !isDark }}
       aria-label={ariaLabel}
     >
-      <header class='view flex col widget-title'>
+      <header class='view flex col tab'>
         <h3 class='card-sub'>{title}</h3>
         <p
           class='term'

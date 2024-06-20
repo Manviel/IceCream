@@ -73,7 +73,7 @@ const Leaderboard: Component = () => {
                   <td>{list.title}</td>
                   <td>
                     <span
-                      class='chip movement widget-title items-center'
+                      class='chip movement tab items-center'
                       classList={{
                         ghost: didGrewUp,
                         price: hasDiscount,

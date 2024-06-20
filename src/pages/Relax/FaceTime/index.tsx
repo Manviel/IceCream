@@ -151,7 +151,7 @@ const FaceTime: Component = () => {
         </nav>
       </div>
 
-      <aside class='flex col widget-title'>
+      <aside class='flex col tab'>
         <h4 class='card-sub'>Lean</h4>
         <p class='term grey-light'>
           Any component of a business enterprise that fails to directly benefit
@@ -159,7 +159,7 @@ const FaceTime: Component = () => {
         </p>
 
         <article class={getGroup('box items-center screen')}>
-          <header class='flex col widget-title'>
+          <header class='flex col tab'>
             <h4 class='card-sub'>Wake Up</h4>
             <p class='term grey-dark'>Tomorrow</p>
           </header>

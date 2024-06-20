@@ -11,7 +11,7 @@ const Card: Component<CardType> = ({ number, description, title }) => (
   <div class={getStack('box')}>
     <h4 class='concise card-sup'>{title}</h4>
 
-    <strong class='flex card-text widget-title'>
+    <strong class='flex card-text tab'>
       {number}
       <span class='concise grey-dark'>{description}</span>
     </strong>

@@ -24,7 +24,7 @@ const Expert: Component = () => {
   return (
     <section class='material edge'>
       <Tabs defaultValue={GrowthTab.value}>
-        <Tabs.List class='tour-list flex items-start widget-title'>
+        <Tabs.List class='tour-list flex items-start tab'>
           <For each={listItems}>
             {(item) => (
               <Tabs.Trigger

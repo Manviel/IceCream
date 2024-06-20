@@ -47,7 +47,7 @@ const Vault: Component = () => {
           </div>
         </>
       }
-      triggerClassName='view box rounded flex col items-start widget-title'
+      triggerClassName='view box rounded flex col items-start tab'
     >
       <output name='profit' for='budget' class='sum'>
         Profit: {commasAdapter(income())}
