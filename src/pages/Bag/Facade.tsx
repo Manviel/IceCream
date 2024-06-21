@@ -1,14 +1,19 @@
-export class ProductPageFacade {
-  constructor(product, priceCalculator) {
-    this.product = product;
-    this.priceCalculator = priceCalculator;
-  }
+import { JSX } from 'solid-js/jsx-runtime';
 
-  getProductDetails() {
+import { PriceCalculatorAdapter } from './Adapter';
+import { IProductComponent } from './Composite';
+
+export class ProductPageFacade {
+  constructor(
+    private product: IProductComponent,
+    private priceCalculator: PriceCalculatorAdapter
+  ) {}
+
+  getProductDetails(): JSX.Element {
     return this.product.display();
   }
 
-  calculatePrice(selectedOptions) {
+  calculatePrice(selectedOptions: Record<string, number>): number {
     return this.priceCalculator.getPrice(this.product, selectedOptions);
   }
 }

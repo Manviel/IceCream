@@ -8,11 +8,18 @@ import { ProductComponent, CompositeProduct } from './Composite';
 import { withDiscount } from './Decorator';
 import { LegacyPriceCalculator, PriceCalculatorAdapter } from './Adapter';
 import { ProductPageFacade } from './Facade';
-import { ListProductView, GridProductView, OptionSelector } from './Bridge';
+import {
+  ListProductView,
+  GridProductView,
+  OptionSelector,
+  OptionType,
+  NumericOption,
+  TextOption,
+} from './Bridge';
 
 const Bag: Component = () => {
   const [selectedOptions, setSelectedOptions] = createSignal({});
-  const [viewType, setViewType] = createSignal('list');
+  const [viewType, setViewType] = createSignal<'list' | 'grid'>('list');
 
   const baseLaptop = new ProductComponent('Base Laptop', 1000);
   const ram = new ProductComponent('16GB RAM', 100);
@@ -38,11 +45,11 @@ const Bag: Component = () => {
     productFacade.calculatePrice(selectedOptions())
   );
 
-  const productOptions = {
-    RAM: [4, 8, 16, 32],
-    Storage: [256, 512, 1024],
-    CPU: ['i3', 'i5', 'i7'],
-  };
+  const productOptions: OptionType[] = [
+    NumericOption('RAM', [4, 8, 16, 32]),
+    NumericOption('Storage', [256, 512, 1024]),
+    TextOption('CPU', ['i3', 'i5', 'i7']),
+  ];
 
   return (
     <PageDecorator headline={Pages.Bag} subtitle='Endless potential'>

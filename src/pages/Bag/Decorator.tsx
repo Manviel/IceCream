@@ -1,10 +1,17 @@
-export function withDiscount(WrappedComponent, discountPercent) {
+import { JSX } from 'solid-js/jsx-runtime';
+
+import { IProductComponent } from './Composite';
+
+export function withDiscount(
+  WrappedComponent: IProductComponent,
+  discountPercent: number
+): IProductComponent {
   return {
     ...WrappedComponent,
-    getPrice() {
+    getPrice(): number {
       return WrappedComponent.getPrice() * (1 - discountPercent);
     },
-    display() {
+    display(): JSX.Element {
       return (
         <div>
           {WrappedComponent.display()}

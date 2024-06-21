@@ -1,16 +1,27 @@
 import { For } from 'solid-js';
+import { JSX } from 'solid-js/jsx-runtime';
 
-export class ProductComponent {
-  constructor(name: string, price: number) {
+export interface IProductComponent {
+  name: string;
+  getPrice(): number;
+  display(): JSX.Element;
+}
+
+interface ICompositeProduct extends IProductComponent {
+  add(component: IProductComponent): void;
+}
+
+export class ProductComponent implements IProductComponent {
+  constructor(public name: string, private price: number) {
     this.name = name;
     this.price = price;
   }
 
-  getPrice() {
+  getPrice(): number {
     return this.price;
   }
 
-  display() {
+  display(): JSX.Element {
     return (
       <div>
         {this.name}: ${this.price}
@@ -19,21 +30,20 @@ export class ProductComponent {
   }
 }
 
-export class CompositeProduct extends ProductComponent {
-  constructor(name: string) {
-    super(name, 0);
-    this.children = [];
-  }
+export class CompositeProduct implements ICompositeProduct {
+  private children: IProductComponent[] = [];
 
-  add(component) {
+  constructor(public name: string) {}
+
+  add(component: IProductComponent): void {
     this.children.push(component);
   }
 
-  getPrice() {
+  getPrice(): number {
     return this.children.reduce((sum, child) => sum + child.getPrice(), 0);
   }
 
-  display() {
+  display(): JSX.Element {
     return (
       <div>
         {this.name}
