@@ -12,14 +12,13 @@ import {
   Tiers,
 } from './Adapter';
 import { ProductPageFacade } from './Facade';
+import { ListProductView, GridProductView } from './Bridge';
 import {
-  ListProductView,
-  GridProductView,
   OptionSelector,
   OptionType,
   NumericOption,
   TextOption,
-} from './Bridge';
+} from './Strategy';
 
 enum Scenes {
   List = 'list',
