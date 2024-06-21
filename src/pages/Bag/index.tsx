@@ -18,7 +18,9 @@ import {
 } from './Bridge';
 
 const Bag: Component = () => {
-  const [selectedOptions, setSelectedOptions] = createSignal({});
+  const [selectedOptions, setSelectedOptions] = createSignal<
+    Record<string, number>
+  >({});
   const [viewType, setViewType] = createSignal<'list' | 'grid'>('list');
 
   const baseLaptop = new ProductComponent('Base Laptop', 1000);
@@ -51,11 +53,12 @@ const Bag: Component = () => {
     TextOption('CPU', ['i3', 'i5', 'i7']),
   ];
 
+  const handleViewChange = () =>
+    setViewType((v) => (v === 'list' ? 'grid' : 'list'));
+
   return (
     <PageDecorator headline={Pages.Bag} subtitle='Endless potential'>
-      <button
-        onClick={() => setViewType((v) => (v === 'list' ? 'grid' : 'list'))}
-      >
+      <button type='button' onClick={handleViewChange}>
         Toggle View
       </button>
 
@@ -74,7 +77,7 @@ const Bag: Component = () => {
         onSelect={setSelectedOptions}
       />
 
-      <div>Total Price: ${totalPrice().toFixed(2)}</div>
+      <h4>Total Price: ${totalPrice().toFixed(2)}</h4>
     </PageDecorator>
   );
 };

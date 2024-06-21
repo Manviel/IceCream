@@ -23,9 +23,9 @@ export class ProductComponent implements IProductComponent {
 
   display(): JSX.Element {
     return (
-      <div>
+      <p>
         {this.name}: ${this.price}
-      </div>
+      </p>
     );
   }
 }
@@ -45,10 +45,10 @@ export class CompositeProduct implements ICompositeProduct {
 
   display(): JSX.Element {
     return (
-      <div>
-        {this.name}
+      <article>
+        <h3>{this.name}</h3>
         <For each={this.children}>{(child) => child.display()}</For>
-      </div>
+      </article>
     );
   }
 }

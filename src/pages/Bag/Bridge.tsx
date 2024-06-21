@@ -72,8 +72,8 @@ export const OptionSelector: Component<OptionSelectorProps> = (props) => {
   };
 
   return (
-    <div>
-      <h3>Customize Your Laptop</h3>
+    <fieldset>
+      <legend>Customize Your Laptop</legend>
       <For each={props.options}>
         {(optionType) => (
           <div>
@@ -82,6 +82,6 @@ export const OptionSelector: Component<OptionSelectorProps> = (props) => {
           </div>
         )}
       </For>
-    </div>
+    </fieldset>
   );
 };

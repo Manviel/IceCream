@@ -1,10 +1,8 @@
 import { IProductComponent } from './Composite';
 
 export class LegacyPriceCalculator {
-  calculatePrice(basePrice: number, options: Record<string, number>): number {
-    return (
-      basePrice + Object.values(options).reduce((sum, value) => sum + value, 0)
-    );
+  calculatePrice(basePrice: number, options: { optionPrices: number }): number {
+    return basePrice + options.optionPrices;
   }
 }
 
@@ -16,6 +14,21 @@ export class PriceCalculatorAdapter {
     selectedOptions: Record<string, number>
   ): number {
     const basePrice = product.getPrice();
-    return this.legacyCalculator.calculatePrice(basePrice, selectedOptions);
+
+    const optionPrices = Object.entries(selectedOptions).reduce(
+      (sum, [key, value]) => {
+        if (typeof value === 'number') {
+          return sum + value;
+        } else if (key === 'CPU') {
+          // Add a price for CPU options
+          const cpuPrices = { i3: 0, i5: 100, i7: 200 };
+          return sum + (cpuPrices[value as keyof typeof cpuPrices] || 0);
+        }
+        return sum;
+      },
+      0
+    );
+
+    return this.legacyCalculator.calculatePrice(basePrice, { optionPrices });
   }
 }
