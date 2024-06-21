@@ -3,6 +3,8 @@ import { Component } from 'solid-js';
 import PageDecorator from '../../components/PageDecorator';
 
 import { Pages } from '../../models';
+import { ActionTypes } from '../../models/config';
+import { getStack } from '../../models/theme';
 
 import { ProductComponent, CompositeProduct } from './Composite';
 import { withDiscount } from './Decorator';
@@ -19,6 +21,8 @@ import {
   NumericOption,
   TextOption,
 } from './Strategy';
+
+import './Bag.css';
 
 enum Scenes {
   List = 'list',
@@ -66,26 +70,39 @@ const Bag: Component = () => {
 
   return (
     <PageDecorator headline={Pages.Bag} subtitle='Endless potential'>
-      <button type='button' onClick={handleViewChange}>
-        Toggle View
-      </button>
+      <div class='grid products proximity bag'>
+        <Show
+          when={viewType() === Scenes.List}
+          fallback={
+            <GridProductView
+              implementation={productFacade.getProductDetails()}
+            />
+          }
+        >
+          <ListProductView implementation={productFacade.getProductDetails()} />
+        </Show>
 
-      <Show
-        when={viewType() === Scenes.List}
-        fallback={
-          <GridProductView implementation={productFacade.getProductDetails()} />
-        }
-      >
-        <ListProductView implementation={productFacade.getProductDetails()} />
-      </Show>
+        <section class='flex col proximity'>
+          <button
+            type='button'
+            onClick={handleViewChange}
+            class={ActionTypes.Secondary}
+          >
+            Toggle View
+          </button>
 
-      <OptionSelector
-        options={productOptions}
-        selectedOptions={selectedOptions()}
-        onSelect={setSelectedOptions}
-      />
+          <OptionSelector
+            options={productOptions}
+            selectedOptions={selectedOptions()}
+            onSelect={setSelectedOptions}
+          />
 
-      <h4>Total Price: ${totalPrice().toFixed(2)}</h4>
+          <div class={getStack('material')}>
+            <p class='concise'>Total Price:</p>
+            <h4 class='subtitle'>${totalPrice().toFixed(2)}</h4>
+          </div>
+        </section>
+      </div>
     </PageDecorator>
   );
 };

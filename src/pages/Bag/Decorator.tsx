@@ -2,6 +2,8 @@ import { JSX } from 'solid-js/jsx-runtime';
 
 import { getStack } from '../../models/theme';
 
+import { getStack } from '../../models/theme';
+
 import { IProductComponent } from './Composite';
 
 export function withDiscount(
@@ -19,8 +21,8 @@ export function withDiscount(
           {WrappedComponent.display()}
 
           <div class={getStack('price')}>
-            <p class="concise">Discounted Price:</p>
-            <strong class="subtitle">${this.getPrice().toFixed(2)}</strong>
+            <p class='concise'>Discounted Price:</p>
+            <strong class='subtitle'>${this.getPrice().toFixed(2)}</strong>
           </div>
         </>
       );
