@@ -53,9 +53,10 @@ export const OptionSelector: Component<OptionSelectorProps> = (props) => {
   const { selectedOptions, onSelect, options } = props;
 
   const handleChange = (name: string, value: string | number) => {
-    const newOptions = { ...selectedOptions, [name]: value };
-
-    onSelect(newOptions);
+    onSelect({
+      ...selectedOptions,
+      [name]: value,
+    });
   };
 
   return (
