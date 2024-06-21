@@ -1,0 +1,13 @@
+fieldset {
+  border: 0;
+}
+
+.grid-item {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (max-width: 768px) {
+  .bag {
+    grid-template-columns: 1fr;
+  }
+}

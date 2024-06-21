@@ -9,18 +9,22 @@ const ProductView: Component<ProductViewProps> = (props) => {
   return props.implementation;
 };
 
-export const ListProductView: Component<ProductViewProps> = (props) => {
+export const ListProductView: Component<ProductViewProps> = ({
+  implementation,
+}) => {
   return (
-    <div class='line-item'>
-      <ProductView implementation={props.implementation} />
-    </div>
+    <section class='flex col line-item'>
+      <ProductView implementation={implementation} />
+    </section>
   );
 };
 
-export const GridProductView: Component<ProductViewProps> = (props) => {
+export const GridProductView: Component<ProductViewProps> = ({
+  implementation,
+}) => {
   return (
-    <div class='grid-item'>
-      <ProductView implementation={props.implementation} />
-    </div>
+    <section class='grid gap items-start grid-item'>
+      <ProductView implementation={implementation} />
+    </section>
   );
 };
