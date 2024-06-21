@@ -1,5 +1,11 @@
 import { IProductComponent } from './Composite';
 
+export enum Tiers {
+  Entry = 'i3',
+  Mid = 'i5',
+  High = 'i7',
+}
+
 export class LegacyPriceCalculator {
   calculatePrice(basePrice: number, options: { optionPrices: number }): number {
     return basePrice + options.optionPrices;
@@ -20,8 +26,12 @@ export class PriceCalculatorAdapter {
         if (typeof value === 'number') {
           return sum + value;
         } else if (key === 'CPU') {
-          // Add a price for CPU options
-          const cpuPrices = { i3: 0, i5: 100, i7: 200 };
+          const cpuPrices = {
+            [Tiers.Entry]: 0,
+            [Tiers.Mid]: 100,
+            [Tiers.High]: 200,
+          };
+
           return sum + (cpuPrices[value as keyof typeof cpuPrices] || 0);
         }
         return sum;

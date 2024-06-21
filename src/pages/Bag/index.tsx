@@ -6,7 +6,11 @@ import { Pages } from '../../models';
 
 import { ProductComponent, CompositeProduct } from './Composite';
 import { withDiscount } from './Decorator';
-import { LegacyPriceCalculator, PriceCalculatorAdapter } from './Adapter';
+import {
+  LegacyPriceCalculator,
+  PriceCalculatorAdapter,
+  Tiers,
+} from './Adapter';
 import { ProductPageFacade } from './Facade';
 import {
   ListProductView,
@@ -17,11 +21,16 @@ import {
   TextOption,
 } from './Bridge';
 
+enum Scenes {
+  List = 'list',
+  Grid = 'grid',
+}
+
 const Bag: Component = () => {
   const [selectedOptions, setSelectedOptions] = createSignal<
     Record<string, number>
   >({});
-  const [viewType, setViewType] = createSignal<'list' | 'grid'>('list');
+  const [viewType, setViewType] = createSignal<Scenes>(Scenes.List);
 
   const baseLaptop = new ProductComponent('Base Laptop', 1000);
   const ram = new ProductComponent('16GB RAM', 100);
@@ -50,11 +59,11 @@ const Bag: Component = () => {
   const productOptions: OptionType[] = [
     NumericOption('RAM', [4, 8, 16, 32]),
     NumericOption('Storage', [256, 512, 1024]),
-    TextOption('CPU', ['i3', 'i5', 'i7']),
+    TextOption('CPU', [Tiers.Entry, Tiers.Mid, Tiers.High]),
   ];
 
   const handleViewChange = () =>
-    setViewType((v) => (v === 'list' ? 'grid' : 'list'));
+    setViewType((v) => (v === Scenes.List ? Scenes.Grid : Scenes.List));
 
   return (
     <PageDecorator headline={Pages.Bag} subtitle='Endless potential'>
@@ -63,7 +72,7 @@ const Bag: Component = () => {
       </button>
 
       <Show
-        when={viewType() === 'list'}
+        when={viewType() === Scenes.List}
         fallback={
           <GridProductView implementation={productFacade.getProductDetails()} />
         }
