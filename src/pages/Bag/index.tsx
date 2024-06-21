@@ -1,10 +1,12 @@
 import { Component, createSignal, createMemo, Show } from 'solid-js';
+import { createStore } from 'solid-js/store';
 
 import PageDecorator from '../../components/PageDecorator';
 
+import LayersDownIcon from '../../assets/icons/layers-down.svg';
+
 import { Pages } from '../../models';
-import { ActionTypes } from '../../models/config';
-import { getStack } from '../../models/theme';
+import { ShapeIcon, getStack } from '../../models/theme';
 
 import { ProductComponent, CompositeProduct } from './Composite';
 import { withDiscount } from './Decorator';
@@ -30,9 +32,7 @@ enum Scenes {
 }
 
 const Bag: Component = () => {
-  const [selectedOptions, setSelectedOptions] = createSignal<
-    Record<string, number>
-  >({});
+  const [selectedOptions, setSelectedOptions] = createStore({});
   const [viewType, setViewType] = createSignal<Scenes>(Scenes.List);
 
   const baseLaptop = new ProductComponent('Base Laptop', 1000);
@@ -56,7 +56,7 @@ const Bag: Component = () => {
   );
 
   const totalPrice = createMemo(() =>
-    productFacade.calculatePrice(selectedOptions())
+    productFacade.calculatePrice(selectedOptions)
   );
 
   const productOptions: OptionType[] = [
@@ -82,22 +82,24 @@ const Bag: Component = () => {
           <ListProductView implementation={productFacade.getProductDetails()} />
         </Show>
 
-        <section class='flex col proximity'>
+        <section class='flex col proximity items-start'>
           <button
             type='button'
             onClick={handleViewChange}
-            class={ActionTypes.Secondary}
+            class={ShapeIcon.Default}
+            aria-label='Toggle View'
+            aria-pressed={viewType() === Scenes.Grid}
           >
-            Toggle View
+            <LayersDownIcon />
           </button>
 
           <OptionSelector
             options={productOptions}
-            selectedOptions={selectedOptions()}
+            selectedOptions={selectedOptions}
             onSelect={setSelectedOptions}
           />
 
-          <div class={getStack('material')}>
+          <div class={getStack('material content-full')}>
             <p class='concise'>Total Price:</p>
             <h4 class='subtitle'>${totalPrice().toFixed(2)}</h4>
           </div>
