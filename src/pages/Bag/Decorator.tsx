@@ -13,10 +13,10 @@ export function withDiscount(
     },
     display(): JSX.Element {
       return (
-        <div>
+        <section>
           {WrappedComponent.display()}
-          <div>Discounted Price: ${this.getPrice().toFixed(2)}</div>
-        </div>
+          <p>Discounted Price: ${this.getPrice().toFixed(2)}</p>
+        </section>
       );
     },
   };
