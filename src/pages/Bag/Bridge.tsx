@@ -1,18 +1,37 @@
-import { For } from 'solid-js';
+import { For, Component } from 'solid-js';
+import { JSX } from 'solid-js/jsx-runtime';
 
-const ProductView = (props) => {
+type ProductViewProps = {
+  implementation: JSX.Element;
+};
+
+export type OptionType = {
+  name: string;
+  values: (string | number)[];
+  render: (props: {
+    onChange: (name: string, value: string | number) => void;
+  }) => JSX.Element;
+};
+
+type OptionSelectorProps = {
+  options: OptionType[];
+  selectedOptions: Record<string, string | number>;
+  onSelect: (newOptions: Record<string, string | number>) => void;
+};
+
+const ProductView: Component<ProductViewProps> = (props) => {
   return props.implementation;
 };
 
-export const ListProductView = (props) => {
+export const ListProductView: Component<ProductViewProps> = (props) => {
   return (
-    <li>
+    <div class='line-item'>
       <ProductView implementation={props.implementation} />
-    </li>
+    </div>
   );
 };
 
-export const GridProductView = (props) => {
+export const GridProductView: Component<ProductViewProps> = (props) => {
   return (
     <div class='grid-item'>
       <ProductView implementation={props.implementation} />
@@ -20,61 +39,42 @@ export const GridProductView = (props) => {
   );
 };
 
-class OptionType {
-  constructor(name, values) {
-    this.name = name;
-    this.values = values;
-  }
+export const NumericOption = (name: string, values: number[]): OptionType => ({
+  name,
+  values,
+  render: (props) => (
+    <select
+      onChange={(e) => props.onChange(name, Number(e.currentTarget.value))}
+    >
+      <For each={values}>
+        {(value) => <option value={value}>{value}</option>}
+      </For>
+    </select>
+  ),
+});
 
-  render(props) {
-    // To be implemented by subclasses
-  }
-}
+export const TextOption = (name: string, values: string[]): OptionType => ({
+  name,
+  values,
+  render: (props) => (
+    <select onChange={(e) => props.onChange(name, e.currentTarget.value)}>
+      <For each={values}>
+        {(value) => <option value={value}>{value}</option>}
+      </For>
+    </select>
+  ),
+});
 
-// Concrete option types
-class NumericOption extends OptionType {
-  render(props) {
-    return (
-      <select
-        onChange={(e) => props.onChange(this.name, Number(e.target.value))}
-      >
-        <For each={this.values}>
-          {(value) => <option value={value}>{value}</option>}
-        </For>
-      </select>
-    );
-  }
-}
-
-class TextOption extends OptionType {
-  render(props) {
-    return (
-      <select onChange={(e) => props.onChange(this.name, e.target.value)}>
-        <For each={this.values}>
-          {(value) => <option value={value}>{value}</option>}
-        </For>
-      </select>
-    );
-  }
-}
-
-export const OptionSelector = (props) => {
-  const optionTypes = [
-    new NumericOption('RAM', [4, 8, 16, 32]),
-    new NumericOption('Storage', [256, 512, 1024]),
-    new TextOption('CPU', ['i3', 'i5', 'i7']),
-  ];
-
-  const handleChange = (name, value) => {
-    const newOptions = { ...props.selectedOptions };
-    newOptions[name] = value;
+export const OptionSelector: Component<OptionSelectorProps> = (props) => {
+  const handleChange = (name: string, value: string | number) => {
+    const newOptions = { ...props.selectedOptions, [name]: value };
     props.onSelect(newOptions);
   };
 
   return (
     <div>
       <h3>Customize Your Laptop</h3>
-      <For each={optionTypes}>
+      <For each={props.options}>
         {(optionType) => (
           <div>
             <label>{optionType.name}: </label>
