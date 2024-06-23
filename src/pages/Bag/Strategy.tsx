@@ -26,7 +26,7 @@ export const NumericOption = (name: string, values: number[]): OptionType => ({
       props.onChange(name, Number(currentTarget.value));
 
     return (
-      <select onChange={execute}>
+      <select onChange={execute} title={name}>
         <For each={values}>
           {(value) => <option value={value}>{value}</option>}
         </For>

@@ -6,6 +6,12 @@ export enum Tiers {
   High = 'i7',
 }
 
+export enum Parts {
+  CPU = 'Chip',
+  RAM = 'Memory',
+  Storage = 'Storage',
+}
+
 export class LegacyPriceCalculator {
   calculatePrice(basePrice: number, options: { optionPrices: number }): number {
     return basePrice + options.optionPrices;
@@ -25,7 +31,7 @@ export class PriceCalculatorAdapter {
       (sum, [key, value]) => {
         if (typeof value === 'number') {
           return sum + value;
-        } else if (key === 'CPU') {
+        } else if (key === Parts.CPU) {
           const cpuPrices = {
             [Tiers.Entry]: 0,
             [Tiers.Mid]: 100,
