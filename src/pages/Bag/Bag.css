@@ -6,6 +6,58 @@ fieldset {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.control {
+  border-radius: 1rem;
+}
+
+.select_trigger {
+  border: 1px solid var(--c-action);
+  padding: 1.1rem var(--s-safe) 1rem;
+}
+
+.select_icon {
+  width: var(--s-dock);
+  height: var(--s-dock);
+  transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.select_trigger[data-expanded] .select_icon {
+  transform: rotate(-90deg);
+}
+
+.select_trigger[data-closed] .select_icon {
+  transform: rotate(90deg);
+}
+
+.select_label {
+  font-size: var(--s-system);
+  padding: 0.9rem 1rem var(--s-unit);
+}
+
+.select_content {
+  background-color: var(--c-ambient);
+  backdrop-filter: var(--p-blur);
+  -webkit-backdrop-filter: var(--p-blur);
+  border: 1px solid var(--c-action);
+}
+
+.select_listbox {
+  padding: var(--s-unit);
+}
+
+.select_item {
+  padding: var(--s-unit) var(--s-safe);
+}
+
+.select_item[data-highlighted] {
+  background-color: var(--c-action);
+}
+
+.select_item[data-selected] {
+  background-color: var(--c-blue);
+  color: var(--c-white);
+}
+
 @media screen and (max-width: 768px) {
   .bag {
     grid-template-columns: 1fr;
