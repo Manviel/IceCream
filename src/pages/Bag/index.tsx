@@ -86,7 +86,7 @@ const Bag: Component = () => {
           <button
             type='button'
             onClick={handleViewChange}
-            class={ShapeIcon.Default}
+            class={viewType() === Scenes.Grid ? ShapeIcon.Contained : ShapeIcon.Default}
             aria-label='Toggle View'
             aria-pressed={viewType() === Scenes.Grid}
           >
