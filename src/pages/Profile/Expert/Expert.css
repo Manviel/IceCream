@@ -2,10 +2,6 @@
   --c-lamp: color(display-p3 0.945 0.911 0.993);
 }
 
-.items-end {
-  align-items: flex-end;
-}
-
 .tour-list {
   font-size: var(--s-system);
   padding: 0.2rem;
