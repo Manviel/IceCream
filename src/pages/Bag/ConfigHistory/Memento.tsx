@@ -1,18 +1,20 @@
+import { StateType } from "../State";
+
 export interface ConfigurationMemento {
-  getState(): Record<string, string | number>;
+  getState(): StateType;
   getTimestamp(): number;
 }
 
 class LaptopConfigurationMemento implements ConfigurationMemento {
   private timestamp: number;
-  private state: Record<string, string | number>;
+  private state: StateType;
 
-  constructor(state: Record<string, string | number>) {
+  constructor(state: StateType) {
     this.timestamp = Date.now();
     this.state = JSON.parse(JSON.stringify(state));
   }
 
-  getState(): Record<string, string | number> {
+  getState(): StateType {
     return { ...this.state };
   }
 
@@ -28,7 +30,7 @@ export class ConfigurationHistory {
     ) => void
   ) {}
 
-  save(state: Record<string, string | number>): void {
+  save(state: StateType): void {
     this.setHistory((prev) => [...prev, new LaptopConfigurationMemento(state)]);
   }
 }

@@ -25,6 +25,7 @@ import {
   TextOption,
 } from './Strategy';
 import ConfigHistory from './ConfigHistory';
+import { StateType } from './State';
 
 import './Bag.css';
 
@@ -34,9 +35,7 @@ enum Scenes {
 }
 
 const Bag: Component = () => {
-  const [selectedOptions, setSelectedOptions] = createStore<
-    Record<string, string | number>
-  >({});
+  const [selectedOptions, setSelectedOptions] = createStore<StateType>({});
   const [viewType, setViewType] = createSignal<Scenes>(Scenes.List);
 
   const baseLaptop = new ProductComponent('Base Laptop', 1000);

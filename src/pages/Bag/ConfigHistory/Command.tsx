@@ -1,3 +1,5 @@
+import { StateType } from '../State';
+
 import { ConfigurationHistory } from './Memento';
 
 interface Command {
@@ -7,7 +9,7 @@ interface Command {
 export class SaveConfigurationCommand implements Command {
   constructor(
     private history: ConfigurationHistory,
-    private currentState: () => Record<string, string | number>
+    private currentState: () => StateType
   ) {}
 
   execute(): void {

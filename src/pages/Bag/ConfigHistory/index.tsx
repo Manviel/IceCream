@@ -8,18 +8,15 @@ import {
   PriceDifferenceStrategy,
 } from '../Strategy';
 import { ProductPageFacade } from '../Facade';
+import { StateType } from '../State';
 
 import { SaveConfigurationCommand } from './Command';
 import { ConfigurationHistory, ConfigurationMemento } from './Memento';
 
 type ComparisonType = {
   productFacade: ProductPageFacade;
-  selectedOptions: Record<string, string | number>;
-  setSelectedOptions: (
-    fn: (
-      prev: Record<string, string | number>
-    ) => Record<string, string | number>
-  ) => void;
+  selectedOptions: StateType;
+  setSelectedOptions: (fn: (prev: StateType) => StateType) => void;
   options: OptionType[];
 };
 
@@ -30,10 +27,11 @@ const ConfigHistory: Component<ComparisonType> = ({
   options,
 }) => {
   const [history, setHistory] = createStore<ConfigurationMemento[]>([]);
-  const configHistory = new ConfigurationHistory(setHistory);
   const [priceStrategy, setPriceStrategy] = createStore({
     strategy: new PercentageDifferenceStrategy() as PriceDifferenceStrategy,
   });
+
+  const configHistory = new ConfigurationHistory(setHistory);
 
   const saveConfiguration = () => {
     const command = new SaveConfigurationCommand(
@@ -59,9 +57,7 @@ const ConfigHistory: Component<ComparisonType> = ({
     return new Date(timestamp).toLocaleString();
   };
 
-  const calculatePriceDifference = (
-    config: Record<string, string | number>
-  ) => {
+  const calculatePriceDifference = (config: StateType) => {
     const basePrice = productFacade.calculatePrice({});
     const comparisonPrice = productFacade.calculatePrice(config);
     return priceStrategy.strategy.calculate(basePrice, comparisonPrice);
@@ -70,7 +66,7 @@ const ConfigHistory: Component<ComparisonType> = ({
   return (
     <section>
       <h3>Product Comparison</h3>
-      
+
       <button onClick={saveConfiguration}>Save Current Configuration</button>
       <button onClick={togglePriceStrategy}>
         Toggle Price Difference:{' '}
@@ -90,9 +86,11 @@ const ConfigHistory: Component<ComparisonType> = ({
                 </div>
               )}
             </For>
+
             <div>
               Price Difference: {calculatePriceDifference(memento.getState())}
             </div>
+
             <button onClick={() => loadConfiguration(memento)}>
               Load This Configuration
             </button>

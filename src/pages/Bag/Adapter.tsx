@@ -1,4 +1,5 @@
 import { IProductComponent } from './Composite';
+import { StateType } from './State';
 
 export enum Tiers {
   Entry = 'i3',
@@ -21,10 +22,7 @@ export class LegacyPriceCalculator {
 export class PriceCalculatorAdapter {
   constructor(private legacyCalculator: LegacyPriceCalculator) {}
 
-  getPrice(
-    product: IProductComponent,
-    selectedOptions: Record<string, string | number>
-  ): number {
+  getPrice(product: IProductComponent, selectedOptions: StateType): number {
     const basePrice = product.getPrice();
 
     const optionPrices = Object.entries(selectedOptions).reduce(
