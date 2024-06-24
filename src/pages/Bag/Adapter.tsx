@@ -23,7 +23,7 @@ export class PriceCalculatorAdapter {
 
   getPrice(
     product: IProductComponent,
-    selectedOptions: Record<string, number>
+    selectedOptions: Record<string, string | number>
   ): number {
     const basePrice = product.getPrice();
 

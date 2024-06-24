@@ -24,6 +24,7 @@ import {
   NumericOption,
   TextOption,
 } from './Strategy';
+import ConfigHistory from './ConfigHistory';
 
 import './Bag.css';
 
@@ -33,7 +34,9 @@ enum Scenes {
 }
 
 const Bag: Component = () => {
-  const [selectedOptions, setSelectedOptions] = createStore({});
+  const [selectedOptions, setSelectedOptions] = createStore<
+    Record<string, string | number>
+  >({});
   const [viewType, setViewType] = createSignal<Scenes>(Scenes.List);
 
   const baseLaptop = new ProductComponent('Base Laptop', 1000);
@@ -99,7 +102,7 @@ const Bag: Component = () => {
               <LayersDownIcon />
             </button>
 
-            <p class='concise grey-light'>In Stock</p>
+            <p class="concise grey-light">In Stock</p>
           </header>
 
           <OptionSelector
@@ -113,6 +116,13 @@ const Bag: Component = () => {
             <h4 class="subtitle">${totalPrice().toFixed(2)}</h4>
           </div>
         </section>
+
+        <ConfigHistory
+          productFacade={productFacade}
+          selectedOptions={selectedOptions}
+          setSelectedOptions={setSelectedOptions}
+          options={productOptions}
+        />
       </div>
     </PageDecorator>
   );
