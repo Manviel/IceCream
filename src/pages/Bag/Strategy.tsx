@@ -4,6 +4,8 @@ import { Select } from '@kobalte/core/select';
 
 import ArrowDownIcon from '../../assets/icons/arrow-down-circle.svg';
 
+import { StateType } from './State';
+
 export type OptionType = {
   name: string;
   values: (string | number)[];
@@ -14,8 +16,8 @@ export type OptionType = {
 
 type OptionSelectorProps = {
   options: OptionType[];
-  selectedOptions: Record<string, string | number>;
-  onSelect: (newOptions: Record<string, string | number>) => void;
+  selectedOptions: StateType;
+  onSelect: (newOptions: StateType) => void;
 };
 
 export interface PriceDifferenceStrategy {
