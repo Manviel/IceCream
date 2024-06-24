@@ -18,6 +18,10 @@ type OptionSelectorProps = {
   onSelect: (newOptions: Record<string, string | number>) => void;
 };
 
+export interface PriceDifferenceStrategy {
+  calculate(basePrice: number, comparisonPrice: number): string;
+}
+
 export const NumericOption = (name: string, values: number[]): OptionType => ({
   name,
   values,
@@ -27,6 +31,7 @@ export const NumericOption = (name: string, values: number[]): OptionType => ({
 
     return (
       <select onChange={execute} title={name}>
+        <option></option>
         <For each={values}>
           {(value) => <option value={value}>{value}</option>}
         </For>
@@ -93,3 +98,21 @@ export const OptionSelector: Component<OptionSelectorProps> = (props) => {
     </fieldset>
   );
 };
+
+export class PercentageDifferenceStrategy implements PriceDifferenceStrategy {
+  calculate(basePrice: number, comparisonPrice: number): string {
+    const difference = ((comparisonPrice - basePrice) / basePrice) * 100;
+    return difference > 0
+      ? `+${difference.toFixed(2)}%`
+      : `${difference.toFixed(2)}%`;
+  }
+}
+
+export class AbsoluteDifferenceStrategy implements PriceDifferenceStrategy {
+  calculate(basePrice: number, comparisonPrice: number): string {
+    const difference = comparisonPrice - basePrice;
+    return difference > 0
+      ? `+$${difference.toFixed(2)}`
+      : `-$${Math.abs(difference).toFixed(2)}`;
+  }
+}

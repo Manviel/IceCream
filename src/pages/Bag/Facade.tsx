@@ -13,7 +13,7 @@ export class ProductPageFacade {
     return this.product.display();
   }
 
-  calculatePrice(selectedOptions: Record<string, number>): number {
+  calculatePrice(selectedOptions: Record<string, string | number>): number {
     return this.priceCalculator.getPrice(this.product, selectedOptions);
   }
 }
