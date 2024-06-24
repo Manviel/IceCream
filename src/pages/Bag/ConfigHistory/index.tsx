@@ -1,5 +1,12 @@
-import { For, Component } from 'solid-js';
+import { For, Component, createSignal } from 'solid-js';
 import { createStore } from 'solid-js/store';
+
+import { ActionTypes } from '../../../models/config';
+import { getGroup } from '../../../models/theme';
+
+import Tooltip from '../../../components/Tooltip';
+
+import WandStarsIcon from '../../../assets/icons/wand-stars.svg';
 
 import {
   AbsoluteDifferenceStrategy,
@@ -20,6 +27,8 @@ type ComparisonType = {
   options: OptionType[];
 };
 
+const INIT_HELP = 'Load this configuration';
+
 const ConfigHistory: Component<ComparisonType> = ({
   productFacade,
   selectedOptions,
@@ -30,6 +39,7 @@ const ConfigHistory: Component<ComparisonType> = ({
   const [priceStrategy, setPriceStrategy] = createStore({
     strategy: new PercentageDifferenceStrategy() as PriceDifferenceStrategy,
   });
+  const [snackbar, setSnackbar] = createSignal<string>(INIT_HELP);
 
   const configHistory = new ConfigurationHistory(setHistory);
 
@@ -41,8 +51,10 @@ const ConfigHistory: Component<ComparisonType> = ({
     command.execute();
   };
 
-  const loadConfiguration = (memento: ConfigurationMemento) => {
+  const loadConfiguration = async (memento: ConfigurationMemento) => {
     setSelectedOptions(() => memento.getState());
+
+    setSnackbar('Done');
   };
 
   const togglePriceStrategy = () => {
@@ -65,36 +77,66 @@ const ConfigHistory: Component<ComparisonType> = ({
 
   return (
     <section>
-      <h3>Product Comparison</h3>
+      <h3 class="subtitle">Product Comparison</h3>
+      <p class="info">History of configurations</p>
 
-      <button onClick={saveConfiguration}>Save Current Configuration</button>
-      <button onClick={togglePriceStrategy}>
-        Toggle Price Difference:{' '}
-        {priceStrategy.strategy instanceof PercentageDifferenceStrategy
-          ? 'Percentage'
-          : 'Absolute'}
-      </button>
+      <header class="flex justify-between">
+        <button
+          type="button"
+          onClick={saveConfiguration}
+          class={ActionTypes.Contained}
+        >
+          Save
+        </button>
+
+        <div class="flex items-center proximity">
+          <p class="concise grey-light">Price Difference in:</p>
+
+          <button
+            type="button"
+            onClick={togglePriceStrategy}
+            class={ActionTypes.Secondary}
+          >
+            {priceStrategy.strategy instanceof PercentageDifferenceStrategy
+              ? '%'
+              : '$'}
+          </button>
+        </div>
+      </header>
 
       <For each={history}>
         {(memento) => (
-          <div>
-            <h3>Configuration from {formatDate(memento.getTimestamp())}</h3>
-            <For each={options}>
-              {(option) => (
-                <div>
-                  {option.name}: {memento.getState()[option.name]}
-                </div>
-              )}
-            </For>
+          <article class="provision">
+            <h4 class="card-sub">Configuration from</h4>
+            <p class="term grey-light">{formatDate(memento.getTimestamp())}</p>
 
-            <div>
-              Price Difference: {calculatePriceDifference(memento.getState())}
+            <ul class="info view layer rounded">
+              <For each={options}>
+                {(option) => (
+                  <li>
+                    {option.name}: {memento.getState()[option.name]}
+                  </li>
+                )}
+              </For>
+            </ul>
+
+            <div class={getGroup('ghost items-end')}>
+              <div class="flex col lockup">
+                <p class="concise">Price Difference:</p>
+                <h4 class="subtitle">
+                  {calculatePriceDifference(memento.getState())}
+                </h4>
+              </div>
+
+              <Tooltip
+                name="Apply"
+                onClick={() => loadConfiguration(memento)}
+                snackbar={snackbar}
+              >
+                <WandStarsIcon />
+              </Tooltip>
             </div>
-
-            <button onClick={() => loadConfiguration(memento)}>
-              Load This Configuration
-            </button>
-          </div>
+          </article>
         )}
       </For>
     </section>

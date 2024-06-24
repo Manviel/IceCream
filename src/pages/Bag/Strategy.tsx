@@ -32,7 +32,7 @@ export const NumericOption = (name: string, values: number[]): OptionType => ({
       props.onChange(name, Number(currentTarget.value));
 
     return (
-      <select onChange={execute} title={name}>
+      <select onChange={execute} title={name} class="select_trigger control">
         <option></option>
         <For each={values}>
           {(value) => <option value={value}>{value}</option>}

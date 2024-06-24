@@ -86,7 +86,7 @@ const Bag: Component = () => {
         </Show>
 
         <section class="flex col proximity items-start">
-          <header class="flex justify-between items-center proximity">
+          <header class="flex items-center proximity">
             <button
               type="button"
               onClick={handleViewChange}
