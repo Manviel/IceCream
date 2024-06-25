@@ -1,8 +1,6 @@
 import { Component, createEffect, createSignal } from 'solid-js';
 
-import NumberField, {
-  PercentField,
-} from '../../../../components/Field/NumberField';
+import NumberField, { PercentField } from '../../../../components/Field/NumberField';
 
 import { useStore } from './useStore';
 import Portfolio from './Portfolio';
@@ -22,52 +20,38 @@ const Dividend: Component = () => {
   });
 
   return (
-    <Portfolio
-      id='Dividend'
-      fairPriceCost={fairPriceCost}
-      fairPricePercent={fairPricePercent}
-    >
+    <Portfolio id="Dividend" fairPriceCost={fairPriceCost} fairPricePercent={fairPricePercent}>
       <NumberField
-        name='priceData'
-        label='Price (in $)'
+        name="priceData"
+        label="Price (in $)"
         value={store.priceData}
-        onChange={handleChangeStore}
+        onInput={handleChangeStore}
       />
 
       <NumberField
-        name='sharesOut'
-        label='Shares Outstanding (in M)'
+        name="sharesOut"
+        label="Shares Outstanding (in M)"
         value={store.sharesOut}
-        onChange={handleChangeStore}
+        onInput={handleChangeStore}
       />
 
       <NumberField
-        name='netIncome'
-        label='Income (in M)'
+        name="netIncome"
+        label="Income (in M)"
         value={store.netIncome}
-        onChange={handleChangeStore}
+        onInput={handleChangeStore}
       />
 
       <PercentField
-        name='netIncomeGrowth'
-        label='EPS next 5Y (in %)'
+        name="netIncomeGrowth"
+        label="EPS next 5Y (in %)"
         value={store.netIncomeGrowth}
-        onChange={handleChangeStore}
+        onInput={handleChangeStore}
       />
 
-      <PercentField
-        name='roe'
-        label='ROE (in %)'
-        value={store.roe}
-        onChange={handleChangeStore}
-      />
+      <PercentField name="roe" label="ROE (in %)" value={store.roe} onInput={handleChangeStore} />
 
-      <PercentField
-        name='pb'
-        label='P / B'
-        value={store.pb}
-        onChange={handleChangeStore}
-      />
+      <PercentField name="pb" label="P / B" value={store.pb} onInput={handleChangeStore} />
     </Portfolio>
   );
 };
