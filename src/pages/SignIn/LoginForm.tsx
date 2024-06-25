@@ -1,6 +1,7 @@
 import { Component, createSignal } from 'solid-js';
 import { createStore } from 'solid-js/store';
 import { useNavigate } from '@solidjs/router';
+import { JSX } from 'solid-js/jsx-runtime';
 
 import Field from '../../components/Field';
 import ErrorMessage from '../../components/Field/ErrorMessage';
@@ -12,17 +13,17 @@ import { DB_LOGS_TABLE, DB_USERS_TABLE, useDataBase } from '../../services/db';
 const LoginForm: Component = () => {
   const [form, setForm] = createStore({
     email: '',
-    password: '',
+    password: ''
   });
 
   const [status, setStatus] = createSignal('');
 
   const navigate = useNavigate();
 
-  const handleChangeForm = ({ target }: any) =>
+  const handleChangeForm: JSX.InputEventHandler<HTMLInputElement, InputEvent> = ({ target }) =>
     setForm({ [target.name]: target.value });
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit: JSX.EventHandler<HTMLFormElement, SubmitEvent> = async e => {
     e.preventDefault();
 
     const db = await useDataBase();
@@ -41,29 +42,29 @@ const LoginForm: Component = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} class='layer view rounded flex col'>
+    <form onSubmit={handleSubmit} class="layer view rounded flex col">
       <Field
-        name='email'
-        label='Email'
-        type='email'
+        name="email"
+        label="Email"
+        type="email"
         value={form.email}
-        onChange={handleChangeForm}
+        onInput={handleChangeForm}
         required
       />
 
       <Field
-        name='password'
-        label='Password'
-        type='password'
+        name="password"
+        label="Password"
+        type="password"
         value={form.password}
-        onChange={handleChangeForm}
+        onInput={handleChangeForm}
         required
-        minlength='6'
+        minlength="6"
       />
 
       {status() && <ErrorMessage>{status()}</ErrorMessage>}
 
-      <button type='submit' class={ActionTypes.Contained}>
+      <button type="submit" class={ActionTypes.Contained}>
         {Pages.SignIn}
       </button>
     </form>

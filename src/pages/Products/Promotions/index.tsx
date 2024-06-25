@@ -14,12 +14,12 @@ const source = {
   '12:00': 29,
   '15:00': 26,
   '18:00': 22,
-  '21:00': 9,
+  '21:00': 9
 };
 
 const chartID = 'chart-promotions';
 
-const sortByMaxValue = (obj: {}, pos: number) => sortByAsc(obj)[pos];
+const sortByMaxValue = (obj: object, pos: number) => sortByAsc(obj)[pos];
 
 const Promotions: Component = () => {
   const { datasets } = useChartSource(source);
@@ -29,12 +29,10 @@ const Promotions: Component = () => {
       isDark
       strategy={ChartTypes.Bar}
       id={chartID}
-      title='Promotions'
-      description={`Peak hours from ${
-        sortByMaxValue(source, datasets.length - 1)[0]
-      } to 
+      title="Promotions"
+      description={`Peak hours from ${sortByMaxValue(source, datasets.length - 1)[0]} to 
         ${sortByMaxValue(source, datasets.length - 2)[0]}`}
-      ariaLabel='Timeline'
+      ariaLabel="Timeline"
       source={source}
     />
   );

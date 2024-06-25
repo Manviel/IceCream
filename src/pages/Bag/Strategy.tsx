@@ -26,7 +26,8 @@ export const NumericOption = (name: string, values: number[]): OptionType => ({
   name,
   values,
   render: props => {
-    const execute = ({ currentTarget }: any) => props.onChange(name, Number(currentTarget.value));
+    const execute: JSX.ChangeEventHandler<HTMLSelectElement, Event> = ({ currentTarget }) =>
+      props.onChange(name, Number(currentTarget.value));
 
     return (
       <select onChange={execute} title={name} class="select_trigger control">

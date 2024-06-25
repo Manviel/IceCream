@@ -1,4 +1,5 @@
 import { createStore } from 'solid-js/store';
+import { JSX } from 'solid-js/jsx-runtime';
 
 export const useStore = () => {
   const [store, setStore] = createStore({
@@ -11,7 +12,7 @@ export const useStore = () => {
     revenue: 394330,
     revenueGrowth: 11.5,
     ps: 5.67,
-    ticker: 'AAPL',
+    ticker: 'AAPL'
   });
 
   const fairPricePercent = (fairPriceCost: number) => {
@@ -20,7 +21,7 @@ export const useStore = () => {
     return (result * 100).toFixed(2);
   };
 
-  const handleChangeStore = ({ target }: any) =>
+  const handleChangeStore: JSX.InputEventHandler<HTMLInputElement, InputEvent> = ({ target }) =>
     setStore({ [target.name]: target.value });
 
   return { store, handleChangeStore, fairPricePercent };
