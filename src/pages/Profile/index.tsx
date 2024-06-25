@@ -15,13 +15,13 @@ const Profile: Component = () => {
     <PageDecorator headline={Pages.Profile} subtitle='Overview' isDark>
       <Expert />
 
-      <header class='flex items-center justify-between screen'>
-        <SubTitle spot='Insights' />
+      <header class="flex items-center justify-between screen">
+        <SubTitle spot="Insights" />
 
         <Results />
       </header>
 
-      <p class='info'>2.2 Billion Visually Impaired People in 2022.</p>
+      <p class="info">2.2 Billion Visually Impaired People in 2022.</p>
 
       <AuthOutlet />
 

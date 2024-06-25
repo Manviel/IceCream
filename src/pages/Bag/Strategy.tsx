@@ -9,9 +9,7 @@ import { StateType } from './State';
 export type OptionType = {
   name: string;
   values: (string | number)[];
-  render: (props: {
-    onChange: (name: string, value: string | number) => void;
-  }) => JSX.Element;
+  render: (props: { onChange: (name: string, value: string | number) => void }) => JSX.Element;
 };
 
 type OptionSelectorProps = {
@@ -27,25 +25,22 @@ export interface PriceDifferenceStrategy {
 export const NumericOption = (name: string, values: number[]): OptionType => ({
   name,
   values,
-  render: (props) => {
-    const execute = ({ currentTarget }: any) =>
-      props.onChange(name, Number(currentTarget.value));
+  render: props => {
+    const execute = ({ currentTarget }: any) => props.onChange(name, Number(currentTarget.value));
 
     return (
       <select onChange={execute} title={name} class="select_trigger control">
         <option></option>
-        <For each={values}>
-          {(value) => <option value={value}>{value}</option>}
-        </For>
+        <For each={values}>{value => <option value={value}>{value}</option>}</For>
       </select>
     );
-  },
+  }
 });
 
 export const TextOption = (name: string, values: string[]): OptionType => ({
   name,
   values,
-  render: (props) => {
+  render: props => {
     const execute = (v: string) => props.onChange(name, v);
 
     return (
@@ -53,7 +48,7 @@ export const TextOption = (name: string, values: string[]): OptionType => ({
         onChange={execute}
         options={values}
         class="provision flex col"
-        itemComponent={(props) => (
+        itemComponent={props => (
           <Select.Item item={props.item} class="select_item control">
             <Select.ItemLabel>{props.item.rawValue}</Select.ItemLabel>
           </Select.Item>
@@ -62,9 +57,7 @@ export const TextOption = (name: string, values: string[]): OptionType => ({
         <Select.Label class="select_label">{name}</Select.Label>
 
         <Select.Trigger class="select_trigger flex justify-between items-center token control">
-          <Select.Value<string> class="concise">
-            {(state) => state.selectedOption()}
-          </Select.Value>
+          <Select.Value<string> class="concise">{state => state.selectedOption()}</Select.Value>
           <Select.Icon class="select_icon flex">
             <ArrowDownIcon />
           </Select.Icon>
@@ -77,16 +70,16 @@ export const TextOption = (name: string, values: string[]): OptionType => ({
         </Select.Portal>
       </Select>
     );
-  },
+  }
 });
 
-export const OptionSelector: Component<OptionSelectorProps> = (props) => {
+export const OptionSelector: Component<OptionSelectorProps> = props => {
   const { selectedOptions, onSelect, options } = props;
 
   const handleChange = (name: string, value: string | number) => {
     onSelect({
       ...selectedOptions,
-      [name]: value,
+      [name]: value
     });
   };
 
@@ -94,9 +87,7 @@ export const OptionSelector: Component<OptionSelectorProps> = (props) => {
     <fieldset>
       <legend class="card-sub">Customize Your Laptop</legend>
 
-      <For each={options}>
-        {(optionType) => optionType.render({ onChange: handleChange })}
-      </For>
+      <For each={options}>{optionType => optionType.render({ onChange: handleChange })}</For>
     </fieldset>
   );
 };
@@ -104,17 +95,13 @@ export const OptionSelector: Component<OptionSelectorProps> = (props) => {
 export class PercentageDifferenceStrategy implements PriceDifferenceStrategy {
   calculate(basePrice: number, comparisonPrice: number): string {
     const difference = ((comparisonPrice - basePrice) / basePrice) * 100;
-    return difference > 0
-      ? `+${difference.toFixed(2)}%`
-      : `${difference.toFixed(2)}%`;
+    return difference > 0 ? `+${difference.toFixed(2)}%` : `${difference.toFixed(2)}%`;
   }
 }
 
 export class AbsoluteDifferenceStrategy implements PriceDifferenceStrategy {
   calculate(basePrice: number, comparisonPrice: number): string {
     const difference = comparisonPrice - basePrice;
-    return difference > 0
-      ? `+$${difference.toFixed(2)}`
-      : `-$${Math.abs(difference).toFixed(2)}`;
+    return difference > 0 ? `+$${difference.toFixed(2)}` : `-$${Math.abs(difference).toFixed(2)}`;
   }
 }

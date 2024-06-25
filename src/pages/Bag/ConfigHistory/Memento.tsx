@@ -1,4 +1,4 @@
-import { StateType } from "../State";
+import { StateType } from '../State';
 
 export interface ConfigurationMemento {
   getState(): StateType;
@@ -25,12 +25,10 @@ class LaptopConfigurationMemento implements ConfigurationMemento {
 
 export class ConfigurationHistory {
   constructor(
-    private setHistory: (
-      fn: (prev: ConfigurationMemento[]) => ConfigurationMemento[]
-    ) => void
+    private setHistory: (fn: (prev: ConfigurationMemento[]) => ConfigurationMemento[]) => void
   ) {}
 
   save(state: StateType): void {
-    this.setHistory((prev) => [...prev, new LaptopConfigurationMemento(state)]);
+    this.setHistory(prev => [...prev, new LaptopConfigurationMemento(state)]);
   }
 }

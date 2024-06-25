@@ -13,8 +13,8 @@ import './index.css';
 
 const App: ParentComponent = ({ children }) => (
   <>
-    <header class='sticky depth content-full flex justify-center'>
-      <nav class='dock flex justify-between content-full' aria-label='Tab bar'>
+    <header class="sticky depth content-full flex justify-center">
+      <nav class="dock flex justify-between content-full" aria-label="Tab bar">
         <TabLink href={Paths.Home} end id={Pages.Home}>
           <SquareTextIcon />
         </TabLink>

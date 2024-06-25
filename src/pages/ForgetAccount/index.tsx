@@ -9,13 +9,10 @@ import { ActionTypes } from '../../models/config';
 import ForgetForm from './ForgetForm';
 
 const ForgetAccount: Component = () => (
-  <PageDecorator
-    headline={Pages.ForgetAccount}
-    subtitle='All your data will be wiped'
-  >
+  <PageDecorator headline={Pages.ForgetAccount} subtitle="All your data will be wiped">
     <ForgetForm />
 
-    <div class='flex col os material screen'>
+    <div class="flex col os material screen">
       <A href={Paths.SignUp} class={ActionTypes.Link}>
         Create an account
       </A>

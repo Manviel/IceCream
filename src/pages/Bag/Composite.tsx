@@ -46,10 +46,10 @@ export class CompositeProduct implements ICompositeProduct {
   display(): JSX.Element {
     return (
       <article>
-        <h3 class='subtitle'>{this.name}</h3>
+        <h3 class="subtitle">{this.name}</h3>
 
-        <ul class='info view layer rounded'>
-          <For each={this.children}>{(child) => child.display()}</For>
+        <ul class="info view layer rounded">
+          <For each={this.children}>{child => child.display()}</For>
         </ul>
       </article>
     );
