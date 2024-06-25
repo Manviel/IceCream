@@ -51,7 +51,7 @@ const Vault: Component = () => {
           </div>
         </>
       }
-      triggerClassName='view box rounded flex col items-start tab'
+      triggerClassName="view box rounded flex col items-start tab"
       closingActions={
         <A href={Paths.Privacy} class={ActionTypes.Contained}>
           Go to Policy
