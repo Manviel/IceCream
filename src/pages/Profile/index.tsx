@@ -12,16 +12,16 @@ import Results from './Expert/Results';
 
 const Profile: Component = () => {
   return (
-    <PageDecorator headline={Pages.Profile} subtitle='Overview'>
+    <PageDecorator headline={Pages.Profile} subtitle="Overview">
       <Expert />
 
-      <header class='flex items-center justify-between screen'>
-        <SubTitle spot='Insights' />
+      <header class="flex items-center justify-between screen">
+        <SubTitle spot="Insights" />
 
         <Results />
       </header>
 
-      <p class='info'>2.2 Billion Visually Impaired People in 2022.</p>
+      <p class="info">2.2 Billion Visually Impaired People in 2022.</p>
 
       <AuthOutlet />
 

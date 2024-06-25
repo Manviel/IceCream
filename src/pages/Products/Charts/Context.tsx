@@ -33,22 +33,20 @@ export const useLegends = ({ labels, datasets }: ChartSource) => {
   return { handleReader, getItem, legend };
 };
 
-export const useChartSource = (src: {}): ChartSource => {
+export const useChartSource = (src: object): ChartSource => {
   return {
     labels: Object.keys(src),
-    datasets: Object.values(src),
+    datasets: Object.values(src)
   };
 };
 
-export const ChartLegend: Component<ChartLegendType<string | null>> = (
-  props
-) => {
+export const ChartLegend: Component<ChartLegendType<string | null>> = props => {
   const { legend } = props;
 
   return (
-    <dl class='flex content-full justify-between items-center widget-legend'>
-      <dt class='ct-label'>Selected:</dt>
-      <dd class='chip widget-tooltip'>{legend()}</dd>
+    <dl class="flex content-full justify-between items-center widget-legend">
+      <dt class="ct-label">Selected:</dt>
+      <dd class="chip widget-tooltip">{legend()}</dd>
     </dl>
   );
 };

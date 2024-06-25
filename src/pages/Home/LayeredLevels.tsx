@@ -6,30 +6,30 @@ import { getStack } from '../../models/theme';
 const listItems: ListItemGen<string>[] = [
   {
     label: 'Presentation',
-    value: 'Responsible for user interactions with the software system',
+    value: 'Responsible for user interactions with the software system'
   },
   {
     label: 'Business',
-    value: 'Handles aspects related to accomplishing functional requirements',
+    value: 'Handles aspects related to accomplishing functional requirements'
   },
   {
     label: 'Domain',
-    value: 'Responsible for algorithms and programming components',
+    value: 'Responsible for algorithms and programming components'
   },
   {
     label: 'Infrastructure',
-    value: 'Responsible for handling data, databases',
-  },
+    value: 'Responsible for handling data, databases'
+  }
 ];
 
 const LayeredLevels: Component = () => {
   return (
-    <ul class='flex justify-between items-start proximity flex-wrap'>
+    <ul class="flex justify-between items-start proximity flex-wrap">
       <For each={listItems}>
-        {(item) => (
+        {item => (
           <li class={getStack('box')}>
-            <h4 class='card-sub'>{item.label}</h4>
-            <p class='term grey-dark'>{item.value}</p>
+            <h4 class="card-sub">{item.label}</h4>
+            <p class="term grey-dark">{item.value}</p>
           </li>
         )}
       </For>

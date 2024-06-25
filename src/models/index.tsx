@@ -8,6 +8,7 @@ export enum Paths {
   SignUp = '/register',
   ForgetAccount = '/delete-account',
   Forbidden = '/403',
+  Bag = '/add-to-bag',
 }
 
 export enum Pages {
@@ -20,6 +21,7 @@ export enum Pages {
   SignUp = 'Sign Up',
   ForgetAccount = 'Delete account',
   Forbidden = 'Access Denied',
+  Bag = 'Bag',
 }
 
 export type Entity = {

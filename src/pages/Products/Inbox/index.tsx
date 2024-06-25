@@ -30,8 +30,8 @@ const Inbox: Component = () => {
       title='Abstract'
       description='This helps the user to focus on what the object does, rather than how it performs.'
       closingActions={
-        <A href={Paths.Privacy} class={ActionTypes.Contained}>
-          Go to Policy
+        <A href={Paths.Bag} class={ActionTypes.Contained}>
+          Add to Bag
         </A>
       }
       triggerContent={

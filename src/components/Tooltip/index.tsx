@@ -5,6 +5,8 @@ import { ShapeIcon } from '../../models/theme';
 
 import { HelpTooltipType } from './HelpTooltip';
 
+import './Tooltip.css';
+
 interface TooltipType<T> extends HelpTooltipType {
   onClick: () => Promise<void>;
   snackbar: Accessor<T>;
@@ -27,13 +29,13 @@ const FloatingTooltip: ParentComponent<TooltipType<string>> = (props) => {
   return (
     <Tooltip openDelay={0}>
       <Tooltip.Portal>
-        <Tooltip.Content class='tooltip vibrancy chip'>
+        <Tooltip.Content class="tooltip vibrancy chip">
           {snackbar()}
         </Tooltip.Content>
       </Tooltip.Portal>
 
       <Tooltip.Trigger
-        type='button'
+        type="button"
         class={className}
         aria-label={name}
         onClick={handleClick}

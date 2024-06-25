@@ -1,5 +1,6 @@
 import { Component, createSignal } from 'solid-js';
 import { createStore } from 'solid-js/store';
+import { JSX } from 'solid-js/jsx-runtime';
 
 import Field from '../../components/Field';
 import ErrorMessage from '../../components/Field/ErrorMessage';
@@ -10,15 +11,15 @@ import { DB_USERS_TABLE, useDataBase } from '../../services/db';
 
 const ForgetForm: Component = () => {
   const [form, setForm] = createStore({
-    email: '',
+    email: ''
   });
 
   const [status, setStatus] = createSignal('');
 
-  const handleChangeForm = ({ target }: any) =>
+  const handleChangeForm: JSX.InputEventHandler<HTMLInputElement, InputEvent> = ({ target }) =>
     setForm({ [target.name]: target.value });
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit: JSX.EventHandler<HTMLFormElement, SubmitEvent> = async e => {
     e.preventDefault();
 
     const db = await useDataBase();
@@ -37,19 +38,19 @@ const ForgetForm: Component = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} class='layer view rounded flex col'>
+    <form onSubmit={handleSubmit} class="layer view rounded flex col">
       <Field
-        name='email'
-        label='Email'
-        type='email'
+        name="email"
+        label="Email"
+        type="email"
         value={form.email}
-        onChange={handleChangeForm}
+        onInput={handleChangeForm}
         required
       />
 
       {status() && <ErrorMessage>{status()}</ErrorMessage>}
 
-      <button type='submit' class={ActionTypes.Contained}>
+      <button type="submit" class={ActionTypes.Contained}>
         {Pages.ForgetAccount}
       </button>
     </form>
