@@ -7,10 +7,7 @@ interface Command {
 }
 
 export class SaveConfigurationCommand implements Command {
-  constructor(
-    private history: ConfigurationHistory,
-    private currentState: () => StateType
-  ) {}
+  constructor(private history: ConfigurationHistory, private currentState: () => StateType) {}
 
   execute(): void {
     this.history.save(this.currentState());

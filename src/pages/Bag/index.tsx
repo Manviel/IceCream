@@ -10,20 +10,10 @@ import { ShapeIcon, getStack } from '../../models/theme';
 
 import { ProductComponent, CompositeProduct } from './Composite';
 import { withDiscount } from './Decorator';
-import {
-  LegacyPriceCalculator,
-  Parts,
-  PriceCalculatorAdapter,
-  Tiers,
-} from './Adapter';
+import { LegacyPriceCalculator, Parts, PriceCalculatorAdapter, Tiers } from './Adapter';
 import { ProductPageFacade } from './Facade';
 import { ListProductView, GridProductView } from './Bridge';
-import {
-  OptionSelector,
-  OptionType,
-  NumericOption,
-  TextOption,
-} from './Strategy';
+import { OptionSelector, OptionType, NumericOption, TextOption } from './Strategy';
 import ConfigHistory from './ConfigHistory';
 import { StateType } from './State';
 
@@ -31,7 +21,7 @@ import './Bag.css';
 
 enum Scenes {
   List = 'list',
-  Grid = 'grid',
+  Grid = 'grid'
 }
 
 const Bag: Component = () => {
@@ -53,34 +43,24 @@ const Bag: Component = () => {
   const legacyCalculator = new LegacyPriceCalculator();
   const priceCalculator = new PriceCalculatorAdapter(legacyCalculator);
 
-  const productFacade = new ProductPageFacade(
-    discountedLaptop,
-    priceCalculator
-  );
+  const productFacade = new ProductPageFacade(discountedLaptop, priceCalculator);
 
-  const totalPrice = createMemo(() =>
-    productFacade.calculatePrice(selectedOptions)
-  );
+  const totalPrice = createMemo(() => productFacade.calculatePrice(selectedOptions));
 
   const productOptions: OptionType[] = [
     NumericOption(Parts.RAM, [4, 8, 16, 32]),
     NumericOption(Parts.Storage, [256, 512, 1024]),
-    TextOption(Parts.CPU, [Tiers.Entry, Tiers.Mid, Tiers.High]),
+    TextOption(Parts.CPU, [Tiers.Entry, Tiers.Mid, Tiers.High])
   ];
 
-  const handleViewChange = () =>
-    setViewType((v) => (v === Scenes.List ? Scenes.Grid : Scenes.List));
+  const handleViewChange = () => setViewType(v => (v === Scenes.List ? Scenes.Grid : Scenes.List));
 
   return (
     <PageDecorator headline={Pages.Bag} subtitle="Endless potential">
       <div class="grid products proximity bag">
         <Show
           when={viewType() === Scenes.List}
-          fallback={
-            <GridProductView
-              implementation={productFacade.getProductDetails()}
-            />
-          }
+          fallback={<GridProductView implementation={productFacade.getProductDetails()} />}
         >
           <ListProductView implementation={productFacade.getProductDetails()} />
         </Show>
@@ -90,11 +70,7 @@ const Bag: Component = () => {
             <button
               type="button"
               onClick={handleViewChange}
-              class={
-                viewType() === Scenes.Grid
-                  ? ShapeIcon.Contained
-                  : ShapeIcon.Default
-              }
+              class={viewType() === Scenes.Grid ? ShapeIcon.Contained : ShapeIcon.Default}
               aria-label="Toggle View"
               aria-pressed={viewType() === Scenes.Grid}
             >
