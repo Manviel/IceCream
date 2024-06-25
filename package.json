@@ -1,18 +1,25 @@
 {
   "name": "vite-template-solid",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "description": "iFruit",
   "type": "module",
   "scripts": {
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint --fix"
   },
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.4.5",
+    "@eslint/js": "^9.5.0",
+    "eslint": "^9.5.0",
+    "eslint-plugin-solid": "^0.14.1",
+    "globals": "^15.6.0",
+    "typescript": "^5.5.2",
+    "typescript-eslint": "^7.14.1",
     "vite": "^5.3.1",
+    "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-solid": "^2.10.2",
     "vite-plugin-solid-svg": "^0.8.1"
   },
