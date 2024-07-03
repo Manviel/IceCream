@@ -1,6 +1,6 @@
 enum VariantTypes {
   Default = 'token',
-  Danger = 'price red',
+  Danger = 'alias red',
   Dark = 'layer',
 }
 

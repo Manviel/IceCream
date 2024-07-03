@@ -77,7 +77,7 @@ const Report: ParentComponent<ReportType> = ({ name, id, client }) => {
 
       <h4 class='card-sub provision col-span-2'>Experience</h4>
 
-      <div class={getStack('layer')}>
+      <div class={getStack('alias')}>
         <p class='concise'>{age} years old</p>
         <strong class='subtitle'>{company.title}</strong>
       </div>

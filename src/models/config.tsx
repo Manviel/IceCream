@@ -2,7 +2,7 @@ export enum ActionTypes {
   SuperEllipse = 'superellipse touch icon flex items-center justify-center',
   Secondary = 'btn concise token',
   Contained = 'btn concise contained',
-  Danger = 'btn concise price red',
+  Danger = 'btn concise alias red',
   Link = 'connect concise',
 }
 

@@ -17,6 +17,7 @@ video {
   position: absolute;
   top: var(--s-medium);
   left: var(--s-medium);
+  color: var(--c-pressure);
 }
 
 .stream-controls,

@@ -33,7 +33,7 @@ const listItems: ListItemGen<string>[] = [
     need.`,
   },
   {
-    value: 'alice',
+    value: 'alias',
     label: `For Survey, a set of questions is given to stakeholders to quantify
     their thoughts. After collecting the responses from stakeholders, data
     is analyzed to identify the area of interest of stakeholders.`,

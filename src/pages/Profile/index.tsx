@@ -12,7 +12,7 @@ import Results from './Expert/Results';
 
 const Profile: Component = () => {
   return (
-    <PageDecorator headline={Pages.Profile} subtitle='Overview'>
+    <PageDecorator headline={Pages.Profile} subtitle='Overview' isDark>
       <Expert />
 
       <header class='flex items-center justify-between screen'>

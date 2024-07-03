@@ -50,7 +50,7 @@ export const StopWatch = (exposedProps: StopWatchInterface) => {
 
   return (
     <div class='vibrancy stop-watch flex os' role='timer'>
-      <p class='concise card-sup'>{formatter.format(elapsedTimeDate())}</p>
+      <p class='concise'>{formatter.format(elapsedTimeDate())}</p>
     </div>
   );
 };

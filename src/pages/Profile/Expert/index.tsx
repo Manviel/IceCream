@@ -22,29 +22,27 @@ const listItems: ListItemGen<string>[] = [GrowthTab, DividendTab];
 
 const Expert: Component = () => {
   return (
-    <section class='material edge'>
-      <Tabs defaultValue={GrowthTab.value}>
-        <Tabs.List class='tour-list flex items-start tab'>
-          <For each={listItems}>
-            {(item) => (
-              <Tabs.Trigger
-                value={item.value}
-                class='tour-list-item flex justify-center content-full'
-              >
-                {item.label}
-              </Tabs.Trigger>
-            )}
-          </For>
-        </Tabs.List>
+    <Tabs defaultValue={GrowthTab.value}>
+      <Tabs.List class='tour-list flex items-start tab'>
+        <For each={listItems}>
+          {(item) => (
+            <Tabs.Trigger
+              value={item.value}
+              class='tour-list-item flex justify-center content-full'
+            >
+              {item.label}
+            </Tabs.Trigger>
+          )}
+        </For>
+      </Tabs.List>
 
-        <Tabs.Content value={GrowthTab.value} class='provision card os'>
-          <Growth />
-        </Tabs.Content>
-        <Tabs.Content value={DividendTab.value} class='provision card os'>
-          <Dividend />
-        </Tabs.Content>
-      </Tabs>
-    </section>
+      <Tabs.Content value={GrowthTab.value} class='provision card os'>
+        <Growth />
+      </Tabs.Content>
+      <Tabs.Content value={DividendTab.value} class='provision card os'>
+        <Dividend />
+      </Tabs.Content>
+    </Tabs>
   );
 };
 
