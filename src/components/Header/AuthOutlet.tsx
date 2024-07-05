@@ -25,7 +25,7 @@ const AuthOutlet: Component = () => {
   };
 
   return (
-    <header class='flex items-center justify-between depth ornament view'>
+    <header class='flex items-center justify-between depth ornament legible'>
       {isAuthed() ? (
         <>
           <A href={Paths.Relax} class={ActionTypes.Secondary}>
