@@ -1,11 +1,6 @@
 :root {
-  --c-teal: color(display-p3 0.652 0.825 0.937);
   --s-petal: 12.5rem;
   --s-inhale: 4s;
-}
-
-.teal {
-  color: var(--c-teal);
 }
 
 .breathe {
@@ -17,7 +12,6 @@
   position: absolute;
   mix-blend-mode: screen;
   transform: translate(0, 0);
-  background-color: var(--c-teal);
 }
 
 .breathe,
@@ -28,6 +22,7 @@
 
 .circle:nth-child(1) {
   animation: circle-1 var(--s-inhale) ease alternate infinite;
+  background-color: var(--c-lamp);
 }
 
 .circle:nth-child(2) {
@@ -40,14 +35,22 @@
 
 .circle:nth-child(4) {
   animation: circle-4 var(--s-inhale) ease alternate infinite;
+  background-color: var(--c-ghost);
 }
 
 .circle:nth-child(5) {
   animation: circle-5 var(--s-inhale) ease alternate infinite;
+  background-color: var(--c-glass);
 }
 
 .circle:nth-child(6) {
   animation: circle-6 var(--s-inhale) ease alternate infinite;
+}
+
+.circle:nth-child(2),
+.circle:nth-child(3),
+.circle:nth-child(6) {
+  background-color: var(--c-pressure);
 }
 
 @keyframes relax {

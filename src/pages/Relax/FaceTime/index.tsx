@@ -113,7 +113,7 @@ const FaceTime: Component = () => {
   });
 
   return (
-    <section class='layer os grid room items-start provision'>
+    <section class='grid room items-start provision proximity'>
       <div class='face-time'>
         <video
           autoplay
@@ -151,14 +151,14 @@ const FaceTime: Component = () => {
         </nav>
       </div>
 
-      <aside class='flex col tab'>
+      <aside class='flex col os layer'>
         <h4 class='card-sub'>Lean</h4>
         <p class='term grey-light'>
           Any component of a business enterprise that fails to directly benefit
           a final product is superfluous.
         </p>
 
-        <article class={getGroup('box items-center screen')}>
+        <article class={getGroup('box items-center')}>
           <header class='flex col tab'>
             <h4 class='card-sub'>Wake Up</h4>
             <p class='term grey-dark'>Tomorrow</p>
