@@ -1,13 +1,5 @@
 import { For, Component, createSignal } from 'solid-js';
-import { For, Component, createSignal } from 'solid-js';
 import { createStore } from 'solid-js/store';
-
-import { ActionTypes } from '../../../models/config';
-import { getGroup } from '../../../models/theme';
-
-import Tooltip from '../../../components/Tooltip';
-
-import WandStarsIcon from '../../../assets/icons/wand-stars.svg';
 
 import { ActionTypes } from '../../../models/config';
 import { getGroup } from '../../../models/theme';
@@ -37,8 +29,6 @@ type ComparisonType = {
 
 const INIT_HELP = 'Load this configuration';
 
-const INIT_HELP = 'Load this configuration';
-
 const ConfigHistory: Component<ComparisonType> = ({
   productFacade,
   selectedOptions,
@@ -50,7 +40,6 @@ const ConfigHistory: Component<ComparisonType> = ({
     strategy: new PercentageDifferenceStrategy() as PriceDifferenceStrategy
   });
   const [snackbar, setSnackbar] = createSignal<string>(INIT_HELP);
-  const [snackbar, setSnackbar] = createSignal<string>(INIT_HELP);
 
   const configHistory = new ConfigurationHistory(setHistory);
 
@@ -59,7 +48,6 @@ const ConfigHistory: Component<ComparisonType> = ({
     command.execute();
   };
 
-  const loadConfiguration = async (memento: ConfigurationMemento) => {
   const loadConfiguration = async (memento: ConfigurationMemento) => {
     setSelectedOptions(() => memento.getState());
 
@@ -131,7 +119,6 @@ const ConfigHistory: Component<ComparisonType> = ({
                 <WandStarsIcon />
               </Tooltip>
             </div>
-          </article>
           </article>
         )}
       </For>

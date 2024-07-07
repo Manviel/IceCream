@@ -2,8 +2,6 @@ import { JSX } from 'solid-js/jsx-runtime';
 
 import { getStack } from '../../models/theme';
 
-import { getStack } from '../../models/theme';
-
 import { IProductComponent } from './Composite';
 
 export function withDiscount(

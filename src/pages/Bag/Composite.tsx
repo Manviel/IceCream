@@ -24,7 +24,6 @@ export class ProductComponent implements IProductComponent {
   display(): JSX.Element {
     return (
       <li>
-      <li>
         {this.name}: ${this.price}
       </li>
     );
