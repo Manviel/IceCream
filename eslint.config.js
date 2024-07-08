@@ -1,11 +1,14 @@
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
+
 export default [
-  {
-    rules: {
-      'prefer-const': 'error'
-    }
-  },
   { files: ['**/*.{js,mjs,cjs,ts}'] },
+  { files: ['**/*.js'], languageOptions: { sourceType: 'script' } },
+  { languageOptions: { globals: globals.browser } },
   {
     ignores: ['**/node_modules/*', 'dist/*']
-  }
+  },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended
 ];
