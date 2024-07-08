@@ -1,4 +1,5 @@
 import { Component, createSignal, createEffect } from 'solid-js';
+import { JSX } from 'solid-js/jsx-runtime';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
 import NumberField from '../../../components/Field/NumberField';
@@ -25,43 +26,39 @@ const Vault: Component = () => {
     setIncome(result);
   });
 
-  const handleChange = ({ target }: any) => setBudget(target.value);
+  const handleChange: JSX.InputEventHandler<HTMLInputElement, InputEvent> = ({ target }) =>
+    setBudget(Number(target.value));
 
   return (
     <DialogFacade
-      title='I want multiply'
-      description='Making a deposit for 12 months.'
+      title="I want multiply"
+      description="Making a deposit for 12 months."
       triggerContent={
         <>
-          <h3 class='card-sub'>Vault</h3>
-          <p class='term grey-dark accrued'>Only {valueNow}% remained</p>
+          <h3 class="card-sub">Vault</h3>
+          <p class="term grey-dark accrued">Only {valueNow}% remained</p>
 
           <div
-            class='provision'
-            role='progressbar'
-            aria-label='Activity ring'
+            class="provision"
+            role="progressbar"
+            aria-label="Activity ring"
             aria-valuenow={valueNow}
           >
             <Ring progress={valueNow} id={chartID} />
           </div>
         </>
       }
-      triggerClassName='view box rounded flex col items-start tab'
+      triggerClassName="view box rounded flex col items-start tab"
     >
-      <output name='profit' for='budget' class='sum'>
+      <output name="profit" for="budget" class="sum">
         Profit: {commasAdapter(income())}
       </output>
 
-      <div class='provision'>
-        <NumberField
-          name='budget'
-          label='Investing'
-          value={budget()}
-          onChange={handleChange}
-        />
+      <div class="provision">
+        <NumberField name="budget" label="Investing" value={budget()} onInput={handleChange} />
       </div>
 
-      <p class='info'>The amount does not include taxes. *</p>
+      <p class="info">The amount does not include taxes. *</p>
     </DialogFacade>
   );
 };
