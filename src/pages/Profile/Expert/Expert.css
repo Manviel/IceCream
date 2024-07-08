@@ -39,7 +39,7 @@
 .carousel-item {
   font-size: var(--s-system);
   scroll-snap-align: center;
-  flex: 100% 0 0;
+  flex: 96% 0 0;
   place-content: center;
 }
 

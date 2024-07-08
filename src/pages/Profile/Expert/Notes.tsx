@@ -1,4 +1,5 @@
 import { Component, onMount, createSignal, For, Show } from 'solid-js';
+import { JSX } from 'solid-js/jsx-runtime';
 
 import LineDecreaseIcon from '../../../assets/icons/line-decrease-circle.svg';
 
@@ -14,7 +15,7 @@ import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
 import Details from './Details';
 
 const Notes: Component = () => {
-  const [price, setPrice] = createSignal(undefined);
+  const [price, setPrice] = createSignal('');
   const [ticker, setTicker] = createSignal(new Date().toDateString());
   const [transactions, setTransations] = createSignal<IDBValidKey[]>();
 
@@ -48,9 +49,11 @@ const Notes: Component = () => {
     await loadFromStorage();
   };
 
-  const handlePriceChange = ({ target }: any) => setPrice(target.value);
+  const handlePriceChange: JSX.InputEventHandler<HTMLInputElement, InputEvent> = ({ target }) =>
+    setPrice(target.value);
 
-  const handleTickerChange = ({ target }: any) => setTicker(target.value);
+  const handleTickerChange: JSX.InputEventHandler<HTMLInputElement, InputEvent> = ({ target }) =>
+    setTicker(target.value);
 
   const handleClear = async () => {
     const db = await useDataBase();
@@ -62,71 +65,57 @@ const Notes: Component = () => {
     await loadFromStorage();
   };
 
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-
-    handleSave();
-  };
-
   return (
     <DialogFacade
-      title='Notes'
-      description='Activity of transactions.'
+      title="Notes"
+      description="Activity of transactions."
       closingActions={
         <>
-          <button
-            type='button'
-            onClick={handleClear}
-            class={ActionTypes.Danger}
-          >
+          <button type="button" onClick={handleClear} class={ActionTypes.Danger}>
             Clear All
           </button>
 
-          <button
-            type='button'
-            onClick={handleSubmit}
-            class={ActionTypes.Contained}
-          >
+          <button type="button" onClick={handleSave} class={ActionTypes.Contained}>
             Add Note
           </button>
         </>
       }
       triggerContent={
-        <HelpTooltip name='Notes'>
+        <HelpTooltip name="Notes">
           <LineDecreaseIcon />
         </HelpTooltip>
       }
       triggerClassName={ShapeIcon.Default}
       isFullScreen
-      childClassName='bottom-sheet card'
+      childClassName="bottom-sheet card"
       toggleActionSheet={toggleActionSheet}
     >
       <Field
-        type='text'
-        name='save-as'
-        label='Save ticker as'
+        type="text"
+        name="save-as"
+        label="Save ticker as"
         value={ticker()}
-        onChange={handleTickerChange}
+        onInput={handleTickerChange}
         required
       />
 
       <NumberField
-        name='price'
-        label='Fair Price'
+        name="price"
+        label="Fair Price"
         value={price()}
-        onChange={handlePriceChange}
+        onInput={handlePriceChange}
         required
       />
 
-      <section class='scrollable content-tall' tabIndex={0} role='log'>
+      <section class="scrollable content-tall" tabIndex={0} role="log">
         <ul class={getStack('material')}>
           <Show when={!transactions()?.length}>
             <li>Your list is empty.</li>
           </Show>
 
           <For each={transactions()}>
-            {(item) => (
-              <li class='flex items-center justify-between list-item chip'>
+            {item => (
+              <li class="flex items-center justify-between list-item chip">
                 {item.toString()}
 
                 <Details id={item.toString()} />
