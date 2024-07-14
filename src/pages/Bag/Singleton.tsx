@@ -1,9 +1,9 @@
 import { createStore } from 'solid-js/store';
 
-import { Product } from './Composite';
+import { ProductDecorator } from './Decorator';
 
-export const [productStore, setProductStore] = createStore<Product[]>([]);
+export const [productStore, setProductStore] = createStore<ProductDecorator[]>([]);
 
-export const addProduct = (product: Product) => {
+export const addProduct = (product: ProductDecorator) => {
   setProductStore(products => [...products, product]);
 };
