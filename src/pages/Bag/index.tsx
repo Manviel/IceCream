@@ -11,12 +11,13 @@ import { ActionTypes, getStack } from '../../global/theme';
 import { productStore, addProduct } from './Singleton';
 import { ProductFacade } from './Facade';
 import { BundleDecorator, ProductDecorator, WarrantyDecorator } from './Decorator';
+import { Devices, Tiers } from './Adapter';
 
 import './Bag.css';
 
 const Bag: Component = () => {
   const [warrantyYears, setWarrantyYears] = createSignal(1);
-  const [bundleItems, setBundleItems] = createSignal(['mouse', 'laptop bag']);
+  const [bundleItems, setBundleItems] = createSignal(['Cable']);
   const [priceDifferences, setPriceDifferences] = createSignal<number[]>([]);
 
   const facade = new ProductFacade();
@@ -25,9 +26,9 @@ const Bag: Component = () => {
     e.preventDefault();
 
     const { products, priceDifferences } = facade.createAndCompareProducts([
-      'Laptop X',
-      'Laptop Pro',
-      'Laptop Ultra'
+      `${Devices.Tablet} ${Tiers.Entry}`,
+      `${Devices.Mobile} ${Tiers.High}`,
+      `${Devices.Laptop} ${Tiers.Mid}`
     ]);
 
     setPriceDifferences(priceDifferences);
