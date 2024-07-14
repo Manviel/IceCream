@@ -1,10 +1,13 @@
 import { Component, createSignal, createEffect } from 'solid-js';
 import { JSX } from 'solid-js/jsx-runtime';
+import { A } from '@solidjs/router';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
 import NumberField from '../../../components/Field/NumberField';
 
 import { commasAdapter, randomInRange } from '../../../services/utils';
+import { Paths } from '../../../models';
+import { ActionTypes } from '../../../models/config';
 
 import Ring from './Ring';
 
@@ -49,6 +52,11 @@ const Vault: Component = () => {
         </>
       }
       triggerClassName="view box rounded flex col items-start tab"
+      closingActions={
+        <A href={Paths.Privacy} class={ActionTypes.Contained}>
+          Go to Policy
+        </A>
+      }
     >
       <output name="profit" for="budget" class="sum">
         Profit: {commasAdapter(income())}
