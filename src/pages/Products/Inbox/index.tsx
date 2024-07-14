@@ -1,9 +1,8 @@
 import { Component } from 'solid-js';
 import { A } from '@solidjs/router';
 
-import { Paths } from '../../../models';
-import { ActionTypes } from '../../../models/config';
-import { ShapeIcon } from '../../../models/theme';
+import { Paths } from '../../../global';
+import { ActionTypes, ShapeIcon } from '../../../global/theme';
 
 import DialogFacade from '../../../components/DialogContent/DialogFacade';
 

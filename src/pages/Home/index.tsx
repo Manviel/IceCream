@@ -1,8 +1,8 @@
 import { Component } from 'solid-js';
 import { A } from '@solidjs/router';
 
-import { Pages, Paths } from '../../models';
-import { ActionTypes } from '../../models/config';
+import { Pages, Paths } from '../../global';
+import { ActionTypes } from '../../global/theme';
 
 import ConnectFactory from '../../components/Link/ConnectFactory';
 import PageDecorator from '../../components/PageDecorator';

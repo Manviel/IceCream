@@ -1,8 +1,8 @@
-import { Entity, IDType } from '../../../models';
+import { Entity, IDType } from '../../../global';
 
 export enum ChartTypes {
   Bar = 'bar',
-  Line = 'line',
+  Line = 'line'
 }
 
 export interface ChartIDType extends IDType {

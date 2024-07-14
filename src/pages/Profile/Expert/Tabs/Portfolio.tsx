@@ -2,8 +2,8 @@ import { ParentComponent, Accessor, createSignal } from 'solid-js';
 
 import DocCopyIcon from '../../../../assets/icons/doc-copy.svg';
 
-import { IDType } from '../../../../models';
-import { getGroup } from '../../../../models/theme';
+import { IDType } from '../../../../global';
+import { getGroup } from '../../../../global/theme';
 
 import Tooltip from '../../../../components/Tooltip';
 
@@ -16,7 +16,7 @@ interface PortfolioType<T> extends IDType {
 
 const INIT_HELP = 'Copy to clipboad';
 
-const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
+const Portfolio: ParentComponent<PortfolioType<number>> = props => {
   const { children, id, fairPriceCost, fairPricePercent } = props;
 
   const [snackbar, setSnackbar] = createSignal<string>(INIT_HELP);
@@ -32,26 +32,26 @@ const Portfolio: ParentComponent<PortfolioType<number>> = (props) => {
   };
 
   return (
-    <fieldset class='grid products proximity portfolio'>
-      <legend class='subtitle card-header'>{id}</legend>
+    <fieldset class="grid products proximity portfolio">
+      <legend class="subtitle card-header">{id}</legend>
 
       {children}
 
       <div class={getGroup('ghost items-end')}>
-        <div class='flex col lockup' role='status'>
+        <div class="flex col lockup" role="status">
           <p>Fair Price (in $)</p>
-          <strong class='subtitle'>{fairPriceCost().toFixed(2)}</strong>
+          <strong class="subtitle">{fairPriceCost().toFixed(2)}</strong>
         </div>
 
-        <Tooltip name='Clone' onClick={handleCopy} snackbar={snackbar}>
+        <Tooltip name="Clone" onClick={handleCopy} snackbar={snackbar}>
           <DocCopyIcon />
         </Tooltip>
       </div>
 
       <div class={getGroup('material items-end')}>
-        <div class='flex col lockup' role='status'>
+        <div class="flex col lockup" role="status">
           <p>Fair Price (in %)</p>
-          <strong class='subtitle'>{fairPricePercent(fairPriceCost())}</strong>
+          <strong class="subtitle">{fairPricePercent(fairPriceCost())}</strong>
         </div>
 
         <Notes />

@@ -3,7 +3,7 @@ import { useNavigate } from '@solidjs/router';
 
 import ArrowUpIcon from '../../assets/icons/arrow-up.svg';
 
-import { ShapeIcon } from '../../models/theme';
+import { ShapeIcon } from '../../global/theme';
 
 import ConnectFactory from '../Link/ConnectFactory';
 
@@ -15,7 +15,7 @@ const Flow: ParentComponent<HeaderTemplateType> = ({
   children,
   headline,
   subtitle,
-  isDark = false,
+  isDark = false
 }) => {
   const navigate = useNavigate();
 

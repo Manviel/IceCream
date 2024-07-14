@@ -5,8 +5,8 @@ import { JSX } from 'solid-js/jsx-runtime';
 import Field from '../../components/Field';
 import ErrorMessage from '../../components/Field/ErrorMessage';
 
-import { ActionTypes } from '../../models/config';
-import { Pages } from '../../models';
+import { ActionTypes } from '../../global/theme';
+import { Pages } from '../../global';
 import { DB_USERS_TABLE, useDataBase } from '../../services/db';
 
 const ForgetForm: Component = () => {

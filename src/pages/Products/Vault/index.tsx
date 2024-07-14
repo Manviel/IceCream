@@ -6,8 +6,8 @@ import DialogFacade from '../../../components/DialogContent/DialogFacade';
 import NumberField from '../../../components/Field/NumberField';
 
 import { commasAdapter, randomInRange } from '../../../services/utils';
-import { Paths } from '../../../models';
-import { ActionTypes } from '../../../models/config';
+import { Paths } from '../../../global';
+import { ActionTypes } from '../../../global/theme';
 
 import Ring from './Ring';
 

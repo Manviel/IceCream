@@ -1,17 +1,10 @@
-import {
-  Component,
-  createSignal,
-  onMount,
-  ErrorBoundary,
-  Show,
-  ParentComponent,
-} from 'solid-js';
+import { Component, createSignal, onMount, ErrorBoundary, Show, ParentComponent } from 'solid-js';
 
 import Loader from '../Loader';
 import HelpTooltip from '../Tooltip/HelpTooltip';
 
-import { ShapeIcon, getGroup } from '../../models/theme';
-import { SegregationType } from '../../models';
+import { ShapeIcon, getGroup } from '../../global/theme';
+import { SegregationType } from '../../global';
 import { getQuote } from '../../services/news';
 import { useCacheStore } from '../../services/store';
 
@@ -24,20 +17,20 @@ type QuoteType = {
 
 interface QuoteViewType extends SegregationType {}
 
-const QuoteView: ParentComponent<QuoteViewType> = (props) => {
+const QuoteView: ParentComponent<QuoteViewType> = props => {
   const { title, description, children } = props;
 
   return (
-    <section class='card view rounded'>
+    <section class="card view rounded">
       <div class={getGroup('layer items-center')}>
-        <blockquote class='flex col gap'>
-          <strong class='subtitle'>{title}</strong>
+        <blockquote class="flex col gap">
+          <strong class="subtitle">{title}</strong>
         </blockquote>
 
         {children}
       </div>
 
-      <h3 class='box os provision term'>{description}</h3>
+      <h3 class="box os provision term">{description}</h3>
     </section>
   );
 };
@@ -78,16 +71,14 @@ const Quote: Component = () => {
   });
 
   return (
-    <ErrorBoundary
-      fallback={<h2 class='price view rounded'>Failed to fetch</h2>}
-    >
+    <ErrorBoundary fallback={<h2 class="price view rounded">Failed to fetch</h2>}>
       {loading() && <Loader />}
 
       <Show when={quote()} keyed>
-        {(res) => (
+        {res => (
           <QuoteView title={res.source} description={res.text}>
-            <button type='button' class={ShapeIcon.Default} onClick={refetch}>
-              <HelpTooltip name='Get new quote'>
+            <button type="button" class={ShapeIcon.Default} onClick={refetch}>
+              <HelpTooltip name="Get new quote">
                 <GoForwardIcon />
               </HelpTooltip>
             </button>

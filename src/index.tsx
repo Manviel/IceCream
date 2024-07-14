@@ -4,7 +4,7 @@ import { lazy } from 'solid-js';
 
 import App from './App';
 
-import { Paths } from './models';
+import { Paths } from './global';
 
 const Home = lazy(() => import('./pages/Home'));
 const Profile = lazy(() => import('./pages/Profile'));

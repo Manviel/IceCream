@@ -5,9 +5,8 @@ import PageDecorator from '../../components/PageDecorator';
 import Field from '../../components/Field';
 import NumberField from '../../components/Field/NumberField';
 
-import { Pages } from '../../models';
-import { ActionTypes } from '../../models/config';
-import { getStack } from '../../models/theme';
+import { Pages } from '../../global';
+import { ActionTypes, getStack } from '../../global/theme';
 
 import { productStore, addProduct } from './Singleton';
 import { ProductFacade } from './Facade';

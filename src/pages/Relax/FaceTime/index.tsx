@@ -7,8 +7,8 @@ import StopCircleIcon from '../../../assets/icons/stop-circle.svg';
 import CloseIcon from '../../../assets/icons/close.svg';
 import PlayIcon from '../../../assets/icons/play-fill.svg';
 
-import { ShapeIcon, getGroup } from '../../../models/theme';
-import { SegregationType } from '../../../models';
+import { ShapeIcon, getGroup } from '../../../global/theme';
+import { SegregationType } from '../../../global';
 
 import { StopWatch, setTimer } from './StopWatch';
 

@@ -1,7 +1,7 @@
 import { onMount, ParentComponent, Show } from 'solid-js';
 import { useNavigate } from '@solidjs/router';
 
-import { Paths } from '../../models';
+import { Paths } from '../../global';
 import { useAuthorization } from '../../services/db';
 
 const Guard: ParentComponent = ({ children }) => {
