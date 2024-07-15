@@ -4,7 +4,7 @@ import { lazy } from 'solid-js';
 
 import App from './App';
 
-import { Paths } from './models';
+import { Paths } from './global';
 
 const Home = lazy(() => import('./pages/Home'));
 const Profile = lazy(() => import('./pages/Profile'));
@@ -16,6 +16,7 @@ const SignIn = lazy(() => import('./pages/SignIn'));
 const SignUp = lazy(() => import('./pages/SignUp'));
 const ForgetAccount = lazy(() => import('./pages/ForgetAccount'));
 const Forbidden = lazy(() => import('./pages/NotFound/Forbidden'));
+const Bag = lazy(() => import('./pages/Bag'));
 
 render(
   () => (
@@ -38,7 +39,9 @@ render(
 
       <Route path={Paths.Forbidden} component={Forbidden} />
 
-      <Route path='*' component={NotFound} />
+      <Route path={Paths.Bag} component={Bag} />
+
+      <Route path="*" component={NotFound} />
     </Router>
   ),
   document.getElementById('root') as HTMLElement

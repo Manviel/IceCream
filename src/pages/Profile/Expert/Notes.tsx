@@ -8,8 +8,7 @@ import NumberField from '../../../components/Field/NumberField';
 import Field from '../../../components/Field';
 import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
-import { ActionTypes } from '../../../models/config';
-import { ShapeIcon, getStack } from '../../../models/theme';
+import { ActionTypes, ShapeIcon, getStack } from '../../../global/theme';
 import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
 
 import Details from './Details';

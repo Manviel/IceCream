@@ -53,8 +53,7 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', Helvetica, Arial,
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: var(--s-system);
@@ -88,8 +87,7 @@ a,
 button {
   will-change: transform;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    background-color 0.4s cubic-bezier(0.28, 0.11, 0.32, 1),
-    outline-offset 0.2s linear;
+    background-color 0.4s cubic-bezier(0.28, 0.11, 0.32, 1), outline-offset 0.2s linear;
 }
 
 a:active,

@@ -1,7 +1,7 @@
 import { ParentComponent, Accessor } from 'solid-js';
 import { Tooltip } from '@kobalte/core/tooltip';
 
-import { ShapeIcon } from '../../models/theme';
+import { ShapeIcon } from '../../global/theme';
 
 import { HelpTooltipType } from './HelpTooltip';
 
@@ -11,14 +11,8 @@ interface TooltipType<T> extends HelpTooltipType {
   className?: string;
 }
 
-const FloatingTooltip: ParentComponent<TooltipType<string>> = (props) => {
-  const {
-    children,
-    name,
-    onClick,
-    snackbar,
-    className = ShapeIcon.Default,
-  } = props;
+const FloatingTooltip: ParentComponent<TooltipType<string>> = props => {
+  const { children, name, onClick, snackbar, className = ShapeIcon.Default } = props;
 
   const handleClick = async () => {
     await onClick();
@@ -27,17 +21,10 @@ const FloatingTooltip: ParentComponent<TooltipType<string>> = (props) => {
   return (
     <Tooltip openDelay={0}>
       <Tooltip.Portal>
-        <Tooltip.Content class='tooltip vibrancy chip'>
-          {snackbar()}
-        </Tooltip.Content>
+        <Tooltip.Content class="tooltip vibrancy chip">{snackbar()}</Tooltip.Content>
       </Tooltip.Portal>
 
-      <Tooltip.Trigger
-        type='button'
-        class={className}
-        aria-label={name}
-        onClick={handleClick}
-      >
+      <Tooltip.Trigger type="button" class={className} aria-label={name} onClick={handleClick}>
         {children}
       </Tooltip.Trigger>
     </Tooltip>

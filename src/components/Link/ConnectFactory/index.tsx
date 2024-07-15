@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 
-import { AnchorType } from '../../../models';
+import { AnchorType } from '../../../global';
 
 interface ConnectFactoryType extends AnchorType {
   text?: string;
@@ -9,13 +9,13 @@ interface ConnectFactoryType extends AnchorType {
 const ConnectFactory: Component<ConnectFactoryType> = ({
   href,
   text = 'Watch Now',
-  end = true,
+  end = true
 }) => (
   <a
     href={href}
-    target='_blank'
-    rel='noopener noreferrer'
-    class='connect'
+    target="_blank"
+    rel="noopener noreferrer"
+    class="connect"
     classList={{ concise: end }}
   >
     {text}

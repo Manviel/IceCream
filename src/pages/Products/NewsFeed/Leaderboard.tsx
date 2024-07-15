@@ -5,8 +5,8 @@ import ArrowUpIcon from '../../../assets/icons/arrow-up.svg';
 import { getNews } from '../../../services/news';
 import { useCacheStore } from '../../../services/store';
 import { commasAdapter } from '../../../services/utils';
-import { Category } from '../../../models/config';
-import { Entity } from '../../../models';
+import { Category } from '../../../global/config';
+import { Entity } from '../../../global';
 
 const DEAL = 10;
 const currentRank = Category;
@@ -46,9 +46,9 @@ const Leaderboard: Component = () => {
   });
 
   return (
-    <table class='content-full concise'>
+    <table class="content-full concise">
       <caption>Exchange 1 {currentRank}</caption>
-      <thead class='material'>
+      <thead class="material">
         <tr>
           <th>Title</th>
           <th>Value</th>
@@ -64,7 +64,7 @@ const Leaderboard: Component = () => {
           </tr>
         ) : (
           <For each={news()}>
-            {(list) => {
+            {list => {
               const didGrewUp = Number(list.discountPercentage) > DEAL;
               const hasDiscount = Number(list.discountPercentage) < DEAL;
 
@@ -73,15 +73,15 @@ const Leaderboard: Component = () => {
                   <td>{list.title}</td>
                   <td>
                     <span
-                      class='chip movement tab items-center'
+                      class="chip movement tab items-center"
                       classList={{
                         ghost: didGrewUp,
-                        price: hasDiscount,
+                        price: hasDiscount
                       }}
                     >
                       <div
-                        class='flex items-center justify-center movement-direction'
-                        role='img'
+                        class="flex items-center justify-center movement-direction"
+                        role="img"
                         aria-label={didGrewUp ? 'Up by' : 'Down by'}
                       >
                         <ArrowUpIcon />

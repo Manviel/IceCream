@@ -2,18 +2,18 @@ import { Component, onMount } from 'solid-js';
 import { PieChart } from 'chartist';
 
 import { useChartSource } from '../Charts/Context';
-import { IDType } from '../../../models';
+import { IDType } from '../../../global';
 
 interface RingType extends IDType {
   progress: number;
 }
 
-const Ring: Component<RingType> = (props) => {
+const Ring: Component<RingType> = props => {
   const { progress, id } = props;
 
   const source = {
     Used: 100 - progress,
-    Free: progress,
+    Free: progress
   };
 
   const { labels, datasets } = useChartSource(source);
@@ -23,16 +23,16 @@ const Ring: Component<RingType> = (props) => {
       `#${id}`,
       {
         series: datasets,
-        labels: labels,
+        labels: labels
       },
       {
         donut: true,
         donutWidth: 14,
-        showLabel: false,
+        showLabel: false
       }
     );
 
-    chart.on('draw', (data) => {
+    chart.on('draw', data => {
       if (data.type === 'slice') {
         const node = data.element.getNode();
         const index = data.index;
@@ -42,7 +42,7 @@ const Ring: Component<RingType> = (props) => {
     });
   });
 
-  return <figure id={id} class='activity' />;
+  return <figure id={id} class="activity" />;
 };
 
 export default Ring;

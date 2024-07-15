@@ -2,7 +2,7 @@ import { Component } from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
 
-import { Pages } from '../../models';
+import { Pages } from '../../global';
 
 import NewsFeed from './NewsFeed';
 import Inbox from './Inbox';
@@ -16,12 +16,8 @@ import './Products.css';
 
 const Products: Component = () => {
   return (
-    <PageDecorator
-      headline={Pages.Products}
-      subtitle='Quick actions and features'
-      isDark
-    >
-      <div class='grid products proximity insights'>
+    <PageDecorator headline={Pages.Products} subtitle="Quick actions and features" isDark>
+      <div class="grid products proximity insights">
         <Vault />
         <Inbox />
         <Stocks />

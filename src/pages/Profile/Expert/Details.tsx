@@ -4,8 +4,8 @@ import ArrowDownIcon from '../../../assets/icons/arrow-down-circle.svg';
 
 import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
-import { ShapeIcon } from '../../../models/theme';
-import { IDType } from '../../../models';
+import { ShapeIcon } from '../../../global/theme';
+import { IDType } from '../../../global';
 import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
 
 const Details: Component<IDType> = ({ id }) => {
@@ -24,19 +24,19 @@ const Details: Component<IDType> = ({ id }) => {
   };
 
   return (
-    <div class='flex gap items-center'>
+    <div class="flex gap items-center">
       <button
-        type='button'
+        type="button"
         class={ShapeIcon.Default}
         onClick={handleSubmit}
         aria-disabled={!!modal()}
       >
-        <HelpTooltip name='Peek'>
+        <HelpTooltip name="Peek">
           <ArrowDownIcon />
         </HelpTooltip>
       </button>
 
-      {modal() && <span class='chip price term'>{modal()}</span>}
+      {modal() && <span class="chip price term">{modal()}</span>}
     </div>
   );
 };
