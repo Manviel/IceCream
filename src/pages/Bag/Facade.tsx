@@ -14,17 +14,25 @@ export class ProductFacade {
     this.pricingAdapter = new LocalPricingAdapter();
   }
 
-  createAndCompareProducts(productNames: string[]): {
-    products: Product[];
-    priceDifferences: number[];
-  } {
-    const products = productNames.map(name =>
-      this.factory.createLaptop(name, this.pricingAdapter.getPrice({ name } as Product))
-    );
-    const priceDifferences = products
-      .slice(1)
-      .map((product, index) => this.comparator.compare(products[index], product));
+  createProducts(productNames: string[]): Product[] {
+    return productNames.map(name => {
+      const price = this.pricingAdapter.getPrice({ name } as Product);
+      return this.factory.createLaptop(name, price);
+    });
+  }
 
-    return { products, priceDifferences };
+  compareProducts(products: Product[]): {
+    priceDifferences: number[];
+    valueDifferences: number[];
+  } {
+    const priceDifferences = [];
+    const valueDifferences = [];
+
+    for (let i = 1; i < products.length; i++) {
+      priceDifferences.push(this.comparator.compare(products[i - 1], products[i], 'price'));
+      valueDifferences.push(this.comparator.compare(products[i - 1], products[i], 'value'));
+    }
+
+    return { priceDifferences, valueDifferences };
   }
 }
