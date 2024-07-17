@@ -47,7 +47,7 @@
 }
 
 .widget-legend {
-  padding: 0.4rem var(--s-system) var(--s-safe);
+  padding: var(--s-bezel) var(--s-system) var(--s-safe);
 }
 
 .widget-legend .ct-label {

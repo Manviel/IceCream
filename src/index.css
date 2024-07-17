@@ -11,14 +11,15 @@
   --c-glass: color(display-p3 0.944 0.971 0.993);
   --c-blue: color(display-p3 0.187 0.436 0.86);
   --c-ring: color(display-p3 0.166 0.394 0.773);
-  --c-pressure: color(display-p3 0.991 0.97 0.93);
-  --c-lamp: color(display-p3 0.979 0.939 0.949);
+  --c-yellow: color(display-p3 0.991 0.97 0.93);
+  --c-pink: color(display-p3 0.979 0.939 0.949);
   --c-heat: color(display-p3 0.917 0.293 0.384);
   --c-red: color(display-p3 0.77 0.182 0.164);
-  --c-ghost: color(display-p3 0.925 0.971 0.886);
+  --c-green: color(display-p3 0.925 0.971 0.886);
   --c-black: color(display-p3 0.11 0.11 0.117);
   --c-backdrop: color(display-p3 0.259 0.259 0.27 / 0.7);
   --c-dark: color(display-p3 0 0 0);
+  --s-bezel: 0.4rem;
   --s-line: 0.6rem;
   --s-unit: 0.8rem;
   --s-safe: 1.2rem;
@@ -28,7 +29,7 @@
   --s-screen: 3.4rem;
   --s-entry: 4.2rem;
   --s-finger: 4.4rem;
-  --s-offset: 8.1rem;
+  --s-offset: 7.8rem;
   --s-indicator: 4px;
   --s-leading: 1.6;
   --p-blur: blur(14px) saturate(180%);
@@ -189,7 +190,7 @@ a:focus-visible {
 }
 
 .dock {
-  padding: var(--s-line) var(--s-medium) var(--s-safe);
+  padding: var(--s-bezel) var(--s-medium) 1rem;
 }
 
 .layer {
@@ -203,7 +204,7 @@ a:focus-visible {
 .connect {
   display: inline-block;
   color: var(--c-ring);
-  padding: 0.4rem 0;
+  padding: var(--s-bezel) 0;
 }
 
 .connect:hover {
@@ -258,11 +259,11 @@ a:focus-visible {
 }
 
 .ghost {
-  background-color: var(--c-ghost);
+  background-color: var(--c-green);
 }
 
 .price {
-  background-color: var(--c-pressure);
+  background-color: var(--c-yellow);
 }
 
 .vibrancy {
@@ -270,7 +271,7 @@ a:focus-visible {
 }
 
 .alias {
-  background-color: var(--c-lamp);
+  background-color: var(--c-pink);
 }
 
 .red {
@@ -334,7 +335,7 @@ a:focus-visible {
 }
 
 .tab.active {
-  transform: scale(1.1);
+  transform: scale(1.03);
   color: var(--c-dark);
 }
 
@@ -362,7 +363,7 @@ a:focus-visible {
 }
 
 .chip {
-  padding: 0.4rem var(--s-unit);
+  padding: var(--s-bezel) var(--s-unit);
   border-radius: var(--s-unit);
 }
 
@@ -428,7 +429,7 @@ button[aria-disabled='true'] {
 
   .dock {
     border-top: 1px solid var(--c-active);
-    padding: var(--s-line) 1.6rem 1.8rem;
+    padding: var(--s-bezel) 1.6rem 1.7rem;
   }
 
   .title {

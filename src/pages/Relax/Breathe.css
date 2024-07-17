@@ -22,7 +22,7 @@
 
 .circle:nth-child(1) {
   animation: circle-1 var(--s-inhale) ease alternate infinite;
-  background-color: var(--c-lamp);
+  background-color: var(--c-pink);
 }
 
 .circle:nth-child(2) {
@@ -35,7 +35,7 @@
 
 .circle:nth-child(4) {
   animation: circle-4 var(--s-inhale) ease alternate infinite;
-  background-color: var(--c-ghost);
+  background-color: var(--c-green);
 }
 
 .circle:nth-child(5) {
@@ -50,7 +50,7 @@
 .circle:nth-child(2),
 .circle:nth-child(3),
 .circle:nth-child(6) {
-  background-color: var(--c-pressure);
+  background-color: var(--c-yellow);
 }
 
 @keyframes relax {

@@ -40,7 +40,7 @@
 }
 
 .closing-actions {
-  padding-top: 0.4rem;
+  padding-top: var(--s-bezel);
 }
 
 .closing-actions > * {
