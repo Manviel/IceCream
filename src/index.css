@@ -368,7 +368,7 @@ a:focus-visible {
 }
 
 .card-header {
-  margin: 1rem 0 var(--s-unit);
+  margin: 0.2rem 0 var(--s-unit);
 }
 
 .screen {

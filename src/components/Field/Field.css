@@ -4,6 +4,7 @@
 
 .form-control {
   padding: 1.1rem var(--s-safe) 1rem;
+  font-size: 1.6rem;
 }
 
 .form-action {

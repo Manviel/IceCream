@@ -12,6 +12,7 @@ import { productStore, setProductStore } from './Singleton';
 import { ProductFacade } from './Facade';
 import { BundleDecorator, ProductDecorator, WarrantyDecorator } from './Decorator';
 import { Devices, Tiers } from './Adapter';
+import Deposit from './Deposit';
 
 import './Bag.css';
 
@@ -59,27 +60,31 @@ const Bag: Component = () => {
 
   return (
     <PageDecorator headline={Pages.Bag} subtitle="Endless potential">
-      <form onSubmit={addDevices}>
-        <NumberField
-          name="warranty"
-          label="Warranty Years"
-          value={warrantyYears()}
-          onInput={handleWarrantyChange}
-          required
-        />
+      <div class="grid products proximity bag">
+        <form onSubmit={addDevices}>
+          <NumberField
+            name="warranty"
+            label="Warranty Years"
+            value={warrantyYears()}
+            onInput={handleWarrantyChange}
+            required
+          />
 
-        <Field
-          name="bundle"
-          label="Bundle Items (comma-separated)"
-          value={bundleItems().join(', ')}
-          onInput={handleBundleChange}
-          required
-        />
+          <Field
+            name="bundle"
+            label="Bundle Items (comma-separated)"
+            value={bundleItems().join(', ')}
+            onInput={handleBundleChange}
+            required
+          />
 
-        <button type="submit" class={ActionTypes.Contained}>
-          Add Devices
-        </button>
-      </form>
+          <button type="submit" class={ActionTypes.Contained}>
+            Add Devices
+          </button>
+        </form>
+
+        <Deposit />
+      </div>
 
       <div class="grid products proximity screen bag">
         <Index each={productStore}>

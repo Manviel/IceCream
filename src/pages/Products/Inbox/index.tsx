@@ -25,28 +25,30 @@ const Inbox: Component = () => {
   const { datasets } = useChartSource(source);
 
   return (
-    <DialogFacade
-      title="Abstract"
-      description="This helps the user to focus on what the object does, rather than how it performs."
-      closingActions={
-        <A href={Paths.Bag} class={ActionTypes.Contained}>
-          Add to Bag
-        </A>
-      }
-      triggerContent={
-        <>
-          <h3 class="card-sub">Inbox</h3>
-          <h4 class="flex card-text">1</h4>
+    <section class="view card rounded flex col items-start justify-between tab">
+      <h3 class="card-sub">Inbox</h3>
+      <h4 class="flex card-text">1</h4>
 
-          <div role="img" aria-label="View details" class={ShapeIcon.Default}>
-            <TrayIcon />
-          </div>
-        </>
-      }
-      triggerClassName="view card rounded flex col items-start justify-between tab"
-    >
-      <p class="info">Average price of a base iPhone is {average(datasets).toFixed(2)} UAH.</p>
-    </DialogFacade>
+      <DialogFacade
+        title="Abstract"
+        description="This helps the user to focus on what the object does, rather than how it performs."
+        closingActions={
+          <>
+            <A href={Paths.Privacy} class={ActionTypes.Secondary}>
+              Go to Policy
+            </A>
+
+            <A href={Paths.Bag} class={ActionTypes.Contained}>
+              Add to Bag
+            </A>
+          </>
+        }
+        triggerContent={<TrayIcon />}
+        triggerClassName={ShapeIcon.Default}
+      >
+        <p class="info">Average price of a base iPhone is {average(datasets).toFixed(2)} UAH.</p>
+      </DialogFacade>
+    </section>
   );
 };
 

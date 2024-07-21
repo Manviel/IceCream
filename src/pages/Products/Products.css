@@ -26,7 +26,7 @@
 
 .widget-line .ct-point,
 .widget-bar .ct-bar {
-  stroke-width: var(--s-system);
+  stroke-width: var(--s-safe);
   transition: stroke-width 0.2s cubic-bezier(0.666, 0, 0.4, 1);
 }
 

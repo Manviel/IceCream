@@ -19,8 +19,3 @@
 .accrued {
   text-align: left;
 }
-
-.sum {
-  font-size: var(--s-dock);
-  font-weight: bold;
-}
