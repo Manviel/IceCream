@@ -30,9 +30,10 @@
   --s-entry: 4.2rem;
   --s-finger: 4.4rem;
   --s-offset: 7.8rem;
-  --s-indicator: 4px;
   --s-leading: 1.6;
-  --p-blur: blur(14px) saturate(180%);
+  --p-blur: blur(12px) saturate(180%);
+  --p-spec: blur(8px);
+  --p-indicator: blur(4px);
 }
 
 @font-face {
@@ -98,7 +99,7 @@ button:active {
 
 :focus-visible {
   outline: 2px solid var(--c-ring);
-  outline-offset: var(--s-indicator);
+  outline-offset: var(--s-bezel);
 }
 
 a:focus-visible {
@@ -346,7 +347,7 @@ a:focus-visible {
 .tab.active::after {
   position: absolute;
   width: var(--s-safe);
-  height: var(--s-indicator);
+  height: var(--s-bezel);
   border-radius: var(--s-medium);
   background-color: var(--c-ring);
   content: '';

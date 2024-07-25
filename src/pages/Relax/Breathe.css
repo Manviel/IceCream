@@ -12,6 +12,7 @@
   position: absolute;
   mix-blend-mode: screen;
   transform: translate(0, 0);
+  filter: saturate(180%);
 }
 
 .breathe,

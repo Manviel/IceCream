@@ -43,7 +43,7 @@
 .widget-line .ct-point:focus,
 .widget-bar .ct-bar:hover,
 .widget-bar .ct-bar:focus {
-  filter: contrast(90%) brightness(125%) saturate(110%);
+  filter: contrast(90%) brightness(140%);
 }
 
 .widget-legend {

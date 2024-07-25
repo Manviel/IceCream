@@ -60,7 +60,6 @@
   z-index: 2;
   margin: 0 -2rem;
   border-top: 1px solid var(--c-active);
-  border-radius: 1.6rem;
 }
 
 .portfolio {
@@ -73,12 +72,6 @@
 
 .list-item {
   background-color: var(--c-ambient);
-}
-
-@media screen and (max-width: 1052px) {
-  .ornament {
-    border-radius: 0;
-  }
 }
 
 @media screen and (max-width: 768px) {

@@ -22,8 +22,8 @@ video {
 
 .stream-controls,
 .stop-watch {
-  backdrop-filter: blur(var(--s-indicator));
-  -webkit-backdrop-filter: blur(var(--s-indicator));
+  backdrop-filter: var(--p-indicator);
+  -webkit-backdrop-filter: var(--p-indicator);
 }
 
 .toast-list {
