@@ -1,10 +1,11 @@
-import { Component, For, createEffect, Show, createResource, ErrorBoundary } from 'solid-js';
+import { Component, For, createEffect, Show, createSignal, onMount, ErrorBoundary } from 'solid-js';
 
 import PageDecorator from '../../components/PageDecorator';
 import Loader from '../../components/Loader';
 
 import { transformCase, useObserver } from '../../services/utils';
 import { getUsers } from '../../services/news';
+import { useCacheStore } from '../../services/store';
 import { Pages } from '../../global';
 
 import Report, { FullNameType, UserType } from './Report';
@@ -30,8 +31,40 @@ const useStickyNavigation = () => {
   );
 };
 
+const requestKey = { url: 'users' };
+
 const Privacy: Component = () => {
-  const [containers] = createResource<UserType[]>(getUsers);
+  const [loading, setLoading] = createSignal(false);
+  const [containers, setContainers] = createSignal<UserType[]>();
+
+  const { getStore, setStore } = useCacheStore();
+
+  const refetch = async () => {
+    setLoading(true);
+
+    try {
+      const data = await getUsers();
+
+      setContainers(data);
+      setStore(requestKey, data);
+    } catch (err) {
+      console.error('Error fetching users:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  onMount(() => {
+    const requestCache = getStore(requestKey);
+
+    if (requestCache) {
+      setContainers(requestCache);
+
+      return;
+    }
+
+    refetch();
+  });
 
   createEffect(() => {
     if (containers()) useStickyNavigation();
@@ -42,7 +75,7 @@ const Privacy: Component = () => {
   return (
     <PageDecorator headline={Pages.Privacy} subtitle="Designed for your policy" isDark>
       <ErrorBoundary fallback={<h2 class="price view rounded">Failed to fetch</h2>}>
-        {containers.loading && <Loader />}
+        {loading() && <Loader />}
 
         <Show when={containers()} keyed>
           {res => (

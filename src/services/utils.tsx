@@ -15,11 +15,21 @@ export const useObserver = (
   execute: (e: IntersectionObserverEntry) => void,
   options = {}
 ) => {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => execute(entry));
-  }, options);
+  const initObserver = () => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => execute(entry));
+    }, options);
 
-  document.querySelectorAll(query).forEach(item => observer.observe(item));
+    const entries = document.querySelectorAll(query);
+
+    if (entries.length > 0) {
+      entries.forEach(item => observer.observe(item));
+    } else {
+      queueMicrotask(() => initObserver());
+    }
+  };
+
+  initObserver();
 };
 
 export const total = (arr: number[]) => arr.reduce((a: number, b: number) => a + b, 0);

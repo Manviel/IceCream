@@ -4,7 +4,7 @@
   --c-ambient: color(display-p3 1 1 1 / 0.42);
   --c-active: color(display-p3 0.463 0.463 0.499 / 0.12);
   --c-action: color(display-p3 0.463 0.463 0.499 / 0.24);
-  --c-depth: color(display-p3 0.961 0.961 0.968 / 0.6);
+  --c-depth: color(display-p3 0.961 0.961 0.968 / 0.62);
   --c-primary: color(display-p3 0.969 0.969 0.976);
   --c-surface: color(display-p3 0.431 0.431 0.449);
   --c-grey: color(display-p3 0.631 0.631 0.649);
