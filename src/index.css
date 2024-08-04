@@ -405,6 +405,7 @@ a:focus-visible {
 button[aria-disabled='true'] {
   cursor: not-allowed;
   color: var(--c-backdrop);
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 768px) {

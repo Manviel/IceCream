@@ -45,7 +45,7 @@ const LayeredLevels: Component = () => {
           <strong class="subtitle">$42</strong>
         </div>
 
-        <A href={Paths.Bag} class={ShapeIcon.Default}>
+        <A href={Paths.Bag} class={ShapeIcon.Default} aria-label="Go to Bag">
           <TrayIcon />
         </A>
       </div>
