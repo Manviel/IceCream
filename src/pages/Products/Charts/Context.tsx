@@ -9,6 +9,8 @@ type ChartLegendType<T> = {
   legend: Accessor<T>;
 };
 
+export const AXIS_OFFSET = 30;
+
 export const useLegends = ({ labels, datasets }: ChartSource) => {
   const [legend, setLegend] = createSignal<string | null>('0');
 

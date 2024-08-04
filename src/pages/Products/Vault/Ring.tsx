@@ -12,8 +12,8 @@ const Ring: Component<RingType> = props => {
   const { progress, id } = props;
 
   const source = {
-    Used: 100 - progress,
-    Free: progress
+    Free: progress,
+    Used: 100 - progress
   };
 
   const { labels, datasets } = useChartSource(source);

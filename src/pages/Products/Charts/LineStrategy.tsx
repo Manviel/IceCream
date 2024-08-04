@@ -2,9 +2,9 @@ import { Component, onMount } from 'solid-js';
 import { LineChart } from 'chartist';
 
 import { ChartIDType } from '../Charts';
-import { ChartLegend, useChartSource, useLegends } from './Context';
+import { AXIS_OFFSET, ChartLegend, useChartSource, useLegends } from './Context';
 
-const LineStrategy: Component<ChartIDType> = (props) => {
+const LineStrategy: Component<ChartIDType> = props => {
   const { id, source } = props;
 
   const { labels, datasets } = useChartSource(source);
@@ -15,18 +15,22 @@ const LineStrategy: Component<ChartIDType> = (props) => {
       `#${id}`,
       {
         labels: labels,
-        series: [datasets],
+        series: [datasets]
       },
       {
         showArea: true,
         fullWidth: true,
         axisX: {
-          showGrid: false,
+          showGrid: false
         },
+        axisY: {
+          position: 'end',
+          offset: AXIS_OFFSET
+        }
       }
     );
 
-    chart.on('draw', (data) => {
+    chart.on('draw', data => {
       if (data.type === 'point') {
         const node = data.element.getNode();
 
@@ -37,7 +41,7 @@ const LineStrategy: Component<ChartIDType> = (props) => {
 
   return (
     <>
-      <figure id={id} class='widget-line' />
+      <figure id={id} class="widget-line" />
 
       <ChartLegend legend={legend} />
     </>

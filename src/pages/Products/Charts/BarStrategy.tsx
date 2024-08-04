@@ -2,9 +2,9 @@ import { Component, onMount } from 'solid-js';
 import { BarChart } from 'chartist';
 
 import { ChartIDType } from '../Charts';
-import { ChartLegend, useChartSource, useLegends } from './Context';
+import { AXIS_OFFSET, ChartLegend, useChartSource, useLegends } from './Context';
 
-const BarStrategy: Component<ChartIDType> = (props) => {
+const BarStrategy: Component<ChartIDType> = props => {
   const { id, source, config } = props;
 
   const { labels, datasets } = useChartSource(source);
@@ -15,7 +15,7 @@ const BarStrategy: Component<ChartIDType> = (props) => {
       `#${id}`,
       {
         labels: labels,
-        series: datasets,
+        series: datasets
       },
       {
         ...config,
@@ -24,13 +24,17 @@ const BarStrategy: Component<ChartIDType> = (props) => {
           showGrid: false,
           labelOffset: {
             x: 0,
-            y: 8,
-          },
+            y: 8
+          }
         },
+        axisY: {
+          position: 'end',
+          offset: AXIS_OFFSET
+        }
       }
     );
 
-    chart.on('draw', (data) => {
+    chart.on('draw', data => {
       if (data.type === 'bar') {
         const node = data.element.getNode();
 
@@ -41,7 +45,7 @@ const BarStrategy: Component<ChartIDType> = (props) => {
 
   return (
     <>
-      <figure id={id} class='widget-bar' />
+      <figure id={id} class="widget-bar" />
 
       <ChartLegend legend={legend} />
     </>

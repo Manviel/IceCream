@@ -15,7 +15,3 @@
 .activity .ct-series-b .ct-slice-donut {
   stroke: var(--c-action);
 }
-
-.accrued {
-  text-align: left;
-}

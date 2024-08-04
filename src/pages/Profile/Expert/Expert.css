@@ -1,7 +1,3 @@
-.items-end {
-  align-items: flex-end;
-}
-
 .tour-list {
   font-size: var(--s-system);
   padding: 0.2rem;
