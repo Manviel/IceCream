@@ -79,6 +79,10 @@
     bottom: var(--s-offset);
     margin: 0 -1.6rem;
   }
+
+  .carousel-item {
+    flex: 92% 0 0;
+  }
 }
 
 @keyframes toast-enter {

@@ -408,6 +408,12 @@ button[aria-disabled='true'] {
   opacity: 0.8;
 }
 
+@media screen and (max-width: 1052px) {
+  .subtitle {
+    word-break: break-all;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .app {
     margin-bottom: var(--s-offset);
@@ -445,8 +451,6 @@ button[aria-disabled='true'] {
 
   .subtitle {
     font-size: 2.4rem;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 
   .card-sub {

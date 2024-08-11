@@ -1,3 +1,7 @@
+:root {
+  --s-corner: 1.8rem;
+}
+
 .home-grid {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -17,11 +21,15 @@
 }
 
 .cohesion {
-  border-radius: 0 1.8rem 1.8rem 0;
+  border-radius: 0 var(--s-corner) var(--s-corner) 0;
 }
 
 .coupling {
-  border-radius: 1.8rem 1.8rem 0 0;
+  border-radius: var(--s-corner) var(--s-corner) 0 0;
+}
+
+.fill {
+  flex: 1;
 }
 
 @media screen and (max-width: 1052px) {
@@ -32,10 +40,6 @@
   .flex-wrap {
     flex-wrap: wrap;
   }
-
-  .cohesion {
-    border-radius: 0 0 1.8rem 1.8rem;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -45,6 +49,10 @@
 
   .os-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cohesion {
+    border-radius: 0 0 var(--s-corner) var(--s-corner);
   }
 }
 

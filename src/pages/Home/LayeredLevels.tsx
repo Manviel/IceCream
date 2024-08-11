@@ -27,11 +27,11 @@ const listItems: ListItemGen<string>[] = [
 
 const LayeredLevels: Component = () => {
   return (
-    <div class="flex col justify-between content-tall">
-      <ul class="flex justify-between items-start proximity flex-wrap">
+    <div class="flex col justify-between content-tall proximity">
+      <ul class="flex justify-between proximity flex-wrap">
         <For each={listItems}>
           {item => (
-            <li class={getStack('box')}>
+            <li class={getStack('box fill')}>
               <h4 class="card-sub">{item.label}</h4>
               <p class="term grey-dark">{item.value}</p>
             </li>
