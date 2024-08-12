@@ -64,6 +64,7 @@
 
 .portfolio legend {
   font-weight: bold;
+  display: block;
 }
 
 .list-item {
@@ -81,7 +82,7 @@
   }
 
   .carousel-item {
-    flex: 92% 0 0;
+    flex: 90% 0 0;
   }
 }
 
