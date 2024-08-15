@@ -29,7 +29,7 @@
   --s-screen: 3.4rem;
   --s-entry: 4.2rem;
   --s-finger: 4.4rem;
-  --s-offset: 7.8rem;
+  --s-offset: 7.6rem;
   --s-leading: 1.6;
   --p-blur: blur(12px) saturate(180%);
   --p-spec: blur(8px);
@@ -410,7 +410,7 @@ button[aria-disabled='true'] {
 
 @media screen and (max-width: 1052px) {
   .subtitle {
-    word-break: break-all;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -441,7 +441,7 @@ button[aria-disabled='true'] {
 
   .dock {
     border-top: 1px solid var(--c-active);
-    padding: var(--s-bezel) 1.6rem 1.7rem;
+    padding: var(--s-bezel) 1.6rem 1.5rem;
   }
 
   .title {
