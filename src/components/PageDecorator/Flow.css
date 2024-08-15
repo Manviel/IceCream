@@ -18,5 +18,6 @@
 }
 
 .flow-mode .app {
-  margin-bottom: var(--s-unit);
+  margin-bottom: var(--s-bezel);
+  margin-top: 0.2rem;
 }

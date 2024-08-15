@@ -323,8 +323,8 @@ a:focus-visible {
 
 .depth {
   background-color: var(--c-depth);
-  backdrop-filter: var(--p-blur);
   -webkit-backdrop-filter: var(--p-blur);
+  backdrop-filter: var(--p-blur);
   color: var(--c-dark);
 }
 

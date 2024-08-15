@@ -9,8 +9,8 @@
   bottom: 0;
   left: 0;
   z-index: 3;
-  backdrop-filter: var(--p-spec);
   -webkit-backdrop-filter: var(--p-spec);
+  backdrop-filter: var(--p-spec);
 }
 
 .dialog {
@@ -23,8 +23,8 @@
 .alert {
   max-width: 54vw;
   background-color: var(--c-elevation);
-  backdrop-filter: var(--p-blur);
   -webkit-backdrop-filter: var(--p-blur);
+  backdrop-filter: var(--p-blur);
   animation: alert-enter ease-in-out 0.2s;
 }
 
