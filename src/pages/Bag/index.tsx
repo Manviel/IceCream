@@ -88,42 +88,49 @@ const Bag: Component = () => {
 
       <div class="grid products proximity screen bag">
         <Index each={productStore}>
-          {(product, index) => (
-            <article class="view layer rounded">
-              <h3 class="subtitle">{product().getDescription()}</h3>
+          {(product, index) => {
+            const hasComparisons = index > 0 && comparisons();
 
-              <header class="flex justify-between items-center">
-                <p class="term grey-light card-header">Base Price: ${product().basePrice}</p>
+            return (
+              <article class="view layer rounded">
+                <h3 class="subtitle">{product().getDescription()}</h3>
 
-                {index > 0 && comparisons() && (
-                  <div class="flex gap">
+                <header class="flex justify-between items-center card-header">
+                  <p class="term grey-light">Base Price: ${product().basePrice}</p>
+
+                  {hasComparisons && (
                     <p class="chip box">Difference: {comparisons()?.priceDifferences[index - 1]}</p>
+                  )}
+                </header>
+
+                <header class="flex justify-between items-center">
+                  <h4 class="card-sub">Options:</h4>
+
+                  {hasComparisons && (
                     <p class="chip box">
                       Value: {comparisons()?.valueDifferences[index - 1].toFixed(2)} pt
                     </p>
-                  </div>
-                )}
-              </header>
-
-              <h4 class="card-sub">Options:</h4>
-
-              <ul class="info">
-                <For each={product().options}>
-                  {option => (
-                    <li>
-                      {option.name}: ${option.price}
-                    </li>
                   )}
-                </For>
-              </ul>
+                </header>
 
-              <div class={getStack('ghost')}>
-                <p class="concise">Total Price:</p>
+                <ul class="info">
+                  <For each={product().options}>
+                    {option => (
+                      <li>
+                        {option.name}: ${option.price}
+                      </li>
+                    )}
+                  </For>
+                </ul>
 
-                <h5 class="subtitle">${calculateTotalPrice(product())}</h5>
-              </div>
-            </article>
-          )}
+                <div class={getStack('ghost')}>
+                  <p class="concise">Total Price:</p>
+
+                  <h5 class="subtitle">${calculateTotalPrice(product())}</h5>
+                </div>
+              </article>
+            );
+          }}
         </Index>
       </div>
     </PageDecorator>
