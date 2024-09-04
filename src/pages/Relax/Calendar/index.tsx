@@ -1,7 +1,10 @@
 import { Component, onMount, createSignal } from 'solid-js';
 import { createScriptLoader } from '@solid-primitives/script-loader';
 
+import ErrorMessage from '../../../components/Field/ErrorMessage';
+
 import { ActionTypes, getStack } from '../../../global/theme';
+import { DB_AUTH_KEY, DB_LOGS_TABLE, useDataBase } from '../../../services/db';
 
 import { GApi, GAccounts, TokenClient, TokenResponse } from './types';
 import { DISCOVERY_DOC, GOOGLE_API_CLIENT, GOOGLE_IDENTITY, SCOPES } from './constants';
@@ -14,16 +17,14 @@ declare global {
 }
 
 const Calendar: Component = () => {
-  const gapi: GApi = window.gapi;
-  const google: GAccounts = window.google;
-
   const [gisInited, setGisInited] = createSignal(false);
   const [gapiInited, setGapiInited] = createSignal(false);
   const [token, setToken] = createSignal<TokenClient>();
   const [userInfo, setUserInfo] = createSignal('');
+  const [status, setStatus] = createSignal('');
 
   async function initializeGapiClient() {
-    await gapi.client.init({
+    await window.gapi.client.init({
       apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
       discoveryDocs: [DISCOVERY_DOC]
     });
@@ -32,7 +33,7 @@ const Calendar: Component = () => {
   }
 
   function handleAuthClick() {
-    if (gapi.client.getToken() === null) {
+    if (window.gapi.client.getToken() === null) {
       // Prompt the user to select a Google Account and ask for consent to share their data
       // when establishing a new session.
       token()?.requestAccessToken({ prompt: 'consent' });
@@ -43,46 +44,59 @@ const Calendar: Component = () => {
   }
 
   function handleSignoutClick() {
-    const tokenClient = gapi.client.getToken();
+    const tokenClient = window.gapi.client.getToken();
 
     if (tokenClient !== null) {
-      google.accounts.oauth2.revoke(tokenClient.access_token, () => console.log('Done'));
-      gapi.client.setToken('');
+      window.google.accounts.oauth2.revoke(tokenClient.access_token, () => setStatus('Done'));
+      window.gapi.client.setToken('');
 
       setUserInfo('');
     }
   }
 
-  const handleTokenClient = (res: TokenResponse) => {
-    console.log(res);
-  }
+  const handleTokenClient = async (res: TokenResponse) => {
+    const db = await useDataBase();
 
-  onMount(() => {
+    await db.put(DB_LOGS_TABLE, { [DB_AUTH_KEY]: res.access_token });
+
+    db.close();
+  };
+
+  onMount(async () => {
+    const db = await useDataBase();
+
+    const response = await db.get(DB_LOGS_TABLE, 'true');
+
     createScriptLoader({
       src: GOOGLE_API_CLIENT,
       async onLoad() {
-        gapi?.load('client', initializeGapiClient);
+        window.gapi.load('client', initializeGapiClient);
       }
     });
-  
-    createScriptLoader({
-      src: GOOGLE_IDENTITY,
-      async onLoad() {
-        const tokenClient = google?.accounts.oauth2.initTokenClient({
-          client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
-          scope: SCOPES,
-          callback: handleTokenClient,
-        });
-  
-        setToken(tokenClient);
-        setGisInited(true);
-      }
-    });
-  })
+
+    if (response[DB_AUTH_KEY] !== true) {
+      createScriptLoader({
+        src: GOOGLE_IDENTITY,
+        async onLoad() {
+          const tokenClient = window.google.accounts.oauth2.initTokenClient({
+            client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
+            scope: SCOPES,
+            callback: handleTokenClient,
+            error_callback: (err) => setStatus(err.message)
+          });
+
+          setToken(tokenClient);
+          setGisInited(true);
+        }
+      });
+    }
+
+    db.close();
+  });
 
   return (
     <div class={getStack('layer')}>
-      <p class='term'>Load the client library</p>
+      <p class="term">Load the client library</p>
 
       <button
         type="button"
@@ -104,6 +118,8 @@ const Calendar: Component = () => {
           Sign Out
         </button>
       )}
+
+      {status() && <ErrorMessage>{status()}</ErrorMessage>}
     </div>
   );
 };
