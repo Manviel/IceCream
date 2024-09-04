@@ -4,6 +4,7 @@ import { createScriptLoader } from '@solid-primitives/script-loader';
 import { ActionTypes, getStack } from '../../../global/theme';
 
 import { GApi, GAccounts, TokenClient, TokenResponse } from './types';
+import { DISCOVERY_DOC, GOOGLE_API_CLIENT, GOOGLE_IDENTITY, SCOPES } from './constants';
 
 declare global {
   interface Window {
@@ -11,9 +12,6 @@ declare global {
     google: GAccounts;
   }
 }
-
-const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
-const SCOPES = 'openid email profile https://www.googleapis.com/auth/calendar';
 
 const Calendar: Component = () => {
   const gapi: GApi = window.gapi;
@@ -61,14 +59,14 @@ const Calendar: Component = () => {
 
   onMount(() => {
     createScriptLoader({
-      src: 'https://apis.google.com/js/api.js',
+      src: GOOGLE_API_CLIENT,
       async onLoad() {
         gapi?.load('client', initializeGapiClient);
       }
     });
   
     createScriptLoader({
-      src: 'https://accounts.google.com/gsi/client',
+      src: GOOGLE_IDENTITY,
       async onLoad() {
         const tokenClient = google?.accounts.oauth2.initTokenClient({
           client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,

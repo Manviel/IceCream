@@ -21,7 +21,7 @@ const Profile: Component = () => {
         <Results />
       </header>
 
-      <p class="info">2.2 Billion Visually Impaired People in 2022.</p>
+      <p class="info">A McKinsey study found that unicorn startups had an Average Annual Return of 30% over 10 years.</p>
 
       <AuthOutlet />
 
