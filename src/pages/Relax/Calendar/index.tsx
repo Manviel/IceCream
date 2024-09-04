@@ -4,10 +4,9 @@ import { createScriptLoader } from '@solid-primitives/script-loader';
 import ErrorMessage from '../../../components/Field/ErrorMessage';
 
 import { ActionTypes, getStack } from '../../../global/theme';
-import { DB_AUTH_KEY, DB_LOGS_TABLE, useDataBase } from '../../../services/db';
 
-import { GApi, GAccounts, TokenClient, TokenResponse } from './types';
-import { DISCOVERY_DOC, GOOGLE_API_CLIENT, GOOGLE_IDENTITY, SCOPES } from './constants';
+import { GApi, GAccounts } from './types';
+import { DISCOVERY_DOC, GOOGLE_API_CLIENT, SCOPES } from './constants';
 
 declare global {
   interface Window {
@@ -17,82 +16,102 @@ declare global {
 }
 
 const Calendar: Component = () => {
-  const [gisInited, setGisInited] = createSignal(false);
   const [gapiInited, setGapiInited] = createSignal(false);
-  const [token, setToken] = createSignal<TokenClient>();
-  const [userInfo, setUserInfo] = createSignal('');
   const [status, setStatus] = createSignal('');
+
+  function updateSigninStatus(isSignedIn: boolean) {
+    setGapiInited(isSignedIn);
+  }
 
   async function initializeGapiClient() {
     await window.gapi.client.init({
       apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
-      discoveryDocs: [DISCOVERY_DOC]
+      discoveryDocs: [DISCOVERY_DOC],
+      clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID,
+      scope: SCOPES
     });
 
-    setGapiInited(true);
+    window.gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+    updateSigninStatus(window.gapi.auth2.getAuthInstance().isSignedIn.get());
+  }
+
+  async function getUpcomingEvents() {
+    try {
+      const request = {
+        calendarId: 'primary',
+        timeMin: new Date().toISOString(),
+        showDeleted: false,
+        singleEvents: true,
+        maxResults: 10,
+        orderBy: 'startTime'
+      };
+      const response = await gapi.client.calendar.events.list(request);
+
+      const events = response.result.items;
+
+      if (!events) {
+        setStatus('No events found.');
+      } else {
+        console.log(events);
+      }
+    } catch (err) {
+      setStatus(err.message);
+    }
   }
 
   function handleAuthClick() {
-    if (window.gapi.client.getToken() === null) {
-      // Prompt the user to select a Google Account and ask for consent to share their data
-      // when establishing a new session.
-      token()?.requestAccessToken({ prompt: 'consent' });
-    } else {
-      // Skip display of account chooser and consent dialog for an existing session.
-      token()?.requestAccessToken({ prompt: '' });
-    }
+    window.gapi.auth2.getAuthInstance().signIn();
   }
 
   function handleSignoutClick() {
-    const tokenClient = window.gapi.client.getToken();
-
-    if (tokenClient !== null) {
-      window.google.accounts.oauth2.revoke(tokenClient.access_token, () => setStatus('Done'));
-      window.gapi.client.setToken('');
-
-      setUserInfo('');
-    }
+    window.gapi.auth2.getAuthInstance().signOut();
   }
 
-  const handleTokenClient = async (res: TokenResponse) => {
-    const db = await useDataBase();
-
-    await db.put(DB_LOGS_TABLE, { [DB_AUTH_KEY]: res.access_token });
-
-    db.close();
-  };
-
-  onMount(async () => {
-    const db = await useDataBase();
-
-    const response = await db.get(DB_LOGS_TABLE, 'true');
-
+  onMount(() => {
     createScriptLoader({
       src: GOOGLE_API_CLIENT,
       async onLoad() {
         window.gapi.load('client', initializeGapiClient);
       }
     });
-
-    if (response[DB_AUTH_KEY] !== true) {
-      createScriptLoader({
-        src: GOOGLE_IDENTITY,
-        async onLoad() {
-          const tokenClient = window.google.accounts.oauth2.initTokenClient({
-            client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
-            scope: SCOPES,
-            callback: handleTokenClient,
-            error_callback: (err) => setStatus(err.message)
-          });
-
-          setToken(tokenClient);
-          setGisInited(true);
-        }
-      });
-    }
-
-    db.close();
   });
+
+  const addEvent = () => {
+    const date = new Date();
+
+    date.setHours(date.getHours() + 1);
+
+    const event = {
+      summary: 'Google I/O',
+      location: 'Google Meet',
+      description: 'A chance to hear more about Workspace',
+      start: {
+        dateTime: date.toISOString(),
+        timeZone: 'America/Los_Angeles'
+      },
+      end: {
+        dateTime: date.toISOString(),
+        timeZone: 'America/Los_Angeles'
+      },
+      recurrence: ['RRULE:FREQ=DAILY;COUNT=2'],
+      attendees: [{ email: 'abc@google.com' }],
+      reminders: {
+        useDefault: false,
+        overrides: [
+          { method: 'email', minutes: 24 * 60 },
+          { method: 'popup', minutes: 10 }
+        ]
+      }
+    };
+
+    const request = window.gapi.client.calendar.events.insert({
+      'calendarId': 'primary',
+      'resource': event
+    });
+
+    request.execute(() => setStatus('Done'));
+  };
 
   return (
     <div class={getStack('layer')}>
@@ -102,21 +121,31 @@ const Calendar: Component = () => {
         type="button"
         id="authorize_button"
         onClick={handleAuthClick}
-        disabled={!gapiInited && !gisInited}
+        disabled={!gapiInited}
         class={ActionTypes.Contained}
       >
         Authorize
       </button>
 
-      {userInfo() && (
-        <button
-          type="button"
-          id="signout_button"
-          onClick={handleSignoutClick}
-          class={ActionTypes.Secondary}
-        >
-          Sign Out
-        </button>
+      {gapiInited() && (
+        <>
+          <button type="button" onClick={getUpcomingEvents} class={ActionTypes.Secondary}>
+            Load Events
+          </button>
+
+          <button type="button" onClick={addEvent} class={ActionTypes.Contained}>
+            Add Event
+          </button>
+
+          <button
+            type="button"
+            id="signout_button"
+            onClick={handleSignoutClick}
+            class={ActionTypes.Secondary}
+          >
+            Sign Out
+          </button>
+        </>
       )}
 
       {status() && <ErrorMessage>{status()}</ErrorMessage>}
