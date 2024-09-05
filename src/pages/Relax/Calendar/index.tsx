@@ -5,13 +5,12 @@ import ErrorMessage from '../../../components/Field/ErrorMessage';
 
 import { ActionTypes, getStack } from '../../../global/theme';
 
-import { GApi, GAccounts } from './types';
+import { GApi } from './types';
 import { DISCOVERY_DOC, GOOGLE_API_CLIENT, SCOPES } from './constants';
 
 declare global {
   interface Window {
     gapi: GApi;
-    google: GAccounts;
   }
 }
 
@@ -19,9 +18,7 @@ const Calendar: Component = () => {
   const [gapiInited, setGapiInited] = createSignal(false);
   const [status, setStatus] = createSignal('');
 
-  function updateSigninStatus(isSignedIn: boolean) {
-    setGapiInited(isSignedIn);
-  }
+  const updateSigninStatus = (isSignedIn: boolean) => setGapiInited(isSignedIn);
 
   async function initializeGapiClient() {
     await window.gapi.client.init({
@@ -46,7 +43,7 @@ const Calendar: Component = () => {
         maxResults: 10,
         orderBy: 'startTime'
       };
-      const response = await gapi.client.calendar.events.list(request);
+      const response = await window.gapi.client.calendar.events.list(request);
 
       const events = response.result.items;
 
@@ -55,8 +52,8 @@ const Calendar: Component = () => {
       } else {
         console.log(events);
       }
-    } catch (err) {
-      setStatus(err.message);
+    } catch {
+      setStatus('Something went wrong! Please try again later');
     }
   }
 
@@ -72,7 +69,7 @@ const Calendar: Component = () => {
     createScriptLoader({
       src: GOOGLE_API_CLIENT,
       async onLoad() {
-        window.gapi.load('client', initializeGapiClient);
+        window.gapi.load('client:auth2', initializeGapiClient);
       }
     });
   });
@@ -106,8 +103,8 @@ const Calendar: Component = () => {
     };
 
     const request = window.gapi.client.calendar.events.insert({
-      'calendarId': 'primary',
-      'resource': event
+      calendarId: 'primary',
+      resource: event
     });
 
     request.execute(() => setStatus('Done'));

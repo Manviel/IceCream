@@ -35,6 +35,170 @@ interface GoogleApiOAuth2TokenObject {
   state: string;
 }
 
+interface Listener {
+  /**
+   * Returns true if the listener is currently listening for changes.
+   * Returns false after remove() is called.
+   */
+  isActive: boolean;
+
+  /**
+   * Stops listening for changes.
+   */
+  remove(): void;
+
+  /**
+   * Triggers the callback function.
+   */
+  trigger(): void;
+}
+
+interface IsSignedIn {
+  /**
+   * Returns whether the current user is currently signed in.
+   */
+  get(): boolean;
+
+  /**
+   * Listen for changes in the current user's sign-in state.
+   */
+  listen(listener: (signedIn: boolean) => unknown): Listener;
+}
+
+interface GoogleUser {
+  /**
+   * Get the user's unique ID string.
+   */
+  getId(): string;
+
+  /**
+   * Returns true if the user is signed in.
+   */
+  isSignedIn(): boolean;
+
+  /**
+   * Revokes all of the scopes that the user granted.
+   */
+  disconnect(): void;
+}
+
+interface CurrentUser {
+  /**
+   * Returns a GoogleUser object that represents the current user. Note that in a newly-initialized
+   * GoogleAuth instance, the current user has not been set. Use the currentUser.listen() method or the
+   * GoogleAuth.then() to get an initialized GoogleAuth instance.
+   */
+  get(): GoogleUser;
+
+  /**
+   * Listen for changes in currentUser.
+   */
+  listen(listener: (user: GoogleUser) => unknown): Listener;
+}
+
+interface SigninOptions {
+  /**
+   * The package name of the Android app to install over the air.
+   * See Android app installs from your web site:
+   * https://developers.google.com/identity/sign-in/web/android-app-installs
+   */
+  app_package_name?: string | undefined;
+  /**
+   *     Fetch users' basic profile information when they sign in.
+   *     Adds 'profile', 'email' and 'openid' to the requested scopes.
+   *     True if unspecified.
+   */
+  fetch_basic_profile?: boolean | undefined;
+  /**
+   * Specifies whether to prompt the user for re-authentication.
+   * See OpenID Connect Request Parameters:
+   * https://openid.net/specs/openid-connect-basic-1_0.html#RequestParameters
+   */
+  prompt?: string | undefined;
+  /**
+   * The scopes to request, as a space-delimited string.
+   * Optional if fetch_basic_profile is not set to false.
+   */
+  scope?: string | undefined;
+  /**
+   * The UX mode to use for the sign-in flow.
+   * By default, it will open the consent flow in a popup.
+   */
+  ux_mode?: 'popup' | 'redirect' | undefined;
+  /**
+   * If using ux_mode='redirect', this parameter allows you to override the default redirect_uri that will be used at the end of the consent flow.
+   * The default redirect_uri is the current URL stripped of query parameters and hash fragment.
+   */
+  redirect_uri?: string | undefined;
+  /**
+   * When your app knows which user it is trying to authenticate, it can provide this parameter as a hint to the authentication server.
+   * Passing this hint suppresses the account chooser and either pre-fill the email box on the sign-in form, or select the proper session (if the user is using multiple sign-in),
+   * which can help you avoid problems that occur if your app logs in the wrong user account. The value can be either an email address or the sub string,
+   * which is equivalent to the user's Google ID.
+   * https://developers.google.com/identity/protocols/OpenIDConnect?hl=en#authenticationuriparameters
+   */
+  login_hint?: string | undefined;
+}
+
+interface SigninOptionsBuilder {
+  setAppPackageName(name: string): unknown;
+  setFetchBasicProfile(fetch: boolean): unknown;
+  setPrompt(prompt: string): unknown;
+  setScope(scope: string): unknown;
+  setLoginHint(hint: string): unknown;
+}
+
+interface GoogleAuthBase {
+  isSignedIn: IsSignedIn;
+  currentUser: CurrentUser;
+
+  /**
+   * Signs in the user using the specified options.
+   * If no option specified here, fallback to the options specified to gapi.auth2.init().
+   */
+  signIn(options?: SigninOptions | SigninOptionsBuilder): Promise<GoogleUser>;
+
+  /**
+   * Signs out all accounts from the application.
+   */
+  signOut(): unknown;
+
+  /**
+   * Revokes all of the scopes that the user granted.
+   */
+  disconnect(): unknown;
+}
+
+// https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/gapi.auth2/index.d.ts
+interface GoogleAuth extends GoogleAuthBase {
+  /**
+   * Calls the onInit function when the GoogleAuth object is fully initialized, or calls the onFailure function if
+   * initialization fails.
+   */
+  then(
+    onInit: (googleAuth: GoogleAuthBase) => unknown,
+    onFailure?: (reason: { error: string; details: string }) => unknown
+  ): unknown;
+}
+
+interface GoogleEvent {
+  execute(callback: LoadCallback): void;
+}
+
+interface GoogleList {
+  result: {
+    items: object[];
+  };
+}
+
+// https://developers.google.com/calendar/api/v3/reference/events
+interface GoogleCalendar {
+  events: {
+    insert(parameters: object): GoogleEvent;
+    list(event: object): Promise<GoogleList>;
+  };
+}
+
 // https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/gapi/index.d.ts
 export interface GApi {
   load(apiName: string, callback: CallbackOrConfig): void;
@@ -56,293 +220,12 @@ export interface GApi {
        * The scopes to request, as a space-delimited string.
        */
       scope?: string;
-      /**
-       * Arbitrary value. If present, allows keys generated after July 29th, 2022 to work with the old (deprecated) api.
-       */
-      plugin_name?: string;
-
-      hosted_domain?: string;
     }): Promise<void>;
     getToken(): GoogleApiOAuth2TokenObject;
     setToken(token: GoogleApiOAuth2TokenObject | string): void;
+    calendar: GoogleCalendar;
   };
-}
-
-interface OverridableTokenClientConfig {
-  /**
-   * Optional. A space-delimited list of scopes that identify the
-   * resources that your application could access on the user's
-   * behalf. These values inform the consent screen that Google
-   * displays to the user.
-   */
-  scope?: string;
-
-  /**
-   * Optional, defaults to true.
-   * Enables applications to use incremental authorization
-   * to request access to additional scopes in context.
-   * If you set this parameter's value to false and the
-   * authorization request is granted, then the new access token
-   * will only cover any scopes to which the scope requested
-   * in this OverridableTokenClientConfig.
-   */
-  include_granted_scopes?: boolean;
-
-  /**
-   * Optional. A space-delimited, case-sensitive list of prompts to
-   * present the user.
-   */
-  prompt?: string;
-
-  /**
-   * Optional, defaults to true. If set to false, more granular Google
-   * Account permissions would be disabled for OAuth client IDs
-   * created before 2019. If both enable_granular_consent and
-   * enable_serial_consent are set, only enable_granular_consent value
-   * would take effect and enable_serial_consent value would be
-   * ignored.
-   *
-   * No effect for newer OAuth client IDs, since more granular
-   * permissions is always enabled for them.
-   */
-  enable_granular_consent?: boolean;
-
-  /**
-   * Deprecated, you should use enable_granular_consent instead.
-   * This has the same effect as enable_granular_consent. Existing
-   * applications that use enable_serial_consent can continue to do
-   * so, but you are encouraged to update your code to use
-   * enable_granular_consent in your next application update.
-   */
-  enable_serial_consent?: boolean;
-
-  /**
-   * Optional. If your application knows which user should authorize
-   * the request, it can use this property to provide a login hint to
-   * Google. When successful, account selection is skipped. The email
-   * address or ID token sub field value for the target user. For more
-   * information, see the login_hint field in the OpenID Connect
-   * documentation.
-   */
-  login_hint?: string;
-
-  /**
-   * Deprecated, you should use login_hint instead.
-   * Optional.
-   * If your application knows which user should authorize the
-   * request, it can use this property to provide a hint to Google.
-   * The email address for the target user. For more information, see
-   * the login_hint field in the OpenID Connect docs.
-   */
-  hint?: string;
-
-  /**
-   * Optional. Not recommended. Specifies any string value that your
-   * application uses to maintain state between your authorization
-   * request and the authorization server's response.
-   */
-  state?: string;
-}
-
-export interface TokenClient {
-  /**
-   * starts the OAuth 2.0 Token UX flow
-   */
-  requestAccessToken: (overrideConfig?: OverridableTokenClientConfig) => void;
-}
-
-export interface TokenResponse {
-  /**
-   * The access token of a successful token response.
-   */
-  access_token: string;
-
-  /**
-   * The lifetime in seconds of the access token.
-   */
-  expires_in: string;
-
-  /**
-   * The hosted domain the signed-in user belongs to.
-   */
-  hd: string;
-
-  /**
-   * The prompt value that was used from the possible list of values
-   * specified by TokenClientConfig or OverridableTokenClientConfig.
-   */
-  prompt: string;
-
-  /**
-   * The type of the token issued.
-   */
-  token_type: string;
-
-  /**
-   * A space-delimited list of scopes that are approved by the user.
-   */
-  scope: string;
-
-  /**
-   * The string value that your application uses to maintain state
-   * between your authorization request and the response.
-   */
-  state: string;
-
-  /**
-   * A single ASCII error code.
-   */
-  error: string;
-
-  /**
-   * Human-readable ASCII text providing additional information, used
-   * to assist the client developer in understanding the error that
-   * occurred.
-   */
-  error_description: string;
-
-  /**
-   * A URI identifying a human-readable web page with information
-   * about the error, used to provide the client developer with
-   * additional information about the error.
-   */
-  error_uri: string;
-}
-
-interface ClientConfigError extends Error {
-  message: string;
-  stack?: string;
-  type: 'unknown' | 'popup_closed' | 'popup_failed_to_open';
-}
-
-interface TokenClientConfig {
-  /**
-   * Required.
-   * The client ID for your application. You can find this value in
-   * the API Console.
-   */
-  client_id: string;
-
-  /**
-   * Required. The JavaScript function name that handles returned
-   * token response.
-   */
-  callback: (tokenResponse: TokenResponse) => void;
-
-  /**
-   * Required.
-   * A space-delimited list of scopes that identify the resources that
-   * your application could access on the user's behalf. These values
-   * inform the consent screen that Google displays to the user.
-   */
-  scope: string;
-
-  /**
-   * Optional, defaults to true.
-   * Enables applications to use incremental authorization
-   * to request access to additional scopes in context.
-   * If you set this parameter's value to false and the
-   * authorization request is granted, then the new access token
-   * will only cover any scopes to which the scope requested
-   * in this TokenClientConfig.
-   */
-  include_granted_scopes?: boolean;
-
-  /**
-   * Optional, defaults to 'select_account'.
-   * A space-delimited, case-sensitive list of prompts to present the
-   * user.
-   * Possible values are:
-   * empty string The user will be prompted only the first time your
-   *     app requests access. Cannot be specified with other values.
-   * 'none' Do not display any authentication or consent screens. Must
-   *     not be specified with other values.
-   * 'consent' Prompt the user for consent.
-   * 'select_account' Prompt the user to select an account.
-   */
-  prompt?: '' | 'none' | 'consent' | 'select_account';
-
-  /**
-   * Optional, defaults to true. If set to false, more granular Google
-   * Account permissions would be disabled for OAuth client IDs
-   * created before 2019. If both enable_granular_consent and
-   * enable_serial_consent are set, only enable_granular_consent value
-   * would take effect and enable_serial_consent value would be
-   * ignored.
-   *
-   * No effect for newer OAuth client IDs, since more granular
-   * permissions is always enabled for them.
-   */
-  enable_granular_consent?: boolean;
-
-  /**
-   * Deprecated, you should use enable_granular_consent instead.
-   * This has the same effect as enable_granular_consent. Existing
-   * applications that use enable_serial_consent can continue to do
-   * so, but you are encouraged to update your code to use
-   * enable_granular_consent in your next application update.
-   */
-  enable_serial_consent?: boolean;
-
-  /**
-   * Optional. If your application knows which user should authorize
-   * the request, it can use this property to provide a login hint to
-   * Google. When successful, account selection is skipped. The email
-   * address or ID token sub field value for the target user. For more
-   * information, see the login_hint field in the OpenID Connect
-   * documentation.
-   */
-  login_hint?: string;
-
-  /**
-   * Deprecated, you should use login_hint instead.
-   * Optional.
-   * If your application knows which user should authorize the
-   * request, it can use this property to provide a hint to Google.
-   * The email address for the target user. For more information, see
-   * the login_hint field in the OpenID Connect docs.
-   */
-  hint?: string;
-
-  /**
-   * Optional.
-   * If your application knows the Workspace domain the user belongs
-   * to, use this to provide a hint to Google. For more information,
-   * see the hd field in the OpenID Connect docs.
-   */
-  hd?: string;
-
-  /**
-   * Deprecated, you should use hd instead.
-   * Optional.
-   * If your application knows the Workspace domain the user belongs
-   * to, use this to provide a hint to Google. For more information,
-   * see the hd field in the OpenID Connect docs.
-   */
-  hosted_domain?: string;
-
-  /**
-   * Optional. Not recommended.
-   * Specifies any string value that your application uses to maintain
-   * state between your authorization request and the authorization
-   * server's response.
-   */
-  state?: string;
-
-  /**
-   * Optional. The JavaScript function that handles some non-OAuth
-   * errors, such as the popup window is failed to open; or closed
-   * before an OAuth response is returned.
-   */
-  error_callback?: (error: ClientConfigError) => void;
-}
-
-// https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/google.accounts/index.d.ts
-export interface GAccounts {
-  accounts: {
-    oauth2: {
-      initTokenClient(config: TokenClientConfig): TokenClient;
-      revoke(accessToken: string, done: () => void): void;
-    };
+  auth2: {
+    getAuthInstance(): GoogleAuth;
   };
 }
