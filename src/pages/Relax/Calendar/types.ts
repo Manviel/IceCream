@@ -185,9 +185,20 @@ interface GoogleEvent {
   execute(callback: LoadCallback): void;
 }
 
+export interface GoogleEventItem {
+  summary: string;
+  description: string;
+  start: {
+    dateTime: string
+  }
+  end: {
+    dateTime: string;
+  }
+}
+
 interface GoogleList {
   result: {
-    items: object[];
+    items: GoogleEventItem[];
   };
 }
 
