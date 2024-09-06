@@ -102,34 +102,34 @@ interface SigninOptions {
    * See Android app installs from your web site:
    * https://developers.google.com/identity/sign-in/web/android-app-installs
    */
-  app_package_name?: string | undefined;
+  app_package_name?: string;
   /**
    *     Fetch users' basic profile information when they sign in.
    *     Adds 'profile', 'email' and 'openid' to the requested scopes.
    *     True if unspecified.
    */
-  fetch_basic_profile?: boolean | undefined;
+  fetch_basic_profile?: boolean;
   /**
    * Specifies whether to prompt the user for re-authentication.
    * See OpenID Connect Request Parameters:
    * https://openid.net/specs/openid-connect-basic-1_0.html#RequestParameters
    */
-  prompt?: string | undefined;
+  prompt?: string;
   /**
    * The scopes to request, as a space-delimited string.
    * Optional if fetch_basic_profile is not set to false.
    */
-  scope?: string | undefined;
+  scope?: string;
   /**
    * The UX mode to use for the sign-in flow.
    * By default, it will open the consent flow in a popup.
    */
-  ux_mode?: 'popup' | 'redirect' | undefined;
+  ux_mode?: 'popup' | 'redirect';
   /**
    * If using ux_mode='redirect', this parameter allows you to override the default redirect_uri that will be used at the end of the consent flow.
    * The default redirect_uri is the current URL stripped of query parameters and hash fragment.
    */
-  redirect_uri?: string | undefined;
+  redirect_uri?: string;
   /**
    * When your app knows which user it is trying to authenticate, it can provide this parameter as a hint to the authentication server.
    * Passing this hint suppresses the account chooser and either pre-fill the email box on the sign-in form, or select the proper session (if the user is using multiple sign-in),
@@ -137,7 +137,7 @@ interface SigninOptions {
    * which is equivalent to the user's Google ID.
    * https://developers.google.com/identity/protocols/OpenIDConnect?hl=en#authenticationuriparameters
    */
-  login_hint?: string | undefined;
+  login_hint?: string;
 }
 
 interface SigninOptionsBuilder {
@@ -189,11 +189,11 @@ export interface GoogleEventItem {
   summary: string;
   description: string;
   start: {
-    dateTime: string
-  }
+    dateTime: string;
+  };
   end: {
     dateTime: string;
-  }
+  };
 }
 
 interface GoogleList {
