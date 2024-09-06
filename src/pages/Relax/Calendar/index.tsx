@@ -2,8 +2,11 @@ import { Component, onMount, createSignal, For, Show } from 'solid-js';
 import { createScriptLoader } from '@solid-primitives/script-loader';
 
 import ErrorMessage from '../../../components/Field/ErrorMessage';
+import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
-import { ActionTypes, getStack } from '../../../global/theme';
+import { ActionTypes, getStack, ShapeIcon } from '../../../global/theme';
+
+import GoForwardIcon from '../../../assets/icons/go-forward.svg';
 
 import { GApi, GoogleEventItem } from './types';
 import { DISCOVERY_DOC, GOOGLE_API_CLIENT, SCOPES } from './constants';
@@ -16,8 +19,7 @@ declare global {
   }
 }
 
-const dateFormat = (date: string) =>
-  new Intl.DateTimeFormat(navigator.language).format(new Date(date));
+const dateFormat = (date: Date) => new Intl.DateTimeFormat(navigator.language).format(date);
 
 const timeFormatter = new Intl.DateTimeFormat(navigator.language, {
   hour: 'numeric',
@@ -32,16 +34,20 @@ const Calendar: Component = () => {
   const updateSigninStatus = (isSignedIn: boolean) => setGapiInited(isSignedIn);
 
   async function initializeGapiClient() {
-    await window.gapi.client.init({
-      apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
-      discoveryDocs: [DISCOVERY_DOC],
-      clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID,
-      scope: SCOPES
-    });
+    try {
+      await window.gapi.client.init({
+        apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
+        discoveryDocs: [DISCOVERY_DOC],
+        clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID,
+        scope: SCOPES
+      });
 
-    window.gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+      window.gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
-    updateSigninStatus(window.gapi.auth2.getAuthInstance().isSignedIn.get());
+      updateSigninStatus(window.gapi.auth2.getAuthInstance().isSignedIn.get());
+    } catch {
+      setStatus('Failed to initialize Google API client');
+    }
   }
 
   onMount(() => {
@@ -82,6 +88,7 @@ const Calendar: Component = () => {
 
   const addEvent = () => {
     const date = new Date();
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     date.setHours(date.getHours() + 1);
 
@@ -91,13 +98,13 @@ const Calendar: Component = () => {
       description: 'A chance to hear more about Workspace',
       start: {
         dateTime: date.toISOString(),
-        timeZone: 'America/Los_Angeles'
+        timeZone
       },
       end: {
         dateTime: date.toISOString(),
-        timeZone: 'America/Los_Angeles'
+        timeZone
       },
-      recurrence: ['RRULE:FREQ=DAILY;COUNT=2'],
+      recurrence: ['RRULE:FREQ=DAILY;COUNT=2;INTERVAL=2'],
       attendees: [{ email: 'abc@google.com' }],
       reminders: {
         useDefault: false,
@@ -113,56 +120,58 @@ const Calendar: Component = () => {
       resource: event
     });
 
-    request.execute(() => setStatus('Done'));
+    request.execute(() => getUpcomingEvents());
   };
 
   return (
-    <div class={getStack('layer')}>
-      <p class="term">Google client</p>
+    <div class="flex col proximity">
+      <section class={getStack('layer')}>
+        {gapiInited() ? (
+          <>
+            <div class="flex justify-between items-center gap">
+              <button type="button" onClick={addEvent} class={ActionTypes.Contained}>
+                Add Event
+              </button>
 
-      {gapiInited() ? (
-        <>
-          <button type="button" onClick={getUpcomingEvents} class={ActionTypes.Secondary}>
-            Load Events
+              <button type="button" onClick={getUpcomingEvents} class={ShapeIcon.Default}>
+                <HelpTooltip name="Refresh event list">
+                  <GoForwardIcon />
+                </HelpTooltip>
+              </button>
+            </div>
+
+            <button type="button" onClick={handleSignoutClick} class={ActionTypes.Secondary}>
+              Sign Out
+            </button>
+          </>
+        ) : (
+          <button type="button" onClick={handleAuthClick} class={ActionTypes.Contained}>
+            Authorize
           </button>
+        )}
 
-          <ul class={getStack('card info')}>
-            <Show when={!userInfo()?.length}>
-              <li class='price chip'>Your list is empty.</li>
-            </Show>
+        {status() && <ErrorMessage>{status()}</ErrorMessage>}
+      </section>
 
-            <For each={userInfo()}>
-              {item => (
-                <li class={getStack('alias event')}>
-                  <strong class="card-sub">{item.summary}</strong>
-                  <p class="term grey-light">{item.description}</p>
+      <ul class="flex col gap">
+        <Show when={!userInfo()?.length}>
+          <li class="price chip">Your list is empty.</li>
+        </Show>
 
-                  <div class="flex justify-between items-center">
-                    <time class="red">{dateFormat(item.start.dateTime)}</time>
-                    <time class="chip slot">
-                      {timeFormatter.format(new Date(item.end.dateTime))}
-                    </time>
-                  </div>
-                </li>
-              )}
-            </For>
-          </ul>
+        <For each={userInfo()}>
+          {item => (
+            <li class={getStack('alias event')}>
+              <strong class="card-sub">{item.summary}</strong>
+              <p class="term grey-light">{item.description}</p>
 
-          <button type="button" onClick={addEvent} class={ActionTypes.Contained}>
-            Add Event
-          </button>
-
-          <button type="button" onClick={handleSignoutClick} class={ActionTypes.Secondary}>
-            Sign Out
-          </button>
-        </>
-      ) : (
-        <button type="button" onClick={handleAuthClick} class={ActionTypes.Contained}>
-          Authorize
-        </button>
-      )}
-
-      {status() && <ErrorMessage>{status()}</ErrorMessage>}
+              <div class="flex justify-between items-center">
+                <time class="red">{dateFormat(new Date(item.start.dateTime))}</time>
+                <time class="chip slot">{timeFormatter.format(new Date(item.end.dateTime))}</time>
+              </div>
+            </li>
+          )}
+        </For>
+      </ul>
     </div>
   );
 };
