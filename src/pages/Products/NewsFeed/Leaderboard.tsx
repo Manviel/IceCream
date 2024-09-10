@@ -14,7 +14,7 @@ const requestKey = { url: 'news' };
 
 const Leaderboard: Component = () => {
   const [loading, setLoading] = createSignal(false);
-  const [news, setNews] = createSignal<Entity[]>();
+  const [news, setNews] = createSignal<Entity<string>[]>();
 
   const { getStore, setStore } = useCacheStore();
 

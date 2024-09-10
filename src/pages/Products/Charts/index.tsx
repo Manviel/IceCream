@@ -6,7 +6,7 @@ export enum ChartTypes {
 }
 
 export interface ChartIDType extends IDType {
-  source: Entity;
+  source: Entity<string>;
   ariaLabel?: string;
-  config?: Entity;
+  config?: Entity<string>;
 }
