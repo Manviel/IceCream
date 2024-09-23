@@ -8,7 +8,7 @@ import ErrorMessage from '../../components/Field/ErrorMessage';
 
 import { ActionTypes } from '../../global/theme';
 import { Pages, Paths } from '../../global';
-import { DB_LOGS_TABLE, DB_USERS_TABLE, useDataBase } from '../../services/db';
+import { DB_AUTH_KEY, DB_LOGS_TABLE, DB_USERS_TABLE, useDataBase } from '../../services/db';
 
 const LoginForm: Component = () => {
   const [form, setForm] = createStore({
@@ -31,7 +31,7 @@ const LoginForm: Component = () => {
     const response = await db.get(DB_USERS_TABLE, form.email);
 
     if (response) {
-      await db.add(DB_LOGS_TABLE, { authorized: 'true' });
+      await db.add(DB_LOGS_TABLE, { [DB_AUTH_KEY]: 'true' });
 
       navigate(Paths.Relax, { replace: true });
     } else {

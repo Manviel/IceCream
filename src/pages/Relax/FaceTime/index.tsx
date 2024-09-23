@@ -81,7 +81,7 @@ const FaceTime: Component = () => {
       const stream = await navigator.mediaDevices.getUserMedia(constraints);
 
       handleStream(stream);
-    } catch (err) {
+    } catch {
       showToast({ title: 'Error', description: 'Verify camera permissions' });
     }
   };

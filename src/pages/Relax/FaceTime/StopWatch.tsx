@@ -1,26 +1,20 @@
-import { mergeProps } from 'solid-js';
 import { createStore } from 'solid-js/store';
 
-export type TimerType = {
+type TimerType = {
   start?: Date;
   end?: Date;
   isRunning: boolean;
   elapsed?: Date;
 };
 
-export interface StopWatchInterface {
-  options?: Intl.DateTimeFormatOptions;
-  locales?: string | string[];
-}
-
 export const [timer, setTimer] = createStore<TimerType>({
   start: undefined,
   end: undefined,
   elapsed: undefined,
-  isRunning: false,
+  isRunning: false
 });
 
-export const elapsedTimeDate = (): Date => {
+const elapsedTimeDate = (): Date => {
   if (timer.start && timer.end) {
     return new Date(timer.end?.getTime() - timer.start?.getTime());
   }
@@ -28,29 +22,13 @@ export const elapsedTimeDate = (): Date => {
   return new Date(0);
 };
 
-export const elapsedTimeString = () => {
-  return (
-    `${String(elapsedTimeDate()?.getMinutes() || 0).padStart(2, '0')}:` +
-    `${String(elapsedTimeDate()?.getSeconds() || 0).padStart(2, '0')}:`
-  );
-};
+const timeFormatter = new Intl.DateTimeFormat(navigator.language, {
+  minute: 'numeric',
+  second: '2-digit'
+});
 
-export const StopWatch = (exposedProps: StopWatchInterface) => {
-  const props = mergeProps<[StopWatchInterface, StopWatchInterface]>(
-    {
-      options: {
-        minute: 'numeric',
-        second: '2-digit',
-      },
-    },
-    exposedProps
-  );
-
-  const formatter = new Intl.DateTimeFormat(props.locales, props.options);
-
-  return (
-    <div class='vibrancy stop-watch flex os' role='timer'>
-      <p class='concise'>{formatter.format(elapsedTimeDate())}</p>
-    </div>
-  );
-};
+export const StopWatch = () => (
+  <div class="vibrancy stop-watch flex os" role="timer">
+    <p class="concise">{timeFormatter.format(elapsedTimeDate())}</p>
+  </div>
+);

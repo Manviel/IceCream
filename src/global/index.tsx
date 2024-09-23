@@ -11,21 +11,21 @@ export enum Paths {
   Bag = '/add-to-bag'
 }
 
-export enum Pages {
-  Home = 'Home',
-  Products = 'For You',
-  Privacy = 'Privacy',
-  Profile = 'Profile',
-  Relax = 'Keep calm',
-  SignIn = 'Sign In',
-  SignUp = 'Sign Up',
-  ForgetAccount = 'Delete account',
-  Forbidden = 'Access Denied',
-  Bag = 'Bag'
+export const Pages: { [K in keyof typeof Paths]: string } = {
+  Home: 'Home',
+  Products: 'For You',
+  Privacy: 'Privacy',
+  Profile: 'Profile',
+  Relax: 'Keep calm',
+  SignIn: 'Sign In',
+  SignUp: 'Sign Up',
+  ForgetAccount: 'Delete account',
+  Forbidden: 'Access Denied',
+  Bag: 'Bag',
 }
 
-export type Entity = {
-  [key: string]: number | string | boolean;
+export type Entity<T> = {
+  [key: string]: T;
 };
 
 export interface SegregationType {

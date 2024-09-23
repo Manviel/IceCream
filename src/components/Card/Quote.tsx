@@ -15,9 +15,7 @@ type QuoteType = {
   text: string;
 };
 
-interface QuoteViewType extends SegregationType {}
-
-const QuoteView: ParentComponent<QuoteViewType> = props => {
+const QuoteView: ParentComponent<SegregationType> = props => {
   const { title, description, children } = props;
 
   return (

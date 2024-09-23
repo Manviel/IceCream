@@ -10,6 +10,7 @@ import { getStack } from '../../global/theme';
 import Breathe from './Breathe';
 import Guard from './Guard';
 import FaceTime from './FaceTime';
+import Calendar from './Calendar';
 
 const options: ListItemGen<string>[] = [
   {
@@ -75,10 +76,14 @@ const Relax: Component = () => (
 
         <p class="info">Consistency is great but efficiency is better.</p>
 
-        <aside class={getStack('material')}>
-          <For each={options}>
-            {option => <ConnectFactory href={option.value} text={option.label} />}
-          </For>
+        <aside class="grid products proximity">
+          <Calendar />
+
+          <div class={getStack('material')}>
+            <For each={options}>
+              {option => <ConnectFactory href={option.value} text={option.label} />}
+            </For>
+          </div>
         </aside>
       </footer>
     </Flow>
