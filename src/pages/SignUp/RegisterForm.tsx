@@ -14,7 +14,6 @@ const RegisterForm: Component = () => {
   const [form, setForm] = createStore({
     fullName: '',
     email: '',
-    password: ''
   });
 
   const [status, setStatus] = createSignal('');
@@ -33,7 +32,6 @@ const RegisterForm: Component = () => {
       await db.add(DB_USERS_TABLE, {
         fullName: form.fullName,
         email: form.email,
-        password: form.password
       });
       await db.add(DB_LOGS_TABLE, { [DB_AUTH_KEY]: 'true' });
 
@@ -64,16 +62,6 @@ const RegisterForm: Component = () => {
         value={form.email}
         onInput={handleChangeForm}
         required
-      />
-
-      <Field
-        name="password"
-        label="Password"
-        type="password"
-        value={form.password}
-        onInput={handleChangeForm}
-        required
-        minlength="6"
       />
 
       {status() && <ErrorMessage>{status()}</ErrorMessage>}

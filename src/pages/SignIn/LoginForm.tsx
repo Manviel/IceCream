@@ -13,7 +13,6 @@ import { DB_AUTH_KEY, DB_LOGS_TABLE, DB_USERS_TABLE, useDataBase } from '../../s
 const LoginForm: Component = () => {
   const [form, setForm] = createStore({
     email: '',
-    password: ''
   });
 
   const [status, setStatus] = createSignal('');
@@ -50,16 +49,6 @@ const LoginForm: Component = () => {
         value={form.email}
         onInput={handleChangeForm}
         required
-      />
-
-      <Field
-        name="password"
-        label="Password"
-        type="password"
-        value={form.password}
-        onInput={handleChangeForm}
-        required
-        minlength="6"
       />
 
       {status() && <ErrorMessage>{status()}</ErrorMessage>}
