@@ -32,29 +32,31 @@ const Portfolio: ParentComponent<PortfolioType<number>> = props => {
   };
 
   return (
-    <fieldset class="grid products proximity portfolio">
+    <fieldset>
       <legend class="subtitle card-header">{id}</legend>
+      
+      <div class="grid products proximity portfolio">
+        {children}
 
-      {children}
+        <div class={getGroup('ghost items-end')}>
+          <div class="flex col lockup" role="status">
+            <p>Fair Price (in $)</p>
+            <strong class="subtitle">{fairPriceCost().toFixed(2)}</strong>
+          </div>
 
-      <div class={getGroup('ghost items-end')}>
-        <div class="flex col lockup" role="status">
-          <p>Fair Price (in $)</p>
-          <strong class="subtitle">{fairPriceCost().toFixed(2)}</strong>
+          <Tooltip name="Clone" onClick={handleCopy} snackbar={snackbar}>
+            <DocCopyIcon />
+          </Tooltip>
         </div>
 
-        <Tooltip name="Clone" onClick={handleCopy} snackbar={snackbar}>
-          <DocCopyIcon />
-        </Tooltip>
-      </div>
+        <div class={getGroup('material items-end')}>
+          <div class="flex col lockup" role="status">
+            <p>Fair Price (in %)</p>
+            <strong class="subtitle">{fairPricePercent(fairPriceCost())}</strong>
+          </div>
 
-      <div class={getGroup('material items-end')}>
-        <div class="flex col lockup" role="status">
-          <p>Fair Price (in %)</p>
-          <strong class="subtitle">{fairPricePercent(fairPriceCost())}</strong>
+          <Notes />
         </div>
-
-        <Notes />
       </div>
     </fieldset>
   );

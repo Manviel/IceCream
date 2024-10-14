@@ -65,6 +65,15 @@ interface IsSignedIn {
   listen(listener: (signedIn: boolean) => unknown): Listener;
 }
 
+interface BasicProfile {
+  getId(): string;
+  getName(): string;
+  getGivenName(): string;
+  getFamilyName(): string;
+  getImageUrl(): string;
+  getEmail(): string;
+}
+
 interface GoogleUser {
   /**
    * Get the user's unique ID string.
@@ -75,6 +84,11 @@ interface GoogleUser {
    * Returns true if the user is signed in.
    */
   isSignedIn(): boolean;
+
+  /**
+   * Get the user's basic profile information.
+   */
+  getBasicProfile(): BasicProfile;
 
   /**
    * Revokes all of the scopes that the user granted.

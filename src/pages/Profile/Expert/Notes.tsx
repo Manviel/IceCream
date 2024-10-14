@@ -89,22 +89,24 @@ const Notes: Component = () => {
       childClassName="bottom-sheet card"
       toggleActionSheet={toggleActionSheet}
     >
-      <Field
-        type="text"
-        name="save-as"
-        label="Save ticker as"
-        value={ticker()}
-        onInput={handleTickerChange}
-        required
-      />
+      <div class="grid products proximity portfolio">
+        <Field
+          type="text"
+          name="save-as"
+          label="Save ticker as"
+          value={ticker()}
+          onInput={handleTickerChange}
+          required
+        />
 
-      <NumberField
-        name="price"
-        label="Fair Price"
-        value={price()}
-        onInput={handlePriceChange}
-        required
-      />
+        <NumberField
+          name="price"
+          label="Fair Price"
+          value={price()}
+          onInput={handlePriceChange}
+          required
+        />
+      </div>
 
       <section class="scrollable content-tall" tabIndex={0} role="log">
         <ul class={getStack('material')}>

@@ -89,6 +89,7 @@ const Calendar: Component = () => {
   const addEvent = () => {
     const date = new Date();
     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const organizer = window.gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
 
     date.setHours(date.getHours() + 1);
 
@@ -105,7 +106,7 @@ const Calendar: Component = () => {
         timeZone
       },
       recurrence: ['RRULE:FREQ=DAILY;COUNT=2;INTERVAL=2'],
-      attendees: [{ email: 'abc@google.com' }],
+      attendees: [{ email: organizer.getEmail() }],
       reminders: {
         useDefault: false,
         overrides: [
