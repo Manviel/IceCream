@@ -22,10 +22,10 @@ const FullScreenMode: Component = () => {
 
   return (
     <article class={getGroup('box items-center')}>
-      <header class="flex col tab">
+      <hgroup class="flex col tab">
         <h3 class="card-sub">Full screen</h3>
         <p class="term grey-dark">{hasFullscreen() ? 'Active' : 'Inactive'}</p>
-      </header>
+      </hgroup>
 
       <button
         type="button"

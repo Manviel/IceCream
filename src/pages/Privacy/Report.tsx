@@ -64,15 +64,15 @@ const Report: ParentComponent<ReportType> = ({ name, id, client }) => {
 
       <h4 class="card-sub provision col-span-2">Contacts</h4>
 
-      <div class={getStack('material')}>
+      <address class={getStack('material')}>
         <p class="concise">Email</p>
         <strong class="subtitle">{email}</strong>
-      </div>
+      </address>
 
-      <div class={getStack('ghost')}>
+      <address class={getStack('ghost')}>
         <p class="concise">Phone</p>
         <strong class="subtitle">{phone}</strong>
-      </div>
+      </address>
 
       <h4 class="card-sub provision col-span-2">Experience</h4>
 

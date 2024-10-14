@@ -57,6 +57,10 @@
   top: 0;
 }
 
+address {
+  font-style: normal;
+}
+
 @media screen and (max-width: 768px) {
   .privacy,
   .users {
