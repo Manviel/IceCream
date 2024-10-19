@@ -1,0 +1,8 @@
+{
+    "name": "My Custom Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+    "features": {
+      "node": "18"
+    },
+    "postCreateCommand": "pnpm install"
+  }
