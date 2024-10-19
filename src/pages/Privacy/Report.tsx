@@ -1,9 +1,9 @@
 import { ParentComponent } from 'solid-js';
 
 import Card from '../../components/Card';
+import Stack from '../../components/Card/Stack';
 
 import { IDType } from '../../global';
-import { getStack } from '../../global/theme';
 
 type AddressType = {
   address: string;
@@ -51,10 +51,10 @@ const Report: ParentComponent<IReport> = ({ name, id, client }) => {
           <figcaption>{getFirstLetters(name)}</figcaption>
         </figure>
 
-        <div class="flex col tab">
+        <address class="flex col tab">
           <h3 class="subtitle">{name}</h3>
           <p class="term grey-light">{address.city}</p>
-        </div>
+        </address>
       </header>
 
       <h4 class="card-sub provision col-span-2">Body measurements</h4>
@@ -64,27 +64,13 @@ const Report: ParentComponent<IReport> = ({ name, id, client }) => {
 
       <h4 class="card-sub provision col-span-2">Contacts</h4>
 
-      <address class={getStack('material')}>
-        <p class="concise">Email</p>
-        <strong class="subtitle">{email}</strong>
-      </address>
-
-      <address class={getStack('ghost')}>
-        <p class="concise">Phone</p>
-        <strong class="subtitle">{phone}</strong>
-      </address>
+      <Stack theme="material" title="Email" description={email} />
+      <Stack theme="ghost" title="Phone" description={phone} />
 
       <h4 class="card-sub provision col-span-2">Experience</h4>
 
-      <div class={getStack('alias')}>
-        <p class="concise">{age} years old</p>
-        <strong class="subtitle">{company.title}</strong>
-      </div>
-
-      <div class={getStack('price')}>
-        <p class="concise">{university}</p>
-        <strong class="subtitle">{company.department}</strong>
-      </div>
+      <Stack theme="alias" title={`${age} years old`} description={company.title} />
+      <Stack theme="price" title={university} description={company.department} />
     </article>
   );
 };
