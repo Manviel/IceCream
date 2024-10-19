@@ -2,7 +2,7 @@ import type { Component } from 'solid-js';
 
 import { ISegregation } from '../../global';
 
-interface IShelf extends ISegregation {
+interface IShelf extends ISegregation<string> {
   hasColSpan?: boolean;
   hasRowSpan?: boolean;
 }

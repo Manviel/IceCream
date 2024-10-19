@@ -15,7 +15,7 @@ type QuoteType = {
   text: string;
 };
 
-const QuoteView: ParentComponent<ISegregation> = props => {
+const QuoteView: ParentComponent<ISegregation<string>> = props => {
   const { title, description, children } = props;
 
   return (

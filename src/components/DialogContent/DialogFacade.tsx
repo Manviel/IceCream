@@ -9,7 +9,7 @@ import CloseIcon from '../../assets/icons/close.svg';
 
 import DialogContent, { IActionSheet } from '.';
 
-interface IDialogFacade extends ISegregation, IActionSheet {
+interface IDialogFacade extends ISegregation<string>, IActionSheet {
   closingActions?: JSX.Element;
   triggerClassName: string;
   triggerContent: JSX.Element;

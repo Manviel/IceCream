@@ -8,7 +8,7 @@ import LineStrategy from './LineStrategy';
 
 import 'chartist/dist/index.css';
 
-interface IChartStrategy extends ISegregation, ChartIDType, IDarkTheme {
+interface IChartStrategy extends ISegregation<string>, ChartIDType, IDarkTheme {
   strategy: ChartTypes;
   ariaLabel: string;
 }

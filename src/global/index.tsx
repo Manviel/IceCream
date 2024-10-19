@@ -28,14 +28,9 @@ export type Entity<T> = {
   [key: string]: T;
 };
 
-export interface ISegregation {
+export interface ISegregation<T> {
   title: string;
-  description: string;
-}
-
-export interface IListItem<T> {
-  label: string;
-  value: T;
+  description: T;
 }
 
 export interface IDType {

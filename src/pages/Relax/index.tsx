@@ -4,7 +4,7 @@ import Flow from '../../components/PageDecorator/Flow';
 import { SubTitle } from '../../components/Header';
 import ConnectFactory from '../../components/Link/ConnectFactory';
 
-import { ListItemGen } from '../../global';
+import { ISegregation } from '../../global';
 import { getStack } from '../../global/theme';
 
 import Breathe from './Breathe';
@@ -12,53 +12,53 @@ import Guard from './Guard';
 import FaceTime from './FaceTime';
 import Calendar from './Calendar';
 
-const options: ListItemGen<string>[] = [
+const options: ISegregation<string>[] = [
   {
-    value: 'https://refactoring.guru/refactoring/what-is-refactoring',
-    label: 'What is Refactoring?'
+    title: 'https://refactoring.guru/refactoring/what-is-refactoring',
+    description: 'What is Refactoring?'
   },
   {
-    value: 'https://www.informit.com/articles/article.aspx?p=1152528&seqNum=4',
-    label: 'Characteristics of Excellent Requirements'
+    title: 'https://www.informit.com/articles/article.aspx?p=1152528&seqNum=4',
+    description: 'Characteristics of Excellent Requirements'
   },
   {
-    value: 'https://ecomputernotes.com/software-engineering/requirementsvalidation',
-    label: 'Requirements validation techniques'
+    title: 'https://ecomputernotes.com/software-engineering/requirementsvalidation',
+    description: 'Requirements validation techniques'
   },
   {
-    value:
+    title:
       'https://www.freecodecamp.org/news/why-understanding-software-requirements-matter-to-you-as-a-software-engineer/',
-    label: 'Why Software Design is important?'
+    description: 'Why Software Design is important?'
   },
   {
-    value: 'https://www.javatpoint.com/software-engineering-software-metrics',
-    label: 'Process measurement metrics'
+    title: 'https://www.javatpoint.com/software-engineering-software-metrics',
+    description: 'Process measurement metrics'
   },
   {
-    value:
+    title:
       'https://www.isixsigma.com/methodology/business-process-management-bpm/business-process-management-software-development/',
-    label: 'Process management'
+    description: 'Process management'
   },
   {
-    value:
+    title:
       'https://towardsdatascience.com/10-common-software-architectural-patterns-in-a-nutshell-a0b47a1e9013',
-    label: 'Common Software Architectural Patterns'
+    description: 'Common Software Architectural Patterns'
   },
   {
-    value: 'https://www.w3.org/WAI/business-case/',
-    label: 'Business case for Accessibility'
+    title: 'https://www.w3.org/WAI/business-case/',
+    description: 'Business case for Accessibility'
   },
   {
-    value: 'https://www.appcues.com/blog/saas-growth-metrics',
-    label: 'Business metrics that matter'
+    title: 'https://www.appcues.com/blog/saas-growth-metrics',
+    description: 'Business metrics that matter'
   },
   {
-    value: 'https://www.softwaretestinghelp.com/requirements-elicitation-techniques/',
-    label: 'View All techniques'
+    title: 'https://www.softwaretestinghelp.com/requirements-elicitation-techniques/',
+    description: 'View All techniques'
   },
   {
-    value: 'https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns',
-    label: 'Design Patterns'
+    title: 'https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns',
+    description: 'Design Patterns'
   }
 ];
 
@@ -81,7 +81,7 @@ const Relax: Component = () => (
 
           <div class={getStack('material')}>
             <For each={options}>
-              {option => <ConnectFactory href={option.value} text={option.label} />}
+              {option => <ConnectFactory href={option.title} text={option.description} />}
             </For>
           </div>
         </aside>

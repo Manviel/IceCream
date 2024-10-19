@@ -1,3 +1,4 @@
+import { createEffect, createSignal } from 'solid-js';
 import { createStore } from 'solid-js/store';
 import { JSX } from 'solid-js/jsx-runtime';
 
@@ -15,14 +16,24 @@ export const useStore = () => {
     ticker: 'AAPL'
   });
 
-  const fairPricePercent = (fairPriceCost: number) => {
-    const result = fairPriceCost / store.priceData - 1;
-
-    return (result * 100).toFixed(2);
-  };
+  const [fairPriceCost, setFairPriceCost] = createSignal(0);
+  const [fairPricePercent, setFairPricePercent] = createSignal(0);
 
   const handleChangeStore: JSX.InputEventHandler<HTMLInputElement, InputEvent> = ({ target }) =>
     setStore({ [target.name]: target.value });
 
-  return { store, handleChangeStore, fairPricePercent };
+  createEffect(() => {
+    const result = fairPriceCost() / store.priceData - 1;
+
+    setFairPricePercent(result * 100);
+  });
+
+  return {
+    store,
+    handleChangeStore,
+    fairPriceCost,
+    setFairPriceCost,
+    fairPricePercent,
+    setFairPricePercent
+  };
 };

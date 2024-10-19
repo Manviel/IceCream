@@ -3,7 +3,7 @@ import type { Component } from 'solid-js';
 import { ISegregation } from '../../global';
 import { getStack } from '../../global/theme';
 
-interface ICard extends ISegregation {
+interface ICard extends ISegregation<string> {
   number: number;
 }
 

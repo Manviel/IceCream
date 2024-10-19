@@ -3,15 +3,15 @@ import { ParentComponent, Accessor, createSignal } from 'solid-js';
 import DocCopyIcon from '../../../../assets/icons/doc-copy.svg';
 
 import { IDType } from '../../../../global';
-import { getGroup } from '../../../../global/theme';
 
 import Tooltip from '../../../../components/Tooltip';
+import { Bundle } from '../../../../components/Card/Stack';
 
 import Notes from '../Notes';
 
 interface IPortfolio<T> extends IDType {
   fairPriceCost: Accessor<T>;
-  fairPricePercent: (cost: number) => string;
+  fairPricePercent: Accessor<T>;
 }
 
 const INIT_HELP = 'Copy to clipboad';
@@ -38,25 +38,15 @@ const Portfolio: ParentComponent<IPortfolio<number>> = props => {
       <div class="grid products proximity portfolio">
         {children}
 
-        <div class={getGroup('ghost items-end')}>
-          <div class="flex col lockup" role="status">
-            <p>Fair Price (in $)</p>
-            <strong class="subtitle">{fairPriceCost().toFixed(2)}</strong>
-          </div>
-
+        <Bundle theme="ghost" title="Fair Price (in $)" description={fairPriceCost}>
           <Tooltip name="Clone" onClick={handleCopy} snackbar={snackbar}>
             <DocCopyIcon />
           </Tooltip>
-        </div>
+        </Bundle>
 
-        <div class={getGroup('material items-end')}>
-          <div class="flex col lockup" role="status">
-            <p>Fair Price (in %)</p>
-            <strong class="subtitle">{fairPricePercent(fairPriceCost())}</strong>
-          </div>
-
+        <Bundle theme="material" title="Fair Price (in %)" description={fairPricePercent}>
           <Notes />
-        </div>
+        </Bundle>
       </div>
     </fieldset>
   );

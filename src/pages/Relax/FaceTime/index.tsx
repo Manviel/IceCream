@@ -21,7 +21,7 @@ const constraints = {
   }
 };
 
-const Notification = ({ title, description }: ISegregation) => (
+const Notification = ({ title, description }: ISegregation<string>) => (
   <>
     <div class="flex col items-center">
       <Toast.CloseButton class={ShapeIcon.Default}>
@@ -44,7 +44,7 @@ const FaceTime: Component = () => {
   let interval: number;
   let localStream: MediaStream;
 
-  const showToast = ({ title, description }: ISegregation) => {
+  const showToast = ({ title, description }: ISegregation<string>) => {
     toaster.show(props => (
       <Toast toastId={props.toastId} class="depth view toast">
         <Notification title={title} description={description} />
