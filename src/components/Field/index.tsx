@@ -2,11 +2,11 @@ import { Component, JSX } from 'solid-js';
 
 import './Field.css';
 
-export interface FieldType extends JSX.InputHTMLAttributes<HTMLInputElement> {
+export interface IField extends JSX.InputHTMLAttributes<HTMLInputElement> {
   label: string;
 }
 
-const Field: Component<FieldType> = props => {
+const Field: Component<IField> = props => {
   const { label, name, ...rest } = props;
 
   return (

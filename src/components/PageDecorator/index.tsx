@@ -1,17 +1,14 @@
 import { ParentComponent } from 'solid-js';
 
-import BackwardNavigation, { BackwardNavigationType } from '../Header/BackwardNavigation';
+import BackwardNavigation, { IBackwardNavigation } from '../Header/BackwardNavigation';
 
-import { DarkThemeType } from '../../global';
+import { IDarkTheme } from '../../global';
 
-export interface HeaderTemplateType extends BackwardNavigationType, DarkThemeType {
+export interface IHeaderTemplate extends IBackwardNavigation, IDarkTheme {
   headline: string;
 }
 
-export const HeaderTemplate: ParentComponent<HeaderTemplateType> = ({
-  children,
-  isDark = false
-}) => {
+export const HeaderTemplate: ParentComponent<IHeaderTemplate> = ({ children, isDark = false }) => {
   return (
     <main class="flex justify-center content-full" classList={{ layer: isDark }}>
       <div class="panel content-full flex col app" id="app">
@@ -21,7 +18,7 @@ export const HeaderTemplate: ParentComponent<HeaderTemplateType> = ({
   );
 };
 
-const PageDecorator: ParentComponent<HeaderTemplateType> = ({
+const PageDecorator: ParentComponent<IHeaderTemplate> = ({
   children,
   headline,
   subtitle,

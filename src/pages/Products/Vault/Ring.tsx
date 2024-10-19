@@ -4,11 +4,11 @@ import { PieChart } from 'chartist';
 import { useChartSource } from '../Charts/Context';
 import { IDType } from '../../../global';
 
-interface RingType extends IDType {
+interface IRing extends IDType {
   progress: number;
 }
 
-const Ring: Component<RingType> = props => {
+const Ring: Component<IRing> = props => {
   const { progress, id } = props;
 
   const source = {

@@ -9,14 +9,14 @@ import Tooltip from '../../../../components/Tooltip';
 
 import Notes from '../Notes';
 
-interface PortfolioType<T> extends IDType {
+interface IPortfolio<T> extends IDType {
   fairPriceCost: Accessor<T>;
   fairPricePercent: (cost: number) => string;
 }
 
 const INIT_HELP = 'Copy to clipboad';
 
-const Portfolio: ParentComponent<PortfolioType<number>> = props => {
+const Portfolio: ParentComponent<IPortfolio<number>> = props => {
   const { children, id, fairPriceCost, fairPricePercent } = props;
 
   const [snackbar, setSnackbar] = createSignal<string>(INIT_HELP);
@@ -34,7 +34,7 @@ const Portfolio: ParentComponent<PortfolioType<number>> = props => {
   return (
     <fieldset>
       <legend class="subtitle card-header">{id}</legend>
-      
+
       <div class="grid products proximity portfolio">
         {children}
 

@@ -2,21 +2,21 @@ import { ParentComponent } from 'solid-js';
 import { JSX } from 'solid-js/jsx-runtime';
 import { Dialog } from '@kobalte/core/dialog';
 
-import { SegregationType } from '../../global';
+import { ISegregation } from '../../global';
 import { ShapeIcon } from '../../global/theme';
 
 import CloseIcon from '../../assets/icons/close.svg';
 
-import DialogContent, { ActionSheetType } from '.';
+import DialogContent, { IActionSheet } from '.';
 
-interface DialogFacadeType extends SegregationType, ActionSheetType {
+interface IDialogFacade extends ISegregation, IActionSheet {
   closingActions?: JSX.Element;
   triggerClassName: string;
   triggerContent: JSX.Element;
   toggleActionSheet?: () => void;
 }
 
-const DialogFacade: ParentComponent<DialogFacadeType> = ({
+const DialogFacade: ParentComponent<IDialogFacade> = ({
   title,
   description,
   closingActions,

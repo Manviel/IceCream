@@ -10,12 +10,12 @@ type AddressType = {
   city: string;
 };
 
-export interface FullNameType {
+export interface IFullName {
   firstName: string;
   lastName: string;
 }
 
-export interface UserType extends FullNameType {
+export interface IUser extends IFullName {
   email: string;
   age: number;
   phone: string;
@@ -29,9 +29,9 @@ export interface UserType extends FullNameType {
   };
 }
 
-interface ReportType extends IDType {
+interface IReport extends IDType {
   name: string;
-  client: UserType;
+  client: IUser;
 }
 
 const getFirstLetters = (str: string) => {
@@ -41,7 +41,7 @@ const getFirstLetters = (str: string) => {
     .join('');
 };
 
-const Report: ParentComponent<ReportType> = ({ name, id, client }) => {
+const Report: ParentComponent<IReport> = ({ name, id, client }) => {
   const { height, weight, age, phone, address, email, company, university } = client;
 
   return (

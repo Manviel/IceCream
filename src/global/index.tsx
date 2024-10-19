@@ -21,19 +21,19 @@ export const Pages: { [K in keyof typeof Paths]: string } = {
   SignUp: 'Sign Up',
   ForgetAccount: 'Delete account',
   Forbidden: 'Access Denied',
-  Bag: 'Bag',
-}
+  Bag: 'Bag'
+};
 
 export type Entity<T> = {
   [key: string]: T;
 };
 
-export interface SegregationType {
+export interface ISegregation {
   title: string;
   description: string;
 }
 
-export interface ListItemGen<T> {
+export interface IListItem<T> {
   label: string;
   value: T;
 }
@@ -42,11 +42,11 @@ export interface IDType {
   id: string;
 }
 
-export interface DarkThemeType {
+export interface IDarkTheme {
   isDark?: boolean;
 }
 
-export interface AnchorType {
+export interface IAnchor {
   href: string;
   end?: boolean;
 }

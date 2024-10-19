@@ -1,16 +1,12 @@
 import type { Component } from 'solid-js';
 
-import { AnchorType } from '../../../global';
+import { IAnchor } from '../../../global';
 
-interface ConnectFactoryType extends AnchorType {
+interface IConnectFactory extends IAnchor {
   text?: string;
 }
 
-const ConnectFactory: Component<ConnectFactoryType> = ({
-  href,
-  text = 'Watch Now',
-  end = true
-}) => (
+const ConnectFactory: Component<IConnectFactory> = ({ href, text = 'Watch Now', end = true }) => (
   <a
     href={href}
     target="_blank"

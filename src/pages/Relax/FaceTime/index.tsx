@@ -8,7 +8,7 @@ import CloseIcon from '../../../assets/icons/close.svg';
 import PlayIcon from '../../../assets/icons/play-fill.svg';
 
 import { ShapeIcon, getGroup } from '../../../global/theme';
-import { SegregationType } from '../../../global';
+import { ISegregation } from '../../../global';
 
 import { StopWatch, setTimer } from './StopWatch';
 
@@ -21,7 +21,7 @@ const constraints = {
   }
 };
 
-const Notification = ({ title, description }: SegregationType) => (
+const Notification = ({ title, description }: ISegregation) => (
   <>
     <div class="flex col items-center">
       <Toast.CloseButton class={ShapeIcon.Default}>
@@ -44,7 +44,7 @@ const FaceTime: Component = () => {
   let interval: number;
   let localStream: MediaStream;
 
-  const showToast = ({ title, description }: SegregationType) => {
+  const showToast = ({ title, description }: ISegregation) => {
     toaster.show(props => (
       <Toast toastId={props.toastId} class="depth view toast">
         <Notification title={title} description={description} />

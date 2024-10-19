@@ -1,13 +1,13 @@
 import type { Component } from 'solid-js';
 
-import { SegregationType } from '../../global';
+import { ISegregation } from '../../global';
 import { getStack } from '../../global/theme';
 
-interface CardType extends SegregationType {
+interface ICard extends ISegregation {
   number: number;
 }
 
-const Card: Component<CardType> = ({ number, description, title }) => (
+const Card: Component<ICard> = ({ number, description, title }) => (
   <div class={getStack('box')}>
     <h4 class="concise card-sup">{title}</h4>
 

@@ -37,13 +37,18 @@ Your app is ready to be deployed!
 
 You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
 
-### Backend Api
-
-[Waffle](https://github.com/Manviel/Waffle) uses mongo database atlas
-
 ## Tools
 
 - [Sticky Table of Contents with Scrolling Active States](https://css-tricks.com/sticky-table-of-contents-with-scrolling-active-states/)
 - [CSS Color Guide Convertor](https://colorjs.io/apps/convert/?color=lime&precision=4)
 - [Browse UX apps](https://mobbin.com/browse/ios/apps?sort=publishedAt)
 - [Storybook Colors](https://workday.github.io/canvas-tokens/?path=/docs/docs-base-tokens--docs)
+
+### Backend Api
+
+[Waffle](https://github.com/Manviel/Waffle) uses mongo database atlas
+
+### Required Extensions
+
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
+- [Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).

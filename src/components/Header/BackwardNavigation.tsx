@@ -2,13 +2,11 @@ import { Component, onMount } from 'solid-js';
 
 import Header from '.';
 
-export interface BackwardNavigationType {
+export interface IBackwardNavigation {
   subtitle: string;
 }
 
-const BackwardNavigation: Component<BackwardNavigationType> = ({
-  subtitle,
-}) => {
+const BackwardNavigation: Component<IBackwardNavigation> = ({ subtitle }) => {
   onMount(() => {
     document.title = `${subtitle} - iFruit`;
   });

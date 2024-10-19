@@ -3,15 +3,15 @@ import { Tooltip } from '@kobalte/core/tooltip';
 
 import { ShapeIcon } from '../../global/theme';
 
-import { HelpTooltipType } from './HelpTooltip';
+import { IHelpTooltip } from './HelpTooltip';
 
-interface TooltipType<T> extends HelpTooltipType {
+interface ITooltip<T> extends IHelpTooltip {
   onClick: () => Promise<void>;
   snackbar: Accessor<T>;
   className?: string;
 }
 
-const FloatingTooltip: ParentComponent<TooltipType<string>> = props => {
+const FloatingTooltip: ParentComponent<ITooltip<string>> = props => {
   const { children, name, onClick, snackbar, className = ShapeIcon.Default } = props;
 
   const handleClick = async () => {

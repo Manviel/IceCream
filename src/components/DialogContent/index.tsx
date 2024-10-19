@@ -4,15 +4,15 @@ import AbstractDialogContent from './AbstractDialogContent';
 
 import './DialogContent.css';
 
-export interface ActionSheetType {
+export interface IActionSheet {
   isFullScreen?: boolean;
   childClassName?: string;
 }
 
-const DialogContent: ParentComponent<ActionSheetType> = ({
+const DialogContent: ParentComponent<IActionSheet> = ({
   children,
   isFullScreen = false,
-  childClassName = 'alert rounded',
+  childClassName = 'alert rounded'
 }) => {
   return (
     <AbstractDialogContent

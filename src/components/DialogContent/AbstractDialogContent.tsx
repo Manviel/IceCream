@@ -2,21 +2,21 @@ import type { ParentComponent } from 'solid-js';
 import { JSX } from 'solid-js/jsx-runtime';
 import { Dialog } from '@kobalte/core/dialog';
 
-import { ActionSheetType } from '.';
+import { IActionSheet } from '.';
 
-interface FactoryType extends ActionSheetType {
+interface IFactory extends IActionSheet {
   factory: JSX.Element;
 }
 
-const AbstractDialogContent: ParentComponent<FactoryType> = ({
+const AbstractDialogContent: ParentComponent<IFactory> = ({
   factory,
   isFullScreen,
-  childClassName,
+  childClassName
 }) => (
   <>
-    <Dialog.Overlay class='backdrop vibrancy' />
+    <Dialog.Overlay class="backdrop vibrancy" />
 
-    <div class='dialog content-tall content-full flex items-center justify-center'>
+    <div class="dialog content-tall content-full flex items-center justify-center">
       <Dialog.Content
         class={`modal view flex col content-full ${childClassName}`}
         classList={{ 'content-tall': isFullScreen }}

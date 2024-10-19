@@ -4,7 +4,7 @@ import Loader from '../Loader';
 import HelpTooltip from '../Tooltip/HelpTooltip';
 
 import { ShapeIcon, getGroup } from '../../global/theme';
-import { SegregationType } from '../../global';
+import { ISegregation } from '../../global';
 import { getQuote } from '../../services/news';
 import { useCacheStore } from '../../services/store';
 
@@ -15,7 +15,7 @@ type QuoteType = {
   text: string;
 };
 
-const QuoteView: ParentComponent<SegregationType> = props => {
+const QuoteView: ParentComponent<ISegregation> = props => {
   const { title, description, children } = props;
 
   return (

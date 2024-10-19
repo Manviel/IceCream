@@ -1,6 +1,6 @@
 import { Component } from 'solid-js';
 
-import { DarkThemeType, SegregationType } from '../../../global';
+import { IDarkTheme, ISegregation } from '../../../global';
 import { ChartTypes, ChartIDType } from '.';
 
 import BarStrategy from './BarStrategy';
@@ -8,12 +8,12 @@ import LineStrategy from './LineStrategy';
 
 import 'chartist/dist/index.css';
 
-interface ChartStrategyType extends SegregationType, ChartIDType, DarkThemeType {
+interface IChartStrategy extends ISegregation, ChartIDType, IDarkTheme {
   strategy: ChartTypes;
   ariaLabel: string;
 }
 
-const ChartStrategy: Component<ChartStrategyType> = props => {
+const ChartStrategy: Component<IChartStrategy> = props => {
   const { title, description, id, strategy, ariaLabel, source, isDark = false, config } = props;
 
   return (

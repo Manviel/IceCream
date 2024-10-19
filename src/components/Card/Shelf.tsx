@@ -1,13 +1,13 @@
 import type { Component } from 'solid-js';
 
-import { SegregationType } from '../../global';
+import { ISegregation } from '../../global';
 
-interface ProtoType extends SegregationType {
+interface IShelf extends ISegregation {
   hasColSpan?: boolean;
   hasRowSpan?: boolean;
 }
 
-const Shelf: Component<ProtoType> = ({
+const Shelf: Component<IShelf> = ({
   description,
   title,
   hasColSpan = false,
