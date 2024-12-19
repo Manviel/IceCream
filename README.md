@@ -4,13 +4,19 @@ Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnp
 
 This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
 
-```
-pnpm install
-```
-
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `pnpm install`
+
+Is used to install all dependencies for a project.
+
+```
+pnpm up --latest
+```
+
+Updates all dependencies to their latest versions
 
 ### `pnpm start`
 
