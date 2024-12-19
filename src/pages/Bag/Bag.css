@@ -1,5 +1,13 @@
-@media screen and (max-width: 768px) {
+.bag {
+  grid-column: span 3;
+}
+
+#products > article {
+  grid-column: span 2;
+}
+
+@media screen and (max-width: 1052px) {
   .bag {
-    grid-template-columns: 1fr;
+    grid-column: span 2;
   }
 }

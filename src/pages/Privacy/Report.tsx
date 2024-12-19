@@ -45,7 +45,7 @@ const Report: ParentComponent<IReport> = ({ name, id, client }) => {
   const { height, weight, age, phone, address, email, company, university } = client;
 
   return (
-    <article class="grid products card view content-full rounded users" id={id}>
+    <article class="grid card view content-full rounded" id={id}>
       <header class="flex proximity items-center col-span-2">
         <figure class="flex items-center justify-center paper shape report-logo">
           <figcaption>{getFirstLetters(name)}</figcaption>

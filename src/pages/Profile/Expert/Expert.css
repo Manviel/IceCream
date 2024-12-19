@@ -70,11 +70,17 @@ fieldset legend {
   background-color: var(--c-ambient);
 }
 
-@media screen and (max-width: 768px) {
-  .portfolio {
-    grid-template-columns: 1fr;
-  }
+.portfolio > div {
+  grid-column: span 3;
+}
 
+@media screen and (max-width: 1052px) {
+  .portfolio > div {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .ornament {
     bottom: var(--s-offset);
     margin: 0 -1.6rem;

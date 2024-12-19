@@ -17,7 +17,7 @@ import './Products.css';
 const Products: Component = () => {
   return (
     <PageDecorator headline={Pages.Products} subtitle="Quick actions and features" isDark>
-      <div class="grid products proximity insights">
+      <div class="grid proximity" id="insights">
         <Vault />
         <Inbox />
         <Stocks />

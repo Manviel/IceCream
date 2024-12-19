@@ -60,8 +60,8 @@ const Bag: Component = () => {
 
   return (
     <PageDecorator headline={Pages.Bag} subtitle="Endless potential">
-      <div class="grid products proximity bag">
-        <form onSubmit={addDevices}>
+      <div class="grid proximity">
+        <form onSubmit={addDevices} class='bag'>
           <NumberField
             name="warranty"
             label="Warranty Years"
@@ -86,7 +86,7 @@ const Bag: Component = () => {
         <Deposit />
       </div>
 
-      <div class="grid products proximity screen bag">
+      <div class="grid proximity screen" id="products">
         <Index each={productStore}>
           {(product, index) => {
             const hasComparisons = index > 0 && comparisons();

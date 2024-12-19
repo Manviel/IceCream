@@ -76,7 +76,7 @@ const Relax: Component = () => (
 
         <p class="info">Consistency is great but efficiency is better.</p>
 
-        <aside class="grid products proximity">
+        <aside class="grid proximity" id='room'>
           <Calendar />
 
           <div class={getStack('material')}>

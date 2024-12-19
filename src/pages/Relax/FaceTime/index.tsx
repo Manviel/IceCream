@@ -113,8 +113,8 @@ const FaceTime: Component = () => {
   });
 
   return (
-    <section class="grid room items-start provision proximity">
-      <div class="face-time">
+    <section class="grid items-start provision proximity">
+      <div class="face-time col-span-4">
         <video
           autoplay
           class="vibrancy rounded content-full"
@@ -148,7 +148,7 @@ const FaceTime: Component = () => {
         </nav>
       </div>
 
-      <aside class="flex col os layer">
+      <aside class="flex col os layer col-span-2">
         <h4 class="card-sub">Lean</h4>
         <p class="term grey-light">
           Any component of a business enterprise that fails to directly benefit a final product is

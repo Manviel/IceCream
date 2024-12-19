@@ -91,11 +91,11 @@
   fill: var(--c-blue);
 }
 
-@media screen and (max-width: 768px) {
-  .widget-chart {
-    grid-column: span 2;
-  }
+#insights > section {
+  grid-column: span 2;
+}
 
+@media screen and (max-width: 768px) {
   .ct-label {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -104,11 +104,5 @@
   .widget-bar,
   .widget-line {
     aspect-ratio: 3 / 2;
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  .insights {
-    grid-template-columns: repeat(3, 1fr);
   }
 }

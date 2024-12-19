@@ -22,7 +22,7 @@ const Deposit: Component = () => {
     setBudget(Number(target.value));
 
   return (
-    <section>
+    <section class='bag'>
       <SubTitle spot="I want multiply" />
 
       <p class="info">Making a deposit for 12 months.</p>

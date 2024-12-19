@@ -89,7 +89,7 @@ const Notes: Component = () => {
       childClassName="bottom-sheet card"
       toggleActionSheet={toggleActionSheet}
     >
-      <div class="grid products proximity portfolio">
+      <div class="grid proximity portfolio">
         <Field
           type="text"
           name="save-as"

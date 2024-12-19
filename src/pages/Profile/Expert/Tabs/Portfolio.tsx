@@ -35,7 +35,7 @@ const Portfolio: ParentComponent<IPortfolio<number>> = props => {
     <fieldset>
       <legend class="subtitle card-header">{id}</legend>
 
-      <div class="grid products proximity portfolio">
+      <div class="grid proximity portfolio">
         {children}
 
         <Bundle theme="ghost" title="Fair Price (in $)" description={fairPriceCost}>

@@ -8,7 +8,7 @@ import { getUsers } from '../../services/news';
 import { useCacheStore } from '../../services/store';
 import { Pages } from '../../global';
 
-import Report, { FullNameType, UserType } from './Report';
+import Report, { IFullName, IUser } from './Report';
 
 import './Privacy.css';
 
@@ -35,7 +35,7 @@ const requestKey = { url: 'users' };
 
 const Privacy: Component = () => {
   const [loading, setLoading] = createSignal(false);
-  const [containers, setContainers] = createSignal<UserType[]>();
+  const [containers, setContainers] = createSignal<IUser[]>();
 
   const { getStore, setStore } = useCacheStore();
 
@@ -70,7 +70,7 @@ const Privacy: Component = () => {
     if (containers()) useStickyNavigation();
   });
 
-  const getFullName = (user: FullNameType) => `${user.firstName} ${user.lastName}`;
+  const getFullName = (user: IFullName) => `${user.firstName} ${user.lastName}`;
 
   return (
     <PageDecorator headline={Pages.Privacy} subtitle="Designed for your policy" isDark>
@@ -79,8 +79,8 @@ const Privacy: Component = () => {
 
         <Show when={containers()} keyed>
           {res => (
-            <div class="grid privacy proximity">
-              <section class="flex col quick" role="feed">
+            <div class="grid proximity">
+              <section class="flex col privacy" role="feed" id="users">
                 <For each={res}>
                   {client => (
                     <Report

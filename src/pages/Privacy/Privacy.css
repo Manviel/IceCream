@@ -1,13 +1,5 @@
-.privacy {
-  grid-template-columns: 4fr 1fr;
-}
-
 .paper {
   background-color: var(--c-active);
-}
-
-.users {
-  gap: var(--s-safe) 1.8rem;
 }
 
 .report-logo {
@@ -16,8 +8,9 @@
   font-size: var(--s-screen);
 }
 
-.quick {
+.privacy {
   gap: var(--s-finger);
+  grid-column: span 5;
 }
 
 .spy-nav {
@@ -26,6 +19,7 @@
   align-self: start;
   overflow: hidden;
   padding: var(--s-safe);
+  grid-column: span 1;
 }
 
 .spy-nav a {
@@ -61,13 +55,19 @@ address {
   font-style: normal;
 }
 
-@media screen and (max-width: 768px) {
-  .privacy,
-  .users {
-    grid-template-columns: 1fr;
-  }
+#users > article {
+  gap: var(--s-safe) 1.8rem;
+  grid-template-columns: subgrid;
+}
 
-  .users .os {
+@media screen and (max-width: 1052px) {
+  .privacy {
+    grid-column: span 3;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .privacy .os {
     overflow: hidden;
   }
 }

@@ -53,8 +53,8 @@ video {
   animation: hide 0.1s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
-.room {
-  grid-template-columns: 4fr 1fr;
+#room > div {
+  grid-column: span 3;
 }
 
 @keyframes hide {
@@ -67,8 +67,8 @@ video {
 }
 
 @media screen and (max-width: 1052px) {
-  .room {
-    grid-template-columns: 1fr;
+  #room > div {
+    grid-column: span 2;
   }
 }
 

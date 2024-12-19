@@ -56,7 +56,7 @@ const Reviews: Component = () => {
       <ul class="carousel flex gap" tabindex="0">
         <For each={listItems}>
           {slide => (
-            <li class={`grid carousel-item view rounded term ${slide.title}`}>
+            <li class={`flex carousel-item view rounded ${slide.title}`}>
               {slide.description}
             </li>
           )}

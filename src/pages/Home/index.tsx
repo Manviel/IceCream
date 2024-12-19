@@ -20,8 +20,8 @@ import './Home.css';
 const Home: Component = () => {
   return (
     <PageDecorator headline={Pages.Home} subtitle="Our values lead the way" isDark>
-      <article class="grid home-grid proximity card rounded">
-        <header class="flex col view col-span-2">
+      <article class="grid proximity card rounded">
+        <header class="flex col view col-span-4">
           <SubTitle spot="What is Cohesion?" />
 
           <p class="info">
@@ -38,15 +38,15 @@ const Home: Component = () => {
           <ConnectFactory href="https://www.baeldung.com/cs/layered-architecture" />
         </header>
 
-        <section class="material flex justify-center items-center cohesion">
+        <section class="material flex justify-center items-center cohesion col-span-2">
           <div class="readable-icon" role="img" aria-label="Cohesion icon">
             <LayersDownIcon />
           </div>
         </section>
       </article>
 
-      <article class="grid home-grid proximity screen">
-        <header class="flex col card rounded">
+      <article class="grid proximity screen">
+        <header class="flex col card rounded col-span-2">
           <div class="flex justify-center items-center price coupling">
             <div class="readable-icon" role="img" aria-label="Coupling icon">
               <CameraFiltersIcon />
@@ -68,7 +68,7 @@ const Home: Component = () => {
           </div>
         </header>
 
-        <section class="flex col card view rounded col-span-2">
+        <section class="flex col card view rounded col-span-4">
           <SubTitle spot="What is Layered Architecture?" />
 
           <p class="info">
@@ -85,8 +85,8 @@ const Home: Component = () => {
         </section>
       </article>
 
-      <article class="grid home-grid proximity screen card rounded">
-        <header class="flex col view col-span-2">
+      <article class="grid proximity screen card rounded">
+        <header class="flex col view col-span-4">
           <SubTitle spot="The Separation of Concerns" />
 
           <p class="info">
@@ -102,14 +102,14 @@ const Home: Component = () => {
           />
         </header>
 
-        <section class="ghost flex justify-center items-center cohesion view">
+        <section class="ghost flex justify-center items-center cohesion view col-span-2">
           <A href={Paths.Products} class={ActionTypes.Secondary}>
             Go to Products
           </A>
         </section>
       </article>
 
-      <article class="grid os-grid proximity screen">
+      <article class="grid proximity screen">
         <Shelf
           title="Get USED TO"
           description="To talk about the process of becoming familiar with something."
