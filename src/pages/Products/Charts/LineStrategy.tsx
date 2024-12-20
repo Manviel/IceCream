@@ -1,10 +1,10 @@
 import { Component, onMount } from 'solid-js';
 import { LineChart } from 'chartist';
 
-import { ChartIDType } from '../Charts';
+import { ChartKind } from '../Charts';
 import { AXIS_OFFSET, ChartLegend, useChartSource, useLegends } from './Context';
 
-const LineStrategy: Component<ChartIDType> = props => {
+const LineStrategy: Component<ChartKind> = props => {
   const { id, source } = props;
 
   const { labels, datasets } = useChartSource(source);

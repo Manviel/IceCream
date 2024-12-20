@@ -1,10 +1,10 @@
 import { Component, onMount } from 'solid-js';
 import { BarChart } from 'chartist';
 
-import { ChartIDType } from '../Charts';
+import { ChartKind } from '../Charts';
 import { AXIS_OFFSET, ChartLegend, useChartSource, useLegends } from './Context';
 
-const BarStrategy: Component<ChartIDType> = props => {
+const BarStrategy: Component<ChartKind> = props => {
   const { id, source, config } = props;
 
   const { labels, datasets } = useChartSource(source);

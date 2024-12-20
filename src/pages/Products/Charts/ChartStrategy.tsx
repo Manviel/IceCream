@@ -1,14 +1,14 @@
 import { Component } from 'solid-js';
 
 import { IDarkTheme, ISegregation } from '../../../global';
-import { ChartTypes, ChartIDType } from '.';
+import { ChartTypes, ChartKind } from '.';
 
 import BarStrategy from './BarStrategy';
 import LineStrategy from './LineStrategy';
 
 import 'chartist/dist/index.css';
 
-interface IChartStrategy extends ISegregation<string>, ChartIDType, IDarkTheme {
+interface IChartStrategy extends ISegregation<string>, ChartKind, IDarkTheme {
   strategy: ChartTypes;
   ariaLabel: string;
 }

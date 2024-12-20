@@ -5,8 +5,10 @@ export enum ChartTypes {
   Line = 'line'
 }
 
-export interface ChartIDType extends IDType {
-  source: Entity<string>;
+export interface ChartIDType<T> extends IDType {
+  source: Entity<T>;
   ariaLabel?: string;
-  config?: Entity<string>;
+  config?: Entity<T>;
 }
+
+export type ChartKind = ChartIDType<string | number>;

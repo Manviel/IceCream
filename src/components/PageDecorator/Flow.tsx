@@ -7,11 +7,11 @@ import { ShapeIcon } from '../../global/theme';
 
 import ConnectFactory from '../Link/ConnectFactory';
 
-import { HeaderTemplate, HeaderTemplateType } from '.';
+import { HeaderTemplate, IHeaderTemplate } from '.';
 
 import './Flow.css';
 
-const Flow: ParentComponent<HeaderTemplateType> = ({
+const Flow: ParentComponent<IHeaderTemplate> = ({
   children,
   headline,
   subtitle,
