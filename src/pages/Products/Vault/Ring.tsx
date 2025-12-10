@@ -1,4 +1,4 @@
-import { Component, onMount } from 'solid-js';
+import { Component, onMount, untrack } from 'solid-js';
 import { PieChart } from 'chartist';
 
 import { useChartSource } from '../Charts/Context';
@@ -9,18 +9,16 @@ interface IRing extends IDType {
 }
 
 const Ring: Component<IRing> = props => {
-  const { progress, id } = props;
-
-  const source = {
-    Free: progress,
-    Used: 100 - progress
-  };
+  const source = untrack(() => ({
+    Free: props.progress,
+    Used: 100 - props.progress
+  }));
 
   const { labels, datasets } = useChartSource(source);
 
   onMount(() => {
     const chart = new PieChart(
-      `#${id}`,
+      `#${props.id}`,
       {
         series: datasets,
         labels: labels
@@ -42,7 +40,7 @@ const Ring: Component<IRing> = props => {
     });
   });
 
-  return <figure id={id} class="activity" />;
+  return <figure id={props.id} class="activity" />;
 };
 
 export default Ring;

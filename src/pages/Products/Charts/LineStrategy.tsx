@@ -1,18 +1,16 @@
-import { Component, onMount } from 'solid-js';
+import { Component, onMount, untrack } from 'solid-js';
 import { LineChart } from 'chartist';
 
 import { ChartKind } from '../Charts';
 import { AXIS_OFFSET, ChartLegend, useChartSource, useLegends } from './Context';
 
 const LineStrategy: Component<ChartKind> = props => {
-  const { id, source } = props;
-
-  const { labels, datasets } = useChartSource(source);
+  const { labels, datasets } = useChartSource(untrack(() => props.source));
   const { handleReader, legend } = useLegends({ labels, datasets });
 
   onMount(() => {
     const chart = new LineChart(
-      `#${id}`,
+      `#${props.id}`,
       {
         labels: labels,
         series: [datasets]
@@ -41,7 +39,7 @@ const LineStrategy: Component<ChartKind> = props => {
 
   return (
     <>
-      <figure id={id} class="widget-line" />
+      <figure id={props.id} class="widget-line" />
 
       <ChartLegend legend={legend} />
     </>

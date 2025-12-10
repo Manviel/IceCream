@@ -8,49 +8,39 @@ interface IStack<T> extends ISegregation<T> {
   theme: string;
 }
 
-const BaseStack: ParentComponent<IStack<JSX.Element>> = ({
-  title,
-  description,
-  theme,
-  children
-}) => (
-  <div class={getGroup(`items-end ${theme}`)}>
+const BaseStack: ParentComponent<IStack<JSX.Element>> = (props) => (
+  <div class={getGroup(`items-end ${props.theme}`)}>
     <div class="flex col lockup">
-      <p>{title}</p>
+      <p>{props.title}</p>
 
-      {description}
+      {props.description}
     </div>
 
-    {children}
+    {props.children}
   </div>
 );
 
-const Stack: ParentComponent<IStack<string>> = ({ title, description, children, theme }) => (
+const Stack: ParentComponent<IStack<string>> = (props) => (
   <BaseStack
-    title={title}
-    description={<strong class="subtitle">{description}</strong>}
-    theme={theme}
+    title={props.title}
+    description={<strong class="subtitle">{props.description}</strong>}
+    theme={props.theme}
   >
-    {children}
+    {props.children}
   </BaseStack>
 );
 
-export const Bundle: ParentComponent<IStack<Accessor<number>>> = ({
-  title,
-  description,
-  children,
-  theme
-}) => (
+export const Bundle: ParentComponent<IStack<Accessor<number>>> = (props) => (
   <BaseStack
-    title={title}
+    title={props.title}
     description={
       <strong class="subtitle" role="status">
-        {description().toFixed(2)}
+        {props.description().toFixed(2)}
       </strong>
     }
-    theme={theme}
+    theme={props.theme}
   >
-    {children}
+    {props.children}
   </BaseStack>
 );
 

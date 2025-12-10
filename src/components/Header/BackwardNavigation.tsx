@@ -6,12 +6,12 @@ export interface IBackwardNavigation {
   subtitle: string;
 }
 
-const BackwardNavigation: Component<IBackwardNavigation> = ({ subtitle }) => {
+const BackwardNavigation: Component<IBackwardNavigation> = (props) => {
   onMount(() => {
-    document.title = `${subtitle} - iFruit`;
+    document.title = `${props.subtitle} - iFruit`;
   });
 
-  return <Header spot={subtitle} />;
+  return <Header spot={props.subtitle} />;
 };
 
 export default BackwardNavigation;

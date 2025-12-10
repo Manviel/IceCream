@@ -16,19 +16,17 @@ type QuoteType = {
 };
 
 const QuoteView: ParentComponent<ISegregation<string>> = props => {
-  const { title, description, children } = props;
-
   return (
     <section class="card view rounded">
       <div class={getGroup('layer items-center')}>
         <blockquote class="flex col gap">
-          <strong class="subtitle">{title}</strong>
+          <strong class="subtitle">{props.title}</strong>
         </blockquote>
 
-        {children}
+        {props.children}
       </div>
 
-      <h3 class="box os provision term">{description}</h3>
+      <h3 class="box os provision term">{props.description}</h3>
     </section>
   );
 };

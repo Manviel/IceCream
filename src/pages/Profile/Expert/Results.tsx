@@ -29,7 +29,7 @@ const Results: Component = () => {
         <Tooltip
           name="Clean"
           snackbar={snackbar}
-          className={ActionTypes.Danger}
+          class={ActionTypes.Danger}
           onClick={handleSubmit}
         >
           Drop database

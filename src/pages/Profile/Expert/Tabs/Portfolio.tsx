@@ -17,13 +17,11 @@ interface IPortfolio<T> extends IDType {
 const INIT_HELP = 'Copy to clipboad';
 
 const Portfolio: ParentComponent<IPortfolio<number>> = props => {
-  const { children, id, fairPriceCost, fairPricePercent } = props;
-
   const [snackbar, setSnackbar] = createSignal<string>(INIT_HELP);
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(fairPriceCost().toFixed(2));
+      await navigator.clipboard.writeText(props.fairPriceCost().toFixed(2));
 
       setSnackbar('Copied');
     } catch {
@@ -33,18 +31,18 @@ const Portfolio: ParentComponent<IPortfolio<number>> = props => {
 
   return (
     <fieldset>
-      <legend class="subtitle card-header">{id}</legend>
+      <legend class="subtitle card-header">{props.id}</legend>
 
       <div class="grid proximity portfolio">
-        {children}
+        {props.children}
 
-        <Bundle theme="ghost" title="Fair Price (in $)" description={fairPriceCost}>
+        <Bundle theme="ghost" title="Fair Price (in $)" description={props.fairPriceCost}>
           <Tooltip name="Clone" onClick={handleCopy} snackbar={snackbar}>
             <DocCopyIcon />
           </Tooltip>
         </Bundle>
 
-        <Bundle theme="material" title="Fair Price (in %)" description={fairPricePercent}>
+        <Bundle theme="material" title="Fair Price (in %)" description={props.fairPricePercent}>
           <Notes />
         </Bundle>
       </div>

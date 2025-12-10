@@ -14,24 +14,22 @@ interface IChartStrategy extends ISegregation<string>, ChartKind, IDarkTheme {
 }
 
 const ChartStrategy: Component<IChartStrategy> = props => {
-  const { title, description, id, strategy, ariaLabel, source, isDark = false, config } = props;
-
   return (
     <section
       class="rounded flex col widget-chart"
-      classList={{ box: isDark, card: !isDark }}
-      aria-label={ariaLabel}
+      classList={{ box: props.isDark, card: !props.isDark }}
+      aria-label={props.ariaLabel}
     >
       <header class="view flex col tab">
-        <h3 class="card-sub">{title}</h3>
-        <p class="term" classList={{ 'grey-dark': isDark, 'grey-light': !isDark }}>
-          {description}
+        <h3 class="card-sub">{props.title}</h3>
+        <p class="term" classList={{ 'grey-dark': props.isDark, 'grey-light': !props.isDark }}>
+          {props.description}
         </p>
       </header>
 
-      {strategy === ChartTypes.Bar && <BarStrategy id={id} source={source} config={config} />}
+      {props.strategy === ChartTypes.Bar && <BarStrategy id={props.id} source={props.source} config={props.config} />}
 
-      {strategy === ChartTypes.Line && <LineStrategy id={id} source={source} />}
+      {props.strategy === ChartTypes.Line && <LineStrategy id={props.id} source={props.source} />}
     </section>
   );
 };

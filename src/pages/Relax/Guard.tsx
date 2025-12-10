@@ -4,7 +4,7 @@ import { useNavigate } from '@solidjs/router';
 import { Paths } from '../../global';
 import { useAuthorization } from '../../services/db';
 
-const Guard: ParentComponent = ({ children }) => {
+const Guard: ParentComponent = (props) => {
   const navigate = useNavigate();
 
   const { isAuthed, verifyStorage } = useAuthorization();
@@ -17,7 +17,7 @@ const Guard: ParentComponent = ({ children }) => {
     }
   });
 
-  return <Show when={isAuthed()}>{children}</Show>;
+  return <Show when={isAuthed()}>{props.children}</Show>;
 };
 
 export default Guard;

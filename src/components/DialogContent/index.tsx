@@ -1,4 +1,4 @@
-import type { ParentComponent } from 'solid-js';
+import { mergeProps, type ParentComponent } from 'solid-js';
 
 import AbstractDialogContent from './AbstractDialogContent';
 
@@ -9,16 +9,14 @@ export interface IActionSheet {
   childClassName?: string;
 }
 
-const DialogContent: ParentComponent<IActionSheet> = ({
-  children,
-  isFullScreen = false,
-  childClassName = 'alert rounded'
-}) => {
+const DialogContent: ParentComponent<IActionSheet> = _props => {
+  const props = mergeProps({ isFullScreen: false, childClassName: 'alert rounded' }, _props);
+
   return (
     <AbstractDialogContent
-      isFullScreen={isFullScreen}
-      childClassName={childClassName}
-      factory={children}
+      isFullScreen={props.isFullScreen}
+      childClassName={props.childClassName}
+      factory={props.children}
     />
   );
 };

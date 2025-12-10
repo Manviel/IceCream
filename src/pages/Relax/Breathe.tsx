@@ -10,7 +10,7 @@ const Breathe: Component = () => (
 
     <p class='grey-dark info'>Inhale and Exhale</p>
     <ul class='breathe'>
-      <For each={LIST}>{() => <li class='circle shape'></li>}</For>
+      <For each={LIST}>{() => <li class='circle shape' />}</For>
     </ul>
     <p class='grey-dark info'>
       Taking moments throughout the day to stop, relax, and practice mindfulness

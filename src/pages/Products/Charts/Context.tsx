@@ -43,12 +43,10 @@ export const useChartSource = (src: object): ChartSource => {
 };
 
 export const ChartLegend: Component<ChartLegendType<string | null>> = props => {
-  const { legend } = props;
-
   return (
     <dl class="flex content-full justify-between items-center widget-legend">
       <dt class="ct-label">Selected:</dt>
-      <dd class="chip widget-tooltip">{legend()}</dd>
+      <dd class="chip widget-tooltip">{props.legend()}</dd>
     </dl>
   );
 };

@@ -1,4 +1,4 @@
-import { ParentComponent, onMount, onCleanup } from 'solid-js';
+import { ParentComponent, onMount, onCleanup, mergeProps } from 'solid-js';
 import { useNavigate } from '@solidjs/router';
 
 import ArrowUpIcon from '../../assets/icons/arrow-up.svg';
@@ -11,12 +11,9 @@ import { HeaderTemplate, IHeaderTemplate } from '.';
 
 import './Flow.css';
 
-const Flow: ParentComponent<IHeaderTemplate> = ({
-  children,
-  headline,
-  subtitle,
-  isDark = false
-}) => {
+const Flow: ParentComponent<IHeaderTemplate> = _props => {
+  const props = mergeProps({ isDark: false }, _props);
+
   const navigate = useNavigate();
 
   onMount(() => {
@@ -30,7 +27,7 @@ const Flow: ParentComponent<IHeaderTemplate> = ({
   const handleGoBack = () => navigate(-1);
 
   return (
-    <HeaderTemplate headline={headline} subtitle={subtitle} isDark={isDark}>
+    <HeaderTemplate headline={props.headline} subtitle={props.subtitle} isDark={props.isDark}>
       <header class="flex justify-center depth flow content-full">
         <nav
           class="app flex justify-between items-center panel content-full"
@@ -45,13 +42,13 @@ const Flow: ParentComponent<IHeaderTemplate> = ({
             <ArrowUpIcon />
           </button>
 
-          <h1 class="card-sub">{subtitle}</h1>
+          <h1 class="card-sub">{props.subtitle}</h1>
 
-          <ConnectFactory href="https://finviz.com/" text={headline} />
+          <ConnectFactory href="https://finviz.com/" text={props.headline} />
         </nav>
       </header>
 
-      {children}
+      {props.children}
     </HeaderTemplate>
   );
 };

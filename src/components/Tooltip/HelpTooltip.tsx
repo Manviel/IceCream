@@ -7,11 +7,9 @@ export interface IHelpTooltip {
 }
 
 const HelpTooltip: ParentComponent<IHelpTooltip> = props => {
-  const { children, name } = props;
-
   return (
-    <div class="content-full content-tall" role="img" aria-label={name} title={name}>
-      {children}
+    <div class="content-full content-tall" role="img" aria-label={props.name} title={props.name}>
+      {props.children}
     </div>
   );
 };

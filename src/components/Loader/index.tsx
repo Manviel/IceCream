@@ -8,8 +8,8 @@ const Loader: Component = () => (
       class='loader box rounded'
       role='progressbar'
       aria-label='Loading'
-    ></div>
-    <div class='skeleton box rounded screen'></div>
+     />
+    <div class='skeleton box rounded screen' />
   </aside>
 );
 

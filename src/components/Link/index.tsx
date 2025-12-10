@@ -6,11 +6,11 @@ import { ActionTypes } from '../../global/theme';
 
 interface ITabLink extends IDType, IAnchor {}
 
-const TabLink: ParentComponent<ITabLink> = ({ href, id, children, end }) => (
-  <A href={href} end={end} class="flex col items-center tab" aria-label={id} title={id}>
-    <div class={ActionTypes.SuperEllipse}>{children}</div>
+const TabLink: ParentComponent<ITabLink> = (props) => (
+  <A href={props.href} end={props.end} class="flex col items-center tab" aria-label={props.id} title={props.id}>
+    <div class={ActionTypes.SuperEllipse}>{props.children}</div>
 
-    <small class="tab-link">{id}</small>
+    <small class="tab-link">{props.id}</small>
   </A>
 );
 

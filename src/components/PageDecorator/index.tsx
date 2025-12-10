@@ -1,4 +1,4 @@
-import { ParentComponent } from 'solid-js';
+import { mergeProps, ParentComponent } from 'solid-js';
 
 import BackwardNavigation, { IBackwardNavigation } from '../Header/BackwardNavigation';
 
@@ -8,29 +8,28 @@ export interface IHeaderTemplate extends IBackwardNavigation, IDarkTheme {
   headline: string;
 }
 
-export const HeaderTemplate: ParentComponent<IHeaderTemplate> = ({ children, isDark = false }) => {
+export const HeaderTemplate: ParentComponent<IHeaderTemplate> = _props => {
+  const props = mergeProps({ isDark: false }, _props);
+
   return (
-    <main class="flex justify-center content-full" classList={{ layer: isDark }}>
+    <main class="flex justify-center content-full" classList={{ layer: props.isDark }}>
       <div class="panel content-full flex col app" id="app">
-        {children}
+        {props.children}
       </div>
     </main>
   );
 };
 
-const PageDecorator: ParentComponent<IHeaderTemplate> = ({
-  children,
-  headline,
-  subtitle,
-  isDark = false
-}) => {
+const PageDecorator: ParentComponent<IHeaderTemplate> = _props => {
+  const props = mergeProps({ isDark: false }, _props);
+
   return (
-    <HeaderTemplate headline={headline} subtitle={subtitle} isDark={isDark}>
-      <BackwardNavigation subtitle={headline} />
+    <HeaderTemplate headline={props.headline} subtitle={props.subtitle} isDark={props.isDark}>
+      <BackwardNavigation subtitle={props.headline} />
 
-      <h2 class="info card-sub">{subtitle}</h2>
+      <h2 class="info card-sub">{props.subtitle}</h2>
 
-      {children}
+      {props.children}
     </HeaderTemplate>
   );
 };

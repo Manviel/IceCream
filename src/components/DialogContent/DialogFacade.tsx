@@ -16,42 +16,32 @@ interface IDialogFacade extends ISegregation<string>, IActionSheet {
   toggleActionSheet?: () => void;
 }
 
-const DialogFacade: ParentComponent<IDialogFacade> = ({
-  title,
-  description,
-  closingActions,
-  children,
-  triggerContent,
-  triggerClassName,
-  isFullScreen,
-  childClassName,
-  toggleActionSheet
-}) => {
+const DialogFacade: ParentComponent<IDialogFacade> = (props) => {
   const handleOpenChange = () => {
-    toggleActionSheet?.();
+    props.toggleActionSheet?.();
   };
 
   return (
     <Dialog onOpenChange={handleOpenChange}>
-      <Dialog.Trigger type="button" class={triggerClassName}>
-        {triggerContent}
+      <Dialog.Trigger type="button" class={props.triggerClassName}>
+        {props.triggerContent}
       </Dialog.Trigger>
 
       <Dialog.Portal>
-        <DialogContent isFullScreen={isFullScreen} childClassName={childClassName}>
+        <DialogContent isFullScreen={props.isFullScreen} childClassName={props.childClassName}>
           <div class="flex justify-between items-center">
-            <Dialog.Title class="subtitle card-header">{title}</Dialog.Title>
+            <Dialog.Title class="subtitle card-header">{props.title}</Dialog.Title>
 
             <Dialog.CloseButton type="button" class={ShapeIcon.Default}>
               <CloseIcon />
             </Dialog.CloseButton>
           </div>
 
-          <Dialog.Description class="info">{description}</Dialog.Description>
+          <Dialog.Description class="info">{props.description}</Dialog.Description>
 
-          {children}
+          {props.children}
 
-          <div class="flex gap justify-between closing-actions">{closingActions}</div>
+          <div class="flex gap justify-between closing-actions">{props.closingActions}</div>
         </DialogContent>
       </Dialog.Portal>
     </Dialog>

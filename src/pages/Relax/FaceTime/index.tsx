@@ -21,15 +21,15 @@ const constraints = {
   }
 };
 
-const Notification = ({ title, description }: ISegregation<string>) => (
+const Notification = (props: ISegregation<string>) => (
   <>
     <div class="flex col items-center">
       <Toast.CloseButton class={ShapeIcon.Default}>
         <CloseIcon />
       </Toast.CloseButton>
 
-      <Toast.Title class="subtitle card-header">{title}</Toast.Title>
-      <Toast.Description>{description}</Toast.Description>
+      <Toast.Title class="subtitle card-header">{props.title}</Toast.Title>
+      <Toast.Description>{props.description}</Toast.Description>
     </div>
     <Toast.ProgressTrack class="toast content-full toast__progress-track">
       <Toast.ProgressFill class="toast toast__progress-fill vibrancy content-tall" />
@@ -40,9 +40,9 @@ const Notification = ({ title, description }: ISegregation<string>) => (
 const FaceTime: Component = () => {
   const [streamStarted, setStreamStarted] = createSignal(false);
 
-  let video: HTMLVideoElement;
-  let interval: number;
-  let localStream: MediaStream;
+  let video!: HTMLVideoElement;
+  let interval: number | undefined;
+  let localStream: MediaStream | undefined;
 
   const showToast = ({ title, description }: ISegregation<string>) => {
     toaster.show(props => (
@@ -118,10 +118,10 @@ const FaceTime: Component = () => {
         <video
           autoplay
           class="vibrancy rounded content-full"
-          ref={video!}
+          ref={video}
           aria-label="Face time"
           playsinline
-        ></video>
+        />
 
         <StopWatch />
 

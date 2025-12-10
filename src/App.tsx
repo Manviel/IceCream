@@ -11,7 +11,7 @@ import BookIcon from './assets/icons/book.svg';
 
 import './index.css';
 
-const App: ParentComponent = ({ children }) => (
+const App: ParentComponent = (props) => (
   <>
     <header class="sticky depth content-full flex justify-center">
       <nav class="dock flex justify-between content-full" aria-label="Tab bar">
@@ -33,7 +33,7 @@ const App: ParentComponent = ({ children }) => (
       </nav>
     </header>
 
-    {children}
+    {props.children}
   </>
 );
 

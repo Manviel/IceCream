@@ -8,14 +8,14 @@ import { ShapeIcon } from '../../../global/theme';
 import { IDType } from '../../../global';
 import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
 
-const Details: Component<IDType> = ({ id }) => {
+const Details: Component<IDType> = (props) => {
   const [modal, setModal] = createSignal('');
 
   const handleSubmit = async () => {
     if (!modal()) {
       const db = await useDataBase();
 
-      const response = await db.get(DB_STORE_TABLE, id);
+      const response = await db.get(DB_STORE_TABLE, props.id);
 
       setModal(response.price);
 

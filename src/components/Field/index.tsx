@@ -1,4 +1,4 @@
-import { Component, JSX } from 'solid-js';
+import { Component, splitProps, JSX } from 'solid-js';
 
 import './Field.css';
 
@@ -7,14 +7,14 @@ export interface IField extends JSX.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Field: Component<IField> = props => {
-  const { label, name, ...rest } = props;
+  const [local, rest] = splitProps(props, ['label', 'name']);
 
   return (
     <div class="flex col form-group">
-      <label for={name} class="form-label">
-        {label}
+      <label for={local.name} class="form-label">
+        {local.label}
       </label>
-      <input {...rest} id={name} name={name} class="form-control form-action token" />
+      <input {...rest} id={local.name} name={local.name} class="form-control form-action token" />
     </div>
   );
 };
