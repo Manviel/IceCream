@@ -10,7 +10,6 @@ import { getStack } from '../../global/theme';
 import Breathe from './Breathe';
 import Guard from './Guard';
 import FaceTime from './FaceTime';
-import Calendar from './Calendar';
 
 const options: ISegregation<string>[] = [
   {
@@ -76,9 +75,7 @@ const Relax: Component = () => (
 
         <p class="info">Consistency is great but efficiency is better.</p>
 
-        <aside class="grid proximity" id='room'>
-          <Calendar />
-
+        <aside class="grid proximity" id="room">
           <div class={getStack('material')}>
             <For each={options}>
               {option => <ConnectFactory href={option.title} text={option.description} />}
