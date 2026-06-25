@@ -1,10 +1,14 @@
+:root {
+  --s-report: 7.8rem;
+}
+
 .paper {
   background-color: var(--c-active);
 }
 
 .report-logo {
-  width: 7.8rem;
-  height: 7.8rem;
+  width: var(--s-report);
+  height: var(--s-report);
   font-size: var(--s-screen);
 }
 
@@ -17,9 +21,12 @@
   position: sticky;
   top: 6rem;
   align-self: start;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100vh - var(--s-report));
   padding: var(--s-safe);
   grid-column: span 1;
+  scrollbar-width: none;
 }
 
 .spy-nav a {

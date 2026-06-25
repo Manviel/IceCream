@@ -21,6 +21,7 @@ const useStickyNavigation = () => {
 
       if (entry.intersectionRatio > 0) {
         article?.classList.add('live');
+        article?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       } else {
         article?.classList.remove('live');
       }
