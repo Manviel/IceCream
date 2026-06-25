@@ -4,6 +4,7 @@ import { lazy } from 'solid-js';
 
 import App from './App';
 import AuthGuard from './components/AuthGuard';
+import Guard from './components/AuthGuard/Guard';
 
 import { Paths } from './global';
 
@@ -30,7 +31,9 @@ render(
 
       <Route path={Paths.Privacy} component={Privacy} />
 
-      <Route path={Paths.Relax} component={Relax} />
+      <Route component={Guard}>
+        <Route path={Paths.Relax} component={Relax} />
+      </Route>
 
       <Route component={AuthGuard}>
         <Route path={Paths.SignIn} component={SignIn} />

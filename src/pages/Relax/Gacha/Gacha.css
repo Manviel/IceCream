@@ -1,0 +1,53 @@
+.gacha {
+  gap: var(--s-medium);
+  padding: var(--s-medium);
+}
+
+.gacha-stats {
+  width: 100%;
+}
+
+.gacha-buttons {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gacha-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gacha-win {
+  color: var(--c-green);
+  font-weight: 600;
+}
+
+.gacha-loss {
+  color: var(--c-pink);
+  font-weight: 600;
+}
+
+.gacha-prizes {
+  width: 100%;
+  text-align: center;
+}
+
+.gacha-list {
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: var(--s-safe);
+}
+
+.gacha-prize {
+  gap: var(--s-safe);
+}
+
+.gacha-image {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: var(--s-safe);
+  border: 1px solid var(--c-ambient);
+}
