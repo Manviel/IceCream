@@ -43,7 +43,7 @@ const Notification = (props: ISegregation<string>) => (
 const FaceTime: Component = () => {
   const [streamStarted, setStreamStarted] = createSignal(false);
 
-  let video!: HTMLVideoElement;
+  let video: HTMLVideoElement;
   let interval: number | undefined;
   let localStream: MediaStream | undefined;
 
@@ -121,7 +121,7 @@ const FaceTime: Component = () => {
         <video
           autoplay
           class="vibrancy rounded content-full"
-          ref={video}
+          ref={el => (video = el)}
           aria-label="Face time"
           playsinline
         />
