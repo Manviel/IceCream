@@ -33,18 +33,21 @@ export const getDB = () => {
   return _db;
 };
 
+export const checkAuthStatus = async (): Promise<boolean> => {
+  try {
+    const db = await getDB();
+    const record = await db.get(DB_LOGS_TABLE, DB_AUTH_VALUE);
+    return !!record;
+  } catch {
+    return false;
+  }
+};
 
 export const useAuthorization = () => {
   const [isAuthed, setIsAuthed] = createSignal(false);
 
   const verifyStorage = async () => {
-    try {
-      const db = await getDB();
-      const response = await db.get(DB_LOGS_TABLE, DB_AUTH_VALUE);
-      setIsAuthed(!!response);
-    } catch {
-      setIsAuthed(false);
-    }
+    setIsAuthed(await checkAuthStatus());
   };
 
   return {
