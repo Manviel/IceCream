@@ -6,32 +6,28 @@ This is the reason you see a `pnpm-lock.yaml`. That being said, any package mana
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Task                 | Bun Command     | Old npm Equivalent |
+| -------------------- | --------------- | ------------------ |
+| Install dependencies | `bun install`   | `pnpm install`     |
+| Run dev server       | `bun run dev`   | `pnpm run dev`     |
+| Build for production | `bun run build` | `pnpm run build`   |
+| Lint code            | `bun run lint`  | `pnpm run lint`    |
 
-### `pnpm install`
-
-Is used to install all dependencies for a project.
-
-```bash
-pnpm up --latest
-```
-
-Updates all dependencies to their latest versions
-
-### `pnpm start`
+### `bun run start`
 
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.
 
-### `pnpm run build`
+### `bun run build`
 
 Builds the app for production to the `dist` folder.
 It correctly bundles Solid in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
+### `bunx npm-check-updates -u && bun install`
+
+Update all outdated packages to their latest versions.
 
 ### Learn more about shortcuts
 
