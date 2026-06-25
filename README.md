@@ -1,4 +1,4 @@
-## Usage
+# Usage
 
 Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
 
@@ -12,7 +12,7 @@ In the project directory, you can run:
 
 Is used to install all dependencies for a project.
 
-```
+```bash
 pnpm up --latest
 ```
 
@@ -20,17 +20,17 @@ Updates all dependencies to their latest versions
 
 ### `pnpm start`
 
-Runs the app in the development mode.<br>
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
+The page will reload if you make edits.
 
 ### `pnpm run build`
 
-Builds the app for production to the `dist` folder.<br>
+Builds the app for production to the `dist` folder.
 It correctly bundles Solid in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
+The build is minified and the filenames include the hashes.
 Your app is ready to be deployed!
 
 ### Learn more about shortcuts
