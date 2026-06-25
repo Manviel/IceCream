@@ -1,3 +1,7 @@
+:root {
+  --s-prize: 24rem;
+}
+
 .gacha {
   gap: var(--s-medium);
   padding: var(--s-medium);
@@ -45,8 +49,8 @@
 }
 
 .gacha-image {
-  width: 6rem;
-  height: 6rem;
+  width: var(--s-prize);
+  height: var(--s-prize);
   object-fit: cover;
   border-radius: var(--s-safe);
   border: 1px solid var(--c-ambient);
