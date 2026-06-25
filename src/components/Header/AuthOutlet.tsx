@@ -3,7 +3,7 @@ import { A } from '@solidjs/router';
 
 import { ActionTypes } from '../../global/theme';
 import { Pages, Paths } from '../../global';
-import { DB_LOGS_TABLE, useAuthorization, useDataBase } from '../../services/db';
+import { DB_LOGS_TABLE, useAuthorization, getDB } from '../../services/db';
 
 const AuthOutlet: Component = () => {
   const { isAuthed, verifyStorage } = useAuthorization();
@@ -13,9 +13,12 @@ const AuthOutlet: Component = () => {
   });
 
   const logOut = async () => {
-    const db = await useDataBase();
-
-    db.clear(DB_LOGS_TABLE);
+    try {
+      const db = await getDB();
+      await db.clear(DB_LOGS_TABLE);
+    } catch (err) {
+      console.error('Failed to log out', err);
+    }
 
     await verifyStorage();
   };

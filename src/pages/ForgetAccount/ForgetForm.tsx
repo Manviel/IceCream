@@ -7,7 +7,7 @@ import ErrorMessage from '../../components/Field/ErrorMessage';
 
 import { ActionTypes } from '../../global/theme';
 import { Pages } from '../../global';
-import { DB_USERS_TABLE, useDataBase } from '../../services/db';
+import { DB_USERS_TABLE, getDB } from '../../services/db';
 
 const ForgetForm: Component = () => {
   const [form, setForm] = createStore({
@@ -22,19 +22,20 @@ const ForgetForm: Component = () => {
   const handleSubmit: JSX.EventHandler<HTMLFormElement, SubmitEvent> = async e => {
     e.preventDefault();
 
-    const db = await useDataBase();
+    try {
+      const db = await getDB();
+      const response = await db.get(DB_USERS_TABLE, form.email);
 
-    const response = await db.get(DB_USERS_TABLE, form.email);
-
-    if (response) {
-      db.delete(DB_USERS_TABLE, form.email);
-    } else {
-      setStatus('Account not found. Check your details and please try again.');
+      if (response) {
+        await db.delete(DB_USERS_TABLE, form.email);
+        setStatus('Your account is deleted. Thanks for using our product.');
+      } else {
+        setStatus('Account not found. Check your details and please try again.');
+      }
+    } catch (err) {
+      console.error('Delete account failed', err);
+      setStatus('Something went wrong. Please try again.');
     }
-
-    setStatus('Your account is deleted. Thanks for using our product.');
-
-    db.close();
   };
 
   return (

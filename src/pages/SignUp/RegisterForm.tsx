@@ -8,7 +8,7 @@ import ErrorMessage from '../../components/Field/ErrorMessage';
 
 import { ActionTypes } from '../../global/theme';
 import { Pages, Paths } from '../../global';
-import { DB_AUTH_KEY, DB_LOGS_TABLE, DB_USERS_TABLE, useDataBase } from '../../services/db';
+import { DB_AUTH_KEY, DB_LOGS_TABLE, DB_USERS_TABLE, getDB } from '../../services/db';
 
 const RegisterForm: Component = () => {
   const [form, setForm] = createStore({
@@ -26,9 +26,8 @@ const RegisterForm: Component = () => {
   const handleSubmit: JSX.EventHandler<HTMLFormElement, SubmitEvent> = async e => {
     e.preventDefault();
 
-    const db = await useDataBase();
-
     try {
+      const db = await getDB();
       await db.add(DB_USERS_TABLE, {
         fullName: form.fullName,
         email: form.email,
@@ -39,8 +38,6 @@ const RegisterForm: Component = () => {
     } catch {
       setStatus('Account already exist. Check your details and please try again.');
     }
-
-    db.close();
   };
 
   return (

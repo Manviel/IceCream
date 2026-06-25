@@ -9,14 +9,14 @@ import Field from '../../../components/Field';
 import HelpTooltip from '../../../components/Tooltip/HelpTooltip';
 
 import { ActionTypes, ShapeIcon, getStack } from '../../../global/theme';
-import { useDataBase, DB_STORE_TABLE } from '../../../services/db';
+import { getDB, DB_STORE_TABLE } from '../../../services/db';
 
 import Details from './Details';
 
 const Notes: Component = () => {
   const [price, setPrice] = createSignal('');
   const [ticker, setTicker] = createSignal(new Date().toDateString());
-  const [transactions, setTransations] = createSignal<IDBValidKey[]>();
+  const [transactions, setTransactions] = createSignal<IDBValidKey[]>();
 
   const toggleActionSheet = () => {
     const main = document.getElementById('app');
@@ -25,13 +25,13 @@ const Notes: Component = () => {
   };
 
   const loadFromStorage = async () => {
-    const db = await useDataBase();
-
-    const response = await db.getAllKeys(DB_STORE_TABLE);
-
-    setTransations(response);
-
-    db.close();
+    try {
+      const db = await getDB();
+      const response = await db.getAllKeys(DB_STORE_TABLE);
+      setTransactions(response);
+    } catch (err) {
+      console.error('Failed to load from storage', err);
+    }
   };
 
   onMount(async () => {
@@ -39,11 +39,12 @@ const Notes: Component = () => {
   });
 
   const handleSave = async () => {
-    const db = await useDataBase();
-
-    db.add(DB_STORE_TABLE, { price: price(), ticker: ticker() });
-
-    db.close();
+    try {
+      const db = await getDB();
+      await db.add(DB_STORE_TABLE, { price: price(), ticker: ticker() });
+    } catch (err) {
+      console.error('Failed to save note', err);
+    }
 
     await loadFromStorage();
   };
@@ -55,11 +56,12 @@ const Notes: Component = () => {
     setTicker(target.value);
 
   const handleClear = async () => {
-    const db = await useDataBase();
-
-    db.clear(DB_STORE_TABLE);
-
-    db.close();
+    try {
+      const db = await getDB();
+      await db.clear(DB_STORE_TABLE);
+    } catch (err) {
+      console.error('Failed to clear notes', err);
+    }
 
     await loadFromStorage();
   };

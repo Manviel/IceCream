@@ -8,7 +8,7 @@ import ErrorMessage from '../../components/Field/ErrorMessage';
 
 import { ActionTypes } from '../../global/theme';
 import { Pages, Paths } from '../../global';
-import { DB_AUTH_KEY, DB_LOGS_TABLE, DB_USERS_TABLE, useDataBase } from '../../services/db';
+import { DB_AUTH_KEY, DB_LOGS_TABLE, DB_USERS_TABLE, getDB } from '../../services/db';
 
 const LoginForm: Component = () => {
   const [form, setForm] = createStore({
@@ -25,19 +25,20 @@ const LoginForm: Component = () => {
   const handleSubmit: JSX.EventHandler<HTMLFormElement, SubmitEvent> = async e => {
     e.preventDefault();
 
-    const db = await useDataBase();
+    try {
+      const db = await getDB();
+      const response = await db.get(DB_USERS_TABLE, form.email);
 
-    const response = await db.get(DB_USERS_TABLE, form.email);
-
-    if (response) {
-      await db.add(DB_LOGS_TABLE, { [DB_AUTH_KEY]: 'true' });
-
-      navigate(Paths.Relax, { replace: true });
-    } else {
-      setStatus('Account not found. Check your details and please try again.');
+      if (response) {
+        await db.add(DB_LOGS_TABLE, { [DB_AUTH_KEY]: 'true' });
+        navigate(Paths.Relax, { replace: true });
+      } else {
+        setStatus('Account not found. Check your details and please try again.');
+      }
+    } catch (err) {
+      console.error('Login failed', err);
+      setStatus('Something went wrong. Please try again.');
     }
-
-    db.close();
   };
 
   return (
