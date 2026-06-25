@@ -5,9 +5,8 @@ import { Toast, toaster } from '@kobalte/core/toast';
 import VideoIcon from '../../../assets/icons/video.svg';
 import StopCircleIcon from '../../../assets/icons/stop-circle.svg';
 import CloseIcon from '../../../assets/icons/close.svg';
-import PlayIcon from '../../../assets/icons/play-fill.svg';
 
-import { ShapeIcon, getGroup } from '../../../global/theme';
+import { ShapeIcon } from '../../../global/theme';
 import { ISegregation } from '../../../global';
 
 import { StopWatch, setTimer } from './StopWatch';
@@ -23,14 +22,18 @@ const constraints = {
 
 const Notification = (props: ISegregation<string>) => (
   <>
-    <div class="flex col items-center">
-      <Toast.CloseButton class={ShapeIcon.Default}>
-        <CloseIcon />
-      </Toast.CloseButton>
+    <div class="flex col items-center gap">
+      <header class="flex justify-between items-center content-full">
+        <Toast.Title class="subtitle">{props.title}</Toast.Title>
 
-      <Toast.Title class="subtitle card-header">{props.title}</Toast.Title>
+        <Toast.CloseButton class={ShapeIcon.Default}>
+          <CloseIcon />
+        </Toast.CloseButton>
+      </header>
+
       <Toast.Description>{props.description}</Toast.Description>
     </div>
+
     <Toast.ProgressTrack class="toast content-full toast__progress-track">
       <Toast.ProgressFill class="toast toast__progress-fill vibrancy content-tall" />
     </Toast.ProgressTrack>
@@ -113,7 +116,7 @@ const FaceTime: Component = () => {
   });
 
   return (
-    <section class="grid items-start provision proximity">
+    <>
       <div class="face-time col-span-4">
         <video
           autoplay
@@ -148,42 +151,12 @@ const FaceTime: Component = () => {
         </nav>
       </div>
 
-      <aside class="flex col os layer col-span-2">
-        <h4 class="card-sub">Lean</h4>
-        <p class="term grey-light">
-          Any component of a business enterprise that fails to directly benefit a final product is
-          superfluous.
-        </p>
-
-        <article class={getGroup('box items-center')}>
-          <header class="flex col tab">
-            <h4 class="card-sub">Wake Up</h4>
-            <p class="term grey-dark">Tomorrow</p>
-          </header>
-
-          <a
-            href="https://youtu.be/evkIu2e5g1M?si=mCS7fNgzV45wL9fm"
-            target="_blank"
-            rel="noopener noreferrer"
-            class={ShapeIcon.Default}
-          >
-            <div
-              role="img"
-              class="content-full content-tall"
-              aria-label="Design widgets for the Smart Stack"
-            >
-              <PlayIcon />
-            </div>
-          </a>
-        </article>
-      </aside>
-
       <Portal>
         <Toast.Region>
           <Toast.List class="toast-list" />
         </Toast.Region>
       </Portal>
-    </section>
+    </>
   );
 };
 
