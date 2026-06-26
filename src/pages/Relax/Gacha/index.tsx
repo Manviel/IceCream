@@ -109,7 +109,7 @@ const Gacha: Component = () => {
   return (
     <article class="box rounded flex gacha screen">
       <Show when={isLoaded()} fallback={<Loader />}>
-        <section class="flex col items-center justify-between view proximity side">
+        <section class="flex col items-center view proximity side">
           <header class="flex col items-center content-full gacha-header">
             <h4 class="gacha-label gacha-sub">Prize Banner</h4>
 
@@ -120,7 +120,7 @@ const Gacha: Component = () => {
 
             <div class="content-full gacha-track">
               <div
-                class="gacha-fill"
+                class="gacha-fill content-tall"
                 role="progressbar"
                 aria-valuenow={consumedPulls()}
                 aria-valuemin={0}
@@ -147,54 +147,59 @@ const Gacha: Component = () => {
             </Show>
           </header>
 
-          <div class="flex col items-center gap content-full gacha-action">
-            <div class="flex gap justify-center gacha-buttons">
-              <button
-                type="button"
-                class="btn legible concise contained"
-                onClick={() => performPull(1)}
-                disabled={pullsRemaining() <= 0}
-              >
-                Use 1 Pull
-              </button>
+          <div class="flex items-center justify-between gap content-full gacha-action view">
+            <button
+              type="button"
+              class="btn legible concise contained"
+              onClick={() => performPull(1)}
+              disabled={pullsRemaining() <= 0}
+            >
+              Use 1 Pull
+            </button>
 
-              <button
-                type="button"
-                class="btn legible concise contained"
-                onClick={() => performPull(10)}
-                disabled={pullsRemaining() <= 0}
-              >
-                Use 10 Pulls
-              </button>
-            </div>
+            <button
+              type="button"
+              class="btn legible concise contained"
+              onClick={() => performPull(10)}
+              disabled={pullsRemaining() <= 0}
+            >
+              Use 10 Pulls
+            </button>
           </div>
         </section>
 
-        <section class="flex col items-center justify-center view gacha-header side">
+        <section class="flex col items-center justify-between view gacha-header side">
           <h4 class="flex items-center grey-dark gacha-label gacha-header gacha-sub">
             Unlocked Prizes
-            <span class="gacha-badge">
+            <span class="gacha-badge chip">
               {unlockedPrizes().length} / {PRIZES.length}
             </span>
           </h4>
 
-          <ul class="flex gap gacha-list">
+          <ul class="flex gacha-list gap content-full">
+            <Show when={unlockedPrizes().length === 0}>
+              <li class="flex col items-center gacha-prize">
+                <div class="flex items-center justify-center grey-dark gacha-placeholder content-full">
+                  ?
+                </div>
+                <span class="grey-dark info">No prizes yet</span>
+              </li>
+            </Show>
+
             <For each={unlockedPrizes()}>
               {prize => (
                 <li class="flex col items-center gacha-prize">
-                  <img src={prize.image} alt={prize.name} class="gacha-image" loading="lazy" />
+                  <img
+                    src={prize.image}
+                    alt={prize.name}
+                    class="gacha-image content-full"
+                    loading="lazy"
+                  />
                   <span class="grey-dark info">{prize.name}</span>
                 </li>
               )}
             </For>
           </ul>
-
-          <Show when={unlockedPrizes().length === 0}>
-            <div class="flex col items-center gacha-empty">
-              <div class="flex items-center justify-center gacha-placeholder grey-dark">?</div>
-              <p class="grey-dark info">No prizes yet</p>
-            </div>
-          </Show>
         </section>
       </Show>
     </article>
