@@ -1,15 +1,19 @@
 import { Component, For, Show, createSignal, onMount } from 'solid-js';
 
-import './Gacha.css';
+import { loadGachaState, saveGachaState, clearGachaState } from '../../../services/gacha-db';
+import Loader from '../../../components/Loader';
 
 import MiyabiPrize from '../../../assets/prizes/miyabi.webp';
 import VelinaPrize from '../../../assets/prizes/velina.webp';
+import JanePrize from '../../../assets/prizes/jane.webp';
+import EvelynPrize from '../../../assets/prizes/evelyn.webp';
+import SunnaPrize from '../../../assets/prizes/sunna.webp';
 
-import { loadGachaState, saveGachaState, clearGachaState } from '../../../services/gacha-db';
+import './Gacha.css';
 
 enum PullResult {
   Win = 'win',
-  Loss = 'loss',
+  Loss = 'loss'
 }
 
 interface Prize {
@@ -20,7 +24,10 @@ interface Prize {
 
 const PRIZES: Prize[] = [
   { id: 'miyabi', name: 'Miyabi', image: MiyabiPrize },
-  { id: 'velina', name: 'Velina', image: VelinaPrize }
+  { id: 'velina', name: 'Velina', image: VelinaPrize },
+  { id: 'jane', name: 'Jane', image: JanePrize },
+  { id: 'evelyn', name: 'Evelyn', image: EvelynPrize },
+  { id: 'sunna', name: 'Sunna', image: SunnaPrize }
 ];
 
 const WIN_CHANCE = 0.006; // 0.6%
@@ -32,6 +39,9 @@ const Gacha: Component = () => {
   const [lastResult, setLastResult] = createSignal<PullResult | null>(null);
   const [totalPulls, setTotalPulls] = createSignal(0);
   const [isLoaded, setIsLoaded] = createSignal(false);
+
+  const consumedPulls = () => MAX_PULLS - pullsRemaining();
+  const progressPercent = () => (consumedPulls() / MAX_PULLS) * 100;
 
   const resetProgress = async () => {
     setPullsRemaining(MAX_PULLS);
@@ -64,7 +74,6 @@ const Gacha: Component = () => {
     }
 
     const consumed = Math.min(count, pullsRemaining());
-
     const nextPullsRemaining = Math.max(0, pullsRemaining() - consumed);
     const nextTotalPulls = totalPulls() + consumed;
 
@@ -72,14 +81,12 @@ const Gacha: Component = () => {
     setTotalPulls(nextTotalPulls);
     setLastResult(won ? PullResult.Win : PullResult.Loss);
 
-    // Save state after each pull
     await saveGachaState({
       pullsRemaining: nextPullsRemaining,
       unlockedIds: unlockedIds(),
-      totalPulls: nextTotalPulls,
+      totalPulls: nextTotalPulls
     });
 
-    // Reset after reaching 90 total pulls consumed
     if (nextTotalPulls >= MAX_PULLS) {
       await resetProgress();
     }
@@ -100,52 +107,76 @@ const Gacha: Component = () => {
   });
 
   return (
-    <article class="box view rounded flex col items-center gacha screen">
-      <h2 class="subtitle card-header">Prize Banner</h2>
+    <article class="box rounded flex gacha screen">
+      <Show when={isLoaded()} fallback={<Loader />}>
+        <section class="flex col items-center justify-between view proximity side">
+          <header class="flex col items-center content-full gacha-header">
+            <h4 class="gacha-label gacha-sub">Prize Banner</h4>
 
-      <Show when={isLoaded()} fallback={<p class="grey-dark info">Loading...</p>}>
-        <div class="flex col items-center gap gacha-stats">
-          <p class="grey-dark info">
-            Pulls remaining: <span class="concise">{pullsRemaining()}</span> / {MAX_PULLS}
-          </p>
+            <div class="flex col items-center gacha-counter">
+              <span class="gacha-count">{consumedPulls()}</span>
+              <span class="gacha-sub grey-dark">/ {MAX_PULLS} pulls used</span>
+            </div>
 
-          <div class="flex gap gacha-buttons">
-            <button
-              type="button"
-              class="btn legible concise contained"
-              onClick={() => performPull(1)}
-              disabled={pullsRemaining() <= 0}
-              aria-label="Use 1 pull"
-            >
-              Use 1 Pull
-            </button>
+            <div class="content-full gacha-track">
+              <div
+                class="gacha-fill"
+                role="progressbar"
+                aria-valuenow={consumedPulls()}
+                aria-valuemin={0}
+                aria-valuemax={MAX_PULLS}
+                aria-label="Pulls consumed"
+                style={{ width: `${progressPercent()}%` }}
+              />
+            </div>
 
-            <button
-              type="button"
-              class="btn legible concise contained"
-              onClick={() => performPull(10)}
-              disabled={pullsRemaining() <= 0}
-              aria-label="Use 10 pulls"
-            >
-              Use 10 Pulls
-            </button>
+            <Show when={lastResult() === null}>
+              <p class="gacha-chance grey-dark">{WIN_CHANCE * 100}% win chance per pull</p>
+            </Show>
+
+            <Show when={lastResult() === PullResult.Win}>
+              <p class="gacha-win ghost grey-light" role="status">
+                Prize unlocked!
+              </p>
+            </Show>
+
+            <Show when={lastResult() === PullResult.Loss}>
+              <p class="gacha-loss alias red" role="status">
+                No luck this time
+              </p>
+            </Show>
+          </header>
+
+          <div class="flex col items-center gap content-full gacha-action">
+            <div class="flex gap justify-center gacha-buttons">
+              <button
+                type="button"
+                class="btn legible concise contained"
+                onClick={() => performPull(1)}
+                disabled={pullsRemaining() <= 0}
+              >
+                Use 1 Pull
+              </button>
+
+              <button
+                type="button"
+                class="btn legible concise contained"
+                onClick={() => performPull(10)}
+                disabled={pullsRemaining() <= 0}
+              >
+                Use 10 Pulls
+              </button>
+            </div>
           </div>
+        </section>
 
-          {lastResult() === PullResult.Win && (
-            <p class="gacha-win" role="status">
-              Prize unlocked!
-            </p>
-          )}
-
-          {lastResult() === PullResult.Loss && (
-            <p class="gacha-loss" role="status">
-              No luck this time
-            </p>
-          )}
-        </div>
-
-        <div class="gacha-prizes">
-          <h3 class="grey-dark info">Unlocked Prizes</h3>
+        <section class="flex col items-center justify-center view gacha-header side">
+          <h4 class="flex items-center grey-dark gacha-label gacha-header gacha-sub">
+            Unlocked Prizes
+            <span class="gacha-badge">
+              {unlockedPrizes().length} / {PRIZES.length}
+            </span>
+          </h4>
 
           <ul class="flex gap gacha-list">
             <For each={unlockedPrizes()}>
@@ -158,8 +189,13 @@ const Gacha: Component = () => {
             </For>
           </ul>
 
-          {unlockedPrizes().length === 0 && <p class="grey-dark info">No prizes unlocked yet</p>}
-        </div>
+          <Show when={unlockedPrizes().length === 0}>
+            <div class="flex col items-center gacha-empty">
+              <div class="flex items-center justify-center gacha-placeholder grey-dark">?</div>
+              <p class="grey-dark info">No prizes yet</p>
+            </div>
+          </Show>
+        </section>
       </Show>
     </article>
   );

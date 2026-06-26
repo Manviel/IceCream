@@ -8,7 +8,7 @@ import Gacha from './Gacha';
 
 const Relax: Component = () => (
   <Flow headline="View" subtitle="My account">
-    <h3 class="subtitle screen">Leave a message</h3>
+    <h2 class="subtitle screen">Leave a message</h2>
 
     <section class="grid items-start provision proximity">
       <FaceTime />
