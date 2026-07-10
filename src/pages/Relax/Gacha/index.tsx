@@ -1,7 +1,8 @@
 import { Component, For, Show, createSignal, onMount } from 'solid-js';
 
-import { loadGachaState, saveGachaState, clearGachaState } from '../../../services/gacha-db';
 import Loader from '../../../components/Loader';
+import { loadGachaState, saveGachaState, clearGachaState } from '../../../services/gacha-db';
+import { secureRandom } from '../../../services/utils';
 
 import MiyabiPrize from '../../../assets/prizes/miyabi.webp';
 import VelinaPrize from '../../../assets/prizes/velina.webp';
@@ -33,6 +34,17 @@ const PRIZES: Prize[] = [
 const WIN_CHANCE = 0.006; // 0.6%
 const MAX_PULLS = 90;
 
+const secureRandomInt = (max: number): number => {
+  const range = 256 - (256 % max);
+  const buf = new Uint8Array(1);
+  let byte: number;
+  do {
+    crypto.getRandomValues(buf);
+    byte = buf[0];
+  } while (byte >= range);
+  return byte % max;
+};
+
 const Gacha: Component = () => {
   const [pullsRemaining, setPullsRemaining] = createSignal(MAX_PULLS);
   const [unlockedIds, setUnlockedIds] = createSignal<string[]>([]);
@@ -55,7 +67,7 @@ const Gacha: Component = () => {
     const locked = PRIZES.filter(p => !unlockedIds().includes(p.id));
     if (locked.length === 0) return null;
 
-    const prize = locked[Math.floor(Math.random() * locked.length)];
+    const prize = locked[secureRandomInt(locked.length)];
     setUnlockedIds(prev => [...prev, prize.id]);
     return prize;
   };
@@ -66,7 +78,7 @@ const Gacha: Component = () => {
     for (let i = 0; i < count; i++) {
       if (pullsRemaining() - i <= 0) break;
 
-      const roll = Math.random();
+      const roll = secureRandom();
       if (roll < WIN_CHANCE) {
         won = true;
         unlockRandomPrize();
