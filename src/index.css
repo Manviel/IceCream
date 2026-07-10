@@ -1,24 +1,25 @@
 :root {
-  --c-white: color(display-p3 1 1 1);
-  --c-elevation: color(display-p3 1 1 1 / 0.84);
-  --c-ambient: color(display-p3 1 1 1 / 0.42);
-  --c-active: color(display-p3 0.463 0.463 0.499 / 0.12);
-  --c-action: color(display-p3 0.463 0.463 0.499 / 0.24);
-  --c-depth: color(display-p3 0.961 0.961 0.968 / 0.62);
-  --c-primary: color(display-p3 0.969 0.969 0.976);
-  --c-surface: color(display-p3 0.431 0.431 0.449);
-  --c-grey: color(display-p3 0.631 0.631 0.649);
-  --c-glass: color(display-p3 0.944 0.971 0.993);
-  --c-blue: color(display-p3 0.187 0.436 0.86);
-  --c-ring: color(display-p3 0.166 0.394 0.773);
-  --c-yellow: color(display-p3 0.991 0.97 0.93);
-  --c-pink: color(display-p3 0.979 0.939 0.949);
-  --c-heat: color(display-p3 0.917 0.293 0.384);
-  --c-red: color(display-p3 0.77 0.182 0.164);
-  --c-green: color(display-p3 0.925 0.971 0.886);
-  --c-black: color(display-p3 0.11 0.11 0.117);
-  --c-backdrop: color(display-p3 0.259 0.259 0.27 / 0.7);
-  --c-dark: color(display-p3 0 0 0);
+  --c-white: oklch(100% 0 0);
+  --c-elevation: oklch(100% 0 0 / 0.84);
+  --c-ambient: oklch(100% 0 0 / 0.42);
+  --c-active: oklch(56.94% 0.0154 285.79 / 0.12);
+  --c-action: oklch(56.94% 0.0154 285.79 / 0.24);
+  --c-depth: oklch(97.09% 0.0027 285.21 / 0.62);
+  --c-primary: oklch(97.7% 0.0027 285.2);
+  --c-surface: oklch(53.96% 0.0078 285.92);
+  --c-grey: oklch(71.02% 0.0073 285.91);
+  --c-glass: oklch(97.4% 0.0124 237.6);
+  --c-blue: oklch(56.27% 0.1934 256.14);
+  --c-ring: oklch(52.21% 0.1771 255.77);
+  --c-yellow: oklch(97.87% 0.0163 80.39);
+  --c-pink: oklch(96.31% 0.0144 0.72);
+  --c-heat: oklch(65.57% 0.2307 16.17);
+  --c-red: oklch(55.56% 0.22 26.9);
+  --c-green: oklch(96.18% 0.0355 133.46);
+  --c-neon: oklch(78.88% 0.209 151.59);
+  --c-black: oklch(22.75% 0.0038 285.91);
+  --c-backdrop: oklch(38.04% 0.0052 285.92 / 0.7);
+  --c-dark: oklch(0% 0 0);
   --s-bezel: 0.4rem;
   --s-line: 0.6rem;
   --s-unit: 0.8rem;
@@ -88,8 +89,10 @@ button {
 a,
 button {
   will-change: transform;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    background-color 0.4s cubic-bezier(0.28, 0.11, 0.32, 1), outline-offset 0.2s linear;
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.4s cubic-bezier(0.28, 0.11, 0.32, 1),
+    outline-offset 0.2s linear;
 }
 
 a:active,
